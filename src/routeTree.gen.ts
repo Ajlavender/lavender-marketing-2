@@ -15,6 +15,7 @@ import { Route as ShopifyWebsiteRouteImport } from './routes/shopify-website'
 import { Route as SeoRouteImport } from './routes/seo'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as DigitalAdsRouteImport } from './routes/digital-ads'
 import { Route as DevelopersRouteImport } from './routes/developers'
@@ -55,6 +56,11 @@ const ReviewsRoute = ReviewsRouteImport.update({
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -122,6 +128,7 @@ export interface FileRoutesByFullPath {
   '/developers': typeof DevelopersRoute
   '/digital-ads': typeof DigitalAdsRoute
   '/faq': typeof FaqRoute
+  '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
   '/reviews': typeof ReviewsRoute
   '/seo': typeof SeoRoute
@@ -141,6 +148,7 @@ export interface FileRoutesByTo {
   '/developers': typeof DevelopersRoute
   '/digital-ads': typeof DigitalAdsRoute
   '/faq': typeof FaqRoute
+  '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
   '/reviews': typeof ReviewsRoute
   '/seo': typeof SeoRoute
@@ -161,6 +169,7 @@ export interface FileRoutesById {
   '/developers': typeof DevelopersRoute
   '/digital-ads': typeof DigitalAdsRoute
   '/faq': typeof FaqRoute
+  '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
   '/reviews': typeof ReviewsRoute
   '/seo': typeof SeoRoute
@@ -182,6 +191,7 @@ export interface FileRouteTypes {
     | '/developers'
     | '/digital-ads'
     | '/faq'
+    | '/pricing'
     | '/projects'
     | '/reviews'
     | '/seo'
@@ -201,6 +211,7 @@ export interface FileRouteTypes {
     | '/developers'
     | '/digital-ads'
     | '/faq'
+    | '/pricing'
     | '/projects'
     | '/reviews'
     | '/seo'
@@ -220,6 +231,7 @@ export interface FileRouteTypes {
     | '/developers'
     | '/digital-ads'
     | '/faq'
+    | '/pricing'
     | '/projects'
     | '/reviews'
     | '/seo'
@@ -240,6 +252,7 @@ export interface RootRouteChildren {
   DevelopersRoute: typeof DevelopersRoute
   DigitalAdsRoute: typeof DigitalAdsRoute
   FaqRoute: typeof FaqRoute
+  PricingRoute: typeof PricingRoute
   ProjectsRoute: typeof ProjectsRoute
   ReviewsRoute: typeof ReviewsRoute
   SeoRoute: typeof SeoRoute
@@ -294,6 +307,13 @@ declare module '@tanstack/react-router' {
       path: '/projects'
       fullPath: '/projects'
       preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -384,6 +404,7 @@ const rootRouteChildren: RootRouteChildren = {
   DevelopersRoute: DevelopersRoute,
   DigitalAdsRoute: DigitalAdsRoute,
   FaqRoute: FaqRoute,
+  PricingRoute: PricingRoute,
   ProjectsRoute: ProjectsRoute,
   ReviewsRoute: ReviewsRoute,
   SeoRoute: SeoRoute,
@@ -398,3 +419,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
