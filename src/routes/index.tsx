@@ -98,7 +98,7 @@ function Index() {
       <LogoStrip />
 
       {/* Pain points */}
-      <Section className="pt-4">
+      <Section className="pt-28">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-start lg:gap-12">
           <div className="lg:sticky lg:top-32">
             <p className="max-w-sm text-base text-primary">
