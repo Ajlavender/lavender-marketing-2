@@ -42,28 +42,29 @@ function DemoButton({ label = "Schedule a demo" }: { label?: string }) {
   );
 }
 
-const barkReviews = [
+const facebookReviews = [
   {
     name: "Mark P.",
-    when: "Verified Bark customer",
+    when: "Recommends Webtec on Facebook",
     rating: 5,
     quote:
       "Great communication from start to finish. The team built exactly what we asked for and then some.",
   },
   {
     name: "Dana R.",
-    when: "Verified Bark customer",
+    when: "Recommends Webtec on Facebook",
     rating: 5,
     quote: "Fast, affordable and genuinely talented designers. Our bookings doubled after launch.",
   },
   {
     name: "Tony L.",
-    when: "Verified Bark customer",
+    when: "Recommends Webtec on Facebook",
     rating: 5,
     quote:
       "They showed me a full demo before I paid a cent. Nobody else does that. Easy decision.",
   },
 ];
+
 
 const videoPosters = [
   `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
@@ -210,25 +211,26 @@ function Reviews() {
         </div>
       </section>
 
-      {/* Bark reviews */}
+      {/* Facebook reviews */}
       <section className="py-24">
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <Reveal from="left">
             <img
-              src="https://www.trywebtec.com/wp-content/uploads/2023/03/Bark_Logo800-200-300x90.png"
-              alt="Bark"
+              src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg"
+              alt="Facebook"
               loading="lazy"
               className="h-6 w-auto object-contain"
             />
             <h2 className="mt-4 text-2xl font-bold sm:text-3xl">
-              See What They Say On <span className="text-primary">Bark.</span>
+              See What They Say On <span className="text-primary">Facebook.</span>
             </h2>
             <div className="mt-5">
               <DemoButton />
             </div>
             <div className="mt-8">
-              <ReviewSlider reviews={barkReviews} />
+              <ReviewSlider reviews={facebookReviews} />
             </div>
+
           </Reveal>
           <Reveal from="right" delay={110}>
             <img
