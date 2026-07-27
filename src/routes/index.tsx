@@ -105,42 +105,34 @@ function Index() {
 
       {/* Pain points */}
       <Section className="pt-4">
-        <p className="text-center text-base text-muted-foreground">
-          Our services rely on insights gained from 3000+ customers' data.
-        </p>
-        <h2 className="mx-auto mt-4 max-w-4xl text-center text-4xl font-bold sm:text-5xl">
-          Website Redesign so you <span className="text-primary">Thrive Online.</span>
-        </h2>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Button asChild size="lg">
-            <a
-              href="https://calendly.com/webtec-website/free-webdesign-sketch"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Free Lead Boost Tips
-            </a>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <Link to="/contact">Download CRO guide PDF</Link>
-          </Button>
-        </div>
+        <div className="grid gap-16 lg:grid-cols-2 lg:items-start lg:gap-12">
+          <div className="lg:sticky lg:top-32">
+            <p className="max-w-sm text-base text-primary">
+              Our services rely on insights gained from 3000+ customers' data.
+            </p>
+            <h2 className="mt-4 max-w-md text-5xl font-bold leading-[1.1] sm:text-6xl">
+              Website Redesign so you <span className="text-primary">Thrive Online.</span>
+            </h2>
+            <div className="mt-10 flex flex-wrap items-center gap-6">
+              <Button asChild size="lg">
+                <a
+                  href="https://calendly.com/webtec-website/free-webdesign-sketch"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Free Lead Boost Tips
+                </a>
+              </Button>
+              <Link
+                to="/contact"
+                className="border-b border-primary pb-1 text-sm font-medium text-primary"
+              >
+                Download CRO guide PDF
+              </Link>
+            </div>
+          </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {painPoints.map((p, i) => (
-            <Link
-              key={p.title}
-              to={painLinks[i]}
-              className={cn(
-                "group rounded-3xl bg-card p-8 shadow-[0_10px_40px_-20px_rgba(16,18,24,0.35)] transition-transform hover:-translate-y-1",
-                i % 2 === 1 && "lg:translate-y-10",
-              )}
-            >
-              <img src={p.image} alt="" loading="lazy" className="h-28 w-28 object-contain" />
-              <h3 className="mt-6 text-xl font-bold group-hover:text-primary">{p.title}</h3>
-              <p className="mt-3 text-sm text-muted-foreground">{p.body}</p>
-            </Link>
-          ))}
+          <PainPointCards />
         </div>
       </Section>
 
