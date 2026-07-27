@@ -1,11 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/site/LeadForm";
+import { cn } from "@/lib/utils";
 import {
   Counters,
   CtaBand,
   FaqAccordion,
+  ExpertiseBand,
   GoogleReviews,
+  LogoStrip,
   ProjectGrid,
   RatingBar,
   Section,
