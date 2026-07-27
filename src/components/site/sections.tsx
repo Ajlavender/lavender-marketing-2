@@ -12,6 +12,7 @@ import {
 import { LeadForm } from "./LeadForm";
 import {
   MEDIA,
+  clientLogos,
   counters,
   faqs,
   googleReviews,
@@ -235,73 +236,48 @@ export function FaqAccordion({ limit }: { limit?: number }) {
 }
 
 export function LogoStrip() {
-  const logos = ["Trayaway", "AFTONBLADET", "Telia", "Norian", "Bzzt"];
+  const row = [...clientLogos, ...clientLogos];
   return (
-    <div className="border-b border-border bg-background py-10">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-14 gap-y-6 px-4">
-        {logos.map((l) => (
-          <span
-            key={l}
-            className="font-[family-name:var(--font-display)] text-xl font-bold uppercase tracking-widest text-muted-foreground/70"
-          >
-            {l}
-          </span>
+    <div className="overflow-hidden bg-background py-12">
+      <div className="marquee flex w-max items-center gap-16 px-8">
+        {row.map((l, i) => (
+          <img
+            key={`${l.name}-${i}`}
+            src={l.src}
+            alt={l.name}
+            loading="lazy"
+            className="h-10 w-auto shrink-0 object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
+          />
         ))}
       </div>
     </div>
   );
 }
 
-export function ExpertiseBand() {
-  return (
-    <section className="bg-orange text-orange-foreground">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <div>
-          <h2 className="text-4xl sm:text-5xl">Expertise, Quality, Trust.</h2>
-          <p className="mt-5 max-w-xl text-lg">
-            Over a decade of building websites that rank, convert and stay fast. You get senior
-            designers, developers and marketers on every project — not interns with a template.
-          </p>
-        </div>
-        <img
-          src={`${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`}
-          alt="Webtec team at work"
-          loading="lazy"
-          className="mx-auto w-full max-w-sm"
-        />
-      </div>
-    </section>
-  );
-}
-
 export function CtaBand({
+  eyebrow = "Don't Be Shy.",
   title = "Ask Away!",
-  subtitle = "Get a free website redesign demo by dropping your details below. No strings attached.",
 }: {
+  eyebrow?: string;
   title?: string;
-  subtitle?: string;
 }) {
   return (
-    <section className="bg-gradient-deep py-20 text-background">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <section className="bg-ink py-20 text-background">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-background/60">
-            Don't be shy
-          </p>
-          <h2 className="text-4xl sm:text-5xl">{title}</h2>
-          <p className="mt-4 max-w-xl text-lg text-background/80">{subtitle}</p>
+          <p className="mb-3 text-lg font-semibold text-background/70">{eyebrow}</p>
+          <h2 className="text-5xl sm:text-6xl">{title}</h2>
           <div className="mt-8 max-w-md">
-            <LeadForm variant="dark" submitLabel="go!" />
+            <LeadForm variant="dark" fields="message" submitLabel="Send Message" />
           </div>
         </div>
         <img
           src={`${MEDIA}/2023/02/businessman-launching-startup-1024x1024.png`}
           alt="Launch your redesign"
           loading="lazy"
-          className="mx-auto hidden w-full max-w-sm lg:block"
+          className="mx-auto hidden w-full max-w-md lg:block"
         />
       </div>
     </section>
   );
 }
-
