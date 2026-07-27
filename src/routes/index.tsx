@@ -280,9 +280,6 @@ function Index() {
 
         <div className="mt-20">
           <Counters />
-          <h3 className="mt-12 text-center text-3xl font-bold sm:text-4xl">
-            Our Experience Is <span className="text-primary">Your Advantage.</span>
-          </h3>
         </div>
       </Section>
 
