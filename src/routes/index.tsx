@@ -168,38 +168,42 @@ function Index() {
       </Section>
 
       {/* Sexy and affordable */}
-      <section className="bg-ink py-24 text-background">
+      <section className="bg-secondary py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-lg text-background/70">
-            The Quality of Marketing Giants At The Price of Freelancers.
-          </p>
-          <div className="mt-12 grid items-center gap-14 lg:grid-cols-2">
-            <div>
-              <h2 className="text-4xl font-bold sm:text-5xl">Sexy And Affordable.</h2>
-              <p className="mt-6 text-background/80">
-                We're on a mission to be the coolest cats in the web game. We whip up website
-                redesigns so sexy you'll want to marry them with services so affordable you can keep
-                your second mortgage.
-              </p>
-              <p className="mt-4 font-bold">The best part?</p>
-              <p className="mt-2 text-background/80">
-                We make sure your site is a love magnet for customers who can't resist your charm. So
-                if you're a small or mid-sized biz who wants to look good, get found, and rule the
-                online jungle, we're your go-to team!
-              </p>
-              <p className="mt-8 font-semibold">
-                Get a free website redesign by dropping your details below.
-              </p>
-              <div className="mt-5 max-w-md">
-                <LeadForm variant="dark" submitLabel="go!" />
+          <div className="relative rounded-[2rem] bg-[linear-gradient(115deg,#1d1f4a_0%,#231f57_45%,#6d33d6_100%)] px-8 py-14 text-background sm:px-14 lg:px-16">
+            <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
+              <div>
+                <p className="text-xl font-medium text-[#a78bfa]">
+                  The Quality of Marketing Giants At The Price of Freelancers.
+                </p>
+                <h2 className="mt-3 text-5xl font-bold sm:text-6xl">Sexy And Affordable.</h2>
+                <p className="mt-8 max-w-xl text-background/85">
+                  We're on a mission to be the coolest cats in the web game. We whip up website
+                  redesigns so sexy you'll want to marry them with services so affordable you can
+                  keep your second mortgage.
+                </p>
+                <p className="mt-6 font-bold">The best part?</p>
+                <p className="mt-1 max-w-xl text-background/85">
+                  We make sure your site is a love magnet for customers who can't resist your charm.
+                  So if you're a small or mid-sized biz who wants to look good, get found, and rule
+                  the online jungle, we're your go-to team!
+                </p>
+                <p className="mt-6 text-background/85">
+                  Get a free website redesign by dropping your details below.
+                </p>
+                <div className="mt-6 max-w-xl">
+                  <LeadForm variant="dark" fields="leadInline" submitLabel="go!" />
+                </div>
+              </div>
+              <div className="relative">
+                <img
+                  src={`${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`}
+                  alt="Businessman giving analysis presentation"
+                  loading="lazy"
+                  className="mx-auto w-full max-w-lg lg:absolute lg:-bottom-24 lg:left-1/2 lg:w-[125%] lg:max-w-none lg:-translate-x-1/2"
+                />
               </div>
             </div>
-            <img
-              src={`${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`}
-              alt="Businessman giving analysis presentation"
-              loading="lazy"
-              className="mx-auto w-full max-w-md"
-            />
           </div>
         </div>
       </section>

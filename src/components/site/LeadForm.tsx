@@ -11,8 +11,8 @@ type Props = {
   submitLabel?: string;
   className?: string;
   compact?: boolean;
-  /** "lead" = url + email + phone, "message" = email + phone + message */
-  fields?: "lead" | "message";
+  /** "lead" = url + email + phone, "message" = email + phone + message, "leadInline" = url over phone+email+button */
+  fields?: "lead" | "message" | "leadInline";
 };
 
 export function LeadForm({
@@ -39,6 +39,49 @@ export function LeadForm({
     "h-14 rounded-full border-0 bg-background px-6 text-base shadow-sm placeholder:text-muted-foreground",
     dark && "bg-background/95",
   );
+
+  if (fields === "leadInline") {
+    return (
+      <form onSubmit={handleSubmit} className={cn("space-y-4", className)}>
+        <Input
+          type="text"
+          required
+          placeholder="yourwebsite.com"
+          aria-label="Website URL"
+          value={values.url}
+          onChange={(e) => setValues((v) => ({ ...v, url: e.target.value }))}
+          className={inputCls}
+        />
+        <div className="flex flex-wrap items-center gap-3">
+          <Input
+            type="tel"
+            placeholder="Phone number"
+            aria-label="Phone number"
+            value={values.phone}
+            onChange={(e) => setValues((v) => ({ ...v, phone: e.target.value }))}
+            className={cn(inputCls, "min-w-0 flex-1")}
+          />
+          <Input
+            type="email"
+            required
+            placeholder="hello@youremail.com"
+            aria-label="Email"
+            value={values.email}
+            onChange={(e) => setValues((v) => ({ ...v, email: e.target.value }))}
+            className={cn(inputCls, "min-w-0 flex-1")}
+          />
+          <Button
+            type="submit"
+            size="lg"
+            className="h-14 shrink-0 rounded-full px-8 text-sm font-bold uppercase tracking-wider"
+          >
+            {submitLabel}
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      </form>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className={cn("space-y-4", className)}>
