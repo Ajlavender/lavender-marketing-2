@@ -163,14 +163,17 @@ export function ProjectGrid({ limit }: { limit?: number }) {
 
 export function Counters() {
   return (
-    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
       {counters.map((c) => (
-        <div key={c.label} className="text-center">
-          <p className="font-[family-name:var(--font-display)] text-5xl font-bold text-primary">
+        <div
+          key={c.label}
+          className="flex aspect-square flex-col items-center justify-center rounded-3xl bg-card px-6 text-center shadow-[0_18px_40px_-24px_rgba(42,35,82,0.35)]"
+        >
+          <p className="font-[family-name:var(--font-display)] text-6xl font-bold tracking-tight text-[#1f2150]">
             {c.value}
             {"suffix" in c ? c.suffix : ""}
           </p>
-          <p className="mt-2 text-sm uppercase tracking-widest text-muted-foreground">{c.label}</p>
+          <p className="mt-4 text-base text-[#1f2150]">{c.label}</p>
         </div>
       ))}
     </div>

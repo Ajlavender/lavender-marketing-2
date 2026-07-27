@@ -104,10 +104,10 @@ export const stats = [
 
 
 export const counters = [
-  { value: "12", label: "Years of Wizardry" },
-  { value: "60", label: "Rockstars" },
-  { value: "3000", suffix: "+", label: "Customers" },
-  { value: "24", label: "Countries" },
+  { value: "8", label: "Years Of Wizardry" },
+  { value: "100", label: "Rockstars" },
+  { value: "3,000", suffix: "+", label: "Customers" },
+  { value: "13", label: "Countries" },
 ];
 
 export const projects = [
