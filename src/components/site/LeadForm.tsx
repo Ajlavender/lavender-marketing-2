@@ -86,20 +86,21 @@ export function LeadForm({
           />
           <Input
             type="tel"
-            placeholder="Phone number"
+            placeholder="Your Phone Number"
             aria-label="Phone number"
             value={values.phone}
             onChange={(e) => setValues((v) => ({ ...v, phone: e.target.value }))}
             className={inputCls}
           />
-          <Textarea
+          <Input
+            type="text"
             placeholder="Message"
             aria-label="Message"
-            rows={4}
             value={values.message}
             onChange={(e) => setValues((v) => ({ ...v, message: e.target.value }))}
-            className="rounded-3xl border-0 bg-background px-6 py-4 text-base shadow-sm"
+            className={inputCls}
           />
+
         </>
       )}
       <Button
