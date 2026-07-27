@@ -80,7 +80,7 @@ function WhyChooseUs() {
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left">
             <img
-              src={`${MEDIA}/2023/02/businessman-ride-on-rocket-1-1024x1024.png`}
+              src={`${MEDIA}/2023/03/businessman-ride-on-rocket-1-1024x1024.png`}
               alt="Businessman riding a rocket"
               className="mx-auto w-full max-w-md"
             />
@@ -348,7 +348,7 @@ function WhyChooseUs() {
           </Reveal>
           <Reveal from="right" delay={120}>
             <img
-              src={`${MEDIA}/2023/02/man-showing-dollar-and-bitcoin-1024x1024.png`}
+              src={`${MEDIA}/2023/03/man-showing-dollar-and-bitcoin-1024x1024.png`}
               alt="Man showing dollar and bitcoin"
               loading="lazy"
               className="mx-auto w-full max-w-sm"
