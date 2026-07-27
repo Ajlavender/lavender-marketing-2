@@ -130,12 +130,11 @@ function Index() {
             <p className="px-6 pb-4 pt-5 text-center text-lg text-white">
               if you want to see what me and my team of experts
             </p>
-            <div className="flex items-center justify-center bg-[#1a1a1a] py-3">
-              <img
-                src={`${MEDIA}/2023/01/webtec-logo-white.png`}
-                alt="Webtec"
-                className="h-4 w-auto opacity-90"
-              />
+            <div className="flex items-center justify-center gap-1.5 bg-[#1a1a1a] py-3">
+              <span className="flex h-4 w-4 items-center justify-center rounded-sm bg-white text-[9px] font-bold text-black">
+                w
+              </span>
+              <span className="text-sm font-semibold text-white">webtec</span>
             </div>
           </div>
         </div>
