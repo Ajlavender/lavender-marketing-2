@@ -1,18 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CtaBand, PageHero, ProjectGrid, Section } from "@/components/site/sections";
-import { MEDIA } from "@/data/site";
+import { ProjectGrid, Section } from "@/components/site/sections";
+import { Reveal } from "@/components/site/Reveal";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Our Website Redesign Projects | Webtec" },
+      { title: "Cutting-Edge Creations | Webtec Projects" },
       {
         name: "description",
         content:
-          "A selection of website redesign projects delivered by Webtec for small and mid-sized businesses around the world.",
+          "We've got a black belt in websites. See a selection of website redesign, SEO and copywriting projects delivered by Webtec.",
       },
-      { property: "og:title", content: "Our Website Redesign Projects | Webtec" },
-      { property: "og:description", content: "See the websites we've redesigned." },
+      { property: "og:title", content: "Cutting-Edge Creations | Webtec Projects" },
+      {
+        property: "og:description",
+        content: "See the websites Webtec has redesigned for businesses around the world.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/projects" },
     ],
     links: [{ rel: "canonical", href: "/projects" }],
@@ -22,17 +27,18 @@ export const Route = createFileRoute("/projects")({
 
 function Projects() {
   return (
-    <>
-      <PageHero
-        eyebrow="Projects"
-        title="A website redesign agency with a black belt in style"
-        subtitle="A snapshot of recent redesigns across professional services, e-commerce, SaaS and property."
-        image={`${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`}
-      />
-      <Section>
-        <ProjectGrid />
-      </Section>
-      <CtaBand />
-    </>
+    <Section className="bg-secondary pb-24 pt-40">
+      <Reveal>
+        <p className="text-sm font-semibold text-primary">
+          We&apos;ve Got Black Belt In Websites. See For Yourself.
+        </p>
+        <h1 className="mt-3 bg-[linear-gradient(90deg,#1e2657_0%,#8548ec_100%)] bg-clip-text text-4xl font-bold text-transparent sm:text-5xl">
+          Cutting-Edge Creations
+        </h1>
+      </Reveal>
+      <div className="mt-12">
+        <ProjectGrid compact />
+      </div>
+    </Section>
   );
 }
