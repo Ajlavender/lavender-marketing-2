@@ -233,22 +233,74 @@ export function FaqAccordion({ limit }: { limit?: number }) {
   );
 }
 
+export function LogoStrip() {
+  const logos = ["Trayaway", "AFTONBLADET", "Telia", "Norian", "Bzzt"];
+  return (
+    <div className="border-b border-border bg-background py-10">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-14 gap-y-6 px-4">
+        {logos.map((l) => (
+          <span
+            key={l}
+            className="font-[family-name:var(--font-display)] text-xl font-bold uppercase tracking-widest text-muted-foreground/70"
+          >
+            {l}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function ExpertiseBand() {
+  return (
+    <section className="bg-orange text-orange-foreground">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div>
+          <h2 className="text-4xl sm:text-5xl">Expertise, Quality, Trust.</h2>
+          <p className="mt-5 max-w-xl text-lg">
+            Over a decade of building websites that rank, convert and stay fast. You get senior
+            designers, developers and marketers on every project — not interns with a template.
+          </p>
+        </div>
+        <img
+          src={`${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`}
+          alt="Webtec team at work"
+          loading="lazy"
+          className="mx-auto w-full max-w-sm"
+        />
+      </div>
+    </section>
+  );
+}
+
 export function CtaBand({
-  title = "Ready To Find Your Digital Soulmate?",
+  title = "Ask Away!",
   subtitle = "Get a free website redesign demo by dropping your details below. No strings attached.",
 }: {
   title?: string;
   subtitle?: string;
 }) {
   return (
-    <section className="bg-foreground py-20 text-background">
-      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl">{title}</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg opacity-80">{subtitle}</p>
-        <div className="mx-auto mt-8 max-w-xl">
-          <LeadForm variant="dark" submitLabel="go!" />
+    <section className="bg-gradient-deep py-20 text-background">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-background/60">
+            Don't be shy
+          </p>
+          <h2 className="text-4xl sm:text-5xl">{title}</h2>
+          <p className="mt-4 max-w-xl text-lg text-background/80">{subtitle}</p>
+          <div className="mt-8 max-w-md">
+            <LeadForm variant="dark" submitLabel="go!" />
+          </div>
         </div>
+        <img
+          src={`${MEDIA}/2023/02/businessman-launching-startup-1024x1024.png`}
+          alt="Launch your redesign"
+          loading="lazy"
+          className="mx-auto hidden w-full max-w-sm lg:block"
+        />
       </div>
     </section>
   );
 }
+
