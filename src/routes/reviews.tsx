@@ -122,7 +122,7 @@ function Reviews() {
           </Reveal>
           <Reveal from="right" delay={120}>
             <img
-              src={`${MEDIA}/2023/02/businesswoman-with-good-rating-1024x1024.png`}
+              src={`${MEDIA}/2023/12/satisfied-customers-giving-five-stars-review.webp`}
               alt="Customer giving Webtec a five star rating"
               className="mx-auto w-full max-w-xs"
             />
@@ -140,7 +140,7 @@ function Reviews() {
               className="group relative block w-full overflow-hidden rounded-xl bg-[#101218] shadow-[0_35px_80px_-45px_rgba(16,18,24,0.8)]"
             >
               <img
-                src={`${MEDIA}/2023/02/businessman-with-megaphone-1024x1024.png`}
+                src={`${MEDIA}/2024/09/maxresdefault.webp`}
                 alt="Webtec customer highlight reel"
                 className="aspect-[16/7] w-full object-cover opacity-90"
               />
@@ -157,7 +157,7 @@ function Reviews() {
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
           <Reveal from="left">
             <img
-              src={`${MEDIA}/2023/02/people-giving-five-star-rating-1024x1024.png`}
+              src={`${MEDIA}/2024/09/boy-giving-rating.webp`}
               alt="Customers giving a five star rating on a phone"
               loading="lazy"
               className="mx-auto w-full max-w-sm"
@@ -234,7 +234,7 @@ function Reviews() {
           </Reveal>
           <Reveal from="right" delay={110}>
             <img
-              src={`${MEDIA}/2023/02/businessman-with-five-star-rating-1024x1024.png`}
+              src={`${MEDIA}/2024/09/satisfied-customer-give-five-stars-600x600.webp`}
               alt="Businessman holding five stars"
               loading="lazy"
               className="mx-auto w-full max-w-xs"
