@@ -53,47 +53,93 @@ function Index() {
     <>
       {/* Hero */}
       <section className="bg-secondary">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-28">
-          <div>
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-24">
+          <div className="relative">
             <p className="mb-4 text-base text-muted-foreground">
               Web Development, SEO &amp; Paid Ads Agency
             </p>
-            <h1 className="text-6xl font-bold sm:text-7xl">Website Redesign</h1>
-            <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+            <h1 className="text-6xl font-bold tracking-tight sm:text-7xl">Website Redesign</h1>
+            <h2 className="mt-5 max-w-xl text-4xl font-bold leading-tight sm:text-[2.75rem]">
               Get a <span className="text-primary">Free</span> Website Redesign Before You Decide
             </h2>
             <div className="mt-10 max-w-xl">
               <LeadForm submitLabel="Book Free Consultation" />
             </div>
+            {/* curved connector line to the video card */}
+            <svg
+              aria-hidden="true"
+              className="pointer-events-none absolute right-[-9rem] top-[7.5rem] hidden h-24 w-40 text-foreground/25 xl:block"
+              viewBox="0 0 160 96"
+              fill="none"
+            >
+              <path
+                d="M0 4C60 4 100 30 158 88"
+                stroke="currentColor"
+                strokeWidth="1"
+                fill="none"
+              />
+            </svg>
           </div>
 
           {/* Video card */}
-          <div className="overflow-hidden rounded-2xl bg-black shadow-2xl">
-            <p className="px-6 py-5 text-2xl font-bold text-white sm:text-3xl">
-              Up for a whole new experience? 🌹
-            </p>
+          <div className="overflow-hidden rounded-2xl bg-black shadow-[0_30px_80px_-40px_rgba(16,18,24,0.6)]">
+            <div className="flex items-start justify-between gap-4 px-6 pb-4 pt-6">
+              <p className="text-2xl font-bold text-white sm:text-[1.6rem]">
+                Up for a whole new experience? 🌹
+              </p>
+              <span aria-hidden="true" className="mt-1 text-xl text-white/70">
+                ✕
+              </span>
+            </div>
             <div className="relative">
               <img
                 src={`${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`}
                 alt="Webtec intro video"
-                className="h-[22rem] w-full object-cover"
+                className="h-[20rem] w-full object-cover"
               />
-              <button
-                type="button"
-                aria-label="Play Webtec intro video"
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-xl transition hover:scale-105">
-                  <Play className="ml-1 h-8 w-8 fill-black text-black" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white/30 ring-2 ring-white/80 backdrop-blur-sm transition hover:scale-105">
+                  <Play className="ml-1 h-8 w-8 fill-white text-white" />
                 </span>
-              </button>
+              </div>
+              {/* chat overlay */}
+              <div className="absolute inset-x-0 bottom-0 px-8 pb-4">
+                <p className="mb-3 text-center text-base text-white/80">Choose 1 of 3 options</p>
+                <div className="space-y-3">
+                  {[
+                    ["A", "Free no-risk design sketch 👷"],
+                    ["B", "See past work 👀"],
+                    ["C", "I want to discuss my needs"],
+                  ].map(([key, label], i) => (
+                    <div
+                      key={key}
+                      className={cn(
+                        "flex items-center gap-3 rounded-full px-3 py-2 text-white",
+                        i < 2 ? "bg-white/15 backdrop-blur-sm" : "",
+                      )}
+                    >
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#3b3b4f] text-sm font-semibold">
+                        {key}
+                      </span>
+                      <span className="text-lg font-medium">{label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <p className="px-6 py-6 text-center text-lg font-medium text-white">
-              Webtec is a unique five ⭐️ rated web agency
+            <p className="px-6 pb-4 pt-5 text-center text-lg text-white">
+              if you want to see what me and my team of experts
             </p>
+            <div className="flex items-center justify-center gap-1.5 bg-[#1a1a1a] py-3">
+              <span className="flex h-4 w-4 items-center justify-center rounded-sm bg-white text-[9px] font-bold text-black">
+                w
+              </span>
+              <span className="text-sm font-semibold text-white">webtec</span>
+            </div>
           </div>
         </div>
       </section>
+
 
       <LogoStrip />
 
