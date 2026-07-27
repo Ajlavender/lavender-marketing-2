@@ -140,27 +140,39 @@ export function ServicesGrid() {
   );
 }
 
-export function ProjectGrid({ limit }: { limit?: number }) {
+export function ProjectGrid({ limit, compact }: { limit?: number; compact?: boolean }) {
   const items = limit ? projects.slice(0, limit) : projects;
   return (
-    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {items.map((p) => (
-        <article key={p.name}>
-          <div className="overflow-hidden rounded-2xl bg-card shadow-[0_18px_50px_-30px_rgba(16,18,24,0.45)]">
-            <img
-              src={p.image}
-              alt={p.name}
-              loading="lazy"
-              className="aspect-square w-full object-cover"
-            />
-          </div>
-          <p className="mt-6 text-base text-muted-foreground">{p.type}</p>
-          <h3 className="mt-1 text-3xl font-bold">{p.name}</h3>
-        </article>
+    <div className={cn("grid gap-8 sm:grid-cols-2 lg:grid-cols-3", compact && "gap-x-6 gap-y-10")}>
+      {items.map((p, i) => (
+        <Reveal key={`${p.name}-${i}`} delay={(i % 3) * 90} from="up">
+          <article>
+            <div className="overflow-hidden rounded-2xl bg-card shadow-[0_18px_50px_-30px_rgba(16,18,24,0.45)]">
+              <img
+                src={p.image}
+                alt={p.name}
+                loading="lazy"
+                className="aspect-square w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+              />
+            </div>
+            <p className={cn("text-muted-foreground", compact ? "mt-4 text-xs" : "mt-6 text-base")}>
+              {p.type}
+            </p>
+            <h3
+              className={cn(
+                "mt-1 font-bold text-[#1f2150]",
+                compact ? "text-xl" : "text-3xl",
+              )}
+            >
+              {p.name}
+            </h3>
+          </article>
+        </Reveal>
       ))}
     </div>
   );
 }
+
 
 export function Counters() {
   return (
