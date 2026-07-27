@@ -145,20 +145,21 @@ function Index() {
       </Section>
 
       {/* Reviews */}
-      <Section className="pt-28">
-        <p className="text-center text-base text-muted-foreground">
+      <Section muted className="py-24">
+        <p className="text-center text-base font-semibold text-foreground">
           Ready To Find Your Digital Soulmate?
         </p>
         <h2 className="mx-auto mt-4 max-w-4xl text-center text-4xl font-bold sm:text-5xl">
           Our customers are raving about us like we're{" "}
           <span className="text-primary">the latest viral TikTok dance.</span>
         </h2>
-        <div className="mt-12">
+        <div className="mt-16">
           <RatingBar />
         </div>
-        <div className="mt-10">
+        <div className="mt-16">
           <GoogleReviews />
         </div>
+
         <div className="mt-10 text-center">
           <Button asChild variant="outline" size="lg">
             <Link to="/reviews">See all reviews</Link>
