@@ -112,29 +112,144 @@ export const counters = [
 
 export const projects = [
   {
-    name: "Elite Home London",
+    name: "Build Warranty",
     type: "Website Redesign",
-    image: `${MEDIA}/2023/02/web-design-1024x1024.png`,
+    image: `${MEDIA}/2025/05/buildwarrenty.png`,
+  },
+  {
+    name: "Angel Host",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/myangelhost.png`,
+  },
+  {
+    name: "Canopy Aerospace",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/canopyaerospace.png`,
+  },
+  {
+    name: "Dops Digital",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/dops.png`,
+  },
+  {
+    name: "Toovio",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/toovio.png`,
+  },
+  {
+    name: "Code Of Talent",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/codetalent.png`,
+  },
+  {
+    name: "Optimum Debt Relief",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/optimum.png`,
+  },
+  {
+    name: "Bloomtrak",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/bloomtrak.png`,
+  },
+  {
+    name: "Software Italiani",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/softwareitaliani.png`,
+  },
+  {
+    name: "Betr Health",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/betrhealth.png`,
+  },
+  {
+    name: "Black Sheep Tequila",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/blacksheep.png`,
+  },
+  {
+    name: "The Robot Mower",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/therobotmower.png`,
+  },
+  {
+    name: "EDO Sthlm",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/edosthim.png`,
+  },
+  {
+    name: "I Am Kooky",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/iamkooky.png`,
+  },
+  {
+    name: "Charity Miles",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/charitymiles.png`,
   },
   {
     name: "Ternary Dev",
     type: "Website Redesign",
-    image: `${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`,
+    image: `${MEDIA}/2025/05/ternary.png`,
+  },
+  {
+    name: "Dwellist",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/dwellist.webp`,
+  },
+  {
+    name: "Yes, You Deserve",
+    type: "Website Redesign",
+    image: `${MEDIA}/2025/05/yes-you-deserve-1.png`,
+  },
+  {
+    name: "Jason Redman",
+    type: "Website Redesign/Copywriting",
+    image: `${MEDIA}/2025/05/jason-redman-mockup-new.webp`,
+  },
+  {
+    name: "Tremble Group",
+    type: "SEO",
+    image: `${MEDIA}/2024/01/TribleGroup-Webtec-SEO-1.png`,
+  },
+  {
+    name: "Elite Home London",
+    type: "Website Redesign/SEO/Copywriting",
+    image: `${MEDIA}/2023/02/elitehomemockup-scaled.jpg`,
+  },
+  {
+    name: "FL Swimwear",
+    type: "Website Redesign/SEO",
+    image: `${MEDIA}/2023/02/flswimbig-scaled.jpg`,
   },
   {
     name: "Patent Hacks",
     type: "Website Redesign",
-    image: `${MEDIA}/2023/12/smartphone-with-user-interface-concept-scaled.jpg`,
+    image: `${MEDIA}/2023/03/patenthacksdemo1.webp`,
   },
   {
-    name: "Agile Search Inc.",
-    type: "Website Redesign & SEO",
-    image: `${MEDIA}/2023/02/businessman-giving-analysis-presentation-768x768.png`,
-  },
-  {
-    name: "Foulk Consulting",
+    name: "Varela Financial",
     type: "Website Redesign",
-    image: `${MEDIA}/2023/02/hand-hold-marker-1024x1024.png`,
+    image: `${MEDIA}/2023/02/varelastart.png`,
+  },
+  {
+    name: "Ternary Dev",
+    type: "Website Redesign",
+    image: `${MEDIA}/2023/02/ternarymockup.png`,
+  },
+  {
+    name: "Oakline Studio",
+    type: "Website Redesign",
+    image: `${MEDIA}/2023/02/oaklinestudios.png`,
+  },
+  {
+    name: "Citizen HQ",
+    type: "Website Redesign",
+    image: `${MEDIA}/2023/02/citizenfulldone-scaled.jpg`,
+  },
+  {
+    name: "H&M Group",
+    type: "Website Redesign",
+    image: `${MEDIA}/2023/02/HM-scaled.jpg`,
   },
 ];
 
