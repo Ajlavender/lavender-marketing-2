@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CtaBand } from "@/components/site/sections";
 import { Reveal } from "@/components/site/Reveal";
 import { MEDIA } from "@/data/site";
 
@@ -349,8 +348,6 @@ function About() {
           </Reveal>
         </div>
       </section>
-
-      <CtaBand />
     </div>
   );
 }
