@@ -78,7 +78,7 @@ export function PageHero({
 }) {
   return (
     <section className="border-b border-border bg-secondary">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pb-20 pt-40 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div>
           {eyebrow && (
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">{eyebrow}</p>
