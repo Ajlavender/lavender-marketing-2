@@ -236,11 +236,12 @@ export const googleReviews = [
 ];
 
 export const ratingSources = [
-  { label: "Google", count: "100+ reviews" },
-  { label: "Facebook", count: "160+ reviews" },
-  { label: "Clutch", count: "30+ reviews" },
+  { label: "Bark", count: "100+ reviews" },
+  { label: "Google", count: "160+ reviews" },
+  { label: "Glassdoor", count: "30+ reviews" },
   { label: "Trustpilot", count: "70+ reviews" },
 ];
+
 
 export const faqs = [
   {
