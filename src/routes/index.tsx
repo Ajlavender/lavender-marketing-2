@@ -213,17 +213,18 @@ function Index() {
           Many small businesses undervalue their website, leading to{" "}
           <span className="text-primary">lost opportunities worth millions.</span>
         </h2>
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <p className="font-[family-name:var(--font-display)] text-6xl font-bold text-primary">
+        <div className="mx-auto mt-20 grid max-w-5xl gap-x-10 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
+          {stats.map((s, i) => (
+            <div key={s.label} className={cn(i === 3 && "lg:col-start-2")}>
+              <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#2a2352]">
                 {s.value}
                 {s.suffix}
               </p>
-              <p className="mt-4 text-sm text-muted-foreground">{s.label}</p>
+              <p className="mt-6 text-base leading-relaxed text-muted-foreground">{s.label}</p>
             </div>
           ))}
         </div>
+
         <h3 className="mx-auto mt-16 max-w-3xl text-center text-3xl font-bold sm:text-4xl">
           We've analyzed thousands of websites to ensure this{" "}
           <span className="text-primary">won't happen to you.</span>

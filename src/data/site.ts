@@ -96,11 +96,12 @@ export const painPoints = [
 
 export const stats = [
   { value: "88", suffix: "%", label: "of online consumers are less likely to return to a site after a bad experience" },
-  { value: "75", suffix: "%", label: "of consumers judge a company's credibility based on its website design" },
-  { value: "61", suffix: "%", label: "of users are unlikely to return to a site on mobile if they had trouble accessing it" },
+  { value: "75", suffix: "%", label: "of consumers admit to making judgements on a company's credibility based on the company's website design" },
+  { value: "61", suffix: "%", label: "of users are unlikely to return to a site on mobile if they had trouble accessing it and 40% visit a competitor's site instead" },
   { value: "8", suffix: "/10", label: "customers would stop engaging with content that doesn't display well on their device" },
   { value: "94", suffix: "%", label: "of negative website feedback was design related" },
 ];
+
 
 export const counters = [
   { value: "12", label: "Years of Wizardry" },
