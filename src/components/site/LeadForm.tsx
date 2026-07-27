@@ -11,8 +11,8 @@ type Props = {
   submitLabel?: string;
   className?: string;
   compact?: boolean;
-  /** "lead" = url + email + phone, "message" = email + phone + message */
-  fields?: "lead" | "message";
+  /** "lead" = url + email + phone, "message" = email + phone + message, "leadInline" = url over phone+email+button */
+  fields?: "lead" | "message" | "leadInline";
 };
 
 export function LeadForm({
