@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Play } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/site/LeadForm";
 import { cn } from "@/lib/utils";
@@ -233,15 +233,18 @@ function Index() {
 
       {/* Projects */}
       <Section muted>
-        <p className="text-center text-base text-muted-foreground">
+        <p className="text-lg font-semibold text-primary">
           A Website Redesign Agency With A Black Belt In Style
         </p>
-        <div className="mt-12">
-          <ProjectGrid limit={4} />
+        <h2 className="mt-3 text-5xl font-bold sm:text-6xl">Cutting-Edge Creations</h2>
+        <div className="mt-14">
+          <ProjectGrid limit={3} />
         </div>
-        <div className="mt-10 text-center">
-          <Button asChild variant="outline" size="lg">
-            <Link to="/projects">See all projects</Link>
+        <div className="mt-14 text-center">
+          <Button asChild size="lg" className="px-10 uppercase tracking-wide">
+            <Link to="/projects">
+              See all projects <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </div>
       </Section>

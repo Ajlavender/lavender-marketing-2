@@ -142,14 +142,19 @@ export function ServicesGrid() {
 export function ProjectGrid({ limit }: { limit?: number }) {
   const items = limit ? projects.slice(0, limit) : projects;
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((p) => (
-        <article key={p.name} className="overflow-hidden rounded-2xl border border-border bg-card">
-          <img src={p.image} alt={p.name} loading="lazy" className="h-48 w-full object-cover" />
-          <div className="p-5">
-            <h3 className="text-xl">{p.name}</h3>
-            <p className="mt-1 text-sm text-primary">{p.type}</p>
+        <article key={p.name}>
+          <div className="overflow-hidden rounded-2xl bg-card shadow-[0_18px_50px_-30px_rgba(16,18,24,0.45)]">
+            <img
+              src={p.image}
+              alt={p.name}
+              loading="lazy"
+              className="aspect-square w-full object-cover"
+            />
           </div>
+          <p className="mt-6 text-base text-muted-foreground">{p.type}</p>
+          <h3 className="mt-1 text-3xl font-bold">{p.name}</h3>
         </article>
       ))}
     </div>

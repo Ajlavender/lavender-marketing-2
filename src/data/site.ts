@@ -112,11 +112,6 @@ export const counters = [
 
 export const projects = [
   {
-    name: "Cutting-Edge Creations",
-    type: "Website Redesign",
-    image: `${MEDIA}/2023/02/businessman-launching-startup-768x768.png`,
-  },
-  {
     name: "Elite Home London",
     type: "Website Redesign",
     image: `${MEDIA}/2023/02/web-design-1024x1024.png`,
