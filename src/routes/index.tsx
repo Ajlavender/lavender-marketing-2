@@ -11,8 +11,8 @@ import {
   ProjectGrid,
   RatingBar,
   Section,
-  TestimonialGrid,
 } from "@/components/site/sections";
+import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
 import { MEDIA, painPoints, stats } from "@/data/site";
 
 export const Route = createFileRoute("/")({
