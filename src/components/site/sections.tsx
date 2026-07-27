@@ -314,22 +314,27 @@ export function CtaBand({
   title?: string;
 }) {
   return (
-    <section className="bg-ink py-20 text-background">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <div>
-          <p className="mb-3 text-lg font-semibold text-background/70">{eyebrow}</p>
-          <h2 className="text-5xl sm:text-6xl">{title}</h2>
-          <div className="mt-8 max-w-md">
-            <LeadForm variant="dark" fields="message" submitLabel="Send Message" />
+    <section className="bg-secondary py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-[2rem] bg-[linear-gradient(100deg,#191b3f_0%,#221f5a_45%,#6d33d6_100%)] px-8 py-14 text-background sm:px-14">
+          <div className="max-w-xl">
+            <p className="text-lg text-[#a78bfa]">
+              Don&apos;t Be <span className="text-[#8b5cf6]">Shy.</span>
+            </p>
+            <h2 className="mt-2 text-5xl font-bold sm:text-6xl">{title}</h2>
+            <div className="mt-8">
+              <LeadForm variant="dark" fields="message" submitLabel="Send Message" />
+            </div>
           </div>
+          <img
+            src={`${MEDIA}/2023/02/businessman-launching-startup-1024x1024.png`}
+            alt="Launch your redesign"
+            loading="lazy"
+            className="pointer-events-none absolute -bottom-10 right-4 hidden w-[26rem] max-w-[40%] lg:block"
+          />
         </div>
-        <img
-          src={`${MEDIA}/2023/02/businessman-launching-startup-1024x1024.png`}
-          alt="Launch your redesign"
-          loading="lazy"
-          className="mx-auto hidden w-full max-w-md lg:block"
-        />
       </div>
     </section>
   );
 }
+
