@@ -159,35 +159,40 @@ function Index() {
         </div>
       </Section>
 
+      <ExpertiseBand />
+
       {/* Sexy and affordable */}
-      <Section muted>
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <img
-            src={`${MEDIA}/2023/02/businessman-launching-startup-768x768.png`}
-            alt="Launching a redesigned website"
-            loading="lazy"
-            className="mx-auto w-full max-w-md rounded-2xl"
-          />
-          <div>
-            <h2 className="text-4xl sm:text-5xl">
-              Sexy And <span className="text-primary">Affordable.</span>
-            </h2>
-            <p className="mt-5 text-muted-foreground">
-              We're on a mission to be the coolest cats in the web game. We whip up website redesigns so
-              sexy you'll want to marry them, with services so affordable you can keep your second
-              mortgage.
-            </p>
-            <p className="mt-4 text-muted-foreground">
-              The best part? We make sure your site is a love magnet for customers who can't resist your
-              charm. So if you're a small or mid-sized biz who wants to look good, get found, and rule the
-              online jungle, we're your go-to team!
-            </p>
-            <Button asChild size="lg" className="mt-8">
-              <Link to="/contact">Get a free website redesign</Link>
-            </Button>
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-12 rounded-3xl bg-gradient-deep p-10 text-background lg:grid-cols-2 lg:p-14">
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-background/60">
+                Web design that pays for itself
+              </p>
+              <h2 className="text-4xl sm:text-5xl">Sexy And Affordable.</h2>
+              <p className="mt-5 text-background/80">
+                We're on a mission to be the coolest cats in the web game. We whip up website redesigns
+                so sexy you'll want to marry them, with services so affordable you can keep your second
+                mortgage.
+              </p>
+              <p className="mt-4 text-background/80">
+                The best part? We make sure your site is a love magnet for customers who can't resist
+                your charm.
+              </p>
+              <div className="mt-8 max-w-md">
+                <LeadForm variant="dark" submitLabel="Get my free redesign" />
+              </div>
+            </div>
+            <img
+              src={`${MEDIA}/2023/02/businessman-launching-startup-768x768.png`}
+              alt="Launching a redesigned website"
+              loading="lazy"
+              className="mx-auto w-full max-w-md"
+            />
           </div>
         </div>
-      </Section>
+      </section>
+
 
       {/* Stats */}
       <Section>
