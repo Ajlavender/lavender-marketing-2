@@ -284,19 +284,18 @@ function Index() {
       </Section>
 
       {/* Testimonials */}
-      <Section muted>
-        <h2 className="text-center text-4xl font-bold sm:text-5xl">
-          Join Thousands Of <span className="text-primary">Happy Customers</span>
+      <Section muted className="py-24">
+        <p className="text-center text-lg text-foreground">
+          Our Experience Is <span className="text-primary">Your Advantage.</span>
+        </p>
+        <h2 className="mt-3 text-center text-5xl font-bold text-[#1f2150] sm:text-6xl">
+          Join Thousands Of Happy Customers
         </h2>
         <div className="mt-14">
-          <TestimonialGrid limit={6} />
-        </div>
-        <div className="mt-10 text-center">
-          <Button asChild variant="outline" size="lg">
-            <Link to="/reviews">Read more reviews</Link>
-          </Button>
+          <TestimonialCarousel />
         </div>
       </Section>
+
 
       <CtaBand />
     </>
