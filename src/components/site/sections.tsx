@@ -190,16 +190,27 @@ export function TestimonialGrid({ limit }: { limit?: number }) {
   );
 }
 
+function ReviewStars({ rating = 5, size = "h-4 w-4" }: { rating?: number; size?: string }) {
+  return (
+    <div className="flex gap-0.5" aria-label={`Rated ${rating} out of 5`}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star
+          key={i}
+          className={cn(size, "fill-current", i < rating ? "text-[#f4a62a]" : "text-muted")}
+        />
+      ))}
+    </div>
+  );
+}
+
 export function RatingBar() {
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
       {ratingSources.map((r) => (
-        <div key={r.label} className="rounded-xl border border-border bg-card p-5 text-center">
-          <Stars className="justify-center" />
-          <p className="mt-2 text-sm font-semibold">Rated 5 out of 5</p>
-          <p className="text-xs text-muted-foreground">
-            {r.count} on {r.label}
-          </p>
+        <div key={r.label} className="flex flex-col items-center gap-6 text-center">
+          <img src={r.logo} alt={r.label} loading="lazy" className="h-10 w-auto object-contain" />
+          <ReviewStars size="h-6 w-6" />
+          <p className="text-sm text-muted-foreground">{r.count}</p>
         </div>
       ))}
     </div>
@@ -208,18 +219,51 @@ export function RatingBar() {
 
 export function GoogleReviews() {
   return (
-    <div className="grid gap-6 md:grid-cols-3">
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {googleReviews.map((r) => (
-        <figure key={r.name} className="rounded-2xl border border-border bg-card p-6">
-          <p className="text-xs uppercase tracking-widest text-muted-foreground">Posted on Google</p>
-          <Stars className="my-3" />
-          <blockquote className="text-sm leading-relaxed text-muted-foreground">"{r.quote}"</blockquote>
-          <figcaption className="mt-4 font-semibold">{r.name}</figcaption>
+        <figure
+          key={r.name}
+          className="rounded-lg border border-border bg-card p-5 shadow-[0_1px_4px_rgba(16,18,24,0.08)]"
+        >
+          <div className="flex items-center gap-3">
+            <div
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-semibold text-white"
+              style={{ backgroundColor: r.color }}
+              aria-hidden
+            >
+              {r.initial}
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="truncate text-sm font-bold">{r.name}</p>
+              <p className="text-xs text-muted-foreground">{r.when}</p>
+            </div>
+            <img
+              src="https://cdn.trustindex.io/assets/platform/Google/icon.svg"
+              alt="Google"
+              loading="lazy"
+              className="h-5 w-5"
+            />
+          </div>
+          <div className="mt-3 flex items-center gap-2">
+            <ReviewStars rating={r.rating} />
+            <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#1a73e8]" aria-hidden>
+              <path
+                fill="currentColor"
+                d="M12 1.5 14.3 4l3.4-.4 1 3.3 3 1.6-1.3 3.2 1.3 3.2-3 1.6-1 3.3-3.4-.4L12 22.5 9.7 20l-3.4.4-1-3.3-3-1.6L3.6 12 2.3 8.8l3-1.6 1-3.3 3.4.4z"
+              />
+              <path fill="#fff" d="m10.9 15.3-2.6-2.6 1.1-1.1 1.5 1.5 3.7-3.7 1.1 1.1z" />
+            </svg>
+          </div>
+          <blockquote className="mt-3 text-sm leading-relaxed text-foreground/80">
+            {r.quote}
+          </blockquote>
+          <figcaption className="mt-3 text-sm text-muted-foreground">Read more</figcaption>
         </figure>
       ))}
     </div>
   );
 }
+
 
 export function FaqAccordion({ limit }: { limit?: number }) {
   const items = limit ? faqs.slice(0, limit) : faqs;

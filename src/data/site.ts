@@ -219,28 +219,65 @@ export const testimonials = [
 
 export const googleReviews = [
   {
-    name: "Gloria Valenzuela",
+    name: "Sandy Zeldes",
+    when: "3 months ago",
+    rating: 5,
+    initial: "S",
+    color: "#8e44ad",
+    quote: "This user only left a rating.",
+  },
+  {
+    name: "Brian Fontenot",
+    when: "3 months ago",
+    rating: 5,
+    initial: "B",
+    color: "#0f766e",
     quote:
-      "Our company utilized Webtec to redesign our website and the team was amazing to work with. They did a great job not just on the design but on the communication and updates.",
+      "Our company utilized Webtec to be able to redesign our website and Bilha Njau and team was amazing to work with. They did a great job not just on the design but on the communication and updates.",
   },
   {
     name: "James Hinton",
+    when: "4 months ago",
+    rating: 5,
+    initial: "J",
+    color: "#166534",
     quote:
       "I was really happy with the results from Webtec. The website looks professional and received positive feedback from our customers. The process was very simple.",
   },
   {
     name: "Christine Davis",
+    when: "4 months ago",
+    rating: 4,
+    initial: "C",
+    color: "#b45309",
     quote:
-      "From the start, she took the time to understand our business, our audience, and what we needed the site to accomplish. The team produced clean, professional work and stayed open to feedback throughout the project.",
+      "Working with Bilha and her team at Webtec was a positive experience overall. From the start, she took the time to understand our business, our audience, and what we needed the site to accomplish.",
   },
 ];
 
 export const ratingSources = [
-  { label: "Bark", count: "100+ reviews" },
-  { label: "Google", count: "160+ reviews" },
-  { label: "Glassdoor", count: "30+ reviews" },
-  { label: "Trustpilot", count: "70+ reviews" },
+  {
+    label: "Bark",
+    count: "100+ reviews",
+    logo: "https://www.trywebtec.com/wp-content/uploads/2023/03/Bark_Logo800-200-300x90.png",
+  },
+  {
+    label: "Google",
+    count: "160+ reviews",
+    logo: "https://www.trywebtec.com/wp-content/uploads/2023/03/Google_2015_logo.svg-300x101.png",
+  },
+  {
+    label: "Glassdoor",
+    count: "30+ reviews",
+    logo: "https://www.trywebtec.com/wp-content/uploads/2023/03/Glassdoor-Logo2-300x96.png",
+  },
+  {
+    label: "Trustpilot",
+    count: "70+ reviews",
+    logo: "https://www.trywebtec.com/wp-content/uploads/2025/08/Trustpilot_logo-e1755785128175-300x100.png",
+  },
 ];
+
 
 
 export const faqs = [
