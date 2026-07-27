@@ -13,7 +13,8 @@ import {
   Section,
 } from "@/components/site/sections";
 import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
-import { MEDIA, painPoints, stats } from "@/data/site";
+import { MEDIA, stats } from "@/data/site";
+import { PainPointCards } from "@/components/site/PainPointCards";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -46,13 +47,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-const painLinks = [
-  "/website-redesign",
-  "/copywriting",
-  "/seo",
-  "/digital-ads",
-] as const;
 
 function Index() {
   return (
