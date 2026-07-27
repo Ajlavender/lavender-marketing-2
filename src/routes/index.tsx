@@ -54,7 +54,7 @@ function Index() {
     <>
       {/* Hero */}
       <section className="bg-secondary">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-2 lg:px-8 lg:pb-24 lg:pt-36">
           <div className="relative animate-fade-in">
             <p className="mb-4 text-base text-muted-foreground">
               Web Development, SEO &amp; Paid Ads Agency
