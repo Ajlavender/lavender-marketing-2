@@ -236,11 +236,12 @@ export const googleReviews = [
 ];
 
 export const ratingSources = [
-  { label: "Google", count: "100+ reviews" },
-  { label: "Facebook", count: "160+ reviews" },
-  { label: "Clutch", count: "30+ reviews" },
+  { label: "Bark", count: "100+ reviews" },
+  { label: "Google", count: "160+ reviews" },
+  { label: "Glassdoor", count: "30+ reviews" },
   { label: "Trustpilot", count: "70+ reviews" },
 ];
+
 
 export const faqs = [
   {
@@ -277,4 +278,17 @@ export const socials = [
   { label: "Facebook", href: "https://www.facebook.com/" },
   { label: "Instagram", href: "https://www.instagram.com/" },
   { label: "Twitter", href: "https://twitter.com/" },
+];
+
+export const clientLogos = [
+  { name: "TrayAway", src: `${MEDIA}/2023/03/My-project-1-1.png` },
+  { name: "Aftonbladet", src: `${MEDIA}/2023/07/logo-aftonbladet-svg.png` },
+  { name: "Telia", src: `${MEDIA}/2023/07/Telia_logo_2022.svg-1.png` },
+  { name: "HM", src: `${MEDIA}/2023/02/My-project-1-4.png` },
+  { name: "FL Swimwear", src: `${MEDIA}/2023/02/My-project-1-2.png` },
+  { name: "HM Group", src: `${MEDIA}/2023/02/My-project-1-3.png` },
+  { name: "Varela Financial", src: `${MEDIA}/2023/02/My-project-1-5.png` },
+  { name: "Ternary Dev", src: `${MEDIA}/2023/02/My-project-1-6.png` },
+  { name: "The Career Lounge", src: `${MEDIA}/2023/03/My-project-1-2.png` },
+  { name: "Live Nights", src: `${MEDIA}/2023/03/My-project-1-3.png` },
 ];
