@@ -20,8 +20,11 @@ import { Route as DigitalAdsRouteImport } from './routes/digital-ads'
 import { Route as DevelopersRouteImport } from './routes/developers'
 import { Route as CopywritingRouteImport } from './routes/copywriting'
 import { Route as ConversionRateOptimizationRouteImport } from './routes/conversion-rate-optimization'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AboutMottoRouteImport } from './routes/about.motto'
 
 const WhyChooseUsRoute = WhyChooseUsRouteImport.update({
@@ -80,14 +83,29 @@ const ConversionRateOptimizationRoute =
     path: '/conversion-rate-optimization',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/about/',
   path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutMottoRoute = AboutMottoRouteImport.update({
@@ -98,6 +116,7 @@ const AboutMottoRoute = AboutMottoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/conversion-rate-optimization': typeof ConversionRateOptimizationRoute
   '/copywriting': typeof CopywritingRoute
   '/developers': typeof DevelopersRoute
@@ -110,10 +129,13 @@ export interface FileRoutesByFullPath {
   '/website-redesign': typeof WebsiteRedesignRoute
   '/why-choose-us': typeof WhyChooseUsRoute
   '/about/motto': typeof AboutMottoRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/about/': typeof AboutIndexRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/conversion-rate-optimization': typeof ConversionRateOptimizationRoute
   '/copywriting': typeof CopywritingRoute
   '/developers': typeof DevelopersRoute
@@ -126,11 +148,14 @@ export interface FileRoutesByTo {
   '/website-redesign': typeof WebsiteRedesignRoute
   '/why-choose-us': typeof WhyChooseUsRoute
   '/about/motto': typeof AboutMottoRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/about': typeof AboutIndexRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/conversion-rate-optimization': typeof ConversionRateOptimizationRoute
   '/copywriting': typeof CopywritingRoute
   '/developers': typeof DevelopersRoute
@@ -143,12 +168,15 @@ export interface FileRoutesById {
   '/website-redesign': typeof WebsiteRedesignRoute
   '/why-choose-us': typeof WhyChooseUsRoute
   '/about/motto': typeof AboutMottoRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/about/': typeof AboutIndexRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contact'
     | '/conversion-rate-optimization'
     | '/copywriting'
     | '/developers'
@@ -161,10 +189,13 @@ export interface FileRouteTypes {
     | '/website-redesign'
     | '/why-choose-us'
     | '/about/motto'
+    | '/blog/$slug'
     | '/about/'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contact'
     | '/conversion-rate-optimization'
     | '/copywriting'
     | '/developers'
@@ -177,10 +208,13 @@ export interface FileRouteTypes {
     | '/website-redesign'
     | '/why-choose-us'
     | '/about/motto'
+    | '/blog/$slug'
     | '/about'
+    | '/blog'
   id:
     | '__root__'
     | '/'
+    | '/contact'
     | '/conversion-rate-optimization'
     | '/copywriting'
     | '/developers'
@@ -193,11 +227,14 @@ export interface FileRouteTypes {
     | '/website-redesign'
     | '/why-choose-us'
     | '/about/motto'
+    | '/blog/$slug'
     | '/about/'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
   ConversionRateOptimizationRoute: typeof ConversionRateOptimizationRoute
   CopywritingRoute: typeof CopywritingRoute
   DevelopersRoute: typeof DevelopersRoute
@@ -210,7 +247,9 @@ export interface RootRouteChildren {
   WebsiteRedesignRoute: typeof WebsiteRedesignRoute
   WhyChooseUsRoute: typeof WhyChooseUsRoute
   AboutMottoRoute: typeof AboutMottoRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   AboutIndexRoute: typeof AboutIndexRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -292,6 +331,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConversionRateOptimizationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -299,11 +345,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about/': {
       id: '/about/'
       path: '/about'
       fullPath: '/about/'
       preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about/motto': {
@@ -318,6 +378,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
   ConversionRateOptimizationRoute: ConversionRateOptimizationRoute,
   CopywritingRoute: CopywritingRoute,
   DevelopersRoute: DevelopersRoute,
@@ -330,7 +391,9 @@ const rootRouteChildren: RootRouteChildren = {
   WebsiteRedesignRoute: WebsiteRedesignRoute,
   WhyChooseUsRoute: WhyChooseUsRoute,
   AboutMottoRoute: AboutMottoRoute,
+  BlogSlugRoute: BlogSlugRoute,
   AboutIndexRoute: AboutIndexRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
