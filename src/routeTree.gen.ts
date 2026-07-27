@@ -9,38 +9,355 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WhyChooseUsRouteImport } from './routes/why-choose-us'
+import { Route as WebsiteRedesignRouteImport } from './routes/website-redesign'
+import { Route as ShopifyWebsiteRouteImport } from './routes/shopify-website'
+import { Route as SeoRouteImport } from './routes/seo'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as DigitalAdsRouteImport } from './routes/digital-ads'
+import { Route as DevelopersRouteImport } from './routes/developers'
+import { Route as CopywritingRouteImport } from './routes/copywriting'
+import { Route as ConversionRateOptimizationRouteImport } from './routes/conversion-rate-optimization'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AboutMottoRouteImport } from './routes/about.motto'
 
+const WhyChooseUsRoute = WhyChooseUsRouteImport.update({
+  id: '/why-choose-us',
+  path: '/why-choose-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteRedesignRoute = WebsiteRedesignRouteImport.update({
+  id: '/website-redesign',
+  path: '/website-redesign',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopifyWebsiteRoute = ShopifyWebsiteRouteImport.update({
+  id: '/shopify-website',
+  path: '/shopify-website',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeoRoute = SeoRouteImport.update({
+  id: '/seo',
+  path: '/seo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalAdsRoute = DigitalAdsRouteImport.update({
+  id: '/digital-ads',
+  path: '/digital-ads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevelopersRoute = DevelopersRouteImport.update({
+  id: '/developers',
+  path: '/developers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CopywritingRoute = CopywritingRouteImport.update({
+  id: '/copywriting',
+  path: '/copywriting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConversionRateOptimizationRoute =
+  ConversionRateOptimizationRouteImport.update({
+    id: '/conversion-rate-optimization',
+    path: '/conversion-rate-optimization',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutMottoRoute = AboutMottoRouteImport.update({
+  id: '/about/motto',
+  path: '/about/motto',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/conversion-rate-optimization': typeof ConversionRateOptimizationRoute
+  '/copywriting': typeof CopywritingRoute
+  '/developers': typeof DevelopersRoute
+  '/digital-ads': typeof DigitalAdsRoute
+  '/faq': typeof FaqRoute
+  '/pricing': typeof PricingRoute
+  '/projects': typeof ProjectsRoute
+  '/reviews': typeof ReviewsRoute
+  '/seo': typeof SeoRoute
+  '/shopify-website': typeof ShopifyWebsiteRoute
+  '/website-redesign': typeof WebsiteRedesignRoute
+  '/why-choose-us': typeof WhyChooseUsRoute
+  '/about/motto': typeof AboutMottoRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/about/': typeof AboutIndexRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/conversion-rate-optimization': typeof ConversionRateOptimizationRoute
+  '/copywriting': typeof CopywritingRoute
+  '/developers': typeof DevelopersRoute
+  '/digital-ads': typeof DigitalAdsRoute
+  '/faq': typeof FaqRoute
+  '/pricing': typeof PricingRoute
+  '/projects': typeof ProjectsRoute
+  '/reviews': typeof ReviewsRoute
+  '/seo': typeof SeoRoute
+  '/shopify-website': typeof ShopifyWebsiteRoute
+  '/website-redesign': typeof WebsiteRedesignRoute
+  '/why-choose-us': typeof WhyChooseUsRoute
+  '/about/motto': typeof AboutMottoRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/about': typeof AboutIndexRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/conversion-rate-optimization': typeof ConversionRateOptimizationRoute
+  '/copywriting': typeof CopywritingRoute
+  '/developers': typeof DevelopersRoute
+  '/digital-ads': typeof DigitalAdsRoute
+  '/faq': typeof FaqRoute
+  '/pricing': typeof PricingRoute
+  '/projects': typeof ProjectsRoute
+  '/reviews': typeof ReviewsRoute
+  '/seo': typeof SeoRoute
+  '/shopify-website': typeof ShopifyWebsiteRoute
+  '/website-redesign': typeof WebsiteRedesignRoute
+  '/why-choose-us': typeof WhyChooseUsRoute
+  '/about/motto': typeof AboutMottoRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/about/': typeof AboutIndexRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/conversion-rate-optimization'
+    | '/copywriting'
+    | '/developers'
+    | '/digital-ads'
+    | '/faq'
+    | '/pricing'
+    | '/projects'
+    | '/reviews'
+    | '/seo'
+    | '/shopify-website'
+    | '/website-redesign'
+    | '/why-choose-us'
+    | '/about/motto'
+    | '/blog/$slug'
+    | '/about/'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contact'
+    | '/conversion-rate-optimization'
+    | '/copywriting'
+    | '/developers'
+    | '/digital-ads'
+    | '/faq'
+    | '/pricing'
+    | '/projects'
+    | '/reviews'
+    | '/seo'
+    | '/shopify-website'
+    | '/website-redesign'
+    | '/why-choose-us'
+    | '/about/motto'
+    | '/blog/$slug'
+    | '/about'
+    | '/blog'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/conversion-rate-optimization'
+    | '/copywriting'
+    | '/developers'
+    | '/digital-ads'
+    | '/faq'
+    | '/pricing'
+    | '/projects'
+    | '/reviews'
+    | '/seo'
+    | '/shopify-website'
+    | '/website-redesign'
+    | '/why-choose-us'
+    | '/about/motto'
+    | '/blog/$slug'
+    | '/about/'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  ConversionRateOptimizationRoute: typeof ConversionRateOptimizationRoute
+  CopywritingRoute: typeof CopywritingRoute
+  DevelopersRoute: typeof DevelopersRoute
+  DigitalAdsRoute: typeof DigitalAdsRoute
+  FaqRoute: typeof FaqRoute
+  PricingRoute: typeof PricingRoute
+  ProjectsRoute: typeof ProjectsRoute
+  ReviewsRoute: typeof ReviewsRoute
+  SeoRoute: typeof SeoRoute
+  ShopifyWebsiteRoute: typeof ShopifyWebsiteRoute
+  WebsiteRedesignRoute: typeof WebsiteRedesignRoute
+  WhyChooseUsRoute: typeof WhyChooseUsRoute
+  AboutMottoRoute: typeof AboutMottoRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/why-choose-us': {
+      id: '/why-choose-us'
+      path: '/why-choose-us'
+      fullPath: '/why-choose-us'
+      preLoaderRoute: typeof WhyChooseUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website-redesign': {
+      id: '/website-redesign'
+      path: '/website-redesign'
+      fullPath: '/website-redesign'
+      preLoaderRoute: typeof WebsiteRedesignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shopify-website': {
+      id: '/shopify-website'
+      path: '/shopify-website'
+      fullPath: '/shopify-website'
+      preLoaderRoute: typeof ShopifyWebsiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seo': {
+      id: '/seo'
+      path: '/seo'
+      fullPath: '/seo'
+      preLoaderRoute: typeof SeoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digital-ads': {
+      id: '/digital-ads'
+      path: '/digital-ads'
+      fullPath: '/digital-ads'
+      preLoaderRoute: typeof DigitalAdsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developers': {
+      id: '/developers'
+      path: '/developers'
+      fullPath: '/developers'
+      preLoaderRoute: typeof DevelopersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/copywriting': {
+      id: '/copywriting'
+      path: '/copywriting'
+      fullPath: '/copywriting'
+      preLoaderRoute: typeof CopywritingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conversion-rate-optimization': {
+      id: '/conversion-rate-optimization'
+      path: '/conversion-rate-optimization'
+      fullPath: '/conversion-rate-optimization'
+      preLoaderRoute: typeof ConversionRateOptimizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +365,57 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/': {
+      id: '/about/'
+      path: '/about'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/motto': {
+      id: '/about/motto'
+      path: '/about/motto'
+      fullPath: '/about/motto'
+      preLoaderRoute: typeof AboutMottoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  ConversionRateOptimizationRoute: ConversionRateOptimizationRoute,
+  CopywritingRoute: CopywritingRoute,
+  DevelopersRoute: DevelopersRoute,
+  DigitalAdsRoute: DigitalAdsRoute,
+  FaqRoute: FaqRoute,
+  PricingRoute: PricingRoute,
+  ProjectsRoute: ProjectsRoute,
+  ReviewsRoute: ReviewsRoute,
+  SeoRoute: SeoRoute,
+  ShopifyWebsiteRoute: ShopifyWebsiteRoute,
+  WebsiteRedesignRoute: WebsiteRedesignRoute,
+  WhyChooseUsRoute: WhyChooseUsRoute,
+  AboutMottoRoute: AboutMottoRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  AboutIndexRoute: AboutIndexRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
