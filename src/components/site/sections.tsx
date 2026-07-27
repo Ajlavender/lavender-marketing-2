@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { LeadForm } from "./LeadForm";
 import {
+  MEDIA,
   counters,
   faqs,
   googleReviews,
