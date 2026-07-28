@@ -7,10 +7,10 @@ import { Reveal } from "@/components/site/Reveal";
 
 const plans = [
   {
-    name: "Starter",
-    price: "$1,490",
-    note: "one-off",
-    blurb: "A sharp, modern 5-page website for businesses that need to look credible fast.",
+    name: "Essentials",
+    price: "$297",
+    note: "per month",
+    blurb: "A sharp, modern website for businesses that need to look credible fast.",
     features: [
       "Free demo design first",
       "Up to 5 custom pages",
@@ -22,12 +22,12 @@ const plans = [
   },
   {
     name: "Growth",
-    price: "$3,490",
-    note: "one-off",
+    price: "$497",
+    note: "per month",
     featured: true,
-    blurb: "Our most popular redesign package — built around conversion, not just looks.",
+    blurb: "Our most popular package — built around conversion, not just looks.",
     features: [
-      "Everything in Starter",
+      "Everything in Essentials",
       "Up to 15 custom pages",
       "Professional copywriting",
       "Conversion-focused layouts",
@@ -38,8 +38,8 @@ const plans = [
   },
   {
     name: "Scale",
-    price: "Custom",
-    note: "from $6,000",
+    price: "$4,997",
+    note: "per month",
     blurb: "For e-commerce, custom functionality and ongoing marketing support.",
     features: [
       "Everything in Growth",
