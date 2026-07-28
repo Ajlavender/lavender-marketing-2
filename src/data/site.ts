@@ -1,6 +1,6 @@
 export const MEDIA = "https://www.trywebtec.com/wp-content/uploads";
 
-export const LOGO = `${MEDIA}/2023/02/Lavender.webp`;
+export const LOGO = "/logo.png";
 
 export const services = [
   {
