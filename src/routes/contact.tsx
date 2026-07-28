@@ -23,7 +23,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const details = [
-  { icon: Mail, label: "Email", value: "info@trywebtec.com", href: "mailto:info@trywebtec.com" },
+  { icon: Mail, label: "Email", value: "info@lavendermarketing.co", href: "mailto:info@lavendermarketing.co" },
   { icon: Phone, label: "Phone", value: "+1 (888) 123-4567", href: "tel:+18881234567" },
   { icon: MapPin, label: "Office", value: "Remote-first, worldwide" },
 ];
