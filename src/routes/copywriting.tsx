@@ -5,13 +5,13 @@ import { MEDIA } from "@/data/site";
 export const Route = createFileRoute("/copywriting")({
   head: () => ({
     meta: [
-      { title: "Website Copywriting Services | Webtec" },
+      { title: "Website Copywriting Services | Lavender Marketing & Co." },
       {
         name: "description",
         content:
           "Website and landing page copywriting that sounds like you and converts like your best salesperson.",
       },
-      { property: "og:title", content: "Website Copywriting Services | Webtec" },
+      { property: "og:title", content: "Website Copywriting Services | Lavender Marketing & Co." },
       { property: "og:description", content: "Copy that sounds like you and sells like your best rep." },
       { property: "og:url", content: "/copywriting" },
     ],

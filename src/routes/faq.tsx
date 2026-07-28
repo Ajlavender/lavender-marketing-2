@@ -5,13 +5,13 @@ import { faqs, MEDIA } from "@/data/site";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "Website Redesign FAQ | Webtec" },
+      { title: "Website Redesign FAQ | Lavender Marketing & Co." },
       {
         name: "description",
         content:
           "Answers to the most common questions about website redesign cost, timelines, free demos, SEO and ongoing support.",
       },
-      { property: "og:title", content: "Website Redesign FAQ | Webtec" },
+      { property: "og:title", content: "Website Redesign FAQ | Lavender Marketing & Co." },
       { property: "og:description", content: "Costs, timelines, free demos, SEO and support — answered." },
       { property: "og:url", content: "/faq" },
     ],

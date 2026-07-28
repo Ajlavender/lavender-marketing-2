@@ -55,13 +55,13 @@ const plans = [
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Website Redesign Pricing | Webtec" },
+      { title: "Website Redesign Pricing | Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "Transparent website redesign pricing from Webtec. See a free demo design of your new homepage before you pay anything.",
+          "Transparent website redesign pricing from Lavender Marketing & Co.. See a free demo design of your new homepage before you pay anything.",
       },
-      { property: "og:title", content: "Website Redesign Pricing | Webtec" },
+      { property: "og:title", content: "Website Redesign Pricing | Lavender Marketing & Co." },
       { property: "og:description", content: "Transparent packages, with a free demo before you pay." },
       { property: "og:url", content: "/pricing" },
     ],
@@ -76,7 +76,7 @@ const heroFaqs = [
     a: "Most redesigns go live in about 45 days. Qualifying businesses get priority scheduling.",
   },
   {
-    q: "Why should you choose Webtec?",
+    q: "Why should you choose Lavender Marketing & Co.?",
     a: "You see a free demo design of your new homepage before you pay anything, with unlimited changes and a fixed price.",
   },
 ];

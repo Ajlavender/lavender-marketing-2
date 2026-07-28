@@ -11,13 +11,13 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Article not found | Webtec" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Article not found | Lavender Marketing & Co." }, { name: "robots", content: "noindex" }],
       };
     }
     const { post } = loaderData;
     return {
       meta: [
-        { title: `${post.title} | Webtec Blog` },
+        { title: `${post.title} | Lavender Marketing & Co. Blog` },
         { name: "description", content: post.excerpt },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.excerpt },
@@ -37,7 +37,7 @@ export const Route = createFileRoute("/blog/$slug")({
             description: post.excerpt,
             image: post.image,
             datePublished: post.date,
-            author: { "@type": "Organization", name: "Webtec" },
+            author: { "@type": "Organization", name: "Lavender Marketing & Co." },
           }),
         },
       ],

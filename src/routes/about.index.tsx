@@ -7,13 +7,13 @@ import { MEDIA } from "@/data/site";
 export const Route = createFileRoute("/about/")({
   head: () => ({
     meta: [
-      { title: "About Us | Webtec Web & SEO Agency" },
+      { title: "About Us | Lavender Marketing & Co. Web & SEO Agency" },
       {
         name: "description",
         content:
           "Our journey began in Sweden in 2016. We built the web agency we never found – a 5-star SEO & web agency for small and medium businesses.",
       },
-      { property: "og:title", content: "About Us | Webtec Web & SEO Agency" },
+      { property: "og:title", content: "About Us | Lavender Marketing & Co. Web & SEO Agency" },
       {
         property: "og:description",
         content: "The Quality of Marketing Giants. At The Price of Freelancers.",
@@ -212,7 +212,7 @@ function About() {
                 managers that we could find to start a web &amp; SEO agency that simplified web
                 technology for busy executives. We started to build the web agency we never found.
                 <br />
-                We are Webtec.
+                We are Lavender Marketing & Co..
               </p>
             </div>
             <div className="mt-7">

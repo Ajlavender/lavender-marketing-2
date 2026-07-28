@@ -8,16 +8,16 @@ import { MEDIA, googleReviews, projects } from "@/data/site";
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Reviews — See What People Say About Webtec" },
+      { title: "Reviews — See What People Say About Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "Read hundreds of 5-star Webtec reviews on Google and Bark, plus video testimonials from real customers who love their new website.",
+          "Read hundreds of 5-star Lavender Marketing & Co. reviews on Google and Bark, plus video testimonials from real customers who love their new website.",
       },
-      { property: "og:title", content: "Reviews — See What People Say About Webtec" },
+      { property: "og:title", content: "Reviews — See What People Say About Lavender Marketing & Co." },
       {
         property: "og:description",
-        content: "Google reviews, Bark reviews and video testimonials from Webtec customers.",
+        content: "Google reviews, Bark reviews and video testimonials from Lavender Marketing & Co. customers.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -45,20 +45,20 @@ function DemoButton({ label = "Schedule a demo" }: { label?: string }) {
 const facebookReviews = [
   {
     name: "Mark P.",
-    when: "Recommends Webtec on Facebook",
+    when: "Recommends Lavender Marketing & Co. on Facebook",
     rating: 5,
     quote:
       "Great communication from start to finish. The team built exactly what we asked for and then some.",
   },
   {
     name: "Dana R.",
-    when: "Recommends Webtec on Facebook",
+    when: "Recommends Lavender Marketing & Co. on Facebook",
     rating: 5,
     quote: "Fast, affordable and genuinely talented designers. Our bookings doubled after launch.",
   },
   {
     name: "Tony L.",
-    when: "Recommends Webtec on Facebook",
+    when: "Recommends Lavender Marketing & Co. on Facebook",
     rating: 5,
     quote:
       "They showed me a full demo before I paid a cent. Nobody else does that. Easy decision.",
@@ -83,7 +83,7 @@ function VideoTile({ poster, tall, i }: { poster: string; tall?: boolean; i: num
       >
         <img
           src={poster}
-          alt="Webtec customer video testimonial"
+          alt="Lavender Marketing & Co. customer video testimonial"
           loading="lazy"
           className={
             tall
@@ -117,13 +117,13 @@ function Reviews() {
             </h1>
             <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-muted-foreground">
               Real reviews from real business owners. No filters, no scripts — just the honest word
-              on what it's like to work with Webtec.
+              on what it's like to work with Lavender Marketing & Co..
             </p>
           </Reveal>
           <Reveal from="right" delay={120}>
             <img
               src={`${MEDIA}/2023/12/satisfied-customers-giving-five-stars-review.webp`}
-              alt="Customer giving Webtec a five star rating"
+              alt="Customer giving Lavender Marketing & Co. a five star rating"
               className="mx-auto w-full max-w-xs"
             />
           </Reveal>
@@ -136,12 +136,12 @@ function Reviews() {
           <Reveal scale>
             <button
               type="button"
-              aria-label="Play the Webtec reviews video"
+              aria-label="Play the Lavender Marketing & Co. reviews video"
               className="group relative block w-full overflow-hidden rounded-xl bg-[#101218] shadow-[0_35px_80px_-45px_rgba(16,18,24,0.8)]"
             >
               <img
                 src={`${MEDIA}/2024/09/maxresdefault.webp`}
-                alt="Webtec customer highlight reel"
+                alt="Lavender Marketing & Co. customer highlight reel"
                 className="aspect-[16/7] w-full object-cover opacity-90"
               />
               <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#6d33d6] shadow-[0_18px_40px_-12px_rgba(109,51,214,0.9)] transition group-hover:scale-110">

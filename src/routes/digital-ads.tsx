@@ -5,13 +5,13 @@ import { MEDIA } from "@/data/site";
 export const Route = createFileRoute("/digital-ads")({
   head: () => ({
     meta: [
-      { title: "Digital Ads & Paid Media | Webtec" },
+      { title: "Digital Ads & Paid Media | Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "Google and social advertising managed by Webtec — campaigns built to book meetings, not burn budget.",
+          "Google and social advertising managed by Lavender Marketing & Co. — campaigns built to book meetings, not burn budget.",
       },
-      { property: "og:title", content: "Digital Ads & Paid Media | Webtec" },
+      { property: "og:title", content: "Digital Ads & Paid Media | Lavender Marketing & Co." },
       { property: "og:description", content: "Paid campaigns built to book meetings, not burn budget." },
       { property: "og:url", content: "/digital-ads" },
     ],

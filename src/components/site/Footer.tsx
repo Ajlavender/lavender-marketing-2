@@ -7,7 +7,7 @@ const links = [
   { label: "Contact Us Today", to: "/contact" },
   { label: "FAQ", to: "/faq" },
   { label: "Testimonials", to: "/reviews" },
-  { label: "Webtec Blog", to: "/blog" },
+  { label: "Lavender Marketing & Co. Blog", to: "/blog" },
 ] as const;
 
 export function Footer() {
@@ -15,9 +15,9 @@ export function Footer() {
     <footer className="bg-background text-foreground">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-3 lg:gap-16 lg:px-8">
         <div className="space-y-5">
-          <img src={LOGO} alt="Webtec" width={150} height={36} className="h-9 w-auto" loading="lazy" />
+          <img src={LOGO} alt="Lavender Marketing & Co." width={150} height={36} className="h-9 w-auto" loading="lazy" />
           <p className="text-base leading-loose text-foreground/80">
-            Webtec was founded by our typical client – ourselves. We want to be the best, fastest, and
+            Lavender Marketing & Co. was founded by our typical client – ourselves. We want to be the best, fastest, and
             most professional website redesign agency out there. Our goal is to help small and
             mid-sized businesses who want beautiful-looking websites that convert visitors into
             customers.
@@ -53,7 +53,7 @@ export function Footer() {
       </div>
 
       <div className="pb-10 text-center text-base text-foreground/70">
-        © Copyright {new Date().getFullYear()} by Webtec
+        © Copyright {new Date().getFullYear()} by Lavender Marketing & Co.
       </div>
     </footer>
   );

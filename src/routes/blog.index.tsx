@@ -6,13 +6,13 @@ import { MEDIA } from "@/data/site";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Webtec Blog | Website Redesign, SEO & Conversion Advice" },
+      { title: "Lavender Marketing & Co. Blog | Website Redesign, SEO & Conversion Advice" },
       {
         name: "description",
         content:
           "Practical advice on website redesign, SEO, copywriting and conversion rate optimization for small and mid-sized businesses.",
       },
-      { property: "og:title", content: "Webtec Blog" },
+      { property: "og:title", content: "Lavender Marketing & Co. Blog" },
       {
         property: "og:description",
         content: "Website redesign, SEO and conversion advice for growing businesses.",
