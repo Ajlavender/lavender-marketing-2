@@ -110,7 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Organization",
           name: "Lavender Marketing & Co.",
           url: "/",
-          logo: "https://www.trywebtec.com/wp-content/uploads/2023/02/Lavender.webp",
+          logo: "/logo.png",
           description:
             "Website redesign agency specializing in web redesign & SEO for small and medium-sized businesses.",
         }),
