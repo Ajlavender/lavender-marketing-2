@@ -9,16 +9,16 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/why-choose-us")({
   head: () => ({
     meta: [
-      { title: "Why Us? | Webtec Web & SEO Agency" },
+      { title: "Why Us? | Lavender Marketing & Co. Web & SEO Agency" },
       {
         name: "description",
         content:
-          "Many small businesses undervalue their website, leading to lost opportunities worth millions. See why 2000+ businesses choose Webtec – 0% risk, free design first.",
+          "Many small businesses undervalue their website, leading to lost opportunities worth millions. See why 2000+ businesses choose Lavender Marketing & Co. – 0% risk, free design first.",
       },
-      { property: "og:title", content: "Why Us? | Webtec Web & SEO Agency" },
+      { property: "og:title", content: "Why Us? | Lavender Marketing & Co. Web & SEO Agency" },
       {
         property: "og:description",
-        content: "No strings attached. Seriously. 0% risk. See why businesses choose Webtec.",
+        content: "No strings attached. Seriously. 0% risk. See why businesses choose Lavender Marketing & Co..",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -310,7 +310,7 @@ function WhyChooseUs() {
                 a web and SEO agency that simplified web technology for busy executives. We started to
                 build the web agency we had never found.
                 <br />
-                We are Webtec.
+                We are Lavender Marketing & Co..
               </p>
             </div>
             <div className="mt-7">

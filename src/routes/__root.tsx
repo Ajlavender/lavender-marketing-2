@@ -81,14 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Webtec | Website Redesign & SEO Services" },
+      { title: "Lavender Marketing & Co. | Website Redesign & SEO Services" },
       {
         name: "description",
         content:
           "Website redesign agency specializing in web redesign & SEO for small and medium-sized businesses. Get a free website demo.",
       },
-      { name: "author", content: "Webtec" },
-      { property: "og:site_name", content: "Webtec" },
+      { name: "author", content: "Lavender Marketing & Co." },
+      { property: "og:site_name", content: "Lavender Marketing & Co." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -108,9 +108,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "Webtec",
+          name: "Lavender Marketing & Co.",
           url: "/",
-          logo: "https://www.trywebtec.com/wp-content/uploads/2023/02/webtec.webp",
+          logo: "/logo.png",
           description:
             "Website redesign agency specializing in web redesign & SEO for small and medium-sized businesses.",
         }),

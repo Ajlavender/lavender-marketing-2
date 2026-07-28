@@ -21,7 +21,7 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/website-redesign")({
   head: () => ({
     meta: [
-      { title: "Website Redesign Services That Convert Visitors | Webtec" },
+      { title: "Website Redesign Services That Convert Visitors | Lavender Marketing & Co." },
       {
         name: "description",
         content:
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/website-redesign")({
       },
       {
         property: "og:title",
-        content: "Website Redesign Services That Convert Visitors | Webtec",
+        content: "Website Redesign Services That Convert Visitors | Lavender Marketing & Co.",
       },
       {
         property: "og:description",
@@ -178,9 +178,9 @@ function WebsiteRedesign() {
         </Reveal>
       </Section>
 
-      {/* Why choose Webtec — staggered cards */}
+      {/* Why choose Lavender Marketing & Co. — staggered cards */}
       <Section className="relative pt-16">
-        <h2 className="sr-only">Why Choose Webtec?</h2>
+        <h2 className="sr-only">Why Choose Lavender Marketing & Co.?</h2>
         <img
           src={`${MEDIA}/2023/03/rocket-1-300x300.png`}
           alt=""

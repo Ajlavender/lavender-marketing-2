@@ -5,13 +5,13 @@ import { MEDIA } from "@/data/site";
 export const Route = createFileRoute("/conversion-rate-optimization")({
   head: () => ({
     meta: [
-      { title: "Conversion Rate Optimization (CRO) | Webtec" },
+      { title: "Conversion Rate Optimization (CRO) | Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "Turn more of your existing traffic into customers with Webtec's conversion rate optimization service.",
+          "Turn more of your existing traffic into customers with Lavender Marketing & Co.'s conversion rate optimization service.",
       },
-      { property: "og:title", content: "Conversion Rate Optimization (CRO) | Webtec" },
+      { property: "og:title", content: "Conversion Rate Optimization (CRO) | Lavender Marketing & Co." },
       { property: "og:description", content: "Get more customers from the traffic you already have." },
       { property: "og:url", content: "/conversion-rate-optimization" },
     ],

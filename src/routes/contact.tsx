@@ -7,13 +7,13 @@ import { MEDIA } from "@/data/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Webtec | Get Your Free Website Demo" },
+      { title: "Contact Lavender Marketing & Co. | Get Your Free Website Demo" },
       {
         name: "description",
         content:
-          "Talk to Webtec about your website redesign, SEO or advertising. Request a free demo design — no cost, no obligation.",
+          "Talk to Lavender Marketing & Co. about your website redesign, SEO or advertising. Request a free demo design — no cost, no obligation.",
       },
-      { property: "og:title", content: "Contact Webtec" },
+      { property: "og:title", content: "Contact Lavender Marketing & Co." },
       { property: "og:description", content: "Request your free website demo design today." },
       { property: "og:url", content: "/contact" },
     ],
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const details = [
-  { icon: Mail, label: "Email", value: "info@trywebtec.com", href: "mailto:info@trywebtec.com" },
+  { icon: Mail, label: "Email", value: "info@lavendermarketing.co", href: "mailto:info@lavendermarketing.co" },
   { icon: Phone, label: "Phone", value: "+1 (888) 123-4567", href: "tel:+18881234567" },
   { icon: MapPin, label: "Office", value: "Remote-first, worldwide" },
 ];

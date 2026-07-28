@@ -5,16 +5,16 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Cutting-Edge Creations | Webtec Projects" },
+      { title: "Cutting-Edge Creations | Lavender Marketing & Co. Projects" },
       {
         name: "description",
         content:
-          "We've got a black belt in websites. See a selection of website redesign, SEO and copywriting projects delivered by Webtec.",
+          "We've got a black belt in websites. See a selection of website redesign, SEO and copywriting projects delivered by Lavender Marketing & Co..",
       },
-      { property: "og:title", content: "Cutting-Edge Creations | Webtec Projects" },
+      { property: "og:title", content: "Cutting-Edge Creations | Lavender Marketing & Co. Projects" },
       {
         property: "og:description",
-        content: "See the websites Webtec has redesigned for businesses around the world.",
+        content: "See the websites Lavender Marketing & Co. has redesigned for businesses around the world.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

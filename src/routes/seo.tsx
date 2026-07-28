@@ -5,13 +5,13 @@ import { MEDIA } from "@/data/site";
 export const Route = createFileRoute("/seo")({
   head: () => ({
     meta: [
-      { title: "Smart SEO Services | Webtec" },
+      { title: "Smart SEO Services | Lavender Marketing & Co." },
       {
         name: "description",
         content:
           "Smart SEO for small and mid-sized businesses: we cut the fluff and chase the rankings that actually generate enquiries and revenue.",
       },
-      { property: "og:title", content: "Smart SEO Services | Webtec" },
+      { property: "og:title", content: "Smart SEO Services | Lavender Marketing & Co." },
       {
         property: "og:description",
         content: "SEO focused on commercial intent, not vanity metrics.",

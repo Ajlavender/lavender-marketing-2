@@ -5,13 +5,13 @@ import { MEDIA } from "@/data/site";
 export const Route = createFileRoute("/developers")({
   head: () => ({
     meta: [
-      { title: "Hire Dedicated Web Developers | Webtec" },
+      { title: "Hire Dedicated Web Developers | Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "Dedicated Webtec developers for custom builds, integrations, maintenance and ongoing website support.",
+          "Dedicated Lavender Marketing & Co. developers for custom builds, integrations, maintenance and ongoing website support.",
       },
-      { property: "og:title", content: "Hire Dedicated Web Developers | Webtec" },
+      { property: "og:title", content: "Hire Dedicated Web Developers | Lavender Marketing & Co." },
       { property: "og:description", content: "Custom builds, integrations and ongoing website support." },
       { property: "og:url", content: "/developers" },
     ],

@@ -5,13 +5,13 @@ import { MEDIA } from "@/data/site";
 export const Route = createFileRoute("/shopify-website")({
   head: () => ({
     meta: [
-      { title: "Shopify & E-commerce Redesign | Webtec" },
+      { title: "Shopify & E-commerce Redesign | Lavender Marketing & Co." },
       {
         name: "description",
         content:
           "Shopify and e-commerce storefront redesigns built to sell — migrated safely with redirects, tracking and checkout testing.",
       },
-      { property: "og:title", content: "Shopify & E-commerce Redesign | Webtec" },
+      { property: "og:title", content: "Shopify & E-commerce Redesign | Lavender Marketing & Co." },
       { property: "og:description", content: "Storefronts built to sell, migrated without losing revenue." },
       { property: "og:url", content: "/shopify-website" },
     ],

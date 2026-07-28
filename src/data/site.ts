@@ -1,6 +1,6 @@
 export const MEDIA = "https://www.trywebtec.com/wp-content/uploads";
 
-export const LOGO = `${MEDIA}/2023/02/webtec.webp`;
+export const LOGO = "/logo.png";
 
 export const services = [
   {
@@ -258,7 +258,7 @@ export const testimonials = [
     name: "Betsy Romeri",
     since: "With us since '19",
     quote:
-      "We have used Webtec to build and maintain our website. We couldn't be more pleased with the speed and quality that they were able to deliver. We are in the process of refreshing our content on our website and the Webtec team has been very responsive and affordable! We would recommend them highly.",
+      "We have used Lavender Marketing & Co. to build and maintain our website. We couldn't be more pleased with the speed and quality that they were able to deliver. We are in the process of refreshing our content on our website and the Lavender Marketing & Co. team has been very responsive and affordable! We would recommend them highly.",
   },
   {
     name: "Kojenwa Moitt",
@@ -276,7 +276,7 @@ export const testimonials = [
     name: "Daniel Droilet",
     since: "With us since '21",
     quote:
-      "Webtec is fantastic and you should hire them. The thing that really separates Webtec from others is that Webtec really knows how to anticipate the needs of their clients, and then provides the necessary support needed – such that it always looks like magic.",
+      "Lavender Marketing & Co. is fantastic and you should hire them. The thing that really separates Lavender Marketing & Co. from others is that Lavender Marketing & Co. really knows how to anticipate the needs of their clients, and then provides the necessary support needed – such that it always looks like magic.",
   },
   {
     name: "Moeed Amin",
@@ -294,7 +294,7 @@ export const testimonials = [
     name: "Karsten Huttenhain",
     since: "With us since '22",
     quote:
-      "Having spent a lot of time maintaining our websites through self-build sites like Wix, we wanted a professional web building company who could build a new site from scratch, advise on design and UX and complete SEO. We are beyond happy with Webtec's services.",
+      "Having spent a lot of time maintaining our websites through self-build sites like Wix, we wanted a professional web building company who could build a new site from scratch, advise on design and UX and complete SEO. We are beyond happy with Lavender Marketing & Co.'s services.",
   },
   {
     name: "Omar Edwards",
@@ -306,19 +306,19 @@ export const testimonials = [
     name: "Gonzalo De la Barra",
     since: "With us since '22",
     quote:
-      "I totally recommend working with Webtec. Very helpful staff, with management highly involved with supporting clients. We hired them long term for overseeing all our website updates and hosting.",
+      "I totally recommend working with Lavender Marketing & Co.. Very helpful staff, with management highly involved with supporting clients. We hired them long term for overseeing all our website updates and hosting.",
   },
   {
     name: "Nassim Joko",
     since: "With us since '20",
     quote:
-      "Been a Webtec client for a while now and so far they're the best in what they do. They redesigned my website and improved my SEO, which has skyrocketed traffic to the website. I highly recommend their services.",
+      "Been a Lavender Marketing & Co. client for a while now and so far they're the best in what they do. They redesigned my website and improved my SEO, which has skyrocketed traffic to the website. I highly recommend their services.",
   },
   {
     name: "Diane Seymour",
     since: "With us since '22",
     quote:
-      "Webtec has been great to work with. They redesigned our business site and made the experience very simple. Great company that values customer satisfaction above all else!",
+      "Lavender Marketing & Co. has been great to work with. They redesigned our business site and made the experience very simple. Great company that values customer satisfaction above all else!",
   },
   {
     name: "Samm Smeltzer",
@@ -344,7 +344,7 @@ export const googleReviews = [
     initial: "B",
     color: "#0f766e",
     quote:
-      "Our company utilized Webtec to be able to redesign our website and Bilha Njau and team was amazing to work with. They did a great job not just on the design but on the communication and updates.",
+      "Our company utilized Lavender Marketing & Co. to be able to redesign our website and Bilha Njau and team was amazing to work with. They did a great job not just on the design but on the communication and updates.",
   },
   {
     name: "James Hinton",
@@ -353,7 +353,7 @@ export const googleReviews = [
     initial: "J",
     color: "#166534",
     quote:
-      "I was really happy with the results from Webtec. The website looks professional and received positive feedback from our customers. The process was very simple.",
+      "I was really happy with the results from Lavender Marketing & Co.. The website looks professional and received positive feedback from our customers. The process was very simple.",
   },
   {
     name: "Christine Davis",
@@ -362,7 +362,7 @@ export const googleReviews = [
     initial: "C",
     color: "#b45309",
     quote:
-      "Working with Bilha and her team at Webtec was a positive experience overall. From the start, she took the time to understand our business, our audience, and what we needed the site to accomplish.",
+      "Working with Bilha and her team at Lavender Marketing & Co. was a positive experience overall. From the start, she took the time to understand our business, our audience, and what we needed the site to accomplish.",
   },
 ];
 

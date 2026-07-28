@@ -34,8 +34,8 @@ export function Header() {
         )}
       >
 
-        <Link to="/" className="shrink-0" aria-label="Webtec home">
-          <img src={LOGO} alt="Webtec" width={120} height={32} className="h-8 w-auto" />
+        <Link to="/" className="shrink-0" aria-label="Lavender Marketing & Co. home">
+          <img src={LOGO} alt="Lavender Marketing & Co." width={120} height={32} className="h-8 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">

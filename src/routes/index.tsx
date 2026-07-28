@@ -20,13 +20,13 @@ import { CountUp, Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Webtec | Website Redesign & SEO Services" },
+      { title: "Lavender Marketing & Co. | Website Redesign & SEO Services" },
       {
         name: "description",
         content:
           "Website redesign agency specializing in web redesign & SEO for small and medium-sized businesses. Get a free website demo before you decide.",
       },
-      { property: "og:title", content: "Webtec | Website Redesign & SEO Services" },
+      { property: "og:title", content: "Lavender Marketing & Co. | Website Redesign & SEO Services" },
       {
         property: "og:description",
         content:
@@ -107,7 +107,7 @@ function Index() {
             <div className="relative">
               <img
                 src={`${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`}
-                alt="Webtec intro video"
+                alt="Lavender Marketing & Co. intro video"
                 className="h-[20rem] w-full object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -147,7 +147,7 @@ function Index() {
               <span className="flex h-4 w-4 items-center justify-center rounded-sm bg-white text-[9px] font-bold text-black">
                 w
               </span>
-              <span className="text-sm font-semibold text-white">webtec</span>
+              <span className="text-sm font-semibold text-white">Lavender</span>
             </div>
           </div>
         </div>
