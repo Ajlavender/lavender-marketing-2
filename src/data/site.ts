@@ -1,6 +1,8 @@
+import logoAsset from "@/assets/lavender-logo.png.asset.json";
+
 export const MEDIA = "https://www.trywebtec.com/wp-content/uploads";
 
-export const LOGO = "/logo.png";
+export const LOGO = logoAsset.url;
 
 export const services = [
   {
