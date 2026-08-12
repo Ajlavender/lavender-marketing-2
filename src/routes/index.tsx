@@ -169,31 +169,29 @@ function Index() {
 
       <LogoStrip />
 
-      {/* Pain points */}
+      {/* Pain points — the four leak points */}
       <Section className="pt-28">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-start lg:gap-12">
           <Reveal from="left" className="lg:sticky lg:top-32">
-            <p className="max-w-sm text-base text-primary">
-              Our services rely on insights gained from 3000+ customers' data.
-            </p>
-            <h2 className="mt-4 max-w-md text-5xl font-bold leading-[1.1] sm:text-6xl">
-              Website Redesign so you <span className="text-primary">Thrive Online.</span>
+            <p className="max-w-sm text-base text-primary">The real issue</p>
+            <h2 className="mt-4 max-w-md text-4xl font-bold leading-[1.1] sm:text-5xl">
+              Most local businesses don&apos;t have a traffic problem. They have a{" "}
+              <span className="text-primary">follow-up and conversion problem.</span>
             </h2>
+            <p className="mt-6 max-w-md text-lg text-muted-foreground">
+              You can have great work, referrals and word of mouth. But if your website is weak,
+              your calls get missed, your follow-up is slow, or your reviews aren&apos;t being
+              captured, good leads quietly disappear.
+            </p>
             <div className="mt-10 flex flex-wrap items-center gap-6">
               <Button asChild size="lg">
-                <a
-                  href="https://calendly.com/webtec-website/free-webdesign-sketch"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Free Lead Boost Tips
-                </a>
+                <Link to="/contact">Get my free design</Link>
               </Button>
               <Link
-                to="/contact"
+                to="/pricing"
                 className="border-b border-primary pb-1 text-sm font-medium text-primary"
               >
-                Download CRO guide PDF
+                See the $297 plan
               </Link>
             </div>
           </Reveal>
@@ -202,17 +200,20 @@ function Index() {
         </div>
       </Section>
 
+      <SystemLoop />
+
       {/* Reviews */}
       <Section muted className="py-24">
         <Reveal>
           <p className="text-center text-base font-semibold text-foreground">
-            Ready To Find Your Digital Soulmate?
+            Rated by 50+ local business owners
           </p>
           <h2 className="mx-auto mt-4 max-w-4xl text-center text-4xl font-bold sm:text-5xl">
-            Our customers are raving about us like we're{" "}
-            <span className="text-primary">the latest viral TikTok dance.</span>
+            The review engine that turns happy customers into{" "}
+            <span className="text-primary">Google rankings.</span>
           </h2>
         </Reveal>
+
         <Reveal delay={120} className="mt-16">
           <RatingBar />
         </Reveal>
