@@ -110,7 +110,7 @@ function Index() {
             className="animate-scale-in overflow-hidden rounded-2xl bg-black shadow-[0_30px_80px_-40px_rgba(16,18,24,0.6)]">
             <div className="flex items-start justify-between gap-4 px-6 pb-4 pt-6">
               <p className="text-2xl font-bold text-white sm:text-[1.6rem]">
-                Up for a whole new experience? 🌹
+                What do you want to fix first? 🌿
               </p>
               <span aria-hidden="true" className="mt-1 text-xl text-white/70">
                 ✕
@@ -132,9 +132,9 @@ function Index() {
                 <p className="mb-3 text-center text-base text-white/80">Choose 1 of 3 options</p>
                 <div className="space-y-3">
                   {[
-                    ["A", "Free no-risk design sketch 👷"],
-                    ["B", "See past work 👀"],
-                    ["C", "I want to discuss my needs"],
+                    ["A", "Free website design 👷"],
+                    ["B", "More Google reviews ⭐"],
+                    ["C", "Stop missing calls 📱"],
                   ].map(([key, label], i) => (
                     <div
                       key={key}
@@ -153,8 +153,9 @@ function Index() {
               </div>
             </div>
             <p className="px-6 pb-4 pt-5 text-center text-lg text-white">
-              if you want to see what me and my team of experts
+              Pick one and we&apos;ll show you exactly how it works.
             </p>
+
             <div className="flex items-center justify-center gap-1.5 bg-[#1a1a1a] py-3">
               <span className="flex h-4 w-4 items-center justify-center rounded-sm bg-white text-[9px] font-bold text-black">
                 w
