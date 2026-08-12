@@ -303,6 +303,9 @@ function Index() {
         </div>
       </Section>
 
+      <CatchSection />
+
+
       {/* No strings attached */}
       <Section>
         <div className="grid items-center gap-14 lg:grid-cols-2">
