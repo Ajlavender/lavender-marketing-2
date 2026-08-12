@@ -239,27 +239,29 @@ function Index() {
             <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
               <div>
                 <p className="text-xl font-medium text-[#a78bfa]">
-                  The Quality of Marketing Giants At The Price of Freelancers.
+                  LM&amp;C sets it up. Scale Suite Pro keeps it running.
                 </p>
-                <h2 className="mt-3 text-5xl font-bold sm:text-6xl">Sexy And Affordable.</h2>
+                <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
+                  One system instead of five disconnected tools.
+                </h2>
                 <p className="mt-8 max-w-xl text-background/85">
-                  We're on a mission to be the coolest cats in the web game. We whip up website
-                  redesigns so sexy you'll want to marry them with services so affordable you can
-                  keep your second mortgage.
+                  Your calls, texts, forms, bookings, reviews and follow-up all live in one place.
+                  You see every lead, where it came from, and what happened next — without adding
+                  front-desk work.
                 </p>
-                <p className="mt-6 font-bold">The best part?</p>
+                <p className="mt-6 font-bold">Already have a decent website?</p>
                 <p className="mt-1 max-w-xl text-background/85">
-                  We make sure your site is a love magnet for customers who can't resist your charm.
-                  So if you're a small or mid-sized biz who wants to look good, get found, and rule
-                  the online jungle, we're your go-to team!
+                  Perfect. The review engine works on its own — more reviews, better local ranking,
+                  more calls. We&apos;ll set it up either way.
                 </p>
                 <p className="mt-6 text-background/85">
-                  Get a free website redesign by dropping your details below.
+                  Drop your details and we&apos;ll send your free design and review audit.
                 </p>
                 <div className="mt-6 max-w-xl">
                   <LeadForm variant="dark" fields="leadInline" submitLabel="go!" />
                 </div>
               </div>
+
               <div className="relative">
                 <img
                   src={`${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`}
