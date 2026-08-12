@@ -17,6 +17,10 @@ import { MEDIA, stats } from "@/data/site";
 import { PainPointCards } from "@/components/site/PainPointCards";
 import { CountUp, Reveal } from "@/components/site/Reveal";
 import { CatchSection } from "@/components/site/CatchSection";
+import { SystemLoop } from "@/components/site/SystemLoop";
+import { BuyerPaths } from "@/components/site/BuyerPaths";
+import { ValueStack } from "@/components/site/ValueStack";
+import { ComparisonTable } from "@/components/site/ComparisonTable";
 
 
 export const Route = createFileRoute("/")({
