@@ -26,19 +26,20 @@ import { ComparisonTable } from "@/components/site/ComparisonTable";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lavender Marketing & Co. | Website Redesign & SEO Services" },
+      { title: "Free Website Design + Review Engine | Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "Website redesign agency specializing in web redesign & SEO for small and medium-sized businesses. Get a free website demo before you decide.",
+          "We build local service businesses a new website for free. You only pay $297/mo if you like it — hosting, review engine, missed-call text-back and follow-up included.",
       },
-      { property: "og:title", content: "Lavender Marketing & Co. | Website Redesign & SEO Services" },
+      { property: "og:title", content: "Free Website Design + Review Engine | Lavender Marketing & Co." },
       {
         property: "og:description",
         content:
-          "Get a free website redesign demo before you decide. Web design, SEO and paid ads for small and mid-sized businesses.",
+          "Free website design for local businesses. $297/mo covers hosting, the Google review engine, missed-call text-back and follow-up. No contracts.",
       },
       { property: "og:url", content: "/" },
+
       {
         property: "og:image",
         content:
