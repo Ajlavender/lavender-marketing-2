@@ -16,6 +16,8 @@ import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
 import { MEDIA, stats } from "@/data/site";
 import { PainPointCards } from "@/components/site/PainPointCards";
 import { CountUp, Reveal } from "@/components/site/Reveal";
+import { CatchSection } from "@/components/site/CatchSection";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -68,8 +70,17 @@ function Index() {
             <h2
               style={{ animationDelay: "180ms", animationFillMode: "both" }}
               className="animate-fade-in mt-5 max-w-xl text-4xl font-bold leading-tight sm:text-[2.75rem]">
-              Get a <span className="text-primary">Free</span> Website Redesign Before You Decide
+              We build your new site <span className="text-primary">for free</span>. You only pay
+              $297/mo if you like it.
             </h2>
+            <p
+              style={{ animationDelay: "240ms", animationFillMode: "both" }}
+              className="animate-fade-in mt-5 max-w-xl text-lg text-muted-foreground"
+            >
+              No setup fee. No contract to see the design. Website, hosting, review engine and
+              missed-call text-back all included.
+            </p>
+
             <div
               className="animate-fade-in mt-10 max-w-xl"
               style={{ animationDelay: "300ms", animationFillMode: "both" }}
