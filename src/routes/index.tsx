@@ -279,11 +279,11 @@ function Index() {
       <Section>
         <Reveal>
           <p className="text-center text-base text-muted-foreground">
-            Do You Have Limited Time, Knowledge, and Budget?
+            Why this matters for a local business
           </p>
           <h2 className="mx-auto mt-4 max-w-4xl text-center text-4xl font-bold sm:text-5xl">
-            Many small businesses undervalue their website, leading to{" "}
-            <span className="text-primary">lost opportunities worth millions.</span>
+            Customers decide fast — and they call{" "}
+            <span className="text-primary">whoever answers first.</span>
           </h2>
         </Reveal>
         <div className="mx-auto mt-20 grid max-w-5xl gap-x-10 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
@@ -298,17 +298,15 @@ function Index() {
         </div>
 
         <Reveal as="h3" className="mx-auto mt-16 max-w-3xl text-center text-3xl font-bold sm:text-4xl">
-          We've analyzed thousands of websites to ensure this{" "}
-          <span className="text-primary">won't happen to you.</span>
+          We build the website and the system so this{" "}
+          <span className="text-primary">doesn&apos;t happen to you.</span>
         </Reveal>
       </Section>
 
       {/* Projects */}
       <Section muted>
         <Reveal>
-          <p className="text-lg font-semibold text-primary">
-            A Website Redesign Agency With A Black Belt In Style
-          </p>
+          <p className="text-lg font-semibold text-primary">Real websites we&apos;ve built</p>
           <h2 className="mt-3 text-5xl font-bold sm:text-6xl">Cutting-Edge Creations</h2>
         </Reveal>
         <Reveal delay={140} className="mt-14">
@@ -325,6 +323,9 @@ function Index() {
 
       <CatchSection />
 
+      <BuyerPaths />
+
+      <ValueStack />
 
       {/* No strings attached */}
       <Section>
@@ -339,20 +340,14 @@ function Index() {
           </Reveal>
           <Reveal from="right" delay={120}>
             <h2 className="text-4xl font-bold sm:text-5xl">
-              No Strings Attached. Seriously. <span className="text-primary">0% risk.</span>
+              No strings attached. Seriously. <span className="text-primary">0% risk.</span>
             </h2>
             <p className="mt-5 text-lg text-muted-foreground">
-              You will either love your new website redesign or don't pay a dime! You've got nothing
-              to lose.
+              We design the site first. You look at it. If you love it, it&apos;s $297 a month and
+              we launch it. If you don&apos;t, you walk away and it costs you nothing.
             </p>
             <Button asChild size="lg" className="mt-8">
-              <a
-                href="https://calendly.com/webtec-website/free-webdesign-sketch"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Free Lead Boost Tips
-              </a>
+              <Link to="/contact">Get my free design</Link>
             </Button>
           </Reveal>
         </div>
@@ -362,14 +357,16 @@ function Index() {
         </div>
       </Section>
 
+      <ComparisonTable />
+
       {/* Testimonials */}
-      <Section muted className="py-24">
+      <Section className="py-24">
         <Reveal>
           <p className="text-center text-lg text-foreground">
-            Our Experience Is <span className="text-primary">Your Advantage.</span>
+            Straight from <span className="text-primary">local owners.</span>
           </p>
           <h2 className="mt-3 text-center text-5xl font-bold text-[#1f2150] sm:text-6xl">
-            Join Thousands Of Happy Customers
+            What clients say after launch
           </h2>
         </Reveal>
         <Reveal delay={140} className="mt-14">
@@ -380,5 +377,6 @@ function Index() {
 
       <CtaBand />
     </>
+
   );
 }
