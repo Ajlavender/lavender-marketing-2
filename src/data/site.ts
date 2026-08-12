@@ -75,42 +75,43 @@ export const nav = [
 
 export const painPoints = [
   {
-    title: "My website isn't generating enough leads",
-    body: "Don't leave your website redesign to chance – let us create a free demo design with suggestions to get you more leads! You'll love what you see.",
+    title: "Visitors leave without calling",
+    body: "Your site looks fine — but the next step isn't obvious, so they bounce and call someone else.",
     image: `${MEDIA}/2023/02/businessman-launching-startup-1024x1024.png`,
   },
   {
-    title: "I'm unsure who to hire to fix my online presence",
-    body: "We have hundreds of 5-star reviews. We book 250 meetings for our sales team every month with Ads, SEO, and good conversion rates. We let you try us out for free. Don't decide on emotion, decide on data.",
+    title: "Missed calls turn into missed jobs",
+    body: "If nobody texts back fast, that customer is already calling the next listing. Missed-call text-back fixes it automatically.",
     image: `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
   },
   {
-    title: "My website isn't getting enough traffic",
-    body: "Our high-quality SEO gives you the most bang for the buck. We cut the fluff for maximum impact. We call it Smart SEO.",
+    title: "Reviews aren't collected consistently",
+    body: "Happy customers forget to leave one. Your reputation stops compounding and your ranking slides.",
     image: `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
   },
   {
-    title: "My marketing and sales data are disconnected",
-    body: "Our digital advertising is like a shot of espresso for your brand – it'll give you the energy and buzz to power through the competition.",
+    title: "Leads fall through the cracks",
+    body: "The first message goes unanswered, follow-up never happens, and a good lead quietly goes cold.",
     image: `${MEDIA}/2023/03/boy-doing-social-media-marketing-1024x1024.png`,
   },
 ];
 
 export const stats = [
-  { value: "88", suffix: "%", label: "of online consumers are less likely to return to a site after a bad experience" },
-  { value: "75", suffix: "%", label: "of consumers admit to making judgements on a company's credibility based on the company's website design" },
-  { value: "61", suffix: "%", label: "of users are unlikely to return to a site on mobile if they had trouble accessing it and 40% visit a competitor's site instead" },
-  { value: "8", suffix: "/10", label: "customers would stop engaging with content that doesn't display well on their device" },
-  { value: "94", suffix: "%", label: "of negative website feedback was design related" },
+  { value: "88", suffix: "%", label: "of people won't come back to a business's website after one bad experience" },
+  { value: "75", suffix: "%", label: "judge how trustworthy a business is purely on its website" },
+  { value: "60", suffix: "%", label: "of customers won't call back after a missed call — they call the next business" },
+  { value: "9", suffix: "/10", label: "customers read reviews before choosing a local business" },
+  { value: "5", suffix: "min", label: "is the window to respond before a lead's interest drops off a cliff" },
 ];
 
 
 export const counters = [
-  { value: "8", label: "Years Of Wizardry" },
-  { value: "100", label: "Rockstars" },
-  { value: "3,000", suffix: "+", label: "Customers" },
-  { value: "13", label: "Countries" },
+  { value: "50", suffix: "+", label: "Local Owners Served" },
+  { value: "48", suffix: "hr", label: "Report Turnaround" },
+  { value: "14", label: "Days To Launch" },
+  { value: "0", label: "Long-Term Contracts" },
 ];
+
 
 export const projects = [
   {
