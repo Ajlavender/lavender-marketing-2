@@ -59,34 +59,35 @@ function Index() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-2 lg:px-8 lg:pb-24 lg:pt-36">
           <div className="relative animate-fade-in">
             <p className="mb-4 text-base text-muted-foreground">
-              Web Development, SEO &amp; Paid Ads Agency
+              Free website design + automated review engine
             </p>
             <h1
-              className="animate-fade-in text-6xl font-bold tracking-tight sm:text-7xl"
+              className="animate-fade-in text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl"
               style={{ animationDelay: "80ms", animationFillMode: "both" }}
             >
-              Website Redesign
+              We build your new website <span className="text-primary">for free.</span>
             </h1>
             <h2
               style={{ animationDelay: "180ms", animationFillMode: "both" }}
-              className="animate-fade-in mt-5 max-w-xl text-4xl font-bold leading-tight sm:text-[2.75rem]">
-              We build your new site <span className="text-primary">for free</span>. You only pay
-              $297/mo if you like it.
+              className="animate-fade-in mt-5 max-w-xl text-3xl font-bold leading-tight sm:text-[2.25rem]">
+              You only pay $297/mo if you like it.
             </h2>
             <p
               style={{ animationDelay: "240ms", animationFillMode: "both" }}
               className="animate-fade-in mt-5 max-w-xl text-lg text-muted-foreground"
             >
-              No setup fee. No contract to see the design. Website, hosting, review engine and
-              missed-call text-back all included.
+              Built for local service businesses. The $297 covers hosting, the review engine that
+              keeps you #1 on Google, missed-call text-back and follow-up. No setup fee, no
+              contract, no paying before you see the design.
             </p>
 
             <div
               className="animate-fade-in mt-10 max-w-xl"
               style={{ animationDelay: "300ms", animationFillMode: "both" }}
             >
-              <LeadForm submitLabel="Book Free Consultation" />
+              <LeadForm submitLabel="Get My Free Website Design" />
             </div>
+
             {/* curved connector line to the video card */}
             <svg
               aria-hidden="true"
