@@ -1,0 +1,102 @@
+import { Check, Minus } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
+import { Reveal } from "@/components/site/Reveal";
+import { cn } from "@/lib/utils";
+
+const columns = [
+  {
+    label: "Option 01",
+    title: "DIY website builders",
+    rows: [
+      { text: "Looks okay", ok: false },
+      { text: "No follow-up system", ok: false },
+      { text: "No customer database", ok: false },
+      { text: "No automations", ok: false },
+      { text: "You still chase every lead by hand", ok: false },
+    ],
+  },
+  {
+    label: "Option 02",
+    title: "Generic agencies",
+    rows: [
+      { text: "Expensive upfront builds", ok: false },
+      { text: "Slow turnaround", ok: false },
+      { text: "Nothing running behind the site", ok: false },
+      { text: "Hard to get changes made", ok: false },
+      { text: "Focused only on design", ok: false },
+    ],
+  },
+  {
+    label: "Option 03",
+    title: "Lavender Marketing & Co.",
+    highlight: true,
+    rows: [
+      { text: "Free website design, built before you pay", ok: true },
+      { text: "Every lead, call and message in one inbox", ok: true },
+      { text: "Missed-call text-back", ok: true },
+      { text: "Review engine and booking flows", ok: true },
+      { text: "Automatic follow-up so leads don't go cold", ok: true },
+    ],
+  },
+];
+
+export function ComparisonTable() {
+  return (
+    <section className="bg-secondary py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <p className="text-center text-base font-semibold text-primary">Compare</p>
+          <h2 className="mx-auto mt-3 max-w-3xl text-center text-4xl font-bold sm:text-5xl">
+            Not another software login you forget about.
+          </h2>
+        </Reveal>
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {columns.map((col, i) => (
+            <Reveal key={col.title} delay={i * 120} scale>
+              <div
+                className={cn(
+                  "h-full rounded-3xl p-8 transition-transform duration-300 sm:p-10",
+                  col.highlight
+                    ? "bg-[linear-gradient(150deg,#1d1f4a_0%,#2a2352_45%,#6d33d6_100%)] text-background shadow-[0_36px_80px_-40px_rgba(109,51,214,0.7)] lg:-translate-y-3"
+                    : "bg-card shadow-[0_24px_60px_-40px_rgba(31,33,80,0.4)]",
+                )}
+              >
+                <p
+                  className={cn(
+                    "text-sm font-semibold uppercase tracking-wide",
+                    col.highlight ? "text-[#c4b5fd]" : "text-muted-foreground",
+                  )}
+                >
+                  {col.label}
+                </p>
+                <h3 className="mt-2 text-2xl font-bold">{col.title}</h3>
+                <ul className="mt-8 space-y-4">
+                  {col.rows.map((row) => (
+                    <li key={row.text} className="flex gap-3 text-base">
+                      {row.ok ? (
+                        <Check className="mt-1 h-5 w-5 shrink-0 text-[#a78bfa]" />
+                      ) : (
+                        <Minus className="mt-1 h-5 w-5 shrink-0 text-muted-foreground/60" />
+                      )}
+                      <span className={col.highlight ? "text-background/85" : "text-muted-foreground"}>
+                        {row.text}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={200} className="mt-12 text-center">
+          <Button asChild size="lg" className="px-10">
+            <Link to="/contact">Start with the free design</Link>
+          </Button>
+        </Reveal>
+      </div>
+    </section>
+  );
+}

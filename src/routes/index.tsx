@@ -17,24 +17,29 @@ import { MEDIA, stats } from "@/data/site";
 import { PainPointCards } from "@/components/site/PainPointCards";
 import { CountUp, Reveal } from "@/components/site/Reveal";
 import { CatchSection } from "@/components/site/CatchSection";
+import { SystemLoop } from "@/components/site/SystemLoop";
+import { BuyerPaths } from "@/components/site/BuyerPaths";
+import { ValueStack } from "@/components/site/ValueStack";
+import { ComparisonTable } from "@/components/site/ComparisonTable";
 
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lavender Marketing & Co. | Website Redesign & SEO Services" },
+      { title: "Free Website Design + Review Engine | Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "Website redesign agency specializing in web redesign & SEO for small and medium-sized businesses. Get a free website demo before you decide.",
+          "We build local service businesses a new website for free. You only pay $297/mo if you like it — hosting, review engine, missed-call text-back and follow-up included.",
       },
-      { property: "og:title", content: "Lavender Marketing & Co. | Website Redesign & SEO Services" },
+      { property: "og:title", content: "Free Website Design + Review Engine | Lavender Marketing & Co." },
       {
         property: "og:description",
         content:
-          "Get a free website redesign demo before you decide. Web design, SEO and paid ads for small and mid-sized businesses.",
+          "Free website design for local businesses. $297/mo covers hosting, the Google review engine, missed-call text-back and follow-up. No contracts.",
       },
       { property: "og:url", content: "/" },
+
       {
         property: "og:image",
         content:
@@ -59,34 +64,35 @@ function Index() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-2 lg:px-8 lg:pb-24 lg:pt-36">
           <div className="relative animate-fade-in">
             <p className="mb-4 text-base text-muted-foreground">
-              Web Development, SEO &amp; Paid Ads Agency
+              Free website design + automated review engine
             </p>
             <h1
-              className="animate-fade-in text-6xl font-bold tracking-tight sm:text-7xl"
+              className="animate-fade-in text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl"
               style={{ animationDelay: "80ms", animationFillMode: "both" }}
             >
-              Website Redesign
+              We build your new website <span className="text-primary">for free.</span>
             </h1>
             <h2
               style={{ animationDelay: "180ms", animationFillMode: "both" }}
-              className="animate-fade-in mt-5 max-w-xl text-4xl font-bold leading-tight sm:text-[2.75rem]">
-              We build your new site <span className="text-primary">for free</span>. You only pay
-              $297/mo if you like it.
+              className="animate-fade-in mt-5 max-w-xl text-3xl font-bold leading-tight sm:text-[2.25rem]">
+              You only pay $297/mo if you like it.
             </h2>
             <p
               style={{ animationDelay: "240ms", animationFillMode: "both" }}
               className="animate-fade-in mt-5 max-w-xl text-lg text-muted-foreground"
             >
-              No setup fee. No contract to see the design. Website, hosting, review engine and
-              missed-call text-back all included.
+              Built for local service businesses. The $297 covers hosting, the review engine that
+              keeps you #1 on Google, missed-call text-back and follow-up. No setup fee, no
+              contract, no paying before you see the design.
             </p>
 
             <div
               className="animate-fade-in mt-10 max-w-xl"
               style={{ animationDelay: "300ms", animationFillMode: "both" }}
             >
-              <LeadForm submitLabel="Book Free Consultation" />
+              <LeadForm submitLabel="Get My Free Website Design" />
             </div>
+
             {/* curved connector line to the video card */}
             <svg
               aria-hidden="true"
@@ -109,7 +115,7 @@ function Index() {
             className="animate-scale-in overflow-hidden rounded-2xl bg-black shadow-[0_30px_80px_-40px_rgba(16,18,24,0.6)]">
             <div className="flex items-start justify-between gap-4 px-6 pb-4 pt-6">
               <p className="text-2xl font-bold text-white sm:text-[1.6rem]">
-                Up for a whole new experience? 🌹
+                What do you want to fix first? 🌿
               </p>
               <span aria-hidden="true" className="mt-1 text-xl text-white/70">
                 ✕
@@ -131,9 +137,9 @@ function Index() {
                 <p className="mb-3 text-center text-base text-white/80">Choose 1 of 3 options</p>
                 <div className="space-y-3">
                   {[
-                    ["A", "Free no-risk design sketch 👷"],
-                    ["B", "See past work 👀"],
-                    ["C", "I want to discuss my needs"],
+                    ["A", "Free website design 👷"],
+                    ["B", "More Google reviews ⭐"],
+                    ["C", "Stop missing calls 📱"],
                   ].map(([key, label], i) => (
                     <div
                       key={key}
@@ -152,8 +158,9 @@ function Index() {
               </div>
             </div>
             <p className="px-6 pb-4 pt-5 text-center text-lg text-white">
-              if you want to see what me and my team of experts
+              Pick one and we&apos;ll show you exactly how it works.
             </p>
+
             <div className="flex items-center justify-center gap-1.5 bg-[#1a1a1a] py-3">
               <span className="flex h-4 w-4 items-center justify-center rounded-sm bg-white text-[9px] font-bold text-black">
                 w
@@ -167,31 +174,29 @@ function Index() {
 
       <LogoStrip />
 
-      {/* Pain points */}
+      {/* Pain points — the four leak points */}
       <Section className="pt-28">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-start lg:gap-12">
           <Reveal from="left" className="lg:sticky lg:top-32">
-            <p className="max-w-sm text-base text-primary">
-              Our services rely on insights gained from 3000+ customers' data.
-            </p>
-            <h2 className="mt-4 max-w-md text-5xl font-bold leading-[1.1] sm:text-6xl">
-              Website Redesign so you <span className="text-primary">Thrive Online.</span>
+            <p className="max-w-sm text-base text-primary">The real issue</p>
+            <h2 className="mt-4 max-w-md text-4xl font-bold leading-[1.1] sm:text-5xl">
+              Most local businesses don&apos;t have a traffic problem. They have a{" "}
+              <span className="text-primary">follow-up and conversion problem.</span>
             </h2>
+            <p className="mt-6 max-w-md text-lg text-muted-foreground">
+              You can have great work, referrals and word of mouth. But if your website is weak,
+              your calls get missed, your follow-up is slow, or your reviews aren&apos;t being
+              captured, good leads quietly disappear.
+            </p>
             <div className="mt-10 flex flex-wrap items-center gap-6">
               <Button asChild size="lg">
-                <a
-                  href="https://calendly.com/webtec-website/free-webdesign-sketch"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Free Lead Boost Tips
-                </a>
+                <Link to="/contact">Get my free design</Link>
               </Button>
               <Link
-                to="/contact"
+                to="/pricing"
                 className="border-b border-primary pb-1 text-sm font-medium text-primary"
               >
-                Download CRO guide PDF
+                See the $297 plan
               </Link>
             </div>
           </Reveal>
@@ -200,17 +205,20 @@ function Index() {
         </div>
       </Section>
 
+      <SystemLoop />
+
       {/* Reviews */}
       <Section muted className="py-24">
         <Reveal>
           <p className="text-center text-base font-semibold text-foreground">
-            Ready To Find Your Digital Soulmate?
+            Rated by 50+ local business owners
           </p>
           <h2 className="mx-auto mt-4 max-w-4xl text-center text-4xl font-bold sm:text-5xl">
-            Our customers are raving about us like we're{" "}
-            <span className="text-primary">the latest viral TikTok dance.</span>
+            The review engine that turns happy customers into{" "}
+            <span className="text-primary">Google rankings.</span>
           </h2>
         </Reveal>
+
         <Reveal delay={120} className="mt-16">
           <RatingBar />
         </Reveal>
@@ -232,27 +240,29 @@ function Index() {
             <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
               <div>
                 <p className="text-xl font-medium text-[#a78bfa]">
-                  The Quality of Marketing Giants At The Price of Freelancers.
+                  LM&amp;C sets it up. Scale Suite Pro keeps it running.
                 </p>
-                <h2 className="mt-3 text-5xl font-bold sm:text-6xl">Sexy And Affordable.</h2>
+                <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
+                  One system instead of five disconnected tools.
+                </h2>
                 <p className="mt-8 max-w-xl text-background/85">
-                  We're on a mission to be the coolest cats in the web game. We whip up website
-                  redesigns so sexy you'll want to marry them with services so affordable you can
-                  keep your second mortgage.
+                  Your calls, texts, forms, bookings, reviews and follow-up all live in one place.
+                  You see every lead, where it came from, and what happened next — without adding
+                  front-desk work.
                 </p>
-                <p className="mt-6 font-bold">The best part?</p>
+                <p className="mt-6 font-bold">Already have a decent website?</p>
                 <p className="mt-1 max-w-xl text-background/85">
-                  We make sure your site is a love magnet for customers who can't resist your charm.
-                  So if you're a small or mid-sized biz who wants to look good, get found, and rule
-                  the online jungle, we're your go-to team!
+                  Perfect. The review engine works on its own — more reviews, better local ranking,
+                  more calls. We&apos;ll set it up either way.
                 </p>
                 <p className="mt-6 text-background/85">
-                  Get a free website redesign by dropping your details below.
+                  Drop your details and we&apos;ll send your free design and review audit.
                 </p>
                 <div className="mt-6 max-w-xl">
                   <LeadForm variant="dark" fields="leadInline" submitLabel="go!" />
                 </div>
               </div>
+
               <div className="relative">
                 <img
                   src={`${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`}
@@ -270,11 +280,11 @@ function Index() {
       <Section>
         <Reveal>
           <p className="text-center text-base text-muted-foreground">
-            Do You Have Limited Time, Knowledge, and Budget?
+            Why this matters for a local business
           </p>
           <h2 className="mx-auto mt-4 max-w-4xl text-center text-4xl font-bold sm:text-5xl">
-            Many small businesses undervalue their website, leading to{" "}
-            <span className="text-primary">lost opportunities worth millions.</span>
+            Customers decide fast — and they call{" "}
+            <span className="text-primary">whoever answers first.</span>
           </h2>
         </Reveal>
         <div className="mx-auto mt-20 grid max-w-5xl gap-x-10 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
@@ -289,17 +299,15 @@ function Index() {
         </div>
 
         <Reveal as="h3" className="mx-auto mt-16 max-w-3xl text-center text-3xl font-bold sm:text-4xl">
-          We've analyzed thousands of websites to ensure this{" "}
-          <span className="text-primary">won't happen to you.</span>
+          We build the website and the system so this{" "}
+          <span className="text-primary">doesn&apos;t happen to you.</span>
         </Reveal>
       </Section>
 
       {/* Projects */}
       <Section muted>
         <Reveal>
-          <p className="text-lg font-semibold text-primary">
-            A Website Redesign Agency With A Black Belt In Style
-          </p>
+          <p className="text-lg font-semibold text-primary">Real websites we&apos;ve built</p>
           <h2 className="mt-3 text-5xl font-bold sm:text-6xl">Cutting-Edge Creations</h2>
         </Reveal>
         <Reveal delay={140} className="mt-14">
@@ -316,6 +324,9 @@ function Index() {
 
       <CatchSection />
 
+      <BuyerPaths />
+
+      <ValueStack />
 
       {/* No strings attached */}
       <Section>
@@ -330,20 +341,14 @@ function Index() {
           </Reveal>
           <Reveal from="right" delay={120}>
             <h2 className="text-4xl font-bold sm:text-5xl">
-              No Strings Attached. Seriously. <span className="text-primary">0% risk.</span>
+              No strings attached. Seriously. <span className="text-primary">0% risk.</span>
             </h2>
             <p className="mt-5 text-lg text-muted-foreground">
-              You will either love your new website redesign or don't pay a dime! You've got nothing
-              to lose.
+              We design the site first. You look at it. If you love it, it&apos;s $297 a month and
+              we launch it. If you don&apos;t, you walk away and it costs you nothing.
             </p>
             <Button asChild size="lg" className="mt-8">
-              <a
-                href="https://calendly.com/webtec-website/free-webdesign-sketch"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Free Lead Boost Tips
-              </a>
+              <Link to="/contact">Get my free design</Link>
             </Button>
           </Reveal>
         </div>
@@ -353,14 +358,16 @@ function Index() {
         </div>
       </Section>
 
+      <ComparisonTable />
+
       {/* Testimonials */}
-      <Section muted className="py-24">
+      <Section className="py-24">
         <Reveal>
           <p className="text-center text-lg text-foreground">
-            Our Experience Is <span className="text-primary">Your Advantage.</span>
+            Straight from <span className="text-primary">local owners.</span>
           </p>
           <h2 className="mt-3 text-center text-5xl font-bold text-[#1f2150] sm:text-6xl">
-            Join Thousands Of Happy Customers
+            What clients say after launch
           </h2>
         </Reveal>
         <Reveal delay={140} className="mt-14">
@@ -371,5 +378,6 @@ function Index() {
 
       <CtaBand />
     </>
+
   );
 }
