@@ -58,6 +58,38 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+  const [showPiP, setShowPiP] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowPiP(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !muted;
+      setMuted(!muted);
+    }
+  };
+
+  const togglePiP = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+    try {
+      if (document.pictureInPictureElement) {
+        await document.exitPictureInPicture();
+      } else {
+        await video.requestPictureInPicture();
+      }
+    } catch (e) {
+      console.error("PiP failed", e);
+    }
+  };
+
   return (
     <>
       {/* Hero */}
