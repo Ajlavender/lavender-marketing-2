@@ -209,15 +209,24 @@ function Index() {
             className="animate-scale-in relative overflow-hidden rounded-2xl bg-black shadow-[0_30px_80px_-40px_rgba(16,18,24,0.6)]">
             <video
               ref={videoRef}
-              src="https://assets.cdn.filesafe.space/LgG7iv4Yd7mh0USORTBt/media/6a7d44f562e9a426c0c5f1dd.mp4"
-              poster={`${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`}
+              poster={HERO_POSTER}
+              width={1280}
+              height={720}
               autoPlay
               muted={muted}
               loop
               playsInline
               controls
-              className="h-full w-full object-cover"
-            />
+              preload="metadata"
+              onCanPlay={() => {
+                setCanPlay(true);
+                videoRef.current?.play().catch(() => {});
+              }}
+              className="aspect-video h-full w-full object-cover"
+            >
+              {videoSrc && <source src={videoSrc} type="video/mp4" />}
+            </video>
+
 
             {/* Click-to-unmute overlay */}
             {muted && (
