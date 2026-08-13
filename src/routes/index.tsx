@@ -106,6 +106,11 @@ function Index() {
     return () => io.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (videoSrc) videoRef.current?.load();
+  }, [videoSrc]);
+
+
 
 
   useEffect(() => {
@@ -229,7 +234,7 @@ function Index() {
 
 
             {/* Click-to-unmute overlay */}
-            {muted && (
+            {muted && canPlay && (
               <button
                 type="button"
                 onClick={toggleMute}
