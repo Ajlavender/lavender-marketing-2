@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, PictureInPicture2, Volume2, VolumeX } from "lucide-react";
+import { ArrowRight, PictureInPicture, PictureInPicture2, Volume2, VolumeX } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/site/LeadForm";
@@ -61,12 +61,27 @@ function Index() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
   const [showPiP, setShowPiP] = useState(false);
+  const [isPiP, setIsPiP] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setShowPiP(window.scrollY > 400);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+
+    const video = videoRef.current;
+    const onEnter = () => setIsPiP(true);
+    const onLeave = () => setIsPiP(false);
+    if (video) {
+      video.addEventListener("enterpictureinpicture", onEnter);
+      video.addEventListener("leavepictureinpicture", onLeave);
+    }
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (video) {
+        video.removeEventListener("enterpictureinpicture", onEnter);
+        video.removeEventListener("leavepictureinpicture", onLeave);
+      }
+    };
   }, []);
 
   const toggleMute = () => {
@@ -218,12 +233,29 @@ function Index() {
               type="button"
               onClick={togglePiP}
               className={cn(
-                "absolute bottom-3 right-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-sm transition-all hover:bg-black/80",
-                showPiP ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0",
+                "group absolute bottom-3 right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full text-white backdrop-blur-md shadow-lg ring-1 transition-all duration-300 ease-out",
+                "bg-black/70 ring-white/10 hover:scale-110 hover:bg-black/85 hover:shadow-[0_0_30px_-8px_rgba(255,255,255,0.35)] hover:ring-white/25",
+                "active:scale-95",
+                showPiP ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0",
+                isPiP && "bg-brand/90 ring-brand-glow/50 shadow-[0_0_30px_-8px_color-mix(in_oklab,var(--brand)_45%,transparent)]",
               )}
-              aria-label="Toggle picture-in-picture"
+              aria-label={isPiP ? "Close picture-in-picture" : "Open picture-in-picture"}
+              title={isPiP ? "Close picture-in-picture" : "Open picture-in-picture"}
             >
-              <PictureInPicture2 className="h-5 w-5" />
+              <span className="relative flex items-center justify-center">
+                {isPiP ? (
+                  <PictureInPicture className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                ) : (
+                  <PictureInPicture2 className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                )}
+                {/* active status dot */}
+                <span
+                  className={cn(
+                    "absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-brand-glow transition-all duration-300",
+                    isPiP ? "scale-100 opacity-100 shadow-[0_0_8px_2px_color-mix(in_oklab,var(--brand-glow)_70%,transparent)]" : "scale-0 opacity-0",
+                  )}
+                />
+              </span>
             </button>
           </div>
         </div>
