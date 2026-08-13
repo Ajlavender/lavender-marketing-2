@@ -46,7 +46,7 @@ export function ValueStack() {
         <div className="mt-14 grid gap-4">
           {items.map((item, i) => (
             <Reveal key={item.title} delay={i * 80}>
-              <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-card px-7 py-6 shadow-[0_18px_50px_-40px_rgba(31,33,80,0.5)]">
+              <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-primary/10 bg-card/90 px-7 py-6 shadow-[0_18px_50px_-40px_rgba(31,33,80,0.5)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_26px_60px_-34px_rgba(109,51,214,0.45)]">
                 <div className="flex min-w-0 gap-4">
                   <Check className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <div>

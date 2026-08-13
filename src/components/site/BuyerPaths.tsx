@@ -48,7 +48,7 @@ export function BuyerPaths() {
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
           {paths.map((p, i) => (
             <Reveal key={p.label} from={i === 0 ? "left" : "right"} delay={i * 120}>
-              <div className="flex h-full flex-col rounded-3xl bg-card p-8 shadow-[0_28px_70px_-45px_rgba(31,33,80,0.5)] sm:p-10">
+              <div className="flex h-full flex-col rounded-3xl border border-primary/10 bg-card p-8 shadow-[0_28px_70px_-45px_rgba(31,33,80,0.5)] transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/25 hover:shadow-[0_36px_80px_-40px_rgba(109,51,214,0.45)] sm:p-10">
                 <img
                   src={p.image}
                   alt=""
