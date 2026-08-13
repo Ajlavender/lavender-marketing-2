@@ -28,7 +28,7 @@ export function Header() {
       className={cn(
         "fixed top-0 z-50 w-full transition-[background-color,box-shadow,border-color,backdrop-filter] duration-500 ease-out",
         frosted
-          ? "border-b border-border/60 bg-background/70 shadow-[0_8px_30px_-18px_rgba(16,18,24,0.35)] backdrop-blur-xl backdrop-saturate-150"
+          ? "border-b border-border/60 bg-background/90 shadow-[0_8px_30px_-18px_rgba(16,18,24,0.35)] backdrop-blur-xl backdrop-saturate-150"
           : "border-b border-transparent bg-transparent",
       )}
     >
