@@ -67,7 +67,21 @@ function Index() {
     const onScroll = () => setShowPiP(window.scrollY > 400);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+
+    const video = videoRef.current;
+    const onEnter = () => setIsPiP(true);
+    const onLeave = () => setIsPiP(false);
+    if (video) {
+      video.addEventListener("enterpictureinpicture", onEnter);
+      video.addEventListener("leavepictureinpicture", onLeave);
+    }
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (video) {
+        video.removeEventListener("enterpictureinpicture", onEnter);
+        video.removeEventListener("leavepictureinpicture", onLeave);
+      }
+    };
   }, []);
 
   const toggleMute = () => {
