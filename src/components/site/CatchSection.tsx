@@ -192,7 +192,11 @@ export function CatchSection() {
         <Reveal delay={120} className="mt-12">
           <ul className="grid gap-3">
             {included.map((item) => (
-              <StackRow key={item.title} item={item} />
+              <ExpandCard
+                key={item.title}
+                item={item}
+                icon={<Check className="h-5 w-5" />}
+              />
             ))}
           </ul>
         </Reveal>
