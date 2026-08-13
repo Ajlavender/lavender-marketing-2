@@ -88,7 +88,7 @@ export const painPoints = [
   {
     title: "Reviews aren't collected consistently",
     body: "Happy customers forget to leave one. Your reputation stops compounding and your ranking slides.",
-    image: CLAY.seo,
+    image: CLAY.reviews,
   },
   {
     title: "Leads fall through the cracks",
