@@ -52,10 +52,24 @@ export const Route = createFileRoute("/")({
           "https://www.trywebtec.com/wp-content/uploads/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      { rel: "preconnect", href: "https://assets.cdn.filesafe.space", crossOrigin: "anonymous" },
+      { rel: "dns-prefetch", href: "https://assets.cdn.filesafe.space" },
+      {
+        rel: "preload",
+        as: "image",
+        href: HERO_POSTER,
+        fetchpriority: "high",
+      },
+    ],
   }),
   component: Index,
 });
+
+const HERO_VIDEO =
+  "https://assets.cdn.filesafe.space/LgG7iv4Yd7mh0USORTBt/media/6a7d44f562e9a426c0c5f1dd.mp4";
+
 
 function Index() {
   const videoRef = useRef<HTMLVideoElement>(null);
