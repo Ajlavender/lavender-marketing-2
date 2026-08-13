@@ -185,7 +185,7 @@ export function CatchSection() {
             we build it, host it and run the whole system that brings you customers.
           </p>
           <p className="mt-4 text-center text-sm font-medium text-primary">
-            Hover any line to see what it actually does for your business.
+            Tap or hover any line to see what it actually does for your business.
           </p>
         </Reveal>
 
