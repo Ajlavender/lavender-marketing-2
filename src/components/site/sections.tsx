@@ -11,8 +11,8 @@ import {
 } from "@/components/ui/accordion";
 import { LeadForm } from "./LeadForm";
 import { CountUp, Reveal } from "./Reveal";
-import {
 import { CLAY } from "@/data/clay";
+import {
   MEDIA,
   clientLogos,
   counters,
