@@ -164,14 +164,39 @@ function Index() {
               <button
                 type="button"
                 onClick={toggleMute}
-                className="absolute inset-0 z-10 flex cursor-pointer items-center justify-center bg-black/25 transition hover:bg-black/35"
+                className="group absolute inset-0 z-10 flex cursor-pointer flex-col items-center justify-center bg-black/30 transition duration-500 hover:bg-black/40"
                 aria-label="Unmute video"
               >
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 ring-1 ring-white/40 backdrop-blur-md transition group-hover:scale-105">
-                  <VolumeX className="h-7 w-7 text-white" />
+                {/* animated rings */}
+                <span className="absolute h-24 w-24 rounded-full bg-white/10 animate-pulse-ring" />
+                <span
+                  className="absolute h-24 w-24 rounded-full bg-white/10 animate-pulse-ring"
+                  style={{ animationDelay: "0.8s" }}
+                />
+                <span className="absolute h-32 w-32 rounded-full bg-white/5 animate-pulse-ring" />
+
+                {/* glass icon button */}
+                <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30 backdrop-blur-xl shadow-[0_0_40px_-10px_rgba(255,255,255,0.25)] transition duration-500 group-hover:scale-110 group-hover:bg-white/25 group-hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.4)]">
+                  <VolumeX className="relative z-10 h-8 w-8 text-white transition-transform duration-500 group-hover:scale-110" />
                 </span>
-                <span className="absolute bottom-5 left-0 right-0 text-center text-sm font-semibold text-white drop-shadow">
-                  Click to unmute
+
+                {/* sound wave bars */}
+                <span className="mt-6 flex h-5 items-end gap-1">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <span
+                      key={i}
+                      className="w-1 rounded-full bg-white/80 animate-sound-bar origin-bottom"
+                      style={{
+                        height: "100%",
+                        animationDelay: `${i * 0.12}s`,
+                      }}
+                    />
+                  ))}
+                </span>
+
+                {/* label */}
+                <span className="mt-5 text-center font-[family-name:var(--font-display)] text-sm font-semibold tracking-[0.16em] text-white/95 uppercase drop-shadow-lg">
+                  Tap to unmute
                 </span>
               </button>
             )}
