@@ -17,7 +17,14 @@ export function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-nav-plum shadow-[0_8px_30px_-18px_rgba(16,18,24,0.45)]">
+    <header
+      className={cn(
+        "fixed top-0 z-50 w-full transition-all duration-500 ease-out",
+        scrolled
+          ? "translate-y-0 border-b border-white/10 bg-nav-plum shadow-[0_8px_30px_-18px_rgba(16,18,24,0.45)] backdrop-blur-xl"
+          : "border-b border-transparent bg-transparent shadow-none",
+      )}
+    >
       <div
         className={cn(
           "mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 transition-[height] duration-500 ease-out sm:px-6 lg:px-8",
