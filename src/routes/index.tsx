@@ -123,9 +123,13 @@ function Index() {
               </span>
             </div>
             <div className="relative">
-              <img
-                src={`${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`}
-                alt="Lavender Marketing & Co. intro video"
+              <video
+                src="https://assets.cdn.filesafe.space/LgG7iv4Yd7mh0USORTBt/media/6a7d44f562e9a426c0c5f1dd.mp4"
+                poster={`${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`}
+                autoPlay
+                muted
+                loop
+                playsInline
                 className="h-[20rem] w-full object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center">
