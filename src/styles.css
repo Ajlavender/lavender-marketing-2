@@ -189,6 +189,8 @@
   --color-ink: var(--ink);
   --color-orange: var(--orange);
   --color-orange-foreground: var(--orange-foreground);
+  --color-nav-plum: var(--nav-plum);
+  --color-nav-plum-foreground: var(--nav-plum-foreground);
 }
 
 @utility bg-gradient-brand {
