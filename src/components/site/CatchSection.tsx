@@ -176,10 +176,10 @@ function ExpandCard({
 
 export function CatchSection() {
   return (
-    <section className="bg-secondary py-24">
+    <section className="section-wash py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <p className="text-center text-base font-semibold text-primary">
+        <Reveal className="flex flex-col items-center">
+          <p className="rail-eyebrow text-primary">
             Let&apos;s get the awkward part out of the way
           </p>
           <h2 className="mx-auto mt-3 max-w-3xl text-center text-4xl font-bold sm:text-5xl">

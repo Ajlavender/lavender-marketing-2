@@ -33,12 +33,10 @@ const items = [
 
 export function ValueStack() {
   return (
-    <section className="bg-secondary py-24">
+    <section className="section-wash py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <p className="text-center text-base font-semibold text-primary">
-            ✦ Here&apos;s everything you get ✦
-          </p>
+        <Reveal className="flex flex-col items-center">
+          <p className="rail-eyebrow text-primary">Here&apos;s everything you get</p>
           <h2 className="mx-auto mt-3 max-w-3xl text-center text-4xl font-bold sm:text-5xl">
             What you get when you request your{" "}
             <span className="text-primary">free design today.</span>
