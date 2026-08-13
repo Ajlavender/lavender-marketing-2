@@ -91,6 +91,15 @@ export function Header() {
         </div>
       </div>
 
+      <div
+        aria-hidden
+        className={cn(
+          "h-[2px] origin-left bg-gradient-brand transition-opacity duration-500",
+          frosted ? "opacity-100" : "opacity-0",
+        )}
+        style={{ transform: `scaleX(${progress})` }}
+      />
+
       {open && (
         <div className="border-t border-border bg-background lg:hidden">
           <nav className="mx-auto max-w-7xl space-y-1 px-4 py-4" aria-label="Mobile">
