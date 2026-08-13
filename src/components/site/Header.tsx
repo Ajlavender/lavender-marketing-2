@@ -8,9 +8,14 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.min(1, window.scrollY / max) : 0);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -85,6 +90,15 @@ export function Header() {
           </button>
         </div>
       </div>
+
+      <div
+        aria-hidden
+        className={cn(
+          "h-[2px] origin-left bg-gradient-brand transition-opacity duration-500",
+          frosted ? "opacity-100" : "opacity-0",
+        )}
+        style={{ transform: `scaleX(${progress})` }}
+      />
 
       {open && (
         <div className="border-t border-border bg-background lg:hidden">
