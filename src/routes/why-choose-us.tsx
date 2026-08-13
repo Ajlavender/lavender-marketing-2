@@ -5,6 +5,7 @@ import { ProjectGrid, RatingBar } from "@/components/site/sections";
 import { CountUp, Reveal } from "@/components/site/Reveal";
 import { MEDIA, stats } from "@/data/site";
 import { cn } from "@/lib/utils";
+import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/why-choose-us")({
   head: () => ({
@@ -53,11 +54,11 @@ const pageCounters = [
 const videoTestimonials = [
   {
     name: "Client story – Foulk Consulting",
-    poster: `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
+    poster: CLAY.analytics,
   },
   {
     name: "Client story – Angel Host",
-    poster: `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
+    poster: CLAY.seo,
   },
 ];
 
@@ -80,7 +81,7 @@ function WhyChooseUs() {
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left">
             <img
-              src={`${MEDIA}/2023/03/businessman-ride-on-rocket-1-1024x1024.png`}
+              src={CLAY.rocket}
               alt="Businessman riding a rocket"
               className="mx-auto w-full max-w-md"
             />
@@ -156,7 +157,7 @@ function WhyChooseUs() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <Reveal from="left" scale>
               <img
-                src={`${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`}
+                src={CLAY.developer}
                 alt="Businessman doing work on working desk"
                 loading="lazy"
                 className="mx-auto w-full max-w-md"
@@ -278,7 +279,7 @@ function WhyChooseUs() {
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left">
             <img
-              src={`${MEDIA}/2023/02/man-doing-online-marketing-1024x1024.png`}
+              src={CLAY.ads}
               alt="Man doing online marketing"
               loading="lazy"
               className="mx-auto w-full max-w-md"
@@ -348,7 +349,7 @@ function WhyChooseUs() {
           </Reveal>
           <Reveal from="right" delay={120}>
             <img
-              src={`${MEDIA}/2023/03/man-showing-dollar-and-bitcoin-1024x1024.png`}
+              src={CLAY.growth}
               alt="Man showing dollar and bitcoin"
               loading="lazy"
               className="mx-auto w-full max-w-sm"

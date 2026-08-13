@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ReviewSlider } from "@/components/site/ReviewSlider";
 import { Reveal } from "@/components/site/Reveal";
 import { MEDIA, googleReviews, projects } from "@/data/site";
+import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/reviews")({
   head: () => ({
@@ -67,9 +68,9 @@ const facebookReviews = [
 
 
 const videoPosters = [
-  `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
-  `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
-  `${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`,
+  CLAY.analytics,
+  CLAY.seo,
+  CLAY.developer,
   ...projects.map((p) => p.image),
 ];
 

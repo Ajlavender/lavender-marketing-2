@@ -1,4 +1,5 @@
 import logoAsset from "@/assets/lavender-logo.png.asset.json";
+import { CLAY } from "@/data/clay";
 
 export const MEDIA = "https://www.trywebtec.com/wp-content/uploads";
 
@@ -9,43 +10,43 @@ export const services = [
     slug: "/website-redesign",
     title: "Website Redesign",
     short: "A modern, conversion-focused redesign of your existing website.",
-    image: `${MEDIA}/2023/02/web-design-1024x1024.png`,
+    image: CLAY.webDesign,
   },
   {
     slug: "/conversion-rate-optimization",
     title: "Conversion Rate Optimization",
     short: "Turn more of the traffic you already have into paying customers.",
-    image: `${MEDIA}/2023/02/financial-growth-1024x1024.png`,
+    image: CLAY.growth,
   },
   {
     slug: "/seo",
     title: "SEO",
     short: "Smart SEO that cuts the fluff and goes straight for the rankings that pay.",
-    image: `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
+    image: CLAY.seo,
   },
   {
     slug: "/digital-ads",
     title: "Digital ADs",
     short: "Paid campaigns that behave like a shot of espresso for your brand.",
-    image: `${MEDIA}/2023/03/boy-doing-social-media-marketing-1024x1024.png`,
+    image: CLAY.ads,
   },
   {
     slug: "/developers",
     title: "Developers",
     short: "Dedicated developers for custom builds, integrations and maintenance.",
-    image: `${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`,
+    image: CLAY.developer,
   },
   {
     slug: "/shopify-website",
     title: "E-commerce Redesign",
     short: "Shopify and e-commerce storefronts built to sell, not just to look pretty.",
-    image: `${MEDIA}/2023/12/smartphone-with-user-interface-concept-768x614.jpg`,
+    image: CLAY.webDesign,
   },
   {
     slug: "/copywriting",
     title: "Copywriting",
     short: "Words that sound like you and convince like your best salesperson.",
-    image: `${MEDIA}/2023/02/hand-hold-marker-1024x1024.png`,
+    image: CLAY.copywriting,
   },
 ] as const;
 
@@ -77,22 +78,22 @@ export const painPoints = [
   {
     title: "Visitors leave without calling",
     body: "Your site looks fine — but the next step isn't obvious, so they bounce and call someone else.",
-    image: `${MEDIA}/2023/02/businessman-launching-startup-1024x1024.png`,
+    image: CLAY.rocket,
   },
   {
     title: "Missed calls turn into missed jobs",
     body: "If nobody texts back fast, that customer is already calling the next listing. Missed-call text-back fixes it automatically.",
-    image: `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
+    image: CLAY.analytics,
   },
   {
     title: "Reviews aren't collected consistently",
     body: "Happy customers forget to leave one. Your reputation stops compounding and your ranking slides.",
-    image: `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
+    image: CLAY.seo,
   },
   {
     title: "Leads fall through the cracks",
     body: "The first message goes unanswered, follow-up never happens, and a good lead quietly goes cold.",
-    image: `${MEDIA}/2023/03/boy-doing-social-media-marketing-1024x1024.png`,
+    image: CLAY.ads,
   },
 ];
 

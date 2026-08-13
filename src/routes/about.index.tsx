@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
 import { MEDIA } from "@/data/site";
+import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/about/")({
   head: () => ({
@@ -46,14 +47,14 @@ const missionCards = [
     title: "Free Design",
     body:
       "We create a demo design with suggestions for free, so you don't need to guess. You can see the design before you decide.",
-    image: `${MEDIA}/2023/02/web-design-1024x1024.png`,
+    image: CLAY.webDesign,
     offset: "lg:mt-14",
   },
   {
     title: "Guaranteed ROI",
     body:
       "We are building all our designs from conversion best practices, so you don't need to worry if it will give return of investment or not.",
-    image: `${MEDIA}/2023/02/financial-growth-1024x1024.png`,
+    image: CLAY.growth,
     offset: "lg:mt-0",
   },
   {
@@ -179,7 +180,7 @@ function About() {
         <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2">
           <Reveal from="left">
             <img
-              src={`${MEDIA}/2023/02/man-doing-online-marketing-1024x1024.png`}
+              src={CLAY.ads}
               alt="Man doing online marketing"
               loading="lazy"
               className="mx-auto w-full max-w-md"
