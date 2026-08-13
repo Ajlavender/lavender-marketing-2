@@ -61,7 +61,7 @@ export const Route = createFileRoute("/")({
         rel: "preload",
         as: "image",
         href: HERO_POSTER,
-        fetchpriority: "high",
+        fetchPriority: "high",
       },
     ],
   }),
@@ -77,6 +77,10 @@ function Index() {
   const [muted, setMuted] = useState(true);
   const [showPiP, setShowPiP] = useState(false);
   const [isPiP, setIsPiP] = useState(false);
+  // Tracks whether the current PiP session was started automatically by scrolling.
+  const autoPipRef = useRef(false);
+  // Tracks whether the user manually closed PiP while scrolled down.
+  const userDismissedRef = useRef(false);
   // Video source is attached only after hydration + when the card is in view,
   // so the poster paints first and the mp4 never blocks first render.
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
@@ -114,13 +118,46 @@ function Index() {
 
 
   useEffect(() => {
-    const onScroll = () => setShowPiP(window.scrollY > 400);
+    const onScroll = () => {
+      const scrolled = window.scrollY > 400;
+      setShowPiP(scrolled);
+
+      const video = videoRef.current;
+      if (!video) return;
+
+      if (scrolled) {
+        // Auto-enter PiP once when the user scrolls past the hero.
+        if (!isPiP && !autoPipRef.current && !userDismissedRef.current && document.pictureInPictureEnabled) {
+          video.requestPictureInPicture().then(() => {
+            autoPipRef.current = true;
+          }).catch(() => {
+            // PiP may require a user gesture on some browsers; leave the manual button as fallback.
+          });
+        }
+      } else {
+        // Back at the hero: reset dismissal so auto-PiP works on the next scroll down,
+        // and exit PiP if it was started automatically.
+        userDismissedRef.current = false;
+        if (isPiP && autoPipRef.current) {
+          document.exitPictureInPicture?.().catch(() => {});
+          autoPipRef.current = false;
+        }
+      }
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
     const video = videoRef.current;
     const onEnter = () => setIsPiP(true);
-    const onLeave = () => setIsPiP(false);
+    const onLeave = () => {
+      setIsPiP(false);
+      // If the user closes PiP while scrolled down, remember that choice.
+      if (window.scrollY > 400) {
+        userDismissedRef.current = true;
+      }
+      autoPipRef.current = false;
+    };
     if (video) {
       video.addEventListener("enterpictureinpicture", onEnter);
       video.addEventListener("leavepictureinpicture", onLeave);
@@ -132,7 +169,7 @@ function Index() {
         video.removeEventListener("leavepictureinpicture", onLeave);
       }
     };
-  }, []);
+  }, [isPiP]);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -147,8 +184,12 @@ function Index() {
     try {
       if (document.pictureInPictureElement) {
         await document.exitPictureInPicture();
+        userDismissedRef.current = true;
+        autoPipRef.current = false;
       } else {
         await video.requestPictureInPicture();
+        userDismissedRef.current = false;
+        autoPipRef.current = false; // manual toggle, not auto-scrolled
       }
     } catch (e) {
       console.error("PiP failed", e);
