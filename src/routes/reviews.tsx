@@ -123,7 +123,7 @@ function Reviews() {
           </Reveal>
           <Reveal from="right" delay={120}>
             <img
-              src={`${MEDIA}/2023/12/satisfied-customers-giving-five-stars-review.webp`}
+              src={CLAY.reviews}
               alt="Customer giving Lavender Marketing & Co. a five star rating"
               className="mx-auto w-full max-w-xs"
             />
@@ -158,7 +158,7 @@ function Reviews() {
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
           <Reveal from="left">
             <img
-              src={`${MEDIA}/2024/09/boy-giving-rating.webp`}
+              src={CLAY.reviews}
               alt="Customers giving a five star rating on a phone"
               loading="lazy"
               className="mx-auto w-full max-w-sm"
@@ -235,7 +235,7 @@ function Reviews() {
           </Reveal>
           <Reveal from="right" delay={110}>
             <img
-              src={`${MEDIA}/2024/09/satisfied-customer-give-five-stars-600x600.webp`}
+              src={CLAY.reviews}
               alt="Businessman holding five stars"
               loading="lazy"
               className="mx-auto w-full max-w-xs"
