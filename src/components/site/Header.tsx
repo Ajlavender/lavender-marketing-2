@@ -89,7 +89,7 @@ export function Header() {
             )}
           >
             <Link to="/contact" className="inline-flex items-center gap-1.5">
-              Get My Free Audit
+              Get Your Free Growth Report
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </Button>
