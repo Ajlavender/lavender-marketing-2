@@ -67,6 +67,12 @@ const included: StackItem[] = [
       "We keep the site online, secure and up to date, and any small change you need is just a message to us — no dev bills, no waiting weeks.",
     value: 200,
   },
+  {
+    title: "Monthly local business growth report",
+    benefit:
+      "On the 1st of every month you get a clear, tangible report showing where your leads came from, what converted, and what to fix next — so you always know if your marketing is actually paying off.",
+    value: 250,
+  },
 ];
 
 const upsells: StackItem[] = [

@@ -82,8 +82,9 @@ function Index() {
               className="animate-fade-in mt-5 max-w-xl text-lg text-muted-foreground"
             >
               Built for local service businesses. The $297 covers hosting, the review engine that
-              keeps you #1 on Google, missed-call text-back and follow-up. No setup fee, no
-              contract, no paying before you see the design.
+              keeps you #1 on Google, missed-call text-back, follow-up and a monthly growth report
+              delivered on the 1st of every month. No setup fee, no contract, no paying before you
+              see the design.
             </p>
 
             <div
