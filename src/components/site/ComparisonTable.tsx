@@ -43,11 +43,11 @@ const columns = [
 
 export function ComparisonTable() {
   return (
-    <section className="bg-secondary py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <p className="text-center text-base font-semibold text-primary">Compare</p>
-          <h2 className="mx-auto mt-3 max-w-3xl text-center text-4xl font-bold sm:text-5xl">
+    <section className="section-band py-28">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Reveal className="flex flex-col items-center">
+          <p className="rail-eyebrow text-[#c4b5fd]">Compare</p>
+          <h2 className="mx-auto mt-4 max-w-3xl text-center text-4xl font-bold sm:text-5xl">
             Not another software login you forget about.
           </h2>
         </Reveal>
