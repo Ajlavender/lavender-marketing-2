@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
-import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/copywriting")({
   head: () => ({
@@ -23,7 +22,7 @@ export const Route = createFileRoute("/copywriting")({
       eyebrow="Copywriting"
       title="Words that do the selling for you"
       subtitle="Clear beats clever. We write website copy your customers understand instantly — and act on."
-      image={CLAY.copywriting}
+      image={`${MEDIA}/2023/02/hand-hold-marker-1024x1024.png`}
       intro={[
         "Great design with vague copy still loses the sale. We interview you, mine your reviews and sales calls, then write pages that say what you do, who it's for, and why it's worth it.",
         "Every claim gets backed by proof, every page ends with an obvious next step, and every word is written to be read on a phone.",

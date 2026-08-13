@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
-import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/shopify-website")({
   head: () => ({
@@ -23,7 +22,7 @@ export const Route = createFileRoute("/shopify-website")({
       eyebrow="E-commerce Redesign"
       title="Shopify stores built to sell, not just to look pretty"
       subtitle="A store redesign is an engineering event. We protect your rankings and revenue through launch day."
-      image={CLAY.webDesign}
+      image={`${MEDIA}/2023/12/smartphone-with-user-interface-concept-768x614.jpg`}
       intro={[
         "Product pages, collection filtering and checkout carry your revenue. We redesign them around real shopper behaviour and test on real devices before anything goes live.",
         "URL maps are frozen, redirects set, structured data re-verified and analytics validated — so launch day is boring, in the best possible way.",

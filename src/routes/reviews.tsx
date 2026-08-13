@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { ReviewSlider } from "@/components/site/ReviewSlider";
 import { Reveal } from "@/components/site/Reveal";
 import { MEDIA, googleReviews, projects } from "@/data/site";
-import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/reviews")({
   head: () => ({
@@ -68,9 +67,9 @@ const facebookReviews = [
 
 
 const videoPosters = [
-  CLAY.analytics,
-  CLAY.seo,
-  CLAY.developer,
+  `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
+  `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
+  `${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`,
   ...projects.map((p) => p.image),
 ];
 
@@ -123,7 +122,7 @@ function Reviews() {
           </Reveal>
           <Reveal from="right" delay={120}>
             <img
-              src={CLAY.reviews}
+              src={`${MEDIA}/2023/12/satisfied-customers-giving-five-stars-review.webp`}
               alt="Customer giving Lavender Marketing & Co. a five star rating"
               className="mx-auto w-full max-w-xs"
             />
@@ -158,7 +157,7 @@ function Reviews() {
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
           <Reveal from="left">
             <img
-              src={CLAY.reviews}
+              src={`${MEDIA}/2024/09/boy-giving-rating.webp`}
               alt="Customers giving a five star rating on a phone"
               loading="lazy"
               className="mx-auto w-full max-w-sm"
@@ -235,7 +234,7 @@ function Reviews() {
           </Reveal>
           <Reveal from="right" delay={110}>
             <img
-              src={CLAY.reviews}
+              src={`${MEDIA}/2024/09/satisfied-customer-give-five-stars-600x600.webp`}
               alt="Businessman holding five stars"
               loading="lazy"
               className="mx-auto w-full max-w-xs"

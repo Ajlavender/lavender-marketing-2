@@ -3,7 +3,6 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { LeadForm } from "@/components/site/LeadForm";
 import { PageHero, RatingBar, Section } from "@/components/site/sections";
 import { MEDIA } from "@/data/site";
-import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -36,7 +35,7 @@ function Contact() {
         eyebrow="Contact"
         title="Let's build a website that sells"
         subtitle="Tell us about your business and we'll design a free demo of your new homepage — no cost, no obligation."
-        image={CLAY.rocket}
+        image={`${MEDIA}/2023/02/businessman-launching-startup-768x768.png`}
       />
 
       <Section>

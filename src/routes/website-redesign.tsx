@@ -17,7 +17,6 @@ import { Reveal } from "@/components/site/Reveal";
 import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
 import { MEDIA } from "@/data/site";
 import { cn } from "@/lib/utils";
-import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/website-redesign")({
   head: () => ({
@@ -42,11 +41,11 @@ export const Route = createFileRoute("/website-redesign")({
       { property: "og:url", content: "/website-redesign" },
       {
         property: "og:image",
-        content: CLAY.team,
+        content: `${MEDIA}/2023/02/business-team-doing-discussion-1024x768.png`,
       },
       {
         name: "twitter:image",
-        content: CLAY.team,
+        content: `${MEDIA}/2023/02/business-team-doing-discussion-1024x768.png`,
       },
     ],
     links: [{ rel: "canonical", href: "/website-redesign" }],
@@ -58,31 +57,31 @@ const cards = [
   {
     title: "Conversion Optimized",
     body: "We take advantage of Conversion Optimization when constructing your website, and once it's live, we run A/B tests to identify further improvements based on your individual results.",
-    image: CLAY.analytics,
+    image: `${MEDIA}/2023/02/ab-testing-600x600.png`,
     alt: "ab testing",
   },
   {
     title: "SEO Ready",
     body: "Our websites will make the Google gods smile. We've got the basics covered for you to go wild with SEO later.",
-    image: CLAY.seo,
+    image: `${MEDIA}/2023/02/seo-process-600x600.png`,
     alt: "seo process",
   },
   {
     title: "Easy To Edit",
     body: "Our visual editor ensures that making minor tweaks is a piece of cake. If you need a refresher after we finish your site, we'll provide you with a helpful video tutorial so you'll never be in the dark.",
-    image: CLAY.webDesign,
+    image: `${MEDIA}/2023/02/edit-photo-600x600.png`,
     alt: "edit photo",
   },
   {
     title: "Smooth Process",
     body: "We're all about saving time for executives with our optimized web development process. Time is the biggest obstacle to creating a website, but our streamlined process makes it a breeze – usually within 45 days!",
-    image: CLAY.growth,
+    image: `${MEDIA}/2023/02/time-is-money-1-600x600.png`,
     alt: "time is money",
   },
   {
     title: "Relationship",
     body: "Once your project is wrapped up, our Customer Success Team will be at your beck and call. Whether you're stumped, need answers or something's gone awry, they'll be there for you at the drop of a hat!",
-    image: CLAY.handshake,
+    image: `${MEDIA}/2023/03/handshake-hand-gesture-600x600.png`,
     alt: "handshake hand gesture",
   },
 ];
@@ -136,7 +135,7 @@ function WebsiteRedesign() {
             style={{ animationDelay: "160ms", animationFillMode: "both" }}
           >
             <img
-              src={CLAY.team}
+              src={`${MEDIA}/2023/02/business-team-doing-discussion-1024x768.png`}
               alt="Business team doing discussion about a website redesign"
               className="mx-auto w-full max-w-xl"
             />
@@ -183,7 +182,7 @@ function WebsiteRedesign() {
       <Section className="relative pt-16">
         <h2 className="sr-only">Why Choose Lavender Marketing & Co.?</h2>
         <img
-          src={CLAY.rocket}
+          src={`${MEDIA}/2023/03/rocket-1-300x300.png`}
           alt=""
           aria-hidden="true"
           loading="lazy"
@@ -212,7 +211,7 @@ function WebsiteRedesign() {
           <Reveal delay={540} className={cn(cardOffset[5])}>
             <article className="flex h-full flex-col items-center justify-center rounded-2xl bg-card p-8 text-center shadow-[0_24px_60px_-40px_rgba(16,18,24,0.45)]">
               <img
-                src={CLAY.question}
+                src={`${MEDIA}/2023/02/question-mark-300x300.png`}
                 alt="question mark"
                 loading="lazy"
                 className="h-24 w-24 object-contain"
@@ -258,7 +257,7 @@ function WebsiteRedesign() {
                 </Button>
               </div>
               <img
-                src={CLAY.team}
+                src={`${MEDIA}/2023/03/ui-ux-team-1024x1024.png`}
                 alt="UI UX team building a website redesign"
                 loading="lazy"
                 className="mx-auto w-full max-w-md"
@@ -278,7 +277,7 @@ function WebsiteRedesign() {
         </Reveal>
 
         <img
-          src={CLAY.handshake}
+          src={`${MEDIA}/2023/02/Hand-03-L-300x279.png`}
           alt=""
           aria-hidden="true"
           loading="lazy"

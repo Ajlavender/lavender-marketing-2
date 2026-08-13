@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, CtaBand } from "@/components/site/sections";
 import { posts } from "@/data/posts";
 import { MEDIA } from "@/data/site";
-import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -32,7 +31,7 @@ function BlogIndex() {
         eyebrow="Blog"
         title="Ideas that make websites work harder"
         subtitle="Redesign, SEO, copywriting and conversion advice — written by the team that does the work."
-        image={CLAY.copywriting}
+        image={`${MEDIA}/2023/02/hand-hold-marker-1024x1024.png`}
       />
 
       <Section>

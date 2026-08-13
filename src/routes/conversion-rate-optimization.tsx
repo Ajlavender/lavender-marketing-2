@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
-import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/conversion-rate-optimization")({
   head: () => ({
@@ -23,7 +22,7 @@ export const Route = createFileRoute("/conversion-rate-optimization")({
       eyebrow="Conversion Rate Optimization"
       title="More customers from the traffic you already have"
       subtitle="Doubling traffic is expensive. Doubling conversion rate is faster, cheaper, and makes every other marketing dollar work harder."
-      image={CLAY.growth}
+      image={`${MEDIA}/2023/02/financial-growth-1024x1024.png`}
       intro={[
         "We look at where visitors hesitate, what they can't find, and which promises aren't believable — then fix those things in priority order.",
         "Offers, forms, proof, page speed and navigation all get tested. You get a documented lift, not opinions.",

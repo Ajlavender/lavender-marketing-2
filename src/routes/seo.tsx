@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
-import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/seo")({
   head: () => ({
@@ -26,7 +25,7 @@ export const Route = createFileRoute("/seo")({
       eyebrow="SEO"
       title="Smart SEO — maximum impact, zero fluff"
       subtitle="High-quality SEO that gives you the most bang for the buck. We skip the busywork and go straight for the terms that bring buyers."
-      image={CLAY.seo}
+      image={`${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`}
       intro={[
         "Monthly reports full of impressions don't pay salaries. Our Smart SEO programme maps your keyword universe by intent, builds the money pages first, and fixes the technical issues holding the rest of the site back.",
         "You get fewer deliverables, tied tightly to enquiries and revenue — and a clear view of exactly what we did and why.",

@@ -22,7 +22,6 @@ import { SystemLoop } from "@/components/site/SystemLoop";
 import { BuyerPaths } from "@/components/site/BuyerPaths";
 import { ValueStack } from "@/components/site/ValueStack";
 import { ComparisonTable } from "@/components/site/ComparisonTable";
-import { CLAY } from "@/data/clay";
 
 const HERO_POSTER = `${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`;
 
@@ -46,12 +45,12 @@ export const Route = createFileRoute("/")({
       {
         property: "og:image",
         content:
-          CLAY.developer,
+          "https://www.trywebtec.com/wp-content/uploads/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
       },
       {
         name: "twitter:image",
         content:
-          CLAY.developer,
+          "https://www.trywebtec.com/wp-content/uploads/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
       },
     ],
     links: [
@@ -456,7 +455,7 @@ function Index() {
 
               <div className="relative">
                 <img
-                  src={CLAY.analytics}
+                  src={`${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`}
                   alt="Businessman giving analysis presentation"
                   loading="lazy"
                   className="mx-auto w-full max-w-lg lg:absolute lg:-bottom-24 lg:left-1/2 lg:w-[125%] lg:max-w-none lg:-translate-x-1/2"
@@ -524,7 +523,7 @@ function Index() {
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <Reveal from="left" scale>
             <img
-              src={CLAY.developer}
+              src={`${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`}
               alt="Businessman doing work on working desk"
               loading="lazy"
               className="mx-auto w-full max-w-md"
