@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, PictureInPicture2, Volume2, VolumeX } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/site/LeadForm";
 import { cn } from "@/lib/utils";
@@ -57,6 +58,38 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+  const [showPiP, setShowPiP] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowPiP(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !muted;
+      setMuted(!muted);
+    }
+  };
+
+  const togglePiP = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+    try {
+      if (document.pictureInPictureElement) {
+        await document.exitPictureInPicture();
+      } else {
+        await video.requestPictureInPicture();
+      }
+    } catch (e) {
+      console.error("PiP failed", e);
+    }
+  };
+
   return (
     <>
       {/* Hero */}
@@ -113,16 +146,60 @@ function Index() {
           {/* Video card */}
           <div
             style={{ animationDelay: "220ms", animationFillMode: "both" }}
-            className="animate-scale-in overflow-hidden rounded-2xl bg-black shadow-[0_30px_80px_-40px_rgba(16,18,24,0.6)]">
+            className="animate-scale-in relative overflow-hidden rounded-2xl bg-black shadow-[0_30px_80px_-40px_rgba(16,18,24,0.6)]">
             <video
+              ref={videoRef}
               src="https://assets.cdn.filesafe.space/LgG7iv4Yd7mh0USORTBt/media/6a7d44f562e9a426c0c5f1dd.mp4"
               poster={`${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`}
               autoPlay
-              muted
+              muted={muted}
               loop
               playsInline
+              controls
               className="h-full w-full object-cover"
             />
+
+            {/* Click-to-unmute overlay */}
+            {muted && (
+              <button
+                type="button"
+                onClick={toggleMute}
+                className="absolute inset-0 z-10 flex cursor-pointer items-center justify-center bg-black/25 transition hover:bg-black/35"
+                aria-label="Unmute video"
+              >
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 ring-1 ring-white/40 backdrop-blur-md transition group-hover:scale-105">
+                  <VolumeX className="h-7 w-7 text-white" />
+                </span>
+                <span className="absolute bottom-5 left-0 right-0 text-center text-sm font-semibold text-white drop-shadow">
+                  Click to unmute
+                </span>
+              </button>
+            )}
+
+            {/* Mute toggle (visible once unmuted) */}
+            {!muted && (
+              <button
+                type="button"
+                onClick={toggleMute}
+                className="absolute top-3 right-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/70"
+                aria-label="Mute video"
+              >
+                <Volume2 className="h-4 w-4" />
+              </button>
+            )}
+
+            {/* PiP button — appears on scroll */}
+            <button
+              type="button"
+              onClick={togglePiP}
+              className={cn(
+                "absolute bottom-3 right-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-sm transition-all hover:bg-black/80",
+                showPiP ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0",
+              )}
+              aria-label="Toggle picture-in-picture"
+            >
+              <PictureInPicture2 className="h-5 w-5" />
+            </button>
           </div>
         </div>
       </section>
