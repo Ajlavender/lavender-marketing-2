@@ -61,7 +61,7 @@ export const Route = createFileRoute("/")({
         rel: "preload",
         as: "image",
         href: HERO_POSTER,
-        fetchpriority: "high",
+        fetchPriority: "high",
       },
     ],
   }),
