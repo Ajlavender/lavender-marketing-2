@@ -114,64 +114,15 @@ function Index() {
           <div
             style={{ animationDelay: "220ms", animationFillMode: "both" }}
             className="animate-scale-in overflow-hidden rounded-2xl bg-black shadow-[0_30px_80px_-40px_rgba(16,18,24,0.6)]">
-            <div className="flex items-start justify-between gap-4 px-6 pb-4 pt-6">
-              <p className="text-2xl font-bold text-white sm:text-[1.6rem]">
-                What do you want to fix first? 🌿
-              </p>
-              <span aria-hidden="true" className="mt-1 text-xl text-white/70">
-                ✕
-              </span>
-            </div>
-            <div className="relative">
-              <video
-                src="https://assets.cdn.filesafe.space/LgG7iv4Yd7mh0USORTBt/media/6a7d44f562e9a426c0c5f1dd.mp4"
-                poster={`${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="h-[20rem] w-full object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white/30 ring-2 ring-white/80 backdrop-blur-sm transition hover:scale-105">
-                  <Play className="ml-1 h-8 w-8 fill-white text-white" />
-                </span>
-              </div>
-              {/* chat overlay */}
-              <div className="absolute inset-x-0 bottom-0 px-8 pb-4">
-                <p className="mb-3 text-center text-base text-white/80">Choose 1 of 3 options</p>
-                <div className="space-y-3">
-                  {[
-                    ["A", "Free website design 👷"],
-                    ["B", "More Google reviews ⭐"],
-                    ["C", "Stop missing calls 📱"],
-                  ].map(([key, label], i) => (
-                    <div
-                      key={key}
-                      className={cn(
-                        "flex items-center gap-3 rounded-full px-3 py-2 text-white",
-                        i < 2 ? "bg-white/15 backdrop-blur-sm" : "",
-                      )}
-                    >
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#3b3b4f] text-sm font-semibold">
-                        {key}
-                      </span>
-                      <span className="text-lg font-medium">{label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <p className="px-6 pb-4 pt-5 text-center text-lg text-white">
-              Pick one and we&apos;ll show you exactly how it works.
-            </p>
-
-            <div className="flex items-center justify-center gap-1.5 bg-[#1a1a1a] py-3">
-              <span className="flex h-4 w-4 items-center justify-center rounded-sm bg-white text-[9px] font-bold text-black">
-                w
-              </span>
-              <span className="text-sm font-semibold text-white">Lavender</span>
-            </div>
+            <video
+              src="https://assets.cdn.filesafe.space/LgG7iv4Yd7mh0USORTBt/media/6a7d44f562e9a426c0c5f1dd.mp4"
+              poster={`${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
       </section>
