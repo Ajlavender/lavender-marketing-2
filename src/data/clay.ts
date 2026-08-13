@@ -10,6 +10,7 @@ import reviews from "@/assets/clay/reviews.png";
 import team from "@/assets/clay/team.png";
 import question from "@/assets/clay/question.png";
 import handshake from "@/assets/clay/handshake.png";
+import lion from "@/assets/clay/lion.png";
 
 /** Brand-owned claymation illustration set (lavender/plum palette). */
 export const CLAY = {
@@ -25,4 +26,5 @@ export const CLAY = {
   team,
   question,
   handshake,
+  lion,
 } as const;
