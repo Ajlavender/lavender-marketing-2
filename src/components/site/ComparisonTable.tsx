@@ -59,14 +59,14 @@ export function ComparisonTable() {
                 className={cn(
                   "h-full rounded-3xl p-8 transition-transform duration-300 sm:p-10",
                   col.highlight
-                    ? "bg-[linear-gradient(150deg,#1d1f4a_0%,#2a2352_45%,#6d33d6_100%)] text-background shadow-[0_36px_80px_-40px_rgba(109,51,214,0.7)] lg:-translate-y-3"
-                    : "bg-card shadow-[0_24px_60px_-40px_rgba(31,33,80,0.4)]",
+                    ? "border border-white/25 bg-[linear-gradient(150deg,#2a2352_0%,#3d2a7a_45%,#7c3aed_100%)] text-white shadow-[0_36px_90px_-30px_rgba(124,58,237,0.75)] lg:-translate-y-3"
+                    : "border border-white/10 bg-white/[0.06] text-white shadow-[0_24px_60px_-40px_rgba(0,0,0,0.6)] backdrop-blur-sm",
                 )}
               >
                 <p
                   className={cn(
                     "text-sm font-semibold uppercase tracking-wide",
-                    col.highlight ? "text-[#c4b5fd]" : "text-muted-foreground",
+                    col.highlight ? "text-[#c4b5fd]" : "text-white/45",
                   )}
                 >
                   {col.label}
@@ -78,9 +78,9 @@ export function ComparisonTable() {
                       {row.ok ? (
                         <Check className="mt-1 h-5 w-5 shrink-0 text-[#a78bfa]" />
                       ) : (
-                        <Minus className="mt-1 h-5 w-5 shrink-0 text-muted-foreground/60" />
+                        <Minus className="mt-1 h-5 w-5 shrink-0 text-white/35" />
                       )}
-                      <span className={col.highlight ? "text-background/85" : "text-muted-foreground"}>
+                      <span className={col.highlight ? "text-white/85" : "text-white/60"}>
                         {row.text}
                       </span>
                     </li>
