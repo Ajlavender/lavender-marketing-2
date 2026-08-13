@@ -1,7 +1,10 @@
-import { Check, X, Info, ArrowUpRight } from "lucide-react";
+import { useState, type ReactNode } from "react";
+import { Check, X, ChevronDown, ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 type StackItem = {
   title: string;
