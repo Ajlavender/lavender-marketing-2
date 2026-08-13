@@ -265,19 +265,13 @@ export function CatchSection() {
             </h3>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {upsells.map((item) => (
-                <li
+                <ExpandCard
                   key={item.title}
-                  className="group relative rounded-2xl bg-secondary px-6 py-5 transition-colors hover:bg-primary/10"
-                >
-                  <div className="flex items-center gap-3">
-                    <ArrowUpRight className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-base font-semibold">{item.title}</span>
-                    <Info className="h-4 w-4 shrink-0 text-muted-foreground/60 transition-colors group-hover:text-primary" />
-                  </div>
-                  <div className="pointer-events-none absolute left-4 right-4 top-full z-20 mt-2 origin-top scale-95 rounded-2xl bg-[#1d1f4a] p-5 text-sm leading-relaxed text-background opacity-0 shadow-[0_30px_60px_-30px_rgba(29,31,74,0.8)] transition-all duration-200 group-hover:scale-100 group-hover:opacity-100">
-                    {item.benefit}
-                  </div>
-                </li>
+                  item={item}
+                  showValue={false}
+                  tone="muted"
+                  icon={<ArrowUpRight className="h-5 w-5" />}
+                />
               ))}
             </ul>
             <p className="mt-6 text-sm text-muted-foreground">
