@@ -1,7 +1,10 @@
-import { Check, X, Info, ArrowUpRight } from "lucide-react";
+import { useState, type ReactNode } from "react";
+import { Check, X, ChevronDown, ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 type StackItem = {
   title: string;
@@ -85,23 +88,81 @@ const notIncluded = ["No setup fee", "No contract for the design", "No paying be
 
 const totalValue = included.reduce((sum, item) => sum + item.value, 0);
 
-function StackRow({ item }: { item: StackItem }) {
-  return (
-    <li className="group relative rounded-2xl bg-card px-6 py-5 shadow-[0_18px_50px_-40px_rgba(31,33,80,0.5)] transition-shadow hover:shadow-[0_28px_60px_-38px_rgba(109,51,214,0.55)]">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex min-w-0 items-start gap-3">
-          <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-          <span className="text-base font-semibold">{item.title}</span>
-          <Info className="mt-1 h-4 w-4 shrink-0 text-muted-foreground/60 transition-colors group-hover:text-primary" />
-        </div>
-        <span className="text-sm font-semibold text-muted-foreground">
-          ${item.value}
-          <span className="font-normal">/mo value</span>
-        </span>
-      </div>
+function ExpandCard({
+  item,
+  icon,
+  showValue = true,
+  tone = "card",
+}: {
+  item: StackItem;
+  icon: ReactNode;
+  showValue?: boolean;
+  tone?: "card" | "muted";
+}) {
+  const [open, setOpen] = useState(false);
+  const isMobile = useIsMobile();
 
-      <div className="pointer-events-none absolute left-4 right-4 top-full z-20 mt-2 origin-top scale-95 rounded-2xl bg-[#1d1f4a] p-5 text-sm leading-relaxed text-background opacity-0 shadow-[0_30px_60px_-30px_rgba(29,31,74,0.8)] transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-focus-within:scale-100 group-focus-within:opacity-100">
-        {item.benefit}
+  const hoverProps = isMobile
+    ? {}
+    : { onMouseEnter: () => setOpen(true), onMouseLeave: () => setOpen(false) };
+
+  return (
+    <li
+      className={cn(
+        "group overflow-hidden rounded-2xl transition-all duration-300",
+        tone === "card"
+          ? "bg-card shadow-[0_18px_50px_-40px_rgba(31,33,80,0.5)]"
+          : "bg-secondary",
+        open &&
+          (tone === "card"
+            ? "shadow-[0_28px_60px_-34px_rgba(109,51,214,0.55)] ring-1 ring-primary/25"
+            : "bg-primary/10 ring-1 ring-primary/25"),
+      )}
+      {...hoverProps}
+    >
+      <button
+        type="button"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        onFocus={() => setOpen(true)}
+        className="grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-6 py-5 text-left"
+      >
+        <span className="flex min-w-0 items-start gap-3">
+          <span className="mt-0.5 shrink-0 text-primary">{icon}</span>
+          <span className="min-w-0 text-base font-semibold">{item.title}</span>
+        </span>
+        <span className="flex shrink-0 items-center gap-3">
+          {showValue && (
+            <span className="hidden text-sm font-semibold text-muted-foreground sm:inline">
+              ${item.value}
+              <span className="font-normal">/mo value</span>
+            </span>
+          )}
+          <ChevronDown
+            className={cn(
+              "h-5 w-5 shrink-0 text-primary transition-transform duration-300",
+              open && "rotate-180",
+            )}
+          />
+        </span>
+      </button>
+
+      <div
+        className={cn(
+          "grid transition-[grid-template-rows,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+        )}
+      >
+        <div className="min-h-0 overflow-hidden">
+          <div className="mx-3 mb-3 rounded-xl bg-[#1d1f4a] p-5 text-sm leading-relaxed text-background">
+            {item.benefit}
+            {showValue && (
+              <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-[#a78bfa] sm:hidden">
+                ${item.value}/mo value
+              </p>
+            )}
+          </div>
+        </div>
       </div>
     </li>
   );
@@ -124,14 +185,18 @@ export function CatchSection() {
             we build it, host it and run the whole system that brings you customers.
           </p>
           <p className="mt-4 text-center text-sm font-medium text-primary">
-            Hover any line to see what it actually does for your business.
+            Tap or hover any line to see what it actually does for your business.
           </p>
         </Reveal>
 
         <Reveal delay={120} className="mt-12">
           <ul className="grid gap-3">
             {included.map((item) => (
-              <StackRow key={item.title} item={item} />
+              <ExpandCard
+                key={item.title}
+                item={item}
+                icon={<Check className="h-5 w-5" />}
+              />
             ))}
           </ul>
         </Reveal>
@@ -200,19 +265,13 @@ export function CatchSection() {
             </h3>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {upsells.map((item) => (
-                <li
+                <ExpandCard
                   key={item.title}
-                  className="group relative rounded-2xl bg-secondary px-6 py-5 transition-colors hover:bg-primary/10"
-                >
-                  <div className="flex items-center gap-3">
-                    <ArrowUpRight className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-base font-semibold">{item.title}</span>
-                    <Info className="h-4 w-4 shrink-0 text-muted-foreground/60 transition-colors group-hover:text-primary" />
-                  </div>
-                  <div className="pointer-events-none absolute left-4 right-4 top-full z-20 mt-2 origin-top scale-95 rounded-2xl bg-[#1d1f4a] p-5 text-sm leading-relaxed text-background opacity-0 shadow-[0_30px_60px_-30px_rgba(29,31,74,0.8)] transition-all duration-200 group-hover:scale-100 group-hover:opacity-100">
-                    {item.benefit}
-                  </div>
-                </li>
+                  item={item}
+                  showValue={false}
+                  tone="muted"
+                  icon={<ArrowUpRight className="h-5 w-5" />}
+                />
               ))}
             </ul>
             <p className="mt-6 text-sm text-muted-foreground">
