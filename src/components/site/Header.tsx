@@ -40,7 +40,12 @@ export function Header() {
           {nav.map((item) =>
             item.children ? (
               <div key={item.label} className="group relative">
-                <button className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-nav-plum-foreground/90 transition-colors hover:text-white">
+                <button
+                  className={cn(
+                    "flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                    scrolled ? "text-white/90 hover:text-white" : "text-ink hover:text-ink/70",
+                  )}
+                >
                   {item.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
@@ -60,8 +65,11 @@ export function Header() {
               <Link
                 key={item.to}
                 to={item.to}
-                activeProps={{ className: "text-white" }}
-                className="rounded-md px-3 py-2 text-sm font-medium text-nav-plum-foreground/90 transition-colors hover:text-white"
+                activeProps={{ className: scrolled ? "text-white" : "text-ink" }}
+                className={cn(
+                  "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                  scrolled ? "text-white/90 hover:text-white" : "text-ink hover:text-ink/70",
+                )}
               >
                 {item.label}
               </Link>
@@ -70,14 +78,28 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button asChild variant="outline" className="hidden rounded-full border-white/40 bg-transparent px-5 text-sm font-semibold text-white hover:border-white hover:bg-white/10 hover:text-white sm:inline-flex">
+          <Button
+            asChild
+            variant="outline"
+            className={cn(
+              "hidden rounded-full px-5 text-sm font-semibold transition-colors sm:inline-flex",
+              scrolled
+                ? "border-white/40 bg-transparent text-white hover:border-white hover:bg-white/10 hover:text-white"
+                : "border-ink/30 bg-transparent text-ink hover:border-ink hover:bg-ink/10 hover:text-ink",
+            )}
+          >
             <Link to="/contact" className="inline-flex items-center gap-1.5">
               Get My Free Audit
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </Button>
           <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/20 text-white lg:hidden"
+            className={cn(
+              "inline-flex h-10 w-10 items-center justify-center rounded-md transition-colors lg:hidden",
+              scrolled
+                ? "border border-white/20 text-white"
+                : "border border-ink/20 text-ink hover:border-ink/40 hover:text-ink/80",
+            )}
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
