@@ -2,13 +2,14 @@ import { Check } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { MEDIA } from "@/data/site";
+import { CLAY } from "@/data/clay";
 
 const paths = [
   {
     label: "Home services",
     title: "Stop losing jobs when you miss a call.",
     body: "For contractors, trades, roofers, plumbers, landscapers, electricians and renovation companies where one missed call can cost hundreds or thousands.",
-    image: `${MEDIA}/2023/02/businessman-launching-startup-1024x1024.png`,
+    image: CLAY.rocket,
     points: [
       "Auto text-back the second you miss a call",
       "Quote request page that actually converts",
@@ -22,7 +23,7 @@ const paths = [
     label: "Appointment businesses",
     title: "Fill more appointments without more front-desk work.",
     body: "For barbers, salons, dog groomers, tattoo shops, detailers, med spas and busy appointment businesses that need fewer gaps in the calendar.",
-    image: `${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`,
+    image: CLAY.developer,
     points: [
       "Easier online booking, 24/7",
       "Automatic confirmations and reminders",

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
+import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/developers")({
   head: () => ({
@@ -22,7 +23,7 @@ export const Route = createFileRoute("/developers")({
       eyebrow="Developers"
       title="A development team on tap"
       subtitle="Custom builds, tricky integrations and the maintenance work nobody on your team wants to own."
-      image={`${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`}
+      image={CLAY.developer}
       intro={[
         "Sometimes a template won't cut it. Our developers build custom functionality, connect your website to the tools you already run on, and keep everything patched and fast.",
         "Work is scoped in writing, delivered in sprints, and handed over with documentation. You own the code.",

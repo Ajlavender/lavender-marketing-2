@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
 import { MEDIA } from "@/data/site";
+import { CLAY } from "@/data/clay";
 
 export const Route = createFileRoute("/about/")({
   head: () => ({
@@ -46,28 +47,28 @@ const missionCards = [
     title: "Free Design",
     body:
       "We create a demo design with suggestions for free, so you don't need to guess. You can see the design before you decide.",
-    image: `${MEDIA}/2023/02/web-design-1024x1024.png`,
+    image: CLAY.webDesign,
     offset: "lg:mt-14",
   },
   {
     title: "Guaranteed ROI",
     body:
       "We are building all our designs from conversion best practices, so you don't need to worry if it will give return of investment or not.",
-    image: `${MEDIA}/2023/02/financial-growth-1024x1024.png`,
+    image: CLAY.growth,
     offset: "lg:mt-0",
   },
   {
     title: "Data Based Decisions",
     body:
       "We A/B testing the website after launch to optimize further. In fact, the only way to be sure that you are improving your website is to optimize it based on data. Otherwise, you're just guessing.",
-    image: `${MEDIA}/2023/02/ab-testing-1024x1024.png`,
+    image: CLAY.analytics,
     offset: "lg:mt-6",
   },
   {
     title: "Optimized communication",
     body:
       "Besides this, we've optimized our processes for busy executives in small and mid-sized businesses. Working with us takes very little time, and communicating with us is done by a live chat for faster replies.",
-    image: `${MEDIA}/2023/02/time-is-money-1-1024x1024.png`,
+    image: CLAY.growth,
     offset: "lg:-mt-6",
   },
 ];
@@ -91,12 +92,12 @@ function About() {
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left" className="relative">
             <img
-              src={`${MEDIA}/2023/03/man-launching-startup-1024x1024.png`}
+              src={CLAY.rocket}
               alt="Man launching a startup from his desk"
               className="mx-auto w-full max-w-lg"
             />
             <img
-              src={`${MEDIA}/2023/02/computer-1-1024x1024.png`}
+              src={CLAY.webDesign}
               alt=""
               aria-hidden
               loading="lazy"
@@ -164,7 +165,7 @@ function About() {
               </div>
             </div>
             <img
-              src={`${MEDIA}/2023/02/man-feeling-stress-due-to-work-1024x1024.png`}
+              src={CLAY.question}
               alt="Man feeling stressed at work"
               loading="lazy"
               className="pointer-events-none absolute -right-6 bottom-0 hidden w-[24rem] lg:block"
@@ -179,7 +180,7 @@ function About() {
         <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2">
           <Reveal from="left">
             <img
-              src={`${MEDIA}/2023/02/man-doing-online-marketing-1024x1024.png`}
+              src={CLAY.ads}
               alt="Man doing online marketing"
               loading="lazy"
               className="mx-auto w-full max-w-md"
@@ -254,13 +255,13 @@ function About() {
               </div>
             </div>
             <img
-              src={`${MEDIA}/2023/03/man-drawing-on-tablet-1024x1024.png`}
+              src={CLAY.copywriting}
               alt="Man drawing on a tablet"
               loading="lazy"
               className="pointer-events-none absolute -right-4 bottom-0 hidden w-[22rem] lg:block"
             />
             <img
-              src={`${MEDIA}/2023/02/rocket-1024x1024.png`}
+              src={CLAY.rocket}
               alt=""
               aria-hidden
               loading="lazy"
@@ -340,7 +341,7 @@ function About() {
           </Reveal>
           <Reveal from="right" delay={100}>
             <img
-              src={`${MEDIA}/2023/02/happy-business-man-with-money-1024x1024.png`}
+              src={CLAY.growth}
               alt="Happy business man throwing money in the air"
               loading="lazy"
               className="mx-auto w-full max-w-md"
