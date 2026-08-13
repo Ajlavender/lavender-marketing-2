@@ -215,3 +215,60 @@
 @utility marquee {
   animation: marquee-scroll 40s linear infinite;
 }
+
+/* ---- Section washes, dark authority band, rail eyebrow ---- */
+:root {
+  --wash-lilac: linear-gradient(
+    180deg,
+    oklch(1 0 0) 0%,
+    oklch(0.975 0.014 296) 28%,
+    oklch(0.965 0.022 296) 62%,
+    oklch(1 0 0) 100%
+  );
+  --band-dark: linear-gradient(
+    165deg,
+    oklch(0.22 0.075 288) 0%,
+    oklch(0.26 0.11 290) 45%,
+    oklch(0.4 0.19 292) 100%
+  );
+}
+
+@utility section-wash {
+  background-image: var(--wash-lilac);
+}
+
+@utility section-band {
+  background-image: var(--band-dark);
+  color: oklch(0.98 0.01 290);
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -30% -10% auto -10%;
+    height: 70%;
+    background: radial-gradient(
+      50% 60% at 70% 0%,
+      color-mix(in oklab, var(--brand-glow) 32%, transparent),
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+}
+
+@utility rail-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  &::before {
+    content: "";
+    width: 2.5rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+}
