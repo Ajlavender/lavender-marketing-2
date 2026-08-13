@@ -61,6 +61,7 @@ function Index() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
   const [showPiP, setShowPiP] = useState(false);
+  const [isPiP, setIsPiP] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setShowPiP(window.scrollY > 400);
