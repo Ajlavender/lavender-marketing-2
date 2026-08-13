@@ -77,6 +77,36 @@ function Index() {
   const [muted, setMuted] = useState(true);
   const [showPiP, setShowPiP] = useState(false);
   const [isPiP, setIsPiP] = useState(false);
+  // Video source is attached only after hydration + when the card is in view,
+  // so the poster paints first and the mp4 never blocks first render.
+  const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
+  const [canPlay, setCanPlay] = useState(false);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+
+    const conn = (navigator as any).connection;
+    const saveData = Boolean(conn?.saveData);
+    const slow = /^(slow-2g|2g)$/.test(conn?.effectiveType ?? "");
+    if (saveData || slow) return; // keep the poster only
+
+    const attach = () => setVideoSrc(HERO_VIDEO);
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          const ric = (window as any).requestIdleCallback;
+          ric ? ric(attach, { timeout: 1200 }) : setTimeout(attach, 200);
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+
 
   useEffect(() => {
     const onScroll = () => setShowPiP(window.scrollY > 400);
