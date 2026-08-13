@@ -23,6 +23,7 @@ import { BuyerPaths } from "@/components/site/BuyerPaths";
 import { ValueStack } from "@/components/site/ValueStack";
 import { ComparisonTable } from "@/components/site/ComparisonTable";
 
+const HERO_POSTER = `${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,16 +53,65 @@ export const Route = createFileRoute("/")({
           "https://www.trywebtec.com/wp-content/uploads/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      { rel: "preconnect", href: "https://assets.cdn.filesafe.space", crossOrigin: "anonymous" },
+      { rel: "dns-prefetch", href: "https://assets.cdn.filesafe.space" },
+      {
+        rel: "preload",
+        as: "image",
+        href: HERO_POSTER,
+        fetchpriority: "high",
+      },
+    ],
   }),
   component: Index,
 });
+
+const HERO_VIDEO =
+  "https://assets.cdn.filesafe.space/LgG7iv4Yd7mh0USORTBt/media/6a7d44f562e9a426c0c5f1dd.mp4";
+
 
 function Index() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
   const [showPiP, setShowPiP] = useState(false);
   const [isPiP, setIsPiP] = useState(false);
+  // Video source is attached only after hydration + when the card is in view,
+  // so the poster paints first and the mp4 never blocks first render.
+  const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
+  const [canPlay, setCanPlay] = useState(false);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+
+    const conn = (navigator as any).connection;
+    const saveData = Boolean(conn?.saveData);
+    const slow = /^(slow-2g|2g)$/.test(conn?.effectiveType ?? "");
+    if (saveData || slow) return; // keep the poster only
+
+    const attach = () => setVideoSrc(HERO_VIDEO);
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          const ric = (window as any).requestIdleCallback;
+          ric ? ric(attach, { timeout: 1200 }) : setTimeout(attach, 200);
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (videoSrc) videoRef.current?.load();
+  }, [videoSrc]);
+
+
+
 
   useEffect(() => {
     const onScroll = () => setShowPiP(window.scrollY > 400);
@@ -164,18 +214,27 @@ function Index() {
             className="animate-scale-in relative overflow-hidden rounded-2xl bg-black shadow-[0_30px_80px_-40px_rgba(16,18,24,0.6)]">
             <video
               ref={videoRef}
-              src="https://assets.cdn.filesafe.space/LgG7iv4Yd7mh0USORTBt/media/6a7d44f562e9a426c0c5f1dd.mp4"
-              poster={`${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`}
+              poster={HERO_POSTER}
+              width={1280}
+              height={720}
               autoPlay
               muted={muted}
               loop
               playsInline
               controls
-              className="h-full w-full object-cover"
-            />
+              preload="metadata"
+              onCanPlay={() => {
+                setCanPlay(true);
+                videoRef.current?.play().catch(() => {});
+              }}
+              className="aspect-video h-full w-full object-cover"
+            >
+              {videoSrc && <source src={videoSrc} type="video/mp4" />}
+            </video>
+
 
             {/* Click-to-unmute overlay */}
-            {muted && (
+            {muted && canPlay && (
               <button
                 type="button"
                 onClick={toggleMute}
