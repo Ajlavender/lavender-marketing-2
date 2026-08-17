@@ -49,17 +49,34 @@ export function Header() {
                   {item.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
-                <div className="invisible absolute left-0 top-full w-64 rounded-xl border border-white/10 bg-white p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100">
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.to}
-                      to={child.to}
-                      className="block rounded-md px-3 py-2 text-sm text-foreground transition-colors hover:bg-secondary hover:text-primary"
-                    >
-                      {child.label}
-                    </Link>
+                <div
+                  className={cn(
+                    "invisible absolute left-0 top-full rounded-xl border border-white/10 bg-white p-3 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100",
+                    item.children.some((c) => "group" in c && c.group)
+                      ? "left-1/2 w-[38rem] -translate-x-1/2 grid grid-cols-2 gap-4"
+                      : "w-64",
+                  )}
+                >
+                  {groupChildren(item.children).map(([groupLabel, kids]) => (
+                    <div key={groupLabel || "default"}>
+                      {groupLabel && (
+                        <p className="px-3 pb-1 pt-1 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                          {groupLabel}
+                        </p>
+                      )}
+                      {kids.map((child) => (
+                        <Link
+                          key={child.to}
+                          to={child.to}
+                          className="block rounded-md px-3 py-2 text-sm text-foreground transition-colors hover:bg-secondary hover:text-primary"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
                   ))}
                 </div>
+
               </div>
             ) : (
               <Link
