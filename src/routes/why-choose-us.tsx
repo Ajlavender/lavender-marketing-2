@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useMemo } from "react";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectGrid, RatingBar } from "@/components/site/sections";
@@ -43,8 +44,8 @@ function DemoButton({ label = "Schedule a demo", to = "/contact" }: { label?: st
   );
 }
 
-const pageCounters = [
-  { value: "6", label: "Years Of Kicking A%*" },
+const pageCounters = (yearsActive: number) => [
+  { value: String(yearsActive), label: "Years Of Kicking A%*" },
   { value: "5", label: "Rockstars" },
   { value: "50", suffix: "+", label: "Local Businesses Served" },
   { value: "7", label: "States & Provinces" },
@@ -73,6 +74,7 @@ function GhostWord({ text, className }: { text: string; className?: string }) {
 }
 
 function WhyChooseUs() {
+  const yearsActive = useMemo(() => new Date().getFullYear() - 2015, []);
   return (
     <div className="overflow-hidden">
       {/* Hero */}
@@ -196,7 +198,7 @@ function WhyChooseUs() {
           </div>
 
           <div className="mt-20 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
-            {pageCounters.map((c, i) => (
+            {pageCounters(yearsActive).map((c, i) => (
               <Reveal key={c.label} delay={i * 110} scale>
                 <div className="flex aspect-square flex-col items-center justify-center rounded-3xl bg-card px-6 text-center shadow-[0_18px_40px_-24px_rgba(42,35,82,0.35)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-28px_rgba(42,35,82,0.5)]">
                   <p className="font-[family-name:var(--font-display)] text-6xl font-bold tracking-tight text-[#1f2150]">
