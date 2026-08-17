@@ -199,24 +199,22 @@ function About() {
             </h2>
             <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
               <p>
-                Almost every business out there has a website. The majority of large and fast-growing
-                companies depend on their websites. Despite the importance of a website, we couldn't
-                find a single website or SEO agency that focused on helping small and mid-size
-                business in a smooth and efficient way.
+                Almost every local business in Canada has a website — but most aren't built to turn
+                visitors into calls, bookings, and reviews. The big agencies only want high-paying
+                enterprise clients. The cheap freelancers disappear after launch. And the DIY tools
+                leave you guessing.
               </p>
               <p>
-                It seemed like the alternatives out there were either cheap freelancers with not
-                enough experience, or web agencies that just wanted to work with larger, higher paying
-                clients. There was nothing for us.
+                We couldn't find a single team that combined great design, fast follow-up, review
+                automation, and local SEO into one simple, affordable package for small business
+                owners.
               </p>
               <p>
                 <strong className="font-bold text-foreground">The solution?</strong>
                 <br />
-                We decided to gather the best web developers, designers, SEO-experts and project
-                managers that we could find to start a web &amp; SEO agency that simplified web
-                technology for busy executives. We started to build the web agency we never found.
-                <br />
-                We are Lavender Marketing & Co..
+                We built it ourselves. Lavender Marketing &amp; Co. is the web, automation, and growth
+                partner we wish we'd had — designed for busy Canadian business owners who want
+                results without the $10,000+ price tag.
               </p>
             </div>
             <div className="mt-7">
