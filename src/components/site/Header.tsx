@@ -118,6 +118,7 @@ export function Header() {
                     <MegaPanel
                       items={item.children as NavChild[]}
                       wide={(item.children as NavChild[]).some((c) => !!c.group)}
+                      open={openMenu === item.label}
                       onNavigate={() => setOpenMenu(null)}
                     />
                   </div>
