@@ -240,14 +240,22 @@ function ReviewStars({ rating = 5, size = "h-4 w-4" }: { rating?: number; size?:
 
 export function RatingBar() {
   return (
-    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-      {ratingSources.map((r) => (
-        <div key={r.label} className="flex flex-col items-center gap-6 text-center">
-          <img src={r.logo} alt={r.label} loading="lazy" className="h-10 w-auto object-contain" />
-          <ReviewStars size="h-6 w-6" />
-          <p className="text-sm text-muted-foreground">{r.count}</p>
-        </div>
-      ))}
+    <div className="flex flex-col items-center gap-6 text-center">
+      <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+        {ratingSources.map((r) => (
+          <img
+            key={r.label}
+            src={r.logo}
+            alt={r.label}
+            loading="lazy"
+            className="h-8 w-auto object-contain opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0 sm:h-10"
+          />
+        ))}
+      </div>
+      <div className="flex flex-col items-center gap-2">
+        <ReviewStars size="h-5 w-5" />
+        <p className="text-sm font-medium text-muted-foreground">50+ reviews</p>
+      </div>
     </div>
   );
 }
