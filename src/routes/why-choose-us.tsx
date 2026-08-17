@@ -200,7 +200,7 @@ function WhyChooseUs() {
               <Reveal key={c.label} delay={i * 110} scale>
                 <div className="flex aspect-square flex-col items-center justify-center rounded-3xl bg-card px-6 text-center shadow-[0_18px_40px_-24px_rgba(42,35,82,0.35)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-28px_rgba(42,35,82,0.5)]">
                   <p className="font-[family-name:var(--font-display)] text-6xl font-bold tracking-tight text-[#1f2150]">
-                    <CountUp value={c.value} />
+                    <CountUp value={`${c.value}${c.suffix ?? ""}`} />
                   </p>
                   <p className="mt-4 text-base text-[#1f2150]">{c.label}</p>
                 </div>
