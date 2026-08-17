@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, ChevronDown, X, ArrowUpRight } from "lucide-react";
+import { Menu, ChevronDown, ArrowUpRight } from "lucide-react";
 import { nav, LOGO } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
