@@ -40,10 +40,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-500 ease-out",
-        scrolled || openMenu
-          ? "translate-y-0 border-b border-white/10 bg-nav-plum/90 shadow-[0_8px_30px_-18px_rgba(16,18,24,0.45)] backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent shadow-none",
+        "fixed top-0 z-50 w-full translate-y-0 border-b border-white/10 bg-nav-plum/90 shadow-[0_8px_30px_-18px_rgba(16,18,24,0.45)] backdrop-blur-xl transition-all duration-500 ease-out",
       )}
     >
       <div
