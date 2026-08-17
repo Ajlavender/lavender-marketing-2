@@ -321,7 +321,7 @@ function Index() {
             {/* floating proof cards */}
             <div className="animate-float-soft pointer-events-none absolute -left-4 top-8 z-20 hidden rounded-2xl border border-white/60 bg-background/85 px-4 py-3 shadow-xl backdrop-blur-xl sm:block">
               <p className="text-2xl font-bold leading-none text-brand">
-                <CountUp to={312} suffix="%" />
+                <CountUp value="312%" />
               </p>
               <p className="mt-1 text-xs font-medium text-muted-foreground">More Google reviews</p>
             </div>
@@ -330,7 +330,7 @@ function Index() {
               style={{ animationDelay: "-2.5s" }}
             >
               <p className="text-2xl font-bold leading-none text-brand">
-                <CountUp to={7} suffix=" days" />
+                <CountUp value="7 days" />
               </p>
               <p className="mt-1 text-xs font-medium text-muted-foreground">Design to launch</p>
             </div>
