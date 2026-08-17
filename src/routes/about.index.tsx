@@ -213,8 +213,8 @@ function About() {
                 <strong className="font-bold text-foreground">The solution?</strong>
                 <br />
                 We built it ourselves. Lavender Marketing &amp; Co. is the web, automation, and growth
-                partner we wish we'd had — designed for busy Canadian business owners who want
-                results without the $10,000+ price tag.
+                partner we wish we'd had — designed for busy Canadian and American business owners who
+                want results without the $10,000+ price tag.
               </p>
             </div>
             <div className="mt-7">
