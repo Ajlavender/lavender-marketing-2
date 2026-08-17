@@ -41,7 +41,7 @@ export function Header() {
     <header
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-500 ease-out",
-        onDark
+        scrolled || openMenu
           ? "translate-y-0 border-b border-white/10 bg-nav-plum/90 shadow-[0_8px_30px_-18px_rgba(16,18,24,0.45)] backdrop-blur-xl"
           : "border-b border-transparent bg-transparent shadow-none",
       )}
