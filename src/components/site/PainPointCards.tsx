@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { painPoints } from "@/data/site";
 import { cn } from "@/lib/utils";
 
-const links = ["/website-redesign", "/why-choose-us", "/seo", "/digital-ads"];
+const links = ["/website-redesign", "/missed-call-text-back", "/review-automation", "/follow-up-automation"];
 
 /** Per-card parallax speed (px of travel per 100px of scroll progress) */
 const speeds = [-26, 14, 20, -18];

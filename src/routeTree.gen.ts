@@ -11,17 +11,24 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhyChooseUsRouteImport } from './routes/why-choose-us'
 import { Route as WebsiteRedesignRouteImport } from './routes/website-redesign'
-import { Route as ShopifyWebsiteRouteImport } from './routes/shopify-website'
-import { Route as SeoRouteImport } from './routes/seo'
+import { Route as VoiceAiReceptionistRouteImport } from './routes/voice-ai-receptionist'
+import { Route as UnifiedInboxRouteImport } from './routes/unified-inbox'
 import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ReviewAutomationRouteImport } from './routes/review-automation'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as OnlineBookingRouteImport } from './routes/online-booking'
+import { Route as MissedCallTextBackRouteImport } from './routes/missed-call-text-back'
+import { Route as LocalSeoRouteImport } from './routes/local-seo'
+import { Route as HostingAndSupportRouteImport } from './routes/hosting-and-support'
+import { Route as GrowthReportRouteImport } from './routes/growth-report'
+import { Route as FollowUpAutomationRouteImport } from './routes/follow-up-automation'
 import { Route as FaqRouteImport } from './routes/faq'
-import { Route as DigitalAdsRouteImport } from './routes/digital-ads'
-import { Route as DevelopersRouteImport } from './routes/developers'
-import { Route as CopywritingRouteImport } from './routes/copywriting'
-import { Route as ConversionRateOptimizationRouteImport } from './routes/conversion-rate-optimization'
+import { Route as CrmPipelineRouteImport } from './routes/crm-pipeline'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ChatWidgetRouteImport } from './routes/chat-widget'
+import { Route as AiChatWidgetRouteImport } from './routes/ai-chat-widget'
+import { Route as AdManagementRouteImport } from './routes/ad-management'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
@@ -38,19 +45,24 @@ const WebsiteRedesignRoute = WebsiteRedesignRouteImport.update({
   path: '/website-redesign',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ShopifyWebsiteRoute = ShopifyWebsiteRouteImport.update({
-  id: '/shopify-website',
-  path: '/shopify-website',
+const VoiceAiReceptionistRoute = VoiceAiReceptionistRouteImport.update({
+  id: '/voice-ai-receptionist',
+  path: '/voice-ai-receptionist',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SeoRoute = SeoRouteImport.update({
-  id: '/seo',
-  path: '/seo',
+const UnifiedInboxRoute = UnifiedInboxRouteImport.update({
+  id: '/unified-inbox',
+  path: '/unified-inbox',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewAutomationRoute = ReviewAutomationRouteImport.update({
+  id: '/review-automation',
+  path: '/review-automation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsRoute = ProjectsRouteImport.update({
@@ -63,35 +75,64 @@ const PricingRoute = PricingRouteImport.update({
   path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OnlineBookingRoute = OnlineBookingRouteImport.update({
+  id: '/online-booking',
+  path: '/online-booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MissedCallTextBackRoute = MissedCallTextBackRouteImport.update({
+  id: '/missed-call-text-back',
+  path: '/missed-call-text-back',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocalSeoRoute = LocalSeoRouteImport.update({
+  id: '/local-seo',
+  path: '/local-seo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HostingAndSupportRoute = HostingAndSupportRouteImport.update({
+  id: '/hosting-and-support',
+  path: '/hosting-and-support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrowthReportRoute = GrowthReportRouteImport.update({
+  id: '/growth-report',
+  path: '/growth-report',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FollowUpAutomationRoute = FollowUpAutomationRouteImport.update({
+  id: '/follow-up-automation',
+  path: '/follow-up-automation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DigitalAdsRoute = DigitalAdsRouteImport.update({
-  id: '/digital-ads',
-  path: '/digital-ads',
+const CrmPipelineRoute = CrmPipelineRouteImport.update({
+  id: '/crm-pipeline',
+  path: '/crm-pipeline',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DevelopersRoute = DevelopersRouteImport.update({
-  id: '/developers',
-  path: '/developers',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CopywritingRoute = CopywritingRouteImport.update({
-  id: '/copywriting',
-  path: '/copywriting',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ConversionRateOptimizationRoute =
-  ConversionRateOptimizationRouteImport.update({
-    id: '/conversion-rate-optimization',
-    path: '/conversion-rate-optimization',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChatWidgetRoute = ChatWidgetRouteImport.update({
+  id: '/chat-widget',
+  path: '/chat-widget',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiChatWidgetRoute = AiChatWidgetRouteImport.update({
+  id: '/ai-chat-widget',
+  path: '/ai-chat-widget',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdManagementRoute = AdManagementRouteImport.update({
+  id: '/ad-management',
+  path: '/ad-management',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -122,17 +163,24 @@ const AboutMottoRoute = AboutMottoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ad-management': typeof AdManagementRoute
+  '/ai-chat-widget': typeof AiChatWidgetRoute
+  '/chat-widget': typeof ChatWidgetRoute
   '/contact': typeof ContactRoute
-  '/conversion-rate-optimization': typeof ConversionRateOptimizationRoute
-  '/copywriting': typeof CopywritingRoute
-  '/developers': typeof DevelopersRoute
-  '/digital-ads': typeof DigitalAdsRoute
+  '/crm-pipeline': typeof CrmPipelineRoute
   '/faq': typeof FaqRoute
+  '/follow-up-automation': typeof FollowUpAutomationRoute
+  '/growth-report': typeof GrowthReportRoute
+  '/hosting-and-support': typeof HostingAndSupportRoute
+  '/local-seo': typeof LocalSeoRoute
+  '/missed-call-text-back': typeof MissedCallTextBackRoute
+  '/online-booking': typeof OnlineBookingRoute
   '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
+  '/review-automation': typeof ReviewAutomationRoute
   '/reviews': typeof ReviewsRoute
-  '/seo': typeof SeoRoute
-  '/shopify-website': typeof ShopifyWebsiteRoute
+  '/unified-inbox': typeof UnifiedInboxRoute
+  '/voice-ai-receptionist': typeof VoiceAiReceptionistRoute
   '/website-redesign': typeof WebsiteRedesignRoute
   '/why-choose-us': typeof WhyChooseUsRoute
   '/about/motto': typeof AboutMottoRoute
@@ -142,17 +190,24 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ad-management': typeof AdManagementRoute
+  '/ai-chat-widget': typeof AiChatWidgetRoute
+  '/chat-widget': typeof ChatWidgetRoute
   '/contact': typeof ContactRoute
-  '/conversion-rate-optimization': typeof ConversionRateOptimizationRoute
-  '/copywriting': typeof CopywritingRoute
-  '/developers': typeof DevelopersRoute
-  '/digital-ads': typeof DigitalAdsRoute
+  '/crm-pipeline': typeof CrmPipelineRoute
   '/faq': typeof FaqRoute
+  '/follow-up-automation': typeof FollowUpAutomationRoute
+  '/growth-report': typeof GrowthReportRoute
+  '/hosting-and-support': typeof HostingAndSupportRoute
+  '/local-seo': typeof LocalSeoRoute
+  '/missed-call-text-back': typeof MissedCallTextBackRoute
+  '/online-booking': typeof OnlineBookingRoute
   '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
+  '/review-automation': typeof ReviewAutomationRoute
   '/reviews': typeof ReviewsRoute
-  '/seo': typeof SeoRoute
-  '/shopify-website': typeof ShopifyWebsiteRoute
+  '/unified-inbox': typeof UnifiedInboxRoute
+  '/voice-ai-receptionist': typeof VoiceAiReceptionistRoute
   '/website-redesign': typeof WebsiteRedesignRoute
   '/why-choose-us': typeof WhyChooseUsRoute
   '/about/motto': typeof AboutMottoRoute
@@ -163,17 +218,24 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ad-management': typeof AdManagementRoute
+  '/ai-chat-widget': typeof AiChatWidgetRoute
+  '/chat-widget': typeof ChatWidgetRoute
   '/contact': typeof ContactRoute
-  '/conversion-rate-optimization': typeof ConversionRateOptimizationRoute
-  '/copywriting': typeof CopywritingRoute
-  '/developers': typeof DevelopersRoute
-  '/digital-ads': typeof DigitalAdsRoute
+  '/crm-pipeline': typeof CrmPipelineRoute
   '/faq': typeof FaqRoute
+  '/follow-up-automation': typeof FollowUpAutomationRoute
+  '/growth-report': typeof GrowthReportRoute
+  '/hosting-and-support': typeof HostingAndSupportRoute
+  '/local-seo': typeof LocalSeoRoute
+  '/missed-call-text-back': typeof MissedCallTextBackRoute
+  '/online-booking': typeof OnlineBookingRoute
   '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
+  '/review-automation': typeof ReviewAutomationRoute
   '/reviews': typeof ReviewsRoute
-  '/seo': typeof SeoRoute
-  '/shopify-website': typeof ShopifyWebsiteRoute
+  '/unified-inbox': typeof UnifiedInboxRoute
+  '/voice-ai-receptionist': typeof VoiceAiReceptionistRoute
   '/website-redesign': typeof WebsiteRedesignRoute
   '/why-choose-us': typeof WhyChooseUsRoute
   '/about/motto': typeof AboutMottoRoute
@@ -185,17 +247,24 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/ad-management'
+    | '/ai-chat-widget'
+    | '/chat-widget'
     | '/contact'
-    | '/conversion-rate-optimization'
-    | '/copywriting'
-    | '/developers'
-    | '/digital-ads'
+    | '/crm-pipeline'
     | '/faq'
+    | '/follow-up-automation'
+    | '/growth-report'
+    | '/hosting-and-support'
+    | '/local-seo'
+    | '/missed-call-text-back'
+    | '/online-booking'
     | '/pricing'
     | '/projects'
+    | '/review-automation'
     | '/reviews'
-    | '/seo'
-    | '/shopify-website'
+    | '/unified-inbox'
+    | '/voice-ai-receptionist'
     | '/website-redesign'
     | '/why-choose-us'
     | '/about/motto'
@@ -205,17 +274,24 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/ad-management'
+    | '/ai-chat-widget'
+    | '/chat-widget'
     | '/contact'
-    | '/conversion-rate-optimization'
-    | '/copywriting'
-    | '/developers'
-    | '/digital-ads'
+    | '/crm-pipeline'
     | '/faq'
+    | '/follow-up-automation'
+    | '/growth-report'
+    | '/hosting-and-support'
+    | '/local-seo'
+    | '/missed-call-text-back'
+    | '/online-booking'
     | '/pricing'
     | '/projects'
+    | '/review-automation'
     | '/reviews'
-    | '/seo'
-    | '/shopify-website'
+    | '/unified-inbox'
+    | '/voice-ai-receptionist'
     | '/website-redesign'
     | '/why-choose-us'
     | '/about/motto'
@@ -225,17 +301,24 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/ad-management'
+    | '/ai-chat-widget'
+    | '/chat-widget'
     | '/contact'
-    | '/conversion-rate-optimization'
-    | '/copywriting'
-    | '/developers'
-    | '/digital-ads'
+    | '/crm-pipeline'
     | '/faq'
+    | '/follow-up-automation'
+    | '/growth-report'
+    | '/hosting-and-support'
+    | '/local-seo'
+    | '/missed-call-text-back'
+    | '/online-booking'
     | '/pricing'
     | '/projects'
+    | '/review-automation'
     | '/reviews'
-    | '/seo'
-    | '/shopify-website'
+    | '/unified-inbox'
+    | '/voice-ai-receptionist'
     | '/website-redesign'
     | '/why-choose-us'
     | '/about/motto'
@@ -246,17 +329,24 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdManagementRoute: typeof AdManagementRoute
+  AiChatWidgetRoute: typeof AiChatWidgetRoute
+  ChatWidgetRoute: typeof ChatWidgetRoute
   ContactRoute: typeof ContactRoute
-  ConversionRateOptimizationRoute: typeof ConversionRateOptimizationRoute
-  CopywritingRoute: typeof CopywritingRoute
-  DevelopersRoute: typeof DevelopersRoute
-  DigitalAdsRoute: typeof DigitalAdsRoute
+  CrmPipelineRoute: typeof CrmPipelineRoute
   FaqRoute: typeof FaqRoute
+  FollowUpAutomationRoute: typeof FollowUpAutomationRoute
+  GrowthReportRoute: typeof GrowthReportRoute
+  HostingAndSupportRoute: typeof HostingAndSupportRoute
+  LocalSeoRoute: typeof LocalSeoRoute
+  MissedCallTextBackRoute: typeof MissedCallTextBackRoute
+  OnlineBookingRoute: typeof OnlineBookingRoute
   PricingRoute: typeof PricingRoute
   ProjectsRoute: typeof ProjectsRoute
+  ReviewAutomationRoute: typeof ReviewAutomationRoute
   ReviewsRoute: typeof ReviewsRoute
-  SeoRoute: typeof SeoRoute
-  ShopifyWebsiteRoute: typeof ShopifyWebsiteRoute
+  UnifiedInboxRoute: typeof UnifiedInboxRoute
+  VoiceAiReceptionistRoute: typeof VoiceAiReceptionistRoute
   WebsiteRedesignRoute: typeof WebsiteRedesignRoute
   WhyChooseUsRoute: typeof WhyChooseUsRoute
   AboutMottoRoute: typeof AboutMottoRoute
@@ -281,18 +371,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WebsiteRedesignRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/shopify-website': {
-      id: '/shopify-website'
-      path: '/shopify-website'
-      fullPath: '/shopify-website'
-      preLoaderRoute: typeof ShopifyWebsiteRouteImport
+    '/voice-ai-receptionist': {
+      id: '/voice-ai-receptionist'
+      path: '/voice-ai-receptionist'
+      fullPath: '/voice-ai-receptionist'
+      preLoaderRoute: typeof VoiceAiReceptionistRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/seo': {
-      id: '/seo'
-      path: '/seo'
-      fullPath: '/seo'
-      preLoaderRoute: typeof SeoRouteImport
+    '/unified-inbox': {
+      id: '/unified-inbox'
+      path: '/unified-inbox'
+      fullPath: '/unified-inbox'
+      preLoaderRoute: typeof UnifiedInboxRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reviews': {
@@ -300,6 +390,13 @@ declare module '@tanstack/react-router' {
       path: '/reviews'
       fullPath: '/reviews'
       preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/review-automation': {
+      id: '/review-automation'
+      path: '/review-automation'
+      fullPath: '/review-automation'
+      preLoaderRoute: typeof ReviewAutomationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects': {
@@ -316,6 +413,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/online-booking': {
+      id: '/online-booking'
+      path: '/online-booking'
+      fullPath: '/online-booking'
+      preLoaderRoute: typeof OnlineBookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/missed-call-text-back': {
+      id: '/missed-call-text-back'
+      path: '/missed-call-text-back'
+      fullPath: '/missed-call-text-back'
+      preLoaderRoute: typeof MissedCallTextBackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/local-seo': {
+      id: '/local-seo'
+      path: '/local-seo'
+      fullPath: '/local-seo'
+      preLoaderRoute: typeof LocalSeoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hosting-and-support': {
+      id: '/hosting-and-support'
+      path: '/hosting-and-support'
+      fullPath: '/hosting-and-support'
+      preLoaderRoute: typeof HostingAndSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/growth-report': {
+      id: '/growth-report'
+      path: '/growth-report'
+      fullPath: '/growth-report'
+      preLoaderRoute: typeof GrowthReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/follow-up-automation': {
+      id: '/follow-up-automation'
+      path: '/follow-up-automation'
+      fullPath: '/follow-up-automation'
+      preLoaderRoute: typeof FollowUpAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faq': {
       id: '/faq'
       path: '/faq'
@@ -323,32 +462,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/digital-ads': {
-      id: '/digital-ads'
-      path: '/digital-ads'
-      fullPath: '/digital-ads'
-      preLoaderRoute: typeof DigitalAdsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/developers': {
-      id: '/developers'
-      path: '/developers'
-      fullPath: '/developers'
-      preLoaderRoute: typeof DevelopersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/copywriting': {
-      id: '/copywriting'
-      path: '/copywriting'
-      fullPath: '/copywriting'
-      preLoaderRoute: typeof CopywritingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/conversion-rate-optimization': {
-      id: '/conversion-rate-optimization'
-      path: '/conversion-rate-optimization'
-      fullPath: '/conversion-rate-optimization'
-      preLoaderRoute: typeof ConversionRateOptimizationRouteImport
+    '/crm-pipeline': {
+      id: '/crm-pipeline'
+      path: '/crm-pipeline'
+      fullPath: '/crm-pipeline'
+      preLoaderRoute: typeof CrmPipelineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -356,6 +474,27 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chat-widget': {
+      id: '/chat-widget'
+      path: '/chat-widget'
+      fullPath: '/chat-widget'
+      preLoaderRoute: typeof ChatWidgetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-chat-widget': {
+      id: '/ai-chat-widget'
+      path: '/ai-chat-widget'
+      fullPath: '/ai-chat-widget'
+      preLoaderRoute: typeof AiChatWidgetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ad-management': {
+      id: '/ad-management'
+      path: '/ad-management'
+      fullPath: '/ad-management'
+      preLoaderRoute: typeof AdManagementRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -398,17 +537,24 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdManagementRoute: AdManagementRoute,
+  AiChatWidgetRoute: AiChatWidgetRoute,
+  ChatWidgetRoute: ChatWidgetRoute,
   ContactRoute: ContactRoute,
-  ConversionRateOptimizationRoute: ConversionRateOptimizationRoute,
-  CopywritingRoute: CopywritingRoute,
-  DevelopersRoute: DevelopersRoute,
-  DigitalAdsRoute: DigitalAdsRoute,
+  CrmPipelineRoute: CrmPipelineRoute,
   FaqRoute: FaqRoute,
+  FollowUpAutomationRoute: FollowUpAutomationRoute,
+  GrowthReportRoute: GrowthReportRoute,
+  HostingAndSupportRoute: HostingAndSupportRoute,
+  LocalSeoRoute: LocalSeoRoute,
+  MissedCallTextBackRoute: MissedCallTextBackRoute,
+  OnlineBookingRoute: OnlineBookingRoute,
   PricingRoute: PricingRoute,
   ProjectsRoute: ProjectsRoute,
+  ReviewAutomationRoute: ReviewAutomationRoute,
   ReviewsRoute: ReviewsRoute,
-  SeoRoute: SeoRoute,
-  ShopifyWebsiteRoute: ShopifyWebsiteRoute,
+  UnifiedInboxRoute: UnifiedInboxRoute,
+  VoiceAiReceptionistRoute: VoiceAiReceptionistRoute,
   WebsiteRedesignRoute: WebsiteRedesignRoute,
   WhyChooseUsRoute: WhyChooseUsRoute,
   AboutMottoRoute: AboutMottoRoute,

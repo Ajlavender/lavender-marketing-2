@@ -5,7 +5,21 @@ import { nav, LOGO } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+type NavChild = { label: string; to: string; group?: string };
+
+function groupChildren(children: readonly NavChild[]): [string, NavChild[]][] {
+  const groups: [string, NavChild[]][] = [];
+  for (const child of children) {
+    const key = child.group ?? "";
+    const existing = groups.find(([k]) => k === key);
+    if (existing) existing[1].push(child);
+    else groups.push([key, [child]]);
+  }
+  return groups;
+}
+
 export function Header() {
+
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -49,17 +63,34 @@ export function Header() {
                   {item.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
-                <div className="invisible absolute left-0 top-full w-64 rounded-xl border border-white/10 bg-white p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100">
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.to}
-                      to={child.to}
-                      className="block rounded-md px-3 py-2 text-sm text-foreground transition-colors hover:bg-secondary hover:text-primary"
-                    >
-                      {child.label}
-                    </Link>
+                <div
+                  className={cn(
+                    "invisible absolute left-0 top-full rounded-xl border border-white/10 bg-white p-3 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100",
+                    item.children.some((c) => "group" in c && c.group)
+                      ? "left-1/2 w-[38rem] -translate-x-1/2 grid grid-cols-2 gap-4"
+                      : "w-64",
+                  )}
+                >
+                  {groupChildren(item.children).map(([groupLabel, kids]) => (
+                    <div key={groupLabel || "default"}>
+                      {groupLabel && (
+                        <p className="px-3 pb-1 pt-1 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                          {groupLabel}
+                        </p>
+                      )}
+                      {kids.map((child) => (
+                        <Link
+                          key={child.to}
+                          to={child.to}
+                          className="block rounded-md px-3 py-2 text-sm text-foreground transition-colors hover:bg-secondary hover:text-primary"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
                   ))}
                 </div>
+
               </div>
             ) : (
               <Link
@@ -123,18 +154,28 @@ export function Header() {
                 </Link>
                 {item.children && (
                   <div className="ml-3 border-l border-white/20 pl-3">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.to}
-                        to={child.to}
-                        onClick={() => setOpen(false)}
-                        className="block rounded-md px-3 py-2 text-sm text-white/80"
-                      >
-                        {child.label}
-                      </Link>
+                    {groupChildren(item.children).map(([groupLabel, kids]) => (
+                      <div key={groupLabel || "default"}>
+                        {groupLabel && (
+                          <p className="px-3 pb-1 pt-3 text-[11px] font-semibold uppercase tracking-wide text-white/50">
+                            {groupLabel}
+                          </p>
+                        )}
+                        {kids.map((child) => (
+                          <Link
+                            key={child.to}
+                            to={child.to}
+                            onClick={() => setOpen(false)}
+                            className="block rounded-md px-3 py-2 text-sm text-white/80"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
                     ))}
                   </div>
                 )}
+
               </div>
             ))}
           </nav>
