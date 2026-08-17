@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about/")({
       {
         name: "description",
         content:
-          "Our journey began in Sweden in 2016. We built the web agency we never found – a 5-star SEO & web agency for small and medium businesses.",
+          "Our journey began in Canada in 2015, and we went all-in in 2019. We built the web agency we never found – a 5-star web, SEO & growth partner for Canadian small businesses.",
       },
       { property: "og:title", content: "About Us | Lavender Marketing & Co. Web & SEO Agency" },
       {
@@ -43,30 +43,30 @@ function DemoButton({ label = "Schedule a demo", to = "/contact" }: { label?: st
 
 const missionCards = [
   {
-    title: "Free Design",
+    title: "Free Design First",
     body:
-      "We create a demo design with suggestions for free, so you don't need to guess. You can see the design before you decide.",
+      "We build your demo design for free, so you see exactly what you're getting before you spend a dollar or sign anything.",
     image: `${MEDIA}/2023/02/web-design-1024x1024.png`,
     offset: "lg:mt-14",
   },
   {
-    title: "Guaranteed ROI",
+    title: "Built to Convert",
     body:
-      "We are building all our designs from conversion best practices, so you don't need to worry if it will give return of investment or not.",
+      "Every page is designed around one goal: more calls, bookings, and reviews. No fluff. No guesswork. Just a site that works.",
     image: `${MEDIA}/2023/02/financial-growth-1024x1024.png`,
     offset: "lg:mt-0",
   },
   {
-    title: "Data Based Decisions",
+    title: "Follow-Up on Autopilot",
     body:
-      "We A/B testing the website after launch to optimize further. In fact, the only way to be sure that you are improving your website is to optimize it based on data. Otherwise, you're just guessing.",
+      "Missed calls get texted back instantly. Leads are chased by text and email until they book or say no. Nothing falls through the cracks.",
     image: `${MEDIA}/2023/02/ab-testing-1024x1024.png`,
     offset: "lg:mt-6",
   },
   {
-    title: "Optimized communication",
+    title: "Made for Busy Owners",
     body:
-      "Besides this, we've optimized our processes for busy executives in small and mid-sized businesses. Working with us takes very little time, and communicating with us is done by a live chat for faster replies.",
+      "We know you're running a business, not a website project. Our process is fast, simple, and built for owners who don't have time to babysit tech.",
     image: `${MEDIA}/2023/02/time-is-money-1-1024x1024.png`,
     offset: "lg:-mt-6",
   },
@@ -124,10 +124,14 @@ function About() {
             </h1>
             <div className="mt-5 max-w-sm space-y-4 text-[15px] leading-relaxed text-muted-foreground">
               <p>
-                Our Journey began in Sweden in 2016, with another Startup that relied heavily on its
-                website to generate revenue.
+                Our journey began in Canada in 2015, running a local service business that relied
+                heavily on its website to bring in leads.
               </p>
-              <p>We were quite successful but had one big problem that took up most of our time.</p>
+              <p>
+                We were doing well, but one problem kept eating up our time and costing us jobs. By
+                2019, we went all-in on fixing it — for ourselves first, then for other Canadian
+                business owners.
+              </p>
             </div>
           </Reveal>
         </div>
@@ -147,16 +151,16 @@ function About() {
                 <p>
                   <strong className="font-bold text-background">The problem?</strong>
                   <br />
-                  Well, building and optimizing a website wasn't a walk in the park. There were too
-                  many website companies, too many choices and it was too costly – and at the end of
-                  they day, no one really knew what worked anyway.
+                  Building and optimizing a website wasn't a walk in the park. There were too many
+                  agencies, too many choices, and it was too expensive — and at the end of the day,
+                  no one could show us what actually worked.
                 </p>
                 <p>
                   <strong className="font-bold text-background">Worst of all?</strong>
                   <br />
                   No one ever showed us what the website they wanted us to buy would look like. They
-                  urged us to spend $ 10 000 + and "trust them". We needed to make the decision based
-                  on gut feeling. Not a very easy decision to make, if you ask me.
+                  urged us to spend $10,000+ and "trust them". We had to make the decision based on
+                  gut feeling — not exactly easy when you're running a small business.
                 </p>
               </div>
               <div className="mt-8">
@@ -195,24 +199,22 @@ function About() {
             </h2>
             <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
               <p>
-                Almost every business out there has a website. The majority of large and fast-growing
-                companies depend on their websites. Despite the importance of a website, we couldn't
-                find a single website or SEO agency that focused on helping small and mid-size
-                business in a smooth and efficient way.
+                Almost every local business in Canada has a website — but most aren't built to turn
+                visitors into calls, bookings, and reviews. The big agencies only want high-paying
+                enterprise clients. The cheap freelancers disappear after launch. And the DIY tools
+                leave you guessing.
               </p>
               <p>
-                It seemed like the alternatives out there were either cheap freelancers with not
-                enough experience, or web agencies that just wanted to work with larger, higher paying
-                clients. There was nothing for us.
+                We couldn't find a single team that combined great design, fast follow-up, review
+                automation, and local SEO into one simple, affordable package for small business
+                owners.
               </p>
               <p>
                 <strong className="font-bold text-foreground">The solution?</strong>
                 <br />
-                We decided to gather the best web developers, designers, SEO-experts and project
-                managers that we could find to start a web &amp; SEO agency that simplified web
-                technology for busy executives. We started to build the web agency we never found.
-                <br />
-                We are Lavender Marketing & Co..
+                We built it ourselves. Lavender Marketing &amp; Co. is the web, automation, and growth
+                partner we wish we'd had — designed for busy Canadian business owners who want
+                results without the $10,000+ price tag.
               </p>
             </div>
             <div className="mt-7">
@@ -224,35 +226,35 @@ function About() {
 
       {/* We Built the Web Agency We Never Found */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
-        <Reveal scale className="mx-auto max-w-5xl">
-          <div className="relative overflow-hidden rounded-[1.75rem] bg-[linear-gradient(115deg,#3b1f8f_0%,#5b2bc4_50%,#7c3aed_100%)] px-8 py-12 text-background sm:px-12">
-            <div className="max-w-lg">
-              <p className="text-sm text-[#c4b5fd]">
-                A 5-Star SEO &amp; Web Agency For Small &amp; Medium Businesses
-              </p>
-              <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
-                We Built the Web Agency
-                <br />
-                <span className="text-[#c4b5fd]">We Never Found.</span>
-              </h2>
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-background/85">
-                <p>
-                  We're on a mission to be the coolest cats in the web game. We whip up websites so
-                  sexy you'll want to marry them and SEO so affordable you can keep your second
-                  mortgage.
+          <Reveal scale className="mx-auto max-w-5xl">
+            <div className="relative overflow-hidden rounded-[1.75rem] bg-[linear-gradient(115deg,#3b1f8f_0%,#5b2bc4_50%,#7c3aed_100%)] px-8 py-12 text-background sm:px-12">
+              <div className="max-w-lg">
+                <p className="text-sm text-[#c4b5fd]">
+                  A 5-Star Web, SEO &amp; Growth Partner For Canadian Small Businesses
                 </p>
-                <p>
-                  <strong className="font-bold text-background">The best part?</strong>
+                <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
+                  We Built the Agency
                   <br />
-                  We make sure your site is a love magnet for customers who can't resist your charm.
-                  So if you're a small or mid-sized biz who wants to look good, get found, and rule
-                  the online jungle, we're your go-to team!
-                </p>
+                  <span className="text-[#c4b5fd]">We Never Found.</span>
+                </h2>
+                <div className="mt-6 space-y-4 text-sm leading-relaxed text-background/85">
+                  <p>
+                    We design your website completely free. You only pay $297/mo if you like it — and
+                    that includes hosting, the review engine, missed-call text-back, automatic
+                    follow-up, online booking, a unified inbox, CRM, and a monthly growth report.
+                  </p>
+                  <p>
+                    <strong className="font-bold text-background">The best part?</strong>
+                    <br />
+                    Everything is built to convert. Your site looks premium, ranks better, responds
+                    faster, and follows up automatically — so you stop losing leads to the next
+                    listing.
+                  </p>
+                </div>
+                <div className="mt-8">
+                  <DemoButton label="Get in touch" />
+                </div>
               </div>
-              <div className="mt-8">
-                <DemoButton label="Get in touch" />
-              </div>
-            </div>
             <img
               src={`${MEDIA}/2023/03/man-drawing-on-tablet-1024x1024.png`}
               alt="Man drawing on a tablet"
@@ -316,22 +318,23 @@ function About() {
       <section className="px-4 pb-24 pt-6 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
           <Reveal from="left">
-            <p className="text-sm text-primary">Chillax And Let Us Do The Heavy Lifting!</p>
+            <p className="text-sm text-primary">Built for Canadian Business Owners</p>
             <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
               We Make it <span className="text-primary">Easy.</span>
             </h2>
             <div className="mt-5 max-w-md space-y-4 text-sm leading-relaxed text-muted-foreground">
               <p>
-                We have finally made the decision easy for busy people in the United States and United
-                Kingdom. We're specialized to work with people that don't know too much about websites
-                and don't want to spend a lot of time nor money on a project.
+                We've made the decision easy for busy business owners across Canada. You don't need
+                to know code, marketing, or design. We handle the website, the follow-up, the reviews,
+                and the reporting — all in one simple $297/mo package.
               </p>
               <p>
-                We're nuts about creating cost-effective websites that are as stunning as they are
-                functional!
+                Whether you're a contractor, clinic, consultant, or local shop, you get a premium site
+                and a growth engine that actually brings in customers.
               </p>
               <p className="font-bold text-foreground">
-                Still not sure? Well, try us out. We create a free design for you, remember?
+                Still not sure? Try us out. Your first design is completely free — no contract, no
+                setup fee, no payment until you love it.
               </p>
             </div>
             <div className="mt-7">
