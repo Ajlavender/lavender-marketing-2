@@ -74,7 +74,7 @@ export function Header() {
 
         <div
           className={cn(
-            "relative mx-auto flex max-w-[90rem] items-center justify-between gap-6 px-5 transition-[height] duration-500 ease-out sm:px-8 lg:px-10",
+            "relative mx-auto flex max-w-[90rem] items-center justify-between gap-4 px-5 transition-[height] duration-500 ease-out sm:px-8 lg:px-10",
             scrolled ? "h-16" : "h-[4.75rem]",
           )}
         >
@@ -85,71 +85,71 @@ export function Header() {
             </span>
           </Link>
 
-          <nav className="relative hidden items-center gap-1 lg:flex" aria-label="Main">
-            {nav.map((item) => {
-              return item.children ? (
-                <div
-                  key={item.label}
-                  className={item.children.some((c: NavChild) => !!c.group) ? "" : "relative"}
-                  onMouseEnter={() => openNow(item.label)}
-                  onMouseLeave={closeSoon}
-                >
-                  <button
-                    className={cn(
-                      "flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium tracking-wide text-nav-plum-foreground/80 transition-colors hover:text-white",
-                      openMenu === item.label && "bg-white/10 text-white",
-                    )}
-                    aria-expanded={openMenu === item.label}
-                    onFocus={() => openNow(item.label)}
+          <div className="flex items-center justify-end gap-2 lg:gap-4">
+            <nav className="relative hidden items-center gap-1 lg:flex" aria-label="Main">
+              {nav.map((item) => {
+                return item.children ? (
+                  <div
+                    key={item.label}
+                    className={item.children.some((c: NavChild) => !!c.group) ? "" : "relative"}
+                    onMouseEnter={() => openNow(item.label)}
+                    onMouseLeave={closeSoon}
+                  >
+                    <button
+                      className={cn(
+                        "flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium tracking-wide text-nav-plum-foreground/80 transition-colors hover:text-white",
+                        openMenu === item.label && "bg-white/10 text-white",
+                      )}
+                      aria-expanded={openMenu === item.label}
+                      onFocus={() => openNow(item.label)}
+                    >
+                      {item.label}
+                      <ChevronDown
+                        className={cn(
+                          "h-4 w-4 transition-transform duration-300",
+                          openMenu === item.label && "rotate-180",
+                        )}
+                      />
+                    </button>
+                    <div
+                      className={cn(
+                        "absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 transition-all duration-200 ease-out motion-reduce:transition-none",
+                        openMenu === item.label
+                          ? "visible translate-y-0 opacity-100"
+                          : "invisible -translate-y-1 opacity-0",
+                      )}
+                    >
+                      <MegaPanel
+                        items={item.children as NavChild[]}
+                        wide={(item.children as NavChild[]).some((c) => !!c.group)}
+                        open={openMenu === item.label}
+                        onNavigate={() => setOpenMenu(null)}
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    onMouseEnter={closeSoon}
+                    activeProps={{ className: "text-white" }}
+                    className="rounded-full px-3 py-2 text-sm font-medium tracking-wide text-nav-plum-foreground/80 transition-colors hover:text-white"
                   >
                     {item.label}
-                    <ChevronDown
-                      className={cn(
-                        "h-4 w-4 transition-transform duration-300",
-                        openMenu === item.label && "rotate-180",
-                      )}
-                    />
-                  </button>
-                  <div
-                    className={cn(
-                      "absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 transition-all duration-200 ease-out motion-reduce:transition-none",
-                      openMenu === item.label
-                        ? "visible translate-y-0 opacity-100"
-                        : "invisible -translate-y-1 opacity-0",
-                    )}
-                  >
-                    <MegaPanel
-                      items={item.children as NavChild[]}
-                      wide={(item.children as NavChild[]).some((c) => !!c.group)}
-                      open={openMenu === item.label}
-                      onNavigate={() => setOpenMenu(null)}
-                    />
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  onMouseEnter={closeSoon}
-                  activeProps={{ className: "text-white" }}
-                  className="rounded-full px-3 py-2 text-sm font-medium tracking-wide text-nav-plum-foreground/80 transition-colors hover:text-white"
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
+                  </Link>
+                );
+              })}
+            </nav>
 
-          <div className="flex items-center gap-2">
             <Button
               asChild
-              className="group/btn relative hidden overflow-hidden rounded-full px-6 text-sm font-semibold tracking-wide text-white shadow-none sm:inline-flex"
+              className="group/btn relative hidden h-9 overflow-hidden rounded-full px-4 text-xs font-semibold tracking-wide text-white shadow-none sm:inline-flex"
             >
-              <Link to="/contact" className="inline-flex items-center gap-1.5">
+              <Link to="/contact" className="inline-flex items-center gap-1">
                 <span className="absolute inset-0 bg-gradient-to-br from-nav-cta-from to-nav-cta-to transition-all duration-300 group-hover/btn:from-nav-cta-hover-from group-hover/btn:to-nav-cta-hover-to" />
                 <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/20" />
-                <span className="relative">Get Your Free Growth Report</span>
-                <ArrowUpRight className="relative h-4 w-4" />
+                <span className="relative">Free Growth Report</span>
+                <ArrowUpRight className="relative h-3.5 w-3.5" />
               </Link>
             </Button>
             <button
