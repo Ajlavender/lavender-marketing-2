@@ -374,7 +374,7 @@ export const faqs = [
   },
   {
     q: "Do you host and maintain the website afterwards?",
-    a: "We offer a monthly care plan covering hosting, backups, security updates and content changes. It is optional — the site is yours either way.",
+    a: "Yes. Hosting, maintenance, backups, security updates, and ongoing support are all included in your $297/month Essentials Plan.\n\nThere’s no separate hosting bill or maintenance package to worry about — we keep the site running, secure, and up to date for you.",
   },
   {
     q: "What platforms do you build on?",
