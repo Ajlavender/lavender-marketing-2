@@ -109,7 +109,7 @@ export function Header() {
                   </button>
                   <div
                     className={cn(
-                      "absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 transition-all duration-200 ease-out",
+                      "absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 transition-all duration-200 ease-out motion-reduce:transition-none",
                       openMenu === item.label
                         ? "visible translate-y-0 opacity-100"
                         : "invisible -translate-y-1 opacity-0",
@@ -118,6 +118,7 @@ export function Header() {
                     <MegaPanel
                       items={item.children as NavChild[]}
                       wide={(item.children as NavChild[]).some((c) => !!c.group)}
+                      open={openMenu === item.label}
                       onNavigate={() => setOpenMenu(null)}
                     />
                   </div>

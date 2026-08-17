@@ -49,13 +49,29 @@ function groupChildren(children: readonly MegaChild[]): [string, MegaChild[]][] 
   return groups;
 }
 
-function Row({ child, onNavigate }: { child: MegaChild; onNavigate?: () => void }) {
+function Row({
+  child,
+  onNavigate,
+  open = true,
+  index = 0,
+}: {
+  child: MegaChild;
+  onNavigate?: () => void;
+  open?: boolean;
+  index?: number;
+}) {
   const Icon = ICONS[child.to] ?? Sparkles;
   return (
     <Link
       to={child.to}
       onClick={onNavigate}
-      className="group/item flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-white/[0.07]"
+      tabIndex={open ? 0 : -1}
+      style={{ transitionDelay: open ? `${40 + index * 28}ms` : "0ms" }}
+      className={cn(
+        "group/item flex items-start gap-3 rounded-xl px-3 py-2.5 transition-[background-color,transform,opacity] duration-300 ease-out hover:bg-white/[0.07]",
+        "motion-reduce:transition-none motion-reduce:!translate-y-0 motion-reduce:!opacity-100 motion-reduce:!delay-0",
+        open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
+      )}
     >
       <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.06] text-nav-plum-foreground/90 transition-colors group-hover/item:border-white/25 group-hover/item:text-nav-plum-foreground">
         <Icon className="h-4 w-4" />
@@ -79,12 +95,16 @@ export function MegaPanel({
   items,
   wide,
   onNavigate,
+  open = true,
 }: {
   items: readonly MegaChild[];
   wide?: boolean;
   onNavigate?: () => void;
+  open?: boolean;
 }) {
   const groups = groupChildren(items);
+  let order = 0;
+
 
   return (
     <div
@@ -95,23 +115,37 @@ export function MegaPanel({
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
       <div className={cn("grid gap-3 p-4", wide && "grid-cols-[2fr_1.05fr_14.5rem]")}>
-        {groups.map(([groupLabel, kids]) => (
+        {groups.map(([groupLabel, kids], gi) => (
           <div key={groupLabel || "default"} className="min-w-0">
             {groupLabel && (
-              <p className="px-3 pb-2 pt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/70">
+              <p
+                style={{ transitionDelay: open ? `${gi * 60}ms` : "0ms" }}
+                className={cn(
+                  "px-3 pb-2 pt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/70 transition-[transform,opacity] duration-300 ease-out",
+                  "motion-reduce:transition-none motion-reduce:!translate-y-0 motion-reduce:!opacity-100 motion-reduce:!delay-0",
+                  open ? "translate-y-0 opacity-100" : "translate-y-1.5 opacity-0",
+                )}
+              >
                 {groupLabel}
               </p>
             )}
             <div className={cn("space-y-0.5", kids.length > 6 && "grid grid-cols-2 gap-x-2 space-y-0")}>
               {kids.map((child) => (
-                <Row key={child.to} child={child} onNavigate={onNavigate} />
+                <Row key={child.to} child={child} onNavigate={onNavigate} open={open} index={order++} />
               ))}
             </div>
           </div>
         ))}
 
         {wide && (
-          <div className="relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/12 bg-white/[0.06] p-5">
+          <div
+            style={{ transitionDelay: open ? `${80 + order * 20}ms` : "0ms" }}
+            className={cn(
+              "relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/12 bg-white/[0.06] p-5 transition-[transform,opacity] duration-300 ease-out",
+              "motion-reduce:transition-none motion-reduce:!translate-y-0 motion-reduce:!opacity-100 motion-reduce:!delay-0 motion-reduce:!scale-100",
+              open ? "translate-y-0 scale-100 opacity-100" : "translate-y-2 scale-[0.98] opacity-0",
+            )}
+          >
             <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/40 blur-3xl" />
             <div className="relative">
               <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/70">
