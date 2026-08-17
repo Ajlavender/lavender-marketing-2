@@ -358,7 +358,7 @@ export const ratingSources = [
 export const faqs = [
   {
     q: "How much does a website redesign cost?",
-    a: "Most of our small and mid-sized business redesigns land between a few hundred and a few thousand dollars depending on page count, integrations and content needs. We quote a fixed price up front so there are no surprises.",
+    a: "Traditional website redesigns can easily cost $2,500 to $10,000+ upfront, often with additional hosting, maintenance, and service fees after launch.\n\nWith us, your custom website design is completely free. We’ll build it and show it to you first. If you love it and want us to launch it, it’s just $297/month for the Essentials Plan.\n\nThat includes your website along with the ongoing tools, hosting, support, and business systems built around it.",
   },
   {
     q: "Do I really get a free demo design first?",
