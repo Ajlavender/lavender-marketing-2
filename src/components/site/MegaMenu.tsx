@@ -89,7 +89,7 @@ export function MegaPanel({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl border border-white/12 bg-nav-plum/95 shadow-[0_40px_80px_-40px_rgba(16,18,24,0.9)] backdrop-blur-2xl",
+        "relative overflow-hidden rounded-2xl border border-white/12 bg-nav-plum/90 shadow-[0_40px_80px_-40px_rgba(16,18,24,0.9)] backdrop-blur-2xl",
         wide ? "w-[64rem]" : "w-[22rem]",
       )}
     >
