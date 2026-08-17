@@ -1,22 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, ChevronDown, X, ArrowUpRight } from "lucide-react";
 import { nav, LOGO } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { MegaPanel, groupChildren, type MegaChild } from "@/components/site/MegaMenu";
 
-type NavChild = { label: string; to: string; group?: string };
+type NavChild = MegaChild;
 
-function groupChildren(children: readonly NavChild[]): [string, NavChild[]][] {
-  const groups: [string, NavChild[]][] = [];
-  for (const child of children) {
-    const key = child.group ?? "";
-    const existing = groups.find(([k]) => k === key);
-    if (existing) existing[1].push(child);
-    else groups.push([key, [child]]);
-  }
-  return groups;
-}
 
 export function Header() {
 
