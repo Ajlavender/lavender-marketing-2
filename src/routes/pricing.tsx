@@ -42,7 +42,7 @@ const plans = [
   },
   {
     name: "Scale",
-    price: "$1,497",
+    price: "$4,997",
     note: "per month + ad spend",
     blurb: "For businesses ready to buy demand, not just catch it.",
     features: [
