@@ -25,27 +25,56 @@ export function Header() {
   };
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
+    let last = window.scrollY;
+    let ticking = false;
+
+    const update = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      const delta = y - last;
+      if (Math.abs(delta) > 6) {
+        // hide when scrolling down past the header, show when scrolling up
+        setHidden(delta > 0 && y > 120);
+        last = y;
+      }
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    };
+
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // never hide while a menu is open
+  const isHidden = hidden && !openMenu && !open;
+
   return (
-    <header className="fixed top-0 z-50 w-full px-4 pt-3 sm:px-6 lg:px-8">
+    <header
+      className={cn(
+        "fixed top-0 z-50 w-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+        isHidden ? "-translate-y-full" : "translate-y-0",
+      )}
+    >
       <div
         className={cn(
-          "relative mx-auto max-w-7xl overflow-hidden rounded-2xl border border-nav-glass-border bg-nav-glass-bg shadow-nav-glass backdrop-blur-2xl transition-all duration-500 ease-out",
-          scrolled && "shadow-[0_28px_60px_-14px_rgba(0,0,0,0.45)]",
+          "relative w-full border-b border-nav-glass-border bg-nav-glass-bg backdrop-blur-2xl transition-all duration-500 ease-out",
+          scrolled && "shadow-[0_18px_40px_-18px_rgba(0,0,0,0.5)]",
         )}
       >
-        {/* Top highlight line */}
-        <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-nav-glass-highlight to-transparent" />
+        {/* Bottom highlight line */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-nav-glass-highlight to-transparent" />
 
         <div
           className={cn(
-            "relative flex items-center justify-between gap-6 px-5 transition-[height] duration-500 ease-out sm:px-7",
-            scrolled ? "h-16" : "h-[4.5rem]",
+            "relative mx-auto flex max-w-[90rem] items-center justify-between gap-6 px-5 transition-[height] duration-500 ease-out sm:px-8 lg:px-10",
+            scrolled ? "h-16" : "h-[4.75rem]",
           )}
         >
           <Link to="/" className="shrink-0" aria-label="Lavender Marketing & Co. home">
