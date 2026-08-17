@@ -111,14 +111,15 @@ function PricingHero() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-24 pt-40 sm:px-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:px-8">
         <Reveal>
-          <p className="text-base text-primary">Special Pricing</p>
+          <p className="text-base text-primary">Growth Plan Special Pricing</p>
           <h1 className="mt-5 max-w-xl text-5xl font-bold leading-[1.05] sm:text-6xl">
             See if your business{" "}
-            <span className="text-primary">qualifies for special pricing</span>
+            <span className="text-primary">qualifies for special Growth plan pricing</span>
           </h1>
           <p className="mt-6 max-w-lg text-base text-muted-foreground">
-            Answer four quick questions and we&apos;ll tell you in 24 hours whether you qualify for
-            our reduced project rate — plus a free demo design of your new homepage.
+            Answer four quick questions and we&apos;ll review whether you qualify for special pricing
+            on our flagship Growth plan — the one with AI chat, voice receptionist, and automatic
+            lead booking.
           </p>
 
           <div className="mt-10 max-w-lg space-y-4">

@@ -13,7 +13,7 @@ type Step = {
 };
 
 const steps: Step[] = [
-  { key: "website", label: "Website", type: "text", placeholder: "yourwebsite.com" },
+  { key: "website", label: "Business website", type: "text", placeholder: "yourwebsite.com" },
   {
     key: "revenue",
     label: "What's your approximate monthly revenue?",
@@ -22,11 +22,11 @@ const steps: Step[] = [
   },
   {
     key: "goal",
-    label: "What do you want the new site to do?",
+    label: "What do you want the Growth plan to do for you?",
     type: "choice",
-    options: ["More leads", "More online sales", "Look more credible", "Rank higher on Google"],
+    options: ["Answer leads 24/7", "Book appointments automatically", "Follow up faster", "All of the above"],
   },
-  { key: "email", label: "Where should we send your qualification result?", type: "email", placeholder: "hello@youremail.com" },
+  { key: "email", label: "Where should we send your Growth plan qualification?", type: "email", placeholder: "hello@youremail.com" },
 ];
 
 export function QualifyWizard({ className }: { className?: string }) {
@@ -45,7 +45,7 @@ export function QualifyWizard({ className }: { className?: string }) {
     setValues((s) => ({ ...s, [step.key]: val }));
     if (index === steps.length - 1) {
       setDone(true);
-      toast.success("Great news — we'll review your answers and email your special pricing.");
+      toast.success("You're eligible for special Growth plan pricing — check your email within 24 hours.");
       return;
     }
     setIndex((i) => i + 1);
@@ -91,10 +91,10 @@ export function QualifyWizard({ className }: { className?: string }) {
 
       {done ? (
         <div className="mt-8">
-          <p className="text-xl font-bold text-white">You're pre-qualified 🎉</p>
+          <p className="text-xl font-bold text-white">You're eligible for special Growth plan pricing 🎉</p>
           <p className="mt-3 text-sm text-white/80">
-            Based on your answers you qualify for our special pricing. We'll email your custom quote
-            and a free demo design of your new homepage within 24 hours.
+            Based on your answers, your business qualifies for reduced pricing on our flagship
+            Growth plan. We'll email your custom quote and next steps within 24 hours.
           </p>
         </div>
       ) : (
