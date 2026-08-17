@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/follow-up-automation")({
-  head: () => ({
-    meta: [
-      { title: "Automatic Lead Follow-Up Sequences | Lavender Marketing & Co." },
-      { name: "description", content: "Text and email follow-up sequences that chase every new lead until they book or opt out. Included in the $297/mo Lavender growth system." },
-      { property: "og:title", content: "Automatic Lead Follow-Up Sequences | Lavender Marketing & Co." },
-      { property: "og:description", content: "Text and email follow-up sequences that chase every new lead until they book or opt out. Included in the $297/mo Lavender growth system." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/follow-up-automation" },
-    ],
-    links: [{ rel: "canonical", href: "/follow-up-automation" }],
-  }),
+  head: () => serviceHead("/follow-up-automation"),
   component: () => (
     <ServicePage
+      slug="/follow-up-automation"
       eyebrow="Follow-Up Automation"
       title="Every lead followed up with, until they book or say no"
       subtitle="Automatic text and email sequences that keep working after you've gone back to the job site."

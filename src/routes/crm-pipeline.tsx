@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/crm-pipeline")({
-  head: () => ({
-    meta: [
-      { title: "Lead Pipeline And CRM For Local Business | Lavender Marketing & Co." },
-      { name: "description", content: "A simple lead pipeline and full CRM that shows every lead's stage, history and next step. Included in the $297/mo Lavender growth system." },
-      { property: "og:title", content: "Lead Pipeline And CRM For Local Business | Lavender Marketing & Co." },
-      { property: "og:description", content: "A simple lead pipeline and full CRM that shows every lead's stage, history and next step. Included in the $297/mo Lavender growth system." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/crm-pipeline" },
-    ],
-    links: [{ rel: "canonical", href: "/crm-pipeline" }],
-  }),
+  head: () => serviceHead("/crm-pipeline"),
   component: () => (
     <ServicePage
+      slug="/crm-pipeline"
       eyebrow="Lead Pipeline + CRM"
       title="Always know who to call back and what was said"
       subtitle="Every contact, note and conversation in one place, with each lead sitting at the stage they're actually at."

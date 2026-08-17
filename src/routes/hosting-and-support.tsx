@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/hosting-and-support")({
-  head: () => ({
-    meta: [
-      { title: "Website Hosting, Security And Unlimited Edits | Lavender Marketing & Co." },
-      { name: "description", content: "Fast managed hosting, domain and SSL management, security updates and unlimited small website edits. Included in the $297/mo system." },
-      { property: "og:title", content: "Website Hosting, Security And Unlimited Edits | Lavender Marketing & Co." },
-      { property: "og:description", content: "Fast managed hosting, domain and SSL management, security updates and unlimited small website edits. Included in the $297/mo system." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/hosting-and-support" },
-    ],
-    links: [{ rel: "canonical", href: "/hosting-and-support" }],
-  }),
+  head: () => serviceHead("/hosting-and-support"),
   component: () => (
     <ServicePage
+      slug="/hosting-and-support"
       eyebrow="Hosting & Support"
       title="Hosting, domain, security and unlimited small edits"
       subtitle="We keep the site fast, online and up to date — and any small change you need is just a message to us."

@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/ad-management")({
-  head: () => ({
-    meta: [
-      { title: "Google And Meta Ad Management For Local Business | Lavender Marketing & Co." },
-      { name: "description", content: "Local Google and Meta ad management wired into your CRM, follow-up sequences and booking calendar. Available on the Growth and Scale plans." },
-      { property: "og:title", content: "Google And Meta Ad Management For Local Business | Lavender Marketing & Co." },
-      { property: "og:description", content: "Local Google and Meta ad management wired into your CRM, follow-up sequences and booking calendar. Available on the Growth and Scale plans." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/ad-management" },
-    ],
-    links: [{ rel: "canonical", href: "/ad-management" }],
-  }),
+  head: () => serviceHead("/ad-management"),
   component: () => (
     <ServicePage
+      slug="/ad-management"
       eyebrow="Add-on"
       title="Ad management that feeds the system"
       subtitle="Google and Meta campaigns pointed at the pages, follow-ups and booking flow we already built — so ad spend turns into booked jobs."

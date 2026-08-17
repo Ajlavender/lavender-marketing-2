@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/review-automation")({
-  head: () => ({
-    meta: [
-      { title: "Google Review Automation For Local Business | Lavender Marketing & Co." },
-      { name: "description", content: "Automated review requests by text and email that turn happy customers into 5-star Google reviews. No fake reviews, ever. Included in $297/mo." },
-      { property: "og:title", content: "Google Review Automation For Local Business | Lavender Marketing & Co." },
-      { property: "og:description", content: "Automated review requests by text and email that turn happy customers into 5-star Google reviews. No fake reviews, ever. Included in $297/mo." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/review-automation" },
-    ],
-    links: [{ rel: "canonical", href: "/review-automation" }],
-  }),
+  head: () => serviceHead("/review-automation"),
   component: () => (
     <ServicePage
+      slug="/review-automation"
       eyebrow="Review Automation"
       title="More 5-star Google reviews, without asking awkwardly"
       subtitle="Automatic text and email follow-up to real customers after the job, pointing the happy ones straight to your Google profile."

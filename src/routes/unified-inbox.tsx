@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/unified-inbox")({
-  head: () => ({
-    meta: [
-      { title: "Unified Inbox App For Local Business | Lavender Marketing & Co." },
-      { name: "description", content: "One mobile inbox for email, SMS, Facebook, Instagram, Google and website chat, so you never miss a lead across five apps. Included in $297/mo." },
-      { property: "og:title", content: "Unified Inbox App For Local Business | Lavender Marketing & Co." },
-      { property: "og:description", content: "One mobile inbox for email, SMS, Facebook, Instagram, Google and website chat, so you never miss a lead across five apps. Included in $297/mo." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/unified-inbox" },
-    ],
-    links: [{ rel: "canonical", href: "/unified-inbox" }],
-  }),
+  head: () => serviceHead("/unified-inbox"),
   component: () => (
     <ServicePage
+      slug="/unified-inbox"
       eyebrow="Unified Inbox"
       title="Every message in one inbox, on your phone"
       subtitle="Email, texts, Facebook and Instagram DMs, Google messages and website chat — all in one app, so nothing gets lost."

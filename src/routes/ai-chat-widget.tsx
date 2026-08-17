@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/ai-chat-widget")({
-  head: () => ({
-    meta: [
-      { title: "AI Chat Widget For Local Business Websites | Lavender Marketing & Co." },
-      { name: "description", content: "An AI chat widget trained on your services, pricing and policies that qualifies leads and books appointments 24/7. Available on the Growth plan." },
-      { property: "og:title", content: "AI Chat Widget For Local Business Websites | Lavender Marketing & Co." },
-      { property: "og:description", content: "An AI chat widget trained on your services, pricing and policies that qualifies leads and books appointments 24/7. Available on the Growth plan." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/ai-chat-widget" },
-    ],
-    links: [{ rel: "canonical", href: "/ai-chat-widget" }],
-  }),
+  head: () => serviceHead("/ai-chat-widget"),
   component: () => (
     <ServicePage
+      slug="/ai-chat-widget"
       eyebrow="Add-on"
       title="AI chat widget trained on your business"
       subtitle="Answers real questions, qualifies the lead and books the job 24/7 — an upgrade from the standard FAQ widget."

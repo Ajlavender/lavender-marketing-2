@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/local-seo")({
-  head: () => ({
-    meta: [
-      { title: "Local SEO And Google Business Profile Management | Lavender Marketing & Co." },
-      { name: "description", content: "Local SEO, map pack rankings and Google Business Profile management for service businesses. Available on the Growth and Scale plans." },
-      { property: "og:title", content: "Local SEO And Google Business Profile Management | Lavender Marketing & Co." },
-      { property: "og:description", content: "Local SEO, map pack rankings and Google Business Profile management for service businesses. Available on the Growth and Scale plans." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/local-seo" },
-    ],
-    links: [{ rel: "canonical", href: "/local-seo" }],
-  }),
+  head: () => serviceHead("/local-seo"),
   component: () => (
     <ServicePage
+      slug="/local-seo"
       eyebrow="Add-on"
       title="Local SEO and Google Business Profile"
       subtitle="Get found in the map pack for the searches that turn into phone calls in your service area."
