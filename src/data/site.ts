@@ -337,6 +337,11 @@ export const ratingSources = [
     logo: "https://www.trywebtec.com/wp-content/uploads/2023/03/Google_2015_logo.svg-300x101.png",
   },
   {
+    label: "Facebook",
+    count: "40+ reviews",
+    logo: "https://www.trywebtec.com/wp-content/uploads/2025/08/Facebook-Logo-e1755785128175-300x100.png",
+  },
+  {
     label: "Glassdoor",
     count: "30+ reviews",
     logo: "https://www.trywebtec.com/wp-content/uploads/2023/03/Glassdoor-Logo2-300x96.png",
