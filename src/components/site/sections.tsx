@@ -248,7 +248,7 @@ export function RatingBar() {
             src={r.logo}
             alt={r.label}
             loading="lazy"
-            className="h-8 w-auto object-contain opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0 sm:h-10"
+            className="h-8 w-auto object-contain opacity-90 transition hover:opacity-100 sm:h-10"
           />
         ))}
       </div>
