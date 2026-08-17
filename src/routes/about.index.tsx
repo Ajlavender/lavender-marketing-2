@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about/")({
       {
         name: "description",
         content:
-          "Our journey began in Canada in 2015, and we went all-in in 2019. We built the web agency we never found – a 5-star web, SEO & growth partner for Canadian small businesses.",
+          "Our journey began in Canada in 2015, and we went all-in in 2019. We built the web agency we never found – a 5-star web, SEO & growth partner for Canadian and American small businesses.",
       },
       { property: "og:title", content: "About Us | Lavender Marketing & Co. Web & SEO Agency" },
       {
@@ -124,13 +124,13 @@ function About() {
             </h1>
             <div className="mt-5 max-w-sm space-y-4 text-[15px] leading-relaxed text-muted-foreground">
               <p>
-                Our journey began in Canada in 2015, running a local service business that relied
-                heavily on its website to bring in leads.
+                Our journey began in Canada in 2015, helping run my mother's clothing boutique shop —
+                a local business that relied heavily on its website to bring in customers.
               </p>
               <p>
-                We were doing well, but one problem kept eating up our time and costing us jobs. By
-                2019, we went all-in on fixing it — for ourselves first, then for other Canadian
-                business owners.
+                We were doing well, but one problem kept eating up our time and costing us sales. By
+                2019, we went all-in on fixing it — for ourselves first, then for other Canadian and
+                American business owners.
               </p>
             </div>
           </Reveal>
@@ -213,8 +213,8 @@ function About() {
                 <strong className="font-bold text-foreground">The solution?</strong>
                 <br />
                 We built it ourselves. Lavender Marketing &amp; Co. is the web, automation, and growth
-                partner we wish we'd had — designed for busy Canadian business owners who want
-                results without the $10,000+ price tag.
+                partner we wish we'd had — designed for busy Canadian and American business owners who
+                want results without the $10,000+ price tag.
               </p>
             </div>
             <div className="mt-7">
@@ -230,7 +230,7 @@ function About() {
             <div className="relative overflow-hidden rounded-[1.75rem] bg-[linear-gradient(115deg,#3b1f8f_0%,#5b2bc4_50%,#7c3aed_100%)] px-8 py-12 text-background sm:px-12">
               <div className="max-w-lg">
                 <p className="text-sm text-[#c4b5fd]">
-                  A 5-Star Web, SEO &amp; Growth Partner For Canadian Small Businesses
+                  A 5-Star Web, SEO &amp; Growth Partner For Canadian &amp; American Small Businesses
                 </p>
                 <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
                   We Built the Agency
@@ -318,15 +318,15 @@ function About() {
       <section className="px-4 pb-24 pt-6 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
           <Reveal from="left">
-            <p className="text-sm text-primary">Built for Canadian Business Owners</p>
+            <p className="text-sm text-primary">Built for Canadian &amp; American Business Owners</p>
             <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
               We Make it <span className="text-primary">Easy.</span>
             </h2>
             <div className="mt-5 max-w-md space-y-4 text-sm leading-relaxed text-muted-foreground">
               <p>
-                We've made the decision easy for busy business owners across Canada. You don't need
-                to know code, marketing, or design. We handle the website, the follow-up, the reviews,
-                and the reporting — all in one simple $297/mo package.
+                We've made the decision easy for busy business owners across Canada and the United
+                States. You don't need to know code, marketing, or design. We handle the website,
+                the follow-up, the reviews, and the reporting — all in one simple $297/mo package.
               </p>
               <p>
                 Whether you're a contractor, clinic, consultant, or local shop, you get a premium site
