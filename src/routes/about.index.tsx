@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about/")({
       {
         name: "description",
         content:
-          "Our journey began in Canada in 2015, and we went all-in in 2019. We built the web agency we never found – a 5-star web, SEO & growth partner for Canadian small businesses.",
+          "Our journey began in Canada in 2015, and we went all-in in 2019. We built the web agency we never found – a 5-star web, SEO & growth partner for Canadian and American small businesses.",
       },
       { property: "og:title", content: "About Us | Lavender Marketing & Co. Web & SEO Agency" },
       {
