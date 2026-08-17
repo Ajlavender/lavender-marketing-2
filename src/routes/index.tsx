@@ -473,7 +473,8 @@ function Index() {
             Why this matters for a local business
           </p>
           <h2 className="mx-auto mt-4 max-w-4xl text-center text-4xl font-bold sm:text-5xl">
-            Customers decide fast — and they call whoever answers first.
+            Customers decide fast — and they call{" "}
+            <span className="text-primary">whoever answers first.</span>
           </h2>
         </Reveal>
         <div className="mx-auto mt-20 grid max-w-5xl gap-x-10 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
@@ -482,7 +483,7 @@ function Index() {
               <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#2a2352]">
                 <CountUp value={`${s.value}${s.suffix ?? ""}`} />
               </p>
-              <p className="mt-6 text-center text-base leading-relaxed text-muted-foreground">{s.label}</p>
+              <p className="mt-6 text-base leading-relaxed text-muted-foreground">{s.label}</p>
             </Reveal>
           ))}
         </div>
