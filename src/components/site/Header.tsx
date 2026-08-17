@@ -154,18 +154,28 @@ export function Header() {
                 </Link>
                 {item.children && (
                   <div className="ml-3 border-l border-white/20 pl-3">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.to}
-                        to={child.to}
-                        onClick={() => setOpen(false)}
-                        className="block rounded-md px-3 py-2 text-sm text-white/80"
-                      >
-                        {child.label}
-                      </Link>
+                    {groupChildren(item.children).map(([groupLabel, kids]) => (
+                      <div key={groupLabel || "default"}>
+                        {groupLabel && (
+                          <p className="px-3 pb-1 pt-3 text-[11px] font-semibold uppercase tracking-wide text-white/50">
+                            {groupLabel}
+                          </p>
+                        )}
+                        {kids.map((child) => (
+                          <Link
+                            key={child.to}
+                            to={child.to}
+                            onClick={() => setOpen(false)}
+                            className="block rounded-md px-3 py-2 text-sm text-white/80"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
                     ))}
                   </div>
                 )}
+
               </div>
             ))}
           </nav>
