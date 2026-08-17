@@ -57,7 +57,7 @@ function Row({ child, onNavigate }: { child: MegaChild; onNavigate?: () => void 
       onClick={onNavigate}
       className="group/item flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-white/[0.07]"
     >
-      <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.06] text-nav-plum-foreground/80 transition-colors group-hover/item:border-white/25 group-hover/item:text-nav-plum-foreground">
+      <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.06] text-nav-plum-foreground/90 transition-colors group-hover/item:border-white/25 group-hover/item:text-nav-plum-foreground">
         <Icon className="h-4 w-4" />
       </span>
       <span className="min-w-0">
@@ -66,7 +66,7 @@ function Row({ child, onNavigate }: { child: MegaChild; onNavigate?: () => void 
           <ArrowUpRight className="mt-1 h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 text-nav-plum-foreground transition-all group-hover/item:translate-x-0 group-hover/item:opacity-100" />
         </span>
         {child.short && (
-          <span className="mt-0.5 line-clamp-2 block text-[11px] leading-snug text-nav-plum-foreground/55">
+          <span className="mt-0.5 line-clamp-2 block text-[11px] leading-snug text-nav-plum-foreground/75">
             {child.short}
           </span>
         )}
@@ -89,7 +89,7 @@ export function MegaPanel({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl border border-white/12 bg-nav-plum/90 shadow-[0_40px_80px_-40px_rgba(16,18,24,0.9)] backdrop-blur-2xl",
+        "relative overflow-hidden rounded-2xl border border-white/12 bg-nav-plum/90 shadow-[0_40px_80px_-40px_rgba(16,18,24,0.9)] backdrop-blur-xl",
         wide ? "w-[64rem]" : "w-[22rem]",
       )}
     >
@@ -98,7 +98,7 @@ export function MegaPanel({
         {groups.map(([groupLabel, kids]) => (
           <div key={groupLabel || "default"} className="min-w-0">
             {groupLabel && (
-              <p className="px-3 pb-2 pt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/45">
+              <p className="px-3 pb-2 pt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/70">
                 {groupLabel}
               </p>
             )}
@@ -114,11 +114,11 @@ export function MegaPanel({
           <div className="relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/12 bg-white/[0.06] p-5">
             <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/40 blur-3xl" />
             <div className="relative">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/50">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/70">
                 All-in for
               </p>
               <p className="mt-1 font-display text-3xl font-bold text-nav-plum-foreground">$297/mo</p>
-              <p className="mt-2 text-xs leading-relaxed text-nav-plum-foreground/60">
+              <p className="mt-2 text-xs leading-relaxed text-nav-plum-foreground/75">
                 We design your website for free. You only pay when you love it — then the whole growth system
                 runs for one flat monthly price.
               </p>
