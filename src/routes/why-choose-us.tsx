@@ -44,8 +44,8 @@ function DemoButton({ label = "Schedule a demo", to = "/contact" }: { label?: st
   );
 }
 
-const pageCounters = [
-  { value: "6", label: "Years Of Kicking A%*" },
+const pageCounters = (yearsActive: number) => [
+  { value: String(yearsActive), label: "Years Of Kicking A%*" },
   { value: "5", label: "Rockstars" },
   { value: "50", suffix: "+", label: "Local Businesses Served" },
   { value: "7", label: "States & Provinces" },
