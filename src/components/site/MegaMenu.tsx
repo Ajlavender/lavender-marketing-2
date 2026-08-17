@@ -74,20 +74,20 @@ function Row({ child, onNavigate }: { child: MegaChild; onNavigate?: () => void 
 }
 
 export function MegaPanel({
-  children,
+  items,
   wide,
   onNavigate,
 }: {
-  children: readonly MegaChild[];
+  items: readonly MegaChild[];
   wide?: boolean;
   onNavigate?: () => void;
 }) {
-  const groups = groupChildren(children);
+  const groups = groupChildren(items);
 
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-2xl border border-white/12 bg-nav-plum/95 shadow-[0_40px_80px_-40px_rgba(16,18,24,0.9)] backdrop-blur-2xl",
+        "relative overflow-hidden rounded-2xl border border-white/12 bg-nav-plum/95 shadow-[0_40px_80px_-40px_rgba(16,18,24,0.9)] backdrop-blur-2xl",
         wide ? "w-[62rem]" : "w-[22rem]",
       )}
     >

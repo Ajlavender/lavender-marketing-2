@@ -88,7 +88,7 @@ export function Header() {
                   )}
                 >
                   <MegaPanel
-                    children={item.children as NavChild[]}
+                    items={item.children as NavChild[]}
                     wide={(item.children as NavChild[]).some((c) => !!c.group)}
                     onNavigate={() => setOpenMenu(null)}
                   />
