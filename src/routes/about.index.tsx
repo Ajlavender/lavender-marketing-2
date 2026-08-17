@@ -124,10 +124,14 @@ function About() {
             </h1>
             <div className="mt-5 max-w-sm space-y-4 text-[15px] leading-relaxed text-muted-foreground">
               <p>
-                Our Journey began in Sweden in 2016, with another Startup that relied heavily on its
-                website to generate revenue.
+                Our journey began in Canada in 2015, running a local service business that relied
+                heavily on its website to bring in leads.
               </p>
-              <p>We were quite successful but had one big problem that took up most of our time.</p>
+              <p>
+                We were doing well, but one problem kept eating up our time and costing us jobs. By
+                2019, we went all-in on fixing it — for ourselves first, then for other Canadian
+                business owners.
+              </p>
             </div>
           </Reveal>
         </div>
