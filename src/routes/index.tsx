@@ -440,7 +440,16 @@ function Index() {
                 />
               </span>
             </button>
+            </div>
           </div>
+        </div>
+
+        {/* scroll cue */}
+        <div className="pointer-events-none flex justify-center pb-8">
+          <span className="animate-float-soft inline-flex items-center gap-2 rounded-full border border-brand/20 bg-background/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur-md">
+            Scroll to see how it works
+            <ArrowRight className="h-3.5 w-3.5 rotate-90 text-brand" />
+          </span>
         </div>
       </section>
 
