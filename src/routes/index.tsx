@@ -311,7 +311,31 @@ function Index() {
           {/* Video card */}
           <div
             style={{ animationDelay: "220ms", animationFillMode: "both" }}
-            className="animate-scale-in relative overflow-hidden rounded-2xl bg-black shadow-[0_30px_80px_-40px_rgba(16,18,24,0.6)]">
+            className="animate-scale-in relative rounded-[1.75rem] p-[1.5px] shadow-[0_40px_90px_-45px_color-mix(in_oklab,var(--brand)_70%,transparent)]"
+          >
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 -z-10 rounded-[1.75rem] bg-gradient-brand opacity-70 blur-[2px]"
+            />
+
+            {/* floating proof cards */}
+            <div className="animate-float-soft pointer-events-none absolute -left-4 top-8 z-20 hidden rounded-2xl border border-white/60 bg-background/85 px-4 py-3 shadow-xl backdrop-blur-xl sm:block">
+              <p className="text-2xl font-bold leading-none text-brand">
+                <CountUp to={312} suffix="%" />
+              </p>
+              <p className="mt-1 text-xs font-medium text-muted-foreground">More Google reviews</p>
+            </div>
+            <div
+              className="animate-float-soft pointer-events-none absolute -right-4 bottom-10 z-20 hidden rounded-2xl border border-white/60 bg-background/85 px-4 py-3 shadow-xl backdrop-blur-xl sm:block"
+              style={{ animationDelay: "-2.5s" }}
+            >
+              <p className="text-2xl font-bold leading-none text-brand">
+                <CountUp to={7} suffix=" days" />
+              </p>
+              <p className="mt-1 text-xs font-medium text-muted-foreground">Design to launch</p>
+            </div>
+
+            <div className="relative overflow-hidden rounded-[1.65rem] bg-black">
             <video
               ref={videoRef}
               poster={HERO_POSTER}
