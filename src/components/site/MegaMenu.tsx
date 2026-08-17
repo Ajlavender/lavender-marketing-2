@@ -49,13 +49,29 @@ function groupChildren(children: readonly MegaChild[]): [string, MegaChild[]][] 
   return groups;
 }
 
-function Row({ child, onNavigate }: { child: MegaChild; onNavigate?: () => void }) {
+function Row({
+  child,
+  onNavigate,
+  open = true,
+  index = 0,
+}: {
+  child: MegaChild;
+  onNavigate?: () => void;
+  open?: boolean;
+  index?: number;
+}) {
   const Icon = ICONS[child.to] ?? Sparkles;
   return (
     <Link
       to={child.to}
       onClick={onNavigate}
-      className="group/item flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-white/[0.07]"
+      tabIndex={open ? 0 : -1}
+      style={{ transitionDelay: open ? `${40 + index * 28}ms` : "0ms" }}
+      className={cn(
+        "group/item flex items-start gap-3 rounded-xl px-3 py-2.5 transition-[background-color,transform,opacity] duration-300 ease-out hover:bg-white/[0.07]",
+        "motion-reduce:transition-none motion-reduce:!translate-y-0 motion-reduce:!opacity-100 motion-reduce:!delay-0",
+        open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
+      )}
     >
       <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.06] text-nav-plum-foreground/90 transition-colors group-hover/item:border-white/25 group-hover/item:text-nav-plum-foreground">
         <Icon className="h-4 w-4" />
