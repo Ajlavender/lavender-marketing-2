@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useMemo } from "react";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectGrid, RatingBar } from "@/components/site/sections";
