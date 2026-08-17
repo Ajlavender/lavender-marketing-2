@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { Menu, ChevronDown, X, ArrowUpRight } from "lucide-react";
 import { nav, LOGO } from "@/data/site";
-import { serviceSeo } from "@/data/service-seo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MegaPanel, groupChildren, type MegaChild } from "@/components/site/MegaMenu";
@@ -15,10 +14,6 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
-  const pathname = useRouterState({ select: (st) => st.location.pathname });
-  // Service pages render a dark plum hero, so nav text must stay light at scroll top.
-  const darkHero = pathname in serviceSeo;
-  const onDark = scrolled || !!openMenu || darkHero;
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const openNow = (label: string) => {
@@ -40,10 +35,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-500 ease-out",
-        scrolled || openMenu
-          ? "translate-y-0 border-b border-white/10 bg-nav-plum/90 shadow-[0_8px_30px_-18px_rgba(16,18,24,0.45)] backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent shadow-none",
+        "fixed top-0 z-50 w-full translate-y-0 border-b border-white/10 bg-nav-plum/90 shadow-[0_8px_30px_-18px_rgba(16,18,24,0.45)] backdrop-blur-xl transition-all duration-500 ease-out",
       )}
     >
       <div
@@ -59,7 +51,6 @@ export function Header() {
 
         <nav className="relative hidden items-center gap-1 lg:flex" aria-label="Main">
           {nav.map((item) => {
-            const dark = onDark;
             return item.children ? (
               <div
                 key={item.label}
@@ -69,8 +60,7 @@ export function Header() {
               >
                 <button
                   className={cn(
-                    "flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium transition-colors",
-                    dark ? "text-white/85 hover:text-white" : "text-ink hover:text-ink/70",
+                    "flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-white/85 transition-colors hover:text-white",
                     openMenu === item.label && "bg-white/10 text-white",
                   )}
                   aria-expanded={openMenu === item.label}
@@ -104,11 +94,8 @@ export function Header() {
                 key={item.to}
                 to={item.to}
                 onMouseEnter={closeSoon}
-                activeProps={{ className: dark ? "text-white" : "text-ink" }}
-                className={cn(
-                  "rounded-full px-3 py-2 text-sm font-medium transition-colors",
-                  dark ? "text-white/85 hover:text-white" : "text-ink hover:text-ink/70",
-                )}
+                activeProps={{ className: "text-white" }}
+                className="rounded-full px-3 py-2 text-sm font-medium text-white/85 transition-colors hover:text-white"
               >
                 {item.label}
               </Link>
@@ -121,12 +108,7 @@ export function Header() {
           <Button
             asChild
             variant="outline"
-            className={cn(
-              "hidden rounded-full px-5 text-sm font-semibold transition-colors sm:inline-flex",
-              onDark
-                ? "border-white/40 bg-transparent text-white hover:border-white hover:bg-white/10 hover:text-white"
-                : "border-ink/30 bg-transparent text-ink hover:border-ink hover:bg-ink/10 hover:text-ink",
-            )}
+            className="hidden rounded-full border-white/40 bg-transparent px-5 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10 hover:text-white sm:inline-flex"
           >
             <Link to="/contact" className="inline-flex items-center gap-1.5">
               Get Your Free Growth Report
@@ -134,12 +116,7 @@ export function Header() {
             </Link>
           </Button>
           <button
-            className={cn(
-              "inline-flex h-10 w-10 items-center justify-center rounded-md transition-colors lg:hidden",
-              onDark
-                ? "border border-white/20 text-white"
-                : "border border-ink/20 text-ink hover:border-ink/40 hover:text-ink/80",
-            )}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/20 text-white transition-colors hover:border-white/40 lg:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
