@@ -4,7 +4,8 @@ import { Menu, ChevronDown, ArrowUpRight } from "lucide-react";
 import { nav, LOGO } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { MegaPanel, groupChildren, type MegaChild } from "@/components/site/MegaMenu";
+import { MegaPanel, type MegaChild } from "@/components/site/MegaMenu";
+import { MobileMenu } from "@/components/site/MobileMenu";
 
 type NavChild = MegaChild;
 
