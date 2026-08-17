@@ -329,4 +329,13 @@ export const clientLogos: { name: string; src?: string }[] = [
   { name: "Ward Holdings International" },
   { name: "T&A Construction Contractors LLC" },
   { name: "Broken Together Story" },
+  { name: "The Miles Group (TMG)" },
+  { name: "RCM Plumbing" },
+  { name: "Colemat Industries" },
+  { name: "Neva Say Neva Entertainment" },
+  { name: "Communities Reimagined" },
+  { name: "Tanza Nutz™" },
+  { name: "Spartan Financial" },
+  { name: "Couto's Cleaning" },
+  { name: "Authentic Customs General Contracting" },
 ];
