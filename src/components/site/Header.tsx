@@ -52,13 +52,13 @@ export function Header() {
           <img src={LOGO} alt="Lavender Marketing & Co." width={120} height={32} className="h-8 w-auto" />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
+        <nav className="relative hidden items-center gap-1 lg:flex" aria-label="Main">
           {nav.map((item) => {
             const dark = scrolled || !!openMenu;
             return item.children ? (
               <div
                 key={item.label}
-                className="relative"
+                className={item.children.some((c: NavChild) => !!c.group) ? "" : "relative"}
                 onMouseEnter={() => openNow(item.label)}
                 onMouseLeave={closeSoon}
               >
@@ -81,7 +81,7 @@ export function Header() {
                 </button>
                 <div
                   className={cn(
-                    "absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 transition-all duration-200 ease-out",
+                    "absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 transition-all duration-200 ease-out",
                     openMenu === item.label
                       ? "visible translate-y-0 opacity-100"
                       : "invisible -translate-y-1 opacity-0",

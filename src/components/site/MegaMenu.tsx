@@ -66,7 +66,9 @@ function Row({ child, onNavigate }: { child: MegaChild; onNavigate?: () => void 
           <ArrowUpRight className="h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 text-nav-plum-foreground transition-all group-hover/item:translate-x-0 group-hover/item:opacity-100" />
         </span>
         {child.short && (
-          <span className="mt-0.5 block text-xs leading-snug text-nav-plum-foreground/55">{child.short}</span>
+          <span className="mt-0.5 line-clamp-2 block text-[11px] leading-snug text-nav-plum-foreground/55">
+            {child.short}
+          </span>
         )}
       </span>
     </Link>
@@ -88,11 +90,11 @@ export function MegaPanel({
     <div
       className={cn(
         "relative overflow-hidden rounded-2xl border border-white/12 bg-nav-plum/95 shadow-[0_40px_80px_-40px_rgba(16,18,24,0.9)] backdrop-blur-2xl",
-        wide ? "w-[62rem]" : "w-[22rem]",
+        wide ? "w-[64rem]" : "w-[22rem]",
       )}
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
-      <div className={cn("grid gap-2 p-4", wide && "grid-cols-[1fr_1fr_16rem]")}>
+      <div className={cn("grid gap-3 p-4", wide && "grid-cols-[2fr_1.05fr_14.5rem]")}>
         {groups.map(([groupLabel, kids]) => (
           <div key={groupLabel || "default"} className="min-w-0">
             {groupLabel && (
@@ -100,7 +102,7 @@ export function MegaPanel({
                 {groupLabel}
               </p>
             )}
-            <div className="space-y-0.5">
+            <div className={cn("space-y-0.5", kids.length > 6 && "grid grid-cols-2 gap-x-2 space-y-0")}>
               {kids.map((child) => (
                 <Row key={child.to} child={child} onNavigate={onNavigate} />
               ))}
