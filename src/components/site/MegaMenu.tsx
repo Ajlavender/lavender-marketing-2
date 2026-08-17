@@ -95,12 +95,16 @@ export function MegaPanel({
   items,
   wide,
   onNavigate,
+  open = true,
 }: {
   items: readonly MegaChild[];
   wide?: boolean;
   onNavigate?: () => void;
+  open?: boolean;
 }) {
   const groups = groupChildren(items);
+  let order = 0;
+
 
   return (
     <div
