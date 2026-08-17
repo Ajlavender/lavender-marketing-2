@@ -45,9 +45,9 @@ function DemoButton({ label = "Schedule a demo", to = "/contact" }: { label?: st
 
 const pageCounters = [
   { value: "6", label: "Years Of Wizardry" },
-  { value: "30", label: "Rockstars" },
-  { value: "2,000+", label: "Customers" },
-  { value: "13", label: "Countries" },
+  { value: "5", label: "Rockstars" },
+  { value: "50", suffix: "+", label: "Local Businesses Served" },
+  { value: "7", label: "States & Provinces" },
 ];
 
 const videoTestimonials = [
