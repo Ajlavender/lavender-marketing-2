@@ -74,6 +74,7 @@ function GhostWord({ text, className }: { text: string; className?: string }) {
 }
 
 function WhyChooseUs() {
+  const yearsActive = useMemo(() => new Date().getFullYear() - 2015, []);
   return (
     <div className="overflow-hidden">
       {/* Hero */}
