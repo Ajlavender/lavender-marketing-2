@@ -478,14 +478,26 @@ function Index() {
           </h2>
         </Reveal>
         <div className="mx-auto mt-20 grid max-w-5xl gap-x-10 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
-          {stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 100} className={cn(i === 3 && "lg:col-start-2")}>
+          {stats.slice(0, 3).map((s, i) => (
+            <Reveal key={s.label} delay={i * 100}>
               <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#2a2352]">
                 <CountUp value={`${s.value}${s.suffix ?? ""}`} />
               </p>
               <p className="mt-6 text-base leading-relaxed text-muted-foreground">{s.label}</p>
             </Reveal>
           ))}
+          <Reveal delay={300} className="col-span-full mt-4 flex justify-center">
+            <div className="grid max-w-2xl grid-cols-2 gap-x-10 gap-y-20 sm:gap-x-16 lg:gap-x-24">
+              {stats.slice(3).map((s) => (
+                <div key={s.label}>
+                  <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#2a2352]">
+                    <CountUp value={`${s.value}${s.suffix ?? ""}`} />
+                  </p>
+                  <p className="mt-6 text-base leading-relaxed text-muted-foreground">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
 
         <Reveal as="h3" className="mx-auto mt-16 max-w-3xl text-center text-3xl font-bold sm:text-4xl">
