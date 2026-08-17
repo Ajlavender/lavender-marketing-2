@@ -124,13 +124,13 @@ function About() {
             </h1>
             <div className="mt-5 max-w-sm space-y-4 text-[15px] leading-relaxed text-muted-foreground">
               <p>
-                Our journey began in Canada in 2015, running a local service business that relied
-                heavily on its website to bring in leads.
+                Our journey began in Canada in 2015, helping run my mother's clothing boutique shop —
+                a local business that relied heavily on its website to bring in customers.
               </p>
               <p>
-                We were doing well, but one problem kept eating up our time and costing us jobs. By
-                2019, we went all-in on fixing it — for ourselves first, then for other Canadian
-                business owners.
+                We were doing well, but one problem kept eating up our time and costing us sales. By
+                2019, we went all-in on fixing it — for ourselves first, then for other Canadian and
+                American business owners.
               </p>
             </div>
           </Reveal>
