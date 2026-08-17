@@ -43,30 +43,30 @@ function DemoButton({ label = "Schedule a demo", to = "/contact" }: { label?: st
 
 const missionCards = [
   {
-    title: "Free Design",
+    title: "Free Design First",
     body:
-      "We create a demo design with suggestions for free, so you don't need to guess. You can see the design before you decide.",
+      "We build your demo design for free, so you see exactly what you're getting before you spend a dollar or sign anything.",
     image: `${MEDIA}/2023/02/web-design-1024x1024.png`,
     offset: "lg:mt-14",
   },
   {
-    title: "Guaranteed ROI",
+    title: "Built to Convert",
     body:
-      "We are building all our designs from conversion best practices, so you don't need to worry if it will give return of investment or not.",
+      "Every page is designed around one goal: more calls, bookings, and reviews. No fluff. No guesswork. Just a site that works.",
     image: `${MEDIA}/2023/02/financial-growth-1024x1024.png`,
     offset: "lg:mt-0",
   },
   {
-    title: "Data Based Decisions",
+    title: "Follow-Up on Autopilot",
     body:
-      "We A/B testing the website after launch to optimize further. In fact, the only way to be sure that you are improving your website is to optimize it based on data. Otherwise, you're just guessing.",
+      "Missed calls get texted back instantly. Leads are chased by text and email until they book or say no. Nothing falls through the cracks.",
     image: `${MEDIA}/2023/02/ab-testing-1024x1024.png`,
     offset: "lg:mt-6",
   },
   {
-    title: "Optimized communication",
+    title: "Made for Busy Owners",
     body:
-      "Besides this, we've optimized our processes for busy executives in small and mid-sized businesses. Working with us takes very little time, and communicating with us is done by a live chat for faster replies.",
+      "We know you're running a business, not a website project. Our process is fast, simple, and built for owners who don't have time to babysit tech.",
     image: `${MEDIA}/2023/02/time-is-money-1-1024x1024.png`,
     offset: "lg:-mt-6",
   },
