@@ -61,9 +61,9 @@ function Row({ child, onNavigate }: { child: MegaChild; onNavigate?: () => void 
         <Icon className="h-4 w-4" />
       </span>
       <span className="min-w-0">
-        <span className="flex items-center gap-1.5">
-          <span className="truncate text-sm font-semibold text-nav-plum-foreground">{child.label}</span>
-          <ArrowUpRight className="h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 text-nav-plum-foreground transition-all group-hover/item:translate-x-0 group-hover/item:opacity-100" />
+        <span className="flex items-start gap-1.5">
+          <span className="text-sm font-semibold leading-snug text-nav-plum-foreground">{child.label}</span>
+          <ArrowUpRight className="mt-1 h-3.5 w-3.5 shrink-0 -translate-x-1 opacity-0 text-nav-plum-foreground transition-all group-hover/item:translate-x-0 group-hover/item:opacity-100" />
         </span>
         {child.short && (
           <span className="mt-0.5 line-clamp-2 block text-[11px] leading-snug text-nav-plum-foreground/55">
