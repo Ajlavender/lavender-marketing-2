@@ -315,7 +315,7 @@ export const socials = [
   { label: "Twitter", href: "https://twitter.com/" },
 ];
 
-export const clientLogos = [
+export const clientLogos: { name: string; src?: string }[] = [
   { name: "Portuguese Canadian Club of Strathroy" },
   { name: "AMG & Associates" },
   { name: "Busy Bee Virtual Solutions Corp" },
