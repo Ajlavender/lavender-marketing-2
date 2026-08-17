@@ -199,17 +199,46 @@ function Index() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-secondary">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-2 lg:px-8 lg:pb-24 lg:pt-36">
+      <section className="relative isolate overflow-hidden bg-secondary">
+        {/* atmosphere */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute inset-0 hero-grid opacity-70" />
+          <div
+            className="aurora-blob left-[-10%] top-[-12%] h-[38rem] w-[38rem] opacity-40"
+            style={{ background: "radial-gradient(circle, var(--brand-glow), transparent 65%)" }}
+          />
+          <div
+            className="aurora-blob right-[-14%] top-[6%] h-[34rem] w-[34rem] opacity-35"
+            style={{
+              background: "radial-gradient(circle, var(--brand), transparent 65%)",
+              animationDelay: "-6s",
+            }}
+          />
+          <div
+            className="aurora-blob bottom-[-20%] left-[35%] h-[30rem] w-[30rem] opacity-25"
+            style={{
+              background: "radial-gradient(circle, var(--brand-deep), transparent 65%)",
+              animationDelay: "-11s",
+            }}
+          />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
+        </div>
+
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 pb-24 pt-32 sm:px-6 lg:grid-cols-2 lg:px-8 lg:pb-28 lg:pt-36">
           <div className="relative animate-fade-in">
-            <p className="mb-4 text-base text-muted-foreground">
-              Free website design + automated review engine
-            </p>
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/25 bg-background/70 py-1.5 pl-1.5 pr-4 text-sm font-medium text-foreground shadow-sm backdrop-blur-md">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+                <Sparkles className="h-3.5 w-3.5" />
+                Free design
+              </span>
+              <span className="text-muted-foreground">Automated review engine included</span>
+            </span>
             <h1
               className="animate-fade-in text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl"
               style={{ animationDelay: "80ms", animationFillMode: "both" }}
             >
-              We build your new website <span className="text-primary">for free.</span>
+              We build your new website{" "}
+              <span className="text-gradient-brand">for free.</span>
             </h1>
             <h2
               style={{ animationDelay: "180ms", animationFillMode: "both" }}
@@ -227,11 +256,31 @@ function Index() {
             </p>
 
             <div
-              className="animate-fade-in mt-10 max-w-xl"
+              className="animate-fade-in mt-10 max-w-xl rounded-2xl border border-white/60 bg-background/70 p-5 shadow-[0_30px_70px_-40px_color-mix(in_oklab,var(--brand)_60%,transparent)] backdrop-blur-xl"
               style={{ animationDelay: "300ms", animationFillMode: "both" }}
             >
               <LeadForm submitLabel="Get My Free Website Design" />
+              <p className="mt-3 text-xs text-muted-foreground">
+                No card required · Design first, decide after · Cancel anytime
+              </p>
             </div>
+
+            {/* trust row */}
+            <div
+              className="animate-fade-in mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
+              style={{ animationDelay: "380ms", animationFillMode: "both" }}
+            >
+              <span className="inline-flex items-center gap-2">
+                <ShieldCheck className="h-4 w-4 text-brand" /> No contracts
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <Star className="h-4 w-4 fill-[#f4a62a] text-[#f4a62a]" /> 5.0 Google rating
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <Zap className="h-4 w-4 text-brand" /> Live in 7 days
+              </span>
+            </div>
+
 
             {/* curved connector line to the video card */}
             <svg
