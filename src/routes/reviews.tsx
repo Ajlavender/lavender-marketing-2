@@ -29,7 +29,7 @@ export const Route = createFileRoute("/reviews")({
 });
 
 const demoBtn =
-  "h-9 rounded-full bg-[linear-gradient(90deg,#CDA0FE_0%,#9B87F5_100%)] px-6 text-[10px] font-bold uppercase tracking-[0.14em] text-background shadow-[0_12px_30px_-14px_rgba(109,51,214,0.9)] hover:opacity-90";
+  "h-9 rounded-full bg-[linear-gradient(90deg,#8b5cf6_0%,#6d33d6_100%)] px-6 text-[10px] font-bold uppercase tracking-[0.14em] text-background shadow-[0_12px_30px_-14px_rgba(109,51,214,0.9)] hover:opacity-90";
 
 function DemoButton({ label = "Schedule a demo" }: { label?: string }) {
   return (
@@ -93,7 +93,7 @@ function VideoTile({ poster, tall, i }: { poster: string; tall?: boolean; i: num
         />
         <span className="absolute inset-0 bg-foreground/10 transition group-hover:bg-foreground/0" />
         <span className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-card/95 shadow-lg transition group-hover:scale-110">
-          <Play className="ml-0.5 h-6 w-6 fill-[#9B87F5] text-[#9B87F5]" />
+          <Play className="ml-0.5 h-6 w-6 fill-[#6d33d6] text-[#6d33d6]" />
         </span>
       </button>
     </Reveal>
@@ -144,7 +144,7 @@ function Reviews() {
                 alt="Lavender Marketing & Co. customer highlight reel"
                 className="aspect-[16/7] w-full object-cover opacity-90"
               />
-              <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#9B87F5] shadow-[0_18px_40px_-12px_rgba(109,51,214,0.9)] transition group-hover:scale-110">
+              <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#6d33d6] shadow-[0_18px_40px_-12px_rgba(109,51,214,0.9)] transition group-hover:scale-110">
                 <Play className="ml-1 h-7 w-7 fill-background text-background" />
               </span>
             </button>
@@ -186,7 +186,7 @@ function Reviews() {
       {/* Purple wave divider */}
       <div aria-hidden className="-mb-px">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="h-12 w-full">
-          <path d="M0 40 C 360 0, 1080 60, 1440 12 L1440 60 L0 60 Z" fill="#9B87F5" />
+          <path d="M0 40 C 360 0, 1080 60, 1440 12 L1440 60 L0 60 Z" fill="#6d33d6" />
         </svg>
       </div>
 

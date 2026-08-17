@@ -67,7 +67,7 @@ export function ValueStack() {
           <p className="text-lg text-muted-foreground">
             Normally <span className="line-through">$2,138</span>
           </p>
-          <p className="mt-1 font-[family-name:var(--font-display)] text-5xl font-bold text-[#312E81]">
+          <p className="mt-1 font-[family-name:var(--font-display)] text-5xl font-bold text-[#2a2352]">
             Today: free
           </p>
           <Button asChild size="lg" className="mt-8 px-10">

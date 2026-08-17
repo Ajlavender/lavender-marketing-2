@@ -360,10 +360,10 @@ export function CtaBand({
   return (
     <section className="bg-secondary py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-[2rem] bg-[linear-gradient(100deg,#1E1B4B_0%,#312E81_45%,#9B87F5_100%)] px-8 py-14 text-background sm:px-14">
+        <div className="relative rounded-[2rem] bg-[linear-gradient(100deg,#191b3f_0%,#221f5a_45%,#6d33d6_100%)] px-8 py-14 text-background sm:px-14">
           <div className="max-w-xl">
             <p className="text-lg text-[#a78bfa]">
-              Don&apos;t Be <span className="text-[#CDA0FE]">Shy.</span>
+              Don&apos;t Be <span className="text-[#8b5cf6]">Shy.</span>
             </p>
             <h2 className="mt-2 text-5xl font-bold sm:text-6xl">{title}</h2>
             <div className="mt-8">

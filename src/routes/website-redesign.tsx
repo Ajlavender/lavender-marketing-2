@@ -201,7 +201,7 @@ function WebsiteRedesign() {
       {/* No hassle, no fuss */}
       <Section className="pt-24">
         <Reveal scale>
-          <div className="relative overflow-hidden rounded-[2rem] bg-[linear-gradient(115deg,#1E1B4B_0%,#312E81_45%,#9B87F5_100%)] px-8 py-14 text-background sm:px-14">
+          <div className="relative overflow-hidden rounded-[2rem] bg-[linear-gradient(115deg,#1d1f4a_0%,#231f57_45%,#6d33d6_100%)] px-8 py-14 text-background sm:px-14">
             <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)]">
               <div>
                 <p className="text-sm font-medium text-[#a78bfa]">
