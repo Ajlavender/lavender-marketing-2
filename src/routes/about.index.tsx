@@ -318,15 +318,15 @@ function About() {
       <section className="px-4 pb-24 pt-6 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
           <Reveal from="left">
-            <p className="text-sm text-primary">Built for Canadian Business Owners</p>
+            <p className="text-sm text-primary">Built for Canadian &amp; American Business Owners</p>
             <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
               We Make it <span className="text-primary">Easy.</span>
             </h2>
             <div className="mt-5 max-w-md space-y-4 text-sm leading-relaxed text-muted-foreground">
               <p>
-                We've made the decision easy for busy business owners across Canada. You don't need
-                to know code, marketing, or design. We handle the website, the follow-up, the reviews,
-                and the reporting — all in one simple $297/mo package.
+                We've made the decision easy for busy business owners across Canada and the United
+                States. You don't need to know code, marketing, or design. We handle the website,
+                the follow-up, the reviews, and the reporting — all in one simple $297/mo package.
               </p>
               <p>
                 Whether you're a contractor, clinic, consultant, or local shop, you get a premium site
