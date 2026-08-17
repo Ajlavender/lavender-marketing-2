@@ -230,7 +230,7 @@ function About() {
             <div className="relative overflow-hidden rounded-[1.75rem] bg-[linear-gradient(115deg,#3b1f8f_0%,#5b2bc4_50%,#7c3aed_100%)] px-8 py-12 text-background sm:px-12">
               <div className="max-w-lg">
                 <p className="text-sm text-[#c4b5fd]">
-                  A 5-Star Web, SEO &amp; Growth Partner For Canadian Small Businesses
+                  A 5-Star Web, SEO &amp; Growth Partner For Canadian &amp; American Small Businesses
                 </p>
                 <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
                   We Built the Agency
