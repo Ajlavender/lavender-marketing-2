@@ -128,6 +128,11 @@ function About() {
                 a local business that relied heavily on its website to bring in customers.
               </p>
               <p>
+                Around the same time, we were also working on my father's media & entertainment
+                company in Michigan — building sites, managing online presence, and learning what
+                service businesses need to win online.
+              </p>
+              <p>
                 We were doing well, but one problem kept eating up our time and costing us sales. By
                 2019, we went all-in on fixing it — for ourselves first, then for other Canadian and
                 American business owners.
