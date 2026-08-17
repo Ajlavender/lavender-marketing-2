@@ -366,7 +366,7 @@ export const faqs = [
   },
   {
     q: "How long does a redesign take?",
-    a: "A typical redesign takes 3 to 6 weeks from kick-off to launch. Larger e-commerce or custom builds take longer, and we give you a timeline in writing before we start.",
+    a: "You’ll typically receive your first design demo within 48 hours, and most redesigns are fully launched within 14 days. Larger e-commerce or custom projects may take longer, and we’ll give you a clear timeline upfront before we begin.",
   },
   {
     q: "Will my new website be good for SEO?",
