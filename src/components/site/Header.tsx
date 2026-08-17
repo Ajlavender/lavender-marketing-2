@@ -56,7 +56,6 @@ export function Header() {
 
         <nav className="relative hidden items-center gap-1 lg:flex" aria-label="Main">
           {nav.map((item) => {
-            const dark = onDark;
             return item.children ? (
               <div
                 key={item.label}
@@ -66,8 +65,7 @@ export function Header() {
               >
                 <button
                   className={cn(
-                    "flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium transition-colors",
-                    dark ? "text-white/85 hover:text-white" : "text-ink hover:text-ink/70",
+                    "flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-white/85 transition-colors hover:text-white",
                     openMenu === item.label && "bg-white/10 text-white",
                   )}
                   aria-expanded={openMenu === item.label}
@@ -101,11 +99,8 @@ export function Header() {
                 key={item.to}
                 to={item.to}
                 onMouseEnter={closeSoon}
-                activeProps={{ className: dark ? "text-white" : "text-ink" }}
-                className={cn(
-                  "rounded-full px-3 py-2 text-sm font-medium transition-colors",
-                  dark ? "text-white/85 hover:text-white" : "text-ink hover:text-ink/70",
-                )}
+                activeProps={{ className: "text-white" }}
+                className="rounded-full px-3 py-2 text-sm font-medium text-white/85 transition-colors hover:text-white"
               >
                 {item.label}
               </Link>
