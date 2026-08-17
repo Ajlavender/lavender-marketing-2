@@ -144,15 +144,15 @@ export function ProjectGrid({ limit, compact }: { limit?: number; compact?: bool
   const items = limit ? projects.slice(0, limit) : projects;
   return (
     <div className={cn("grid gap-8 sm:grid-cols-2 lg:grid-cols-3", compact && "gap-x-6 gap-y-10")}>
-      {items.map((p, i) => (
-        <Reveal key={`${p.name}-${i}`} delay={(i % 3) * 90} from="up">
-          <article>
+      {items.map((p, i) => {
+        const Card = (
+          <article className={cn("group", p.href && "cursor-pointer")}>
             <div className="overflow-hidden rounded-2xl bg-card shadow-[0_18px_50px_-30px_rgba(16,18,24,0.45)]">
               <img
                 src={p.image}
                 alt={p.name}
                 loading="lazy"
-                className="aspect-square w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                className="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               />
             </div>
             <p className={cn("text-muted-foreground", compact ? "mt-4 text-xs" : "mt-6 text-base")}>
@@ -160,15 +160,31 @@ export function ProjectGrid({ limit, compact }: { limit?: number; compact?: bool
             </p>
             <h3
               className={cn(
-                "mt-1 font-bold text-[#1f2150]",
+                "mt-1 font-bold text-[#1f2150] transition-colors group-hover:text-primary",
                 compact ? "text-xl" : "text-3xl",
               )}
             >
               {p.name}
             </h3>
           </article>
-        </Reveal>
-      ))}
+        );
+        return (
+          <Reveal key={`${p.name}-${i}`} delay={(i % 3) * 90} from="up">
+            {p.href ? (
+              <a
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${p.name} live site`}
+              >
+                {Card}
+              </a>
+            ) : (
+              Card
+            )}
+          </Reveal>
+        );
+      })}
     </div>
   );
 }
