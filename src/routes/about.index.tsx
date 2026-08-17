@@ -226,35 +226,35 @@ function About() {
 
       {/* We Built the Web Agency We Never Found */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
-        <Reveal scale className="mx-auto max-w-5xl">
-          <div className="relative overflow-hidden rounded-[1.75rem] bg-[linear-gradient(115deg,#3b1f8f_0%,#5b2bc4_50%,#7c3aed_100%)] px-8 py-12 text-background sm:px-12">
-            <div className="max-w-lg">
-              <p className="text-sm text-[#c4b5fd]">
-                A 5-Star SEO &amp; Web Agency For Small &amp; Medium Businesses
-              </p>
-              <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
-                We Built the Web Agency
-                <br />
-                <span className="text-[#c4b5fd]">We Never Found.</span>
-              </h2>
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-background/85">
-                <p>
-                  We're on a mission to be the coolest cats in the web game. We whip up websites so
-                  sexy you'll want to marry them and SEO so affordable you can keep your second
-                  mortgage.
+          <Reveal scale className="mx-auto max-w-5xl">
+            <div className="relative overflow-hidden rounded-[1.75rem] bg-[linear-gradient(115deg,#3b1f8f_0%,#5b2bc4_50%,#7c3aed_100%)] px-8 py-12 text-background sm:px-12">
+              <div className="max-w-lg">
+                <p className="text-sm text-[#c4b5fd]">
+                  A 5-Star Web, SEO &amp; Growth Partner For Canadian Small Businesses
                 </p>
-                <p>
-                  <strong className="font-bold text-background">The best part?</strong>
+                <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
+                  We Built the Agency
                   <br />
-                  We make sure your site is a love magnet for customers who can't resist your charm.
-                  So if you're a small or mid-sized biz who wants to look good, get found, and rule
-                  the online jungle, we're your go-to team!
-                </p>
+                  <span className="text-[#c4b5fd]">We Never Found.</span>
+                </h2>
+                <div className="mt-6 space-y-4 text-sm leading-relaxed text-background/85">
+                  <p>
+                    We design your website completely free. You only pay $297/mo if you like it — and
+                    that includes hosting, the review engine, missed-call text-back, automatic
+                    follow-up, online booking, a unified inbox, CRM, and a monthly growth report.
+                  </p>
+                  <p>
+                    <strong className="font-bold text-background">The best part?</strong>
+                    <br />
+                    Everything is built to convert. Your site looks premium, ranks better, responds
+                    faster, and follows up automatically — so you stop losing leads to the next
+                    listing.
+                  </p>
+                </div>
+                <div className="mt-8">
+                  <DemoButton label="Get in touch" />
+                </div>
               </div>
-              <div className="mt-8">
-                <DemoButton label="Get in touch" />
-              </div>
-            </div>
             <img
               src={`${MEDIA}/2023/03/man-drawing-on-tablet-1024x1024.png`}
               alt="Man drawing on a tablet"
