@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/growth-report")({
-  head: () => ({
-    meta: [
-      { title: "Monthly Local Business Growth Report | Lavender Marketing & Co." },
-      { name: "description", content: "A clear monthly report showing leads by source, calls recovered, reviews earned, bookings made and what to improve next. Included in $297/mo." },
-      { property: "og:title", content: "Monthly Local Business Growth Report | Lavender Marketing & Co." },
-      { property: "og:description", content: "A clear monthly report showing leads by source, calls recovered, reviews earned, bookings made and what to improve next. Included in $297/mo." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/growth-report" },
-    ],
-    links: [{ rel: "canonical", href: "/growth-report" }],
-  }),
+  head: () => serviceHead("/growth-report"),
   component: () => (
     <ServicePage
+      slug="/growth-report"
       eyebrow="Monthly Growth Report"
       title="A plain-English report on the 1st of every month"
       subtitle="Where your leads came from, what converted, and what to fix next — so you always know if your marketing is paying off."

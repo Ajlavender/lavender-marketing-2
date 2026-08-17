@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/voice-ai-receptionist")({
-  head: () => ({
-    meta: [
-      { title: "Voice AI Receptionist For Local Business | Lavender Marketing & Co." },
-      { name: "description", content: "An AI receptionist that answers missed calls, qualifies callers and books appointments into your calendar. Available on the Growth and Scale plans." },
-      { property: "og:title", content: "Voice AI Receptionist For Local Business | Lavender Marketing & Co." },
-      { property: "og:description", content: "An AI receptionist that answers missed calls, qualifies callers and books appointments into your calendar. Available on the Growth and Scale plans." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/voice-ai-receptionist" },
-    ],
-    links: [{ rel: "canonical", href: "/voice-ai-receptionist" }],
-  }),
+  head: () => serviceHead("/voice-ai-receptionist"),
   component: () => (
     <ServicePage
+      slug="/voice-ai-receptionist"
       eyebrow="Add-on"
       title="Voice AI receptionist that answers every call"
       subtitle="Picks up when you can't, has a natural conversation, answers questions and books the appointment straight into your calendar."

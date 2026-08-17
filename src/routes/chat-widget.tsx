@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/chat-widget")({
-  head: () => ({
-    meta: [
-      { title: "Website Chat Widget With Pre-Loaded FAQs | Lavender Marketing & Co." },
-      { name: "description", content: "A website chat widget loaded with your FAQs that answers visitors instantly and hands the conversation straight to your phone. Included in the $297/mo system." },
-      { property: "og:title", content: "Website Chat Widget With Pre-Loaded FAQs | Lavender Marketing & Co." },
-      { property: "og:description", content: "A website chat widget loaded with your FAQs that answers visitors instantly and hands the conversation straight to your phone. Included in the $297/mo system." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/chat-widget" },
-    ],
-    links: [{ rel: "canonical", href: "/chat-widget" }],
-  }),
+  head: () => serviceHead("/chat-widget"),
   component: () => (
     <ServicePage
+      slug="/chat-widget"
       eyebrow="Website Chat Widget"
       title="A chat widget that answers before they leave"
       subtitle="A bottom-right chat box pre-loaded with your most common questions, so visitors get an answer instantly instead of bouncing to the next business."

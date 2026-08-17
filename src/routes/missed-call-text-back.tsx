@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/missed-call-text-back")({
-  head: () => ({
-    meta: [
-      { title: "Missed-Call Text-Back For Local Business | Lavender Marketing & Co." },
-      { name: "description", content: "Automatically text back every missed call so callers stay with you instead of calling a competitor. Part of the $297/mo Lavender growth system." },
-      { property: "og:title", content: "Missed-Call Text-Back For Local Business | Lavender Marketing & Co." },
-      { property: "og:description", content: "Automatically text back every missed call so callers stay with you instead of calling a competitor. Part of the $297/mo Lavender growth system." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/missed-call-text-back" },
-    ],
-    links: [{ rel: "canonical", href: "/missed-call-text-back" }],
-  }),
+  head: () => serviceHead("/missed-call-text-back"),
   component: () => (
     <ServicePage
+      slug="/missed-call-text-back"
       eyebrow="Missed-Call Text-Back"
       title="Never lose a job to a missed call again"
       subtitle="If you can't pick up, the caller instantly gets a text from your business — so they keep talking to you instead of calling the next name on the list."

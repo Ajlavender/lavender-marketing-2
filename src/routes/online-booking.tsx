@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import { MEDIA } from "@/data/site";
 
 export const Route = createFileRoute("/online-booking")({
-  head: () => ({
-    meta: [
-      { title: "Online Booking For Local Business Websites | Lavender Marketing & Co." },
-      { name: "description", content: "Let customers book straight into your calendar from your website, with reminders that cut no-shows. Included in the $297/mo growth system." },
-      { property: "og:title", content: "Online Booking For Local Business Websites | Lavender Marketing & Co." },
-      { property: "og:description", content: "Let customers book straight into your calendar from your website, with reminders that cut no-shows. Included in the $297/mo growth system." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/online-booking" },
-    ],
-    links: [{ rel: "canonical", href: "/online-booking" }],
-  }),
+  head: () => serviceHead("/online-booking"),
   component: () => (
     <ServicePage
+      slug="/online-booking"
       eyebrow="Online Booking"
       title="Appointments land on your calendar on autopilot"
       subtitle="Customers pick a time that's actually free. No phone tag, no “does Thursday work?” eating your afternoon."
