@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, ChevronDown, X, ArrowUpRight } from "lucide-react";
 import { nav, LOGO } from "@/data/site";
+import { serviceSeo } from "@/data/service-seo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MegaPanel, groupChildren, type MegaChild } from "@/components/site/MegaMenu";
@@ -14,6 +15,10 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const pathname = useRouterState({ select: (st) => st.location.pathname });
+  // Service pages render a dark plum hero, so nav text must stay light at scroll top.
+  const darkHero = pathname in serviceSeo;
+  const onDark = scrolled || !!openMenu || darkHero;
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const openNow = (label: string) => {
@@ -36,7 +41,7 @@ export function Header() {
     <header
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-500 ease-out",
-        scrolled || openMenu
+        onDark
           ? "translate-y-0 border-b border-white/10 bg-nav-plum/90 shadow-[0_8px_30px_-18px_rgba(16,18,24,0.45)] backdrop-blur-xl"
           : "border-b border-transparent bg-transparent shadow-none",
       )}
@@ -54,7 +59,7 @@ export function Header() {
 
         <nav className="relative hidden items-center gap-1 lg:flex" aria-label="Main">
           {nav.map((item) => {
-            const dark = scrolled || !!openMenu;
+            const dark = onDark;
             return item.children ? (
               <div
                 key={item.label}
@@ -118,7 +123,7 @@ export function Header() {
             variant="outline"
             className={cn(
               "hidden rounded-full px-5 text-sm font-semibold transition-colors sm:inline-flex",
-              scrolled || openMenu
+              onDark
                 ? "border-white/40 bg-transparent text-white hover:border-white hover:bg-white/10 hover:text-white"
                 : "border-ink/30 bg-transparent text-ink hover:border-ink hover:bg-ink/10 hover:text-ink",
             )}
@@ -131,7 +136,7 @@ export function Header() {
           <button
             className={cn(
               "inline-flex h-10 w-10 items-center justify-center rounded-md transition-colors lg:hidden",
-              scrolled || openMenu
+              onDark
                 ? "border border-white/20 text-white"
                 : "border border-ink/20 text-ink hover:border-ink/40 hover:text-ink/80",
             )}
