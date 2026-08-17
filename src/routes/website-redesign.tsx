@@ -10,6 +10,7 @@ import {
   Star,
   Tag,
 } from "lucide-react";
+import { serviceHead } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/site/LeadForm";
 import { Section } from "@/components/site/sections";
@@ -19,37 +20,7 @@ import { MEDIA } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/website-redesign")({
-  head: () => ({
-    meta: [
-      { title: "Website Redesign Services That Convert Visitors | Lavender Marketing & Co." },
-      {
-        name: "description",
-        content:
-          "High quality, affordable website redesign for busy executives. See the new website redesign before you buy it — no upfront costs, unlimited changes.",
-      },
-      {
-        property: "og:title",
-        content: "Website Redesign Services That Convert Visitors | Lavender Marketing & Co.",
-      },
-      {
-        property: "og:description",
-        content:
-          "See the new website redesign before you buy it. Conversion optimized, SEO ready and delivered in about 45 days.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/website-redesign" },
-      {
-        property: "og:image",
-        content: `${MEDIA}/2023/02/business-team-doing-discussion-1024x768.png`,
-      },
-      {
-        name: "twitter:image",
-        content: `${MEDIA}/2023/02/business-team-doing-discussion-1024x768.png`,
-      },
-    ],
-    links: [{ rel: "canonical", href: "/website-redesign" }],
-  }),
+  head: () => serviceHead("/website-redesign"),
   component: WebsiteRedesign,
 });
 
