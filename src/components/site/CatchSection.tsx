@@ -160,7 +160,7 @@ function ExpandCard({
         )}
       >
         <div className="min-h-0 overflow-hidden">
-          <div className="mx-3 mb-3 rounded-xl bg-[#1d1f4a] p-5 text-sm leading-relaxed text-background">
+          <div className="mx-3 mb-3 rounded-xl bg-[#1E1B4B] p-5 text-sm leading-relaxed text-background">
             {item.benefit}
             {showValue && (
               <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-[#a78bfa] sm:hidden">
@@ -216,7 +216,7 @@ export function CatchSection() {
               <div className="mt-6 space-y-3 text-base">
                 <div className="flex items-baseline justify-between gap-4">
                   <span className="text-muted-foreground">Total monthly value</span>
-                  <span className="font-[family-name:var(--font-display)] text-3xl font-bold text-[#2a2352] line-through decoration-primary/50">
+                  <span className="font-[family-name:var(--font-display)] text-3xl font-bold text-[#312E81] line-through decoration-primary/50">
                     ${totalValue.toLocaleString()}/mo
                   </span>
                 </div>
@@ -243,7 +243,7 @@ export function CatchSection() {
               </div>
             </div>
 
-            <div className="rounded-3xl bg-[linear-gradient(150deg,#1d1f4a_0%,#2a2352_45%,#6d33d6_100%)] p-8 text-background sm:p-10">
+            <div className="rounded-3xl bg-[linear-gradient(150deg,#1E1B4B_0%,#312E81_45%,#9B87F5_100%)] p-8 text-background sm:p-10">
               <h3 className="text-2xl font-bold">What you don&apos;t pay for</h3>
               <ul className="mt-6 space-y-4">
                 {notIncluded.map((item) => (

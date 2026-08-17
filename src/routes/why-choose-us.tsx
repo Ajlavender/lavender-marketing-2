@@ -31,7 +31,7 @@ export const Route = createFileRoute("/why-choose-us")({
 });
 
 const demoBtn =
-  "h-11 rounded-full bg-[linear-gradient(90deg,#8b5cf6_0%,#6d33d6_100%)] px-7 text-[11px] font-bold uppercase tracking-[0.14em] text-background shadow-[0_12px_30px_-14px_rgba(109,51,214,0.9)] hover:opacity-90";
+  "h-11 rounded-full bg-[linear-gradient(90deg,#CDA0FE_0%,#9B87F5_100%)] px-7 text-[11px] font-bold uppercase tracking-[0.14em] text-background shadow-[0_12px_30px_-14px_rgba(109,51,214,0.9)] hover:opacity-90";
 
 function DemoButton({ label = "Schedule a demo", to = "/contact" }: { label?: string; to?: string }) {
   return (
@@ -136,7 +136,7 @@ function WhyChooseUs() {
           <div className="mx-auto mt-20 grid max-w-5xl gap-x-10 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
             {stats.slice(0, 3).map((s, i) => (
               <Reveal key={s.label} delay={i * 100}>
-                <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#2a2352]">
+                <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#312E81]">
                   <CountUp value={`${s.value}${s.suffix ?? ""}`} />
                 </p>
                 <p className="mt-6 text-center text-base leading-relaxed text-muted-foreground">
@@ -149,7 +149,7 @@ function WhyChooseUs() {
             <div className="grid max-w-2xl grid-cols-2 gap-x-10 gap-y-20 sm:gap-x-16 lg:gap-x-24">
               {stats.slice(3).map((s) => (
                 <div key={s.label}>
-                  <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#2a2352]">
+                  <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#312E81]">
                     <CountUp value={`${s.value}${s.suffix ?? ""}`} />
                   </p>
                   <p className="mt-6 text-center text-base leading-relaxed text-muted-foreground">

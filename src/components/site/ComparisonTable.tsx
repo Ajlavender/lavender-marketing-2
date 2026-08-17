@@ -59,7 +59,7 @@ export function ComparisonTable() {
                 className={cn(
                   "h-full rounded-3xl p-8 transition-transform duration-300 sm:p-10",
                   col.highlight
-                    ? "border border-white/25 bg-[linear-gradient(150deg,#2a2352_0%,#3d2a7a_45%,#7c3aed_100%)] text-white shadow-[0_36px_90px_-30px_rgba(124,58,237,0.75)] lg:-translate-y-3"
+                    ? "border border-white/25 bg-[linear-gradient(150deg,#312E81_0%,#3d2a7a_45%,#7c3aed_100%)] text-white shadow-[0_36px_90px_-30px_rgba(124,58,237,0.75)] lg:-translate-y-3"
                     : "border border-white/10 bg-white/[0.06] text-white shadow-[0_24px_60px_-40px_rgba(0,0,0,0.6)] backdrop-blur-sm",
                 )}
               >
