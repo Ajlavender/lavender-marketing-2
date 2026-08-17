@@ -318,16 +318,25 @@ export function LogoStrip() {
   const row = [...clientLogos, ...clientLogos];
   return (
     <div className="overflow-hidden bg-background py-12">
-      <div className="marquee flex w-max items-center gap-16 px-8">
-        {row.map((l, i) => (
-          <img
-            key={`${l.name}-${i}`}
-            src={l.src}
-            alt={l.name}
-            loading="lazy"
-            className="h-10 w-auto shrink-0 object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
-          />
-        ))}
+      <div className="marquee flex w-max items-center gap-20 px-8">
+        {row.map((l, i) =>
+          "src" in l && l.src ? (
+            <img
+              key={`${l.name}-${i}`}
+              src={l.src}
+              alt={l.name}
+              loading="lazy"
+              className="h-10 w-auto shrink-0 object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
+            />
+          ) : (
+            <span
+              key={`${l.name}-${i}`}
+              className="shrink-0 whitespace-nowrap font-[family-name:var(--font-display)] text-lg font-semibold tracking-tight text-foreground/60 transition hover:text-primary"
+            >
+              {l.name}
+            </span>
+          )
+        )}
       </div>
     </div>
   );

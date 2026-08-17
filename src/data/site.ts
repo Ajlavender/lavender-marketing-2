@@ -315,15 +315,18 @@ export const socials = [
   { label: "Twitter", href: "https://twitter.com/" },
 ];
 
-export const clientLogos = [
-  { name: "TrayAway", src: `${MEDIA}/2023/03/My-project-1-1.png` },
-  { name: "Aftonbladet", src: `${MEDIA}/2023/07/logo-aftonbladet-svg.png` },
-  { name: "Telia", src: `${MEDIA}/2023/07/Telia_logo_2022.svg-1.png` },
-  { name: "HM", src: `${MEDIA}/2023/02/My-project-1-4.png` },
-  { name: "FL Swimwear", src: `${MEDIA}/2023/02/My-project-1-2.png` },
-  { name: "HM Group", src: `${MEDIA}/2023/02/My-project-1-3.png` },
-  { name: "Varela Financial", src: `${MEDIA}/2023/02/My-project-1-5.png` },
-  { name: "Ternary Dev", src: `${MEDIA}/2023/02/My-project-1-6.png` },
-  { name: "The Career Lounge", src: `${MEDIA}/2023/03/My-project-1-2.png` },
-  { name: "Live Nights", src: `${MEDIA}/2023/03/My-project-1-3.png` },
+export const clientLogos: { name: string; src?: string }[] = [
+  { name: "Portuguese Canadian Club of Strathroy" },
+  { name: "AMG & Associates" },
+  { name: "Busy Bee Virtual Solutions Corp" },
+  { name: "People First Group Realty" },
+  { name: "7Steps™ Insurance Coaching" },
+  { name: "Scale Suite Pro" },
+  { name: "Soccerfice Apparel" },
+  { name: "Summit of Strength ALS Gala" },
+  { name: "Strathroy Lobster Fest" },
+  { name: "Uncommon Delights Cashew Nuts" },
+  { name: "Ward Holdings International" },
+  { name: "T&A Construction Contractors LLC" },
+  { name: "Broken Together Story" },
 ];
