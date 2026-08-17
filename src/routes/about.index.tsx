@@ -151,16 +151,16 @@ function About() {
                 <p>
                   <strong className="font-bold text-background">The problem?</strong>
                   <br />
-                  Well, building and optimizing a website wasn't a walk in the park. There were too
-                  many website companies, too many choices and it was too costly – and at the end of
-                  they day, no one really knew what worked anyway.
+                  Building and optimizing a website wasn't a walk in the park. There were too many
+                  agencies, too many choices, and it was too expensive — and at the end of the day,
+                  no one could show us what actually worked.
                 </p>
                 <p>
                   <strong className="font-bold text-background">Worst of all?</strong>
                   <br />
                   No one ever showed us what the website they wanted us to buy would look like. They
-                  urged us to spend $ 10 000 + and "trust them". We needed to make the decision based
-                  on gut feeling. Not a very easy decision to make, if you ask me.
+                  urged us to spend $10,000+ and "trust them". We had to make the decision based on
+                  gut feeling — not exactly easy when you're running a small business.
                 </p>
               </div>
               <div className="mt-8">
