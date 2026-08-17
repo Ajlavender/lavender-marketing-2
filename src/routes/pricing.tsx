@@ -79,7 +79,7 @@ export const Route = createFileRoute("/pricing")({
 const heroFaqs = [
   {
     q: "How long does a web project take?",
-    a: "Most redesigns go live in about 45 days. Qualifying businesses get priority scheduling.",
+    a: "You’ll typically receive your initial design demo within 48 hours, with most websites fully launched within 14 days — depending on how quickly we receive your content, feedback, and approvals.",
   },
   {
     q: "Why should you choose Lavender Marketing & Co.?",
