@@ -231,7 +231,7 @@ export const googleReviews = [
     initial: "B",
     color: "#0f766e",
     quote:
-      "Our company utilized Lavender Marketing & Co. to be able to redesign our website and Bilha Njau and team was amazing to work with. They did a great job not just on the design but on the communication and updates.",
+      "Our company utilized Lavender Marketing & Co. to be able to redesign our website and AJ and team was amazing to work with. They did a great job not just on the design but on the communication and updates.",
   },
   {
     name: "James Hinton",
@@ -249,7 +249,7 @@ export const googleReviews = [
     initial: "C",
     color: "#b45309",
     quote:
-      "Working with Bilha and her team at Lavender Marketing & Co. was a positive experience overall. From the start, she took the time to understand our business, our audience, and what we needed the site to accomplish.",
+      "Working with AJ and his team at Lavender Marketing & Co. was a positive experience overall. From the start, he took the time to understand our business, our audience, and what we needed the site to accomplish.",
   },
 ];
 
