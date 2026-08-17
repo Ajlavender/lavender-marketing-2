@@ -118,7 +118,7 @@ export function Header() {
             variant="outline"
             className={cn(
               "hidden rounded-full px-5 text-sm font-semibold transition-colors sm:inline-flex",
-              scrolled
+              scrolled || openMenu
                 ? "border-white/40 bg-transparent text-white hover:border-white hover:bg-white/10 hover:text-white"
                 : "border-ink/30 bg-transparent text-ink hover:border-ink hover:bg-ink/10 hover:text-ink",
             )}
