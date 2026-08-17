@@ -113,12 +113,7 @@ export function Header() {
           <Button
             asChild
             variant="outline"
-            className={cn(
-              "hidden rounded-full px-5 text-sm font-semibold transition-colors sm:inline-flex",
-              onDark
-                ? "border-white/40 bg-transparent text-white hover:border-white hover:bg-white/10 hover:text-white"
-                : "border-ink/30 bg-transparent text-ink hover:border-ink hover:bg-ink/10 hover:text-ink",
-            )}
+            className="hidden rounded-full border-white/40 bg-transparent px-5 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10 hover:text-white sm:inline-flex"
           >
             <Link to="/contact" className="inline-flex items-center gap-1.5">
               Get Your Free Growth Report
@@ -126,12 +121,7 @@ export function Header() {
             </Link>
           </Button>
           <button
-            className={cn(
-              "inline-flex h-10 w-10 items-center justify-center rounded-md transition-colors lg:hidden",
-              onDark
-                ? "border border-white/20 text-white"
-                : "border border-ink/20 text-ink hover:border-ink/40 hover:text-ink/80",
-            )}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/20 text-white transition-colors hover:border-white/40 lg:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
