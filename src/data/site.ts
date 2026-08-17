@@ -124,19 +124,20 @@ export const nav = [
   {
     label: "Services",
     to: "/website-redesign",
-    children: services.map((s) => ({ label: s.title, to: s.slug, group: s.group })),
+    children: services.map((s) => ({ label: s.title, to: s.slug, group: s.group, short: s.short })),
   },
 
   {
     label: "About",
     to: "/about",
     children: [
-      { label: "About Us", to: "/about" },
-      { label: "Company Motto", to: "/about/motto" },
-      { label: "FAQ", to: "/faq" },
-      { label: "Why Choose Us?", to: "/why-choose-us" },
+      { label: "About Us", to: "/about", short: "Who we are and how we work." },
+      { label: "Company Motto", to: "/about/motto", short: "What we stand for." },
+      { label: "FAQ", to: "/faq", short: "Straight answers, no fine print." },
+      { label: "Why Choose Us?", to: "/why-choose-us", short: "What makes us different." },
     ],
   },
+
   { label: "Reviews", to: "/reviews" },
   { label: "Projects", to: "/projects" },
   { label: "Pricing", to: "/pricing" },
