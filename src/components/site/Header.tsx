@@ -131,7 +131,7 @@ export function Header() {
           <button
             className={cn(
               "inline-flex h-10 w-10 items-center justify-center rounded-md transition-colors lg:hidden",
-              scrolled
+              scrolled || openMenu
                 ? "border border-white/20 text-white"
                 : "border border-ink/20 text-ink hover:border-ink/40 hover:text-ink/80",
             )}
