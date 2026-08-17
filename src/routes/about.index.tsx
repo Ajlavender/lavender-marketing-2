@@ -318,22 +318,23 @@ function About() {
       <section className="px-4 pb-24 pt-6 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
           <Reveal from="left">
-            <p className="text-sm text-primary">Chillax And Let Us Do The Heavy Lifting!</p>
+            <p className="text-sm text-primary">Built for Canadian Business Owners</p>
             <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
               We Make it <span className="text-primary">Easy.</span>
             </h2>
             <div className="mt-5 max-w-md space-y-4 text-sm leading-relaxed text-muted-foreground">
               <p>
-                We have finally made the decision easy for busy people in the United States and United
-                Kingdom. We're specialized to work with people that don't know too much about websites
-                and don't want to spend a lot of time nor money on a project.
+                We've made the decision easy for busy business owners across Canada. You don't need
+                to know code, marketing, or design. We handle the website, the follow-up, the reviews,
+                and the reporting — all in one simple $297/mo package.
               </p>
               <p>
-                We're nuts about creating cost-effective websites that are as stunning as they are
-                functional!
+                Whether you're a contractor, clinic, consultant, or local shop, you get a premium site
+                and a growth engine that actually brings in customers.
               </p>
               <p className="font-bold text-foreground">
-                Still not sure? Well, try us out. We create a free design for you, remember?
+                Still not sure? Try us out. Your first design is completely free — no contract, no
+                setup fee, no payment until you love it.
               </p>
             </div>
             <div className="mt-7">
