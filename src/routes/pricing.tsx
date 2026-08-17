@@ -92,6 +92,29 @@ function PricingHero() {
 
   return (
     <section className="relative overflow-hidden bg-secondary">
+      {/* aurora atmosphere */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          className="aurora-blob -left-[10%] -top-[10%] h-[55%] w-[55%] opacity-40"
+          style={{ background: "radial-gradient(circle, oklch(0.65 0.22 292 / 0.55), transparent 70%)" }}
+        />
+        <div
+          className="aurora-blob bottom-[5%] right-[-5%] h-[45%] w-[45%] opacity-35"
+          style={{
+            background: "radial-gradient(circle, oklch(0.72 0.18 300 / 0.5), transparent 70%)",
+            animationDelay: "-6s",
+          }}
+        />
+        <div
+          className="aurora-blob left-[30%] top-[40%] h-[35%] w-[35%] opacity-30"
+          style={{
+            background: "radial-gradient(circle, oklch(0.55 0.24 288 / 0.45), transparent 70%)",
+            animationDelay: "-12s",
+          }}
+        />
+        <div className="hero-grid absolute inset-0 opacity-60" />
+      </div>
+
       {/* curved connector */}
       <svg
         aria-hidden
@@ -114,7 +137,7 @@ function PricingHero() {
           <p className="text-base text-primary">Growth Plan Special Pricing</p>
           <h1 className="mt-5 max-w-xl text-5xl font-bold leading-[1.05] sm:text-6xl">
             See if your business{" "}
-            <span className="text-primary">qualifies for special Growth plan pricing</span>
+            <span className="text-gradient-brand">qualifies for special Growth plan pricing</span>
           </h1>
           <p className="mt-6 max-w-lg text-base text-muted-foreground">
             Answer four quick questions and we&apos;ll review whether you qualify for special pricing
