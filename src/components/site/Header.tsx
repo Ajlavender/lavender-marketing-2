@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { Menu, ChevronDown, X, ArrowUpRight } from "lucide-react";
 import { nav, LOGO } from "@/data/site";
-import { serviceSeo } from "@/data/service-seo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MegaPanel, groupChildren, type MegaChild } from "@/components/site/MegaMenu";
@@ -15,10 +14,6 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
-  const pathname = useRouterState({ select: (st) => st.location.pathname });
-  // Service pages render a dark plum hero, so nav text must stay light at scroll top.
-  const darkHero = pathname in serviceSeo;
-  const onDark = scrolled || !!openMenu || darkHero;
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const openNow = (label: string) => {
