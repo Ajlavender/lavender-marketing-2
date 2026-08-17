@@ -129,46 +129,7 @@ export function Header() {
         </div>
       </div>
 
-      {open && (
-        <div className="mx-auto mt-2 max-w-7xl overflow-hidden rounded-2xl border border-white/10 bg-nav-plum shadow-[0_20px_50px_-10px_rgba(0,0,0,0.45)] backdrop-blur-2xl lg:hidden">
-          <nav className="mx-auto max-w-7xl space-y-1 px-4 py-4" aria-label="Mobile">
-            {nav.map((item) => (
-              <div key={item.label}>
-                <Link
-                  to={item.to}
-                  onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-2 text-sm font-semibold text-white"
-                >
-                  {item.label}
-                </Link>
-                {item.children && (
-                  <div className="ml-3 border-l border-white/20 pl-3">
-                    {groupChildren(item.children).map(([groupLabel, kids]) => (
-                      <div key={groupLabel || "default"}>
-                        {groupLabel && (
-                          <p className="px-3 pb-1 pt-3 text-[11px] font-semibold uppercase tracking-wide text-white/50">
-                            {groupLabel}
-                          </p>
-                        )}
-                        {kids.map((child) => (
-                          <Link
-                            key={child.to}
-                            to={child.to}
-                            onClick={() => setOpen(false)}
-                            className="block rounded-md px-3 py-2 text-sm text-white/80"
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
-        </div>
-      )}
+      <MobileMenu open={open} onClose={() => setOpen(false)} />
     </header>
   );
 }
