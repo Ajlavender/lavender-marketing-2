@@ -78,8 +78,11 @@ export function Header() {
             scrolled ? "h-16" : "h-[4.75rem]",
           )}
         >
-          <Link to="/" className="shrink-0" aria-label="Lavender Marketing & Co. home">
-            <img src={LOGO} alt="Lavender Marketing & Co." width={120} height={32} className="h-8 w-auto" />
+          <Link to="/" className="flex shrink-0 items-center gap-2.5" aria-label="Lavender Marketing & Co. home">
+            <img src={LOGO} alt="" width={120} height={32} className="h-8 w-auto" />
+            <span className="hidden whitespace-nowrap font-serif text-lg font-semibold tracking-tight text-white sm:inline">
+              Lavender Marketing & Co.
+            </span>
           </Link>
 
           <nav className="relative hidden items-center gap-1 lg:flex" aria-label="Main">
