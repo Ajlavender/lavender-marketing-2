@@ -23,9 +23,9 @@ export const Route = createFileRoute("/contact")({
 });
 
 const details = [
-  { icon: Mail, label: "Email", value: "info@lavendermarketing.co", href: "mailto:info@lavendermarketing.co" },
-  { icon: Phone, label: "Phone", value: "+1 (888) 123-4567", href: "tel:+18881234567" },
-  { icon: MapPin, label: "Office", value: "Remote-first, worldwide" },
+  { icon: Mail, label: "Email", value: "Aj@lavendermarketingco.com", href: "mailto:Aj@lavendermarketingco.com" },
+  { icon: Phone, label: "Phone", value: "519-671-6248", href: "tel:5196716248" },
+  { icon: MapPin, label: "Office", value: "Canada & US" },
 ];
 
 function Contact() {
