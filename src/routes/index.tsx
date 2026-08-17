@@ -518,7 +518,7 @@ function Index() {
       {/* Sexy and affordable */}
       <section className="bg-secondary py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal scale className="relative rounded-[2rem] bg-[linear-gradient(115deg,#1d1f4a_0%,#231f57_45%,#6d33d6_100%)] px-8 py-14 text-background sm:px-14 lg:px-16">
+          <Reveal scale className="relative rounded-[2rem] bg-[linear-gradient(115deg,#1E1B4B_0%,#312E81_45%,#9B87F5_100%)] px-8 py-14 text-background sm:px-14 lg:px-16">
             <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
               <div>
                 <p className="text-xl font-medium text-[#a78bfa]">
@@ -572,7 +572,7 @@ function Index() {
         <div className="mx-auto mt-20 grid max-w-5xl gap-x-10 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
           {stats.slice(0, 3).map((s, i) => (
             <Reveal key={s.label} delay={i * 100}>
-              <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#2a2352]">
+              <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#312E81]">
                 <CountUp value={`${s.value}${s.suffix ?? ""}`} />
               </p>
               <p className="mt-6 text-base leading-relaxed text-muted-foreground">{s.label}</p>
@@ -582,7 +582,7 @@ function Index() {
             <div className="grid max-w-2xl grid-cols-2 gap-x-10 gap-y-20 sm:gap-x-16 lg:gap-x-24">
               {stats.slice(3).map((s) => (
                 <div key={s.label}>
-                  <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#2a2352]">
+                  <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#312E81]">
                     <CountUp value={`${s.value}${s.suffix ?? ""}`} />
                   </p>
                   <p className="mt-6 text-base leading-relaxed text-muted-foreground">{s.label}</p>
