@@ -207,6 +207,7 @@
   --color-nav-cta-to: var(--nav-cta-to);
   --color-nav-cta-hover-from: var(--nav-cta-hover-from);
   --color-nav-cta-hover-to: var(--nav-cta-hover-to);
+  --color-lavender-wash: var(--lavender-wash);
 }
 
 @utility bg-gradient-brand {
