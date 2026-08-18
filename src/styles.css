@@ -204,6 +204,7 @@
   --color-nav-glass-bg: var(--nav-glass-bg);
   --color-nav-glass-border: var(--nav-glass-border);
   --color-nav-glass-highlight: var(--nav-glass-highlight);
+  --color-nav-glass-glow: var(--nav-glass-glow);
   --color-nav-cta-from: var(--nav-cta-from);
   --color-nav-cta-to: var(--nav-cta-to);
   --color-nav-cta-hover-from: var(--nav-cta-hover-from);
