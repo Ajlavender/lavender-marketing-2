@@ -66,9 +66,16 @@ export function Header() {
       <div
         className={cn(
           "relative w-full border-b border-nav-glass-border bg-nav-glass-bg backdrop-blur-2xl transition-all duration-500 ease-out",
-          scrolled && "shadow-[0_18px_40px_-18px_rgba(0,0,0,0.5)]",
+          scrolled && "shadow-[0_24px_60px_-20px_rgba(0,0,0,0.55)]",
         )}
       >
+        {/* Ambient lavender glow behind the nav */}
+        <div
+          className="pointer-events-none absolute -bottom-20 left-1/2 h-40 w-[80%] -translate-x-1/2 rounded-full bg-nav-glass-glow blur-[80px]"
+          aria-hidden="true"
+        />
+        {/* Top highlight line */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
         {/* Bottom highlight line */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-nav-glass-highlight to-transparent" />
 
