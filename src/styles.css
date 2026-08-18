@@ -218,6 +218,10 @@
   background-image: var(--gradient-deep);
 }
 
+@utility bg-gradient-radial {
+  background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
+}
+
 @layer base {
   [data-slot="button"] {
     border-radius: 9999px;
