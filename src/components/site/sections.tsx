@@ -325,26 +325,41 @@ export function FaqAccordion({ limit }: { limit?: number }) {
 export function LogoStrip() {
   const row = [...clientLogos, ...clientLogos];
   return (
-    <div className="overflow-hidden bg-background py-12">
-      <div className="marquee flex w-max items-center gap-20 px-8">
-        {row.map((l, i) =>
-          "src" in l && l.src ? (
-            <img
-              key={`${l.name}-${i}`}
-              src={l.src}
-              alt={l.name}
-              loading="lazy"
-              className="h-10 w-auto shrink-0 object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
-            />
-          ) : (
-            <span
-              key={`${l.name}-${i}`}
-              className="shrink-0 whitespace-nowrap font-[family-name:var(--font-display)] text-lg font-semibold tracking-tight text-foreground/60 transition hover:text-primary"
-            >
+    <div className="relative isolate overflow-hidden border-y border-brand/10 bg-lavender-wash py-8 sm:py-10">
+      {/* Top edge sheen */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent"
+      />
+      {/* Bottom edge shadow for section break */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-ink/10 to-transparent"
+      />
+      {/* Left fade mask */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-lavender-wash to-transparent sm:w-28"
+      />
+      {/* Right fade mask */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-lavender-wash to-transparent sm:w-28"
+      />
+
+      <div className="marquee-premium flex w-max items-center gap-12 px-8 sm:gap-16">
+        {row.map((l, i) => (
+          <div key={`${l.name}-${i}`} className="flex items-center gap-12 sm:gap-16">
+            <span className="shrink-0 whitespace-nowrap font-[family-name:var(--font-display)] text-lg font-semibold tracking-tight text-ink/80 transition-colors duration-300 hover:text-brand sm:text-xl">
               {l.name}
             </span>
-          )
-        )}
+            <span className="shrink-0 text-brand/25" aria-hidden>
+              <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
+                <circle cx="3" cy="3" r="3" />
+              </svg>
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );

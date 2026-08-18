@@ -184,6 +184,7 @@
   --nav-cta-to: oklch(0.22 0.07 292);
   --nav-cta-hover-from: oklch(0.38 0.13 310);
   --nav-cta-hover-to: oklch(0.28 0.09 292);
+  --lavender-wash: oklch(0.96 0.018 292);
   --gradient-brand: linear-gradient(100deg, var(--brand), var(--brand-glow));
   --gradient-deep: linear-gradient(140deg, var(--brand-deep), var(--ink) 70%);
   --shadow-brand: 0 18px 40px -18px color-mix(in oklab, var(--brand) 55%, transparent);
@@ -206,6 +207,7 @@
   --color-nav-cta-to: var(--nav-cta-to);
   --color-nav-cta-hover-from: var(--nav-cta-hover-from);
   --color-nav-cta-hover-to: var(--nav-cta-hover-to);
+  --color-lavender-wash: var(--lavender-wash);
 }
 
 @utility bg-gradient-brand {
@@ -233,6 +235,19 @@
 
 @utility marquee {
   animation: marquee-scroll 40s linear infinite;
+}
+
+@keyframes marquee-premium-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@utility marquee-premium {
+  animation: marquee-premium-scroll 55s linear infinite;
+}
+
+.marquee-premium:hover {
+  animation-play-state: paused;
 }
 
 @keyframes pulse-ring {
