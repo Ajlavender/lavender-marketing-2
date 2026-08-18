@@ -334,7 +334,7 @@ export function LogoStrip() {
       {/* Seamless white gradient transition into the next section */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-40 bg-gradient-to-t from-white via-white/80 to-transparent sm:h-56"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-40 bg-gradient-to-t from-white via-white/80 to-transparent sm:h-56"
       />
       {/* Soft radial glow behind headline */}
       <div
