@@ -160,7 +160,7 @@ export function Header() {
               </Link>
             </Button>
             <button
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:border-white/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/[0.05] text-white backdrop-blur-md transition-all duration-200 hover:border-white/40 hover:bg-white/10 hover:shadow-[0_0_24px_-6px_rgba(255,255,255,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum lg:hidden"
               onClick={() => setOpen(true)}
               aria-label="Open menu"
               aria-expanded={open}
