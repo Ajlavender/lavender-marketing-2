@@ -87,11 +87,12 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         aria-modal="true"
         aria-label="Site menu"
         className={cn(
-          "fixed inset-y-0 right-0 z-50 flex w-[min(22rem,90vw)] flex-col border-l border-white/12 bg-nav-plum/90 shadow-[0_40px_120px_-30px_rgba(0,0,0,0.75)] backdrop-blur-2xl transition-transform duration-350 ease-[cubic-bezier(0.22,1,0.36,1)]",
+          "fixed inset-y-0 right-0 z-50 flex w-[min(22rem,90vw)] flex-col border-l border-white/12 bg-nav-glass-bg shadow-[0_40px_120px_-30px_rgba(0,0,0,0.8)] backdrop-blur-2xl transition-transform duration-350 ease-[cubic-bezier(0.22,1,0.36,1)]",
           open ? "translate-x-0" : "translate-x-full",
         )}
       >
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent" />
+        <div className="pointer-events-none absolute -bottom-20 left-1/2 h-40 w-[80%] -translate-x-1/2 rounded-full bg-nav-glass-glow blur-[80px]" />
 
         <div className="flex items-center justify-between px-5 py-4">
           <Link to="/" onClick={onClose} aria-label="Lavender Marketing & Co. home">

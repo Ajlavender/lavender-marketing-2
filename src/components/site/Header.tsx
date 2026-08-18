@@ -66,9 +66,16 @@ export function Header() {
       <div
         className={cn(
           "relative w-full border-b border-nav-glass-border bg-nav-glass-bg backdrop-blur-2xl transition-all duration-500 ease-out",
-          scrolled && "shadow-[0_18px_40px_-18px_rgba(0,0,0,0.5)]",
+          scrolled && "shadow-[0_24px_60px_-20px_rgba(0,0,0,0.55)]",
         )}
       >
+        {/* Ambient lavender glow behind the nav */}
+        <div
+          className="pointer-events-none absolute -bottom-20 left-1/2 h-40 w-[80%] -translate-x-1/2 rounded-full bg-nav-glass-glow blur-[80px]"
+          aria-hidden="true"
+        />
+        {/* Top highlight line */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
         {/* Bottom highlight line */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-nav-glass-highlight to-transparent" />
 
@@ -97,8 +104,8 @@ export function Header() {
                   >
                     <button
                       className={cn(
-                        "flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium tracking-wide text-nav-plum-foreground/80 transition-colors hover:text-white",
-                        openMenu === item.label && "bg-white/10 text-white",
+                        "flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium tracking-wide text-nav-plum-foreground/85 transition-all duration-200 hover:bg-white/[0.07] hover:text-white hover:shadow-[0_0_20px_-4px_rgba(255,255,255,0.15)]",
+                        openMenu === item.label && "bg-white/10 text-white shadow-[0_0_24px_-4px_rgba(255,255,255,0.18)]",
                       )}
                       aria-expanded={openMenu === item.label}
                       onFocus={() => openNow(item.label)}
@@ -132,8 +139,8 @@ export function Header() {
                     key={item.to}
                     to={item.to}
                     onMouseEnter={closeSoon}
-                    activeProps={{ className: "text-white" }}
-                    className="rounded-full px-3 py-2 text-sm font-medium tracking-wide text-nav-plum-foreground/80 transition-colors hover:text-white"
+                    activeProps={{ className: "text-white bg-white/[0.07] shadow-[0_0_24px_-4px_rgba(255,255,255,0.18)]" }}
+                    className="rounded-full px-3 py-2 text-sm font-medium tracking-wide text-nav-plum-foreground/85 transition-all duration-200 hover:bg-white/[0.07] hover:text-white hover:shadow-[0_0_20px_-4px_rgba(255,255,255,0.15)]"
                   >
                     {item.label}
                   </Link>
@@ -153,7 +160,7 @@ export function Header() {
               </Link>
             </Button>
             <button
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:border-white/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/[0.05] text-white backdrop-blur-md transition-all duration-200 hover:border-white/40 hover:bg-white/10 hover:shadow-[0_0_24px_-6px_rgba(255,255,255,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum lg:hidden"
               onClick={() => setOpen(true)}
               aria-label="Open menu"
               aria-expanded={open}
