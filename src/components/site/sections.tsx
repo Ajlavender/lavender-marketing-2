@@ -325,43 +325,94 @@ export function FaqAccordion({ limit }: { limit?: number }) {
 export function LogoStrip() {
   const row = [...clientLogos, ...clientLogos];
   return (
-    <div className="relative isolate overflow-hidden border-y border-brand/10 bg-lavender-wash py-8 sm:py-10">
-      {/* Top edge sheen */}
+    <section className="relative isolate overflow-hidden border-y border-brand/10 bg-lavender-wash py-14 sm:py-20">
+      {/* Ambient top sheen */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent"
       />
       {/* Bottom edge shadow for section break */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-ink/10 to-transparent"
       />
-      {/* Left fade mask */}
+      {/* Soft radial glow behind headline */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-lavender-wash to-transparent sm:w-28"
-      />
-      {/* Right fade mask */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-lavender-wash to-transparent sm:w-28"
+        className="pointer-events-none absolute left-1/2 top-0 h-64 w-[40rem] -translate-x-1/2 bg-gradient-radial from-brand/10 via-transparent to-transparent opacity-70"
       />
 
-      <div className="marquee-premium flex w-max items-center gap-12 px-8 sm:gap-16">
-        {row.map((l, i) => (
-          <div key={`${l.name}-${i}`} className="flex items-center gap-12 sm:gap-16">
-            <span className="shrink-0 whitespace-nowrap font-[family-name:var(--font-display)] text-lg font-semibold tracking-tight text-ink/80 transition-colors duration-300 hover:text-brand sm:text-xl">
-              {l.name}
-            </span>
-            <span className="shrink-0 text-brand/25" aria-hidden>
-              <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
-                <circle cx="3" cy="3" r="3" />
-              </svg>
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand/15 bg-white/60 px-4 py-1.5 shadow-sm backdrop-blur-sm">
+            <Star className="h-3.5 w-3.5 fill-orange text-orange" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-ink/70">
+              Trusted by local businesses across Canada & the US
             </span>
           </div>
-        ))}
+          <h2 className="mt-5 max-w-2xl text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+            Companies we&apos;ve worked with
+          </h2>
+          <p className="mt-3 max-w-xl text-base text-ink/60">
+            Real brands, real results — from boutiques and contractors to entertainment and professional services.
+          </p>
+        </div>
       </div>
-    </div>
+
+      <div className="relative mt-10 sm:mt-14">
+        {/* Left fade mask */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-lavender-wash to-transparent sm:w-28"
+        />
+        {/* Right fade mask */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-lavender-wash to-transparent sm:w-28"
+        />
+
+        <div className="marquee-premium flex w-max items-center gap-10 px-8 sm:gap-14">
+          {row.map((l, i) => (
+            <div key={`${l.name}-${i}`} className="group flex items-center gap-10 sm:gap-14">
+              <span className="shrink-0 whitespace-nowrap font-[family-name:var(--font-display)] text-xl font-semibold tracking-tight text-ink/70 transition-all duration-300 group-hover:text-brand sm:text-2xl">
+                {l.name}
+              </span>
+              <span className="shrink-0 text-brand/20 transition-colors duration-300 group-hover:text-brand/50" aria-hidden>
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor">
+                  <circle cx="4" cy="4" r="4" />
+                </svg>
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative z-10 mx-auto mt-10 flex max-w-7xl justify-center px-4 sm:mt-14 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3 rounded-2xl border border-brand/10 bg-white/70 px-5 py-3 shadow-sm backdrop-blur-sm">
+          <div className="flex -space-x-1.5">
+            {["bg-brand", "bg-brand-glow", "bg-brand-deep", "bg-ink"].map((c, i) => (
+              <div
+                key={i}
+                className={`flex h-7 w-7 items-center justify-center rounded-full border-2 border-white ${c}`}
+              >
+                <span className="text-[10px] font-bold text-white">{String.fromCharCode(65 + i)}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col items-start">
+            <div className="flex items-center gap-1">
+              <span className="text-sm font-bold text-ink">50+ reviews</span>
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-3 w-3 fill-orange text-orange" />
+                ))}
+              </div>
+            </div>
+            <span className="text-xs text-ink/50">Across Google, Facebook & more</span>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
