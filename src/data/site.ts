@@ -418,4 +418,5 @@ export const clientLogos: { name: string; src?: string }[] = [
   { name: "NCP Realty" },
   { name: "New Canaan Real Estate Leads" },
   { name: "The Chambers Group" },
+  { name: "Romulus Enterprises" },
 ];
