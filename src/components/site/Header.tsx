@@ -139,8 +139,8 @@ export function Header() {
                     key={item.to}
                     to={item.to}
                     onMouseEnter={closeSoon}
-                    activeProps={{ className: "text-white" }}
-                    className="rounded-full px-3 py-2 text-sm font-medium tracking-wide text-nav-plum-foreground/80 transition-colors hover:text-white"
+                    activeProps={{ className: "text-white bg-white/[0.07] shadow-[0_0_24px_-4px_rgba(255,255,255,0.18)]" }}
+                    className="rounded-full px-3 py-2 text-sm font-medium tracking-wide text-nav-plum-foreground/85 transition-all duration-200 hover:bg-white/[0.07] hover:text-white hover:shadow-[0_0_20px_-4px_rgba(255,255,255,0.15)]"
                   >
                     {item.label}
                   </Link>
