@@ -325,16 +325,16 @@ export function FaqAccordion({ limit }: { limit?: number }) {
 export function LogoStrip() {
   const row = [...clientLogos, ...clientLogos];
   return (
-    <section className="relative isolate overflow-hidden border-y border-brand/10 bg-lavender-wash py-14 sm:py-20">
+    <section className="relative isolate overflow-hidden border-t border-brand/10 bg-lavender-wash py-14 sm:py-20">
       {/* Ambient top sheen */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent"
       />
-      {/* Bottom edge shadow for section break */}
+      {/* Seamless white gradient transition into the next section */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-ink/10 to-transparent"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-40 bg-gradient-to-t from-white via-white/80 to-transparent sm:h-56"
       />
       {/* Soft radial glow behind headline */}
       <div
