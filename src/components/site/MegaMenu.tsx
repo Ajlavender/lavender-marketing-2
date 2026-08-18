@@ -109,11 +109,12 @@ export function MegaPanel({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl border border-white/12 bg-nav-plum shadow-[0_40px_80px_-40px_rgba(16,18,24,0.9)] backdrop-blur-xl",
+        "relative overflow-hidden rounded-2xl border border-white/12 bg-nav-glass-bg shadow-[0_40px_80px_-40px_rgba(16,18,24,0.92)] backdrop-blur-2xl",
         wide ? "w-[64rem]" : "w-[22rem]",
       )}
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent" />
+      <div className="pointer-events-none absolute -bottom-16 left-1/2 h-32 w-[70%] -translate-x-1/2 rounded-full bg-nav-glass-glow blur-[60px]" />
       <div className={cn("grid gap-3 p-4", wide && "grid-cols-[2fr_1.05fr_14.5rem]")}>
         {groups.map(([groupLabel, kids], gi) => (
           <div key={groupLabel || "default"} className="min-w-0">
