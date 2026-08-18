@@ -415,4 +415,7 @@ export const clientLogos: { name: string; src?: string }[] = [
   { name: "Spartan Financial" },
   { name: "Couto's Cleaning" },
   { name: "Authentic Customs General Contracting" },
+  { name: "NCP Realty" },
+  { name: "New Canaan Real Estate Leads" },
+  { name: "The Chambers Group" },
 ];
