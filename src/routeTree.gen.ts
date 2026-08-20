@@ -13,6 +13,7 @@ import { Route as WhyChooseUsRouteImport } from './routes/why-choose-us'
 import { Route as WebsiteRedesignRouteImport } from './routes/website-redesign'
 import { Route as VoiceAiReceptionistRouteImport } from './routes/voice-ai-receptionist'
 import { Route as UnifiedInboxRouteImport } from './routes/unified-inbox'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as ReviewAutomationRouteImport } from './routes/review-automation'
 import { Route as ProjectsRouteImport } from './routes/projects'
@@ -53,6 +54,11 @@ const VoiceAiReceptionistRoute = VoiceAiReceptionistRouteImport.update({
 const UnifiedInboxRoute = UnifiedInboxRouteImport.update({
   id: '/unified-inbox',
   path: '/unified-inbox',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReviewsRoute = ReviewsRouteImport.update({
@@ -179,6 +185,7 @@ export interface FileRoutesByFullPath {
   '/projects': typeof ProjectsRoute
   '/review-automation': typeof ReviewAutomationRoute
   '/reviews': typeof ReviewsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unified-inbox': typeof UnifiedInboxRoute
   '/voice-ai-receptionist': typeof VoiceAiReceptionistRoute
   '/website-redesign': typeof WebsiteRedesignRoute
@@ -206,6 +213,7 @@ export interface FileRoutesByTo {
   '/projects': typeof ProjectsRoute
   '/review-automation': typeof ReviewAutomationRoute
   '/reviews': typeof ReviewsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unified-inbox': typeof UnifiedInboxRoute
   '/voice-ai-receptionist': typeof VoiceAiReceptionistRoute
   '/website-redesign': typeof WebsiteRedesignRoute
@@ -234,6 +242,7 @@ export interface FileRoutesById {
   '/projects': typeof ProjectsRoute
   '/review-automation': typeof ReviewAutomationRoute
   '/reviews': typeof ReviewsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unified-inbox': typeof UnifiedInboxRoute
   '/voice-ai-receptionist': typeof VoiceAiReceptionistRoute
   '/website-redesign': typeof WebsiteRedesignRoute
@@ -263,6 +272,7 @@ export interface FileRouteTypes {
     | '/projects'
     | '/review-automation'
     | '/reviews'
+    | '/sitemap.xml'
     | '/unified-inbox'
     | '/voice-ai-receptionist'
     | '/website-redesign'
@@ -290,6 +300,7 @@ export interface FileRouteTypes {
     | '/projects'
     | '/review-automation'
     | '/reviews'
+    | '/sitemap.xml'
     | '/unified-inbox'
     | '/voice-ai-receptionist'
     | '/website-redesign'
@@ -317,6 +328,7 @@ export interface FileRouteTypes {
     | '/projects'
     | '/review-automation'
     | '/reviews'
+    | '/sitemap.xml'
     | '/unified-inbox'
     | '/voice-ai-receptionist'
     | '/website-redesign'
@@ -345,6 +357,7 @@ export interface RootRouteChildren {
   ProjectsRoute: typeof ProjectsRoute
   ReviewAutomationRoute: typeof ReviewAutomationRoute
   ReviewsRoute: typeof ReviewsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UnifiedInboxRoute: typeof UnifiedInboxRoute
   VoiceAiReceptionistRoute: typeof VoiceAiReceptionistRoute
   WebsiteRedesignRoute: typeof WebsiteRedesignRoute
@@ -383,6 +396,13 @@ declare module '@tanstack/react-router' {
       path: '/unified-inbox'
       fullPath: '/unified-inbox'
       preLoaderRoute: typeof UnifiedInboxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reviews': {
@@ -553,6 +573,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsRoute: ProjectsRoute,
   ReviewAutomationRoute: ReviewAutomationRoute,
   ReviewsRoute: ReviewsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   UnifiedInboxRoute: UnifiedInboxRoute,
   VoiceAiReceptionistRoute: VoiceAiReceptionistRoute,
   WebsiteRedesignRoute: WebsiteRedesignRoute,

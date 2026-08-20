@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lavendermarketingco.com/sitemap.xml
