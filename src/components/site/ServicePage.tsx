@@ -66,7 +66,11 @@ export function ServicePage({
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild size="lg">
-                  <Link to="/contact">Get your free growth report</Link>
+                  {ctaTo.startsWith("#") ? (
+                    <a href={ctaTo}>{ctaLabel}</a>
+                  ) : (
+                    <Link to={ctaTo}>{ctaLabel}</Link>
+                  )}
                 </Button>
                 <Button
                   asChild
