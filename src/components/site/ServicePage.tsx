@@ -44,7 +44,7 @@ export function ServicePage({
   return (
     <article>
       {/* Hero */}
-      <header className="relative overflow-hidden bg-nav-plum pb-24 pt-40 text-nav-plum-foreground">
+      <header className="relative overflow-hidden bg-[linear-gradient(180deg,color-mix(in_oklab,var(--nav-plum)_75%,black)_0%,var(--nav-plum)_55%)] pb-24 pt-40 text-nav-plum-foreground">
         <div className="pointer-events-none absolute -right-24 -top-24 h-[28rem] w-[28rem] rounded-full bg-primary/30 blur-[120px]" />
         <div className="pointer-events-none absolute -bottom-32 left-1/4 h-80 w-80 rounded-full bg-white/10 blur-[110px]" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.15fr_1fr] lg:px-8">

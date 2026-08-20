@@ -65,13 +65,13 @@ export function Header() {
     >
       <div
         className={cn(
-          "relative w-full border-b border-nav-glass-border bg-nav-plum backdrop-blur-2xl transition-all duration-500 ease-out",
+          "relative w-full border-b border-white/10 bg-nav-plum shadow-[0_18px_40px_-24px_rgba(0,0,0,0.8)] backdrop-blur-2xl transition-all duration-500 ease-out",
           scrolled && "shadow-[0_24px_60px_-20px_rgba(0,0,0,0.55)]",
         )}
       >
         {/* Ambient lavender glow behind the nav */}
         <div
-          className="pointer-events-none absolute -bottom-20 left-1/2 h-40 w-[80%] -translate-x-1/2 rounded-full bg-nav-glass-glow blur-[80px]"
+          className="pointer-events-none absolute inset-x-0 -bottom-16 mx-auto h-32 w-4/5 rounded-full bg-nav-glass-glow opacity-40 blur-[80px]"
           aria-hidden="true"
         />
         {/* Top highlight line */}
