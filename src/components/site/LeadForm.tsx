@@ -23,17 +23,40 @@ export function LeadForm({
   fields = "lead",
 }: Props) {
   const [values, setValues] = useState({ url: "", email: "", phone: "", message: "" });
+  const [sending, setSending] = useState(false);
+  const send = useServerFn(submitLead);
   const dark = variant === "dark";
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!values.email) {
       toast.error("Please add your email so we can get back to you.");
       return;
     }
-    toast.success("Thanks! We'll be in touch with your free website demo shortly.");
-    setValues({ url: "", email: "", phone: "", message: "" });
+    setSending(true);
+    try {
+      const res = await send({
+        data: {
+          source: `LeadForm:${fields}`,
+          email: values.email,
+          phone: values.phone || undefined,
+          website: values.url || undefined,
+          message: values.message || undefined,
+        },
+      });
+      if (!res.ok) {
+        toast.error("Something went wrong sending that. Please email Aj@lavendermarketingco.com.");
+        return;
+      }
+      toast.success("Thanks! We'll be in touch with your free website demo shortly.");
+      setValues({ url: "", email: "", phone: "", message: "" });
+    } catch {
+      toast.error("Something went wrong sending that. Please email Aj@lavendermarketingco.com.");
+    } finally {
+      setSending(false);
+    }
   }
+
 
   const inputCls = cn(
     "h-14 rounded-full border-0 bg-background px-6 text-base shadow-sm placeholder:text-muted-foreground",
