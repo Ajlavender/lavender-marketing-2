@@ -1,4 +1,3 @@
-import type React from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -22,7 +21,6 @@ export type ServicePageProps = {
   intro: string[];
   benefits: { title: string; body: string }[];
   process: { step: string; title: string; body: string }[];
-  children?: React.ReactNode;
 };
 
 export function ServicePage({
@@ -34,7 +32,6 @@ export function ServicePage({
   intro,
   benefits,
   process,
-  children,
 }: ServicePageProps) {
   const seo = serviceSeo[slug];
 
@@ -92,8 +89,6 @@ export function ServicePage({
           </Reveal>
         </div>
       </header>
-
-      {children}
 
       {/* Answer-first summary + key facts (built for AI answer engines) */}
       {seo && (
