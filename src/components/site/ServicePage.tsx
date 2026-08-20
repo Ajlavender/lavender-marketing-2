@@ -34,6 +34,7 @@ export function ServicePage({
   intro,
   benefits,
   process,
+  children,
 }: ServicePageProps) {
   const seo = serviceSeo[slug];
 
