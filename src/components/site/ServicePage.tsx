@@ -21,6 +21,10 @@ export type ServicePageProps = {
   intro: string[];
   benefits: { title: string; body: string }[];
   process: { step: string; title: string; body: string }[];
+  /** Primary hero CTA. Defaults to "/contact". Use a hash for same-page anchors. */
+  ctaTo?: string;
+  /** Label for the primary hero CTA. Defaults to "Get your free growth report". */
+  ctaLabel?: string;
 };
 
 export function ServicePage({
