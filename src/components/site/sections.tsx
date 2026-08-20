@@ -46,15 +46,17 @@ export function SectionHeading({
   highlight,
   subtitle,
   center = true,
+  className,
 }: {
   eyebrow?: string;
   title: string;
   highlight?: string;
   subtitle?: string;
   center?: boolean;
+  className?: string;
 }) {
   return (
-    <div className={cn("max-w-3xl", center && "mx-auto text-center")}>
+    <div className={cn("max-w-3xl", center && "mx-auto text-center", className)}>
       {eyebrow && (
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">{eyebrow}</p>
       )}
