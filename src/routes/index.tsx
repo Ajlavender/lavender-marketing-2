@@ -40,17 +40,17 @@ const HERO_POSTER = `${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sit
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Free Website Design + Review Engine | Lavender Marketing & Co." },
+      { title: "Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "We build local service businesses a new website for free. You only pay $297/mo if you like it — hosting, review engine, missed-call text-back and follow-up included.",
+          "We design your new website for free. If you love it, launch for $297/mo — hosting, review engine, missed-call text-back and follow-up included.",
       },
-      { property: "og:title", content: "Free Website Design + Review Engine | Lavender Marketing & Co." },
+      { property: "og:title", content: "Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
       {
         property: "og:description",
         content:
-          "Free website design for local businesses. $297/mo covers hosting, the Google review engine, missed-call text-back and follow-up. No contracts.",
+          "We design your new website for free. If you love it, launch for $297/mo — hosting, review engine, missed-call text-back and follow-up included.",
       },
       { property: "og:url", content: "/" },
 
