@@ -332,16 +332,16 @@ export const serviceSeo: Record<string, ServiceSeo> = {
   "/growth-report": {
     title: t("Monthly Local Business Growth Report"),
     description:
-      "A one-page plain-English report on the 1st: leads by source, calls recovered, reviews earned, bookings made and the next improvement. Included in $297/mo.",
+      "A one-page plain-English report on the 1st: leads by source, calls recovered, reviews earned, bookings made and the next improvement. Your first report is free.",
     name: "Monthly Growth Report",
     image: `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
     answer:
-      "The monthly growth report is one page of plain English sent on the 1st: leads by source, calls recovered, reviews earned, bookings made, compared to last month — plus the one or two things we are changing next. No impressions, no vanity dashboards.",
+      "The monthly growth report is one page of plain English sent on the 1st: leads by source, calls recovered, reviews earned, bookings made, compared to last month — plus the one or two things we are changing next. No impressions, no vanity dashboards. Your first report is free.",
     facts: [
       { label: "Delivered", value: "1st of every month, by email" },
       { label: "Length", value: "One page, plain English" },
       { label: "Tracks", value: "Calls, forms, chats, bookings, reviews" },
-      { label: "Price", value: "Included in $297/mo" },
+      { label: "First report", value: "Free" },
     ],
     faqs: [
       {
@@ -361,7 +361,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Calls, forms, chats and bookings are tracked from day one, so each lead is tied back to the channel that produced it.",
       },
     ],
-    plan: "Included in the $297/mo growth system",
+    plan: "First report free; included monthly in the $297/mo growth system",
   },
   "/ai-chat-widget": {
     title: t("AI Chat Widget Trained On Your Business"),
