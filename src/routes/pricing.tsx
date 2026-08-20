@@ -61,14 +61,14 @@ const plans = [
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Website Redesign Pricing | Lavender Marketing & Co." },
+      { title: "Pricing | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "Transparent website redesign pricing from Lavender Marketing & Co.. See a free demo design of your new homepage before you pay anything.",
+          "Transparent pricing from Lavender Marketing & Co. — your website design is free, then launch from $297/mo with hosting, review engine, missed-call text-back and follow-up included.",
       },
-      { property: "og:title", content: "Website Redesign Pricing | Lavender Marketing & Co." },
-      { property: "og:description", content: "Transparent packages, with a free demo before you pay." },
+      { property: "og:title", content: "Pricing | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { property: "og:description", content: "Transparent pricing from Lavender Marketing & Co. — your website design is free, then launch from $297/mo with hosting, review engine, missed-call text-back and follow-up included." },
       { property: "og:url", content: "/pricing" },
     ],
     links: [{ rel: "canonical", href: "/pricing" }],

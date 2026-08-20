@@ -5,16 +5,16 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Cutting-Edge Creations | Lavender Marketing & Co. Projects" },
+      { title: "Projects | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "We've got a black belt in websites. See a selection of website redesign, SEO and copywriting projects delivered by Lavender Marketing & Co..",
+          "See websites Lavender Marketing & Co. designed and launched for local businesses — free design first, then $297/mo for hosting, review engine and follow-up.",
       },
-      { property: "og:title", content: "Cutting-Edge Creations | Lavender Marketing & Co. Projects" },
+      { property: "og:title", content: "Projects | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
       {
         property: "og:description",
-        content: "See the websites Lavender Marketing & Co. has redesigned for businesses around the world.",
+        content: "See websites Lavender Marketing & Co. designed and launched for local businesses — free design first, then $297/mo for hosting, review engine and follow-up.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -8,16 +8,16 @@ import { MEDIA, googleReviews, projects } from "@/data/site";
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Reviews — See What People Say About Lavender Marketing & Co." },
+      { title: "Reviews | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "Read hundreds of 5-star Lavender Marketing & Co. reviews on Google and Bark, plus video testimonials from real customers who love their new website.",
+          "Read 5-star Lavender Marketing & Co. reviews on Google and Facebook, plus video testimonials from real customers who love their free-design-first website and growth system.",
       },
-      { property: "og:title", content: "Reviews — See What People Say About Lavender Marketing & Co." },
+      { property: "og:title", content: "Reviews | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
       {
         property: "og:description",
-        content: "Google reviews, Bark reviews and video testimonials from Lavender Marketing & Co. customers.",
+        content: "Read 5-star Lavender Marketing & Co. reviews on Google and Facebook, plus video testimonials from real customers who love their free-design-first website and growth system.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -6,16 +6,16 @@ import { MEDIA } from "@/data/site";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Lavender Marketing & Co. Blog | Website Redesign, SEO & Conversion Advice" },
+      { title: "Blog | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "Practical advice on website redesign, SEO, copywriting and conversion rate optimization for small and mid-sized businesses.",
+          "Practical advice on free website design, review engines, local SEO, copywriting and conversion for small and mid-sized businesses.",
       },
-      { property: "og:title", content: "Lavender Marketing & Co. Blog" },
+      { property: "og:title", content: "Blog | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
       {
         property: "og:description",
-        content: "Website redesign, SEO and conversion advice for growing businesses.",
+        content: "Practical advice on free website design, review engines, local SEO, copywriting and conversion for small and mid-sized businesses.",
       },
       { property: "og:url", content: "/blog" },
     ],
