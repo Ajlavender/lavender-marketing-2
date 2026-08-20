@@ -65,7 +65,7 @@ export function Header() {
     >
       <div
         className={cn(
-          "relative w-full border-b border-nav-glass-border bg-nav-glass-bg backdrop-blur-2xl transition-all duration-500 ease-out",
+          "relative w-full border-b border-nav-glass-border bg-nav-plum backdrop-blur-2xl transition-all duration-500 ease-out",
           scrolled && "shadow-[0_24px_60px_-20px_rgba(0,0,0,0.55)]",
         )}
       >
