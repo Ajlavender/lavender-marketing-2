@@ -150,9 +150,9 @@ export function Header() {
 
             <Button
               asChild
-              className="group/btn relative hidden h-9 items-center gap-1 overflow-hidden rounded-full px-4 text-xs font-semibold tracking-wide text-white shadow-none sm:inline-flex"
+              className="group/btn relative hidden h-9 overflow-hidden rounded-full px-4 text-xs font-semibold tracking-wide text-white shadow-none sm:inline-flex"
             >
-              <Link to="/growth-report">
+              <Link to="/contact" className="inline-flex items-center gap-1">
                 <span className="absolute inset-0 bg-gradient-to-br from-nav-cta-from to-nav-cta-to transition-all duration-300 group-hover/btn:from-nav-cta-hover-from group-hover/btn:to-nav-cta-hover-to" />
                 <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/20" />
                 <span className="relative">Free Growth Report</span>
