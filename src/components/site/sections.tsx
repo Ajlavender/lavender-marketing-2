@@ -27,14 +27,13 @@ export function Section({
   children,
   className,
   muted,
-  id,
 }: {
   children: ReactNode;
   className?: string;
   muted?: boolean;
-} & React.HTMLAttributes<HTMLElement>) {
+}) {
   return (
-    <section id={id} className={cn("py-20", muted && "bg-secondary", className)}>
+    <section className={cn("py-20", muted && "bg-secondary", className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
     </section>
   );
@@ -46,17 +45,15 @@ export function SectionHeading({
   highlight,
   subtitle,
   center = true,
-  className,
 }: {
   eyebrow?: string;
   title: string;
   highlight?: string;
   subtitle?: string;
   center?: boolean;
-  className?: string;
 }) {
   return (
-    <div className={cn("max-w-3xl", center && "mx-auto text-center", className)}>
+    <div className={cn("max-w-3xl", center && "mx-auto text-center")}>
       {eyebrow && (
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">{eyebrow}</p>
       )}

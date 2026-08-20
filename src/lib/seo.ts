@@ -1,6 +1,6 @@
 import { serviceSeo } from "@/data/service-seo";
 
-export const SITE_URL = "https://project--e08a8ecc-293c-4c66-a4a0-c6c4458e6186.lovable.app";
+export const SITE_URL = "https://webtec-sparkle-suite.lovable.app";
 export const BRAND = "Lavender Marketing & Co.";
 
 /**
