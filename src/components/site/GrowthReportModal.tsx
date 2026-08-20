@@ -25,7 +25,8 @@ export function GrowthReportModal() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent
-        className="max-h-[92dvh] w-[calc(100vw-1.5rem)] max-w-2xl overflow-y-auto overscroll-contain border-white/10 bg-nav-plum p-5 text-nav-plum-foreground sm:p-8"
+        className="left-0 top-0 m-auto h-fit max-h-[92dvh] w-[calc(100vw-1.5rem)] max-w-2xl translate-x-0 translate-y-0 overflow-y-auto overscroll-contain rounded-2xl border-white/10 bg-nav-plum p-5 text-nav-plum-foreground sm:p-8"
+        style={{ inset: 0 }}
       >
         <div className="space-y-2 pr-6 text-left">
           <span className="inline-flex items-center rounded-full border border-white/15 bg-white/[0.07] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/80">
