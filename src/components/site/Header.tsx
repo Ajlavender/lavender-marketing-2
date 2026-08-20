@@ -71,7 +71,7 @@ export function Header() {
       >
         {/* Ambient lavender glow behind the nav */}
         <div
-          className="pointer-events-none absolute -bottom-20 left-1/2 h-40 w-[80%] -translate-x-1/2 rounded-full bg-nav-glass-glow blur-[80px]"
+          className="pointer-events-none absolute inset-x-0 -bottom-16 mx-auto h-32 w-4/5 rounded-full bg-nav-glass-glow opacity-40 blur-[80px]"
           aria-hidden="true"
         />
         {/* Top highlight line */}
