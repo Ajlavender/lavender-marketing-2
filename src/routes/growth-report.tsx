@@ -41,7 +41,6 @@ export const Route = createFileRoute("/growth-report")({
               Free report
             </p>
             <SectionHeading
-              as="h2"
               title="Get your free growth report"
               highlight="delivered monthly"
               className="text-nav-plum-foreground [&_span]:text-primary"
