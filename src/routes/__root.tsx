@@ -150,6 +150,7 @@ function RootComponent() {
         </main>
         <Footer />
       </div>
+      <GrowthReportModal />
       <Toaster position="top-center" />
     </QueryClientProvider>
   );
