@@ -157,25 +157,25 @@ export function ServicePage({
       </Section>
 
       {/* Process rail */}
-      <Section className="band-dark text-nav-plum-foreground">
+      <Section className="section-wash text-foreground">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-nav-plum-foreground/55">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             How it works
           </p>
-          <h2 className="text-4xl text-nav-plum-foreground sm:text-5xl">
+          <h2 className="text-4xl text-primary sm:text-5xl">
             Set up for you, start to finish
           </h2>
         </div>
         <ol className="relative mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div className="pointer-events-none absolute inset-x-0 top-10 hidden h-px bg-gradient-to-r from-transparent via-white/20 to-transparent lg:block" />
+          <div className="pointer-events-none absolute inset-x-0 top-10 hidden h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent lg:block" />
           {process.map((p, i) => (
             <Reveal key={p.step} from="up" delay={i * 100}>
-              <li className="relative h-full rounded-3xl border border-white/10 bg-white/[0.05] p-7 backdrop-blur-sm">
+              <li className="relative h-full rounded-3xl border border-border bg-white p-7 shadow-sm">
                 <span className="font-[family-name:var(--font-display)] text-5xl font-bold text-primary">
                   {p.step}
                 </span>
-                <h3 className="mt-3 text-xl text-nav-plum-foreground">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-nav-plum-foreground/65">{p.body}</p>
+                <h3 className="mt-3 text-xl text-foreground">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
               </li>
             </Reveal>
           ))}
