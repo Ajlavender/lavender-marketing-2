@@ -1,6 +1,9 @@
 import { useState, type FormEvent } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { ArrowRight } from "lucide-react";
 import { toast } from "sonner";
+import { submitLead } from "@/lib/leads.functions";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
