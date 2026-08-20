@@ -21,6 +21,10 @@ export type ServicePageProps = {
   intro: string[];
   benefits: { title: string; body: string }[];
   process: { step: string; title: string; body: string }[];
+  /** Primary hero CTA. Defaults to "/contact". Use a hash for same-page anchors. */
+  ctaTo?: string;
+  /** Label for the primary hero CTA. Defaults to "Get your free growth report". */
+  ctaLabel?: string;
 };
 
 export function ServicePage({
@@ -32,6 +36,8 @@ export function ServicePage({
   intro,
   benefits,
   process,
+  ctaTo = "/contact",
+  ctaLabel = "Get your free growth report",
 }: ServicePageProps) {
   const seo = serviceSeo[slug];
 
@@ -60,7 +66,11 @@ export function ServicePage({
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild size="lg">
-                  <Link to="/contact">Get your free growth report</Link>
+                  {ctaTo.startsWith("#") ? (
+                    <a href={ctaTo}>{ctaLabel}</a>
+                  ) : (
+                    <Link to={ctaTo}>{ctaLabel}</Link>
+                  )}
                 </Button>
                 <Button
                   asChild
@@ -151,7 +161,7 @@ export function ServicePage({
       </Section>
 
       {/* Process rail */}
-      <Section className="band-dark text-nav-plum-foreground">
+      <Section className="section-band text-nav-plum-foreground">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-nav-plum-foreground/55">
             How it works
