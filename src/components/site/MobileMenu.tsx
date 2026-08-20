@@ -191,7 +191,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
             <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/20" />
             <span className="relative">Get Your Free Growth Report</span>
             <ArrowUpRight className="relative h-4 w-4" />
-          </Link>
+          </button>
         </div>
       </div>
     </div>
