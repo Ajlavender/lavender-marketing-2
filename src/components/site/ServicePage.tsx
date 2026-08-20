@@ -93,6 +93,8 @@ export function ServicePage({
         </div>
       </header>
 
+      {children}
+
       {/* Answer-first summary + key facts (built for AI answer engines) */}
       {seo && (
         <Section className="section-wash">
