@@ -27,13 +27,14 @@ export function Section({
   children,
   className,
   muted,
+  id,
 }: {
   children: ReactNode;
   className?: string;
   muted?: boolean;
-}) {
+} & React.HTMLAttributes<HTMLElement>) {
   return (
-    <section className={cn("py-20", muted && "bg-secondary", className)}>
+    <section id={id} className={cn("py-20", muted && "bg-secondary", className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
     </section>
   );
