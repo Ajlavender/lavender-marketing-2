@@ -1,3 +1,4 @@
+import { openGrowthReport } from "@/components/site/GrowthReportModal";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, X, ArrowUpRight } from "lucide-react";
@@ -178,16 +179,19 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         </nav>
 
         <div className="border-t border-white/10 p-4">
-          <Link
-            to="/contact"
-            onClick={onClose}
-            className="group relative flex items-center justify-center gap-1.5 overflow-hidden rounded-full px-6 py-3.5 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum"
+          <button
+            type="button"
+            onClick={() => {
+              onClose();
+              openGrowthReport();
+            }}
+            className="group relative flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-full px-6 py-3.5 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum"
           >
             <span className="absolute inset-0 bg-gradient-to-br from-nav-cta-from to-nav-cta-to transition-all duration-300 group-hover:from-nav-cta-hover-from group-hover:to-nav-cta-hover-to" />
             <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/20" />
             <span className="relative">Get Your Free Growth Report</span>
             <ArrowUpRight className="relative h-4 w-4" />
-          </Link>
+          </button>
         </div>
       </div>
     </div>
