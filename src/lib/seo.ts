@@ -21,7 +21,7 @@ export function serviceHead(slug: string) {
       { property: "og:title", content: s.title },
       { property: "og:description", content: s.description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: url },
+      { property: "og:url", content: slug },
       { property: "og:site_name", content: BRAND },
       { property: "og:image", content: s.image },
       { name: "twitter:card", content: "summary_large_image" },
@@ -29,7 +29,7 @@ export function serviceHead(slug: string) {
       { name: "twitter:description", content: s.description },
       { name: "twitter:image", content: s.image },
     ],
-    links: [{ rel: "canonical", href: url }],
+    links: [{ rel: "canonical", href: slug }],
     scripts: [
       {
         type: "application/ld+json",

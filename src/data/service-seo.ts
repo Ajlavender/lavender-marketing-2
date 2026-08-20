@@ -24,7 +24,7 @@ const t = (s: string) => `${s} | ${BRAND}`;
 
 export const serviceSeo: Record<string, ServiceSeo> = {
   "/website-redesign": {
-    title: t("Free Website Design + Review Engine for Local Businesses"),
+    title: t("Website Redesign Services for Local Businesses"),
     description:
       "We design your new website for free. If you love it, launch for $297/mo — hosting, review engine, missed-call text-back, booking and follow-up included.",
     name: "Website Design & Build",
