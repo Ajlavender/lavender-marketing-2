@@ -36,7 +36,7 @@ export const Route = createFileRoute("/growth-report")({
       />
 
       {/* Inline LeadConnector growth-report widget */}
-      <Section id="growth-report-form" className="band-dark text-nav-plum-foreground">
+      <Section id="growth-report-form" className="section-band text-nav-plum-foreground">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal from="up">
             <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/80">

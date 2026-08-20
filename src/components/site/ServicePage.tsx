@@ -161,7 +161,7 @@ export function ServicePage({
       </Section>
 
       {/* Process rail */}
-      <Section className="band-dark text-nav-plum-foreground">
+      <Section className="section-band text-nav-plum-foreground">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-nav-plum-foreground/55">
             How it works
