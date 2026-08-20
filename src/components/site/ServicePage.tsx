@@ -36,6 +36,8 @@ export function ServicePage({
   intro,
   benefits,
   process,
+  ctaTo = "/contact",
+  ctaLabel = "Get your free growth report",
 }: ServicePageProps) {
   const seo = serviceSeo[slug];
 
