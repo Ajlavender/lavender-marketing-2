@@ -22,6 +22,8 @@ import {
   ProjectGrid,
   RatingBar,
   Section,
+  SectionHeading,
+  ServicesGrid,
 } from "@/components/site/sections";
 import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
 import { MEDIA, stats } from "@/data/site";
@@ -488,6 +490,18 @@ function Index() {
       </Section>
 
       <SystemLoop />
+
+      {/* Services grid */}
+      <Section>
+        <SectionHeading
+          eyebrow="What you get"
+          title="One growth system, built for local service businesses"
+          subtitle="Every tool below is included in the $297/month Essentials Plan. No separate logins, no surprise bills."
+        />
+        <Reveal delay={120} className="mt-14">
+          <ServicesGrid />
+        </Reveal>
+      </Section>
 
       {/* Reviews */}
       <Section muted className="py-24">

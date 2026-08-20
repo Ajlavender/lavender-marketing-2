@@ -27,6 +27,7 @@ import { Route as FollowUpAutomationRouteImport } from './routes/follow-up-autom
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as CrmPipelineRouteImport } from './routes/crm-pipeline'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ConstructionWebsiteDesignRouteImport } from './routes/construction-website-design'
 import { Route as ChatWidgetRouteImport } from './routes/chat-widget'
 import { Route as AiChatWidgetRouteImport } from './routes/ai-chat-widget'
 import { Route as AdManagementRouteImport } from './routes/ad-management'
@@ -126,6 +127,12 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConstructionWebsiteDesignRoute =
+  ConstructionWebsiteDesignRouteImport.update({
+    id: '/construction-website-design',
+    path: '/construction-website-design',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ChatWidgetRoute = ChatWidgetRouteImport.update({
   id: '/chat-widget',
   path: '/chat-widget',
@@ -172,6 +179,7 @@ export interface FileRoutesByFullPath {
   '/ad-management': typeof AdManagementRoute
   '/ai-chat-widget': typeof AiChatWidgetRoute
   '/chat-widget': typeof ChatWidgetRoute
+  '/construction-website-design': typeof ConstructionWebsiteDesignRoute
   '/contact': typeof ContactRoute
   '/crm-pipeline': typeof CrmPipelineRoute
   '/faq': typeof FaqRoute
@@ -200,6 +208,7 @@ export interface FileRoutesByTo {
   '/ad-management': typeof AdManagementRoute
   '/ai-chat-widget': typeof AiChatWidgetRoute
   '/chat-widget': typeof ChatWidgetRoute
+  '/construction-website-design': typeof ConstructionWebsiteDesignRoute
   '/contact': typeof ContactRoute
   '/crm-pipeline': typeof CrmPipelineRoute
   '/faq': typeof FaqRoute
@@ -229,6 +238,7 @@ export interface FileRoutesById {
   '/ad-management': typeof AdManagementRoute
   '/ai-chat-widget': typeof AiChatWidgetRoute
   '/chat-widget': typeof ChatWidgetRoute
+  '/construction-website-design': typeof ConstructionWebsiteDesignRoute
   '/contact': typeof ContactRoute
   '/crm-pipeline': typeof CrmPipelineRoute
   '/faq': typeof FaqRoute
@@ -259,6 +269,7 @@ export interface FileRouteTypes {
     | '/ad-management'
     | '/ai-chat-widget'
     | '/chat-widget'
+    | '/construction-website-design'
     | '/contact'
     | '/crm-pipeline'
     | '/faq'
@@ -287,6 +298,7 @@ export interface FileRouteTypes {
     | '/ad-management'
     | '/ai-chat-widget'
     | '/chat-widget'
+    | '/construction-website-design'
     | '/contact'
     | '/crm-pipeline'
     | '/faq'
@@ -315,6 +327,7 @@ export interface FileRouteTypes {
     | '/ad-management'
     | '/ai-chat-widget'
     | '/chat-widget'
+    | '/construction-website-design'
     | '/contact'
     | '/crm-pipeline'
     | '/faq'
@@ -344,6 +357,7 @@ export interface RootRouteChildren {
   AdManagementRoute: typeof AdManagementRoute
   AiChatWidgetRoute: typeof AiChatWidgetRoute
   ChatWidgetRoute: typeof ChatWidgetRoute
+  ConstructionWebsiteDesignRoute: typeof ConstructionWebsiteDesignRoute
   ContactRoute: typeof ContactRoute
   CrmPipelineRoute: typeof CrmPipelineRoute
   FaqRoute: typeof FaqRoute
@@ -496,6 +510,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/construction-website-design': {
+      id: '/construction-website-design'
+      path: '/construction-website-design'
+      fullPath: '/construction-website-design'
+      preLoaderRoute: typeof ConstructionWebsiteDesignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/chat-widget': {
       id: '/chat-widget'
       path: '/chat-widget'
@@ -560,6 +581,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdManagementRoute: AdManagementRoute,
   AiChatWidgetRoute: AiChatWidgetRoute,
   ChatWidgetRoute: ChatWidgetRoute,
+  ConstructionWebsiteDesignRoute: ConstructionWebsiteDesignRoute,
   ContactRoute: ContactRoute,
   CrmPipelineRoute: CrmPipelineRoute,
   FaqRoute: FaqRoute,

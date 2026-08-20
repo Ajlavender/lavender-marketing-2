@@ -499,4 +499,38 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     ],
     plan: "Growth and Scale add-on",
   },
+  "/construction-website-design": {
+    title: t("Construction Website Design For Contractors"),
+    description:
+      "Website design for construction companies, contractors and trades. Free custom design, then $297/mo for the growth system with missed-call text-back, review automation and follow-up.",
+    name: "Construction Website Design",
+    image: `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
+    answer:
+      "Lavender Marketing & Co. designs and builds construction websites for contractors, roofers, electricians, plumbers and general trades. We create the site for free, then launch it under the $297/month growth system that includes missed-call text-back, automated Google review requests, online booking, follow-up and a monthly report.",
+    facts: [
+      { label: "Design cost", value: "$0 upfront" },
+      { label: "Growth system", value: "$297/mo" },
+      { label: "Built for", value: "Contractors & trades" },
+      { label: "Key tools", value: "Text-back, reviews, booking" },
+    ],
+    faqs: [
+      {
+        q: "Do you only work with construction companies?",
+        a: "No. We build sites for any local service business, but this page is tailored for contractors who need a site that turns estimates into booked jobs.",
+      },
+      {
+        q: "Can customers request a quote from the site?",
+        a: "Yes. Every construction site includes a quote form that triggers instant missed-call text-back and follow-up so no estimate request goes cold.",
+      },
+      {
+        q: "How do the review requests work?",
+        a: "After a job is marked complete, the system sends a short text and email with a one-tap Google review link. Happy customers leave public reviews; unhappy feedback is routed to you privately first.",
+      },
+      {
+        q: "What if I am already busy and miss calls?",
+        a: "Missed-call text-back sends an automatic reply within seconds, so the caller texts back instead of calling your competitor. It works after hours and on weekends too.",
+      },
+    ],
+    plan: "Included in the $297/mo growth system",
+  },
 };
