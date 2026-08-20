@@ -14,7 +14,6 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Toaster } from "@/components/ui/sonner";
-import { GrowthReportModal } from "@/components/site/GrowthReportModal";
 
 
 function NotFoundComponent() {
@@ -151,7 +150,6 @@ function RootComponent() {
         </main>
         <Footer />
       </div>
-      <GrowthReportModal />
       <Toaster position="top-center" />
     </QueryClientProvider>
   );
