@@ -1,3 +1,4 @@
+import { openGrowthReport } from "@/components/site/GrowthReportModal";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, X, ArrowUpRight } from "lucide-react";
