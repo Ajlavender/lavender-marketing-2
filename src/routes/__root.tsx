@@ -81,11 +81,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lavender Marketing & Co. | Website Redesign & SEO Services" },
+      { title: "Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "Website redesign agency specializing in web redesign & SEO for small and medium-sized businesses. Get a free website demo.",
+          "We design your new website for free. If you love it, launch for $297/mo — hosting, review engine, missed-call text-back and follow-up included.",
       },
       { name: "author", content: "Lavender Marketing & Co." },
       { property: "og:site_name", content: "Lavender Marketing & Co." },
@@ -112,7 +112,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           url: "/",
           logo: "/logo.png",
           description:
-            "Website redesign agency specializing in web redesign & SEO for small and medium-sized businesses.",
+            "We design your new website for free. If you love it, launch for $297/mo — hosting, review engine, missed-call text-back and follow-up included.",
         }),
       },
     ],
