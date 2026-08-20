@@ -117,6 +117,14 @@ export const services = [
     group: "Add-ons (Growth & Scale)",
     image: `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
   },
+  {
+    slug: "/construction-website-design",
+    title: "Construction Website Design",
+    short: "A site built for contractors — with missed-call text-back and review automation included.",
+    value: "$297/mo",
+    group: "Industry Solutions",
+    image: `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
+  },
 ] as const;
 
 export const nav = [

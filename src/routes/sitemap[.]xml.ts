@@ -34,6 +34,7 @@ const staticPaths: SitemapEntry[] = [
   { path: "/review-automation", changefreq: "monthly", priority: "0.7" },
   { path: "/unified-inbox", changefreq: "monthly", priority: "0.7" },
   { path: "/voice-ai-receptionist", changefreq: "monthly", priority: "0.7" },
+  { path: "/construction-website-design", changefreq: "monthly", priority: "0.8" },
   { path: "/blog", changefreq: "weekly", priority: "0.7" },
 ];
 
