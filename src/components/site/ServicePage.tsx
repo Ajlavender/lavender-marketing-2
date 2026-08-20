@@ -60,7 +60,13 @@ export function ServicePage({
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild size="lg">
-                  <Link to="/contact">Get your free growth report</Link>
+                  <a
+                    href="https://services.leadconnectorhq.com/prospecting/widgets/public/69913d5dd2dae6c8487503d5"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get your free growth report
+                  </a>
                 </Button>
                 <Button
                   asChild
