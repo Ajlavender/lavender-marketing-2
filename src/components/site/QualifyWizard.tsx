@@ -33,23 +33,39 @@ export function QualifyWizard({ className }: { className?: string }) {
   const [index, setIndex] = useState(0);
   const [values, setValues] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
+  const send = useServerFn(submitLead);
   const step = steps[index];
   const value = values[step.key] ?? "";
 
-  function next(v?: string) {
+  async function next(v?: string) {
     const val = v ?? value;
     if (!val) {
       toast.error("Please answer this question to continue.");
       return;
     }
-    setValues((s) => ({ ...s, [step.key]: val }));
+    const updated = { ...values, [step.key]: val };
+    setValues(updated);
     if (index === steps.length - 1) {
       setDone(true);
       toast.success("You're eligible for special Growth plan pricing — check your email within 24 hours.");
+      try {
+        const res = await send({
+          data: {
+            source: "QualifyWizard",
+            email: updated["email"] ?? "",
+            website: updated["website"] || undefined,
+            answers: { revenue: updated["revenue"] ?? "", goal: updated["goal"] ?? "" },
+          },
+        });
+        if (!res.ok) console.error("Lead not delivered");
+      } catch {
+        console.error("Lead not delivered");
+      }
       return;
     }
     setIndex((i) => i + 1);
   }
+
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
