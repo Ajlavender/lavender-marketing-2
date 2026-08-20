@@ -21,6 +21,7 @@ export type ServicePageProps = {
   intro: string[];
   benefits: { title: string; body: string }[];
   process: { step: string; title: string; body: string }[];
+  children?: React.ReactNode;
 };
 
 export function ServicePage({
