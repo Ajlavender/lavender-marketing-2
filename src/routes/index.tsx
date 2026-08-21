@@ -314,111 +314,90 @@ function Index() {
             </div>
 
             <div className="relative overflow-hidden rounded-[1.65rem] bg-black">
-            <video
-              ref={videoRef}
-              poster={HERO_POSTER}
-              width={1280}
-              height={720}
-              autoPlay
-              muted={muted}
-              loop
-              playsInline
-              controls
-              preload="metadata"
-              onCanPlay={() => {
-                setCanPlay(true);
-                videoRef.current?.play().catch(() => {});
-              }}
-              className="aspect-video h-full w-full object-cover"
-            >
-              {videoSrc && <source src={videoSrc} type="video/mp4" />}
-            </video>
+              {!floating ? (
+                <>
+                  <VideoPlayer
+                    videoRef={videoRef}
+                    muted={muted}
+                    canPlay={canPlay}
+                    videoSrc={videoSrc}
+                    floating={false}
+                    onToggleMute={toggleMute}
+                  />
 
-
-            {/* Click-to-unmute overlay */}
-            {muted && canPlay && (
-              <button
-                type="button"
-                onClick={toggleMute}
-                className="group absolute inset-0 z-10 flex cursor-pointer flex-col items-center justify-center bg-black/30 transition duration-500 hover:bg-black/40"
-                aria-label="Unmute video"
-              >
-                {/* animated rings */}
-                <span className="absolute h-24 w-24 rounded-full bg-white/10 animate-pulse-ring" />
-                <span
-                  className="absolute h-24 w-24 rounded-full bg-white/10 animate-pulse-ring"
-                  style={{ animationDelay: "0.8s" }}
-                />
-                <span className="absolute h-32 w-32 rounded-full bg-white/5 animate-pulse-ring" />
-
-                {/* glass icon button */}
-                <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30 backdrop-blur-xl shadow-[0_0_40px_-10px_rgba(255,255,255,0.25)] transition duration-500 group-hover:scale-110 group-hover:bg-white/25 group-hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.4)]">
-                  <VolumeX className="relative z-10 h-8 w-8 text-white transition-transform duration-500 group-hover:scale-110" />
-                </span>
-
-                {/* sound wave bars */}
-                <span className="mt-6 flex h-5 items-end gap-1">
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <span
-                      key={i}
-                      className="w-1 rounded-full bg-white/80 animate-sound-bar origin-bottom"
-                      style={{
-                        height: "100%",
-                        animationDelay: `${i * 0.12}s`,
-                      }}
-                    />
-                  ))}
-                </span>
-
-                {/* label */}
-                <span className="mt-5 text-center font-[family-name:var(--font-display)] text-sm font-semibold tracking-[0.16em] text-white/95 uppercase drop-shadow-lg">
-                  Tap to unmute
-                </span>
-              </button>
-            )}
-
-            {/* Mute toggle (visible once unmuted) */}
-            {!muted && (
-              <button
-                type="button"
-                onClick={toggleMute}
-                className="absolute top-3 right-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/70"
-                aria-label="Mute video"
-              >
-                <Volume2 className="h-4 w-4" />
-              </button>
-            )}
-
-            {/* PiP button — appears on scroll */}
-            <button
-              type="button"
-              onClick={togglePiP}
-              className={cn(
-                "group absolute bottom-3 right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full text-white backdrop-blur-md shadow-lg ring-1 transition-all duration-300 ease-out",
-                "bg-black/70 ring-white/10 hover:scale-110 hover:bg-black/85 hover:shadow-[0_0_30px_-8px_rgba(255,255,255,0.35)] hover:ring-white/25",
-                "active:scale-95",
-                showPiP ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0",
-                isPiP && "bg-brand/90 ring-brand-glow/50 shadow-[0_0_30px_-8px_color-mix(in_oklab,var(--brand)_45%,transparent)]",
+                  {/* Pop-out button — appears on scroll */}
+                  <button
+                    type="button"
+                    onClick={toggleFloating}
+                    className={cn(
+                      "group absolute bottom-3 right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full text-white backdrop-blur-md shadow-lg ring-1 transition-all duration-300 ease-out",
+                      "bg-black/70 ring-white/10 hover:scale-110 hover:bg-black/85 hover:shadow-[0_0_30px_-8px_rgba(255,255,255,0.35)] hover:ring-white/25",
+                      "active:scale-95",
+                      showFloatBtn && !floating
+                        ? "translate-y-0 opacity-100"
+                        : "pointer-events-none translate-y-3 opacity-0",
+                    )}
+                    aria-label="Pop video out"
+                    title="Pop video out"
+                  >
+                    <Minimize2 className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                  </button>
+                </>
+              ) : (
+                /* Placeholder while the video is playing in the floating player */
+                <div className="relative aspect-video w-full">
+                  <img
+                    src={HERO_POSTER}
+                    alt=""
+                    className="h-full w-full object-cover opacity-60"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30 backdrop-blur-xl">
+                      <Maximize2 className="h-5 w-5" />
+                    </span>
+                    <span className="text-sm font-medium text-white/80">Video playing in corner</span>
+                  </div>
+                </div>
               )}
-              aria-label={isPiP ? "Close picture-in-picture" : "Open picture-in-picture"}
-              title={isPiP ? "Close picture-in-picture" : "Open picture-in-picture"}
-            >
-              <span className="relative flex items-center justify-center">
-                {isPiP ? (
-                  <PictureInPicture className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-                ) : (
-                  <PictureInPicture2 className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-                )}
-                {/* active status dot */}
-                <span
-                  className={cn(
-                    "absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-brand-glow transition-all duration-300",
-                    isPiP ? "scale-100 opacity-100 shadow-[0_0_8px_2px_color-mix(in_oklab,var(--brand-glow)_70%,transparent)]" : "scale-0 opacity-0",
-                  )}
-                />
-              </span>
-            </button>
             </div>
+
+            {/* Custom floating player — no browser PiP chrome, so no favicon/logo appears. */}
+            {floating &&
+              createPortal(
+                <div className="fixed bottom-4 right-4 z-[100] w-[min(22rem,92vw)] animate-scale-in">
+                  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_30px_70px_-25px_rgba(0,0,0,0.7)]">
+                    <VideoPlayer
+                      videoRef={videoRef}
+                      muted={muted}
+                      canPlay={canPlay}
+                      videoSrc={videoSrc}
+                      floating={true}
+                      onToggleMute={toggleMute}
+                    />
+                    {/* Close floating player */}
+                    <button
+                      type="button"
+                      onClick={toggleFloating}
+                      className="absolute -top-2 -right-2 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-background text-foreground shadow-lg ring-1 ring-border transition hover:scale-110 hover:bg-accent"
+                      aria-label="Close floating video"
+                      title="Close floating video"
+                    >
+                      <span className="sr-only">Close</span>
+                      <svg
+                        className="h-3.5 w-3.5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                      >
+                        <path d="M18 6 6 18M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>,
+                document.body,
+              )}
           </div>
         </div>
 
