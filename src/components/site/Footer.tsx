@@ -21,10 +21,9 @@ export function Footer() {
         <div className="space-y-5">
           <img src={LOGO} alt="Lavender Marketing & Co." width={150} height={36} className="h-9 w-auto" loading="lazy" />
           <p className="text-base leading-loose text-foreground/80">
-            Lavender Marketing & Co. was founded by our typical client – ourselves. We want to be the best, fastest, and
-            most professional website redesign agency out there. Our goal is to help small and
-            mid-sized businesses who want beautiful-looking websites that convert visitors into
-            customers.
+            Lavender Marketing &amp; Co. helps local service businesses turn more visitors, calls and
+            customers into booked work. We build the website. Scale Suite Pro keeps the follow-up,
+            reviews, bookings and customer conversations running behind it.
           </p>
         </div>
 
