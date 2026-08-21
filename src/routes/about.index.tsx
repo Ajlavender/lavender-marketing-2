@@ -30,17 +30,28 @@ export const Route = createFileRoute("/about/")({
 const demoBtn =
   "h-11 rounded-full bg-[linear-gradient(90deg,#8b5cf6_0%,#6d33d6_100%)] px-7 text-[11px] font-bold uppercase tracking-[0.14em] text-background shadow-[0_12px_30px_-14px_rgba(109,51,214,0.9)] hover:opacity-90";
 
-function DemoButton({ label = "Schedule a demo" }: { label?: string }) {
+function DemoButton({
+  label = "Schedule a demo",
+  to,
+  href = "https://api.scalesuitepro.com/widget/booking/sElYCoHQVkd1yhfDrM4l",
+}: {
+  label?: string;
+  to?: string;
+  href?: string;
+}) {
   return (
     <Button asChild className={demoBtn}>
-      <a
-        href="https://api.scalesuitepro.com/widget/booking/sElYCoHQVkd1yhfDrM4l"
-        target="_blank"
-        rel="noreferrer"
-      >
-        {label}
-        <ArrowRight className="ml-2 h-3.5 w-3.5" />
-      </a>
+      {to ? (
+        <Link to={to}>
+          {label}
+          <ArrowRight className="ml-2 h-3.5 w-3.5" />
+        </Link>
+      ) : (
+        <a href={href} target="_blank" rel="noreferrer">
+          {label}
+          <ArrowRight className="ml-2 h-3.5 w-3.5" />
+        </a>
+      )}
     </Button>
   );
 }
