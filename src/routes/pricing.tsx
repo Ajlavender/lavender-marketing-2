@@ -222,13 +222,13 @@ function Pricing() {
                     : "border border-border hover:bg-accent hover:text-accent-foreground"
                 }`}
               >
-                Get a free demo
+                Get My Free Website Design
               </Link>
             </div>
           ))}
         </div>
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          Prices are indicative. Every project is quoted after a short discovery call.
+          Essentials and Growth are fixed monthly plans. Scale campaigns are customized based on your market, goals and advertising requirements.
         </p>
       </Section>
 

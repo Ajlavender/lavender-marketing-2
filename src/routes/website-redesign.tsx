@@ -223,7 +223,7 @@ function WebsiteRedesign() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Schedule a demo <ArrowRight className="ml-2 h-4 w-4" />
+                    Get My Free Website Design <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
               </div>

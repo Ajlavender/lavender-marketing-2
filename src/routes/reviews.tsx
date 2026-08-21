@@ -32,7 +32,7 @@ const demoBtn =
   "h-9 rounded-full bg-[linear-gradient(90deg,#8b5cf6_0%,#6d33d6_100%)] px-6 text-[10px] font-bold uppercase tracking-[0.14em] text-background shadow-[0_12px_30px_-14px_rgba(109,51,214,0.9)] hover:opacity-90";
 
 function DemoButton({
-  label = "Schedule a demo",
+  label = "Get My Free Website Design",
   to,
   href = "https://api.scalesuitepro.com/widget/booking/sElYCoHQVkd1yhfDrM4l",
 }: {
