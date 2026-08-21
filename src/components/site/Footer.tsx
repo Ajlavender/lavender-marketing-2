@@ -36,22 +36,12 @@ export function Footer() {
                 </Link>
               </li>
             ))}
-            <li>
-              <a href="https://www.trywebtec.com/privacy-policy/" className="hover:text-primary">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="https://www.trywebtec.com/disclaimer/" className="hover:text-primary">
-                Disclaimer
-              </a>
-            </li>
           </ul>
         </div>
 
         <div>
           <h2 className="mb-6 text-2xl text-foreground">Get A Free Website Redesign Today!</h2>
-          <LeadForm submitLabel="Free Website Facelift" />
+          <LeadForm submitLabel="Get My Free Website Design" />
         </div>
       </div>
 
