@@ -3,11 +3,15 @@ import { LOGO } from "@/data/site";
 import { LeadForm } from "./LeadForm";
 
 const links = [
-  { label: "More About Us", to: "/about" },
-  { label: "Contact Us Today", to: "/contact" },
+  { label: "Website Design", to: "/website-redesign" },
+  { label: "Pricing", to: "/pricing" },
+  { label: "Free Growth Report", to: "/growth-report" },
+  { label: "Case Studies", to: "/projects" },
+  { label: "Reviews", to: "/reviews" },
+  { label: "About Lavender Marketing", to: "/about" },
+  { label: "Contact", to: "/contact" },
   { label: "FAQ", to: "/faq" },
-  { label: "Testimonials", to: "/reviews" },
-  { label: "Lavender Marketing & Co. Blog", to: "/blog" },
+  { label: "Blog", to: "/blog" },
 ] as const;
 
 export function Footer() {
