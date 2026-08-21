@@ -88,11 +88,11 @@ const HERO_VIDEO =
 function Index() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
-  const [showPiP, setShowPiP] = useState(false);
-  const [isPiP, setIsPiP] = useState(false);
-  // Tracks whether the current PiP session was started automatically by scrolling.
-  const autoPipRef = useRef(false);
-  // Tracks whether the user manually closed PiP while scrolled down.
+  const [showFloatBtn, setShowFloatBtn] = useState(false);
+  const [floating, setFloating] = useState(false);
+  // Tracks whether the current floating player was started automatically by scrolling.
+  const autoFloatRef = useRef(false);
+  // Tracks whether the user manually closed the floating player while scrolled down.
   const userDismissedRef = useRef(false);
   // Video source is attached only after hydration + when the card is in view,
   // so the poster paints first and the mp4 never blocks first render.
