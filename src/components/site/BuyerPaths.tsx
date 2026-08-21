@@ -72,7 +72,7 @@ export function BuyerPaths() {
                   to="/contact"
                   className="mt-8 self-start border-b border-primary pb-1 text-sm font-medium text-primary"
                 >
-                  Get my free design
+                  Get My Free Website Design
                 </Link>
               </div>
             </Reveal>

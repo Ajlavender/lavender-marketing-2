@@ -87,7 +87,7 @@ export function PageHero({
           <p className="mt-5 text-lg text-muted-foreground">{subtitle}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">
-              <Link to="/contact">Get a Free Website Demo</Link>
+              <Link to="/contact">Get My Free Website Design</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
               <Link to="/projects">See our work</Link>

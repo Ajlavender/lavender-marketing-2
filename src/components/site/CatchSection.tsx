@@ -232,7 +232,7 @@ export function CatchSection() {
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Button asChild size="lg">
-                  <Link to="/contact">Get my free design</Link>
+                  <Link to="/contact">Get My Free Website Design</Link>
                 </Button>
                 <Link
                   to="/pricing"
