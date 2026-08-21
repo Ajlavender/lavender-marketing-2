@@ -10,7 +10,7 @@ import {
   VolumeX,
   Zap,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/site/LeadForm";
@@ -126,6 +126,8 @@ interface VideoPlayerProps {
   floating: boolean;
   onToggleMute: () => void;
   onCanPlay: () => void;
+  /** Shared playback position so the video resumes instead of restarting when it moves. */
+  positionRef: { current: number };
 }
 
 function VideoPlayer({
@@ -136,7 +138,24 @@ function VideoPlayer({
   floating,
   onToggleMute,
   onCanPlay,
+  positionRef,
 }: VideoPlayerProps) {
+  // Restore the shared playback position whenever this element mounts (hero <-> floating).
+  const resume = useCallback(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    const target = positionRef.current;
+    if (target > 0 && Math.abs(el.currentTime - target) > 0.25) {
+      try {
+        el.currentTime = target;
+      } catch {
+        /* seek not ready yet */
+      }
+    }
+    el.muted = muted;
+    el.play().catch(() => {});
+  }, [videoRef, positionRef, muted]);
+
   return (
     <div className="relative aspect-video w-full bg-black">
       <video
@@ -150,10 +169,14 @@ function VideoPlayer({
         playsInline
         controls={!floating}
         disablePictureInPicture
-        preload="metadata"
+        preload="auto"
+        onLoadedMetadata={resume}
+        onTimeUpdate={(e) => {
+          positionRef.current = e.currentTarget.currentTime;
+        }}
         onCanPlay={() => {
           onCanPlay();
-          videoRef.current?.play().catch(() => {});
+          resume();
         }}
         className={cn(
           "h-full w-full object-cover",
@@ -162,6 +185,7 @@ function VideoPlayer({
       >
         {videoSrc && <source src={videoSrc} type="video/mp4" />}
       </video>
+
 
       {/* Click-to-unmute overlay */}
       {muted && canPlay && (
@@ -234,6 +258,7 @@ function Index() {
   // so the poster paints first and the mp4 never blocks first render.
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
   const [canPlay, setCanPlay] = useState(false);
+  const positionRef = useRef(0);
 
   useEffect(() => {
     const el = videoRef.current;
@@ -461,6 +486,7 @@ function Index() {
                     floating={false}
                     onToggleMute={toggleMute}
                     onCanPlay={() => setCanPlay(true)}
+                    positionRef={positionRef}
                   />
 
                   {/* Pop-out button — appears on scroll */}
@@ -513,6 +539,7 @@ function Index() {
                       floating={true}
                       onToggleMute={toggleMute}
                       onCanPlay={() => setCanPlay(true)}
+                    positionRef={positionRef}
                     />
                     {/* Close floating player */}
                     <button
