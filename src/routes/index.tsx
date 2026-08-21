@@ -58,12 +58,12 @@ export const Route = createFileRoute("/")({
       {
         property: "og:image",
         content:
-          "https://www.trywebtec.com/wp-content/uploads/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
+          "/media/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
       },
       {
         name: "twitter:image",
         content:
-          "https://www.trywebtec.com/wp-content/uploads/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
+          "/media/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
       },
     ],
     links: [

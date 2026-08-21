@@ -1,6 +1,6 @@
 import logoAsset from "@/assets/lavender-logo.png.asset.json";
 
-export const MEDIA = "https://www.trywebtec.com/wp-content/uploads";
+export const MEDIA = "/media";
 
 export const LOGO = logoAsset.url;
 
@@ -198,79 +198,79 @@ export const projects = [
     name: "Portuguese Canadian Club of Strathroy",
     type: "Website Redesign",
     href: "https://www.strathroyportugueseclub.com/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=Portuguese+Canadian+Club",
+    image: "/projects/portuguese-canadian-club.jpg",
   },
   {
     name: "AMG & Associates",
     type: "Website Redesign",
     href: "https://www.amg-associates.com/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=AMG+%26+Associates",
+    image: "/projects/amg-associates.jpg",
   },
   {
     name: "Busy Bee Virtual Solutions Corp",
     type: "Website Redesign",
     href: "https://busybeesolutionscorp.com/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=Busy+Bee+Solutions",
+    image: "/projects/busy-bee-solutions.jpg",
   },
   {
     name: "People First Group Realty",
     type: "Website Redesign",
     href: "https://peoplefirst321.com/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=People+First+Realty",
+    image: "/projects/people-first-realty.jpg",
   },
   {
     name: "7Steps™ Insurance Coaching",
     type: "Website Redesign",
     href: "https://eric7steps.com/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=7Steps+Coaching",
+    image: "/projects/7steps-coaching.jpg",
   },
   {
     name: "Scale Suite Pro",
     type: "Website Redesign + Automations",
     href: "https://www.scalesuitepro.com/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=Scale+Suite+Pro",
+    image: "/projects/scale-suite-pro.jpg",
   },
   {
     name: "Soccerfice Apparel",
     type: "E-commerce Redesign",
     href: "https://www.soccerfice.com/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=Soccerfice+Apparel",
+    image: "/projects/soccerfice-apparel.jpg",
   },
   {
     name: "Summit of Strength ALS Gala",
     type: "Website Redesign",
     href: "https://summitofstrength.com/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=Summit+of+Strength",
+    image: "/projects/summit-of-strength.jpg",
   },
   {
     name: "Strathroy Lobster Fest",
     type: "Website Redesign",
     href: "https://strathroylobsterfest.com/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=Strathroy+Lobster+Fest",
+    image: "/projects/strathroy-lobster-fest.jpg",
   },
   {
     name: "Uncommon Delights Cashew Nuts",
     type: "Website Redesign",
     href: "https://uncommondelights.com/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=Uncommon+Delights",
+    image: "/projects/uncommon-delights.jpg",
   },
   {
     name: "Ward Holdings International",
     type: "Website Redesign",
     href: "https://ward.holdings/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=Ward+Holdings",
+    image: "/projects/ward-holdings.jpg",
   },
   {
     name: "T&A Construction Contractors LLC",
     type: "Website Redesign",
     href: "https://ta.lavendermarketingco.com/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=T%26A+Construction",
+    image: "/projects/ta-construction.jpg",
   },
   {
     name: "Broken Together Story",
     type: "Website Redesign",
     href: "https://brokentogetherstory.com/",
-    image: "https://placehold.co/600x600/2a2352/ffffff?text=Broken+Together+Story",
+    image: "/projects/broken-together-story.jpg",
   },
 ];
 
@@ -337,12 +337,12 @@ export const ratingSources = [
   {
     label: "Bark",
     count: "100+ reviews",
-    logo: "https://www.trywebtec.com/wp-content/uploads/2023/03/Bark_Logo800-200-300x90.png",
+    logo: "/logos/bark.svg",
   },
   {
     label: "Google",
     count: "160+ reviews",
-    logo: "https://www.trywebtec.com/wp-content/uploads/2023/03/Google_2015_logo.svg-300x101.png",
+    logo: "/logos/google.svg",
   },
   {
     label: "Facebook",
@@ -352,12 +352,12 @@ export const ratingSources = [
   {
     label: "Glassdoor",
     count: "30+ reviews",
-    logo: "https://www.trywebtec.com/wp-content/uploads/2023/03/Glassdoor-Logo2-300x96.png",
+    logo: "/logos/glassdoor.svg",
   },
   {
     label: "Trustpilot",
     count: "70+ reviews",
-    logo: "https://www.trywebtec.com/wp-content/uploads/2025/08/Trustpilot_logo-e1755785128175-300x100.png",
+    logo: "/logos/trustpilot.svg",
   },
 ];
 

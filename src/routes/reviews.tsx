@@ -180,7 +180,7 @@ function Reviews() {
           </Reveal>
           <Reveal from="right" delay={110}>
             <img
-              src="https://www.trywebtec.com/wp-content/uploads/2023/03/Google_2015_logo.svg-300x101.png"
+              src="/logos/google.svg"
               alt="Google"
               loading="lazy"
               className="h-6 w-auto object-contain"
