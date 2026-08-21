@@ -216,7 +216,7 @@ function Reviews() {
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <Reveal from="left">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg"
+              src="/facebook-logo.svg"
               alt="Facebook"
               loading="lazy"
               className="h-6 w-auto object-contain"
