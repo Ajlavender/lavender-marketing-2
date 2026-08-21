@@ -118,6 +118,7 @@ function VideoPlayer({
         disablePictureInPicture
         preload="metadata"
         onCanPlay={() => {
+          onCanPlay();
           videoRef.current?.play().catch(() => {});
         }}
         className={cn(
