@@ -52,8 +52,12 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="pb-10 text-center text-base text-foreground/70">
-        © Copyright {new Date().getFullYear()} by Lavender Marketing & Co.
+      <div className="flex flex-col items-center gap-2 pb-10 text-center text-base text-foreground/70 sm:flex-row sm:justify-center sm:gap-4">
+        <span>© Copyright {new Date().getFullYear()} by Lavender Marketing & Co.</span>
+        <span className="hidden sm:inline" aria-hidden="true">·</span>
+        <a href="/sitemap.xml" className="hover:text-primary hover:underline">
+          Sitemap
+        </a>
       </div>
     </footer>
   );
