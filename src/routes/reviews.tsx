@@ -34,10 +34,14 @@ const demoBtn =
 function DemoButton({ label = "Schedule a demo" }: { label?: string }) {
   return (
     <Button asChild className={demoBtn}>
-      <Link to="/contact">
+      <a
+        href="https://api.scalesuitepro.com/widget/booking/sElYCoHQVkd1yhfDrM4l"
+        target="_blank"
+        rel="noreferrer"
+      >
         {label}
         <ArrowRight className="ml-2 h-3 w-3" />
-      </Link>
+      </a>
     </Button>
   );
 }

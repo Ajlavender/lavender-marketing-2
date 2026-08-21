@@ -219,7 +219,7 @@ function WebsiteRedesign() {
                 </ol>
                 <Button asChild size="lg" className="mt-8 uppercase tracking-wider">
                   <a
-                    href="https://calendly.com/webtec-website/free-webdesign-sketch"
+                    href="https://api.scalesuitepro.com/widget/booking/sElYCoHQVkd1yhfDrM4l"
                     target="_blank"
                     rel="noreferrer"
                   >
