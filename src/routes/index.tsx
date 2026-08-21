@@ -133,27 +133,21 @@ function Index() {
   useEffect(() => {
     const onScroll = () => {
       const scrolled = window.scrollY > 400;
-      setShowPiP(scrolled);
-
-      const video = videoRef.current;
-      if (!video) return;
+      setShowFloatBtn(scrolled);
 
       if (scrolled) {
-        // Auto-enter PiP once when the user scrolls past the hero.
-        if (!isPiP && !autoPipRef.current && !userDismissedRef.current && document.pictureInPictureEnabled) {
-          video.requestPictureInPicture().then(() => {
-            autoPipRef.current = true;
-          }).catch(() => {
-            // PiP may require a user gesture on some browsers; leave the manual button as fallback.
-          });
+        // Auto-float once when the user scrolls past the hero.
+        if (!floating && !autoFloatRef.current && !userDismissedRef.current) {
+          autoFloatRef.current = true;
+          setFloating(true);
         }
       } else {
-        // Back at the hero: reset dismissal so auto-PiP works on the next scroll down,
-        // and exit PiP if it was started automatically.
+        // Back at the hero: reset dismissal so auto-float works on the next scroll down,
+        // and return the video if it was floated automatically.
         userDismissedRef.current = false;
-        if (isPiP && autoPipRef.current) {
-          document.exitPictureInPicture?.().catch(() => {});
-          autoPipRef.current = false;
+        if (floating && autoFloatRef.current) {
+          setFloating(false);
+          autoFloatRef.current = false;
         }
       }
     };
@@ -161,28 +155,10 @@ function Index() {
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
-    const video = videoRef.current;
-    const onEnter = () => setIsPiP(true);
-    const onLeave = () => {
-      setIsPiP(false);
-      // If the user closes PiP while scrolled down, remember that choice.
-      if (window.scrollY > 400) {
-        userDismissedRef.current = true;
-      }
-      autoPipRef.current = false;
-    };
-    if (video) {
-      video.addEventListener("enterpictureinpicture", onEnter);
-      video.addEventListener("leavepictureinpicture", onLeave);
-    }
     return () => {
       window.removeEventListener("scroll", onScroll);
-      if (video) {
-        video.removeEventListener("enterpictureinpicture", onEnter);
-        video.removeEventListener("leavepictureinpicture", onLeave);
-      }
     };
-  }, [isPiP]);
+  }, [floating]);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -191,22 +167,21 @@ function Index() {
     }
   };
 
-  const togglePiP = async () => {
-    const video = videoRef.current;
-    if (!video) return;
-    try {
-      if (document.pictureInPictureElement) {
-        await document.exitPictureInPicture();
-        userDismissedRef.current = true;
-        autoPipRef.current = false;
+  const toggleFloating = () => {
+    setFloating((prev) => {
+      const next = !prev;
+      if (!next) {
+        // Manual close while scrolled down — remember the choice.
+        if (window.scrollY > 400) {
+          userDismissedRef.current = true;
+        }
+        autoFloatRef.current = false;
       } else {
-        await video.requestPictureInPicture();
         userDismissedRef.current = false;
-        autoPipRef.current = false; // manual toggle, not auto-scrolled
+        autoFloatRef.current = false;
       }
-    } catch (e) {
-      console.error("PiP failed", e);
-    }
+      return next;
+    });
   };
 
   return (
