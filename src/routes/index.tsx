@@ -596,7 +596,7 @@ function Index() {
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-6">
               <Button asChild size="lg">
-                <Link to="/contact">Get my free design</Link>
+                <Link to="/contact">Get My Free Website Design</Link>
               </Button>
               <Link
                 to="/pricing"
@@ -778,7 +778,7 @@ function Index() {
               we launch it. If you don&apos;t, you walk away and it costs you nothing.
             </p>
             <Button asChild size="lg" className="mt-8">
-              <Link to="/contact">Get my free design</Link>
+              <Link to="/contact">Get My Free Website Design</Link>
             </Button>
           </Reveal>
         </div>
