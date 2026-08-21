@@ -419,6 +419,7 @@ function Index() {
               {!floating ? (
                 <>
                   <VideoPlayer
+                    key="hero-video-player"
                     videoRef={videoRef}
                     muted={muted}
                     canPlay={canPlay}
