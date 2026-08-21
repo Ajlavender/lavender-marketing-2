@@ -104,7 +104,7 @@ function VideoPlayer({
   onCanPlay,
 }: VideoPlayerProps) {
   return (
-    <div key="hero-video-player" className="relative aspect-video w-full bg-black">
+    <div className="relative aspect-video w-full bg-black">
       <video
         ref={videoRef}
         poster={HERO_POSTER}
