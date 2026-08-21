@@ -126,6 +126,8 @@ interface VideoPlayerProps {
   floating: boolean;
   onToggleMute: () => void;
   onCanPlay: () => void;
+  /** Shared playback position so the video resumes instead of restarting when it moves. */
+  positionRef: React.MutableRefObject<number>;
 }
 
 function VideoPlayer({
@@ -136,7 +138,24 @@ function VideoPlayer({
   floating,
   onToggleMute,
   onCanPlay,
+  positionRef,
 }: VideoPlayerProps) {
+  // Restore the shared playback position whenever this element mounts (hero <-> floating).
+  const resume = React.useCallback(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    const target = positionRef.current;
+    if (target > 0 && Math.abs(el.currentTime - target) > 0.25) {
+      try {
+        el.currentTime = target;
+      } catch {
+        /* seek not ready yet */
+      }
+    }
+    el.muted = muted;
+    el.play().catch(() => {});
+  }, [videoRef, positionRef, muted]);
+
   return (
     <div className="relative aspect-video w-full bg-black">
       <video
@@ -150,10 +169,14 @@ function VideoPlayer({
         playsInline
         controls={!floating}
         disablePictureInPicture
-        preload="metadata"
+        preload="auto"
+        onLoadedMetadata={resume}
+        onTimeUpdate={(e) => {
+          positionRef.current = e.currentTarget.currentTime;
+        }}
         onCanPlay={() => {
           onCanPlay();
-          videoRef.current?.play().catch(() => {});
+          resume();
         }}
         className={cn(
           "h-full w-full object-cover",
@@ -162,6 +185,7 @@ function VideoPlayer({
       >
         {videoSrc && <source src={videoSrc} type="video/mp4" />}
       </video>
+
 
       {/* Click-to-unmute overlay */}
       {muted && canPlay && (
