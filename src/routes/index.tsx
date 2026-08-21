@@ -425,6 +425,7 @@ function Index() {
                     videoSrc={videoSrc}
                     floating={false}
                     onToggleMute={toggleMute}
+                    onCanPlay={() => setCanPlay(true)}
                   />
 
                   {/* Pop-out button — appears on scroll */}
