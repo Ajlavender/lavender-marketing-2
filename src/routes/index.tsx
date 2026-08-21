@@ -84,6 +84,105 @@ export const Route = createFileRoute("/")({
 const HERO_VIDEO =
   "https://assets.cdn.filesafe.space/LgG7iv4Yd7mh0USORTBt/media/6a7d44f562e9a426c0c5f1dd.mp4";
 
+interface VideoPlayerProps {
+  videoRef: React.RefObject<HTMLVideoElement | null>;
+  muted: boolean;
+  canPlay: boolean;
+  videoSrc: string | undefined;
+  floating: boolean;
+  onToggleMute: () => void;
+}
+
+function VideoPlayer({
+  videoRef,
+  muted,
+  canPlay,
+  videoSrc,
+  floating,
+  onToggleMute,
+}: VideoPlayerProps) {
+  return (
+    <div key="hero-video-player" className="relative aspect-video w-full bg-black">
+      <video
+        ref={videoRef}
+        poster={HERO_POSTER}
+        width={1280}
+        height={720}
+        autoPlay
+        muted={muted}
+        loop
+        playsInline
+        controls={!floating}
+        disablePictureInPicture
+        preload="metadata"
+        onCanPlay={() => {
+          videoRef.current?.play().catch(() => {});
+        }}
+        className={cn(
+          "h-full w-full object-cover",
+          floating ? "aspect-video" : "aspect-video",
+        )}
+      >
+        {videoSrc && <source src={videoSrc} type="video/mp4" />}
+      </video>
+
+      {/* Click-to-unmute overlay */}
+      {muted && canPlay && (
+        <button
+          type="button"
+          onClick={onToggleMute}
+          className="group absolute inset-0 z-10 flex cursor-pointer flex-col items-center justify-center bg-black/30 transition duration-500 hover:bg-black/40"
+          aria-label="Unmute video"
+        >
+          {/* animated rings */}
+          <span className="absolute h-24 w-24 rounded-full bg-white/10 animate-pulse-ring" />
+          <span
+            className="absolute h-24 w-24 rounded-full bg-white/10 animate-pulse-ring"
+            style={{ animationDelay: "0.8s" }}
+          />
+          <span className="absolute h-32 w-32 rounded-full bg-white/5 animate-pulse-ring" />
+
+          {/* glass icon button */}
+          <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30 backdrop-blur-xl shadow-[0_0_40px_-10px_rgba(255,255,255,0.25)] transition duration-500 group-hover:scale-110 group-hover:bg-white/25 group-hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.4)]">
+            <VolumeX className="relative z-10 h-8 w-8 text-white transition-transform duration-500 group-hover:scale-110" />
+          </span>
+
+          {/* sound wave bars */}
+          <span className="mt-6 flex h-5 items-end gap-1">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <span
+                key={i}
+                className="w-1 rounded-full bg-white/80 animate-sound-bar origin-bottom"
+                style={{
+                  height: "100%",
+                  animationDelay: `${i * 0.12}s`,
+                }}
+              />
+            ))}
+          </span>
+
+          {/* label */}
+          <span className="mt-5 text-center font-[family-name:var(--font-display)] text-sm font-semibold tracking-[0.16em] text-white/95 uppercase drop-shadow-lg">
+            Tap to unmute
+          </span>
+        </button>
+      )}
+
+      {/* Mute toggle (visible once unmuted) */}
+      {!muted && (
+        <button
+          type="button"
+          onClick={onToggleMute}
+          className="absolute top-3 right-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/70"
+          aria-label={muted ? "Unmute video" : "Mute video"}
+        >
+          {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+        </button>
+      )}
+    </div>
+  );
+}
+
 
 function Index() {
   const videoRef = useRef<HTMLVideoElement>(null);
