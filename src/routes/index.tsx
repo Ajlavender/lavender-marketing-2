@@ -91,6 +91,7 @@ interface VideoPlayerProps {
   videoSrc: string | undefined;
   floating: boolean;
   onToggleMute: () => void;
+  onCanPlay: () => void;
 }
 
 function VideoPlayer({
@@ -100,6 +101,7 @@ function VideoPlayer({
   videoSrc,
   floating,
   onToggleMute,
+  onCanPlay,
 }: VideoPlayerProps) {
   return (
     <div key="hero-video-player" className="relative aspect-video w-full bg-black">
