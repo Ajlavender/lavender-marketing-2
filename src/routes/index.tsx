@@ -58,12 +58,12 @@ export const Route = createFileRoute("/")({
       {
         property: "og:image",
         content:
-          "https://www.trywebtec.com/wp-content/uploads/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
+          "/media/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
       },
       {
         name: "twitter:image",
         content:
-          "https://www.trywebtec.com/wp-content/uploads/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
+          "/media/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
       },
     ],
     links: [
@@ -386,7 +386,7 @@ function Index() {
               className="animate-fade-in text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl"
               style={{ animationDelay: "80ms", animationFillMode: "both" }}
             >
-              We build your new website{" "}
+              We design your new website{" "}
               <span className="text-gradient-brand">for free.</span>
             </h1>
             <h2
@@ -398,10 +398,10 @@ function Index() {
               style={{ animationDelay: "240ms", animationFillMode: "both" }}
               className="animate-fade-in mt-5 max-w-xl text-lg text-muted-foreground"
             >
-              Built for local service businesses. The $297 covers hosting, the review engine that
-              keeps you #1 on Google, missed-call text-back, follow-up and a monthly growth report
-              delivered on the 1st of every month. No setup fee, no contract, no paying before you
-              see the design.
+              Built for local service businesses. The $297 covers hosting, the review engine that turns happy
+              customers into stronger local visibility, missed-call text-back, follow-up and a
+              monthly growth report delivered on the 1st of every month. No upfront design fee, no
+              setup fee, no paying before you see the design.
             </p>
 
             <div

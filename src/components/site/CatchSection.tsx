@@ -267,7 +267,7 @@ export function CatchSection() {
               Want the AI layer on top?
             </p>
             <h3 className="mt-2 text-2xl font-bold">
-              Upgrade to Growth — $497/mo
+              Upgrade to Growth — $597/mo
             </h3>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {upsells.map((item) => (

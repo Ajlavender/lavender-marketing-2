@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ReviewSlider } from "@/components/site/ReviewSlider";
 import { Reveal } from "@/components/site/Reveal";
-import { MEDIA, googleReviews, projects } from "@/data/site";
+import { MEDIA, googleReviews } from "@/data/site";
 
 export const Route = createFileRoute("/reviews")({
   head: () => ({
@@ -32,7 +32,7 @@ const demoBtn =
   "h-9 rounded-full bg-[linear-gradient(90deg,#8b5cf6_0%,#6d33d6_100%)] px-6 text-[10px] font-bold uppercase tracking-[0.14em] text-background shadow-[0_12px_30px_-14px_rgba(109,51,214,0.9)] hover:opacity-90";
 
 function DemoButton({
-  label = "Schedule a demo",
+  label = "Get My Free Website Design",
   to,
   href = "https://api.scalesuitepro.com/widget/booking/sElYCoHQVkd1yhfDrM4l",
 }: {
@@ -81,40 +81,6 @@ const facebookReviews = [
 ];
 
 
-const videoPosters = [
-  `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
-  `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
-  `${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`,
-  ...projects.map((p) => p.image),
-];
-
-function VideoTile({ poster, tall, i }: { poster: string; tall?: boolean; i: number }) {
-  return (
-    <Reveal delay={(i % 2) * 90} scale>
-      <button
-        type="button"
-        aria-label="Play video testimonial"
-        className="group relative block w-full overflow-hidden rounded-lg bg-card shadow-[0_18px_45px_-30px_rgba(16,18,24,0.5)]"
-      >
-        <img
-          src={poster}
-          alt="Lavender Marketing & Co. customer video testimonial"
-          loading="lazy"
-          className={
-            tall
-              ? "aspect-[3/4] w-full object-cover"
-              : "aspect-[4/3] w-full object-cover"
-          }
-        />
-        <span className="absolute inset-0 bg-foreground/10 transition group-hover:bg-foreground/0" />
-        <span className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-card/95 shadow-lg transition group-hover:scale-110">
-          <Play className="ml-0.5 h-6 w-6 fill-[#6d33d6] text-[#6d33d6]" />
-        </span>
-      </button>
-    </Reveal>
-  );
-}
-
 function Reviews() {
   return (
     <div className="overflow-hidden bg-secondary">
@@ -145,28 +111,6 @@ function Reviews() {
         </div>
       </section>
 
-      {/* Feature video */}
-      <section className="pb-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <Reveal scale>
-            <button
-              type="button"
-              aria-label="Play the Lavender Marketing & Co. reviews video"
-              className="group relative block w-full overflow-hidden rounded-xl bg-[#101218] shadow-[0_35px_80px_-45px_rgba(16,18,24,0.8)]"
-            >
-              <img
-                src={`${MEDIA}/2024/09/maxresdefault.webp`}
-                alt="Lavender Marketing & Co. customer highlight reel"
-                className="aspect-[16/7] w-full object-cover opacity-90"
-              />
-              <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#6d33d6] shadow-[0_18px_40px_-12px_rgba(109,51,214,0.9)] transition group-hover:scale-110">
-                <Play className="ml-1 h-7 w-7 fill-background text-background" />
-              </span>
-            </button>
-          </Reveal>
-        </div>
-      </section>
-
       {/* Google reviews */}
       <section className="pb-24">
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
@@ -180,7 +124,7 @@ function Reviews() {
           </Reveal>
           <Reveal from="right" delay={110}>
             <img
-              src="https://www.trywebtec.com/wp-content/uploads/2023/03/Google_2015_logo.svg-300x101.png"
+              src="/logos/google.svg"
               alt="Google"
               loading="lazy"
               className="h-6 w-auto object-contain"
@@ -195,34 +139,6 @@ function Reviews() {
               <ReviewSlider reviews={googleReviews} />
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Purple wave divider */}
-      <div aria-hidden className="-mb-px">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="h-12 w-full">
-          <path d="M0 40 C 360 0, 1080 60, 1440 12 L1440 60 L0 60 Z" fill="#6d33d6" />
-        </svg>
-      </div>
-
-      {/* Video testimonials */}
-      <section className="bg-background py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              Don't Just Take Our Word For It
-            </p>
-            <h2 className="mt-3 text-center text-3xl font-bold sm:text-4xl">
-              See Our
-              <br />
-              <span className="text-primary">Video Testimonials</span>
-            </h2>
-          </Reveal>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {videoPosters.map((poster, i) => (
-              <VideoTile key={`${poster}-${i}`} poster={poster} tall={i < 2} i={i} />
-            ))}
-          </div>
         </div>
       </section>
 
