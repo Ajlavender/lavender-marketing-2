@@ -107,12 +107,46 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Lavender Marketing & Co.",
-          url: "/",
-          logo: "/logo.png",
-          description:
-            "We design your new website for free. If you love it, launch for $297/mo — hosting, review engine, missed-call text-back and follow-up included.",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://lavendermarketingco.com/#organization",
+              name: "Lavender Marketing & Co.",
+              alternateName: "Lavender Marketing",
+              url: "https://lavendermarketingco.com/",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://lavendermarketingco.com/favicon.png",
+              },
+              email: "Aj@lavendermarketingco.com",
+              telephone: "+1-519-671-6248",
+              description:
+                "We design your new website for free. If you love it, launch for $297/mo — hosting, review engine, missed-call text-back and follow-up included.",
+              areaServed: [
+                { "@type": "Country", name: "Canada" },
+                { "@type": "Country", name: "United States" },
+              ],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  contactType: "sales",
+                  telephone: "+1-519-671-6248",
+                  email: "Aj@lavendermarketingco.com",
+                  areaServed: ["CA", "US"],
+                  availableLanguage: "English",
+                },
+              ],
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://lavendermarketingco.com/#website",
+              url: "https://lavendermarketingco.com/",
+              name: "Lavender Marketing & Co.",
+              alternateName: "Lavender Marketing",
+              publisher: { "@id": "https://lavendermarketingco.com/#organization" },
+              inLanguage: "en",
+            },
+          ],
         }),
       },
     ],

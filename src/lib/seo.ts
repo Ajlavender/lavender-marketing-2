@@ -1,6 +1,6 @@
 import { serviceSeo } from "@/data/service-seo";
 
-export const SITE_URL = "https://webtec-sparkle-suite.lovable.app";
+export const SITE_URL = "https://lavendermarketingco.com";
 export const BRAND = "Lavender Marketing & Co.";
 
 /**
