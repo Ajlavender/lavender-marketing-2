@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
-  PictureInPicture,
-  PictureInPicture2,
+  Maximize2,
+  Minimize2,
   ShieldCheck,
   Sparkles,
   Star,
@@ -11,6 +11,7 @@ import {
   Zap,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/site/LeadForm";
 import { cn } from "@/lib/utils";
