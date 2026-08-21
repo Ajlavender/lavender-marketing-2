@@ -10,7 +10,7 @@ import {
   VolumeX,
   Zap,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/site/LeadForm";
@@ -127,7 +127,7 @@ interface VideoPlayerProps {
   onToggleMute: () => void;
   onCanPlay: () => void;
   /** Shared playback position so the video resumes instead of restarting when it moves. */
-  positionRef: React.MutableRefObject<number>;
+  positionRef: { current: number };
 }
 
 function VideoPlayer({
@@ -141,7 +141,7 @@ function VideoPlayer({
   positionRef,
 }: VideoPlayerProps) {
   // Restore the shared playback position whenever this element mounts (hero <-> floating).
-  const resume = React.useCallback(() => {
+  const resume = useCallback(() => {
     const el = videoRef.current;
     if (!el) return;
     const target = positionRef.current;
@@ -258,6 +258,7 @@ function Index() {
   // so the poster paints first and the mp4 never blocks first render.
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
   const [canPlay, setCanPlay] = useState(false);
+  const positionRef = useRef(0);
 
   useEffect(() => {
     const el = videoRef.current;
@@ -485,6 +486,7 @@ function Index() {
                     floating={false}
                     onToggleMute={toggleMute}
                     onCanPlay={() => setCanPlay(true)}
+                    positionRef={positionRef}
                   />
 
                   {/* Pop-out button — appears on scroll */}
@@ -537,6 +539,7 @@ function Index() {
                       floating={true}
                       onToggleMute={toggleMute}
                       onCanPlay={() => setCanPlay(true)}
+                    positionRef={positionRef}
                     />
                     {/* Close floating player */}
                     <button
