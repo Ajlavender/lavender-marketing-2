@@ -476,6 +476,7 @@ function Index() {
                       videoSrc={videoSrc}
                       floating={true}
                       onToggleMute={toggleMute}
+                      onCanPlay={() => setCanPlay(true)}
                     />
                     {/* Close floating player */}
                     <button
