@@ -77,6 +77,40 @@ export const Route = createFileRoute("/")({
         fetchPriority: "high",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": "https://lavendermarketingco.com/#webpage",
+              url: "https://lavendermarketingco.com/",
+              name: "Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co.",
+              description:
+                "We design your new website for free. If you love it, launch for $297/mo — hosting, review engine, missed-call text-back and follow-up included.",
+              isPartOf: { "@id": "https://lavendermarketingco.com/#website" },
+              about: { "@id": "https://lavendermarketingco.com/#organization" },
+              inLanguage: "en",
+            },
+            ...[
+              { name: "Website Design", url: "https://lavendermarketingco.com/website-redesign" },
+              { name: "Pricing", url: "https://lavendermarketingco.com/pricing" },
+              { name: "Free Growth Report", url: "https://lavendermarketingco.com/growth-report" },
+              { name: "Case Studies", url: "https://lavendermarketingco.com/projects" },
+              { name: "Reviews", url: "https://lavendermarketingco.com/reviews" },
+              { name: "About Lavender Marketing", url: "https://lavendermarketingco.com/about" },
+              { name: "Contact", url: "https://lavendermarketingco.com/contact" },
+            ].map((n) => ({
+              "@type": "SiteNavigationElement",
+              name: n.name,
+              url: n.url,
+            })),
+          ],
+        }),
+      },
+    ],
   }),
   component: Index,
 });
