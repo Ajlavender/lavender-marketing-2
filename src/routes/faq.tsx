@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaBand, FaqAccordion, PageHero, Section } from "@/components/site/sections";
-import { faqs, MEDIA, ILLU } from "@/data/site";
+import { faqs, ILLU } from "@/data/site";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({

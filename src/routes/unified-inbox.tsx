@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
-import { MEDIA, ILLU } from "@/data/site";
+import { ILLU } from "@/data/site";
 
 export const Route = createFileRoute("/unified-inbox")({
   head: () => serviceHead("/unified-inbox"),
