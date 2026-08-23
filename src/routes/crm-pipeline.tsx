@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
-import { MEDIA } from "@/data/site";
+import { MEDIA, ILLU } from "@/data/site";
 
 export const Route = createFileRoute("/crm-pipeline")({
   head: () => serviceHead("/crm-pipeline"),
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/crm-pipeline")({
       eyebrow="Lead Pipeline + CRM"
       title="Always know who to call back and what was said"
       subtitle="Every contact, note and conversation in one place, with each lead sitting at the stage they're actually at."
-      image={`${MEDIA}/2023/02/financial-growth-1024x1024.png`}
+      image={`${ILLU}/crm-pipeline.png`}
       intro={[
         "Notes on your phone, quotes in your email, numbers on a scrap of paper — that's where revenue leaks.",
         "We set up a simple pipeline built around how your business actually sells, so you can see at a glance who's new, who's quoted, who's booked and who needs chasing today.",

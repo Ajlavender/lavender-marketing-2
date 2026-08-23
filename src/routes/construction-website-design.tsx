@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
-import { MEDIA } from "@/data/site";
+import { MEDIA, ILLU } from "@/data/site";
 
 export const Route = createFileRoute("/construction-website-design")({
   head: () => serviceHead("/construction-website-design"),
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/construction-website-design")({
       eyebrow="Construction Website Design"
       title="A website that turns estimates into booked jobs"
       subtitle="Website design for contractors, roofers, electricians, plumbers and general trades — with missed-call text-back, review automation and follow-up built in."
-      image={`${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`}
+      image={`${ILLU}/websites.png`}
       intro={[
         "Most construction companies have a website that looks fine but does not close. Visitors browse photos, then leave and call the next contractor because there is no fast way to request a quote, no instant reply, and no follow-up after they leave.",
         "We design your construction website for free and build it around the tools that actually win jobs: a quote form that triggers missed-call text-back, automatic Google review requests after every completed job, online booking for estimates, and follow-up sequences that keep you in front of the lead until they book.",

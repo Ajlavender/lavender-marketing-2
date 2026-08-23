@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaBand, FaqAccordion, PageHero, Section } from "@/components/site/sections";
-import { faqs, MEDIA } from "@/data/site";
+import { faqs, MEDIA, ILLU } from "@/data/site";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -41,7 +41,7 @@ function Faq() {
         eyebrow="FAQ"
         title="Don't be shy. Ask away!"
         subtitle="Everything people ask us before starting a website redesign."
-        image={`${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`}
+        image={`${ILLU}/founder.png`}
       />
       <Section>
         <FaqAccordion />
