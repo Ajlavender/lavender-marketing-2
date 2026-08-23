@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaBand, PageHero, Section, SectionHeading } from "@/components/site/sections";
-import { MEDIA } from "@/data/site";
+import { ILLU } from "@/data/site";
 
 const values = [
   {
@@ -46,7 +46,7 @@ function Motto() {
         eyebrow="Company Motto"
         title="Don't decide on emotion. Decide on data."
         subtitle="Four principles that decide how we design, how we price, and how we talk to you."
-        image={`${MEDIA}/2023/02/hand-hold-marker-1024x1024.png`}
+        image={`${ILLU}/founder.png`}
       />
 
       <Section>
