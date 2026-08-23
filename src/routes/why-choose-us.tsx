@@ -4,7 +4,7 @@ import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectGrid, RatingBar } from "@/components/site/sections";
 import { CountUp, Reveal } from "@/components/site/Reveal";
-import { MEDIA, stats } from "@/data/site";
+import { stats, ILLU } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/why-choose-us")({
@@ -69,11 +69,11 @@ const pageCounters = (yearsActive: number) => [
 const videoTestimonials = [
   {
     name: "Client story – Foulk Consulting",
-    poster: `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
+    poster: `${ILLU}/reporting.png`,
   },
   {
     name: "Client story – Angel Host",
-    poster: `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
+    poster: `${ILLU}/growth.png`,
   },
 ];
 
@@ -97,7 +97,7 @@ function WhyChooseUs() {
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left">
             <img
-              src={`${MEDIA}/2023/03/businessman-ride-on-rocket-1-1024x1024.png`}
+              src={`${ILLU}/growth.png`}
               alt="Businessman riding a rocket"
               className="mx-auto w-full max-w-md"
             />
@@ -187,7 +187,7 @@ function WhyChooseUs() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <Reveal from="left" scale>
               <img
-                src={`${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`}
+                src={`${ILLU}/hosting-support.png`}
                 alt="Businessman doing work on working desk"
                 loading="lazy"
                 className="mx-auto w-full max-w-md"
@@ -309,7 +309,7 @@ function WhyChooseUs() {
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left">
             <img
-              src={`${MEDIA}/2023/02/man-doing-online-marketing-1024x1024.png`}
+              src={`${ILLU}/lead-gen.png`}
               alt="Man doing online marketing"
               loading="lazy"
               className="mx-auto w-full max-w-md"
@@ -379,7 +379,7 @@ function WhyChooseUs() {
           </Reveal>
           <Reveal from="right" delay={120}>
             <img
-              src={`${MEDIA}/2023/03/man-showing-dollar-and-bitcoin-1024x1024.png`}
+              src={`${ILLU}/reviews.png`}
               alt="Man showing dollar and bitcoin"
               loading="lazy"
               className="mx-auto w-full max-w-sm"

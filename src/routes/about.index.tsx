@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
-import { MEDIA } from "@/data/site";
+import { ILLU } from "@/data/site";
 
 export const Route = createFileRoute("/about/")({
   head: () => ({
@@ -61,28 +61,28 @@ const missionCards = [
     title: "Free Design First",
     body:
       "We build your demo design for free, so you see exactly what you're getting before you spend a dollar or sign anything.",
-    image: `${MEDIA}/2023/02/web-design-1024x1024.png`,
+    image: `${ILLU}/websites.png`,
     offset: "lg:mt-14",
   },
   {
     title: "Built to Convert",
     body:
       "Every page is designed around one goal: more calls, bookings, and reviews. No fluff. No guesswork. Just a site that works.",
-    image: `${MEDIA}/2023/02/financial-growth-1024x1024.png`,
+    image: `${ILLU}/crm-pipeline.png`,
     offset: "lg:mt-0",
   },
   {
     title: "Follow-Up on Autopilot",
     body:
       "Missed calls get texted back instantly. Leads are chased by text and email until they book or say no. Nothing falls through the cracks.",
-    image: `${MEDIA}/2023/02/ab-testing-1024x1024.png`,
+    image: `${ILLU}/reporting.png`,
     offset: "lg:mt-6",
   },
   {
     title: "Made for Busy Owners",
     body:
       "We know you're running a business, not a website project. Our process is fast, simple, and built for owners who don't have time to babysit tech.",
-    image: `${MEDIA}/2023/02/time-is-money-1-1024x1024.png`,
+    image: `${ILLU}/automations.png`,
     offset: "lg:-mt-6",
   },
 ];
@@ -106,12 +106,12 @@ function About() {
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left" className="relative">
             <img
-              src={`${MEDIA}/2023/03/man-launching-startup-1024x1024.png`}
+              src={`${ILLU}/growth.png`}
               alt="Man launching a startup from his desk"
               className="mx-auto w-full max-w-lg"
             />
             <img
-              src={`${MEDIA}/2023/02/computer-1-1024x1024.png`}
+              src={`${ILLU}/websites.png`}
               alt=""
               aria-hidden
               loading="lazy"
@@ -188,7 +188,7 @@ function About() {
               </div>
             </div>
             <img
-              src={`${MEDIA}/2023/02/man-feeling-stress-due-to-work-1024x1024.png`}
+              src={`${ILLU}/missed-call.png`}
               alt="Man feeling stressed at work"
               loading="lazy"
               className="pointer-events-none absolute -right-6 bottom-0 hidden w-[24rem] lg:block"
@@ -203,7 +203,7 @@ function About() {
         <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2">
           <Reveal from="left">
             <img
-              src={`${MEDIA}/2023/02/man-doing-online-marketing-1024x1024.png`}
+              src={`${ILLU}/lead-gen.png`}
               alt="Man doing online marketing"
               loading="lazy"
               className="mx-auto w-full max-w-md"
@@ -276,13 +276,13 @@ function About() {
                 </div>
               </div>
             <img
-              src={`${MEDIA}/2023/03/man-drawing-on-tablet-1024x1024.png`}
+              src={`${ILLU}/founder.png`}
               alt="Man drawing on a tablet"
               loading="lazy"
               className="pointer-events-none absolute -right-4 bottom-0 hidden w-[22rem] lg:block"
             />
             <img
-              src={`${MEDIA}/2023/02/rocket-1024x1024.png`}
+              src={`${ILLU}/growth.png`}
               alt=""
               aria-hidden
               loading="lazy"
@@ -363,7 +363,7 @@ function About() {
           </Reveal>
           <Reveal from="right" delay={100}>
             <img
-              src={`${MEDIA}/2023/02/happy-business-man-with-money-1024x1024.png`}
+              src={`${ILLU}/reviews.png`}
               alt="Happy business man throwing money in the air"
               loading="lazy"
               className="mx-auto w-full max-w-md"

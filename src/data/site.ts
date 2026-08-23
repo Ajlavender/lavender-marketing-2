@@ -2,6 +2,8 @@ import logoAsset from "@/assets/lavender-logo.png.asset.json";
 
 export const MEDIA = "/media";
 
+export const ILLU = "/illustrations";
+
 export const LOGO = logoAsset.url;
 
 export const services = [
@@ -11,7 +13,7 @@ export const services = [
     short: "We design it free. You only pay if you like it.",
     value: "$500/mo value",
     group: "Included in $297/mo",
-    image: `${MEDIA}/2023/02/web-design-1024x1024.png`,
+    image: `${ILLU}/websites.png`,
   },
   {
     slug: "/chat-widget",
@@ -19,7 +21,7 @@ export const services = [
     short: "Pre-loaded with your FAQs so visitors get answers instantly.",
     value: "$300/mo value",
     group: "Included in $297/mo",
-    image: `${MEDIA}/2023/02/businessman-launching-startup-1024x1024.png`,
+    image: `${ILLU}/chat-widget.png`,
   },
   {
     slug: "/missed-call-text-back",
@@ -27,7 +29,7 @@ export const services = [
     short: "Can't pick up? They get a text in seconds and stay with you.",
     value: "$300/mo value",
     group: "Included in $297/mo",
-    image: `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
+    image: `${ILLU}/missed-call.png`,
   },
   {
     slug: "/review-automation",
@@ -35,7 +37,7 @@ export const services = [
     short: "Automatic text and email asks that turn jobs into 5-star reviews.",
     value: "$400/mo value",
     group: "Included in $297/mo",
-    image: `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
+    image: `${ILLU}/reviews.png`,
   },
   {
     slug: "/online-booking",
@@ -43,7 +45,7 @@ export const services = [
     short: "Customers book a real free slot instead of playing phone tag.",
     value: "$300/mo value",
     group: "Included in $297/mo",
-    image: `${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`,
+    image: `${ILLU}/booking.png`,
   },
   {
     slug: "/follow-up-automation",
@@ -51,7 +53,7 @@ export const services = [
     short: "Every lead chased by text and email until they book or say no.",
     value: "$300/mo value",
     group: "Included in $297/mo",
-    image: `${MEDIA}/2023/03/boy-doing-social-media-marketing-1024x1024.png`,
+    image: `${ILLU}/automations.png`,
   },
   {
     slug: "/unified-inbox",
@@ -59,7 +61,7 @@ export const services = [
     short: "Email, texts, DMs, Google and chat in one inbox on your phone.",
     value: "$400/mo value",
     group: "Included in $297/mo",
-    image: `${MEDIA}/2023/02/hand-hold-marker-1024x1024.png`,
+    image: `${ILLU}/unified-inbox.png`,
   },
   {
     slug: "/crm-pipeline",
@@ -67,7 +69,7 @@ export const services = [
     short: "Every contact, note and stage in one place you can act on.",
     value: "$400/mo value",
     group: "Included in $297/mo",
-    image: `${MEDIA}/2023/02/financial-growth-1024x1024.png`,
+    image: `${ILLU}/crm-pipeline.png`,
   },
   {
     slug: "/hosting-and-support",
@@ -75,7 +77,7 @@ export const services = [
     short: "Hosting, domain, SSL and unlimited small edits — just message us.",
     value: "$200/mo value",
     group: "Included in $297/mo",
-    image: `${MEDIA}/2023/12/smartphone-with-user-interface-concept-768x614.jpg`,
+    image: `${ILLU}/hosting-support.png`,
   },
   {
     slug: "/growth-report",
@@ -83,7 +85,7 @@ export const services = [
     short: "One plain-English page on the 1st: leads, calls, reviews, bookings.",
     value: "$250/mo value",
     group: "Included in $297/mo",
-    image: `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
+    image: `${ILLU}/reporting.png`,
   },
   {
     slug: "/ai-chat-widget",
@@ -91,7 +93,7 @@ export const services = [
     short: "Trained on your business — qualifies and books leads 24/7.",
     value: "Growth plan",
     group: "Add-ons (Growth & Scale)",
-    image: `${MEDIA}/2023/02/businessman-launching-startup-1024x1024.png`,
+    image: `${ILLU}/chat-widget.png`,
   },
   {
     slug: "/voice-ai-receptionist",
@@ -99,7 +101,7 @@ export const services = [
     short: "Answers every call you can't and books it into your calendar.",
     value: "Growth plan",
     group: "Add-ons (Growth & Scale)",
-    image: `${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`,
+    image: `${ILLU}/ai-receptionist.png`,
   },
   {
     slug: "/ad-management",
@@ -107,7 +109,7 @@ export const services = [
     short: "Google and Meta campaigns wired into your CRM and booking flow.",
     value: "Scale plan",
     group: "Add-ons (Growth & Scale)",
-    image: `${MEDIA}/2023/03/boy-doing-social-media-marketing-1024x1024.png`,
+    image: `${ILLU}/lead-gen.png`,
   },
   {
     slug: "/local-seo",
@@ -115,7 +117,7 @@ export const services = [
     short: "Map pack rankings and a Google Business Profile that converts.",
     value: "Scale plan",
     group: "Add-ons (Growth & Scale)",
-    image: `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
+    image: `${ILLU}/local-seo.png`,
   },
   {
     slug: "/construction-website-design",
@@ -123,7 +125,7 @@ export const services = [
     short: "A site built for contractors — with missed-call text-back and review automation included.",
     value: "$297/mo",
     group: "Industry Solutions",
-    image: `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
+    image: `${ILLU}/websites.png`,
   },
 ] as const;
 
@@ -157,22 +159,22 @@ export const painPoints = [
   {
     title: "Visitors leave without calling",
     body: "Your site looks fine — but the next step isn't obvious, so they bounce and call someone else.",
-    image: `${MEDIA}/2023/02/businessman-launching-startup-1024x1024.png`,
+    image: `${ILLU}/websites.png`,
   },
   {
     title: "Missed calls turn into missed jobs",
     body: "If nobody texts back fast, that customer is already calling the next listing. Missed-call text-back fixes it automatically.",
-    image: `${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`,
+    image: `${ILLU}/missed-call.png`,
   },
   {
     title: "Reviews aren't collected consistently",
     body: "Happy customers forget to leave one. Your reputation stops compounding and your ranking slides.",
-    image: `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
+    image: `${ILLU}/reviews.png`,
   },
   {
     title: "Leads fall through the cracks",
     body: "The first message goes unanswered, follow-up never happens, and a good lead quietly goes cold.",
-    image: `${MEDIA}/2023/03/boy-doing-social-media-marketing-1024x1024.png`,
+    image: `${ILLU}/automations.png`,
   },
 ];
 

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
-import { MEDIA } from "@/data/site";
+import { ILLU } from "@/data/site";
 
 export const Route = createFileRoute("/chat-widget")({
   head: () => serviceHead("/chat-widget"),
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/chat-widget")({
       eyebrow="Website Chat Widget"
       title="A chat widget that answers before they leave"
       subtitle="A bottom-right chat box pre-loaded with your most common questions, so visitors get an answer instantly instead of bouncing to the next business."
-      image={`${MEDIA}/2023/02/businessman-launching-startup-1024x1024.png`}
+      image={`${ILLU}/chat-widget.png`}
       intro={[
         "Most people who land on your site have one question standing between them and calling you. Do you service my area? How much roughly? Can you come this week? If the answer isn't right there, they leave and ask someone else.",
         "We load the widget with your real answers and route every conversation to your phone, so a quiet visit turns into a conversation you can close.",

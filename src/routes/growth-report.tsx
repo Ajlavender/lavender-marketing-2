@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
-import { MEDIA } from "@/data/site";
+import { ILLU } from "@/data/site";
 
 export const Route = createFileRoute("/growth-report")({
   head: () => serviceHead("/growth-report"),
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/growth-report")({
       eyebrow="Monthly Growth Report"
       title="A plain-English report on the 1st of every month"
       subtitle="Where your leads came from, what converted, and what to fix next — so you always know if your marketing is paying off."
-      image={`${MEDIA}/2023/02/businessman-giving-analysis-presentation-1024x1024.png`}
+      image={`${ILLU}/reporting.png`}
       intro={[
         "Most agencies send dashboards full of impressions. That doesn't tell you whether the phone rang more this month.",
         "Our report is one page of plain English: leads by source, calls recovered, reviews earned, bookings made, and the one or two things we're changing next month.",

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
-import { MEDIA } from "@/data/site";
+import { ILLU } from "@/data/site";
 
 export const Route = createFileRoute("/voice-ai-receptionist")({
   head: () => serviceHead("/voice-ai-receptionist"),
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/voice-ai-receptionist")({
       eyebrow="Add-on"
       title="Voice AI receptionist that answers every call"
       subtitle="Picks up when you can't, has a natural conversation, answers questions and books the appointment straight into your calendar."
-      image={`${MEDIA}/2023/02/businessman-doing-work-on-working-desk-1-1024x1024.png`}
+      image={`${ILLU}/ai-receptionist.png`}
       intro={[
         "Voicemail is where jobs go to die. A voice AI receptionist answers on the second ring, every time, including evenings and weekends.",
         "It greets the caller by your business name, answers common questions, takes the details and books the appointment — then sends you a transcript and summary.",

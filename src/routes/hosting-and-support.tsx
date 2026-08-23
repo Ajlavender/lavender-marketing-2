@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
-import { MEDIA } from "@/data/site";
+import { ILLU } from "@/data/site";
 
 export const Route = createFileRoute("/hosting-and-support")({
   head: () => serviceHead("/hosting-and-support"),
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/hosting-and-support")({
       eyebrow="Hosting & Support"
       title="Hosting, domain, security and unlimited small edits"
       subtitle="We keep the site fast, online and up to date — and any small change you need is just a message to us."
-      image={`${MEDIA}/2023/12/smartphone-with-user-interface-concept-768x614.jpg`}
+      image={`${ILLU}/hosting-support.png`}
       intro={[
         "A website is not a one-time purchase. Prices change, staff change, seasons change — and most business owners either pay a developer every time or let the site go stale.",
         "Your plan includes hosting, domain and SSL management, security monitoring and unlimited small edits. You message us, we make the change.",

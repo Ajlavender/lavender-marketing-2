@@ -12,7 +12,7 @@ import {
 import { LeadForm } from "./LeadForm";
 import { CountUp, Reveal } from "./Reveal";
 import {
-  MEDIA,
+  ILLU,
   clientLogos,
   counters,
   faqs,
@@ -437,7 +437,7 @@ export function CtaBand({
             </div>
           </div>
           <img
-            src={`${MEDIA}/2023/02/businessman-launching-startup-1024x1024.png`}
+            src={`${ILLU}/growth.png`}
             alt="Launch your redesign"
             loading="lazy"
             className="pointer-events-none absolute -bottom-10 right-4 hidden w-[26rem] max-w-[40%] lg:block"

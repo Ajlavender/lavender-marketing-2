@@ -16,7 +16,7 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { Section } from "@/components/site/sections";
 import { Reveal } from "@/components/site/Reveal";
 import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
-import { MEDIA } from "@/data/site";
+import { ILLU } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/website-redesign")({
@@ -28,31 +28,31 @@ const cards = [
   {
     title: "Conversion Optimized",
     body: "We take advantage of Conversion Optimization when constructing your website, and once it's live, we run A/B tests to identify further improvements based on your individual results.",
-    image: `${MEDIA}/2023/02/ab-testing-600x600.png`,
+    image: `${ILLU}/reporting.png`,
     alt: "ab testing",
   },
   {
     title: "SEO Ready",
     body: "Our websites will make the Google gods smile. We've got the basics covered for you to go wild with SEO later.",
-    image: `${MEDIA}/2023/02/seo-process-600x600.png`,
+    image: `${ILLU}/local-seo.png`,
     alt: "seo process",
   },
   {
     title: "Easy To Edit",
     body: "Our visual editor ensures that making minor tweaks is a piece of cake. If you need a refresher after we finish your site, we'll provide you with a helpful video tutorial so you'll never be in the dark.",
-    image: `${MEDIA}/2023/02/edit-photo-600x600.png`,
+    image: `${ILLU}/websites.png`,
     alt: "edit photo",
   },
   {
     title: "Smooth Process",
     body: "We're all about saving time for executives with our optimized web development process. Time is the biggest obstacle to creating a website, but our streamlined process makes it a breeze – usually within 45 days!",
-    image: `${MEDIA}/2023/02/time-is-money-1-600x600.png`,
+    image: `${ILLU}/automations.png`,
     alt: "time is money",
   },
   {
     title: "Relationship",
     body: "Once your project is wrapped up, our Customer Success Team will be at your beck and call. Whether you're stumped, need answers or something's gone awry, they'll be there for you at the drop of a hat!",
-    image: `${MEDIA}/2023/03/handshake-hand-gesture-600x600.png`,
+    image: `${ILLU}/founder.png`,
     alt: "handshake hand gesture",
   },
 ];
@@ -106,7 +106,7 @@ function WebsiteRedesign() {
             style={{ animationDelay: "160ms", animationFillMode: "both" }}
           >
             <img
-              src={`${MEDIA}/2023/02/business-team-doing-discussion-1024x768.png`}
+              src={`${ILLU}/crm-pipeline.png`}
               alt="Business team doing discussion about a website redesign"
               className="mx-auto w-full max-w-xl"
             />
@@ -153,7 +153,7 @@ function WebsiteRedesign() {
       <Section className="relative pt-16">
         <h2 className="sr-only">Why Choose Lavender Marketing & Co.?</h2>
         <img
-          src={`${MEDIA}/2023/03/rocket-1-300x300.png`}
+          src={`${ILLU}/growth.png`}
           alt=""
           aria-hidden="true"
           loading="lazy"
@@ -182,7 +182,7 @@ function WebsiteRedesign() {
           <Reveal delay={540} className={cn(cardOffset[5])}>
             <article className="flex h-full flex-col items-center justify-center rounded-2xl bg-card p-8 text-center shadow-[0_24px_60px_-40px_rgba(16,18,24,0.45)]">
               <img
-                src={`${MEDIA}/2023/02/question-mark-300x300.png`}
+                src={`${ILLU}/chat-widget.png`}
                 alt="question mark"
                 loading="lazy"
                 className="h-24 w-24 object-contain"
@@ -228,7 +228,7 @@ function WebsiteRedesign() {
                 </Button>
               </div>
               <img
-                src={`${MEDIA}/2023/03/ui-ux-team-1024x1024.png`}
+                src={`${ILLU}/websites.png`}
                 alt="UI UX team building a website redesign"
                 loading="lazy"
                 className="mx-auto w-full max-w-md"
@@ -248,7 +248,7 @@ function WebsiteRedesign() {
         </Reveal>
 
         <img
-          src={`${MEDIA}/2023/02/Hand-03-L-300x279.png`}
+          src={`${ILLU}/booking.png`}
           alt=""
           aria-hidden="true"
           loading="lazy"

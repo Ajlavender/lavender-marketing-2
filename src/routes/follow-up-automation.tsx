@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { serviceHead } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
-import { MEDIA } from "@/data/site";
+import { ILLU } from "@/data/site";
 
 export const Route = createFileRoute("/follow-up-automation")({
   head: () => serviceHead("/follow-up-automation"),
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/follow-up-automation")({
       eyebrow="Follow-Up Automation"
       title="Every lead followed up with, until they book or say no"
       subtitle="Automatic text and email sequences that keep working after you've gone back to the job site."
-      image={`${MEDIA}/2023/03/boy-doing-social-media-marketing-1024x1024.png`}
+      image={`${ILLU}/automations.png`}
       intro={[
         "Most leads aren't lost to competitors, they're lost to silence. One message goes unanswered, the week gets busy, and a good lead quietly goes cold.",
         "We build the follow-up you'd send if you had time: a handful of short, friendly messages spread over the first two weeks, stopping the moment they reply or book.",
