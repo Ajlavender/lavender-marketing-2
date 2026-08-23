@@ -1,4 +1,4 @@
-import { MEDIA } from "./site";
+import { ILLU } from "./site";
 
 export type Post = {
   slug: string;
@@ -20,7 +20,7 @@ export const posts: Post[] = [
     category: "Website Redesign",
     date: "2026-06-18",
     readTime: "6 min read",
-    image: `${MEDIA}/2023/02/web-design-1024x1024.png`,
+    image: `${ILLU}/websites.png`,
     body: [
       "Most business owners know something is off with their website long before they do anything about it. Traffic is flat, the phone rings less, and the site feels embarrassing to send to a prospect. The question is whether you need a coat of paint or a proper redesign.",
       "Sign one: your bounce rate on mobile is above 70%. Sign two: your site takes longer than three seconds to load. Sign three: you can't update a page without calling a developer. Sign four: your branding has moved on but the site hasn't. Sign five: your competitors look modern and you don't.",
@@ -36,7 +36,7 @@ export const posts: Post[] = [
     category: "SEO",
     date: "2026-05-30",
     readTime: "8 min read",
-    image: `${MEDIA}/2023/02/businessman-looking-for-growth-1024x1024.png`,
+    image: `${ILLU}/reviews.png`,
     body: [
       "Search engine optimization has a reputation problem, and agencies earned it. Monthly reports full of impressions and 'keyword movement' rarely translate into revenue. Smart SEO is our answer: fewer deliverables, tied tightly to commercial intent.",
       "It starts with intent mapping. We split your keyword universe into research terms, comparison terms and buying terms, then we build pages for the buying terms first. Those pages are where the money is, and they're usually the least competitive because everyone else chases traffic volume.",
@@ -52,7 +52,7 @@ export const posts: Post[] = [
     category: "Conversion",
     date: "2026-05-08",
     readTime: "7 min read",
-    image: `${MEDIA}/2023/02/financial-growth-1024x1024.png`,
+    image: `${ILLU}/crm-pipeline.png`,
     body: [
       "Doubling your traffic is expensive. Doubling your conversion rate is usually cheaper, faster and compounds with every marketing dollar you spend afterwards.",
       "Start with the offer. If your homepage's main call to action is 'Contact Us', you're asking for a commitment before you've given a reason. Swap it for something specific and low-risk — a free demo, an audit, a sample.",
@@ -68,7 +68,7 @@ export const posts: Post[] = [
     category: "Pricing",
     date: "2026-04-21",
     readTime: "5 min read",
-    image: `${MEDIA}/2023/02/hand-hold-marker-1024x1024.png`,
+    image: `${ILLU}/unified-inbox.png`,
     body: [
       "Website pricing is confusing because you're not buying one thing. You're buying design, content, development, integrations and ongoing support — and agencies bundle them differently.",
       "Page count matters far less than people expect. A ten-page brochure site with a single template costs less than a five-page site with five bespoke layouts.",
@@ -84,7 +84,7 @@ export const posts: Post[] = [
     category: "E-commerce",
     date: "2026-03-27",
     readTime: "9 min read",
-    image: `${MEDIA}/2023/12/smartphone-with-user-interface-concept-768x614.jpg`,
+    image: `${ILLU}/hosting-support.png`,
     body: [
       "A store redesign can tank revenue overnight if the URL structure, product data or checkout flow changes without care. We treat launch day as an engineering event, not a design reveal.",
       "Before launch we freeze the URL map and set 301 redirects for every changed product and category path. We re-verify structured data so rich results survive the move.",
@@ -100,7 +100,7 @@ export const posts: Post[] = [
     category: "Copywriting",
     date: "2026-02-14",
     readTime: "6 min read",
-    image: `${MEDIA}/2023/03/boy-doing-social-media-marketing-1024x1024.png`,
+    image: `${ILLU}/automations.png`,
     body: [
       "The most common homepage mistake is writing for your industry peers instead of your customers. Your visitors don't know your jargon and they won't work to decode it.",
       "Use a simple structure: what you do, who it's for, what changes for them, and proof it works. If a stranger can't answer those four questions in ten seconds, rewrite.",
