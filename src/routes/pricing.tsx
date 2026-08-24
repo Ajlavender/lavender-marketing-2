@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check, ChevronRight } from "lucide-react";
+import { Check, ChevronRight, Star } from "lucide-react";
 import { CtaBand, FaqAccordion, RatingBar, Section, SectionHeading } from "@/components/site/sections";
 import { QualifyWizard } from "@/components/site/QualifyWizard";
 import { Reveal } from "@/components/site/Reveal";
