@@ -128,6 +128,8 @@ interface VideoPlayerProps {
   canPlay: boolean;
   videoSrc: string | undefined;
   floating: boolean;
+  /** Play only once the banner is actually on screen (or floating). */
+  shouldPlay: boolean;
   onToggleMute: () => void;
   onCanPlay: () => void;
   /** Shared playback position so the video resumes instead of restarting when it moves. */
@@ -140,6 +142,7 @@ function VideoPlayer({
   canPlay,
   videoSrc,
   floating,
+  shouldPlay,
   onToggleMute,
   onCanPlay,
   positionRef,
@@ -157,8 +160,16 @@ function VideoPlayer({
       }
     }
     el.muted = muted;
-    el.play().catch(() => {});
-  }, [videoRef, positionRef, muted]);
+    if (shouldPlay) el.play().catch(() => {});
+  }, [videoRef, positionRef, muted, shouldPlay]);
+
+  // Start when the banner scrolls into view, pause when it leaves (and isn't floating).
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    if (shouldPlay) el.play().catch(() => {});
+    else el.pause();
+  }, [shouldPlay, videoRef, videoSrc]);
 
   return (
     <div className="relative aspect-video w-full bg-black">
@@ -167,13 +178,12 @@ function VideoPlayer({
         poster={HERO_POSTER}
         width={1280}
         height={720}
-        autoPlay
         muted={muted}
         loop
         playsInline
         controls={!floating}
         disablePictureInPicture
-        preload="auto"
+        preload="metadata"
         onLoadedMetadata={resume}
         onTimeUpdate={(e) => {
           positionRef.current = e.currentTarget.currentTime;
@@ -189,6 +199,7 @@ function VideoPlayer({
       >
         {videoSrc && <source src={videoSrc} type="video/mp4" />}
       </video>
+
 
 
       {/* Click-to-unmute overlay */}
@@ -253,38 +264,49 @@ function Index() {
   // Warm the below-the-fold section chunks once the browser is idle.
   usePrefetchOnIdle(homeSectionFactories);
   const videoRef = useRef<HTMLVideoElement>(null);
+  // Wrapper around the video banner — drives lazy-load, autoplay and auto-PiP.
+  const bannerRef = useRef<HTMLDivElement>(null);
   const [muted, setMuted] = useState(true);
   const [showFloatBtn, setShowFloatBtn] = useState(false);
   const [floating, setFloating] = useState(false);
+  // True while the banner is meaningfully on screen — gates autoplay.
+  const [inView, setInView] = useState(false);
   // Tracks whether the current floating player was started automatically by scrolling.
   const autoFloatRef = useRef(false);
   // Tracks whether the user manually closed the floating player while scrolled down.
   const userDismissedRef = useRef(false);
-  // Video source is attached only after hydration + when the card is in view,
+  // Video source is attached only after hydration + when the card is near view,
   // so the poster paints first and the mp4 never blocks first render.
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
   const [canPlay, setCanPlay] = useState(false);
   const positionRef = useRef(0);
 
+  const scrolledPastRef = useRef(false);
+
+  // Lazy-attach the mp4 once the banner is close to the viewport.
   useEffect(() => {
-    const el = videoRef.current;
+    const el = bannerRef.current;
     if (!el) return;
 
-    const conn = (navigator as any).connection;
-    const saveData = Boolean(conn?.saveData);
-    const slow = /^(slow-2g|2g)$/.test(conn?.effectiveType ?? "");
-    if (saveData || slow) return; // keep the poster only
+    const conn = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    if (conn?.saveData) return; // keep the poster only
+    if (/^(slow-2g|2g)$/.test(conn?.effectiveType ?? "")) return;
 
     const attach = () => setVideoSrc(HERO_VIDEO);
     const io = new IntersectionObserver(
       (entries) => {
         if (entries.some((e) => e.isIntersecting)) {
           io.disconnect();
-          const ric = (window as any).requestIdleCallback;
-          ric ? ric(attach, { timeout: 1200 }) : setTimeout(attach, 200);
+          const ric = (window as Window & {
+            requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number;
+          }).requestIdleCallback;
+          if (ric) ric(attach, { timeout: 1200 });
+          else setTimeout(attach, 200);
         }
       },
-      { rootMargin: "200px" },
+      { rootMargin: "300px" },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -294,38 +316,48 @@ function Index() {
     if (videoSrc) videoRef.current?.load();
   }, [videoSrc]);
 
-
-
-
+  // Autoplay when the banner scrolls into view; pop to PiP once it scrolls fully past.
   useEffect(() => {
-    const onScroll = () => {
-      const scrolled = window.scrollY > 400;
-      setShowFloatBtn(scrolled);
+    const el = bannerRef.current;
+    if (!el) return;
 
-      if (scrolled) {
-        // Auto-float once when the user scrolls past the hero.
-        if (!floating && !autoFloatRef.current && !userDismissedRef.current) {
-          autoFloatRef.current = true;
-          setFloating(true);
+    const io = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[entries.length - 1];
+        if (!entry) return;
+
+        const visible = entry.isIntersecting && entry.intersectionRatio >= 0.4;
+        setInView(visible);
+        setShowFloatBtn(visible);
+
+        const past = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+        scrolledPastRef.current = past;
+
+        if (past) {
+          // Scrolled below the video (into "companies we've worked with") — go PiP.
+          setFloating((prev) => {
+            if (prev || autoFloatRef.current || userDismissedRef.current) return prev;
+            autoFloatRef.current = true;
+            return true;
+          });
+        } else if (entry.isIntersecting) {
+          // Back at the banner: return the video and allow auto-PiP again later.
+          userDismissedRef.current = false;
+          setFloating((prev) => {
+            if (prev && autoFloatRef.current) {
+              autoFloatRef.current = false;
+              return false;
+            }
+            return prev;
+          });
         }
-      } else {
-        // Back at the hero: reset dismissal so auto-float works on the next scroll down,
-        // and return the video if it was floated automatically.
-        userDismissedRef.current = false;
-        if (floating && autoFloatRef.current) {
-          setFloating(false);
-          autoFloatRef.current = false;
-        }
-      }
-    };
+      },
+      { threshold: [0, 0.4, 0.75] },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, [floating]);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -339,7 +371,7 @@ function Index() {
       const next = !prev;
       if (!next) {
         // Manual close while scrolled down — remember the choice.
-        if (window.scrollY > 400) {
+        if (scrolledPastRef.current) {
           userDismissedRef.current = true;
         }
         autoFloatRef.current = false;
@@ -464,6 +496,7 @@ function Index() {
 
           {/* Landscape video banner */}
           <div
+            ref={bannerRef}
             style={{ animationDelay: "380ms", animationFillMode: "both" }}
             className="animate-fade-in relative mt-16 lg:mt-20"
           >
@@ -500,6 +533,7 @@ function Index() {
                       canPlay={canPlay}
                       videoSrc={videoSrc}
                       floating={false}
+                      shouldPlay={inView && !floating}
                       onToggleMute={toggleMute}
                       onCanPlay={() => setCanPlay(true)}
                       positionRef={positionRef}
@@ -554,6 +588,7 @@ function Index() {
                       canPlay={canPlay}
                       videoSrc={videoSrc}
                       floating={true}
+                      shouldPlay={true}
                       onToggleMute={toggleMute}
                       onCanPlay={() => setCanPlay(true)}
                       positionRef={positionRef}
