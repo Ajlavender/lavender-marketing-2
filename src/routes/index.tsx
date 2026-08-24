@@ -624,11 +624,11 @@ function Index() {
             </div>
           </Reveal>
 
-          <LazySection minHeight={600}><PainPointCards /></LazySection>
+          <LazySection variant="cards" minHeight={600}><PainPointCards /></LazySection>
         </div>
       </Section>
 
-      <LazySection minHeight={520}><SystemLoop /></LazySection>
+      <LazySection variant="loop" minHeight={520}><SystemLoop /></LazySection>
 
       {/* Services grid */}
       <Section>
@@ -769,11 +769,11 @@ function Index() {
         </div>
       </Section>
 
-      <LazySection minHeight={640}><CatchSection /></LazySection>
+      <LazySection variant="split" minHeight={640}><CatchSection /></LazySection>
 
-      <LazySection minHeight={520}><BuyerPaths /></LazySection>
+      <LazySection variant="split" minHeight={520}><BuyerPaths /></LazySection>
 
-      <LazySection minHeight={640}><ValueStack /></LazySection>
+      <LazySection variant="cards" minHeight={640}><ValueStack /></LazySection>
 
       {/* No strings attached */}
       <Section>
@@ -805,7 +805,7 @@ function Index() {
         </div>
       </Section>
 
-      <LazySection minHeight={560}><ComparisonTable /></LazySection>
+      <LazySection variant="table" minHeight={560}><ComparisonTable /></LazySection>
 
       {/* Testimonials */}
       <Section className="py-24">
@@ -818,7 +818,7 @@ function Index() {
           </h2>
         </Reveal>
         <Reveal delay={140} className="mt-14">
-          <LazySection minHeight={420}><TestimonialCarousel /></LazySection>
+          <LazySection variant="carousel" minHeight={420}><TestimonialCarousel /></LazySection>
         </Reveal>
       </Section>
 

@@ -279,7 +279,7 @@ function WebsiteRedesign() {
           </h2>
         </Reveal>
         <Reveal delay={140} className="mt-14">
-          <LazySection minHeight={420}><TestimonialCarousel /></LazySection>
+          <LazySection variant="carousel" minHeight={420}><TestimonialCarousel /></LazySection>
         </Reveal>
       </Section>
     </>
