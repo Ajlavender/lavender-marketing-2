@@ -460,7 +460,7 @@ function Index() {
                   <Star className="h-4 w-4 fill-[#f4a62a] text-[#f4a62a]" /> 5.0 Google rating
                 </span>
                 <span className="inline-flex items-center gap-2">
-                  <Zap className="h-4 w-4 text-brand" /> Live in 7 days
+                  <Zap className="h-4 w-4 text-brand" /> Live in 14 days
                 </span>
               </div>
             </div>
@@ -506,19 +506,14 @@ function Index() {
                 className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-brand opacity-70 blur-[2px]"
               />
 
-              {/* floating proof cards */}
-              <div className="animate-float-soft pointer-events-none absolute -left-4 top-8 z-20 hidden rounded-2xl border border-white/60 bg-background/85 px-4 py-3 shadow-xl backdrop-blur-xl sm:block">
-                <p className="text-2xl font-bold leading-none text-brand">
-                  <CountUp value="312%" />
-                </p>
-                <p className="mt-1 text-xs font-medium text-muted-foreground">More Google reviews</p>
-              </div>
+              {/* floating proof card — real turnaround stat */}
+
               <div
                 className="animate-float-soft pointer-events-none absolute -right-4 bottom-10 z-20 hidden rounded-2xl border border-white/60 bg-background/85 px-4 py-3 shadow-xl backdrop-blur-xl sm:block"
                 style={{ animationDelay: "-2.5s" }}
               >
                 <p className="text-2xl font-bold leading-none text-brand">
-                  <CountUp value="7 days" />
+                  <CountUp value="14 days" />
                 </p>
                 <p className="mt-1 text-xs font-medium text-muted-foreground">Design to launch</p>
               </div>
@@ -685,7 +680,7 @@ function Index() {
           </p>
           <h2 className="mx-auto mt-4 max-w-4xl text-center text-4xl font-bold sm:text-5xl">
             The review engine that turns happy customers into{" "}
-            <span className="text-primary">Google rankings.</span>
+            <span className="text-primary">reviews that help more local customers choose you.</span>
           </h2>
         </Reveal>
 
@@ -764,6 +759,9 @@ function Index() {
                 <CountUp value={`${s.value}${s.suffix ?? ""}`} />
               </p>
               <p className="mt-6 text-base leading-relaxed text-muted-foreground">{s.label}</p>
+              {"source" in s && s.source && (
+                <p className="mt-2 text-xs text-muted-foreground/60">Source: {s.source}</p>
+              )}
             </Reveal>
           ))}
           <Reveal delay={300} className="col-span-full mt-4 flex justify-center">
@@ -774,6 +772,9 @@ function Index() {
                     <CountUp value={`${s.value}${s.suffix ?? ""}`} />
                   </p>
                   <p className="mt-6 text-base leading-relaxed text-muted-foreground">{s.label}</p>
+                  {"source" in s && s.source && (
+                    <p className="mt-2 text-xs text-muted-foreground/60">Source: {s.source}</p>
+                  )}
                 </div>
               ))}
             </div>
