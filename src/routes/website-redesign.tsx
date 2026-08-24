@@ -15,7 +15,8 @@ import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/site/LeadForm";
 import { Section } from "@/components/site/sections";
 import { Reveal } from "@/components/site/Reveal";
-import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
+import { TestimonialCarousel } from "@/components/site/home-sections.lazy";
+import { LazySection } from "@/components/site/LazySection";
 import { ILLU } from "@/data/site";
 import { cn } from "@/lib/utils";
 
@@ -278,7 +279,7 @@ function WebsiteRedesign() {
           </h2>
         </Reveal>
         <Reveal delay={140} className="mt-14">
-          <TestimonialCarousel />
+          <LazySection minHeight={420}><TestimonialCarousel /></LazySection>
         </Reveal>
       </Section>
     </>
