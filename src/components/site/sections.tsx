@@ -515,8 +515,8 @@ export function CtaBand({
               <LeadForm variant="dark" fields="message" submitLabel="Send Message" />
             </div>
           </div>
-          <div className="w-full max-w-[15rem] shrink-0 lg:w-[15rem] xl:w-[17rem]">
-            <div className="relative rounded-[2rem] border border-white/15 bg-white/5 p-2.5 shadow-[0_40px_90px_-45px_rgba(0,0,0,0.7)] backdrop-blur-md">
+          <div className="flex w-full shrink-0 justify-center lg:w-auto lg:justify-center lg:pl-4">
+            <div className="relative w-full max-w-[18rem] rounded-[2rem] border border-white/15 bg-white/5 p-3 shadow-[0_40px_90px_-45px_rgba(0,0,0,0.7)] backdrop-blur-md sm:max-w-[20rem]">
               <div
                 aria-hidden
                 className="pointer-events-none absolute inset-0 rounded-[2rem] bg-[radial-gradient(120%_90%_at_50%_0%,rgba(255,255,255,0.16),transparent_70%)]"
