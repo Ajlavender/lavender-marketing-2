@@ -14,9 +14,8 @@ export const services = [
     value: "$500/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/websites.png`,
-  }
-    card: `${ILLU}/cards/websites.jpg`,
-  ,
+      card: `${ILLU}/cards/websites.jpg`,
+  },
   {
     slug: "/chat-widget",
     title: "Website Chat Widget",
@@ -24,9 +23,8 @@ export const services = [
     value: "$300/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/chat-widget.png`,
-  }
-    card: `${ILLU}/cards/chat-widget.jpg`,
-  ,
+      card: `${ILLU}/cards/chat-widget.jpg`,
+  },
   {
     slug: "/missed-call-text-back",
     title: "Missed-Call Text-Back",
@@ -34,9 +32,8 @@ export const services = [
     value: "$300/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/missed-call.png`,
-  }
-    card: `${ILLU}/cards/missed-call.jpg`,
-  ,
+      card: `${ILLU}/cards/missed-call.jpg`,
+  },
   {
     slug: "/review-automation",
     title: "Review Automation",
@@ -44,9 +41,8 @@ export const services = [
     value: "$400/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/reviews.png`,
-  }
-    card: `${ILLU}/cards/reviews.jpg`,
-  ,
+      card: `${ILLU}/cards/reviews.jpg`,
+  },
   {
     slug: "/online-booking",
     title: "Online Booking",
@@ -54,9 +50,8 @@ export const services = [
     value: "$300/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/booking.png`,
-  }
-    card: `${ILLU}/cards/booking.jpg`,
-  ,
+      card: `${ILLU}/cards/booking.jpg`,
+  },
   {
     slug: "/follow-up-automation",
     title: "Automatic Follow-Up",
@@ -64,9 +59,8 @@ export const services = [
     value: "$300/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/automations.png`,
-  }
-    card: `${ILLU}/cards/automations.jpg`,
-  ,
+      card: `${ILLU}/cards/automations.jpg`,
+  },
   {
     slug: "/unified-inbox",
     title: "Unified Inbox (Mobile App)",
@@ -74,9 +68,8 @@ export const services = [
     value: "$400/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/unified-inbox.png`,
-  }
-    card: `${ILLU}/cards/unified-inbox.jpg`,
-  ,
+      card: `${ILLU}/cards/unified-inbox.jpg`,
+  },
   {
     slug: "/crm-pipeline",
     title: "Lead Pipeline + CRM",
@@ -84,9 +77,8 @@ export const services = [
     value: "$400/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/crm-pipeline.png`,
-  }
-    card: `${ILLU}/cards/crm-pipeline.jpg`,
-  ,
+      card: `${ILLU}/cards/crm-pipeline.jpg`,
+  },
   {
     slug: "/hosting-and-support",
     title: "Hosting, Security & Edits",
@@ -94,9 +86,8 @@ export const services = [
     value: "$200/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/hosting-support.png`,
-  }
-    card: `${ILLU}/cards/hosting-support.jpg`,
-  ,
+      card: `${ILLU}/cards/hosting-support.jpg`,
+  },
   {
     slug: "/growth-report",
     title: "Monthly Growth Report",
@@ -104,9 +95,8 @@ export const services = [
     value: "$250/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/reporting.png`,
-  }
-    card: `${ILLU}/cards/reporting.jpg`,
-  ,
+      card: `${ILLU}/cards/reporting.jpg`,
+  },
   {
     slug: "/ai-chat-widget",
     title: "AI Chat Widget",
@@ -114,9 +104,8 @@ export const services = [
     value: "Growth plan",
     group: "Add-ons (Growth & Scale)",
     image: `${ILLU}/chat-widget.png`,
-  }
-    card: `${ILLU}/cards/ai-chat-widget.jpg`,
-  ,
+      card: `${ILLU}/cards/ai-chat-widget.jpg`,
+  },
   {
     slug: "/voice-ai-receptionist",
     title: "Voice AI Receptionist",
@@ -124,9 +113,8 @@ export const services = [
     value: "Growth plan",
     group: "Add-ons (Growth & Scale)",
     image: `${ILLU}/ai-receptionist.png`,
-  }
-    card: `${ILLU}/cards/ai-receptionist.jpg`,
-  ,
+      card: `${ILLU}/cards/ai-receptionist.jpg`,
+  },
   {
     slug: "/ad-management",
     title: "Ad Management",
@@ -134,9 +122,8 @@ export const services = [
     value: "Scale plan",
     group: "Add-ons (Growth & Scale)",
     image: `${ILLU}/lead-gen.png`,
-  }
-    card: `${ILLU}/cards/ads.jpg`,
-  ,
+      card: `${ILLU}/cards/ads.jpg`,
+  },
   {
     slug: "/local-seo",
     title: "Local SEO",
@@ -144,9 +131,8 @@ export const services = [
     value: "Scale plan",
     group: "Add-ons (Growth & Scale)",
     image: `${ILLU}/local-seo.png`,
-  }
-    card: `${ILLU}/cards/local-seo.jpg`,
-  ,
+      card: `${ILLU}/cards/local-seo.jpg`,
+  },
   {
     slug: "/construction-website-design",
     title: "Construction Website Design",
@@ -154,9 +140,8 @@ export const services = [
     value: "$297/mo",
     group: "Industry Solutions",
     image: `${ILLU}/websites.png`,
-  }
-    card: `${ILLU}/cards/construction.jpg`,
-  ,
+      card: `${ILLU}/cards/construction.jpg`,
+  },
 ] as const;
 
 export const nav = [
