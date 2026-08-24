@@ -128,7 +128,7 @@ export function ServicesGrid() {
         >
           <div className="aspect-[16/10] w-full overflow-hidden bg-secondary">
             <img
-              src={s.card ?? s.image}
+              src={s.card}
               alt={s.title}
               loading="lazy"
               width={1440}
