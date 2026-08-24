@@ -502,7 +502,7 @@ export function CtaBand({
   return (
     <section className="bg-secondary py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2rem] bg-[linear-gradient(100deg,#191b3f_0%,#221f5a_45%,#6d33d6_100%)] px-8 py-14 text-background sm:px-14 lg:pl-14 lg:pr-[20rem]">
+        <div className="relative rounded-[2rem] bg-[linear-gradient(100deg,#191b3f_0%,#221f5a_45%,#6d33d6_100%)] px-8 py-14 text-background sm:px-14 lg:pl-14 lg:pr-[20rem]">
           <div className="max-w-xl">
             <p className="text-lg text-[#a78bfa]">
               Don't Be <span className="text-[#8b5cf6]">Shy.</span>
@@ -515,7 +515,7 @@ export function CtaBand({
               <LeadForm variant="dark" fields="message" submitLabel="Send Message" />
             </div>
           </div>
-          <div className="pointer-events-none absolute -bottom-8 right-6 hidden w-[18rem] lg:block xl:right-10 xl:w-[20rem]">
+          <div className="pointer-events-none absolute right-6 top-1/2 hidden w-[18rem] -translate-y-1/2 lg:block xl:right-10 xl:w-[20rem]">
             <div className="relative rounded-[2rem] border border-white/15 bg-white/5 p-2.5 shadow-[0_40px_90px_-45px_rgba(0,0,0,0.7)] backdrop-blur-md">
               <div
                 aria-hidden
