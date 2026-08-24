@@ -285,6 +285,39 @@
   animation: shimmer 3s linear infinite;
 }
 
+/* ---- Premium skeleton shimmer ---- */
+@keyframes skeleton-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@utility skeleton-block {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: color-mix(in oklab, var(--primary) 7%, transparent);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in oklab, var(--primary) 12%, transparent) 45%,
+      color-mix(in oklab, var(--primary) 4%, transparent) 100%
+    );
+    animation: skeleton-sweep 1.6s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-block::after {
+    animation: none;
+  }
+}
+
+
 /* ---- Section washes, dark authority band, rail eyebrow ---- */
 :root {
   --wash-lilac: linear-gradient(
