@@ -250,6 +250,8 @@ function VideoPlayer({
 
 
 function Index() {
+  // Warm the below-the-fold section chunks once the browser is idle.
+  usePrefetchOnIdle(homeSectionFactories);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
   const [showFloatBtn, setShowFloatBtn] = useState(false);
