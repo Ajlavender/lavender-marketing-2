@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, ChevronDown, ArrowUpRight } from "lucide-react";
+import { Menu, ChevronDown, ArrowUpRight, X, Sparkles } from "lucide-react";
 import { nav, LOGO } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -9,11 +9,46 @@ import { MobileMenu } from "@/components/site/MobileMenu";
 
 type NavChild = MegaChild;
 
+function AnnouncementBar({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="relative z-50 w-full overflow-hidden border-b border-white/10 bg-gradient-to-r from-nav-cta-from via-[#7c4dff] to-nav-cta-to text-white shadow-[0_8px_30px_-12px_rgba(124,77,255,0.55)]">
+      {/* shimmer sweep */}
+      <div className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(110deg,transparent,rgba(255,255,255,0.18),transparent)] [background-size:220%_100%] animate-[shimmer_3.2s_ease-in-out_infinite]" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+      <div className="relative mx-auto flex max-w-[90rem] items-center justify-center gap-3 px-5 py-2 sm:px-8 lg:px-10">
+        <Sparkles className="hidden h-4 w-4 shrink-0 text-white/90 sm:block" />
+        <p className="flex items-center gap-2 text-center text-[0.72rem] font-medium tracking-wide sm:text-xs">
+          <span className="hidden sm:inline">✦</span>
+          <span>
+            Free website design + review engine — launch your site for{" "}
+            <span className="font-semibold underline decoration-white/40 underline-offset-2">$297/mo</span>.
+          </span>
+          <Link
+            to="/pricing"
+            className="ml-1 inline-flex items-center gap-0.5 rounded-full bg-white/15 px-2.5 py-0.5 text-[0.7rem] font-semibold ring-1 ring-inset ring-white/25 transition-colors hover:bg-white/25 sm:text-[0.72rem]"
+          >
+            See if you qualify
+            <ArrowUpRight className="h-3 w-3" />
+          </Link>
+        </p>
+        <button
+          onClick={onClose}
+          aria-label="Dismiss announcement"
+          className="absolute right-3 top-1/2 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white/80 ring-1 ring-inset ring-white/20 transition-colors hover:bg-white/20 hover:text-white sm:right-5 lg:right-6"
+        >
+          <X className="h-3.5 w-3.5" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const openNow = (label: string) => {
