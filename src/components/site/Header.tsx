@@ -13,19 +13,20 @@ function AnnouncementBar({ onClose }: { onClose: () => void }) {
   return (
     <div className="relative z-50 w-full overflow-hidden border-b border-white/10 bg-gradient-to-r from-nav-cta-from via-[#7c4dff] to-nav-cta-to text-white shadow-[0_8px_30px_-12px_rgba(124,77,255,0.55)]">
       {/* shimmer sweep */}
-      <div className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(110deg,transparent,rgba(255,255,255,0.18),transparent)] [background-size:220%_100%] animate-[shimmer_3.2s_ease-in-out_infinite]" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(110deg,transparent,rgba(255,255,255,0.18),transparent)] [background-size:220%_100%] animate-[shimmer_3.2s_ease-in-out_infinite] motion-reduce:hidden" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
-      <div className="relative mx-auto flex max-w-[90rem] items-center justify-center gap-3 px-5 py-2 sm:px-8 lg:px-10">
+      <div className="relative mx-auto flex max-w-[90rem] items-center justify-center gap-2 px-4 py-2 pr-10 sm:gap-3 sm:px-8 sm:pr-12 lg:px-10">
         <Sparkles className="hidden h-4 w-4 shrink-0 text-white/90 sm:block" />
-        <p className="flex items-center gap-2 text-center text-[0.72rem] font-medium tracking-wide sm:text-xs">
+        <p className="flex min-w-0 flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-[0.7rem] font-medium leading-tight tracking-wide sm:text-xs">
           <span className="hidden sm:inline">✦</span>
           <span>
-            Free website design + review engine — launch your site for{" "}
+            <span className="hidden sm:inline">Free website design + review engine — launch your site for </span>
+            <span className="sm:hidden">Free website design — launch for </span>
             <span className="font-semibold underline decoration-white/40 underline-offset-2">$297/mo</span>.
           </span>
           <Link
             to="/pricing"
-            className="ml-1 inline-flex items-center gap-0.5 rounded-full bg-white/15 px-2.5 py-0.5 text-[0.7rem] font-semibold ring-1 ring-inset ring-white/25 transition-colors hover:bg-white/25 sm:text-[0.72rem]"
+            className="inline-flex shrink-0 items-center gap-0.5 whitespace-nowrap rounded-full bg-white/15 px-2.5 py-0.5 text-[0.68rem] font-semibold ring-1 ring-inset ring-white/25 transition-colors hover:bg-white/25 sm:text-[0.72rem]"
           >
             See if you qualify
             <ArrowUpRight className="h-3 w-3" />
@@ -34,7 +35,7 @@ function AnnouncementBar({ onClose }: { onClose: () => void }) {
         <button
           onClick={onClose}
           aria-label="Dismiss announcement"
-          className="absolute right-3 top-1/2 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white/80 ring-1 ring-inset ring-white/20 transition-colors hover:bg-white/20 hover:text-white sm:right-5 lg:right-6"
+          className="absolute right-2 top-1/2 inline-flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white/80 ring-1 ring-inset ring-white/20 transition-colors hover:bg-white/20 hover:text-white sm:right-4 lg:right-5"
         >
           <X className="h-3.5 w-3.5" />
         </button>
@@ -42,6 +43,7 @@ function AnnouncementBar({ onClose }: { onClose: () => void }) {
     </div>
   );
 }
+
 
 export function Header() {
   const [open, setOpen] = useState(false);
