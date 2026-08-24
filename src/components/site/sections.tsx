@@ -124,19 +124,23 @@ export function ServicesGrid() {
         <Link
           key={s.slug}
           to={s.slug}
-          className="group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+          className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg"
         >
-          <div className="mb-5 flex h-40 w-full items-center justify-center overflow-hidden rounded-xl bg-secondary p-3">
+          <div className="aspect-[16/10] w-full overflow-hidden bg-secondary">
             <img
-              src={s.image}
+              src={s.card ?? s.image}
               alt={s.title}
               loading="lazy"
-              className="h-full w-auto max-w-full object-contain"
+              width={1440}
+              height={900}
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
             />
           </div>
 
-          <h3 className="text-2xl group-hover:text-primary">{s.title}</h3>
-          <p className="mt-2 text-sm text-muted-foreground">{s.short}</p>
+          <div className="p-6">
+            <h3 className="text-2xl group-hover:text-primary">{s.title}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{s.short}</p>
+          </div>
         </Link>
       ))}
     </div>
