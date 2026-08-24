@@ -502,22 +502,39 @@ export function CtaBand({
   return (
     <section className="bg-secondary py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-[2rem] bg-[linear-gradient(100deg,#191b3f_0%,#221f5a_45%,#6d33d6_100%)] px-8 py-14 text-background sm:px-14">
-          <div className="max-w-xl">
+        <div className="flex flex-col items-center gap-10 rounded-[2rem] bg-[linear-gradient(100deg,#191b3f_0%,#221f5a_45%,#6d33d6_100%)] px-8 py-14 text-background sm:px-14 lg:flex-row lg:items-center lg:gap-12 lg:pl-14">
+          <div className="w-full max-w-xl lg:flex-1">
             <p className="text-lg text-[#a78bfa]">
-              Don&apos;t Be <span className="text-[#8b5cf6]">Shy.</span>
+              Don't Be <span className="text-[#8b5cf6]">Shy.</span>
             </p>
             <h2 className="mt-2 text-5xl font-bold sm:text-6xl">{title}</h2>
+            <p className="mt-3 text-lg text-[#c4b5fd]/80">
+              Talk to AJ directly &mdash; he reads every message.
+            </p>
             <div className="mt-8">
               <LeadForm variant="dark" fields="message" submitLabel="Send Message" />
             </div>
           </div>
-          <img
-            src={`${ILLU}/growth.png`}
-            alt="Launch your redesign"
-            loading="lazy"
-            className="pointer-events-none absolute -bottom-10 right-4 hidden w-[26rem] max-w-[40%] lg:block"
-          />
+          <div className="w-full max-w-[15rem] shrink-0 lg:w-[15rem] xl:w-[17rem]">
+            <div className="relative rounded-[2rem] border border-white/15 bg-white/5 p-2.5 shadow-[0_40px_90px_-45px_rgba(0,0,0,0.7)] backdrop-blur-md">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-[2rem] bg-[radial-gradient(120%_90%_at_50%_0%,rgba(255,255,255,0.16),transparent_70%)]"
+              />
+              <div className="relative overflow-hidden rounded-[1.5rem] bg-[linear-gradient(160deg,rgba(167,139,250,0.25),transparent_55%)]">
+                <img
+                  src="https://assets.cdn.filesafe.space/IyiCTBDPcxyW5GC333Qt/media/6a21a3a9c6d915cec1d4b37a.png"
+                  alt="AJ, founder of Lavender Marketing & Co."
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-cover object-top"
+                />
+              </div>
+              <div className="relative mt-2.5 flex items-center justify-between gap-3 rounded-[1.1rem] bg-white/8 px-4 py-3">
+                <p className="text-sm font-semibold text-white">AJ &mdash; Founder</p>
+                <Stars />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
