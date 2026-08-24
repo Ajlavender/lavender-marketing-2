@@ -371,7 +371,7 @@ function Index() {
       const next = !prev;
       if (!next) {
         // Manual close while scrolled down — remember the choice.
-        if (window.scrollY > 400) {
+        if (scrolledPastRef.current) {
           userDismissedRef.current = true;
         }
         autoFloatRef.current = false;
@@ -532,6 +532,7 @@ function Index() {
                       canPlay={canPlay}
                       videoSrc={videoSrc}
                       floating={false}
+                      shouldPlay={inView && !floating}
                       onToggleMute={toggleMute}
                       onCanPlay={() => setCanPlay(true)}
                       positionRef={positionRef}
@@ -586,6 +587,7 @@ function Index() {
                       canPlay={canPlay}
                       videoSrc={videoSrc}
                       floating={true}
+                      shouldPlay={true}
                       onToggleMute={toggleMute}
                       onCanPlay={() => setCanPlay(true)}
                       positionRef={positionRef}
