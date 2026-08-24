@@ -128,6 +128,8 @@ interface VideoPlayerProps {
   canPlay: boolean;
   videoSrc: string | undefined;
   floating: boolean;
+  /** Play only once the banner is actually on screen (or floating). */
+  shouldPlay: boolean;
   onToggleMute: () => void;
   onCanPlay: () => void;
   /** Shared playback position so the video resumes instead of restarting when it moves. */
@@ -140,6 +142,7 @@ function VideoPlayer({
   canPlay,
   videoSrc,
   floating,
+  shouldPlay,
   onToggleMute,
   onCanPlay,
   positionRef,
@@ -157,8 +160,16 @@ function VideoPlayer({
       }
     }
     el.muted = muted;
-    el.play().catch(() => {});
-  }, [videoRef, positionRef, muted]);
+    if (shouldPlay) el.play().catch(() => {});
+  }, [videoRef, positionRef, muted, shouldPlay]);
+
+  // Start when the banner scrolls into view, pause when it leaves (and isn't floating).
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    if (shouldPlay) el.play().catch(() => {});
+    else el.pause();
+  }, [shouldPlay, videoRef, videoSrc]);
 
   return (
     <div className="relative aspect-video w-full bg-black">
@@ -167,13 +178,12 @@ function VideoPlayer({
         poster={HERO_POSTER}
         width={1280}
         height={720}
-        autoPlay
         muted={muted}
         loop
         playsInline
         controls={!floating}
         disablePictureInPicture
-        preload="auto"
+        preload="metadata"
         onLoadedMetadata={resume}
         onTimeUpdate={(e) => {
           positionRef.current = e.currentTarget.currentTime;
@@ -189,6 +199,7 @@ function VideoPlayer({
       >
         {videoSrc && <source src={videoSrc} type="video/mp4" />}
       </video>
+
 
 
       {/* Click-to-unmute overlay */}
