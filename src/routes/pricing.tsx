@@ -137,10 +137,10 @@ function PricingHero() {
           <p className="text-base text-primary">Exclusive Growth Plan Pricing</p>
           <h1 className="mt-5 max-w-xl text-5xl font-bold leading-[1.05] sm:text-6xl">
             See if your business{" "}
-            <span className="text-gradient-brand">qualifies for our special&nbsp; pricing</span>
+            <span className="text-gradient-brand">qualifies for our trial offer!</span>
           </h1>
           <p className="mt-6 max-w-lg text-base text-muted-foreground">
-            Answer four quick questions to see if you qualify for exclusive pricing on our flagship
+            Answer four quick questions to see if you qualify for an exclusive trial on our flagship
             Growth Plan — featuring AI chat, an AI voice receptionist, and automatic lead booking.
           </p>
 
