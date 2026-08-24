@@ -50,11 +50,13 @@ type RevealProps = {
   as?: ElementType;
 };
 
+// On phones every direction resolves to a vertical rise: horizontal travel
+// creates side-scroll and costs more to composite on mobile GPUs.
 const hidden: Record<NonNullable<RevealProps["from"]>, string> = {
   up: "translate-y-10",
   down: "-translate-y-10",
-  left: "-translate-x-10",
-  right: "translate-x-10",
+  left: "translate-y-8 md:translate-y-0 md:-translate-x-10",
+  right: "translate-y-8 md:translate-y-0 md:translate-x-10",
   none: "",
 };
 
