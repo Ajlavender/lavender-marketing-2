@@ -126,12 +126,15 @@ export function ServicesGrid() {
           to={s.slug}
           className="group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg"
         >
-          <img
-            src={s.image}
-            alt={s.title}
-            loading="lazy"
-            className="mb-5 h-40 w-full rounded-xl object-cover"
-          />
+          <div className="mb-5 flex h-40 w-full items-center justify-center overflow-hidden rounded-xl bg-secondary p-3">
+            <img
+              src={s.image}
+              alt={s.title}
+              loading="lazy"
+              className="h-full w-auto max-w-full object-contain"
+            />
+          </div>
+
           <h3 className="text-2xl group-hover:text-primary">{s.title}</h3>
           <p className="mt-2 text-sm text-muted-foreground">{s.short}</p>
         </Link>
