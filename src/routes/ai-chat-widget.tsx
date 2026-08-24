@@ -11,7 +11,7 @@ export const Route = createFileRoute("/ai-chat-widget")({
       eyebrow="Add-on"
       title="AI chat widget trained on your business"
       subtitle="Answers real questions, qualifies the lead and books the job 24/7 — an upgrade from the standard FAQ widget."
-      image={`${ILLU}/chat-widget.png`}
+      image={`${ILLU}/chat-widget.webp`}
       intro={[
         "The standard widget answers the questions we pre-load. The AI widget answers anything — because it's trained on your services, service area, pricing approach and policies.",
         "It holds a real conversation, qualifies the lead, and either books them in or hands a warm, summarised conversation to you.",

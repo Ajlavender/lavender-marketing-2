@@ -11,7 +11,7 @@ export const Route = createFileRoute("/missed-call-text-back")({
       eyebrow="Missed-Call Text-Back"
       title="Never lose a job to a missed call again"
       subtitle="If you can't pick up, the caller instantly gets a text from your business — so they keep talking to you instead of calling the next name on the list."
-      image={`${ILLU}/missed-call.png`}
+      image={`${ILLU}/missed-call.webp`}
       intro={[
         "Around 6 in 10 calls to a local business go unanswered, and most of those callers never call back. They just dial the next business.",
         "Missed-call text-back closes that hole. The second a call goes unanswered, an automatic text goes out asking how we can help — and the conversation continues in your inbox.",

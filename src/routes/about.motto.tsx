@@ -46,7 +46,7 @@ function Motto() {
         eyebrow="Company Motto"
         title="Don't decide on emotion. Decide on data."
         subtitle="Four principles that decide how we design, how we price, and how we talk to you."
-        image={`${ILLU}/founder.png`}
+        image={`${ILLU}/founder.webp`}
       />
 
       <Section>

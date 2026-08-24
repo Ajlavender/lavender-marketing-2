@@ -69,11 +69,11 @@ const pageCounters = (yearsActive: number) => [
 const videoTestimonials = [
   {
     name: "Client story – Foulk Consulting",
-    poster: `${ILLU}/reporting.png`,
+    poster: `${ILLU}/reporting.webp`,
   },
   {
     name: "Client story – Angel Host",
-    poster: `${ILLU}/growth.png`,
+    poster: `${ILLU}/growth.webp`,
   },
 ];
 
@@ -97,7 +97,7 @@ function WhyChooseUs() {
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left">
             <img
-              src={`${ILLU}/growth.png`}
+              src={`${ILLU}/growth.webp`}
               alt="Businessman riding a rocket"
               className="mx-auto w-full max-w-md"
             />
@@ -187,7 +187,7 @@ function WhyChooseUs() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <Reveal from="left" scale>
               <img
-                src={`${ILLU}/hosting-support.png`}
+                src={`${ILLU}/hosting-support.webp`}
                 alt="Businessman doing work on working desk"
                 loading="lazy"
                 className="mx-auto w-full max-w-md"
@@ -309,7 +309,7 @@ function WhyChooseUs() {
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left">
             <img
-              src={`${ILLU}/lead-gen.png`}
+              src={`${ILLU}/lead-gen.webp`}
               alt="Man doing online marketing"
               loading="lazy"
               className="mx-auto w-full max-w-md"
@@ -379,7 +379,7 @@ function WhyChooseUs() {
           </Reveal>
           <Reveal from="right" delay={120}>
             <img
-              src={`${ILLU}/reviews.png`}
+              src={`${ILLU}/reviews.webp`}
               alt="Man showing dollar and bitcoin"
               loading="lazy"
               className="mx-auto w-full max-w-sm"

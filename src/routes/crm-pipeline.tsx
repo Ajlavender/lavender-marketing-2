@@ -11,7 +11,7 @@ export const Route = createFileRoute("/crm-pipeline")({
       eyebrow="Lead Pipeline + CRM"
       title="Always know who to call back and what was said"
       subtitle="Every contact, note and conversation in one place, with each lead sitting at the stage they're actually at."
-      image={`${ILLU}/crm-pipeline.png`}
+      image={`${ILLU}/crm-pipeline.webp`}
       intro={[
         "Notes on your phone, quotes in your email, numbers on a scrap of paper — that's where revenue leaks.",
         "We set up a simple pipeline built around how your business actually sells, so you can see at a glance who's new, who's quoted, who's booked and who needs chasing today.",

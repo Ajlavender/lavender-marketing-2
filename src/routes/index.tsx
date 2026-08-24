@@ -690,7 +690,7 @@ function Index() {
 
               <div className="relative">
                 <img
-                  src={`${ILLU}/reporting.png`}
+                  src={`${ILLU}/reporting.webp`}
                   alt="Businessman giving analysis presentation"
                   loading="lazy"
                   className="mx-auto w-full max-w-lg lg:absolute lg:-bottom-24 lg:left-1/2 lg:w-[125%] lg:max-w-none lg:-translate-x-1/2"
@@ -770,7 +770,7 @@ function Index() {
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <Reveal from="left" scale>
             <img
-              src={`${ILLU}/booking.png`}
+              src={`${ILLU}/booking.webp`}
               alt="Businessman doing work on working desk"
               loading="lazy"
               className="mx-auto w-full max-w-md"

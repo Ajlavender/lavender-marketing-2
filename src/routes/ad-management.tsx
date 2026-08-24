@@ -11,7 +11,7 @@ export const Route = createFileRoute("/ad-management")({
       eyebrow="Add-on"
       title="Ad management that feeds the system"
       subtitle="Google and Meta campaigns pointed at the pages, follow-ups and booking flow we already built — so ad spend turns into booked jobs."
-      image={`${ILLU}/lead-gen.png`}
+      image={`${ILLU}/lead-gen.webp`}
       intro={[
         "Ads only work when everything behind them works. Most local businesses spend money sending clicks to a page that doesn't convert and a follow-up process that doesn't exist.",
         "Because we already run your site, CRM, follow-ups and booking, every dollar of ad spend lands in a system built to catch it — and we report on cost per booked job, not clicks.",

@@ -8,7 +8,7 @@ const paths = [
     label: "Home services",
     title: "Stop losing jobs when you miss a call.",
     body: "For contractors, trades, roofers, plumbers, landscapers, electricians and renovation companies where one missed call can cost hundreds or thousands.",
-    image: `${ILLU}/websites.png`,
+    image: `${ILLU}/websites.webp`,
     points: [
       "Auto text-back the second you miss a call",
       "Quote request page that actually converts",
@@ -22,7 +22,7 @@ const paths = [
     label: "Appointment businesses",
     title: "Fill more appointments without more front-desk work.",
     body: "For barbers, salons, dog groomers, tattoo shops, detailers, med spas and busy appointment businesses that need fewer gaps in the calendar.",
-    image: `${ILLU}/growth.png`,
+    image: `${ILLU}/growth.webp`,
     points: [
       "Easier online booking, 24/7",
       "Automatic confirmations and reminders",

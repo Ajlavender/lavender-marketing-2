@@ -11,7 +11,7 @@ export const Route = createFileRoute("/follow-up-automation")({
       eyebrow="Follow-Up Automation"
       title="Every lead followed up with, until they book or say no"
       subtitle="Automatic text and email sequences that keep working after you've gone back to the job site."
-      image={`${ILLU}/automations.png`}
+      image={`${ILLU}/automations.webp`}
       intro={[
         "Most leads aren't lost to competitors, they're lost to silence. One message goes unanswered, the week gets busy, and a good lead quietly goes cold.",
         "We build the follow-up you'd send if you had time: a handful of short, friendly messages spread over the first two weeks, stopping the moment they reply or book.",

@@ -11,7 +11,7 @@ export const Route = createFileRoute("/unified-inbox")({
       eyebrow="Unified Inbox"
       title="Every message in one inbox, on your phone"
       subtitle="Email, texts, Facebook and Instagram DMs, Google messages and website chat — all in one app, so nothing gets lost."
-      image={`${ILLU}/unified-inbox.png`}
+      image={`${ILLU}/unified-inbox.webp`}
       intro={[
         "Leads arrive in five different places and each one has its own app, its own notifications and its own way of getting buried.",
         "We put every channel in a single inbox with a mobile app, so replying to a customer takes ten seconds no matter where they messaged from.",

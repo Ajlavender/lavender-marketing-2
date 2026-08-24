@@ -28,7 +28,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "We design your new website for free. If you love it, launch for $297/mo — hosting, review engine, missed-call text-back, booking and follow-up included.",
     name: "Website Design & Build",
-    image: `${ILLU}/websites.png`,
+    image: `${ILLU}/websites.webp`,
     answer:
       "Lavender Marketing & Co. designs and builds your new website for free, then you only pay if you like it. Once approved, the site is included in the $297/month growth system along with hosting, chat, review automation, booking and follow-up — with unlimited small edits handled by us.",
     facts: [
@@ -62,7 +62,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "A website chat widget pre-loaded with your real answers so visitors get a reply instantly and every conversation lands on your phone. Included in the $297/mo plan.",
     name: "Website Chat Widget",
-    image: `${ILLU}/chat-widget.png`,
+    image: `${ILLU}/chat-widget.webp`,
     answer:
       "A website chat widget answers the questions that stop people from calling — service area, rough pricing, availability — right on the page. Ours is pre-loaded with your real answers, captures the visitor's name and number up front, and routes every conversation to your unified inbox.",
     facts: [
@@ -96,7 +96,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "Every missed call gets an instant text from your business so the caller stays with you instead of calling a competitor. Included in the $297/mo growth system.",
     name: "Missed-Call Text-Back",
-    image: `${ILLU}/missed-call.png`,
+    image: `${ILLU}/missed-call.webp`,
     answer:
       "Missed-call text-back sends an automatic text from your business number the moment a call goes unanswered, so the caller replies to you instead of dialling the next business. The conversation continues in your inbox, and every recovered call is tracked in your monthly report.",
     facts: [
@@ -130,7 +130,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "Automatic text and email review requests after every job, pointing happy customers straight to your Google profile. Included in the $297/mo growth system.",
     name: "Review Automation",
-    image: `${ILLU}/reviews.png`,
+    image: `${ILLU}/reviews.webp`,
     answer:
       "Review automation sends each customer a short text and email after their job is complete with a one-tap link to your Google review box. Happy customers are pointed to Google, unhappy replies are flagged to you privately first, and review count and rating are tracked monthly.",
     facts: [
@@ -164,7 +164,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "Customers book a genuinely free slot straight into your calendar from your site, chat and follow-up texts, with reminders that cut no-shows. Included in $297/mo.",
     name: "Online Booking",
-    image: `${ILLU}/booking.png`,
+    image: `${ILLU}/booking.webp`,
     answer:
       "Online booking connects a live calendar to your website, chat widget and follow-up messages so customers can lock in a real available time in about twenty seconds. It syncs two-way with Google or Outlook, respects your travel time and buffers, and sends automatic reminders.",
     facts: [
@@ -198,7 +198,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "Automatic text and email sequences that follow up every lead until they book or say no, and stop the moment they reply. Included in the $297/mo growth system.",
     name: "Automatic Follow-Up",
-    image: `${ILLU}/automations.png`,
+    image: `${ILLU}/automations.webp`,
     answer:
       "Follow-up automation sends a short series of text and email messages to every new lead over the first two weeks, written in your voice, and stops instantly when they reply or book. It also reactivates old leads already sitting in your contact list.",
     facts: [
@@ -232,7 +232,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "Email, SMS, Facebook, Instagram, Google messages and website chat in one mobile inbox, so no lead is buried in a second app. Included in the $297/mo plan.",
     name: "Unified Inbox",
-    image: `${ILLU}/unified-inbox.png`,
+    image: `${ILLU}/unified-inbox.webp`,
     answer:
       "The unified inbox pulls email, SMS, Facebook and Instagram messages, Google messages and website chat into one mobile app with a single thread per customer. You reply from your phone, assign conversations to staff and leave internal notes, so nothing is missed across apps.",
     facts: [
@@ -266,7 +266,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "A simple visual lead pipeline and CRM showing every lead's stage, history and next step, built around how you already sell. Included in the $297/mo plan.",
     name: "Lead Pipeline + CRM",
-    image: `${ILLU}/crm-pipeline.png`,
+    image: `${ILLU}/crm-pipeline.webp`,
     answer:
       "The CRM gives every customer one record — calls, texts, emails, quotes and notes on a single timeline — and a visual pipeline showing who is new, quoted, booked or needs chasing. Stages trigger automatic tasks and follow-ups so nothing is forgotten.",
     facts: [
@@ -300,7 +300,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "Managed hosting, domain and SSL, security monitoring, backups and unlimited small website edits handled by us. Included in the $297/mo growth system.",
     name: "Hosting & Support",
-    image: `${ILLU}/hosting-support.png`,
+    image: `${ILLU}/hosting-support.webp`,
     answer:
       "Hosting and support covers fast managed hosting, domain and SSL management, security monitoring, backups and unlimited small edits. When prices, hours, staff or photos change, you message us and we make the change — usually the same or next business day.",
     facts: [
@@ -334,7 +334,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "A one-page plain-English report on the 1st: leads by source, calls recovered, reviews earned, bookings made and the next improvement. Included in $297/mo.",
     name: "Monthly Growth Report",
-    image: `${ILLU}/reporting.png`,
+    image: `${ILLU}/reporting.webp`,
     answer:
       "The monthly growth report is one page of plain English sent on the 1st: leads by source, calls recovered, reviews earned, bookings made, compared to last month — plus the one or two things we are changing next. No impressions, no vanity dashboards.",
     facts: [
@@ -368,7 +368,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "An AI chat widget trained on your services, pricing approach, service area and policies that qualifies leads and books jobs 24/7. Growth plan add-on.",
     name: "AI Chat Widget",
-    image: `${ILLU}/chat-widget.png`,
+    image: `${ILLU}/chat-widget.webp`,
     answer:
       "The AI chat widget is trained on your services, service area, pricing approach and policies, so it can answer free-form questions instead of only pre-written FAQs. It qualifies the lead, books directly into your calendar, and escalates to you with a summarised conversation when needed.",
     facts: [
@@ -402,7 +402,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "An AI receptionist that answers overflow and after-hours calls, qualifies the caller and books straight into your calendar, with full transcripts. Add-on.",
     name: "Voice AI Receptionist",
-    image: `${ILLU}/ai-receptionist.png`,
+    image: `${ILLU}/ai-receptionist.webp`,
     answer:
       "The voice AI receptionist answers calls you cannot take — overflow, evenings and weekends — greets callers with your business name, answers common questions, takes details and books the appointment into your live calendar. Every call is transcribed and summarised in your CRM.",
     facts: [
@@ -436,7 +436,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "Local Google and Meta ad campaigns wired into your CRM, follow-up and booking system, reported on cost per booked job — not clicks. Growth and Scale add-on.",
     name: "Ad Management",
-    image: `${ILLU}/lead-gen.png`,
+    image: `${ILLU}/lead-gen.webp`,
     answer:
       "Ad management runs Google and Meta campaigns that point at pages, follow-up sequences and a booking calendar we already built, so clicks land in a system that converts. Every lead is tracked from ad click to booked job and reported as cost per job, not cost per click.",
     facts: [
@@ -470,7 +470,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "Local SEO, map pack rankings and Google Business Profile management for service businesses, fed by your review automation. Growth and Scale add-on.",
     name: "Local SEO",
-    image: `${ILLU}/local-seo.png`,
+    image: `${ILLU}/local-seo.webp`,
     answer:
       "Local SEO gets your business into the Google map pack for searches in your service area. We rebuild your Google Business Profile, write real service and area pages, build citations, and feed your review automation into local ranking — then report on map positions and calls.",
     facts: [
@@ -504,7 +504,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     description:
       "Website design for construction companies, contractors and trades. Free custom design, then $297/mo for the growth system with missed-call text-back, review automation and follow-up.",
     name: "Construction Website Design",
-    image: `${ILLU}/websites.png`,
+    image: `${ILLU}/websites.webp`,
     answer:
       "Lavender Marketing & Co. designs and builds construction websites for contractors, roofers, electricians, plumbers and general trades. We create the site for free, then launch it under the $297/month growth system that includes missed-call text-back, automated Google review requests, online booking, follow-up and a monthly report.",
     facts: [

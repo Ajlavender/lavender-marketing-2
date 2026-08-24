@@ -31,7 +31,7 @@ function BlogIndex() {
         eyebrow="Blog"
         title="Ideas that make websites work harder"
         subtitle="Redesign, SEO, copywriting and conversion advice — written by the team that does the work."
-        image={`${ILLU}/reporting.png`}
+        image={`${ILLU}/reporting.webp`}
       />
 
       <Section>
