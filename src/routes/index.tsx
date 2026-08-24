@@ -496,6 +496,7 @@ function Index() {
 
           {/* Landscape video banner */}
           <div
+            ref={bannerRef}
             style={{ animationDelay: "380ms", animationFillMode: "both" }}
             className="animate-fade-in relative mt-16 lg:mt-20"
           >
