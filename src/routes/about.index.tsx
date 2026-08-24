@@ -111,17 +111,11 @@ function About() {
       <section className="relative pb-16 pt-36">
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left" className="relative">
-            <img
-              src={`${ILLU}/growth.png`}
-              alt="Man launching a startup from his desk"
-              className="mx-auto w-full max-w-lg"
-            />
-            <img
-              src={`${ILLU}/websites.png`}
-              alt=""
-              aria-hidden
-              loading="lazy"
-              className="pointer-events-none absolute -bottom-6 left-1/2 w-40 -translate-x-1/4"
+            <FounderPortrait
+              src={AJ_PHOTO_1}
+              alt="AJ, founder of Lavender Marketing & Co."
+              caption="AJ — Founder, Lavender Marketing & Co."
+              className="max-w-sm"
             />
           </Reveal>
           <Reveal from="right" delay={120} className="relative">
