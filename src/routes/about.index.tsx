@@ -275,19 +275,21 @@ function About() {
                   <DemoButton label="Get in touch" />
                 </div>
               </div>
-            <img
-              src={`${ILLU}/founder.png`}
-              alt="Man drawing on a tablet"
-              loading="lazy"
-              className="pointer-events-none absolute -right-4 bottom-0 hidden w-[22rem] lg:block"
-            />
-            <img
-              src={`${ILLU}/growth.png`}
-              alt=""
-              aria-hidden
-              loading="lazy"
-              className="pointer-events-none absolute right-64 top-4 hidden w-24 lg:block"
-            />
+            <div className="pointer-events-none absolute -right-4 bottom-0 hidden w-[15rem] lg:block">
+              <div className="relative rounded-[2rem] border border-white/15 bg-white/10 p-2 shadow-[0_40px_90px_-45px_rgba(0,0,0,0.6)] backdrop-blur-sm">
+                <div className="overflow-hidden rounded-[1.5rem]">
+                  <img
+                    src={AJ_PHOTO_2}
+                    alt="AJ, founder of Lavender Marketing & Co."
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover object-top"
+                  />
+                </div>
+                <p className="mt-2 text-center text-[11px] font-semibold uppercase tracking-widest text-background/80">
+                  AJ — Founder
+                </p>
+              </div>
+            </div>
           </div>
         </Reveal>
       </section>
