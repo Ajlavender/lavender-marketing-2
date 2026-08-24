@@ -191,7 +191,7 @@ function Pricing() {
                 plan.featured
                   ? "border-primary bg-card shadow-xl ring-1 ring-primary/20"
                   : "border-border bg-card"
-              } ${plan.featured ? "pt-14" : "p-8"}`}
+              } ${plan.featured ? "px-8 pb-8 pt-14" : "p-8"}`}
             >
               {plan.featured && (
                 <div className="absolute inset-x-0 top-0 flex items-center justify-center bg-gradient-to-r from-primary via-primary to-primary/80 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-primary-foreground shadow-[0_4px_16px_-4px_rgba(var(--primary-rgb),0.5)]">
