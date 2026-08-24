@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check, ChevronRight } from "lucide-react";
+import { Check, ChevronRight, Star } from "lucide-react";
 import { CtaBand, FaqAccordion, RatingBar, Section, SectionHeading } from "@/components/site/sections";
 import { QualifyWizard } from "@/components/site/QualifyWizard";
 import { Reveal } from "@/components/site/Reveal";
@@ -187,16 +187,18 @@ function Pricing() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`flex flex-col rounded-2xl border p-8 ${
+              className={`relative flex flex-col overflow-hidden rounded-2xl border ${
                 plan.featured
                   ? "border-primary bg-card shadow-xl ring-1 ring-primary/20"
                   : "border-border bg-card"
-              }`}
+              } ${plan.featured ? "px-8 pb-8 pt-14" : "p-8"}`}
             >
               {plan.featured && (
-                <span className="mb-4 self-start rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-foreground">
+                <div className="absolute inset-x-0 top-0 flex items-center justify-center bg-gradient-to-r from-primary via-primary to-primary/80 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-primary-foreground shadow-lg">
+                  <Star className="mr-2 h-3 w-3 fill-current" />
                   Most popular
-                </span>
+                  <Star className="ml-2 h-3 w-3 fill-current" />
+                </div>
               )}
               <h2 className="text-2xl">{plan.name}</h2>
               <p className="mt-2 text-sm text-muted-foreground">{plan.blurb}</p>
