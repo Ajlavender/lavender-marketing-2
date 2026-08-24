@@ -535,7 +535,7 @@ function Index() {
             {/* Custom floating player — no browser PiP chrome, so no favicon/logo appears. */}
             {floating &&
               createPortal(
-                <div className="fixed bottom-4 right-4 z-[100] w-[min(22rem,92vw)] animate-scale-in">
+                <div className="fixed bottom-4 right-3 z-[100] w-[min(11rem,48vw)] animate-scale-in sm:right-4 sm:w-[min(22rem,60vw)]">
                   <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_30px_70px_-25px_rgba(0,0,0,0.7)]">
                     <VideoPlayer
                       key="hero-video-player"
