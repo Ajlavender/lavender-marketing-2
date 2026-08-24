@@ -1,7 +1,49 @@
-import { Check } from "lucide-react";
+import {
+  Check,
+  Hammer,
+  Wrench,
+  Home,
+  Trees,
+  Zap,
+  PaintRoller,
+  Scissors,
+  Dog,
+  Sparkles,
+  Car,
+  Flower2,
+  Stethoscope,
+} from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { ILLU } from "@/data/site";
+
+const industryGroups = [
+  {
+    label: "Home services",
+    blurb: "One missed call can cost a job worth hundreds or thousands.",
+    items: [
+      { name: "Roofing", icon: Home },
+      { name: "Plumbing", icon: Wrench },
+      { name: "Electrical", icon: Zap },
+      { name: "General contracting", icon: Hammer },
+      { name: "Landscaping", icon: Trees },
+      { name: "Painting & renovation", icon: PaintRoller },
+    ],
+  },
+  {
+    label: "Appointment businesses",
+    blurb: "Every empty slot on the calendar is revenue you can't get back.",
+    items: [
+      { name: "Barbers & salons", icon: Scissors },
+      { name: "Dog grooming", icon: Dog },
+      { name: "Tattoo studios", icon: Sparkles },
+      { name: "Auto detailing", icon: Car },
+      { name: "Med spas", icon: Flower2 },
+      { name: "Clinics & wellness", icon: Stethoscope },
+    ],
+  },
+];
+
 
 const paths = [
   {
@@ -78,6 +120,49 @@ export function BuyerPaths() {
             </Reveal>
           ))}
         </div>
+
+        <div className="mt-20">
+          <Reveal className="flex flex-col items-center">
+            <p className="rail-eyebrow text-primary">Industries we serve</p>
+            <h3 className="mx-auto mt-3 max-w-2xl text-center text-3xl font-bold sm:text-4xl">
+              Find your <span className="text-primary">business type.</span>
+            </h3>
+          </Reveal>
+
+          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+            {industryGroups.map((group, gi) => (
+              <Reveal key={group.label} from={gi === 0 ? "left" : "right"} delay={gi * 120}>
+                <div className="h-full rounded-3xl border border-primary/10 bg-secondary/60 p-6 backdrop-blur-sm sm:p-8">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                    {group.label}
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">{group.blurb}</p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    {group.items.map(({ name, icon: Icon }) => (
+                      <div
+                        key={name}
+                        className="group flex items-center gap-3 rounded-2xl border border-primary/10 bg-card p-4 shadow-[0_18px_45px_-38px_rgba(31,33,80,0.6)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_26px_60px_-35px_rgba(109,51,214,0.45)]"
+                      >
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                          <Icon className="h-5 w-5" />
+                        </span>
+                        <span className="text-sm font-medium">{name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <p className="mt-8 text-center text-sm text-muted-foreground">
+            Don't see your trade?{" "}
+            <Link to="/contact" className="border-b border-primary pb-0.5 font-medium text-primary">
+              Ask us — we probably build for it.
+            </Link>
+          </p>
+        </div>
+
       </div>
     </section>
   );
