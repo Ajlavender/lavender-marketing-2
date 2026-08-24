@@ -106,15 +106,6 @@ export const services = [
     image: `${ILLU}/local-seo.webp`,
     card: `${ILLU}/cards/local-seo.jpg`,
   },
-  {
-    slug: "/construction-website-design",
-    title: "Construction Website Design",
-    short: "A site built for contractors — with missed-call text-back and review automation included.",
-    value: "$297/mo",
-    group: "Industry Solutions",
-    image: `${ILLU}/websites.webp`,
-    card: `${ILLU}/cards/construction.jpg`,
-  },
 ] as const;
 
 export const nav = [
