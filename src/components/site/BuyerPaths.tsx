@@ -1,7 +1,49 @@
-import { Check } from "lucide-react";
+import {
+  Check,
+  Hammer,
+  Wrench,
+  Home,
+  Trees,
+  Zap,
+  PaintRoller,
+  Scissors,
+  Dog,
+  Sparkles,
+  Car,
+  Flower2,
+  Stethoscope,
+} from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { ILLU } from "@/data/site";
+
+const industryGroups = [
+  {
+    label: "Home services",
+    blurb: "One missed call can cost a job worth hundreds or thousands.",
+    items: [
+      { name: "Roofing", icon: Home },
+      { name: "Plumbing", icon: Wrench },
+      { name: "Electrical", icon: Zap },
+      { name: "General contracting", icon: Hammer },
+      { name: "Landscaping", icon: Trees },
+      { name: "Painting & renovation", icon: PaintRoller },
+    ],
+  },
+  {
+    label: "Appointment businesses",
+    blurb: "Every empty slot on the calendar is revenue you can't get back.",
+    items: [
+      { name: "Barbers & salons", icon: Scissors },
+      { name: "Dog grooming", icon: Dog },
+      { name: "Tattoo studios", icon: Sparkles },
+      { name: "Auto detailing", icon: Car },
+      { name: "Med spas", icon: Flower2 },
+      { name: "Clinics & wellness", icon: Stethoscope },
+    ],
+  },
+];
+
 
 const paths = [
   {
