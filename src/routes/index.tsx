@@ -373,156 +373,163 @@ function Index() {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
         </div>
 
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 pb-24 pt-32 sm:px-6 lg:grid-cols-2 lg:px-8 lg:pb-28 lg:pt-36">
-          <div className="relative animate-fade-in">
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/25 bg-background/70 py-1.5 pl-1.5 pr-4 text-sm font-medium text-foreground shadow-sm backdrop-blur-md">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-white">
-                <Sparkles className="h-3.5 w-3.5" />
-                Free design
+        <div className="mx-auto max-w-7xl px-4 pb-16 pt-32 sm:px-6 lg:px-8 lg:pb-20 lg:pt-36">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+            <div className="relative animate-fade-in">
+              <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/25 bg-background/70 py-1.5 pl-1.5 pr-4 text-sm font-medium text-foreground shadow-sm backdrop-blur-md">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  Free design
+                </span>
+                <span className="text-muted-foreground">Automated review engine included</span>
               </span>
-              <span className="text-muted-foreground">Automated review engine included</span>
-            </span>
-            <h1
-              className="animate-fade-in text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl"
-              style={{ animationDelay: "80ms", animationFillMode: "both" }}
-            >
-              We design your new website{" "}
-              <span className="text-gradient-brand">for free.</span>
-            </h1>
-            <h2
-              style={{ animationDelay: "180ms", animationFillMode: "both" }}
-              className="animate-fade-in mt-5 max-w-xl text-3xl font-bold leading-tight sm:text-[2.25rem]">
-              You only pay $297/mo if you like it.
-            </h2>
-            <p
-              style={{ animationDelay: "240ms", animationFillMode: "both" }}
-              className="animate-fade-in mt-5 max-w-xl text-lg text-muted-foreground"
-            >
-              Built for local service businesses. The $297 covers hosting, the review engine that turns happy
-              customers into stronger local visibility, missed-call text-back, follow-up and a
-              monthly growth report delivered on the 1st of every month. No upfront design fee, no
-              setup fee, no paying before you see the design.
-            </p>
-
-            <div
-              className="animate-fade-in mt-10 max-w-xl rounded-2xl border border-white/60 bg-background/70 p-5 shadow-[0_30px_70px_-40px_color-mix(in_oklab,var(--brand)_60%,transparent)] backdrop-blur-xl"
-              style={{ animationDelay: "300ms", animationFillMode: "both" }}
-            >
-              <LeadForm submitLabel="Get My Free Website Design" />
-              <p className="mt-3 text-xs text-muted-foreground">
-                No card required · Design first, decide after · Cancel anytime
+              <h1
+                className="animate-fade-in text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl"
+                style={{ animationDelay: "80ms", animationFillMode: "both" }}
+              >
+                We design your new website{" "}
+                <span className="text-gradient-brand">for free.</span>
+              </h1>
+              <h2
+                style={{ animationDelay: "180ms", animationFillMode: "both" }}
+                className="animate-fade-in mt-5 max-w-xl text-3xl font-bold leading-tight sm:text-[2.25rem]"
+              >
+                You only pay $297/mo if you like it.
+              </h2>
+              <p
+                style={{ animationDelay: "240ms", animationFillMode: "both" }}
+                className="animate-fade-in mt-5 max-w-xl text-lg text-muted-foreground"
+              >
+                Built for local service businesses. The $297 covers hosting, the review engine that turns happy
+                customers into stronger local visibility, missed-call text-back, follow-up and a
+                monthly growth report delivered on the 1st of every month. No upfront design fee, no
+                setup fee, no paying before you see the design.
               </p>
+
+              {/* trust row */}
+              <div
+                className="animate-fade-in mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
+                style={{ animationDelay: "320ms", animationFillMode: "both" }}
+              >
+                <span className="inline-flex items-center gap-2">
+                  <ShieldCheck className="h-4 w-4 text-brand" /> No contracts
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <Star className="h-4 w-4 fill-[#f4a62a] text-[#f4a62a]" /> 5.0 Google rating
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <Zap className="h-4 w-4 text-brand" /> Live in 7 days
+                </span>
+              </div>
             </div>
 
-            {/* trust row */}
+            {/* Form card */}
             <div
-              className="animate-fade-in mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
-              style={{ animationDelay: "380ms", animationFillMode: "both" }}
+              style={{ animationDelay: "220ms", animationFillMode: "both" }}
+              className="animate-scale-in relative rounded-[1.75rem] p-[1.5px] shadow-[0_40px_90px_-45px_color-mix(in_oklab,var(--brand)_70%,transparent)]"
             >
-              <span className="inline-flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-brand" /> No contracts
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <Star className="h-4 w-4 fill-[#f4a62a] text-[#f4a62a]" /> 5.0 Google rating
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <Zap className="h-4 w-4 text-brand" /> Live in 7 days
-              </span>
-            </div>
-
-
-            {/* curved connector line to the video card */}
-            <svg
-              aria-hidden="true"
-              className="pointer-events-none absolute right-[-9rem] top-[7.5rem] hidden h-24 w-40 text-foreground/25 xl:block"
-              viewBox="0 0 160 96"
-              fill="none"
-            >
-              <path
-                d="M0 4C60 4 100 30 158 88"
-                stroke="currentColor"
-                strokeWidth="1"
-                fill="none"
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 -z-10 rounded-[1.75rem] bg-gradient-brand opacity-70 blur-[2px]"
               />
-            </svg>
+              <div className="rounded-[1.65rem] border border-white/60 bg-background/80 p-6 backdrop-blur-xl sm:p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
+                  Start here
+                </p>
+                <p className="mt-2 text-2xl font-bold leading-tight">
+                  Get your free website design
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Tell us about your business — we'll send a custom design demo in 48 hours.
+                </p>
+                <div className="mt-6">
+                  <LeadForm submitLabel="Get My Free Website Design" />
+                </div>
+                <p className="mt-3 text-xs text-muted-foreground">
+                  No card required · Design first, decide after · Cancel anytime
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Video card */}
+          {/* Landscape video banner */}
           <div
-            style={{ animationDelay: "220ms", animationFillMode: "both" }}
-            className="animate-scale-in relative rounded-[1.75rem] p-[1.5px] shadow-[0_40px_90px_-45px_color-mix(in_oklab,var(--brand)_70%,transparent)]"
+            style={{ animationDelay: "380ms", animationFillMode: "both" }}
+            className="animate-fade-in relative mt-16 lg:mt-20"
           >
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 -z-10 rounded-[1.75rem] bg-gradient-brand opacity-70 blur-[2px]"
-            />
+            <div className="relative rounded-[2rem] p-[1.5px] shadow-[0_50px_110px_-50px_color-mix(in_oklab,var(--brand)_75%,transparent)]">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-brand opacity-70 blur-[2px]"
+              />
 
-            {/* floating proof cards */}
-            <div className="animate-float-soft pointer-events-none absolute -left-4 top-8 z-20 hidden rounded-2xl border border-white/60 bg-background/85 px-4 py-3 shadow-xl backdrop-blur-xl sm:block">
-              <p className="text-2xl font-bold leading-none text-brand">
-                <CountUp value="312%" />
-              </p>
-              <p className="mt-1 text-xs font-medium text-muted-foreground">More Google reviews</p>
-            </div>
-            <div
-              className="animate-float-soft pointer-events-none absolute -right-4 bottom-10 z-20 hidden rounded-2xl border border-white/60 bg-background/85 px-4 py-3 shadow-xl backdrop-blur-xl sm:block"
-              style={{ animationDelay: "-2.5s" }}
-            >
-              <p className="text-2xl font-bold leading-none text-brand">
-                <CountUp value="7 days" />
-              </p>
-              <p className="mt-1 text-xs font-medium text-muted-foreground">Design to launch</p>
-            </div>
+              {/* floating proof cards */}
+              <div className="animate-float-soft pointer-events-none absolute -left-4 top-8 z-20 hidden rounded-2xl border border-white/60 bg-background/85 px-4 py-3 shadow-xl backdrop-blur-xl sm:block">
+                <p className="text-2xl font-bold leading-none text-brand">
+                  <CountUp value="312%" />
+                </p>
+                <p className="mt-1 text-xs font-medium text-muted-foreground">More Google reviews</p>
+              </div>
+              <div
+                className="animate-float-soft pointer-events-none absolute -right-4 bottom-10 z-20 hidden rounded-2xl border border-white/60 bg-background/85 px-4 py-3 shadow-xl backdrop-blur-xl sm:block"
+                style={{ animationDelay: "-2.5s" }}
+              >
+                <p className="text-2xl font-bold leading-none text-brand">
+                  <CountUp value="7 days" />
+                </p>
+                <p className="mt-1 text-xs font-medium text-muted-foreground">Design to launch</p>
+              </div>
 
-            <div className="relative overflow-hidden rounded-[1.65rem] bg-black">
-              {!floating ? (
-                <>
-                  <VideoPlayer
-                    key="hero-video-player"
-                    videoRef={videoRef}
-                    muted={muted}
-                    canPlay={canPlay}
-                    videoSrc={videoSrc}
-                    floating={false}
-                    onToggleMute={toggleMute}
-                    onCanPlay={() => setCanPlay(true)}
-                    positionRef={positionRef}
-                  />
+              <div className="relative overflow-hidden rounded-[1.9rem] bg-black">
+                {!floating ? (
+                  <>
+                    <VideoPlayer
+                      key="hero-video-player"
+                      videoRef={videoRef}
+                      muted={muted}
+                      canPlay={canPlay}
+                      videoSrc={videoSrc}
+                      floating={false}
+                      onToggleMute={toggleMute}
+                      onCanPlay={() => setCanPlay(true)}
+                      positionRef={positionRef}
+                    />
 
-                  {/* Pop-out button — appears on scroll */}
-                  <button
-                    type="button"
-                    onClick={toggleFloating}
-                    className={cn(
-                      "group absolute bottom-3 right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full text-white backdrop-blur-md shadow-lg ring-1 transition-all duration-300 ease-out",
-                      "bg-black/70 ring-white/10 hover:scale-110 hover:bg-black/85 hover:shadow-[0_0_30px_-8px_rgba(255,255,255,0.35)] hover:ring-white/25",
-                      "active:scale-95",
-                      showFloatBtn && !floating
-                        ? "translate-y-0 opacity-100"
-                        : "pointer-events-none translate-y-3 opacity-0",
-                    )}
-                    aria-label="Pop video out"
-                    title="Pop video out"
-                  >
-                    <Minimize2 className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-                  </button>
-                </>
-              ) : (
-                /* Placeholder while the video is playing in the floating player */
-                <div className="relative aspect-video w-full">
-                  <img
-                    src={HERO_POSTER}
-                    alt=""
-                    className="h-full w-full object-cover opacity-60"
-                  />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30 backdrop-blur-xl">
-                      <Maximize2 className="h-5 w-5" />
-                    </span>
-                    <span className="text-sm font-medium text-white/80">Video playing in corner</span>
+                    {/* Pop-out button — appears on scroll */}
+                    <button
+                      type="button"
+                      onClick={toggleFloating}
+                      className={cn(
+                        "group absolute bottom-3 right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full text-white backdrop-blur-md shadow-lg ring-1 transition-all duration-300 ease-out",
+                        "bg-black/70 ring-white/10 hover:scale-110 hover:bg-black/85 hover:shadow-[0_0_30px_-8px_rgba(255,255,255,0.35)] hover:ring-white/25",
+                        "active:scale-95",
+                        showFloatBtn && !floating
+                          ? "translate-y-0 opacity-100"
+                          : "pointer-events-none translate-y-3 opacity-0",
+                      )}
+                      aria-label="Pop video out"
+                      title="Pop video out"
+                    >
+                      <Minimize2 className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                    </button>
+                  </>
+                ) : (
+                  /* Placeholder while the video is playing in the floating player */
+                  <div className="relative aspect-video w-full">
+                    <img
+                      src={HERO_POSTER}
+                      alt=""
+                      className="h-full w-full object-cover opacity-60"
+                    />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30 backdrop-blur-xl">
+                        <Maximize2 className="h-5 w-5" />
+                      </span>
+                      <span className="text-sm font-medium text-white/80">Video playing in corner</span>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
 
             {/* Custom floating player — no browser PiP chrome, so no favicon/logo appears. */}
@@ -539,7 +546,7 @@ function Index() {
                       floating={true}
                       onToggleMute={toggleMute}
                       onCanPlay={() => setCanPlay(true)}
-                    positionRef={positionRef}
+                      positionRef={positionRef}
                     />
                     {/* Close floating player */}
                     <button
