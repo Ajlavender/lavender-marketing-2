@@ -435,7 +435,7 @@ export function LogoStrip() {
         </div>
       </div>
 
-      <div className="relative mt-10 sm:mt-14">
+      <div className="relative mt-10 overflow-hidden sm:mt-14">
         {/* Left fade mask */}
         <div
           aria-hidden="true"
