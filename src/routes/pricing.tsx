@@ -26,7 +26,7 @@ const plans = [
   },
   {
     name: "Growth",
-    price: "$497",
+    price: "$597",
     note: "per month",
     featured: true,
     blurb: "Everything in Essentials, plus AI that answers and books while you work.",

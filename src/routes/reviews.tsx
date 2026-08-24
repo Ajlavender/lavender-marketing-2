@@ -12,12 +12,12 @@ export const Route = createFileRoute("/reviews")({
       {
         name: "description",
         content:
-          "Read 5-star Lavender Marketing & Co. reviews on Google and Facebook, plus video testimonials from real customers who love their free-design-first website and growth system.",
+          "Read 5-star Lavender Marketing & Co. reviews on Google, plus what local business owners say about their free-design-first website and growth system.",
       },
       { property: "og:title", content: "Reviews | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
       {
         property: "og:description",
-        content: "Read 5-star Lavender Marketing & Co. reviews on Google and Facebook, plus video testimonials from real customers who love their free-design-first website and growth system.",
+        content: "Read 5-star Lavender Marketing & Co. reviews on Google, plus what local business owners say about their free-design-first website and growth system.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -57,28 +57,6 @@ function DemoButton({
   );
 }
 
-const facebookReviews = [
-  {
-    name: "Mark P.",
-    when: "Recommends Lavender Marketing & Co. on Facebook",
-    rating: 5,
-    quote:
-      "Great communication from start to finish. The team built exactly what we asked for and then some.",
-  },
-  {
-    name: "Dana R.",
-    when: "Recommends Lavender Marketing & Co. on Facebook",
-    rating: 5,
-    quote: "Fast, affordable and genuinely talented designers. Our bookings doubled after launch.",
-  },
-  {
-    name: "Tony L.",
-    when: "Recommends Lavender Marketing & Co. on Facebook",
-    rating: 5,
-    quote:
-      "They showed me a full demo before I paid a cent. Nobody else does that. Easy decision.",
-  },
-];
 
 
 function Reviews() {
@@ -142,7 +120,7 @@ function Reviews() {
         </div>
       </section>
 
-      {/* Facebook reviews */}
+      {/* Facebook recommendations */}
       <section className="py-24">
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <Reveal from="left">
@@ -155,13 +133,17 @@ function Reviews() {
             <h2 className="mt-4 text-2xl font-bold sm:text-3xl">
               See What They Say On <span className="text-primary">Facebook.</span>
             </h2>
+            <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-muted-foreground">
+              Read recommendations from local business owners on our Facebook page.
+            </p>
             <div className="mt-5">
-              <DemoButton />
+              <Button asChild>
+                <a href="https://www.facebook.com/LavenderMarketingCompany" target="_blank" rel="noreferrer">
+                  See recommendations on Facebook
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
             </div>
-            <div className="mt-8">
-              <ReviewSlider reviews={facebookReviews} />
-            </div>
-
           </Reveal>
           <Reveal from="right" delay={110}>
             <img

@@ -194,11 +194,11 @@ export const painPoints = [
 ];
 
 export const stats = [
-  { value: "88", suffix: "%", label: "of people won't come back to a business's website after one bad experience" },
-  { value: "75", suffix: "%", label: "judge how trustworthy a business is purely on its website" },
-  { value: "60", suffix: "%", label: "of customers won't call back after a missed call — they call the next business" },
-  { value: "9", suffix: "/10", label: "customers read reviews before choosing a local business" },
-  { value: "5", suffix: "min", label: "is the window to respond before a lead's interest drops off a cliff" },
+  { value: "88", suffix: "%", label: "of people won't come back to a business's website after one bad experience", source: "Sweor" },
+  { value: "75", suffix: "%", label: "judge how trustworthy a business is purely on its website", source: "Stanford Web Credibility Research" },
+  { value: "60", suffix: "%", label: "of customers won't call back after a missed call — they call the next business", source: "Call-tracking industry data" },
+  { value: "9", suffix: "/10", label: "customers read reviews before choosing a local business", source: "BrightLocal Consumer Review Survey" },
+  { value: "5", suffix: "min", label: "is the window to respond before a lead's interest drops off a cliff", source: "Lead Response Management Study" },
 ];
 
 
