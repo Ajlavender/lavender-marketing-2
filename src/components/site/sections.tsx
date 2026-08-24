@@ -531,7 +531,7 @@ export function CtaBand({
               </div>
               <div className="relative mt-2.5 flex items-center justify-between gap-3 rounded-[1.1rem] bg-white/8 px-4 py-3">
                 <p className="text-sm font-semibold text-white">AJ &mdash; Founder</p>
-                <Stars />
+                <Stars className="text-amber-400" />
               </div>
             </div>
           </div>
