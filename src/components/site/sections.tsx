@@ -228,7 +228,7 @@ export function ProjectGrid({ limit, compact }: { limit?: number; compact?: bool
                 src={p.image}
                 alt={p.name}
                 loading="lazy"
-                className="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               />
             </div>
             <p className={cn("text-muted-foreground", compact ? "mt-4 text-xs" : "mt-6 text-base")}>
