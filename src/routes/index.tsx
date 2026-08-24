@@ -26,15 +26,19 @@ import {
   SectionHeading,
   ServicesGrid,
 } from "@/components/site/sections";
-import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
 import { MEDIA, stats, ILLU } from "@/data/site";
-import { PainPointCards } from "@/components/site/PainPointCards";
 import { CountUp, Reveal } from "@/components/site/Reveal";
-import { CatchSection } from "@/components/site/CatchSection";
-import { SystemLoop } from "@/components/site/SystemLoop";
-import { BuyerPaths } from "@/components/site/BuyerPaths";
-import { ValueStack } from "@/components/site/ValueStack";
-import { ComparisonTable } from "@/components/site/ComparisonTable";
+import { LazySection, usePrefetchOnIdle } from "@/components/site/LazySection";
+import {
+  BuyerPaths,
+  CatchSection,
+  ComparisonTable,
+  PainPointCards,
+  SystemLoop,
+  TestimonialCarousel,
+  ValueStack,
+  homeSectionFactories,
+} from "@/components/site/home-sections.lazy";
 
 const HERO_POSTER = `${MEDIA}/hero-poster.jpg`;
 
