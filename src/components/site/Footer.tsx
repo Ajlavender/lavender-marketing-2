@@ -42,15 +42,6 @@ const socials = [
       </svg>
     ),
   },
-  {
-    label: "X",
-    href: "https://x.com/lavendermktg",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden="true">
-        <path d="M18.9 2.5h3.68l-8.04 9.19L24 21.5h-7.4l-5.8-7.58-6.64 7.58H.48l8.6-9.83L0 2.5h7.6l5.24 6.93L18.9 2.5Zm-1.29 17h2.04L7.46 4.43H5.27L17.61 19.5Z" />
-      </svg>
-    ),
-  },
 ] as const;
 
 export function Footer() {
