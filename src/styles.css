@@ -414,3 +414,36 @@
     animation: none !important;
   }
 }
+
+/* ---- Mobile performance tuning -------------------------------------------
+   Keeps the premium look (gradients, glass, glow) but drops the expensive
+   continuously-animated filters that make phones drop frames + drain battery. */
+@media (max-width: 767px) {
+  .aurora-blob {
+    animation: none;
+    filter: blur(48px);
+    opacity: 0.5;
+  }
+  .sheen::after {
+    animation: none;
+    opacity: 0;
+  }
+  .animate-float-soft {
+    animation-duration: 9s;
+  }
+  /* Cheaper glass on phones — visually near-identical, far less GPU work. */
+  .backdrop-blur-2xl,
+  .backdrop-blur-xl {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+}
+
+/* Let the browser skip layout/paint for off-screen sections. */
+@media (min-width: 0px) {
+  main > section,
+  main > div > section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 720px;
+  }
+}
