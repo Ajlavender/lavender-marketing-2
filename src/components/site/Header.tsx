@@ -98,6 +98,7 @@ export function Header() {
         isHidden ? "-translate-y-full" : "translate-y-0",
       )}
     >
+      {showAnnouncement && <AnnouncementBar onClose={() => setShowAnnouncement(false)} />}
       <div
         className={cn(
           "relative w-full border-b border-nav-glass-border bg-nav-glass-bg backdrop-blur-2xl transition-all duration-500 ease-out",
