@@ -36,7 +36,7 @@ import { BuyerPaths } from "@/components/site/BuyerPaths";
 import { ValueStack } from "@/components/site/ValueStack";
 import { ComparisonTable } from "@/components/site/ComparisonTable";
 
-const HERO_POSTER = `${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`;
+const HERO_POSTER = `${MEDIA}/hero-poster.jpg`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
