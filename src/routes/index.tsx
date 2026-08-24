@@ -26,15 +26,19 @@ import {
   SectionHeading,
   ServicesGrid,
 } from "@/components/site/sections";
-import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
 import { MEDIA, stats, ILLU } from "@/data/site";
-import { PainPointCards } from "@/components/site/PainPointCards";
 import { CountUp, Reveal } from "@/components/site/Reveal";
-import { CatchSection } from "@/components/site/CatchSection";
-import { SystemLoop } from "@/components/site/SystemLoop";
-import { BuyerPaths } from "@/components/site/BuyerPaths";
-import { ValueStack } from "@/components/site/ValueStack";
-import { ComparisonTable } from "@/components/site/ComparisonTable";
+import { LazySection, usePrefetchOnIdle } from "@/components/site/LazySection";
+import {
+  BuyerPaths,
+  CatchSection,
+  ComparisonTable,
+  PainPointCards,
+  SystemLoop,
+  TestimonialCarousel,
+  ValueStack,
+  homeSectionFactories,
+} from "@/components/site/home-sections.lazy";
 
 const HERO_POSTER = `${MEDIA}/hero-poster.jpg`;
 
@@ -246,6 +250,8 @@ function VideoPlayer({
 
 
 function Index() {
+  // Warm the below-the-fold section chunks once the browser is idle.
+  usePrefetchOnIdle(homeSectionFactories);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
   const [showFloatBtn, setShowFloatBtn] = useState(false);
@@ -618,11 +624,11 @@ function Index() {
             </div>
           </Reveal>
 
-          <PainPointCards />
+          <LazySection minHeight={600}><PainPointCards /></LazySection>
         </div>
       </Section>
 
-      <SystemLoop />
+      <LazySection minHeight={520}><SystemLoop /></LazySection>
 
       {/* Services grid */}
       <Section>
@@ -763,11 +769,11 @@ function Index() {
         </div>
       </Section>
 
-      <CatchSection />
+      <LazySection minHeight={640}><CatchSection /></LazySection>
 
-      <BuyerPaths />
+      <LazySection minHeight={520}><BuyerPaths /></LazySection>
 
-      <ValueStack />
+      <LazySection minHeight={640}><ValueStack /></LazySection>
 
       {/* No strings attached */}
       <Section>
@@ -799,7 +805,7 @@ function Index() {
         </div>
       </Section>
 
-      <ComparisonTable />
+      <LazySection minHeight={560}><ComparisonTable /></LazySection>
 
       {/* Testimonials */}
       <Section className="py-24">
@@ -812,7 +818,7 @@ function Index() {
           </h2>
         </Reveal>
         <Reveal delay={140} className="mt-14">
-          <TestimonialCarousel />
+          <LazySection minHeight={420}><TestimonialCarousel /></LazySection>
         </Reveal>
       </Section>
 
