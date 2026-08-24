@@ -28,9 +28,10 @@ export function Footer() {
         </div>
 
         <div>
-          <ul className="list-disc space-y-3 pl-5 text-base text-foreground/85 marker:text-foreground/60">
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-3 text-base text-foreground/85">
             {links.map((l) => (
-              <li key={l.label}>
+              <li key={l.label} className="flex items-center gap-2">
+                <span className="text-foreground/40" aria-hidden="true">•</span>
                 <Link to={l.to} className="hover:text-primary">
                   {l.label}
                 </Link>
