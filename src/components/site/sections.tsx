@@ -137,6 +137,44 @@ export function PageHero({
   );
 }
 
+export function FounderPortrait({
+  src,
+  alt,
+  caption,
+  className,
+  captionClassName,
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+  className?: string;
+  captionClassName?: string;
+}) {
+  return (
+    <div className={cn("mx-auto w-full max-w-md", className)}>
+      <div className="relative rounded-[2.5rem] border border-primary/15 bg-card/80 p-3 shadow-[0_40px_90px_-45px_rgba(31,33,80,0.55)] backdrop-blur-sm">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-[2.5rem] bg-[radial-gradient(120%_90%_at_50%_0%,color-mix(in_oklab,var(--primary)_16%,transparent),transparent_70%)]"
+        />
+        <div className="relative overflow-hidden rounded-[2rem] bg-[linear-gradient(160deg,color-mix(in_oklab,var(--primary)_18%,transparent),transparent_55%)]">
+          <img
+            src={src}
+            alt={alt}
+            loading="lazy"
+            className="aspect-[4/5] w-full object-cover object-top"
+          />
+        </div>
+        {caption && (
+          <div className={cn("relative mt-3 flex items-center justify-between gap-3 rounded-[1.25rem] bg-secondary/70 px-4 py-3", captionClassName)}>
+            <p className="text-sm font-semibold">{caption}</p>
+            <Stars />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export function Stars({ className }: { className?: string }) {
   return (

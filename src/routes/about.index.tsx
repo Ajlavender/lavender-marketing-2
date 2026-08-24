@@ -2,7 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
+import { FounderPortrait } from "@/components/site/sections";
 import { ILLU } from "@/data/site";
+
+const AJ_PHOTO_1 =
+  "https://assets.cdn.filesafe.space/IyiCTBDPcxyW5GC333Qt/media/6a21a3a8da24932f120f82eb.png";
+const AJ_PHOTO_2 =
+  "https://assets.cdn.filesafe.space/IyiCTBDPcxyW5GC333Qt/media/6a21a3acf607d4002b7c8113.png";
 
 export const Route = createFileRoute("/about/")({
   head: () => ({
@@ -105,17 +111,11 @@ function About() {
       <section className="relative pb-16 pt-36">
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left" className="relative">
-            <img
-              src={`${ILLU}/growth.png`}
-              alt="Man launching a startup from his desk"
-              className="mx-auto w-full max-w-lg"
-            />
-            <img
-              src={`${ILLU}/websites.png`}
-              alt=""
-              aria-hidden
-              loading="lazy"
-              className="pointer-events-none absolute -bottom-6 left-1/2 w-40 -translate-x-1/4"
+            <FounderPortrait
+              src={AJ_PHOTO_1}
+              alt="AJ, founder of Lavender Marketing & Co."
+              caption="AJ — Founder, Lavender Marketing & Co."
+              className="max-w-sm"
             />
           </Reveal>
           <Reveal from="right" delay={120} className="relative">
@@ -275,19 +275,21 @@ function About() {
                   <DemoButton label="Get in touch" />
                 </div>
               </div>
-            <img
-              src={`${ILLU}/founder.png`}
-              alt="Man drawing on a tablet"
-              loading="lazy"
-              className="pointer-events-none absolute -right-4 bottom-0 hidden w-[22rem] lg:block"
-            />
-            <img
-              src={`${ILLU}/growth.png`}
-              alt=""
-              aria-hidden
-              loading="lazy"
-              className="pointer-events-none absolute right-64 top-4 hidden w-24 lg:block"
-            />
+            <div className="pointer-events-none absolute -right-4 bottom-0 hidden w-[15rem] lg:block">
+              <div className="relative rounded-[2rem] border border-white/15 bg-white/10 p-2 shadow-[0_40px_90px_-45px_rgba(0,0,0,0.6)] backdrop-blur-sm">
+                <div className="overflow-hidden rounded-[1.5rem]">
+                  <img
+                    src={AJ_PHOTO_2}
+                    alt="AJ, founder of Lavender Marketing & Co."
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover object-top"
+                  />
+                </div>
+                <p className="mt-2 text-center text-[11px] font-semibold uppercase tracking-widest text-background/80">
+                  AJ — Founder
+                </p>
+              </div>
+            </div>
           </div>
         </Reveal>
       </section>
