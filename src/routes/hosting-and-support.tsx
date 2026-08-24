@@ -11,7 +11,7 @@ export const Route = createFileRoute("/hosting-and-support")({
       eyebrow="Hosting & Support"
       title="Hosting, domain, security and unlimited small edits"
       subtitle="We keep the site fast, online and up to date — and any small change you need is just a message to us."
-      image={`${ILLU}/hosting-support.png`}
+      image={`${ILLU}/hosting-support.webp`}
       intro={[
         "A website is not a one-time purchase. Prices change, staff change, seasons change — and most business owners either pay a developer every time or let the site go stale.",
         "Your plan includes hosting, domain and SSL management, security monitoring and unlimited small edits. You message us, we make the change.",

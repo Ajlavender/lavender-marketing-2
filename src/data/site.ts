@@ -13,7 +13,7 @@ export const services = [
     short: "We design it free. You only pay if you like it.",
     value: "$500/mo value",
     group: "Included in $297/mo",
-    image: `${ILLU}/websites.png`,
+    image: `${ILLU}/websites.webp`,
     card: `${ILLU}/cards/websites.jpg`,
   },
   {
@@ -22,7 +22,7 @@ export const services = [
     short: "Pre-loaded with your FAQs so visitors get answers instantly.",
     value: "$300/mo value",
     group: "Included in $297/mo",
-    image: `${ILLU}/chat-widget.png`,
+    image: `${ILLU}/chat-widget.webp`,
     card: `${ILLU}/cards/chat-widget.jpg`,
   },
   {
@@ -31,7 +31,7 @@ export const services = [
     short: "Can't pick up? They get a text in seconds and stay with you.",
     value: "$300/mo value",
     group: "Included in $297/mo",
-    image: `${ILLU}/missed-call.png`,
+    image: `${ILLU}/missed-call.webp`,
     card: `${ILLU}/cards/missed-call.jpg`,
   },
   {
@@ -40,7 +40,7 @@ export const services = [
     short: "Automatic text and email asks that turn jobs into 5-star reviews.",
     value: "$400/mo value",
     group: "Included in $297/mo",
-    image: `${ILLU}/reviews.png`,
+    image: `${ILLU}/reviews.webp`,
     card: `${ILLU}/cards/reviews.jpg`,
   },
   {
@@ -49,7 +49,7 @@ export const services = [
     short: "Customers book a real free slot instead of playing phone tag.",
     value: "$300/mo value",
     group: "Included in $297/mo",
-    image: `${ILLU}/booking.png`,
+    image: `${ILLU}/booking.webp`,
     card: `${ILLU}/cards/booking.jpg`,
   },
   {
@@ -58,7 +58,7 @@ export const services = [
     short: "Every lead chased by text and email until they book or say no.",
     value: "$300/mo value",
     group: "Included in $297/mo",
-    image: `${ILLU}/automations.png`,
+    image: `${ILLU}/automations.webp`,
     card: `${ILLU}/cards/automations.jpg`,
   },
   {
@@ -67,7 +67,7 @@ export const services = [
     short: "Email, texts, DMs, Google and chat in one inbox on your phone.",
     value: "$400/mo value",
     group: "Included in $297/mo",
-    image: `${ILLU}/unified-inbox.png`,
+    image: `${ILLU}/unified-inbox.webp`,
     card: `${ILLU}/cards/unified-inbox.jpg`,
   },
   {
@@ -76,7 +76,7 @@ export const services = [
     short: "Every contact, note and stage in one place you can act on.",
     value: "$400/mo value",
     group: "Included in $297/mo",
-    image: `${ILLU}/crm-pipeline.png`,
+    image: `${ILLU}/crm-pipeline.webp`,
     card: `${ILLU}/cards/crm-pipeline.jpg`,
   },
   {
@@ -85,7 +85,7 @@ export const services = [
     short: "Hosting, domain, SSL and unlimited small edits — just message us.",
     value: "$200/mo value",
     group: "Included in $297/mo",
-    image: `${ILLU}/hosting-support.png`,
+    image: `${ILLU}/hosting-support.webp`,
     card: `${ILLU}/cards/hosting-support.jpg`,
   },
   {
@@ -94,7 +94,7 @@ export const services = [
     short: "One plain-English page on the 1st: leads, calls, reviews, bookings.",
     value: "$250/mo value",
     group: "Included in $297/mo",
-    image: `${ILLU}/reporting.png`,
+    image: `${ILLU}/reporting.webp`,
     card: `${ILLU}/cards/reporting.jpg`,
   },
   {
@@ -103,7 +103,7 @@ export const services = [
     short: "Trained on your business — qualifies and books leads 24/7.",
     value: "Growth plan",
     group: "Add-ons (Growth & Scale)",
-    image: `${ILLU}/chat-widget.png`,
+    image: `${ILLU}/chat-widget.webp`,
     card: `${ILLU}/cards/ai-chat-widget.jpg`,
   },
   {
@@ -112,7 +112,7 @@ export const services = [
     short: "Answers every call you can't and books it into your calendar.",
     value: "Growth plan",
     group: "Add-ons (Growth & Scale)",
-    image: `${ILLU}/ai-receptionist.png`,
+    image: `${ILLU}/ai-receptionist.webp`,
     card: `${ILLU}/cards/ai-receptionist.jpg`,
   },
   {
@@ -121,7 +121,7 @@ export const services = [
     short: "Google and Meta campaigns wired into your CRM and booking flow.",
     value: "Scale plan",
     group: "Add-ons (Growth & Scale)",
-    image: `${ILLU}/lead-gen.png`,
+    image: `${ILLU}/lead-gen.webp`,
     card: `${ILLU}/cards/ads.jpg`,
   },
   {
@@ -130,7 +130,7 @@ export const services = [
     short: "Map pack rankings and a Google Business Profile that converts.",
     value: "Scale plan",
     group: "Add-ons (Growth & Scale)",
-    image: `${ILLU}/local-seo.png`,
+    image: `${ILLU}/local-seo.webp`,
     card: `${ILLU}/cards/local-seo.jpg`,
   },
   {
@@ -139,7 +139,7 @@ export const services = [
     short: "A site built for contractors — with missed-call text-back and review automation included.",
     value: "$297/mo",
     group: "Industry Solutions",
-    image: `${ILLU}/websites.png`,
+    image: `${ILLU}/websites.webp`,
     card: `${ILLU}/cards/construction.jpg`,
   },
 ] as const;
@@ -174,22 +174,22 @@ export const painPoints = [
   {
     title: "Visitors leave without calling",
     body: "Your site looks fine — but the next step isn't obvious, so they bounce and call someone else.",
-    image: `${ILLU}/websites.png`,
+    image: `${ILLU}/websites.webp`,
   },
   {
     title: "Missed calls turn into missed jobs",
     body: "If nobody texts back fast, that customer is already calling the next listing. Missed-call text-back fixes it automatically.",
-    image: `${ILLU}/missed-call.png`,
+    image: `${ILLU}/missed-call.webp`,
   },
   {
     title: "Reviews aren't collected consistently",
     body: "Happy customers forget to leave one. Your reputation stops compounding and your ranking slides.",
-    image: `${ILLU}/reviews.png`,
+    image: `${ILLU}/reviews.webp`,
   },
   {
     title: "Leads fall through the cracks",
     body: "The first message goes unanswered, follow-up never happens, and a good lead quietly goes cold.",
-    image: `${ILLU}/automations.png`,
+    image: `${ILLU}/automations.webp`,
   },
 ];
 

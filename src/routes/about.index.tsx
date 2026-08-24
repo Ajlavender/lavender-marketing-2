@@ -67,28 +67,28 @@ const missionCards = [
     title: "Free Design First",
     body:
       "We build your demo design for free, so you see exactly what you're getting before you spend a dollar or sign anything.",
-    image: `${ILLU}/websites.png`,
+    image: `${ILLU}/websites.webp`,
     offset: "lg:mt-14",
   },
   {
     title: "Built to Convert",
     body:
       "Every page is designed around one goal: more calls, bookings, and reviews. No fluff. No guesswork. Just a site that works.",
-    image: `${ILLU}/crm-pipeline.png`,
+    image: `${ILLU}/crm-pipeline.webp`,
     offset: "lg:mt-0",
   },
   {
     title: "Follow-Up on Autopilot",
     body:
       "Missed calls get texted back instantly. Leads are chased by text and email until they book or say no. Nothing falls through the cracks.",
-    image: `${ILLU}/reporting.png`,
+    image: `${ILLU}/reporting.webp`,
     offset: "lg:mt-6",
   },
   {
     title: "Made for Busy Owners",
     body:
       "We know you're running a business, not a website project. Our process is fast, simple, and built for owners who don't have time to babysit tech.",
-    image: `${ILLU}/automations.png`,
+    image: `${ILLU}/automations.webp`,
     offset: "lg:-mt-6",
   },
 ];
@@ -188,7 +188,7 @@ function About() {
               </div>
             </div>
             <img
-              src={`${ILLU}/missed-call.png`}
+              src={`${ILLU}/missed-call.webp`}
               alt="Man feeling stressed at work"
               loading="lazy"
               className="pointer-events-none absolute -right-6 bottom-0 hidden w-[24rem] lg:block"
@@ -203,7 +203,7 @@ function About() {
         <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2">
           <Reveal from="left">
             <img
-              src={`${ILLU}/lead-gen.png`}
+              src={`${ILLU}/lead-gen.webp`}
               alt="Man doing online marketing"
               loading="lazy"
               className="mx-auto w-full max-w-md"
@@ -365,7 +365,7 @@ function About() {
           </Reveal>
           <Reveal from="right" delay={100}>
             <img
-              src={`${ILLU}/reviews.png`}
+              src={`${ILLU}/reviews.webp`}
               alt="Happy business man throwing money in the air"
               loading="lazy"
               className="mx-auto w-full max-w-md"

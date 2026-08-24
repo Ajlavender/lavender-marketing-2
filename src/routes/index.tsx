@@ -36,7 +36,7 @@ import { BuyerPaths } from "@/components/site/BuyerPaths";
 import { ValueStack } from "@/components/site/ValueStack";
 import { ComparisonTable } from "@/components/site/ComparisonTable";
 
-const HERO_POSTER = `${MEDIA}/2023/05/representacion-3d-concepto-alojamiento-sitios-web-scaled.jpg`;
+const HERO_POSTER = `${MEDIA}/hero-poster.jpg`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -376,15 +376,15 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 pb-16 pt-32 sm:px-6 lg:px-8 lg:pb-20 lg:pt-36">
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div className="relative animate-fade-in">
-              <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/25 bg-background/70 py-1.5 pl-1.5 pr-4 text-sm font-medium text-foreground shadow-sm backdrop-blur-md">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+              <span className="mb-6 inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-brand/25 bg-background/70 py-1.5 pl-1.5 pr-4 text-sm font-medium text-foreground shadow-sm backdrop-blur-md">
+                <span className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-white">
                   <Sparkles className="h-3.5 w-3.5" />
                   Free design
                 </span>
                 <span className="text-muted-foreground">Automated review engine included</span>
               </span>
               <h1
-                className="animate-fade-in text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl"
+                className="animate-fade-in text-[2.6rem] font-bold leading-[1.05] tracking-tight sm:text-6xl"
                 style={{ animationDelay: "80ms", animationFillMode: "both" }}
               >
                 We design your new website{" "}
@@ -392,19 +392,23 @@ function Index() {
               </h1>
               <h2
                 style={{ animationDelay: "180ms", animationFillMode: "both" }}
-                className="animate-fade-in mt-5 max-w-xl text-3xl font-bold leading-tight sm:text-[2.25rem]"
+                className="animate-fade-in mt-4 max-w-xl text-2xl font-bold leading-tight sm:mt-5 sm:text-[2.25rem]"
               >
                 You only pay $297/mo if you like it.
               </h2>
               <p
                 style={{ animationDelay: "240ms", animationFillMode: "both" }}
-                className="animate-fade-in mt-5 max-w-xl text-lg text-muted-foreground"
+                className="animate-fade-in mt-4 max-w-xl text-base text-muted-foreground sm:mt-5 sm:text-lg"
               >
                 Built for local service businesses. The $297 covers hosting, the review engine that turns happy
                 customers into stronger local visibility, missed-call text-back, follow-up and a
-                monthly growth report delivered on the 1st of every month. No upfront design fee, no
-                setup fee, no paying before you see the design.
+                monthly growth report delivered on the 1st of every month.
+                <span className="hidden sm:inline">
+                  {" "}
+                  No upfront design fee, no setup fee, no paying before you see the design.
+                </span>
               </p>
+
 
               {/* trust row */}
               <div
@@ -535,7 +539,7 @@ function Index() {
             {/* Custom floating player — no browser PiP chrome, so no favicon/logo appears. */}
             {floating &&
               createPortal(
-                <div className="fixed bottom-4 right-4 z-[100] w-[min(22rem,92vw)] animate-scale-in">
+                <div className="fixed bottom-4 right-3 z-[100] w-[min(11rem,48vw)] animate-scale-in sm:right-4 sm:w-[min(22rem,60vw)]">
                   <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_30px_70px_-25px_rgba(0,0,0,0.7)]">
                     <VideoPlayer
                       key="hero-video-player"
@@ -690,7 +694,7 @@ function Index() {
 
               <div className="relative">
                 <img
-                  src={`${ILLU}/reporting.png`}
+                  src={`${ILLU}/reporting.webp`}
                   alt="Businessman giving analysis presentation"
                   loading="lazy"
                   className="mx-auto w-full max-w-lg lg:absolute lg:-bottom-24 lg:left-1/2 lg:w-[125%] lg:max-w-none lg:-translate-x-1/2"
@@ -770,7 +774,7 @@ function Index() {
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <Reveal from="left" scale>
             <img
-              src={`${ILLU}/booking.png`}
+              src={`${ILLU}/booking.webp`}
               alt="Businessman doing work on working desk"
               loading="lazy"
               className="mx-auto w-full max-w-md"

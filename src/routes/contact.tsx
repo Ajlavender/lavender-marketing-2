@@ -35,7 +35,7 @@ function Contact() {
         eyebrow="Contact"
         title="Let's build a website that sells"
         subtitle="Tell us about your business and we'll design a free demo of your new homepage — no cost, no obligation."
-        image={`${ILLU}/founder.png`}
+        image={`${ILLU}/founder.webp`}
       />
 
       <Section>

@@ -11,7 +11,7 @@ export const Route = createFileRoute("/online-booking")({
       eyebrow="Online Booking"
       title="Appointments land on your calendar on autopilot"
       subtitle="Customers pick a time that's actually free. No phone tag, no “does Thursday work?” eating your afternoon."
-      image={`${ILLU}/booking.png`}
+      image={`${ILLU}/booking.webp`}
       intro={[
         "Every booking made by phone costs you two or three interruptions. Every booking made online costs you nothing.",
         "We connect a booking calendar to your site, your chat widget and your follow-up messages, so any lead can lock in a time in about twenty seconds.",
