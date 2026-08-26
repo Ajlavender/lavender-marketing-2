@@ -44,7 +44,7 @@ export const transformations: Transformation[] = [
     type: "Website Redesign",
     beforeImage: pccBeforeAsset.url,
     afterImage: pccAfterAsset.url,
-    url: "https://portugueseclubstrathroy.com",
+    url: "https://strathroyportugueseclub.com/",
     beforePoints: [
       "Cluttered header with no clear message",
       "Hard to find events and hall rentals",
