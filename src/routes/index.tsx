@@ -29,6 +29,7 @@ import {
 import { MEDIA, stats, ILLU } from "@/data/site";
 import { CountUp, Reveal } from "@/components/site/Reveal";
 import { LazySection, usePrefetchOnIdle } from "@/components/site/LazySection";
+import { BeforeAfterShowcase } from "@/components/site/BeforeAfterShowcase";
 import {
   BuyerPaths,
   CatchSection,
@@ -626,6 +627,9 @@ function Index() {
 
 
       <LogoStrip />
+
+      <BeforeAfterShowcase />
+
 
       {/* Pain points — the four leak points */}
       <Section className="pt-28">
