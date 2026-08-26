@@ -169,7 +169,7 @@ export function BeforeAfterCompare({
         src={item.afterImage}
         alt={`${item.client} website after Lavender Marketing redesign`}
         width={1920}
-        height={1062}
+        height={888}
         draggable={false}
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
@@ -187,7 +187,7 @@ export function BeforeAfterCompare({
           src={item.beforeImage}
           alt={`${item.client} website before Lavender Marketing redesign`}
           width={1920}
-          height={1062}
+          height={888}
           draggable={false}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
