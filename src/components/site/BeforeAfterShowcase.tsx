@@ -136,24 +136,40 @@ export function BeforeAfterCompare({
   };
 
   return (
-    <div
-      ref={frameRef}
-      onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
-      onPointerUp={endDrag}
-      onPointerCancel={endDrag}
-      className={cn(
-        "relative isolate w-full select-none overflow-hidden rounded-2xl border border-brand/12 bg-secondary shadow-[0_24px_60px_-40px_rgba(24,16,48,0.45)]",
-        dragging ? "cursor-ew-resize" : "cursor-pointer",
-      )}
-      style={{ aspectRatio: "1920 / 1062", touchAction: "pan-y" }}
-    >
+    <div className="overflow-hidden rounded-2xl border border-brand/12 bg-[#2b2b2b] shadow-[0_28px_70px_-40px_rgba(24,16,48,0.55)]">
+      {/* Browser chrome */}
+      <div className="flex items-center gap-3 px-3 py-2.5 sm:px-4">
+        <div className="flex shrink-0 items-center gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+        </div>
+        <div className="flex min-w-0 flex-1 items-center gap-2 rounded-full bg-white/10 px-3 py-1">
+          <span className="truncate text-[11px] text-white/60">
+            {item.url?.replace(/^https?:\/\//, "") ?? "example.com"}
+          </span>
+        </div>
+      </div>
+
+      <div
+        ref={frameRef}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={endDrag}
+        onPointerCancel={endDrag}
+        className={cn(
+          "relative isolate w-full select-none overflow-hidden bg-secondary",
+          dragging ? "cursor-ew-resize" : "cursor-pointer",
+        )}
+        style={{ aspectRatio: "1920 / 888", touchAction: "pan-y" }}
+      >
+
       {/* AFTER = base layer */}
       <img
         src={item.afterImage}
         alt={`${item.client} website after Lavender Marketing redesign`}
         width={1920}
-        height={1062}
+        height={888}
         draggable={false}
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
@@ -171,7 +187,7 @@ export function BeforeAfterCompare({
           src={item.beforeImage}
           alt={`${item.client} website before Lavender Marketing redesign`}
           width={1920}
-          height={1062}
+          height={888}
           draggable={false}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
@@ -212,8 +228,10 @@ export function BeforeAfterCompare({
           <ChevronRight className="h-3.5 w-3.5 -ml-0.5" />
         </span>
       </div>
+      </div>
     </div>
   );
+
 }
 
 export function BeforeAfterShowcase() {
