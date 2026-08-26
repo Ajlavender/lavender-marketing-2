@@ -26,7 +26,7 @@ export const transformations: Transformation[] = [
     type: "Website Redesign",
     beforeImage: beforeAsset.url,
     afterImage: afterAsset.url,
-    url: "https://authenticcustomsdemo.lavendermarketingco.com",
+    url: "https://www.authenticcustoms.com/",
     beforePoints: [
       "Dated visual design",
       "Desktop-first experience",
