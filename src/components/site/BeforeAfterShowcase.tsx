@@ -256,7 +256,8 @@ export function BeforeAfterCompare({
 }
 
 export function BeforeAfterShowcase() {
-  const item = transformations[0];
+  const [active, setActive] = useState(0);
+  const item = transformations[active];
 
   return (
     <Section className="pt-24 pb-4 sm:pt-28">
@@ -275,8 +276,35 @@ export function BeforeAfterShowcase() {
         </p>
       </Reveal>
 
-      <Reveal delay={120} className="mx-auto mt-12 w-full max-w-[1280px]">
-        <BeforeAfterCompare item={item} />
+      <Reveal delay={80} className="mt-8 flex justify-center">
+        <div
+          role="tablist"
+          aria-label="Choose a website transformation"
+          className="inline-flex flex-wrap justify-center gap-1 rounded-full border border-brand/12 bg-white/70 p-1 backdrop-blur-sm"
+        >
+          {transformations.map((t, i) => (
+            <button
+              key={t.client}
+              type="button"
+              role="tab"
+              aria-selected={i === active}
+              onClick={() => setActive(i)}
+              className={cn(
+                "rounded-full px-4 py-2 text-sm font-medium transition",
+                i === active
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-ink",
+              )}
+            >
+              {t.client}
+            </button>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal delay={120} className="mx-auto mt-10 w-full max-w-[1280px]">
+        <BeforeAfterCompare key={item.client} item={item} />
+
 
         {/* Project info row */}
         <div className="mt-6 flex flex-col gap-3 border-b border-brand/10 pb-6 sm:flex-row sm:items-end sm:justify-between">
