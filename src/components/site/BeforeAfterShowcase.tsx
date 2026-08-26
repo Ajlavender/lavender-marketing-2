@@ -5,6 +5,8 @@ import { Section } from "./sections";
 import { Reveal } from "./Reveal";
 import beforeAsset from "@/assets/authentic-customs-before.webp.asset.json";
 import afterAsset from "@/assets/authentic-customs-after.webp.asset.json";
+import pccBeforeAsset from "@/assets/pcc-before.webp.asset.json";
+import pccAfterAsset from "@/assets/pcc-after.webp.asset.json";
 
 export type Transformation = {
   client: string;
@@ -36,7 +38,26 @@ export const transformations: Transformation[] = [
       "Clear conversion-focused calls to action",
     ],
   },
+  {
+    client: "Portuguese Canadian Club of Strathroy",
+    industry: "Event Venue & Community Club",
+    type: "Website Redesign",
+    beforeImage: pccBeforeAsset.url,
+    afterImage: pccAfterAsset.url,
+    url: "https://portugueseclubstrathroy.com",
+    beforePoints: [
+      "Cluttered header with no clear message",
+      "Hard to find events and hall rentals",
+      "No obvious way to check availability",
+    ],
+    afterPoints: [
+      "Elegant venue-first hero with clear positioning",
+      "Live event bar and simple navigation",
+      "Prominent Check Availability booking path",
+    ],
+  },
 ];
+
 
 const clamp = (n: number) => Math.min(100, Math.max(0, n));
 
