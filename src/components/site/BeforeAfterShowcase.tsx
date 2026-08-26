@@ -5,6 +5,8 @@ import { Section } from "./sections";
 import { Reveal } from "./Reveal";
 import beforeAsset from "@/assets/authentic-customs-before.webp.asset.json";
 import afterAsset from "@/assets/authentic-customs-after.webp.asset.json";
+import pccBeforeAsset from "@/assets/pcc-before.webp.asset.json";
+import pccAfterAsset from "@/assets/pcc-after.webp.asset.json";
 
 export type Transformation = {
   client: string;
@@ -36,7 +38,26 @@ export const transformations: Transformation[] = [
       "Clear conversion-focused calls to action",
     ],
   },
+  {
+    client: "Portuguese Canadian Club of Strathroy",
+    industry: "Event Venue & Community Club",
+    type: "Website Redesign",
+    beforeImage: pccBeforeAsset.url,
+    afterImage: pccAfterAsset.url,
+    url: "https://portugueseclubstrathroy.com",
+    beforePoints: [
+      "Cluttered header with no clear message",
+      "Hard to find events and hall rentals",
+      "No obvious way to check availability",
+    ],
+    afterPoints: [
+      "Elegant venue-first hero with clear positioning",
+      "Live event bar and simple navigation",
+      "Prominent Check Availability booking path",
+    ],
+  },
 ];
+
 
 const clamp = (n: number) => Math.min(100, Math.max(0, n));
 
@@ -235,7 +256,8 @@ export function BeforeAfterCompare({
 }
 
 export function BeforeAfterShowcase() {
-  const item = transformations[0];
+  const [active, setActive] = useState(0);
+  const item = transformations[active];
 
   return (
     <Section className="pt-24 pb-4 sm:pt-28">
@@ -254,8 +276,35 @@ export function BeforeAfterShowcase() {
         </p>
       </Reveal>
 
-      <Reveal delay={120} className="mx-auto mt-12 w-full max-w-[1280px]">
-        <BeforeAfterCompare item={item} />
+      <Reveal delay={80} className="mt-8 flex justify-center">
+        <div
+          role="tablist"
+          aria-label="Choose a website transformation"
+          className="inline-flex flex-wrap justify-center gap-1 rounded-full border border-brand/12 bg-white/70 p-1 backdrop-blur-sm"
+        >
+          {transformations.map((t, i) => (
+            <button
+              key={t.client}
+              type="button"
+              role="tab"
+              aria-selected={i === active}
+              onClick={() => setActive(i)}
+              className={cn(
+                "rounded-full px-4 py-2 text-sm font-medium transition",
+                i === active
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-ink",
+              )}
+            >
+              {t.client}
+            </button>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal delay={120} className="mx-auto mt-10 w-full max-w-[1280px]">
+        <BeforeAfterCompare key={item.client} item={item} />
+
 
         {/* Project info row */}
         <div className="mt-6 flex flex-col gap-3 border-b border-brand/10 pb-6 sm:flex-row sm:items-end sm:justify-between">
