@@ -627,6 +627,9 @@ function Index() {
 
       <LogoStrip />
 
+      <BeforeAfterShowcase />
+
+
       {/* Pain points — the four leak points */}
       <Section className="pt-28">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-start lg:gap-12">
