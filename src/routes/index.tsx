@@ -29,6 +29,7 @@ import {
 import { MEDIA, stats, ILLU } from "@/data/site";
 import { CountUp, Reveal } from "@/components/site/Reveal";
 import { LazySection, usePrefetchOnIdle } from "@/components/site/LazySection";
+import { BeforeAfterShowcase } from "@/components/site/BeforeAfterShowcase";
 import {
   BuyerPaths,
   CatchSection,
