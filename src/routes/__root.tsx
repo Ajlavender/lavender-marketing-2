@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { MobileCtaBar } from "@/components/site/MobileCtaBar";
 import { Toaster } from "@/components/ui/sonner";
 
 
@@ -80,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { title: "Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
       {
         name: "description",
@@ -184,6 +185,7 @@ function RootComponent() {
         </main>
         <Footer />
       </div>
+      <MobileCtaBar />
       <Toaster position="top-center" />
     </QueryClientProvider>
   );
