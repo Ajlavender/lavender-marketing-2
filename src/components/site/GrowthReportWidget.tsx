@@ -1,16 +1,37 @@
 const WIDGET_ID = "69913d5dd2dae6c8487503d5";
 const SRC = "https://services.leadconnectorhq.com/prospecting/client/widget-embed.js";
 
+/**
+ * CSS injected into the iframe document. The LeadConnector widget ships with
+ * fixed max-widths (480px banner, 384px form) and centers itself, so when we
+ * zoom the iframe out (scale < 1) the form floats with whitespace on both
+ * sides. Forcing every layer to fill 100% width makes the form span the full
+ * iframe, so the zoom no longer leaves side gaps.
+ */
+const FILL_CSS = `
+[id^="prospecting-widget-"], [id^="prospecting-widget-"] * { max-width: 100% !important; }
+[id^="prospecting-widget-"] { width: 100% !important; }
+[id^="prospecting-widget-"] > div,
+[id^="prospecting-widget-"] > div > div,
+[id^="prospecting-widget-"] > div > div > div { width: 100% !important; }
+[id^="prospecting-widget-"] img { width: 100% !important; height: auto !important; display: block; }
+[id^="prospecting-widget-"] form,
+[id^="prospecting-widget-"] form > div,
+[id^="prospecting-widget-"] form > div > div { width: 100% !important; }
+`;
+
 const DOC = `<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1" />
-<style>html,body{margin:0;padding:0;background:transparent;font-family:system-ui,sans-serif}</style>
+<style>html,body{margin:0;padding:0;background:transparent;font-family:system-ui,sans-serif}${FILL_CSS}</style>
 </head><body><script src="${SRC}" data-widget-id="${WIDGET_ID}"><\/script></body></html>`;
 
 /**
- * Embeds the LeadConnector growth-report widget inside an isolated iframe so its
- * global styles/overlays cannot affect the page layout.
+ * Embeds the LeadConnector growth-report widget inside an isolated iframe so
+ * its global styles/overlays cannot affect the page layout.
  *
  * `scale` zooms the embedded document out (desktop) so the whole form fits on
- * screen without inner scrolling; the iframe is sized up by 1/scale to compensate.
+ * screen without inner scrolling; the iframe is sized up by 1/scale to
+ * compensate. The injected FILL_CSS keeps the form flush to the iframe edges
+ * so no side whitespace appears at any zoom level.
  */
 export function GrowthReportWidget({
   className,
