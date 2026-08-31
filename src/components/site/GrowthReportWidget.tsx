@@ -38,32 +38,23 @@ const DOC = `<!doctype html><html><head><meta name="viewport" content="width=dev
  *
  * Auto-fit: because the iframe is a same-origin srcDoc (sandbox includes
  * allow-same-origin), the parent can read the widget's real content height
- * once it renders. The iframe is then sized to that exact content height (so
- * nothing scrolls inside the iframe) and scaled down to fill the container's
- * full height — the whole form is visible with no vertical scrollbar.
+ * once it renders. The container is then sized to that exact content height
+ * (capped at `maxHeight`), so:
+ *  - on a tall screen the popup shrinks to the form — no empty gap, scale 1;
+ *  - on a short screen the form is scaled down to fit `maxHeight` — no scroll.
  */
 export function GrowthReportWidget({
   className,
-  scale: scaleProp,
+  scale: scaleCap = 1,
+  maxHeight,
 }: {
   className?: string;
   scale?: number;
+  maxHeight?: number;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [containerH, setContainerH] = useState(0);
   const [contentH, setContentH] = useState(0);
-
-  // Track the container's available height.
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    const update = () => setContainerH(el.clientHeight);
-    update();
-    const ro = new ResizeObserver(update);
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
 
   // Measure the widget's natural content height inside the iframe.
   useEffect(() => {
@@ -99,19 +90,22 @@ export function GrowthReportWidget({
     };
   }, []);
 
-  // Compute the scale that fits the content into the container, capping at the
-  // caller's requested scale (or 1) so we never upscale.
-  const cap = scaleProp ?? 1;
-  const scale = contentH && containerH ? Math.min(cap, containerH / contentH) : cap;
+  // Container height: the form's real height, capped at maxHeight when given.
+  const targetH =
+    contentH > 0 ? (maxHeight ? Math.min(contentH, maxHeight) : contentH) : maxHeight ?? 360;
+
+  // Scale so the (unscaled, full-height) iframe fits the container exactly.
+  const scale = contentH > 0 ? Math.min(scaleCap, targetH / contentH) : scaleCap;
 
   // iframe sized to the natural content (no internal scroll); scaled to fit.
+  const iframeH = contentH > 0 ? `${contentH}px` : "100%";
   const iframeW = `${100 / scale}%`;
-  const iframeH = contentH ? `${contentH}px` : `${100 / scale}%`;
 
   return (
     <div
       ref={containerRef}
       className={`relative overflow-hidden ${className ?? "h-[70vh] w-full rounded-xl"}`}
+      style={{ height: targetH }}
     >
       <iframe
         ref={iframeRef}
