@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MegaPanel, type MegaChild } from "@/components/site/MegaMenu";
 import { MobileMenu } from "@/components/site/MobileMenu";
+import { GrowthReportDialog } from "@/components/site/GrowthReportDialog";
 
 type NavChild = MegaChild;
 
@@ -186,17 +187,16 @@ export function Header() {
               })}
             </nav>
 
-            <Button
-              asChild
-              className="group/btn relative h-9 max-w-[11rem] overflow-hidden rounded-full px-4 text-xs font-semibold tracking-wide text-white shadow-none max-sm:hidden"
-            >
-              <Link to="/growth-report" className="inline-flex items-center gap-1">
+            <GrowthReportDialog>
+              <Button
+                className="group/btn relative h-9 max-w-[11rem] overflow-hidden rounded-full px-4 text-xs font-semibold tracking-wide text-white shadow-none max-sm:hidden"
+              >
                 <span className="absolute inset-0 bg-gradient-to-br from-nav-cta-from to-nav-cta-to transition-all duration-300 group-hover/btn:from-nav-cta-hover-from group-hover/btn:to-nav-cta-hover-to" />
                 <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/20" />
                 <span className="relative">Free Growth Report</span>
                 <ArrowUpRight className="relative h-3.5 w-3.5" />
-              </Link>
-            </Button>
+              </Button>
+            </GrowthReportDialog>
             <button
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/[0.05] text-white backdrop-blur-md transition-all duration-200 hover:border-white/40 hover:bg-white/10 hover:shadow-[0_0_24px_-6px_rgba(255,255,255,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum lg:hidden"
               onClick={() => setOpen(true)}
