@@ -12,9 +12,10 @@ const FILL_CSS = `
 [id^="prospecting-widget-"] { width: 100% !important; max-width: 100% !important; }
 [id^="prospecting-widget-"] * { max-width: 100% !important; }
 [id^="prospecting-widget-"] div { width: 100% !important; }
-[id^="prospecting-widget-"] form { width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; }
+[id^="prospecting-widget-"] form { width: 100% !important; margin: 0 !important; padding: 0 1.25rem 1.25rem !important; }
 [id^="prospecting-widget-"] img { width: 100% !important; height: auto !important; display: block; }
-[id^="prospecting-widget-"] .flex.flex-col.gap-4 { padding: 1rem !important; }
+[id^="prospecting-widget-"] .flex.flex-col.gap-4 { padding: 0 !important; gap: 0 !important; }
+[id^="prospecting-widget-"] p { padding: 1rem 1.25rem !important; margin: 0 !important; }
 `;
 
 const DOC = `<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1" />
