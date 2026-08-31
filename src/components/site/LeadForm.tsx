@@ -101,6 +101,7 @@ export function LeadForm({
     return (
       <>
       <form onSubmit={handleSubmit} className={cn("space-y-4", className)}>
+        {labeled && <FieldLabel icon={Globe}>Your website</FieldLabel>}
         <Input
           type="text"
           required
@@ -110,6 +111,12 @@ export function LeadForm({
           onChange={(e) => setValues((v) => ({ ...v, url: e.target.value }))}
           className={inputCls}
         />
+        {labeled && (
+          <div className="grid gap-1.5 sm:grid-cols-2">
+            <FieldLabel icon={Phone}>Phone</FieldLabel>
+            <FieldLabel icon={Mail}>Email</FieldLabel>
+          </div>
+        )}
         <div className="flex flex-wrap items-center gap-3">
           <Input
             type="tel"
