@@ -83,16 +83,12 @@ export function ServicePage({
           <Reveal from="up" delay={120}>
             <div className="relative mx-auto w-full max-w-md">
               <div className="absolute inset-0 -z-10 rounded-[2rem] bg-primary/25 blur-3xl" />
-              <img
-                src={image}
-                alt={`${title} illustration`}
-                width={512}
-                height={512}
-                loading="eager"
-                className="w-full rounded-[2rem] border border-white/10 bg-white/[0.04] object-cover p-4"
-              />
+              <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-4 backdrop-blur-sm">
+                <GrowthReportWidget className="min-h-[420px] w-full [&_iframe]:w-full" />
+              </div>
             </div>
           </Reveal>
+
         </div>
       </header>
 
