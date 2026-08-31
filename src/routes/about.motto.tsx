@@ -24,13 +24,13 @@ const values = [
 export const Route = createFileRoute("/about/motto")({
   head: () => ({
     meta: [
-      { title: "Our Company Motto | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { title: "Our Company Motto | Lavender Marketing & Co." },
       {
         name: "description",
         content:
           "The values behind Lavender Marketing & Co.: show don't pitch, cut the fluff, speak human, and own the outcome.",
       },
-      { property: "og:title", content: "Our Company Motto | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { property: "og:title", content: "Our Company Motto | Lavender Marketing & Co." },
       { property: "og:description", content: "The values behind Lavender Marketing & Co.: show don't pitch, cut the fluff, speak human, and own the outcome." },
       { property: "og:url", content: "/about/motto" },
     ],

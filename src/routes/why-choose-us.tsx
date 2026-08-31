@@ -10,13 +10,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/why-choose-us")({
   head: () => ({
     meta: [
-      { title: "Why Us? | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { title: "Why Us? | Lavender Marketing & Co." },
       {
         name: "description",
         content:
           "See why 50+ local businesses choose Lavender Marketing & Co. — free design first, then $297/mo for hosting, review engine, missed-call text-back and follow-up.",
       },
-      { property: "og:title", content: "Why Us? | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { property: "og:title", content: "Why Us? | Lavender Marketing & Co." },
       {
         property: "og:description",
         content: "See why 50+ local businesses choose Lavender Marketing & Co. — free design first, then $297/mo for hosting, review engine, missed-call text-back and follow-up.",

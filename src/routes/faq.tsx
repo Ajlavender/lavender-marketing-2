@@ -5,13 +5,13 @@ import { faqs } from "@/data/site";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { title: "FAQ | Lavender Marketing & Co." },
       {
         name: "description",
         content:
           "Answers about free website design, the $297/mo launch plan, timelines, hosting, review engine, missed-call text-back and ongoing support.",
       },
-      { property: "og:title", content: "FAQ | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { property: "og:title", content: "FAQ | Lavender Marketing & Co." },
       { property: "og:description", content: "Answers about free website design, the $297/mo launch plan, timelines, hosting, review engine, missed-call text-back and ongoing support." },
       { property: "og:url", content: "/faq" },
     ],

@@ -13,13 +13,13 @@ const AJ_PHOTO_2 =
 export const Route = createFileRoute("/about/")({
   head: () => ({
     meta: [
-      { title: "About Us | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { title: "About Us | Lavender Marketing & Co." },
       {
         name: "description",
         content:
           "Our journey began in Canada in 2015, and we went all-in in 2019. We built the web agency we never found — a free-design-first growth partner for Canadian and American small businesses.",
       },
-      { property: "og:title", content: "About Us | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { property: "og:title", content: "About Us | Lavender Marketing & Co." },
       {
         property: "og:description",
         content: "Our journey began in Canada in 2015, and we went all-in in 2019. We built the web agency we never found — a free-design-first growth partner for Canadian and American small businesses.",
