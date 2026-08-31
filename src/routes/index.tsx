@@ -60,16 +60,8 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:url", content: "https://lavendermarketingco.com/" },
 
-      {
-        property: "og:image",
-        content:
-          "/media/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "/media/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
-      },
+      { property: "og:image", content: "https://lavendermarketingco.com/media/hero-poster.jpg" },
+      { name: "twitter:image", content: "https://lavendermarketingco.com/media/hero-poster.jpg" },
     ],
     links: [
       { rel: "canonical", href: "https://lavendermarketingco.com/" },

@@ -13,6 +13,7 @@ export function serviceHead(slug: string) {
   if (!s) return { meta: [], links: [] };
 
   const url = `${SITE_URL}${slug}`;
+  const image = s.image.startsWith("http") ? s.image : `${SITE_URL}${s.image}`;
 
   return {
     meta: [
@@ -21,15 +22,15 @@ export function serviceHead(slug: string) {
       { property: "og:title", content: s.title },
       { property: "og:description", content: s.description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: slug },
+      { property: "og:url", content: url },
       { property: "og:site_name", content: BRAND },
-      { property: "og:image", content: s.image },
+      { property: "og:image", content: image },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: s.title },
       { name: "twitter:description", content: s.description },
-      { name: "twitter:image", content: s.image },
+      { name: "twitter:image", content: image },
     ],
-    links: [{ rel: "canonical", href: slug }],
+    links: [{ rel: "canonical", href: url }],
     scripts: [
       {
         type: "application/ld+json",
