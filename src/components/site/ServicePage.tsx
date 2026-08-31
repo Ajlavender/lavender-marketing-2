@@ -65,23 +65,23 @@ export function ServicePage({
                   <DialogTrigger asChild>
                     <Button size="lg">Get your free growth report</Button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-[95vw] overflow-hidden border-border/50 bg-card/95 p-0 shadow-2xl backdrop-blur-xl sm:max-w-2xl [&>button]:text-nav-plum-foreground [&>button]:opacity-80">
-                    <div className="relative bg-gradient-deep px-6 pb-5 pt-6 text-nav-plum-foreground">
+                  <DialogContent className="flex max-h-[92dvh] w-[calc(100vw-1.5rem)] max-w-[calc(100vw-1.5rem)] flex-col overflow-hidden border-border/50 bg-card/95 p-0 shadow-2xl backdrop-blur-xl sm:w-full sm:max-w-2xl [&>button]:text-nav-plum-foreground [&>button]:opacity-80">
+                    <div className="relative shrink-0 bg-gradient-deep px-5 pb-4 pt-5 text-nav-plum-foreground sm:px-6 sm:pb-5 sm:pt-6">
                       <div className="pointer-events-none absolute inset-0 opacity-60 [background:radial-gradient(60%_120%_at_20%_0%,color-mix(in_oklab,var(--brand)_35%,transparent),transparent_70%)]" />
-                      <DialogHeader className="relative space-y-2 text-left">
-                        <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em]">
-                          <Sparkles className="h-3 w-3" /> Free growth report
+                      <DialogHeader className="relative space-y-2 pr-8 text-left">
+                        <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] sm:text-[11px]">
+                          <Sparkles className="h-3 w-3 shrink-0" /> Free growth report
                         </span>
-                        <DialogTitle className="text-2xl font-semibold text-nav-plum-foreground">
+                        <DialogTitle className="text-lg font-semibold leading-snug text-nav-plum-foreground sm:text-2xl">
                           See where your business can grow next
                         </DialogTitle>
-                        <p className="text-sm text-nav-plum-foreground/70">
+                        <p className="text-xs text-nav-plum-foreground/70 sm:text-sm">
                           Takes about 60 seconds — no cost, no obligation.
                         </p>
                       </DialogHeader>
                     </div>
-                    <div className="bg-background p-2 sm:p-3">
-                      <GrowthReportWidget className="h-[64vh] w-full rounded-xl border-0" />
+                    <div className="min-h-0 flex-1 bg-background p-2 sm:p-3">
+                      <GrowthReportWidget className="h-full min-h-[55dvh] w-full rounded-xl border-0" />
                     </div>
                   </DialogContent>
 
