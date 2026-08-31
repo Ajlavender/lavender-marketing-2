@@ -7,13 +7,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { CtaBand, Section, SectionHeading, TestimonialGrid } from "./sections";
 import { Reveal } from "./Reveal";
-import { GrowthReportWidget } from "./GrowthReportWidget";
+import { GrowthReportDialog } from "./GrowthReportDialog";
 import { serviceSeo } from "@/data/service-seo";
-import { LOGO } from "@/data/site";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { ILLU } from "@/data/site";
 
 export type ServicePageProps = {
   /** Route path, e.g. "/chat-widget" — keys the SEO/answer content. */
