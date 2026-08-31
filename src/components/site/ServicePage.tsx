@@ -72,31 +72,31 @@ export function ServicePage({
                       <DialogTitle className="sr-only">Free growth report</DialogTitle>
                       <DialogHeader className="sr-only" />
 
-                      {/* Light-luxury banner — replaces the widget's native image header */}
-                      <div className="relative shrink-0 overflow-hidden bg-card px-5 pb-3 pt-4">
-                        <div className="pointer-events-none absolute -right-16 -top-20 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+                      {/* Gradient purple banner — replaces the widget's native image header */}
+                      <div className="relative shrink-0 overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-nav-plum px-5 pb-3 pt-4 text-white">
+                        <div className="pointer-events-none absolute -right-16 -top-20 h-40 w-40 rounded-full bg-white/20 blur-3xl" />
                         <div className="relative grid grid-cols-[auto_minmax(0,1fr)] items-center gap-3">
-                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-primary/15 bg-primary/5">
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/15">
                             <img src={LOGO} alt="" width={22} height={22} className="h-[22px] w-[22px] object-contain" />
                           </span>
                           <div className="min-w-0">
-                            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/70">
-                              Lavender Marketing &amp; Co.
+                            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                              Lavender Marketing & Co.
                             </p>
-                            <p className="truncate text-[17px] font-semibold leading-tight text-ink">
+                            <p className="truncate text-[17px] font-semibold leading-tight text-white">
                               Your free growth report
                             </p>
                           </div>
                         </div>
-                        <div className="relative mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-muted-foreground">
+                        <div className="relative mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-white/85">
                           <span className="inline-flex items-center gap-1.5">
-                            <Check className="h-3 w-3 text-primary" /> 30 seconds
+                            <Check className="h-3 w-3 text-white" /> 30 seconds
                           </span>
                           <span className="inline-flex items-center gap-1.5">
-                            <Check className="h-3 w-3 text-primary" /> No cost, no obligation
+                            <Check className="h-3 w-3 text-white" /> No cost, no obligation
                           </span>
                         </div>
-                        <div className="mt-3 h-px w-full bg-linear-to-r from-primary/40 via-primary/15 to-transparent" />
+                        <div className="mt-3 h-px w-full bg-linear-to-r from-white/50 via-white/20 to-transparent" />
                       </div>
 
                       <div className="min-h-0 flex-1 bg-background p-0">
