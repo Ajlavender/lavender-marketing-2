@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { CtaBand, Section, SectionHeading, TestimonialGrid } from "./sections";
 import { Reveal } from "./Reveal";
 import { GrowthReportWidget } from "./GrowthReportWidget";
@@ -18,8 +19,7 @@ export type ServicePageProps = {
   eyebrow: string;
   title: string;
   subtitle: string;
-  /** @deprecated hero now renders the growth report widget */
-  image?: string;
+  image: string;
   intro: string[];
   benefits: { title: string; body: string }[];
   process: { step: string; title: string; body: string }[];
@@ -30,6 +30,7 @@ export function ServicePage({
   eyebrow,
   title,
   subtitle,
+  image,
   intro,
   benefits,
   process,
@@ -60,15 +61,17 @@ export function ServicePage({
               )}
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button asChild size="lg">
-                  <a
-                    href="https://services.leadconnectorhq.com/prospecting/widgets/public/69913d5dd2dae6c8487503d5"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Get your free growth report
-                  </a>
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button size="lg">Get your free growth report</Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-lg">
+                    <DialogHeader>
+                      <DialogTitle>Get your free growth report</DialogTitle>
+                    </DialogHeader>
+                    <GrowthReportWidget className="w-full [&_iframe]:w-full" />
+                  </DialogContent>
+                </Dialog>
                 <Button
                   asChild
                   size="lg"
@@ -84,9 +87,14 @@ export function ServicePage({
           <Reveal from="up" delay={120}>
             <div className="relative mx-auto w-full max-w-md">
               <div className="absolute inset-0 -z-10 rounded-[2rem] bg-primary/25 blur-3xl" />
-              <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-4 backdrop-blur-sm">
-                <GrowthReportWidget className="min-h-[420px] w-full [&_iframe]:w-full" />
-              </div>
+              <img
+                src={image}
+                alt={`${title} illustration`}
+                width={512}
+                height={512}
+                loading="eager"
+                className="w-full rounded-[2rem] border border-white/10 bg-white/[0.04] object-cover p-4"
+              />
             </div>
           </Reveal>
 
