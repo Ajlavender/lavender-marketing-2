@@ -82,11 +82,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { title: "Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { title: "Lavender Marketing & Co." },
       {
         name: "description",
         content:
-          "We design your new website for free. If you love it, launch for $297/mo — hosting, review engine, missed-call text-back and follow-up included.",
+          "Lavender Marketing & Co. — websites, review engine, and missed-call text-back for local businesses across the US and Canada.",
       },
       { name: "author", content: "Lavender Marketing & Co." },
       { property: "og:site_name", content: "Lavender Marketing & Co." },
