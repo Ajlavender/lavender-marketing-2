@@ -22,11 +22,11 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.excerpt },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/blog/${post.slug}` },
+        { property: "og:url", content: `https://lavendermarketingco.com/blog/${post.slug}` },
         { property: "og:image", content: post.image },
         { name: "twitter:image", content: post.image },
       ],
-      links: [{ rel: "canonical", href: `/blog/${post.slug}` }],
+      links: [{ rel: "canonical", href: `https://lavendermarketingco.com/blog/${post.slug}` }],
       scripts: [
         {
           type: "application/ld+json",

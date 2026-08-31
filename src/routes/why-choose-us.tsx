@@ -23,9 +23,9 @@ export const Route = createFileRoute("/why-choose-us")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/why-choose-us" },
+      { property: "og:url", content: "https://lavendermarketingco.com/why-choose-us" },
     ],
-    links: [{ rel: "canonical", href: "/why-choose-us" }],
+    links: [{ rel: "canonical", href: "https://lavendermarketingco.com/why-choose-us" }],
   }),
   component: WhyChooseUs,
 });

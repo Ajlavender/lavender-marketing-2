@@ -18,9 +18,9 @@ export const Route = createFileRoute("/projects")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/projects" },
+      { property: "og:url", content: "https://lavendermarketingco.com/projects" },
     ],
-    links: [{ rel: "canonical", href: "/projects" }],
+    links: [{ rel: "canonical", href: "https://lavendermarketingco.com/projects" }],
   }),
   component: Projects,
 });

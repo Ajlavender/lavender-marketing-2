@@ -15,9 +15,9 @@ export const Route = createFileRoute("/contact")({
       },
       { property: "og:title", content: "Contact | Lavender Marketing & Co." },
       { property: "og:description", content: "Talk to Lavender Marketing & Co. about your free website design and $297/mo growth system. Request a free demo — no cost, no obligation." },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://lavendermarketingco.com/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://lavendermarketingco.com/contact" }],
   }),
   component: Contact,
 });

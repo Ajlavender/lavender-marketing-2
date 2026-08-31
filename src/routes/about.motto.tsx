@@ -32,9 +32,9 @@ export const Route = createFileRoute("/about/motto")({
       },
       { property: "og:title", content: "Our Company Motto | Lavender Marketing & Co." },
       { property: "og:description", content: "The values behind Lavender Marketing & Co.: show don't pitch, cut the fluff, speak human, and own the outcome." },
-      { property: "og:url", content: "/about/motto" },
+      { property: "og:url", content: "https://lavendermarketingco.com/about/motto" },
     ],
-    links: [{ rel: "canonical", href: "/about/motto" }],
+    links: [{ rel: "canonical", href: "https://lavendermarketingco.com/about/motto" }],
   }),
   component: Motto,
 });
