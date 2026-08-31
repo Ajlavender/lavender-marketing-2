@@ -36,6 +36,7 @@ export function ServicePage({
   process,
 }: ServicePageProps) {
   const seo = serviceSeo[slug];
+  const isMobile = useIsMobile();
 
   return (
     <article>
