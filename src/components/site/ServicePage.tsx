@@ -71,9 +71,8 @@ export function ServicePage({
                     </DialogHeader>
                     <GrowthReportWidget className="h-[70vh] w-full rounded-xl border-0" />
                   </DialogContent>
-
-                  </DialogContent>
                 </Dialog>
+
                 <Button
                   asChild
                   size="lg"
