@@ -8,15 +8,33 @@ const DOC = `<!doctype html><html><head><meta name="viewport" content="width=dev
 /**
  * Embeds the LeadConnector growth-report widget inside an isolated iframe so its
  * global styles/overlays cannot affect the page layout.
+ *
+ * `scale` zooms the embedded document out (desktop) so the whole form fits on
+ * screen without inner scrolling; the iframe is sized up by 1/scale to compensate.
  */
-export function GrowthReportWidget({ className }: { className?: string }) {
+export function GrowthReportWidget({
+  className,
+  scale = 1,
+}: {
+  className?: string;
+  scale?: number;
+}) {
+  const pct = `${100 / scale}%`;
   return (
-    <iframe
-      title="Free growth report"
-      srcDoc={DOC}
-      sandbox="allow-scripts allow-forms allow-popups allow-same-origin"
-      className={className ?? "h-[70vh] w-full rounded-xl border-0"}
-      loading="lazy"
-    />
+    <div className={`relative overflow-hidden ${className ?? "h-[70vh] w-full rounded-xl"}`}>
+      <iframe
+        title="Free growth report"
+        srcDoc={DOC}
+        sandbox="allow-scripts allow-forms allow-popups allow-same-origin"
+        className="absolute left-0 top-0 border-0"
+        style={{
+          width: pct,
+          height: pct,
+          transform: `scale(${scale})`,
+          transformOrigin: "top left",
+        }}
+        loading="lazy"
+      />
+    </div>
   );
 }
