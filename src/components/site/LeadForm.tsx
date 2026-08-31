@@ -100,55 +100,59 @@ export function LeadForm({
   if (fields === "leadInline") {
     return (
       <>
-      <form onSubmit={handleSubmit} className={cn("space-y-4", className)}>
-        {labeled && <FieldLabel icon={Globe}>Your website</FieldLabel>}
-        <Input
-          type="text"
-          required
-          placeholder="yourwebsite.com"
-          aria-label="Website URL"
-          value={values.url}
-          onChange={(e) => setValues((v) => ({ ...v, url: e.target.value }))}
-          className={inputCls}
-        />
-        {labeled && (
-          <div className="grid gap-1.5 sm:grid-cols-2">
-            <FieldLabel icon={Phone}>Phone</FieldLabel>
-            <FieldLabel icon={Mail}>Email</FieldLabel>
-          </div>
-        )}
-        <div className="flex flex-wrap items-center gap-3">
+      <form onSubmit={handleSubmit} className={cn("space-y-5", className)}>
+        <div>
+          {labeled && <FieldLabel icon={Globe}>Your website</FieldLabel>}
           <Input
-            type="tel"
-            placeholder="Phone number"
-            aria-label="Phone number"
-            value={values.phone}
-            onChange={(e) => setValues((v) => ({ ...v, phone: e.target.value }))}
-            className={cn(inputCls, "min-w-0 flex-1")}
-          />
-          <Input
-            type="email"
+            type="text"
             required
-            placeholder="hello@youremail.com"
-            aria-label="Email"
-            value={values.email}
-            onChange={(e) => setValues((v) => ({ ...v, email: e.target.value }))}
-            className={cn(inputCls, "min-w-0 flex-1")}
+            placeholder="yourwebsite.com"
+            aria-label="Website URL"
+            value={values.url}
+            onChange={(e) => setValues((v) => ({ ...v, url: e.target.value }))}
+            className={inputCls}
           />
-          <Button
-            type="submit"
-            size="lg"
-            className="h-14 shrink-0 rounded-full px-8 text-sm font-bold uppercase tracking-wider"
-          >
-            {submitLabel}
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
         </div>
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div>
+            {labeled && <FieldLabel icon={Phone}>Phone</FieldLabel>}
+            <Input
+              type="tel"
+              placeholder="(555) 123-4567"
+              aria-label="Phone number"
+              value={values.phone}
+              onChange={(e) => setValues((v) => ({ ...v, phone: e.target.value }))}
+              className={cn(inputCls, "w-full min-w-0")}
+            />
+          </div>
+          <div>
+            {labeled && <FieldLabel icon={Mail}>Email</FieldLabel>}
+            <Input
+              type="email"
+              required
+              placeholder="hello@youremail.com"
+              aria-label="Email"
+              value={values.email}
+              onChange={(e) => setValues((v) => ({ ...v, email: e.target.value }))}
+              className={cn(inputCls, "w-full min-w-0")}
+            />
+          </div>
+        </div>
+        <Button
+          type="submit"
+          size="lg"
+          disabled={sending}
+          className="h-14 w-full rounded-full px-8 text-sm font-bold uppercase tracking-wider sm:w-auto"
+        >
+          {submitLabel}
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
       </form>
       {bookingDialog}
       </>
     );
   }
+
 
   return (
     <>
