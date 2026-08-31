@@ -486,7 +486,7 @@ function Index() {
                   Tell us about your business — we'll send a custom design demo in 48 hours.
                 </p>
                 <div className="mt-6">
-                  <LeadForm submitLabel="Get My Free Website Design" />
+                  <LeadForm labeled submitLabel="Get My Free Website Design" />
                 </div>
                 <p className="mt-3 text-xs text-muted-foreground">
                   No card required · Design first, decide after · Cancel anytime
