@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+
 import { CtaBand, Section, SectionHeading, TestimonialGrid } from "./sections";
 import { Reveal } from "./Reveal";
 import { GrowthReportDialog } from "./GrowthReportDialog";
