@@ -54,8 +54,8 @@ export function GrowthReportDialog({ children }: { children: React.ReactNode }) 
 
         <div className="min-h-0 flex-1 bg-background p-0">
           <GrowthReportWidget
-            className="h-full min-h-[62dvh] w-full rounded-none border-0 lg:min-h-[520px]"
-            scale={isMobile ? 1 : 0.78}
+            className="h-full w-full rounded-none border-0"
+            scale={isMobile ? 1 : 0.85}
           />
         </div>
       </DialogContent>
