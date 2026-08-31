@@ -1,4 +1,4 @@
-const WIDGET_ID = "69913d5dd2dae6c8487503d5";
+const WIDGET_ID = "6a96011c8fedf72db4fd0b10";
 const SRC = "https://services.leadconnectorhq.com/prospecting/client/widget-embed.js";
 
 /**
