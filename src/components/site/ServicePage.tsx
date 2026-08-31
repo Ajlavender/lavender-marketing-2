@@ -83,7 +83,10 @@ export function ServicePage({
                       </DialogHeader>
                     </div>
                     <div className="min-h-0 flex-1 bg-background p-2 sm:p-3">
-                      <GrowthReportWidget className="h-full min-h-[55dvh] w-full rounded-xl border-0" />
+                      <GrowthReportWidget
+                        className="h-full min-h-[55dvh] w-full rounded-xl border-0 lg:min-h-[70dvh]"
+                        scale={isMobile ? 1 : 0.82}
+                      />
                     </div>
                   </DialogContent>
 
