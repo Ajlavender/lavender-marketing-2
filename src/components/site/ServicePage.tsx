@@ -67,7 +67,7 @@ export function ServicePage({
                   <DialogTrigger asChild>
                     <Button size="lg">Get your free growth report</Button>
                   </DialogTrigger>
-                    <DialogContent className={`flex max-h-[92dvh] w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] flex-col overflow-hidden border-border/50 bg-card/95 p-0 shadow-2xl backdrop-blur-xl sm:w-full sm:max-w-4xl [&>button]:text-nav-plum-foreground [&>button]:opacity-80 ${isMobile ? "" : "lg:max-h-[96dvh]"}`}>
+                    <DialogContent className={`flex max-h-[92dvh] w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] flex-col overflow-hidden border-border/50 bg-card/95 p-0 shadow-2xl backdrop-blur-xl sm:w-full sm:max-w-[480px] [&>button]:text-nav-plum-foreground [&>button]:opacity-80 [&>button]:right-2 [&>button]:top-2 ${isMobile ? "" : "lg:max-h-[96dvh]"}`}>
                       <DialogTitle className="sr-only">Free growth report</DialogTitle>
                       <DialogHeader className="sr-only" />
                       <div className="min-h-0 flex-1 bg-background p-0">
