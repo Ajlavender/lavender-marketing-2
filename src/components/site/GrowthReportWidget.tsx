@@ -13,7 +13,7 @@ const FILL_CSS = `
 [id^="prospecting-widget-"] * { max-width: 100% !important; }
 [id^="prospecting-widget-"] div { width: 100% !important; }
 [id^="prospecting-widget-"] form { width: 100% !important; margin: 0 !important; padding: 0 1.25rem 1.25rem !important; }
-[id^="prospecting-widget-"] img { width: 100% !important; height: auto !important; display: block; }
+[id^="prospecting-widget-"] img { width: 100% !important; height: auto !important; margin: 0 !important; display: block; }
 [id^="prospecting-widget-"] .flex.flex-col.gap-4 { padding: 0 !important; gap: 0 !important; }
 [id^="prospecting-widget-"] p { padding: 1rem 1.25rem !important; margin: 0 !important; }
 `;
