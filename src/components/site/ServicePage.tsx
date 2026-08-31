@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { CtaBand, Section, SectionHeading, TestimonialGrid } from "./sections";
 import { Reveal } from "./Reveal";
+import { GrowthReportWidget } from "./GrowthReportWidget";
 import { serviceSeo } from "@/data/service-seo";
 
 export type ServicePageProps = {
@@ -17,7 +18,8 @@ export type ServicePageProps = {
   eyebrow: string;
   title: string;
   subtitle: string;
-  image: string;
+  /** @deprecated hero now renders the growth report widget */
+  image?: string;
   intro: string[];
   benefits: { title: string; body: string }[];
   process: { step: string; title: string; body: string }[];
@@ -28,7 +30,6 @@ export function ServicePage({
   eyebrow,
   title,
   subtitle,
-  image,
   intro,
   benefits,
   process,
