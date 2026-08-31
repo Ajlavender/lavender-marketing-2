@@ -65,12 +65,26 @@ export function ServicePage({
                   <DialogTrigger asChild>
                     <Button size="lg">Get your free growth report</Button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-[95vw] p-4 sm:max-w-2xl">
-                    <DialogHeader>
-                      <DialogTitle>Get your free growth report</DialogTitle>
-                    </DialogHeader>
-                    <GrowthReportWidget className="h-[70vh] w-full rounded-xl border-0" />
+                  <DialogContent className="max-w-[95vw] overflow-hidden border-border/50 bg-card/95 p-0 shadow-2xl backdrop-blur-xl sm:max-w-2xl [&>button]:text-nav-plum-foreground [&>button]:opacity-80">
+                    <div className="relative bg-gradient-deep px-6 pb-5 pt-6 text-nav-plum-foreground">
+                      <div className="pointer-events-none absolute inset-0 opacity-60 [background:radial-gradient(60%_120%_at_20%_0%,color-mix(in_oklab,var(--brand)_35%,transparent),transparent_70%)]" />
+                      <DialogHeader className="relative space-y-2 text-left">
+                        <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em]">
+                          <Sparkles className="h-3 w-3" /> Free growth report
+                        </span>
+                        <DialogTitle className="text-2xl font-semibold text-nav-plum-foreground">
+                          See where your business can grow next
+                        </DialogTitle>
+                        <p className="text-sm text-nav-plum-foreground/70">
+                          Takes about 60 seconds — no cost, no obligation.
+                        </p>
+                      </DialogHeader>
+                    </div>
+                    <div className="bg-background p-2 sm:p-3">
+                      <GrowthReportWidget className="h-[64vh] w-full rounded-xl border-0" />
+                    </div>
                   </DialogContent>
+
                 </Dialog>
 
                 <Button
