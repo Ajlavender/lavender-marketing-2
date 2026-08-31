@@ -9,15 +9,9 @@ const SRC = "https://services.leadconnectorhq.com/prospecting/client/widget-embe
  * iframe, so the zoom no longer leaves side gaps.
  */
 const FILL_CSS = `
-[id^="prospecting-widget-"], [id^="prospecting-widget-"] * { max-width: 100% !important; }
-[id^="prospecting-widget-"] { width: 100% !important; }
-[id^="prospecting-widget-"] > div,
-[id^="prospecting-widget-"] > div > div,
-[id^="prospecting-widget-"] > div > div > div { width: 100% !important; }
+[id^="prospecting-widget-"] { width: 100% !important; max-width: 100% !important; }
+[id^="prospecting-widget-"] div { width: 100% !important; max-width: 100% !important; }
 [id^="prospecting-widget-"] img { width: 100% !important; height: auto !important; display: block; }
-[id^="prospecting-widget-"] form,
-[id^="prospecting-widget-"] form > div,
-[id^="prospecting-widget-"] form > div > div { width: 100% !important; }
 `;
 
 const DOC = `<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1" />
