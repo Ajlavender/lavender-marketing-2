@@ -471,3 +471,30 @@
     -webkit-backdrop-filter: blur(14px);
   }
 }
+
+/* ---- Mobile polish (iPhone 17 Pro and similar) ---- */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 767px) {
+  /* Prevent iOS auto-zoom when focusing form fields */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Room for the sticky mobile CTA bar + home indicator */
+  body {
+    padding-bottom: calc(4.25rem + env(safe-area-inset-bottom));
+  }
+}
+
+@utility safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
