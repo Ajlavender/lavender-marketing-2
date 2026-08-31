@@ -3,6 +3,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import { submitLead } from "@/lib/leads.functions";
+import { BookingDialog } from "@/components/site/BookingDialog";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -27,6 +28,7 @@ export function LeadForm({
 }: Props) {
   const [values, setValues] = useState({ url: "", email: "", phone: "", message: "" });
   const [sending, setSending] = useState(false);
+  const [booking, setBooking] = useState(false);
   const send = useServerFn(submitLead);
   const dark = variant === "dark";
 
@@ -51,8 +53,8 @@ export function LeadForm({
         toast.error("Something went wrong sending that. Please email Aj@lavendermarketingco.com.");
         return;
       }
-      toast.success("Thanks! We'll be in touch with your free website demo shortly.");
-      setValues({ url: "", email: "", phone: "", message: "" });
+      toast.success("You're in! Pick a time to talk through your free design.");
+      setBooking(true);
     } catch {
       toast.error("Something went wrong sending that. Please email Aj@lavendermarketingco.com.");
     } finally {
@@ -66,8 +68,20 @@ export function LeadForm({
     dark && "bg-background/95",
   );
 
+  const bookingDialog = (
+    <BookingDialog
+      open={booking}
+      onOpenChange={(o) => {
+        setBooking(o);
+        if (!o) setValues({ url: "", email: "", phone: "", message: "" });
+      }}
+      prefill={{ email: values.email, phone: values.phone }}
+    />
+  );
+
   if (fields === "leadInline") {
     return (
+      <>
       <form onSubmit={handleSubmit} className={cn("space-y-4", className)}>
         <Input
           type="text"
@@ -106,10 +120,13 @@ export function LeadForm({
           </Button>
         </div>
       </form>
+      {bookingDialog}
+      </>
     );
   }
 
   return (
+    <>
     <form onSubmit={handleSubmit} className={cn("space-y-4", className)}>
       {fields === "lead" ? (
         <>
@@ -181,5 +198,7 @@ export function LeadForm({
         <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
     </form>
+    {bookingDialog}
+    </>
   );
 }
