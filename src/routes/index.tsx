@@ -729,7 +729,7 @@ function Index() {
                   Drop your details and we&apos;ll send your free design and review audit.
                 </p>
                 <div className="mt-6 max-w-xl">
-                  <LeadForm variant="dark" fields="leadInline" submitLabel="go!" />
+                  <LeadForm variant="dark" fields="leadInline" labeled submitLabel="Get My Free Design" />
                 </div>
               </div>
 
