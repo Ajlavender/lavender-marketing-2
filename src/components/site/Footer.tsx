@@ -63,7 +63,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-foreground/15 text-foreground/70 transition-all hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-white"
+                className="flex h-11 w-11 items-center justify-center rounded-full sm:h-9 sm:w-9 border border-foreground/15 text-foreground/70 transition-all hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-white"
               >
                 {s.icon}
               </a>
@@ -76,7 +76,7 @@ export function Footer() {
           <ul className="grid grid-cols-2 gap-x-6 gap-y-3 text-base text-foreground/85">
             {links.map((l) => (
               <li key={l.label}>
-                <Link to={l.to} className="transition-colors hover:text-primary">
+                <Link to={l.to} className="-mx-2 inline-block px-2 py-2 transition-colors hover:text-primary">
                   {l.label}
                 </Link>
               </li>
