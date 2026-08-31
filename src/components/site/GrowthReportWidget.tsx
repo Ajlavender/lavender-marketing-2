@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+
 const WIDGET_ID = "6a96011c8fedf72db4fd0b10";
 const SRC = "https://services.leadconnectorhq.com/prospecting/client/widget-embed.js";
 
@@ -34,29 +36,92 @@ const DOC = `<!doctype html><html><head><meta name="viewport" content="width=dev
  * Embeds the LeadConnector growth-report widget inside an isolated iframe so
  * its global styles/overlays cannot affect the page layout.
  *
- * `scale` zooms the embedded document out (desktop) so the whole form fits on
- * screen without inner scrolling; the iframe is sized up by 1/scale to
- * compensate. The injected FILL_CSS keeps the form flush to the iframe edges
- * so no side whitespace appears at any zoom level.
+ * Auto-fit: because the iframe is a same-origin srcDoc (sandbox includes
+ * allow-same-origin), the parent can read the widget's real content height
+ * once it renders. The iframe is then sized to that exact content height (so
+ * nothing scrolls inside the iframe) and scaled down to fill the container's
+ * full height — the whole form is visible with no vertical scrollbar.
  */
 export function GrowthReportWidget({
   className,
-  scale = 1,
+  scale: scaleProp,
 }: {
   className?: string;
   scale?: number;
 }) {
-  const pct = `${100 / scale}%`;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [containerH, setContainerH] = useState(0);
+  const [contentH, setContentH] = useState(0);
+
+  // Track the container's available height.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const update = () => setContainerH(el.clientHeight);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  // Measure the widget's natural content height inside the iframe.
+  useEffect(() => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+    let stopped = false;
+    const measure = (): boolean => {
+      if (stopped) return false;
+      try {
+        const doc = iframe.contentDocument;
+        if (!doc) return false;
+        const widget = doc.querySelector(W) as HTMLElement | null;
+        if (widget && widget.scrollHeight > 0) {
+          setContentH(widget.scrollHeight);
+          return true;
+        }
+      } catch {
+        /* cross-origin / not ready yet */
+      }
+      return false;
+    };
+    const onLoad = () => {
+      let tries = 0;
+      const id = setInterval(() => {
+        if (measure() || ++tries > 80) clearInterval(id);
+      }, 200);
+    };
+    iframe.addEventListener("load", onLoad);
+    measure();
+    return () => {
+      stopped = true;
+      iframe.removeEventListener("load", onLoad);
+    };
+  }, []);
+
+  // Compute the scale that fits the content into the container, capping at the
+  // caller's requested scale (or 1) so we never upscale.
+  const cap = scaleProp ?? 1;
+  const scale = contentH && containerH ? Math.min(cap, containerH / contentH) : cap;
+
+  // iframe sized to the natural content (no internal scroll); scaled to fit.
+  const iframeW = `${100 / scale}%`;
+  const iframeH = contentH ? `${contentH}px` : `${100 / scale}%`;
+
   return (
-    <div className={`relative overflow-hidden ${className ?? "h-[70vh] w-full rounded-xl"}`}>
+    <div
+      ref={containerRef}
+      className={`relative overflow-hidden ${className ?? "h-[70vh] w-full rounded-xl"}`}
+    >
       <iframe
+        ref={iframeRef}
         title="Free growth report"
         srcDoc={DOC}
         sandbox="allow-scripts allow-forms allow-popups allow-same-origin"
         className="absolute left-0 top-0 border-0"
         style={{
-          width: pct,
-          height: pct,
+          width: iframeW,
+          height: iframeH,
           transform: `scale(${scale})`,
           transformOrigin: "top left",
         }}
