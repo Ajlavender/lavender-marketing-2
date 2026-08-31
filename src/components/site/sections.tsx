@@ -84,18 +84,18 @@ export function PageHero({
 }) {
   return (
     <section className="border-b border-border bg-secondary">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pb-20 pt-40 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-16 pt-36 sm:px-6 sm:pb-20 sm:pt-40 lg:grid-cols-2 lg:px-8">
         <div>
           {eyebrow && (
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">{eyebrow}</p>
           )}
-          <h1 className="text-4xl sm:text-6xl">{title}</h1>
-          <p className="mt-5 text-lg text-muted-foreground">{subtitle}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild size="lg">
+          <h1 className="text-[2.15rem] leading-[1.08] sm:text-6xl">{title}</h1>
+          <p className="mt-4 text-base text-muted-foreground sm:mt-5 sm:text-lg">{subtitle}</p>
+          <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <Link to="/contact">Get My Free Website Design</Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
               <Link to="/projects">See our work</Link>
             </Button>
           </div>
@@ -105,9 +105,10 @@ export function PageHero({
             src={image}
             alt={imageAlt ?? title}
             loading="lazy"
-            className="mx-auto w-full max-w-md rounded-2xl object-cover"
+            className="mx-auto max-h-[16rem] w-full max-w-md rounded-2xl object-contain sm:max-h-none sm:object-cover"
           />
         )}
+
         {image && portrait && (
           <div className="mx-auto w-full max-w-md">
             <div className="relative rounded-[2.5rem] border border-primary/15 bg-card/80 p-3 shadow-[0_40px_90px_-45px_rgba(31,33,80,0.55)] backdrop-blur-sm">
