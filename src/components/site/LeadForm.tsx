@@ -155,6 +155,7 @@ export function LeadForm({
     <form onSubmit={handleSubmit} className={cn("space-y-4", className)}>
       {fields === "lead" ? (
         <>
+          {labeled && <FieldLabel icon={Globe}>Your current website</FieldLabel>}
           <Input
             type="text"
             required
@@ -165,6 +166,35 @@ export function LeadForm({
             className={inputCls}
           />
           <div className={cn("grid gap-4", !compact && "sm:grid-cols-2")}>
+            <div>
+              {labeled && <FieldLabel icon={Mail}>Email address</FieldLabel>}
+              <Input
+                type="email"
+                required
+                placeholder="hello@youremail.com"
+                aria-label="Email"
+                value={values.email}
+                onChange={(e) => setValues((v) => ({ ...v, email: e.target.value }))}
+                className={inputCls}
+              />
+            </div>
+            <div>
+              {labeled && <FieldLabel icon={Phone}>Phone number</FieldLabel>}
+              <Input
+                type="tel"
+                placeholder="(555) 123-4567"
+                aria-label="Phone number"
+                value={values.phone}
+                onChange={(e) => setValues((v) => ({ ...v, phone: e.target.value }))}
+                className={inputCls}
+              />
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div>
+            {labeled && <FieldLabel icon={Mail}>Email address</FieldLabel>}
             <Input
               type="email"
               required
@@ -174,43 +204,29 @@ export function LeadForm({
               onChange={(e) => setValues((v) => ({ ...v, email: e.target.value }))}
               className={inputCls}
             />
+          </div>
+          <div>
+            {labeled && <FieldLabel icon={Phone}>Phone number</FieldLabel>}
             <Input
               type="tel"
-              placeholder="Your phone number"
+              placeholder="(555) 123-4567"
               aria-label="Phone number"
               value={values.phone}
               onChange={(e) => setValues((v) => ({ ...v, phone: e.target.value }))}
               className={inputCls}
             />
           </div>
-        </>
-      ) : (
-        <>
-          <Input
-            type="email"
-            required
-            placeholder="Email"
-            aria-label="Email"
-            value={values.email}
-            onChange={(e) => setValues((v) => ({ ...v, email: e.target.value }))}
-            className={inputCls}
-          />
-          <Input
-            type="tel"
-            placeholder="Your Phone Number"
-            aria-label="Phone number"
-            value={values.phone}
-            onChange={(e) => setValues((v) => ({ ...v, phone: e.target.value }))}
-            className={inputCls}
-          />
-          <Input
-            type="text"
-            placeholder="Message"
-            aria-label="Message"
-            value={values.message}
-            onChange={(e) => setValues((v) => ({ ...v, message: e.target.value }))}
-            className={inputCls}
-          />
+          <div>
+            {labeled && <FieldLabel icon={MessageSquare}>How can we help?</FieldLabel>}
+            <Input
+              type="text"
+              placeholder="Tell us a little about your project"
+              aria-label="Message"
+              value={values.message}
+              onChange={(e) => setValues((v) => ({ ...v, message: e.target.value }))}
+              className={inputCls}
+            />
+          </div>
 
         </>
       )}
