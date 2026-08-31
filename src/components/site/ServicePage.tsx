@@ -12,6 +12,7 @@ import { CtaBand, Section, SectionHeading, TestimonialGrid } from "./sections";
 import { Reveal } from "./Reveal";
 import { GrowthReportWidget } from "./GrowthReportWidget";
 import { serviceSeo } from "@/data/service-seo";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export type ServicePageProps = {
   /** Route path, e.g. "/chat-widget" — keys the SEO/answer content. */
