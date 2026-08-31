@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Globe, Mail, Phone, MessageSquare } from "lucide-react";
 import { toast } from "sonner";
 import { submitLead } from "@/lib/leads.functions";
 import { BookingDialog } from "@/components/site/BookingDialog";
@@ -15,9 +15,26 @@ type Props = {
   submitLabel?: string;
   className?: string;
   compact?: boolean;
+  /** Render premium field labels above each input */
+  labeled?: boolean;
   /** "lead" = url + email + phone, "message" = email + phone + message, "leadInline" = url over phone+email+button */
   fields?: "lead" | "message" | "leadInline";
 };
+
+function FieldLabel({
+  icon: Icon,
+  children,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  children: React.ReactNode;
+}) {
+  return (
+    <label className="mb-1.5 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+      <Icon className="h-3.5 w-3.5 text-brand" />
+      {children}
+    </label>
+  );
+}
 
 export function LeadForm({
   variant = "light",
