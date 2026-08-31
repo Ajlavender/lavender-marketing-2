@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, X, ArrowUpRight } from "lucide-react";
 import { nav, LOGO } from "@/data/site";
@@ -65,9 +66,9 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
     return () => document.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
-  if (!mounted) return null;
+  if (!mounted || typeof document === "undefined") return null;
 
-  return (
+  return createPortal(
     <div className="lg:hidden" aria-hidden={!open}>
       {/* Scrim */}
       <button
@@ -75,7 +76,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         aria-label="Close menu"
         onClick={onClose}
         className={cn(
-          "fixed inset-0 z-40 cursor-default bg-ink/50 backdrop-blur-sm transition-opacity duration-300",
+          "fixed inset-0 z-[99] cursor-default bg-ink/50 backdrop-blur-sm transition-opacity duration-300",
           open ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       />
@@ -87,7 +88,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         aria-modal="true"
         aria-label="Site menu"
         className={cn(
-          "fixed inset-y-0 right-0 z-50 flex w-[min(22rem,90vw)] flex-col border-l border-white/12 bg-nav-glass-bg shadow-[0_40px_120px_-30px_rgba(0,0,0,0.8)] backdrop-blur-2xl transition-transform duration-350 ease-[cubic-bezier(0.22,1,0.36,1)]",
+          "fixed inset-y-0 right-0 z-[100] flex w-[min(22rem,92vw)] flex-col pb-[env(safe-area-inset-bottom)] pt-[env(safe-area-inset-top)] border-l border-white/12 bg-nav-glass-bg shadow-[0_40px_120px_-30px_rgba(0,0,0,0.8)] backdrop-blur-2xl transition-transform duration-350 ease-[cubic-bezier(0.22,1,0.36,1)]",
           open ? "translate-x-0" : "translate-x-full",
         )}
       >
@@ -191,5 +192,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         </div>
       </div>
     </div>
+    </div>,
+    document.body,
   );
 }
