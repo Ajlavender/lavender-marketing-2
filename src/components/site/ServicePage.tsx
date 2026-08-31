@@ -65,7 +65,7 @@ export function ServicePage({
                   <DialogTrigger asChild>
                     <Button size="lg">Get your free growth report</Button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-[95vw] overflow-hidden border-border/50 bg-card/95 p-0 shadow-2xl backdrop-blur-xl sm:max-w-2xl">
+                  <DialogContent className="max-w-[95vw] overflow-hidden border-border/50 bg-card/95 p-0 shadow-2xl backdrop-blur-xl sm:max-w-2xl [&>button]:text-nav-plum-foreground [&>button]:opacity-80">
                     <div className="relative bg-gradient-deep px-6 pb-5 pt-6 text-nav-plum-foreground">
                       <div className="pointer-events-none absolute inset-0 opacity-60 [background:radial-gradient(60%_120%_at_20%_0%,color-mix(in_oklab,var(--brand)_35%,transparent),transparent_70%)]" />
                       <DialogHeader className="relative space-y-2 text-left">
