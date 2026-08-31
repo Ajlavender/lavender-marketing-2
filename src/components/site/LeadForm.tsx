@@ -41,6 +41,7 @@ export function LeadForm({
   submitLabel = "Book Free Consultation",
   className,
   compact,
+  labeled = false,
   fields = "lead",
 }: Props) {
   const [values, setValues] = useState({ url: "", email: "", phone: "", message: "" });
