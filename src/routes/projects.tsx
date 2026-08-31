@@ -5,22 +5,22 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { title: "Projects | Lavender Marketing & Co." },
       {
         name: "description",
         content:
           "See websites Lavender Marketing & Co. designed and launched for local businesses — free design first, then $297/mo for hosting, review engine and follow-up.",
       },
-      { property: "og:title", content: "Projects | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { property: "og:title", content: "Projects | Lavender Marketing & Co." },
       {
         property: "og:description",
         content: "See websites Lavender Marketing & Co. designed and launched for local businesses — free design first, then $297/mo for hosting, review engine and follow-up.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/projects" },
+      { property: "og:url", content: "https://lavendermarketingco.com/projects" },
     ],
-    links: [{ rel: "canonical", href: "/projects" }],
+    links: [{ rel: "canonical", href: "https://lavendermarketingco.com/projects" }],
   }),
   component: Projects,
 });

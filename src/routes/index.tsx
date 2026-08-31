@@ -58,21 +58,13 @@ export const Route = createFileRoute("/")({
         content:
           "We design your new website for free. If you love it, launch for $297/mo — hosting, review engine, missed-call text-back and follow-up included.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://lavendermarketingco.com/" },
 
-      {
-        property: "og:image",
-        content:
-          "/media/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "/media/2023/02/man-seating-on-beanbag-and-work-on-laptop.png",
-      },
+      { property: "og:image", content: "https://lavendermarketingco.com/media/hero-poster.jpg" },
+      { name: "twitter:image", content: "https://lavendermarketingco.com/media/hero-poster.jpg" },
     ],
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: "https://lavendermarketingco.com/" },
       { rel: "preconnect", href: "https://assets.cdn.filesafe.space", crossOrigin: "anonymous" },
       { rel: "dns-prefetch", href: "https://assets.cdn.filesafe.space" },
       {

@@ -6,20 +6,20 @@ import { ILLU } from "@/data/site";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Blog | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { title: "Blog | Lavender Marketing & Co." },
       {
         name: "description",
         content:
           "Practical advice on free website design, review engines, local SEO, copywriting and conversion for small and mid-sized businesses.",
       },
-      { property: "og:title", content: "Blog | Free Website Design + Review Engine for Local Businesses | Lavender Marketing & Co." },
+      { property: "og:title", content: "Blog | Lavender Marketing & Co." },
       {
         property: "og:description",
         content: "Practical advice on free website design, review engines, local SEO, copywriting and conversion for small and mid-sized businesses.",
       },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: "https://lavendermarketingco.com/blog" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://lavendermarketingco.com/blog" }],
   }),
   component: BlogIndex,
 });
