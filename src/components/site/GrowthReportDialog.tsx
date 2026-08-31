@@ -21,7 +21,7 @@ export function GrowthReportDialog({ children }: { children: React.ReactNode }) 
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent
-        className={`flex max-h-[92dvh] w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] flex-col overflow-hidden border-border/50 bg-card p-0 shadow-2xl sm:w-full sm:max-w-[480px] [&>button]:right-3 [&>button]:top-3 [&>button]:text-muted-foreground ${isMobile ? "" : "lg:max-h-[96dvh]"}`}
+        className={`flex h-[90dvh] max-h-[92dvh] w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] flex-col overflow-hidden border-border/50 bg-card p-0 shadow-2xl sm:w-full sm:max-w-[480px] [&>button]:right-3 [&>button]:top-3 [&>button]:text-muted-foreground`}
       >
         <DialogTitle className="sr-only">Free growth report</DialogTitle>
         <DialogHeader className="sr-only" />
