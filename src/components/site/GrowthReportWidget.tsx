@@ -10,18 +10,17 @@ const SRC = "https://services.leadconnectorhq.com/prospecting/client/widget-embe
  */
 const FILL_CSS = `
 [id^="prospecting-widget-"] { width: 100% !important; max-width: 100% !important; }
-[id^="prospecting-widget-"] * { max-width: 100% !important; }
-[id^="prospecting-widget-"] div { width: 100% !important; margin: 0 !important; }
-[id^="prospecting-widget-"] form { width: 100% !important; margin: 0 !important; padding: 0 1.25rem 1.5rem !important; display: flex !important; flex-direction: column !important; gap: 0.875rem !important; }
-[id^="prospecting-widget-"] img { width: 100% !important; height: auto !important; margin: 0 !important; display: block; }
-[id^="prospecting-widget-"] .flex.flex-col.gap-4 { padding: 0 !important; gap: 0 !important; }
-[id^="prospecting-widget-"] p { padding: 1rem 1.25rem !important; margin: 0 !important; }
-[id^="prospecting-widget-"] label { display: block !important; margin-bottom: 0.375rem !important; line-height: 1.35 !important; }
-[id^="prospecting-widget-"] input, [id^="prospecting-widget-"] select, [id^="prospecting-widget-"] textarea {
-  width: 100% !important; height: auto !important; min-height: 2.75rem !important;
+[id^="prospecting-widget-"] > div { width: 100% !important; max-width: 100% !important; }
+[id^="prospecting-widget-"] form { width: 100% !important; max-width: 100% !important; padding: 0 1.25rem 1.5rem !important; }
+[id^="prospecting-widget-"] img { width: 100% !important; height: auto !important; display: block; }
+[id^="prospecting-widget-"] label { line-height: 1.35 !important; }
+[id^="prospecting-widget-"] input:not([type="checkbox"]):not([type="radio"]),
+[id^="prospecting-widget-"] select,
+[id^="prospecting-widget-"] textarea {
+  width: 100% !important; min-height: 2.75rem !important;
   padding: 0.625rem 0.875rem !important; line-height: 1.4 !important; font-size: 15px !important;
 }
-[id^="prospecting-widget-"] button { min-height: 2.875rem !important; margin-top: 0.25rem !important; }
+[id^="prospecting-widget-"] button[type="submit"] { min-height: 2.875rem !important; }
 `;
 
 const DOC = `<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1" />
