@@ -29,7 +29,7 @@ function FieldLabel({
   children: React.ReactNode;
 }) {
   return (
-    <label className="mb-1.5 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+    <label className="mb-2 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-current/70">
       <Icon className="h-3.5 w-3.5 text-brand" />
       {children}
     </label>
