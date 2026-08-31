@@ -67,16 +67,16 @@ export function ServicePage({
                   <DialogTrigger asChild>
                     <Button size="lg">Get your free growth report</Button>
                   </DialogTrigger>
-                  <DialogContent className={`flex max-h-[92dvh] w-[calc(100vw-1.5rem)] max-w-[calc(100vw-1.5rem)] flex-col overflow-hidden border-border/50 bg-card/95 p-0 shadow-2xl backdrop-blur-xl sm:w-full sm:max-w-4xl [&>button]:text-nav-plum-foreground [&>button]:opacity-80 ${isMobile ? "" : "lg:max-h-[96dvh]"}`}>
-                    <DialogTitle className="sr-only">Free growth report</DialogTitle>
-                    <DialogHeader className="sr-only" />
-                    <div className="min-h-0 flex-1 bg-background p-2 sm:p-3">
-                      <GrowthReportWidget
-                        className="h-full min-h-[80dvh] w-full rounded-xl border-0 lg:min-h-[90dvh]"
-                        scale={isMobile ? 1 : 0.78}
-                      />
-                    </div>
-                  </DialogContent>
+                    <DialogContent className={`flex max-h-[92dvh] w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] flex-col overflow-hidden border-border/50 bg-card/95 p-0 shadow-2xl backdrop-blur-xl sm:w-full sm:max-w-4xl [&>button]:text-nav-plum-foreground [&>button]:opacity-80 ${isMobile ? "" : "lg:max-h-[96dvh]"}`}>
+                      <DialogTitle className="sr-only">Free growth report</DialogTitle>
+                      <DialogHeader className="sr-only" />
+                      <div className="min-h-0 flex-1 bg-background p-0">
+                        <GrowthReportWidget
+                          className="h-full min-h-[80dvh] w-full rounded-none border-0 lg:min-h-[90dvh]"
+                          scale={isMobile ? 1 : 0.78}
+                        />
+                      </div>
+                    </DialogContent>
 
                 </Dialog>
 
