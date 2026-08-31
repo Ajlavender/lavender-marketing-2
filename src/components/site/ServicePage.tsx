@@ -65,13 +65,14 @@ export function ServicePage({
                   <DialogTrigger asChild>
                     <Button size="lg">Get your free growth report</Button>
                   </DialogTrigger>
-                  <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-lg">
+                  <DialogContent className="max-w-[95vw] p-4 sm:max-w-2xl">
                     <DialogHeader>
                       <DialogTitle>Get your free growth report</DialogTitle>
                     </DialogHeader>
-                    <GrowthReportWidget className="w-full [&_iframe]:w-full" />
+                    <GrowthReportWidget className="h-[70vh] w-full rounded-xl border-0" />
                   </DialogContent>
                 </Dialog>
+
                 <Button
                   asChild
                   size="lg"
