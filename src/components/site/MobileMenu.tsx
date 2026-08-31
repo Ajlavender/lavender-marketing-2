@@ -191,7 +191,6 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
           </Link>
         </div>
       </div>
-    </div>
     </div>,
     document.body,
   );
