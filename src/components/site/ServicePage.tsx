@@ -68,24 +68,12 @@ export function ServicePage({
                     <Button size="lg">Get your free growth report</Button>
                   </DialogTrigger>
                   <DialogContent className={`flex max-h-[92dvh] w-[calc(100vw-1.5rem)] max-w-[calc(100vw-1.5rem)] flex-col overflow-hidden border-border/50 bg-card/95 p-0 shadow-2xl backdrop-blur-xl sm:w-full sm:max-w-4xl [&>button]:text-nav-plum-foreground [&>button]:opacity-80 ${isMobile ? "" : "lg:max-h-[96dvh]"}`}>
-                    <div className="relative shrink-0 bg-gradient-deep px-5 pb-4 pt-5 text-nav-plum-foreground sm:px-6 sm:pb-5 sm:pt-6">
-                      <div className="pointer-events-none absolute inset-0 opacity-60 [background:radial-gradient(60%_120%_at_20%_0%,color-mix(in_oklab,var(--brand)_35%,transparent),transparent_70%)]" />
-                      <DialogHeader className="relative space-y-2 pr-8 text-left">
-                        <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] sm:text-[11px]">
-                          <Sparkles className="h-3 w-3 shrink-0" /> Free growth report
-                        </span>
-                        <DialogTitle className="text-lg font-semibold leading-snug text-nav-plum-foreground sm:text-2xl">
-                          See where your business can grow next
-                        </DialogTitle>
-                        <p className="text-xs text-nav-plum-foreground/70 sm:text-sm">
-                          Takes about 60 seconds — no cost, no obligation.
-                        </p>
-                      </DialogHeader>
-                    </div>
+                    <DialogTitle className="sr-only">Free growth report</DialogTitle>
+                    <DialogHeader className="sr-only" />
                     <div className="min-h-0 flex-1 bg-background p-2 sm:p-3">
                       <GrowthReportWidget
-                        className="h-full min-h-[55dvh] w-full rounded-xl border-0 lg:min-h-[70dvh]"
-                        scale={isMobile ? 1 : 0.82}
+                        className="h-full min-h-[80dvh] w-full rounded-xl border-0 lg:min-h-[90dvh]"
+                        scale={isMobile ? 1 : 0.78}
                       />
                     </div>
                   </DialogContent>
