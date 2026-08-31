@@ -12,6 +12,7 @@ import { CtaBand, Section, SectionHeading, TestimonialGrid } from "./sections";
 import { Reveal } from "./Reveal";
 import { GrowthReportWidget } from "./GrowthReportWidget";
 import { serviceSeo } from "@/data/service-seo";
+import { LOGO } from "@/data/site";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export type ServicePageProps = {
@@ -67,12 +68,40 @@ export function ServicePage({
                   <DialogTrigger asChild>
                     <Button size="lg">Get your free growth report</Button>
                   </DialogTrigger>
-                    <DialogContent className={`flex max-h-[92dvh] w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] flex-col overflow-hidden border-border/50 bg-card/95 p-0 shadow-2xl backdrop-blur-xl sm:w-full sm:max-w-[480px] [&>button]:text-nav-plum-foreground [&>button]:opacity-80 [&>button]:right-2 [&>button]:top-2 ${isMobile ? "" : "lg:max-h-[96dvh]"}`}>
+                    <DialogContent className={`flex max-h-[92dvh] w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] flex-col overflow-hidden border-border/50 bg-card/95 p-0 shadow-2xl backdrop-blur-xl sm:w-full sm:max-w-[480px] [&>button]:text-nav-plum-foreground [&>button]:opacity-80 [&>button]:right-3 [&>button]:top-3 ${isMobile ? "" : "lg:max-h-[96dvh]"}`}>
                       <DialogTitle className="sr-only">Free growth report</DialogTitle>
                       <DialogHeader className="sr-only" />
+
+                      {/* Compact premium banner — replaces the widget's native image header */}
+                      <div className="relative shrink-0 overflow-hidden bg-nav-plum px-5 py-4 text-nav-plum-foreground">
+                        <div className="pointer-events-none absolute -right-10 -top-14 h-40 w-40 rounded-full bg-primary/40 blur-3xl" />
+                        <div className="pointer-events-none absolute -bottom-16 left-8 h-32 w-32 rounded-full bg-white/10 blur-3xl" />
+                        <div className="relative flex items-center gap-3">
+                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10">
+                            <img src={LOGO} alt="" width={24} height={24} className="h-6 w-6 object-contain" />
+                          </span>
+                          <div className="min-w-0">
+                            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/70">
+                              Lavender Marketing &amp; Co.
+                            </p>
+                            <p className="truncate text-base font-semibold leading-tight">
+                              Your free growth report
+                            </p>
+                          </div>
+                        </div>
+                        <div className="relative mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-nav-plum-foreground/75">
+                          <span className="inline-flex items-center gap-1.5">
+                            <Check className="h-3 w-3 text-primary-foreground" /> Takes 30 seconds
+                          </span>
+                          <span className="inline-flex items-center gap-1.5">
+                            <Check className="h-3 w-3 text-primary-foreground" /> No cost, no obligation
+                          </span>
+                        </div>
+                      </div>
+
                       <div className="min-h-0 flex-1 bg-background p-0">
                         <GrowthReportWidget
-                          className="h-full min-h-[80dvh] w-full rounded-none border-0 lg:min-h-[680px]"
+                          className="h-full min-h-[70dvh] w-full rounded-none border-0 lg:min-h-[560px]"
                           scale={isMobile ? 1 : 0.78}
                         />
                       </div>
