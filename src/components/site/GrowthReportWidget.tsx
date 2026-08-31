@@ -8,19 +8,22 @@ const SRC = "https://services.leadconnectorhq.com/prospecting/client/widget-embe
  * sides. Forcing every layer to fill 100% width makes the form span the full
  * iframe, so the zoom no longer leaves side gaps.
  */
+const W = '[id^="prospecting-widget-"]';
 const FILL_CSS = `
-[id^="prospecting-widget-"] { width: 100% !important; max-width: 100% !important; }
-[id^="prospecting-widget-"] > div { width: 100% !important; max-width: 100% !important; }
-[id^="prospecting-widget-"] form { width: 100% !important; max-width: 100% !important; padding: 0 1.25rem 1.5rem !important; }
-[id^="prospecting-widget-"] img { width: 100% !important; height: auto !important; display: block; }
-[id^="prospecting-widget-"] label { line-height: 1.35 !important; }
-[id^="prospecting-widget-"] input:not([type="checkbox"]):not([type="radio"]),
-[id^="prospecting-widget-"] select,
-[id^="prospecting-widget-"] textarea {
-  width: 100% !important; min-height: 2.75rem !important;
-  padding: 0.625rem 0.875rem !important; line-height: 1.4 !important; font-size: 15px !important;
-}
-[id^="prospecting-widget-"] button[type="submit"] { min-height: 2.875rem !important; }
+${W} { width: 100% !important; max-width: 100% !important; }
+/* outer wrapper + the white card: fill the iframe instead of the widget's fixed 30rem */
+${W} > div { width: 100% !important; max-width: 100% !important; }
+${W} > div > div { width: 100% !important; max-width: 100% !important; padding: 24px !important; border-radius: 0 !important; }
+/* banner block: keep its full-bleed breakout in sync with the new padding */
+${W} > div > div > div:first-child { margin: -24px -24px 1rem !important; }
+/* the form is capped at max-w-sm by the widget */
+${W} form { width: 100% !important; max-width: 100% !important; }
+/* radio row must wrap instead of overflowing */
+${W} form > div.flex { flex-wrap: wrap !important; row-gap: 0.5rem !important; }
+${W} input:not([type="radio"]):not([type="checkbox"]),
+${W} select,
+${W} textarea { min-height: 2.75rem !important; padding: 0.625rem 0.875rem !important; }
+${W} button[type="submit"] { min-height: 2.875rem !important; }
 `;
 
 const DOC = `<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1" />
