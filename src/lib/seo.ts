@@ -43,7 +43,7 @@ export function serviceHead(slug: string) {
               serviceType: s.name,
               description: s.answer,
               url,
-              image: s.image,
+              image,
               provider: {
                 "@type": "ProfessionalService",
                 name: BRAND,

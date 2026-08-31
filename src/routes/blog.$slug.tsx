@@ -23,8 +23,8 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:description", content: post.excerpt },
         { property: "og:type", content: "article" },
         { property: "og:url", content: `https://lavendermarketingco.com/blog/${post.slug}` },
-        { property: "og:image", content: post.image },
-        { name: "twitter:image", content: post.image },
+        { property: "og:image", content: post.image.startsWith("http") ? post.image : `https://lavendermarketingco.com${post.image}` },
+        { name: "twitter:image", content: post.image.startsWith("http") ? post.image : `https://lavendermarketingco.com${post.image}` },
       ],
       links: [{ rel: "canonical", href: `https://lavendermarketingco.com/blog/${post.slug}` }],
       scripts: [
