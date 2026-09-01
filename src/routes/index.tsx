@@ -273,6 +273,11 @@ function Index() {
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
   const [canPlay, setCanPlay] = useState(false);
   const positionRef = useRef(0);
+  // Swipe-to-hide state for the floating mobile player (audio keeps playing).
+  const [dragX, setDragX] = useState(0);
+  const [peeked, setPeeked] = useState(false);
+  const dragRef = useRef<{ startX: number; active: boolean } | null>(null);
+
 
   const scrolledPastRef = useRef(false);
 
