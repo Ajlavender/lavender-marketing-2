@@ -309,6 +309,10 @@ function Index() {
     io.observe(el);
     return () => io.disconnect();
   }, []);
+  useEffect(() => {
+    if (!floating) setPeeked(false);
+  }, [floating]);
+
 
   useEffect(() => {
     if (videoSrc) videoRef.current?.load();
