@@ -489,7 +489,10 @@ body {
     font-size: 16px !important;
   }
 
-  /* Room for the sticky mobile CTA bar + home indicator */
+}
+
+/* Room for the sticky mobile/tablet CTA bar + home indicator (matches lg:hidden) */
+@media (max-width: 1023px) {
   body {
     padding-bottom: calc(4.25rem + env(safe-area-inset-bottom));
   }
