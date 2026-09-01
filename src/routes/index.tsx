@@ -568,7 +568,37 @@ function Index() {
             {/* Custom floating player — no browser PiP chrome, so no favicon/logo appears. */}
             {floating &&
               createPortal(
-                <div className="fixed bottom-4 right-3 z-[100] w-[min(11rem,48vw)] animate-scale-in sm:right-4 sm:w-[min(22rem,60vw)]">
+                <div
+                  className={cn(
+                    "fixed right-3 z-[100] w-[min(9.5rem,42vw)] animate-scale-in sm:right-4 sm:w-[min(22rem,60vw)]",
+                    // Sit above the sticky mobile CTA bar on small screens.
+                    "bottom-[calc(env(safe-area-inset-bottom)+4.9rem)] sm:bottom-4",
+                    dragX === 0 ? "transition-transform duration-300 ease-out" : "",
+                  )}
+                  style={{
+                    transform: `translateX(${peeked ? "calc(100% - 1.6rem)" : `${dragX}px`})`,
+                    touchAction: "pan-y",
+                  }}
+                  onPointerDown={(e) => {
+                    dragRef.current = { startX: e.clientX, active: true };
+                  }}
+                  onPointerMove={(e) => {
+                    if (!dragRef.current?.active) return;
+                    const dx = e.clientX - dragRef.current.startX;
+                    setDragX(Math.max(0, dx));
+                  }}
+                  onPointerUp={(e) => {
+                    if (!dragRef.current?.active) return;
+                    const dx = e.clientX - dragRef.current.startX;
+                    dragRef.current.active = false;
+                    setDragX(0);
+                    if (dx > 60) setPeeked(true);
+                  }}
+                  onPointerCancel={() => {
+                    if (dragRef.current) dragRef.current.active = false;
+                    setDragX(0);
+                  }}
+                >
                   <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_30px_70px_-25px_rgba(0,0,0,0.7)]">
                     <VideoPlayer
                       key="hero-video-player"
@@ -582,30 +612,46 @@ function Index() {
                       onCanPlay={() => setCanPlay(true)}
                       positionRef={positionRef}
                     />
-                    {/* Close floating player */}
-                    <button
-                      type="button"
-                      onClick={toggleFloating}
-                      className="absolute -top-2 -right-2 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-background text-foreground shadow-lg ring-1 ring-border transition hover:scale-110 hover:bg-accent"
-                      aria-label="Close floating video"
-                      title="Close floating video"
-                    >
-                      <span className="sr-only">Close</span>
-                      <svg
-                        className="h-3.5 w-3.5"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
+
+                    {/* Tap the visible sliver to bring the hidden video back (audio never stops) */}
+                    {peeked && (
+                      <button
+                        type="button"
+                        onClick={() => setPeeked(false)}
+                        className="absolute inset-0 z-20 flex items-center justify-start bg-black/70 pl-1 text-white backdrop-blur-sm"
+                        aria-label="Show video"
                       >
-                        <path d="M18 6 6 18M6 6l12 12" />
-                      </svg>
-                    </button>
+                        <ArrowRight className="h-4 w-4 rotate-180" />
+                      </button>
+                    )}
+
+                    {/* Close floating player */}
+                    {!peeked && (
+                      <button
+                        type="button"
+                        onClick={toggleFloating}
+                        className="absolute -top-2 -right-2 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-background text-foreground shadow-lg ring-1 ring-border transition hover:scale-110 hover:bg-accent"
+                        aria-label="Close floating video"
+                        title="Close floating video"
+                      >
+                        <span className="sr-only">Close</span>
+                        <svg
+                          className="h-3.5 w-3.5"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                        >
+                          <path d="M18 6 6 18M6 6l12 12" />
+                        </svg>
+                      </button>
+                    )}
                   </div>
                 </div>,
                 document.body,
               )}
+
           </div>
         </div>
 
