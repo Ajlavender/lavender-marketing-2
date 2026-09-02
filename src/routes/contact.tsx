@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { LeadForm } from "@/components/site/LeadForm";
 import { PageHero, RatingBar, Section } from "@/components/site/sections";
-import { ILLU } from "@/data/site";
+import { AJ_PHOTO } from "@/data/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
