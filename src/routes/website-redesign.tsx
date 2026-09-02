@@ -53,8 +53,8 @@ const cards = [
   {
     title: "Relationship",
     body: "Once your project is wrapped up, our Customer Success Team will be at your beck and call. Whether you're stumped, need answers or something's gone awry, they'll be there for you at the drop of a hat!",
-    image: `${ILLU}/founder.webp`,
-    alt: "handshake hand gesture",
+    image: AJ_PHOTO,
+    alt: "AJ, founder of Lavender Marketing & Co.",
   },
 ];
 
