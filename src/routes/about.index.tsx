@@ -39,7 +39,7 @@ const demoBtn =
 function DemoButton({
   label = "Get My Free Website Design",
   to,
-  href = "https://links.lavendersuitepro.com/widget/booking/sElYCoHQVkd1yhfDrM4l",
+  href = "https://links.lavendermarketingco.com/widget/booking/sElYCoHQVkd1yhfDrM4l",
 }: {
   label?: string;
   to?: string;

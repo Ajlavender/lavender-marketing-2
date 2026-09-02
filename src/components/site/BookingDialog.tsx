@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
-export const BOOKING_URL = "https://links.lavendersuitepro.com/widget/booking/sElYCoHQVkd1yhfDrM4l";
+export const BOOKING_URL = "https://links.lavendermarketingco.com/widget/booking/sElYCoHQVkd1yhfDrM4l";
 
 export type BookingPrefill = {
   name?: string;
@@ -41,7 +41,7 @@ export function BookingDialog({
     if (document.getElementById(id)) return;
     const script = document.createElement("script");
     script.id = id;
-    script.src = "https://links.lavendersuitepro.com/js/form_embed.js";
+    script.src = "https://links.lavendermarketingco.com/js/form_embed.js";
     script.type = "text/javascript";
     document.body.appendChild(script);
   }, [open]);
