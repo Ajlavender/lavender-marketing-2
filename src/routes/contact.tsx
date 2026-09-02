@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { LeadForm } from "@/components/site/LeadForm";
 import { PageHero, RatingBar, Section } from "@/components/site/sections";
-import { ILLU } from "@/data/site";
+import { AJ_PHOTO } from "@/data/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -35,7 +35,7 @@ function Contact() {
         eyebrow="Contact"
         title="Let's build a website that sells"
         subtitle="Tell us about your business and we'll design a free demo of your new homepage — no cost, no obligation."
-        image={`${ILLU}/founder.webp`}
+        image={AJ_PHOTO}
       />
 
       <Section>

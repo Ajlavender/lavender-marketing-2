@@ -3,12 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
 import { FounderPortrait } from "@/components/site/sections";
-import { ILLU } from "@/data/site";
-
-const AJ_PHOTO_1 =
-  "https://assets.cdn.filesafe.space/IyiCTBDPcxyW5GC333Qt/media/6a21a3a8da24932f120f82eb.png";
-const AJ_PHOTO_2 =
-  "https://assets.cdn.filesafe.space/IyiCTBDPcxyW5GC333Qt/media/6a21a3acf607d4002b7c8113.png";
+import { ILLU, AJ_PHOTO, AJ_PHOTO_STUDIO } from "@/data/site";
 
 export const Route = createFileRoute("/about/")({
   head: () => ({
@@ -112,7 +107,7 @@ function About() {
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left" className="relative">
             <FounderPortrait
-              src={AJ_PHOTO_1}
+              src={AJ_PHOTO}
               alt="AJ, founder of Lavender Marketing & Co."
               caption="AJ — Founder, Lavender Marketing & Co."
               className="max-w-sm"
@@ -279,7 +274,7 @@ function About() {
               <div className="relative rounded-[2rem] border border-white/15 bg-white/10 p-2 shadow-[0_40px_90px_-45px_rgba(0,0,0,0.6)] backdrop-blur-sm">
                 <div className="overflow-hidden rounded-[1.5rem]">
                   <img
-                    src={AJ_PHOTO_2}
+                    src={AJ_PHOTO_STUDIO}
                     alt="AJ, founder of Lavender Marketing & Co."
                     loading="lazy"
                     className="aspect-[4/5] w-full object-cover object-top"

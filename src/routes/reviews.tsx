@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ReviewSlider } from "@/components/site/ReviewSlider";
 import { Reveal } from "@/components/site/Reveal";
-import { googleReviews, ILLU } from "@/data/site";
+import { googleReviews, ILLU, AJ_PHOTO } from "@/data/site";
 
 export const Route = createFileRoute("/reviews")({
   head: () => ({
@@ -147,7 +147,7 @@ function Reviews() {
           </Reveal>
           <Reveal from="right" delay={110}>
             <img
-              src={`${ILLU}/founder.webp`}
+              src={AJ_PHOTO}
               alt="Businessman holding five stars"
               loading="lazy"
               className="mx-auto w-full max-w-xs"
