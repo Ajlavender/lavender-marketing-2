@@ -52,7 +52,7 @@ export function Footer() {
           <img src={LOGO} alt="Lavender Marketing & Co." width={150} height={36} className="h-9 w-auto" loading="lazy" />
           <p className="text-sm leading-relaxed text-foreground/70">
             Lavender Marketing & Co. helps local service businesses turn more visitors, calls and
-            customers into booked work. We build the website. Scale Suite Pro keeps the follow-up,
+            customers into booked work. We build the website. Lavender Suite Pro keeps the follow-up,
             reviews, bookings and customer conversations running behind it.
           </p>
           <div className="flex items-center gap-2.5">

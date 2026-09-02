@@ -757,7 +757,7 @@ function Index() {
             <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
               <div>
                 <p className="text-xl font-medium text-[#a78bfa]">
-                  LM&amp;C sets it up. Scale Suite Pro keeps it running.
+                  LM&amp;C sets it up. Lavender Suite Pro keeps it running.
                 </p>
                 <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
                   One system instead of five disconnected tools.
