@@ -3,12 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
 import { FounderPortrait } from "@/components/site/sections";
-import { ILLU } from "@/data/site";
-
-const AJ_PHOTO_1 =
-  "https://assets.cdn.filesafe.space/IyiCTBDPcxyW5GC333Qt/media/6a21a3a8da24932f120f82eb.png";
-const AJ_PHOTO_2 =
-  "https://assets.cdn.filesafe.space/IyiCTBDPcxyW5GC333Qt/media/6a21a3acf607d4002b7c8113.png";
+import { ILLU, AJ_PHOTO, AJ_PHOTO_STUDIO } from "@/data/site";
 
 export const Route = createFileRoute("/about/")({
   head: () => ({
