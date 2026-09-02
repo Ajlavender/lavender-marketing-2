@@ -17,7 +17,7 @@ import { Section } from "@/components/site/sections";
 import { Reveal } from "@/components/site/Reveal";
 import { TestimonialCarousel } from "@/components/site/home-sections.lazy";
 import { LazySection } from "@/components/site/LazySection";
-import { ILLU } from "@/data/site";
+import { ILLU, AJ_PHOTO } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/website-redesign")({
