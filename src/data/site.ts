@@ -6,6 +6,12 @@ export const ILLU = "/illustrations";
 
 export const LOGO = logoAsset.url;
 
+// AJ's actual photos (hosted on the project's CDN)
+export const AJ_PHOTO =
+  "https://assets.cdn.filesafe.space/IyiCTBDPcxyW5GC333Qt/media/6a21a3a8da24932f120f82eb.png";
+export const AJ_PHOTO_STUDIO =
+  "https://assets.cdn.filesafe.space/IyiCTBDPcxyW5GC333Qt/media/6a21a3acf607d4002b7c8113.png";
+
 export const services = [
   {
     slug: "/website-redesign",
