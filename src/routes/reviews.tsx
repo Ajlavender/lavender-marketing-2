@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ReviewSlider } from "@/components/site/ReviewSlider";
 import { Reveal } from "@/components/site/Reveal";
-import { googleReviews, AJ_PHOTO } from "@/data/site";
+import { googleReviews, ILLU, AJ_PHOTO } from "@/data/site";
 
 export const Route = createFileRoute("/reviews")({
   head: () => ({
