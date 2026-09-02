@@ -206,9 +206,9 @@ export const projects = [
     image: "/projects/7steps-coaching.jpg",
   },
   {
-    name: "Scale Suite Pro",
+    name: "Lavender Suite Pro",
     type: "Website Redesign + Automations",
-    href: "https://www.scalesuitepro.com/",
+    href: "https://www.lavendersuitepro.com/",
     image: "/projects/scale-suite-pro.jpg",
   },
   {
@@ -387,7 +387,7 @@ export const clientLogos: { name: string; src?: string }[] = [
   { name: "Busy Bee Virtual Solutions Corp" },
   { name: "People First Group Realty" },
   { name: "7Steps™ Insurance Coaching" },
-  { name: "Scale Suite Pro" },
+  { name: "Lavender Suite Pro" },
   { name: "Soccerfice Apparel" },
   { name: "Summit of Strength ALS Gala" },
   { name: "Strathroy Lobster Fest" },
