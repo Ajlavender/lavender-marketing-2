@@ -107,7 +107,7 @@ function About() {
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal from="left" className="relative">
             <FounderPortrait
-              src={AJ_PHOTO_1}
+              src={AJ_PHOTO}
               alt="AJ, founder of Lavender Marketing & Co."
               caption="AJ — Founder, Lavender Marketing & Co."
               className="max-w-sm"
@@ -274,7 +274,7 @@ function About() {
               <div className="relative rounded-[2rem] border border-white/15 bg-white/10 p-2 shadow-[0_40px_90px_-45px_rgba(0,0,0,0.6)] backdrop-blur-sm">
                 <div className="overflow-hidden rounded-[1.5rem]">
                   <img
-                    src={AJ_PHOTO_2}
+                    src={AJ_PHOTO_STUDIO}
                     alt="AJ, founder of Lavender Marketing & Co."
                     loading="lazy"
                     className="aspect-[4/5] w-full object-cover object-top"
