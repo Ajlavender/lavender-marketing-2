@@ -773,10 +773,10 @@ function Index() {
                   more calls. We&apos;ll set it up either way.
                 </p>
                 <p className="mt-6 text-background/85">
-                  Drop your details and we&apos;ll send your free design and review audit.
+                  Drop your details and we'll send your free Google & Local Visibility Report.
                 </p>
                 <div className="mt-6 max-w-xl">
-                  <LeadForm variant="dark" fields="leadInline" labeled submitLabel="Get My Free Design" />
+                  <LeadForm variant="dark" fields="leadInline" labeled submitLabel="Get My Free Google Report" />
                 </div>
               </div>
 
