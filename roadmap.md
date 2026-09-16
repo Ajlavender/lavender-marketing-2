@@ -7,3 +7,12 @@
 - [x] Reduce repeated offer explanation
 - [x] Preserve the Google-first CTA on its dedicated report page
 - [x] Complete desktop and tablet verification
+
+# Homepage performance optimization
+
+- [x] Replace oversized header logo and external fonts with optimized CDN assets
+- [x] Compress and delay the homepage video
+- [x] Add responsive image variants and stable image dimensions
+- [x] Remove avoidable third-party image requests
+- [x] Stop idle-loading every lower-page section
+- [x] Verify layout stability, mobile/tablet presentation, and interactions

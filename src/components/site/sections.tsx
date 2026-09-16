@@ -199,6 +199,8 @@ export function ServicesGrid() {
           <div className="aspect-[16/10] w-full overflow-hidden bg-secondary">
             <img
               src={s.card}
+              srcSet={`${s.card.replace(/\.jpg$/, "-480.webp")} 480w, ${s.card.replace(/\.jpg$/, "-800.webp")} 800w, ${s.card} 1440w`}
+              sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) calc(50vw - 2rem), 400px"
               alt={s.title}
               loading="lazy"
               width={1440}
@@ -227,8 +229,13 @@ export function ProjectGrid({ limit, compact }: { limit?: number; compact?: bool
             <div className="overflow-hidden rounded-2xl bg-card shadow-[0_18px_50px_-30px_rgba(16,18,24,0.45)]">
               <img
                 src={p.image}
+                srcSet={`${p.image.replace(/\.jpg$/, "-480.webp")} 480w, ${p.image.replace(/\.jpg$/, "-800.webp")} 800w, ${p.image} 1200w`}
+                sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) calc(50vw - 2rem), 400px"
                 alt={p.name}
                 loading="lazy"
+                width={1200}
+                height={900}
+                decoding="async"
                 className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               />
             </div>
@@ -357,12 +364,12 @@ export function GoogleReviews() {
               <p className="truncate text-sm font-bold">{r.name}</p>
               <p className="text-xs text-muted-foreground">{r.when}</p>
             </div>
-            <img
-              src="https://cdn.trustindex.io/assets/platform/Google/icon.svg"
-              alt="Google"
-              loading="lazy"
-              className="h-5 w-5"
-            />
+            <svg viewBox="0 0 24 24" role="img" aria-label="Google" className="h-5 w-5 shrink-0">
+              <path fill="#4285F4" d="M21.6 12.23c0-.71-.06-1.4-.18-2.07H12v3.92h5.38a4.6 4.6 0 0 1-2 3.02v2.54h3.24c1.9-1.75 2.98-4.33 2.98-7.41Z" />
+              <path fill="#34A853" d="M12 22c2.7 0 4.97-.9 6.62-2.36l-3.24-2.54c-.9.6-2.05.96-3.38.96-2.61 0-4.82-1.76-5.61-4.13H3.04v2.62A10 10 0 0 0 12 22Z" />
+              <path fill="#FBBC05" d="M6.39 13.93A6 6 0 0 1 6.08 12c0-.67.11-1.32.31-1.93V7.45H3.04A10 10 0 0 0 2 12c0 1.61.39 3.14 1.04 4.55l3.35-2.62Z" />
+              <path fill="#EA4335" d="M12 5.94c1.47 0 2.79.5 3.83 1.5l2.87-2.87A9.64 9.64 0 0 0 12 2a10 10 0 0 0-8.96 5.45l3.35 2.62C7.18 7.7 9.39 5.94 12 5.94Z" />
+            </svg>
           </div>
           <div className="mt-3 flex items-center gap-2">
             <ReviewStars rating={r.rating} />

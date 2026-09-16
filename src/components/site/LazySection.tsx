@@ -1,4 +1,4 @@
-import { Suspense, useEffect, type ReactNode } from "react";
+import { Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 type Variant = "cards" | "split" | "table" | "carousel" | "loop" | "plain";
@@ -113,55 +113,34 @@ export function LazySection({
   minHeight?: number;
   variant?: Variant;
 }) {
-  return (
-    <Suspense fallback={<SectionSkeleton minHeight={minHeight} variant={variant} />}>
-      {children}
-    </Suspense>
-  );
-}
+  const hostRef = useRef<HTMLDivElement | null>(null);
+  const [ready, setReady] = useState(false);
 
-
-type Factory = () => Promise<unknown>;
-
-/**
- * Smart prefetch: warms the dynamic chunks for below-the-fold sections once the
- * browser is idle (and the connection isn't metered/slow), so scrolling and
- * hydration never wait on a network round trip.
- */
-export function usePrefetchOnIdle(factories: Factory[]) {
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    const host = hostRef.current;
+    if (!host || ready) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setReady(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "500px 0px" },
+    );
+    observer.observe(host);
+    return () => observer.disconnect();
+  }, [ready]);
 
-    const conn = (navigator as Navigator & {
-      connection?: { saveData?: boolean; effectiveType?: string };
-    }).connection;
-    if (conn?.saveData) return;
-    if (conn?.effectiveType && /(^|-)2g$/.test(conn.effectiveType)) return;
-
-    let cancelled = false;
-    const run = () => {
-      if (cancelled) return;
-      for (const factory of factories) {
-        void factory().catch(() => {});
-      }
-    };
-
-    const ric = (window as Window & {
-      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
-    }).requestIdleCallback;
-
-    let idleId: number | undefined;
-    let timeoutId: number | undefined;
-    if (ric) idleId = ric(run, { timeout: 2500 });
-    else timeoutId = window.setTimeout(run, 1200);
-
-    return () => {
-      cancelled = true;
-      const cic = (window as Window & { cancelIdleCallback?: (id: number) => void })
-        .cancelIdleCallback;
-      if (idleId !== undefined && cic) cic(idleId);
-      if (timeoutId !== undefined) window.clearTimeout(timeoutId);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  return (
+    <div ref={hostRef} style={{ minHeight: ready ? undefined : minHeight }}>
+      {ready ? (
+        <Suspense fallback={<SectionSkeleton minHeight={minHeight} variant={variant} />}>
+          {children}
+        </Suspense>
+      ) : (
+        <SectionSkeleton minHeight={minHeight} variant={variant} />
+      )}
+    </div>
+  );
 }

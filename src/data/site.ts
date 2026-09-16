@@ -1,4 +1,4 @@
-import logoAsset from "@/assets/lavender-logo-gradient.png.asset.json";
+import logoAsset from "@/assets/lavender-logo-240.webp.asset.json";
 
 export const MEDIA = "/media";
 
