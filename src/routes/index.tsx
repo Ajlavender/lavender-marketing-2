@@ -94,7 +94,7 @@ export const Route = createFileRoute("/")({
             ...[
               { name: "Website Design", url: "https://lavendermarketingco.com/website-redesign" },
               { name: "Pricing", url: "https://lavendermarketingco.com/pricing" },
-              { name: "Free Growth Report", url: "https://lavendermarketingco.com/growth-report" },
+              { name: "Free Visibility Report", url: "https://lavendermarketingco.com/growth-report" },
               { name: "Case Studies", url: "https://lavendermarketingco.com/projects" },
               { name: "Reviews", url: "https://lavendermarketingco.com/reviews" },
               { name: "About Lavender Marketing", url: "https://lavendermarketingco.com/about" },
@@ -443,7 +443,7 @@ function Index() {
               >
                 Built for local service businesses. The $297 covers hosting, the review engine that turns happy
                 customers into stronger local visibility, missed-call text-back, follow-up and a
-                monthly growth report delivered on the 1st of every month.
+                monthly Google & Local Visibility Report delivered on the 1st of every month.
                 <span className="hidden sm:inline">
                   {" "}
                   No upfront design fee, no setup fee, no paying before you see the design.

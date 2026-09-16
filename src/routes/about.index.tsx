@@ -256,7 +256,7 @@ function About() {
                   <p>
                     We design your website completely free. You only pay $297/mo if you like it — and
                     that includes hosting, the review engine, missed-call text-back, automatic
-                    follow-up, online booking, a unified inbox, CRM, and a monthly growth report.
+                    follow-up, online booking, a unified inbox, CRM, and a monthly Google & Local Visibility Report.
                   </p>
                   <p>
                     <strong className="font-bold text-background">The best part?</strong>

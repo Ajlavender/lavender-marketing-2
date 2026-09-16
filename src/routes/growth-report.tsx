@@ -8,7 +8,7 @@ export const Route = createFileRoute("/growth-report")({
   component: () => (
     <ServicePage
       slug="/growth-report"
-      eyebrow="Monthly Growth Report"
+      eyebrow="Google & Local Visibility Report"
       title="A plain-English report on the 1st of every month"
       subtitle="Where your leads came from, what converted, and what to fix next — so you always know if your marketing is paying off."
       image={`${ILLU}/reporting.webp`}

@@ -68,7 +68,7 @@ const included: StackItem[] = [
     value: 200,
   },
   {
-    title: "Monthly local business growth report",
+    title: "Google & Local Visibility Report",
     benefit:
       "On the 1st of every month you get a clear, tangible report showing where your leads came from, what converted, and what to fix next — so you always know if your marketing is actually paying off.",
     value: 250,

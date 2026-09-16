@@ -5,7 +5,7 @@ import { LeadForm } from "./LeadForm";
 const links = [
   { label: "Website Design", to: "/website-redesign" },
   { label: "Pricing", to: "/pricing" },
-  { label: "Growth Report", to: "/growth-report" },
+  { label: "Visibility Report", to: "/growth-report" },
   { label: "Our Work", to: "/projects" },
   { label: "Reviews", to: "/reviews" },
   { label: "About Us", to: "/about" },

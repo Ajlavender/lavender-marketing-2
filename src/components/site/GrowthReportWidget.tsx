@@ -109,7 +109,7 @@ export function GrowthReportWidget({
     >
       <iframe
         ref={iframeRef}
-        title="Free growth report"
+        title="Free Google & Local Visibility Report"
         srcDoc={DOC}
         sandbox="allow-scripts allow-forms allow-popups allow-same-origin"
         className="absolute left-0 top-0 border-0"
