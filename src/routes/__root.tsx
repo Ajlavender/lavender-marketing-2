@@ -102,6 +102,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         crossOrigin: "anonymous",
         href: "/__l5e/assets-v1/9e27791e-efbe-4618-a0a0-ddbb29440b7f/barlow-700.woff2",
       },
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+        href: "/__l5e/assets-v1/84554a3a-3e50-4432-914d-5fda63f957e7/roboto-400.woff2",
+      },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
     scripts: [

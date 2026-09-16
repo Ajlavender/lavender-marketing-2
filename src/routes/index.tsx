@@ -275,6 +275,7 @@ function Index() {
   const [dragX, setDragX] = useState(0);
   const [peeked, setPeeked] = useState(false);
   const dragRef = useRef<{ startX: number; active: boolean } | null>(null);
+  const hasScrolledRef = useRef(false);
 
 
   const scrolledPastRef = useRef(false);
@@ -290,11 +291,19 @@ function Index() {
     if (conn?.saveData) return; // keep the poster only
     if (/^(slow-2g|2g)$/.test(conn?.effectiveType ?? "")) return;
 
-    const attach = () => setVideoSrc(HERO_VIDEO);
+    const attach = () => {
+      if (hasScrolledRef.current) setVideoSrc(HERO_VIDEO);
+    };
+    const markScrolled = () => {
+      if (window.scrollY > 80) {
+        hasScrolledRef.current = true;
+        window.removeEventListener("scroll", markScrolled);
+      }
+    };
+    window.addEventListener("scroll", markScrolled, { passive: true });
     const io = new IntersectionObserver(
       (entries) => {
         if (entries.some((e) => e.isIntersecting)) {
-          io.disconnect();
           const ric = (window as Window & {
             requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number;
           }).requestIdleCallback;
@@ -305,7 +314,10 @@ function Index() {
        { rootMargin: "0px" },
     );
     io.observe(el);
-    return () => io.disconnect();
+    return () => {
+      io.disconnect();
+      window.removeEventListener("scroll", markScrolled);
+    };
   }, []);
   useEffect(() => {
     if (!floating) setPeeked(false);
