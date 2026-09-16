@@ -49,7 +49,7 @@ export function Footer() {
     <footer className="bg-background text-foreground">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-3 lg:gap-16 lg:px-8">
         <div className="space-y-5">
-          <img src={LOGO} alt="Lavender Marketing & Co." width={150} height={36} className="h-9 w-auto" loading="lazy" />
+          <img src={LOGO} alt="Lavender Marketing & Co." width={150} height={36} className="h-9 w-[150px] object-contain object-left" loading="lazy" />
           <p className="text-sm leading-relaxed text-foreground/70">
             Lavender Marketing & Co. helps local service businesses turn more visitors, calls and
             customers into booked work. We build the website. Lavender Suite Pro keeps the follow-up,

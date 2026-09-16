@@ -12,7 +12,7 @@ type NavChild = MegaChild;
 
 function AnnouncementBar({ onClose }: { onClose: () => void }) {
   return (
-    <div className="relative z-50 w-full overflow-hidden border-b border-white/10 bg-gradient-to-r from-nav-cta-from via-[#7c4dff] to-nav-cta-to text-white shadow-[0_8px_30px_-12px_rgba(124,77,255,0.55)]">
+       <div className="relative z-50 min-h-9 w-full overflow-hidden border-b border-white/10 bg-gradient-to-r from-nav-cta-from via-[#7c4dff] to-nav-cta-to text-white shadow-[0_8px_30px_-12px_rgba(124,77,255,0.55)]">
       {/* shimmer sweep */}
       <div className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(110deg,transparent,rgba(255,255,255,0.18),transparent)] [background-size:220%_100%] animate-[shimmer_3.2s_ease-in-out_infinite] motion-reduce:hidden" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
@@ -126,7 +126,7 @@ export function Header() {
           )}
         >
           <Link to="/" className="flex shrink-0 items-center gap-2.5" aria-label="Lavender Marketing & Co. home">
-            <img src={LOGO} alt="" width={120} height={32} className="h-8 w-auto" />
+            <img src={LOGO} alt="" width={120} height={32} className="h-8 w-[120px] object-contain object-left" fetchPriority="high" />
             <span className="hidden whitespace-nowrap font-display text-lg font-semibold tracking-tight text-white sm:inline">
               Lavender Marketing & Co.
             </span>

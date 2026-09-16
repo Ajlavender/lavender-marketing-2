@@ -2,6 +2,55 @@
 @source "../src";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url("/__l5e/assets-v1/4a670771-75af-4eee-8db5-fc3a6a785f95/barlow-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url("/__l5e/assets-v1/0785891f-2178-4c20-b430-0a14c5ecab5e/barlow-600.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url("/__l5e/assets-v1/9e27791e-efbe-4618-a0a0-ddbb29440b7f/barlow-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/__l5e/assets-v1/84554a3a-3e50-4432-914d-5fda63f957e7/roboto-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/__l5e/assets-v1/b5fcf4b5-f7a7-457f-aa45-aae1cb0c8be6/roboto-500.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/__l5e/assets-v1/9a4bae16-ab7d-4d52-845d-5aa39fbb3c52/roboto-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 /*
@@ -157,7 +206,7 @@
     font-family: var(--font-display);
     font-weight: 700;
     line-height: 1.1;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
 }
 

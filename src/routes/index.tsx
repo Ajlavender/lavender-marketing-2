@@ -39,8 +39,8 @@ import {
   SystemLoop,
   TestimonialCarousel,
   ValueStack,
-  homeSectionFactories,
 } from "@/components/site/home-sections.lazy";
+import heroVideoAsset from "@/assets/hero-mobile.mp4.asset.json";
 
 const HERO_POSTER = `${MEDIA}/hero-poster.jpg`;
 
@@ -113,8 +113,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const HERO_VIDEO =
-  "https://assets.cdn.filesafe.space/LgG7iv4Yd7mh0USORTBt/media/6a7d44f562e9a426c0c5f1dd.mp4";
+const HERO_VIDEO = heroVideoAsset.url;
 
 interface VideoPlayerProps {
   videoRef: React.RefObject<HTMLVideoElement | null>;
@@ -255,8 +254,6 @@ function VideoPlayer({
 
 
 function Index() {
-  // Warm the below-the-fold section chunks once the browser is idle.
-  usePrefetchOnIdle(homeSectionFactories);
   const videoRef = useRef<HTMLVideoElement>(null);
   // Wrapper around the video banner — drives lazy-load, autoplay and auto-PiP.
   const bannerRef = useRef<HTMLDivElement>(null);
@@ -305,7 +302,7 @@ function Index() {
           else setTimeout(attach, 200);
         }
       },
-      { rootMargin: "300px" },
+       { rootMargin: "0px" },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -414,7 +411,7 @@ function Index() {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
         </div>
 
-        <div className="mx-auto max-w-7xl px-5 pb-14 pt-36 sm:px-6 sm:pt-32 lg:px-8 lg:pb-20 lg:pt-36">
+        <div className="mx-auto min-h-[58rem] max-w-7xl px-5 pb-14 pt-36 sm:min-h-[66rem] sm:px-6 sm:pt-32 lg:min-h-0 lg:px-8 lg:pb-20 lg:pt-36">
           <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
             <div className="relative animate-fade-in">
@@ -562,6 +559,8 @@ function Index() {
                     <img
                       src={HERO_POSTER}
                       alt=""
+                       width={1280}
+                       height={720}
                       className="h-full w-full object-cover opacity-60"
                     />
                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white">
