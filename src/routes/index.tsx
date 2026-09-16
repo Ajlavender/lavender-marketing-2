@@ -28,7 +28,7 @@ import {
 } from "@/components/site/sections";
 import { MEDIA, stats, ILLU } from "@/data/site";
 import { CountUp, Reveal } from "@/components/site/Reveal";
-import { LazySection, usePrefetchOnIdle } from "@/components/site/LazySection";
+import { LazySection } from "@/components/site/LazySection";
 import { BeforeAfterShowcase } from "@/components/site/BeforeAfterShowcase";
 import { VisibilityReportPreview } from "@/components/site/VisibilityReportPreview";
 import {
