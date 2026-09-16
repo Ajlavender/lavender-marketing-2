@@ -19,6 +19,7 @@ type Props = {
   labeled?: boolean;
   /** "lead" = url + email + phone, "message" = email + phone + message, "leadInline" = url over phone+email+button */
   fields?: "lead" | "message" | "leadInline";
+  offer?: "report" | "design";
 };
 
 function FieldLabel({
@@ -43,6 +44,7 @@ export function LeadForm({
   compact,
   labeled = false,
   fields = "lead",
+  offer = "report",
 }: Props) {
   const [values, setValues] = useState({ url: "", email: "", phone: "", message: "" });
   const [sending, setSending] = useState(false);
@@ -71,7 +73,11 @@ export function LeadForm({
         toast.error("Something went wrong sending that. Please email Aj@lavendermarketingco.com.");
         return;
       }
-      toast.success("Your Google report is being prepared! Check your inbox for your personalized Google & Local Visibility Report.");
+      toast.success(
+        offer === "design"
+          ? "Your free design request is in! Pick a time to tell us about your business."
+          : "Your Google report is being prepared! Check your inbox for your personalized Google & Local Visibility Report.",
+      );
       setBooking(true);
     } catch {
       toast.error("Something went wrong sending that. Please email Aj@lavendermarketingco.com.");
@@ -94,6 +100,7 @@ export function LeadForm({
         if (!o) setValues({ url: "", email: "", phone: "", message: "" });
       }}
       prefill={{ email: values.email, phone: values.phone }}
+      offer={offer}
     />
   );
 

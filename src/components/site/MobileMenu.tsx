@@ -186,7 +186,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
           >
             <span className="absolute inset-0 bg-gradient-to-br from-nav-cta-from to-nav-cta-to transition-all duration-300 group-hover:from-nav-cta-hover-from group-hover:to-nav-cta-hover-to" />
             <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/20" />
-            <span className="relative">Get Your Free Visibility Report</span>
+            <span className="relative">Get My Free Website Design</span>
             <ArrowUpRight className="relative h-4 w-4" />
           </Link>
         </div>

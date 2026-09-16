@@ -54,7 +54,7 @@ const paths = [
     points: [
       "Auto text-back the second you miss a call",
       "Quote request page that actually converts",
-      "More 5-star reviews from happy customers",
+      "More honest Google reviews from real customers",
       "Show up when locals search Google",
       "One place to track every lead",
       "Automatic follow-up texts and reminders",
@@ -68,7 +68,7 @@ const paths = [
     points: [
       "Easier online booking, 24/7",
       "Automatic confirmations and reminders",
-      "More reviews from happy clients",
+      "More honest reviews from real clients",
       "Win-back texts for clients who haven't been in",
       "Promo texts and emails for slow days",
       "One place to see every client and booking",
