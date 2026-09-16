@@ -38,7 +38,7 @@ function FieldLabel({
 
 export function LeadForm({
   variant = "light",
-  submitLabel = "Book Free Consultation",
+  submitLabel = "Get My Free Google Report",
   className,
   compact,
   labeled = false,
@@ -71,7 +71,7 @@ export function LeadForm({
         toast.error("Something went wrong sending that. Please email Aj@lavendermarketingco.com.");
         return;
       }
-      toast.success("You're in! Pick a time to talk through your free design.");
+      toast.success("Your Google report is being prepared! Check your inbox for your personalized Google & Local Visibility Report.");
       setBooking(true);
     } catch {
       toast.error("Something went wrong sending that. Please email Aj@lavendermarketingco.com.");

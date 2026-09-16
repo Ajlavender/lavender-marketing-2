@@ -98,7 +98,7 @@ function WebsiteRedesign() {
               className="animate-fade-in mt-8 max-w-xl"
               style={{ animationDelay: "220ms", animationFillMode: "both" }}
             >
-              <LeadForm fields="leadInline" submitLabel="go!" />
+              <LeadForm fields="leadInline" submitLabel="Get My Free Google Report" />
             </div>
           </div>
 

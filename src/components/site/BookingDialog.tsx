@@ -55,7 +55,7 @@ export function BookingDialog({
               You're in — now pick a time
             </DialogTitle>
             <DialogDescription className="text-white/70">
-              Book a quick call and we'll walk you through your free website design.
+              Book a quick call and we'll walk you through your free Google & Local Visibility Report.
             </DialogDescription>
           </DialogHeader>
         </div>
