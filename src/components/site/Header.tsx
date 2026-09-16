@@ -193,7 +193,7 @@ export function Header() {
               >
                 <span className="absolute inset-0 bg-gradient-to-br from-nav-cta-from to-nav-cta-to transition-all duration-300 group-hover/btn:from-nav-cta-hover-from group-hover/btn:to-nav-cta-hover-to" />
                 <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/20" />
-                <span className="relative">Free Visibility Report</span>
+                <span className="relative">Free Google Report</span>
                 <ArrowUpRight className="relative h-3.5 w-3.5" />
               </Button>
             </GrowthReportDialog>
