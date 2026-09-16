@@ -291,31 +291,19 @@ function Index() {
     if (conn?.saveData) return; // keep the poster only
     if (/^(slow-2g|2g)$/.test(conn?.effectiveType ?? "")) return;
 
-    const attach = () => {
-      if (hasScrolledRef.current) setVideoSrc(HERO_VIDEO);
-    };
+    const attach = () => setVideoSrc(HERO_VIDEO);
     const markScrolled = () => {
       if (window.scrollY > 80) {
         hasScrolledRef.current = true;
-        window.removeEventListener("scroll", markScrolled);
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 1.5) {
+          attach();
+          window.removeEventListener("scroll", markScrolled);
+        }
       }
     };
     window.addEventListener("scroll", markScrolled, { passive: true });
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          const ric = (window as Window & {
-            requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number;
-          }).requestIdleCallback;
-          if (ric) ric(attach, { timeout: 1200 });
-          else setTimeout(attach, 200);
-        }
-      },
-       { rootMargin: "0px" },
-    );
-    io.observe(el);
     return () => {
-      io.disconnect();
       window.removeEventListener("scroll", markScrolled);
     };
   }, []);

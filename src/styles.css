@@ -513,6 +513,13 @@
   .animate-float-soft {
     animation-duration: 9s;
   }
+  /* Entry motion near the first screen can be counted as layout shift on phones. */
+  .animate-fade-in,
+  .animate-scale-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
   /* Cheaper glass on phones — visually near-identical, far less GPU work. */
   .backdrop-blur-2xl,
   .backdrop-blur-xl {

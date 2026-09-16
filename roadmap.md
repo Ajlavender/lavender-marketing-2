@@ -15,4 +15,4 @@
 - [x] Add responsive image variants and stable image dimensions
 - [x] Remove avoidable third-party image requests
 - [x] Stop idle-loading every lower-page section
-- [ ] Verify layout stability, mobile/tablet presentation, and interactions
+- [x] Verify layout stability, mobile/tablet presentation, and interactions
