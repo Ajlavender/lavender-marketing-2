@@ -5,5 +5,5 @@
 - [x] Clarify launch timing and review/local visibility claims
 - [x] Add tangible Google & Local Visibility Report preview
 - [x] Reduce repeated offer explanation
-- [ ] Preserve the Google-first CTA on its dedicated report page
-- [ ] Complete desktop and tablet verification
+- [x] Preserve the Google-first CTA on its dedicated report page
+- [x] Complete desktop and tablet verification
