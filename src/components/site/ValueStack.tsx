@@ -5,8 +5,8 @@ import { Reveal } from "@/components/site/Reveal";
 
 const items = [
   {
-    title: "Google & Local Visibility Report",
-    body: "Delivered on the 1st of every month. See where your leads came from, what converted, and what to fix next.",
+    title: "Free Google & Local Visibility Snapshot",
+    body: "A one-time snapshot included with your free design, showing how customers currently find and evaluate your business online.",
     value: "$297",
   },
   {
@@ -75,6 +75,9 @@ export function ValueStack() {
           </Button>
           <p className="mt-4 text-sm text-muted-foreground">
             🔒 Your info stays private. We never spam.
+          </p>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
+            Become an Essentials client and your full Monthly Google &amp; Local Visibility Report is delivered automatically on the 1st.
           </p>
         </Reveal>
       </div>

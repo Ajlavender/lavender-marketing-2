@@ -153,7 +153,7 @@ export const painPoints = [
   },
   {
     title: "Reviews aren't collected consistently",
-    body: "Happy customers forget to leave one. Your reputation stops compounding and your ranking slides.",
+    body: "Customers often forget to leave feedback. Your reputation stops growing, making it harder for new customers to choose you.",
     image: `${ILLU}/reviews.webp`,
   },
   {

@@ -19,11 +19,11 @@ const steps = [
   },
   {
     title: "Review gets requested",
-    body: "Every happy customer is asked for a Google review at the moment they're happiest.",
+    body: "After every completed job, customers automatically receive a request for an honest Google review while the experience is still fresh.",
   },
   {
     title: "The cycle repeats",
-    body: "More reviews means better ranking. Better ranking means more visitors. Same system, every month.",
+    body: "More reviews can strengthen your local visibility. More visibility creates more opportunities to get found and chosen.",
   },
 ];
 

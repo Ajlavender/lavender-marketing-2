@@ -30,6 +30,7 @@ import { MEDIA, stats, ILLU } from "@/data/site";
 import { CountUp, Reveal } from "@/components/site/Reveal";
 import { LazySection, usePrefetchOnIdle } from "@/components/site/LazySection";
 import { BeforeAfterShowcase } from "@/components/site/BeforeAfterShowcase";
+import { VisibilityReportPreview } from "@/components/site/VisibilityReportPreview";
 import {
   BuyerPaths,
   CatchSection,
@@ -94,7 +95,7 @@ export const Route = createFileRoute("/")({
             ...[
               { name: "Website Design", url: "https://lavendermarketingco.com/website-redesign" },
               { name: "Pricing", url: "https://lavendermarketingco.com/pricing" },
-              { name: "Free Visibility Report", url: "https://lavendermarketingco.com/growth-report" },
+              { name: "Free Google Report", url: "https://lavendermarketingco.com/growth-report" },
               { name: "Case Studies", url: "https://lavendermarketingco.com/projects" },
               { name: "Reviews", url: "https://lavendermarketingco.com/reviews" },
               { name: "About Lavender Marketing", url: "https://lavendermarketingco.com/about" },
@@ -441,8 +442,8 @@ function Index() {
                 style={{ animationDelay: "240ms", animationFillMode: "both" }}
                 className="animate-fade-in mt-4 max-w-xl text-base text-muted-foreground sm:mt-5 sm:text-lg"
               >
-                Built for local service businesses. The $297 covers hosting, the review engine that turns happy
-                customers into stronger local visibility, missed-call text-back, follow-up and a
+                Built for local service businesses. The $297 covers hosting, honest review requests,
+                missed-call text-back, follow-up and a
                 monthly Google & Local Visibility Report delivered on the 1st of every month.
                 <span className="hidden sm:inline">
                   {" "}
@@ -463,7 +464,7 @@ function Index() {
                   <Star className="h-4 w-4 fill-[#f4a62a] text-[#f4a62a]" /> 5.0 Google rating
                 </span>
                 <span className="inline-flex items-center gap-2">
-                  <Zap className="h-4 w-4 text-brand" /> Live in 14 days
+                   <Zap className="h-4 w-4 text-brand" /> Live within 14 days
                 </span>
               </div>
             </div>
@@ -482,16 +483,16 @@ function Index() {
                   Start here
                 </p>
                 <p className="mt-2 text-2xl font-bold leading-tight">
-                  See How Your Business Ranks on Google
+                  Get Your Free Website Design
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Get a free report showing how your business appears across Google Search, Maps, reviews, local listings and your website.
+                  Tell us about your business. We&apos;ll design a custom homepage first, and you pay nothing unless you love it.
                 </p>
                 <div className="mt-6">
-                  <LeadForm labeled submitLabel="Get My Free Google Report" />
+                  <LeadForm labeled offer="design" submitLabel="Get My Free Website Design" />
                 </div>
                 <p className="mt-3 text-xs text-muted-foreground">
-                  Free, personalized and built specifically for your business
+                  No design fee, no setup fee and no obligation
                 </p>
               </div>
             </div>
@@ -731,8 +732,8 @@ function Index() {
             Rated by 50+ local business owners
           </p>
           <h2 className="mx-auto mt-4 max-w-4xl text-center text-4xl font-bold sm:text-5xl">
-            The review engine that turns happy customers into{" "}
-            <span className="text-primary">reviews that help more local customers choose you.</span>
+            Automatically ask real customers for{" "}
+            <span className="text-primary">honest Google reviews after every completed job.</span>
           </h2>
         </Reveal>
 
@@ -769,8 +770,8 @@ function Index() {
                 </p>
                 <p className="mt-6 font-bold">Already have a decent website?</p>
                 <p className="mt-1 max-w-xl text-background/85">
-                  Perfect. The review engine works on its own — more reviews, better local ranking,
-                  more calls. We&apos;ll set it up either way.
+                  Perfect. The review engine works on its own — honest reviews can strengthen your
+                  local visibility and create more opportunities to get found and chosen.
                 </p>
                 <p className="mt-6 text-background/85">
                   Drop your details and we'll send your free Google & Local Visibility Report.
@@ -780,14 +781,7 @@ function Index() {
                 </div>
               </div>
 
-              <div className="relative">
-                <img
-                  src={`${ILLU}/reporting.webp`}
-                  alt="Businessman giving analysis presentation"
-                  loading="lazy"
-                  className="mx-auto w-full max-w-lg lg:absolute lg:-bottom-24 lg:left-1/2 lg:w-[125%] lg:max-w-none lg:-translate-x-1/2"
-                />
-              </div>
+              <VisibilityReportPreview />
             </div>
           </Reveal>
         </div>
@@ -865,30 +859,12 @@ function Index() {
 
       {/* No strings attached */}
       <Section>
-        <div className="grid items-center gap-14 lg:grid-cols-2">
-          <Reveal from="left" scale>
-            <img
-              src={`${ILLU}/booking.webp`}
-              alt="Businessman doing work on working desk"
-              loading="lazy"
-              className="mx-auto w-full max-w-md"
-            />
-          </Reveal>
-          <Reveal from="right" delay={120}>
-            <h2 className="text-4xl font-bold sm:text-5xl">
-              No strings attached. Seriously. <span className="text-primary">0% risk.</span>
-            </h2>
-            <p className="mt-5 text-lg text-muted-foreground">
-              We design the site first. You look at it. If you love it, it&apos;s $297 a month and
-              we launch it. If you don&apos;t, you walk away and it costs you nothing.
-            </p>
-            <Button asChild size="lg" className="mt-8">
-              <Link to="/contact">Get My Free Website Design</Link>
-            </Button>
-          </Reveal>
-        </div>
-
-        <div className="mt-20">
+        <Reveal>
+          <h2 className="mx-auto max-w-3xl text-center text-4xl font-bold sm:text-5xl">
+            Built quickly. Supported for the <span className="text-primary">long run.</span>
+          </h2>
+        </Reveal>
+        <div className="mt-14">
           <Counters />
         </div>
       </Section>

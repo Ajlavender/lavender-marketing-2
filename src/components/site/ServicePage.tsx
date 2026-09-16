@@ -63,7 +63,7 @@ export function ServicePage({
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <GrowthReportDialog>
-                  <Button size="lg">Get your free visibility report</Button>
+                  <Button size="lg">Get My Free Google Report</Button>
                 </GrowthReportDialog>
 
                 <Button

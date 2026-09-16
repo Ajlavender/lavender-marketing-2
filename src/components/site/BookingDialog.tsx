@@ -30,10 +30,12 @@ export function BookingDialog({
   open,
   onOpenChange,
   prefill,
+  offer = "report",
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   prefill?: BookingPrefill;
+  offer?: "report" | "design";
 }) {
   useEffect(() => {
     if (!open) return;
@@ -55,7 +57,9 @@ export function BookingDialog({
               You're in — now pick a time
             </DialogTitle>
             <DialogDescription className="text-white/70">
-              Book a quick call and we'll walk you through your free Google & Local Visibility Report.
+              {offer === "design"
+                ? "Book a quick call so we can learn about your business and prepare your free website design."
+                : "Book a quick call and we'll walk you through your free Google & Local Visibility Report."}
             </DialogDescription>
           </DialogHeader>
         </div>

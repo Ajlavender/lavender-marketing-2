@@ -1,15 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, X, ArrowUpRight } from "lucide-react";
 import { nav, LOGO } from "@/data/site";
 import { cn } from "@/lib/utils";
 import { groupChildren, type MegaChild } from "@/components/site/MegaMenu";
+import { GrowthReportDialog } from "@/components/site/GrowthReportDialog";
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
 export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const isReportPage = useRouterState({ select: (state) => state.location.pathname === "/growth-report" });
   const panelRef = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [mounted, setMounted] = useState(open);
@@ -179,16 +181,29 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         </nav>
 
         <div className="border-t border-white/10 p-4">
-          <Link
-            to="/contact"
-            onClick={onClose}
-            className="group relative flex items-center justify-center gap-1.5 overflow-hidden rounded-full px-6 py-3.5 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum"
-          >
+          {isReportPage ? (
+            <GrowthReportDialog>
+              <button
+                onClick={onClose}
+                className="group relative flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-full px-6 py-3.5 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum"
+              >
+                <span className="absolute inset-0 bg-gradient-to-br from-nav-cta-from to-nav-cta-to" />
+                <span className="relative">Get My Free Google Report</span>
+                <ArrowUpRight className="relative h-4 w-4" />
+              </button>
+            </GrowthReportDialog>
+          ) : (
+            <Link
+              to="/contact"
+              onClick={onClose}
+              className="group relative flex items-center justify-center gap-1.5 overflow-hidden rounded-full px-6 py-3.5 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum"
+            >
             <span className="absolute inset-0 bg-gradient-to-br from-nav-cta-from to-nav-cta-to transition-all duration-300 group-hover:from-nav-cta-hover-from group-hover:to-nav-cta-hover-to" />
             <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/20" />
-            <span className="relative">Get Your Free Visibility Report</span>
+            <span className="relative">Get My Free Website Design</span>
             <ArrowUpRight className="relative h-4 w-4" />
-          </Link>
+            </Link>
+          )}
         </div>
       </div>
     </div>,
