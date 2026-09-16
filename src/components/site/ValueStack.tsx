@@ -5,7 +5,7 @@ import { Reveal } from "@/components/site/Reveal";
 
 const items = [
   {
-    title: "Monthly local business growth report",
+    title: "Google & Local Visibility Report",
     body: "Delivered on the 1st of every month. See where your leads came from, what converted, and what to fix next.",
     value: "$297",
   },

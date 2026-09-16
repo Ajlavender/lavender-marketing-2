@@ -51,7 +51,7 @@ export function GrowthReportDialog({ children }: { children: React.ReactNode }) 
       <DialogContent
         className="flex max-h-[90dvh] w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] flex-col overflow-hidden border-border/50 bg-card p-0 shadow-2xl sm:w-full sm:max-w-[480px] [&>button]:right-3 [&>button]:top-3 [&>button]:text-muted-foreground"
       >
-        <DialogTitle className="sr-only">Free growth report</DialogTitle>
+        <DialogTitle className="sr-only">Free Google & Local Visibility Report</DialogTitle>
         <DialogHeader className="sr-only" />
 
         {/* Gradient plum banner — replaces the widget's native image header */}
@@ -69,7 +69,7 @@ export function GrowthReportDialog({ children }: { children: React.ReactNode }) 
                 Lavender Marketing & Co.
               </p>
               <p className="truncate text-[17px] font-semibold leading-tight text-white">
-                Your free growth report
+                Your free Google & Local Visibility Report
               </p>
             </div>
           </div>

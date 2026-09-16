@@ -290,7 +290,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
       },
       {
         q: "Can I see what my pipeline is worth?",
-        a: "Yes, pipeline value and win rate are included in your monthly growth report.",
+        a: "Yes, pipeline value and win rate are included in your monthly Google & Local Visibility Report.",
       },
     ],
     plan: "Included in the $297/mo growth system",
@@ -330,13 +330,13 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     plan: "Included in the $297/mo growth system",
   },
   "/growth-report": {
-    title: t("Monthly Local Business Growth Report"),
+    title: t("Google & Local Visibility Report"),
     description:
       "A one-page plain-English report on the 1st: leads by source, calls recovered, reviews earned, bookings made and the next improvement. Included in $297/mo.",
-    name: "Monthly Growth Report",
+    name: "Google & Local Visibility Report",
     image: `${ILLU}/reporting.webp`,
     answer:
-      "The monthly growth report is one page of plain English sent on the 1st: leads by source, calls recovered, reviews earned, bookings made, compared to last month — plus the one or two things we are changing next. No impressions, no vanity dashboards.",
+      "The Google & Local Visibility Report is one page of plain English sent on the 1st: leads by source, calls recovered, reviews earned, bookings made, compared to last month — plus the one or two things we are changing next. No impressions, no vanity dashboards.",
     facts: [
       { label: "Delivered", value: "1st of every month, by email" },
       { label: "Length", value: "One page, plain English" },

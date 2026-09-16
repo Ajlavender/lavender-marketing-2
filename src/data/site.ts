@@ -96,7 +96,7 @@ export const services = [
   },
   {
     slug: "/growth-report",
-    title: "Monthly Growth Report",
+    title: "Google & Local Visibility Report",
     short: "One plain-English page on the 1st: leads, calls, reviews, bookings.",
     value: "$250/mo value",
     group: "Included in $297/mo",

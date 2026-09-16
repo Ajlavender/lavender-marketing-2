@@ -21,7 +21,7 @@ const plans = [
       "Unified inbox (mobile app included)",
       "Lead pipeline + full CRM",
       "Hosting, domain, security & unlimited small edits",
-      "Monthly local business growth report",
+      "Google & Local Visibility Report",
     ],
   },
   {
