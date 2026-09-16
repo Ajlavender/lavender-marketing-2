@@ -85,8 +85,8 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="mb-5 text-2xl text-foreground">Get A Free Website Redesign Today!</h2>
-          <LeadForm submitLabel="Get My Free Website Design" />
+          <h2 className="mb-5 text-2xl text-foreground">See How Your Business Ranks on Google</h2>
+          <LeadForm submitLabel="Get My Free Google Report" />
         </div>
       </div>
 

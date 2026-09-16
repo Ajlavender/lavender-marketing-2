@@ -482,16 +482,16 @@ function Index() {
                   Start here
                 </p>
                 <p className="mt-2 text-2xl font-bold leading-tight">
-                  Get your free website design
+                  See How Your Business Ranks on Google
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Tell us about your business — we'll send a custom design demo in 48 hours.
+                  Get a free report showing how your business appears across Google Search, Maps, reviews, local listings and your website.
                 </p>
                 <div className="mt-6">
-                  <LeadForm labeled submitLabel="Get My Free Website Design" />
+                  <LeadForm labeled submitLabel="Get My Free Google Report" />
                 </div>
                 <p className="mt-3 text-xs text-muted-foreground">
-                  No card required · Design first, decide after · Cancel anytime
+                  Free, personalized and built specifically for your business
                 </p>
               </div>
             </div>
