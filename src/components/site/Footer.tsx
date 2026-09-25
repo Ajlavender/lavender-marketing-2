@@ -90,7 +90,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-2 pb-10 text-center text-sm text-foreground/60 sm:flex-row sm:justify-center sm:gap-4">
+      <div className="flex flex-col items-center gap-2 pb-4 text-center text-sm text-foreground/60 sm:flex-row sm:justify-center sm:gap-4">
         <span>© {new Date().getFullYear()} Lavender Marketing & Co.</span>
         <span className="hidden sm:inline" aria-hidden="true">·</span>
         <a href="/sitemap.xml" className="hover:text-primary hover:underline">
