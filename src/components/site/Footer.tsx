@@ -97,6 +97,16 @@ export function Footer() {
           Sitemap
         </a>
       </div>
+      <p className="px-4 pb-8 text-center text-xs leading-relaxed text-foreground/45 sm:text-[12px]">
+        Designed by{" "}
+        <a href="https://lavendermarketingco.com/" rel="sponsored" className="transition-colors hover:text-primary">
+          Lavender Marketing Co.
+        </a>{" "}
+        · Powered by{" "}
+        <a href="https://lavendersuitepro.com/" rel="sponsored" className="transition-colors hover:text-primary">
+          Lavender Suite Pro
+        </a>
+      </p>
     </footer>
   );
 }
