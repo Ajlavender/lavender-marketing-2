@@ -19,7 +19,15 @@ import { useIsMobile } from "@/hooks/use-mobile";
  * when the form would otherwise overflow — so there's never a vertical
  * scrollbar inside the popup.
  */
-export function GrowthReportDialog({ children }: { children: React.ReactNode }) {
+export function GrowthReportDialog({
+  children,
+  open,
+  onOpenChange,
+}: {
+  children: React.ReactNode;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}) {
   const isMobile = useIsMobile();
   const bannerRef = useRef<HTMLDivElement>(null);
   const [bannerH, setBannerH] = useState(96);
@@ -46,7 +54,7 @@ export function GrowthReportDialog({ children }: { children: React.ReactNode }) 
   const widgetMaxH = Math.max(240, vh * 0.9 - bannerH - 16);
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent
         className="flex max-h-[90dvh] w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] flex-col overflow-hidden border-border/50 bg-card p-0 shadow-2xl sm:w-full sm:max-w-[480px] [&>button]:right-3 [&>button]:top-3 [&>button]:text-muted-foreground"
