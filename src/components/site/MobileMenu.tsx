@@ -15,16 +15,18 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
   const panelRef = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [mounted, setMounted] = useState(open);
+  const [reportOpen, setReportOpen] = useState(false);
 
-  // keep panel mounted through the exit animation
+  // keep panel mounted through the exit animation — and while the report
+  // popup is open, since the dialog lives in this subtree
   useEffect(() => {
-    if (open) {
+    if (open || reportOpen) {
       setMounted(true);
       return;
     }
     const t = setTimeout(() => setMounted(false), 350);
     return () => clearTimeout(t);
-  }, [open]);
+  }, [open, reportOpen]);
 
   // body scroll lock
   useEffect(() => {
@@ -182,9 +184,12 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
 
         <div className="border-t border-white/10 p-4">
           {isReportPage ? (
-            <GrowthReportDialog>
+            <GrowthReportDialog open={reportOpen} onOpenChange={setReportOpen}>
               <button
-                onClick={onClose}
+                onClick={() => {
+                  setReportOpen(true);
+                  onClose();
+                }}
                 className="group relative flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-full px-6 py-3.5 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum"
               >
                 <span className="absolute inset-0 bg-gradient-to-br from-nav-cta-from to-nav-cta-to" />
