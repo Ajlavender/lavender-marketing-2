@@ -13,7 +13,8 @@ import {
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "@/components/ui/button";
-import { LeadForm } from "@/components/site/LeadForm";
+import { LeadForm, ReportFallback } from "@/components/site/LeadForm";
+import { PreviewSteps } from "@/components/site/sections";
 import { cn } from "@/lib/utils";
 import {
   Counters,
@@ -164,6 +165,10 @@ function VideoPlayer({
     else el.pause();
   }, [shouldPlay, videoRef, videoSrc]);
 
+  // If the file can't be decoded, fall back to the poster instead of the browser's error screen.
+  const [failed, setFailed] = useState(false);
+  const [ready, setReady] = useState(false);
+
   return (
     <div className="relative aspect-video w-full bg-black">
       <video
@@ -174,14 +179,16 @@ function VideoPlayer({
         muted={muted}
         loop
         playsInline
-        controls={!floating}
+        controls={!floating && ready && !failed}
         disablePictureInPicture
         preload="metadata"
         onLoadedMetadata={resume}
         onTimeUpdate={(e) => {
           positionRef.current = e.currentTarget.currentTime;
         }}
+        onError={() => setFailed(true)}
         onCanPlay={() => {
+          setReady(true);
           onCanPlay();
           resume();
         }}
@@ -190,7 +197,9 @@ function VideoPlayer({
           floating ? "aspect-video" : "aspect-video",
         )}
       >
-        {videoSrc && <source src={videoSrc} type="video/mp4" />}
+        {videoSrc && !failed && (
+          <source src={videoSrc} type="video/mp4" onError={() => setFailed(true)} />
+        )}
       </video>
 
 
@@ -458,7 +467,7 @@ function Index() {
                   <ShieldCheck className="h-4 w-4 text-brand" /> No contracts
                 </span>
                 <span className="inline-flex items-center gap-2">
-                  <Star className="h-4 w-4 fill-[#f4a62a] text-[#f4a62a]" /> 5.0 Google rating
+                  <Star className="h-4 w-4 fill-[#f4a62a] text-[#f4a62a]" /> 5.0-star Google rating
                 </span>
                 <span className="inline-flex items-center gap-2">
                    <Zap className="h-4 w-4 text-brand" /> Live within 14 days
@@ -487,6 +496,7 @@ function Index() {
                 </p>
                 <div className="mt-6">
                   <LeadForm labeled offer="design" submitLabel="Get My Free Website Design" />
+                  <ReportFallback className="mt-4 text-center" />
                 </div>
                 <p className="mt-3 text-xs text-muted-foreground">
                   No design fee, no setup fee and no obligation
@@ -723,6 +733,8 @@ function Index() {
           <ServicesGrid />
         </Reveal>
       </Section>
+
+      <PreviewSteps />
 
       {/* Reviews */}
       <Section muted className="py-24">

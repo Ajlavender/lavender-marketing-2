@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { serviceHead } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
-import { LeadForm } from "@/components/site/LeadForm";
+import { LeadForm, ReportFallback } from "@/components/site/LeadForm";
 import { Section } from "@/components/site/sections";
 import { Reveal } from "@/components/site/Reveal";
 import { TestimonialCarousel } from "@/components/site/home-sections.lazy";
@@ -34,7 +34,7 @@ const cards = [
   },
   {
     title: "SEO Ready",
-    body: "Our websites will make the Google gods smile. We've got the basics covered for you to go wild with SEO later.",
+    body: "Our websites will impress Google. We've got the basics covered for you to go wild with SEO later.",
     image: `${ILLU}/local-seo.webp`,
     alt: "seo process",
   },
@@ -46,7 +46,7 @@ const cards = [
   },
   {
     title: "Smooth Process",
-    body: "We're all about saving time for executives with our optimized web development process. Time is the biggest obstacle to creating a website, but our streamlined process makes it a breeze – usually within 45 days!",
+    body: "We're all about saving time for executives with our optimized web development process. Time is the biggest obstacle to creating a website, but our streamlined process makes it a breeze – usually within 14 days.",
     image: `${ILLU}/automations.webp`,
     alt: "time is money",
   },
@@ -63,7 +63,7 @@ const loveUs = [
   { label: "Smooth Process Built For Busy Executives", Icon: Clock },
   { label: "Get A Personalized Redesign Before Decision", Icon: Monitor },
   { label: "Dedicated Designer To Support You After Completion", Icon: Star },
-  { label: "Ideas Based On Data From 2000 Websites", Icon: Database },
+  { label: "Ideas Proven Across 50+ Businesses", Icon: Database },
   { label: "Piece Of Cake To Modify. Tutorial Included", Icon: BadgeCheck },
   { label: "Fixed Price To Prevent Incentive To Lengthen The Project", Icon: InfinityIcon },
   { label: "Unlimited Changes Included", Icon: Brush },
@@ -80,7 +80,7 @@ function WebsiteRedesign() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pb-20 pt-36 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:px-8">
           <div className="animate-fade-in">
             <p className="text-base text-muted-foreground">
-              Establish Yourself As The Undisputed Leader In Your Niche
+              Stand Out In Your Local Market
             </p>
             <h1 className="mt-5 max-w-xl text-5xl font-bold leading-[1.08] sm:text-6xl">
               Website Redesign Services{" "}
@@ -98,7 +98,8 @@ function WebsiteRedesign() {
               className="animate-fade-in mt-8 max-w-xl"
               style={{ animationDelay: "220ms", animationFillMode: "both" }}
             >
-              <LeadForm fields="leadInline" submitLabel="Get My Free Google Report" />
+              <LeadForm fields="leadInline" offer="design" submitLabel="Get My Free Website Design" />
+              <ReportFallback className="mt-4" />
             </div>
           </div>
 
@@ -275,7 +276,7 @@ function WebsiteRedesign() {
             Our Experience Is Your Advantage
           </p>
           <h2 className="mt-3 text-center text-4xl font-bold sm:text-5xl">
-            Join Thousands Of Happy Customers
+            Join 50+ Happy Local Businesses
           </h2>
         </Reveal>
         <Reveal delay={140} className="mt-14">

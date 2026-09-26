@@ -328,7 +328,7 @@ export const ratingSources = [
   },
   {
     label: "Google",
-    count: "160+ reviews",
+    count: "50+ reviews",
     logo: "/logos/google.svg",
   },
   {
@@ -378,6 +378,22 @@ export const faqs = [
   {
     q: "Who owns the website when it's done?",
     a: "You do. Full ownership of the design, content and files, with no lock-in.",
+  },
+  {
+    q: "What happens during the 7-day preview?",
+    a: "We design a brand-new homepage for your business and give you 7 days to review it. If you love it, it becomes your live website at $297/mo, live within 14 days, with everything switched on. If not, we take it down and you owe nothing.",
+  },
+  {
+    q: "Do I need to enter a credit card to start?",
+    a: "No. The design and the 7-day preview are completely free. You only pay if you decide to keep the website.",
+  },
+  {
+    q: "What happens if I don't want to continue after 7 days?",
+    a: "The preview comes down and you owe nothing. We'll check in once to hear your thoughts.",
+  },
+  {
+    q: "What's the difference between the free Google report and the free website preview?",
+    a: "The report is a free snapshot of how your business shows up on Google, zero commitment. The website preview is the fix: a brand-new homepage designed free, yours to keep for $297/mo if you love it.",
   },
 ];
 

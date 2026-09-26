@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { ArrowRight, Globe, Mail, Phone, MessageSquare } from "lucide-react";
 import { toast } from "sonner";
@@ -252,5 +253,16 @@ export function LeadForm({
     </form>
     {bookingDialog}
     </>
+  );
+}
+
+export function ReportFallback({ className, dark }: { className?: string; dark?: boolean }) {
+  return (
+    <p className={cn("text-sm", dark ? "text-background/80" : "text-muted-foreground", className)}>
+      Not ready for a new website?{" "}
+      <Link to="/growth-report" className="font-semibold text-primary underline-offset-4 hover:underline">
+        Get your free Google &amp; Local Visibility Report instead.
+      </Link>
+    </p>
   );
 }

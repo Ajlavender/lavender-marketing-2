@@ -13,6 +13,7 @@ const links = [
   { label: "Contact", to: "/contact" },
   { label: "FAQ", to: "/faq" },
   { label: "Blog", to: "/blog" },
+  { label: "Privacy Policy", to: "/privacy-policy" },
 ] as const;
 
 const socials = [

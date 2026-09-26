@@ -549,3 +549,56 @@ export function CtaBand({
   );
 }
 
+
+const previewSteps = [
+  "Tell us your current website URL. We design a brand-new homepage for your business, completely free.",
+  "You get 7 days to look it over. Click through it, show your team, picture it as your live site.",
+  "Love it? It becomes your new website at $297/mo, live within 14 days, with missed-call text-back, review automation, online booking, and follow-up switched on.",
+  "Not for you? We take the preview down. You owe nothing.",
+];
+
+export function PreviewSteps() {
+  return (
+    <section className="bg-secondary py-20 sm:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h2 className="mx-auto max-w-3xl text-center text-4xl font-bold sm:text-5xl">
+          Try your new website <span className="text-primary">free for 7 days.</span>
+        </h2>
+        <p className="mt-4 text-center text-lg text-muted-foreground">Here's exactly how it works:</p>
+        <ol className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {previewSteps.map((step, i) => (
+            <li key={i} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-base font-bold text-primary-foreground">
+                {i + 1}
+              </span>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{step}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
+const nextSteps = [
+  "We look at your current website, usually within one business day.",
+  "We design your new homepage. Free. No card required.",
+  "You get 7 days to review it before you decide anything.",
+  "Love it? Your full site goes live within 14 days at $297/mo. Don't? The preview comes down and you owe nothing.",
+];
+
+export function NextSteps({ className }: { className?: string }) {
+  return (
+    <div className={cn("rounded-xl bg-secondary p-5", className)}>
+      <p className="font-semibold">Here's what happens after you submit:</p>
+      <ol className="mt-4 space-y-3">
+        {nextSteps.map((s, i) => (
+          <li key={i} className="flex gap-3 text-sm text-muted-foreground">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">{i + 1}</span>
+            <span>{s}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}

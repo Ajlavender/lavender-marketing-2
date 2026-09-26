@@ -17,6 +17,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as ReviewAutomationRouteImport } from './routes/review-automation'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as OnlineBookingRouteImport } from './routes/online-booking'
 import { Route as MissedCallTextBackRouteImport } from './routes/missed-call-text-back'
@@ -75,6 +76,11 @@ const ReviewAutomationRoute = ReviewAutomationRouteImport.update({
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricingRoute = PricingRouteImport.update({
@@ -190,6 +196,7 @@ export interface FileRoutesByFullPath {
   '/missed-call-text-back': typeof MissedCallTextBackRoute
   '/online-booking': typeof OnlineBookingRoute
   '/pricing': typeof PricingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
   '/review-automation': typeof ReviewAutomationRoute
   '/reviews': typeof ReviewsRoute
@@ -219,6 +226,7 @@ export interface FileRoutesByTo {
   '/missed-call-text-back': typeof MissedCallTextBackRoute
   '/online-booking': typeof OnlineBookingRoute
   '/pricing': typeof PricingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
   '/review-automation': typeof ReviewAutomationRoute
   '/reviews': typeof ReviewsRoute
@@ -249,6 +257,7 @@ export interface FileRoutesById {
   '/missed-call-text-back': typeof MissedCallTextBackRoute
   '/online-booking': typeof OnlineBookingRoute
   '/pricing': typeof PricingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
   '/review-automation': typeof ReviewAutomationRoute
   '/reviews': typeof ReviewsRoute
@@ -280,6 +289,7 @@ export interface FileRouteTypes {
     | '/missed-call-text-back'
     | '/online-booking'
     | '/pricing'
+    | '/privacy-policy'
     | '/projects'
     | '/review-automation'
     | '/reviews'
@@ -309,6 +319,7 @@ export interface FileRouteTypes {
     | '/missed-call-text-back'
     | '/online-booking'
     | '/pricing'
+    | '/privacy-policy'
     | '/projects'
     | '/review-automation'
     | '/reviews'
@@ -338,6 +349,7 @@ export interface FileRouteTypes {
     | '/missed-call-text-back'
     | '/online-booking'
     | '/pricing'
+    | '/privacy-policy'
     | '/projects'
     | '/review-automation'
     | '/reviews'
@@ -368,6 +380,7 @@ export interface RootRouteChildren {
   MissedCallTextBackRoute: typeof MissedCallTextBackRoute
   OnlineBookingRoute: typeof OnlineBookingRoute
   PricingRoute: typeof PricingRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProjectsRoute: typeof ProjectsRoute
   ReviewAutomationRoute: typeof ReviewAutomationRoute
   ReviewsRoute: typeof ReviewsRoute
@@ -438,6 +451,13 @@ declare module '@tanstack/react-router' {
       path: '/projects'
       fullPath: '/projects'
       preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -592,6 +612,7 @@ const rootRouteChildren: RootRouteChildren = {
   MissedCallTextBackRoute: MissedCallTextBackRoute,
   OnlineBookingRoute: OnlineBookingRoute,
   PricingRoute: PricingRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProjectsRoute: ProjectsRoute,
   ReviewAutomationRoute: ReviewAutomationRoute,
   ReviewsRoute: ReviewsRoute,

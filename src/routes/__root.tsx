@@ -17,6 +17,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { MobileCtaBar } from "@/components/site/MobileCtaBar";
 import { Toaster } from "@/components/ui/sonner";
+import { UsSpelling } from "@/components/site/UsSpelling";
 
 
 function NotFoundComponent() {
@@ -198,6 +199,7 @@ function RootComponent() {
       </div>
       <MobileCtaBar />
       <LocalePrompt />
+      <UsSpelling />
       <Toaster position="top-center" />
     </QueryClientProvider>
   );

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { LeadForm } from "@/components/site/LeadForm";
-import { PageHero, RatingBar, Section } from "@/components/site/sections";
+import { LeadForm, ReportFallback } from "@/components/site/LeadForm";
+import { NextSteps, PageHero, RatingBar, Section } from "@/components/site/sections";
 import { AJ_PHOTO } from "@/data/site";
 
 export const Route = createFileRoute("/contact")({
@@ -11,10 +11,10 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Talk to Lavender Marketing & Co. about your free website design and $297/mo growth system. Request a free demo — no cost, no obligation.",
+          "Talk to Lavender Marketing & Co. about your free website design and $297/mo Essentials plan. Request a free demo — no cost, no obligation.",
       },
       { property: "og:title", content: "Contact | Lavender Marketing & Co." },
-      { property: "og:description", content: "Talk to Lavender Marketing & Co. about your free website design and $297/mo growth system. Request a free demo — no cost, no obligation." },
+      { property: "og:description", content: "Talk to Lavender Marketing & Co. about your free website design and $297/mo Essentials plan. Request a free demo — no cost, no obligation." },
       { property: "og:url", content: "https://lavendermarketingco.com/contact" },
     ],
     links: [{ rel: "canonical", href: "https://lavendermarketingco.com/contact" }],
@@ -76,7 +76,9 @@ function Contact() {
               We'll design your new homepage first. Love it and we continue — if not, you owe nothing.
             </p>
             <div className="mt-6">
-              <LeadForm />
+              <LeadForm offer="design" submitLabel="Get My Free Website Design" />
+              <ReportFallback className="mt-4" />
+              <NextSteps className="mt-8" />
             </div>
           </div>
         </div>
