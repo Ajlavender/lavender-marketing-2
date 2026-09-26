@@ -10,6 +10,9 @@ export const PAYMENT_LINKS: Record<string, { cad: string; usd: string }> = {
   Scale: { cad: "", usd: "" },
 };
 
+/** Intake form for the free website design offer — used by all "Get My Free Website Design" CTAs. */
+export const INTAKE_URL = "https://lavender-intake.vibepreview.app";
+
 export function paymentLink(plan: string, locale: Locale): string | null {
   const l = PAYMENT_LINKS[plan];
   if (!l) return null;

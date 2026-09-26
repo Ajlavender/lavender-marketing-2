@@ -1,3 +1,4 @@
+import { INTAKE_URL } from "@/data/pricing";
 import { useEffect, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, ChevronDown, ArrowUpRight, X, Sparkles } from "lucide-react";
@@ -205,12 +206,12 @@ export function Header() {
               <Button asChild
                 className="group/btn relative h-9 max-w-[11rem] overflow-hidden rounded-full px-4 text-xs font-semibold tracking-wide text-white shadow-none max-sm:hidden"
               >
-              <Link to="/contact">
+              <a href={INTAKE_URL}>
                 <span className="absolute inset-0 bg-gradient-to-br from-nav-cta-from to-nav-cta-to transition-all duration-300 group-hover/btn:from-nav-cta-hover-from group-hover/btn:to-nav-cta-hover-to" />
                 <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/20" />
                 <span className="relative">Get Free Website Design</span>
                 <ArrowUpRight className="relative h-3.5 w-3.5" />
-              </Link>
+              </a>
               </Button>
             )}
             <button

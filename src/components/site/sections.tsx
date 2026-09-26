@@ -1,3 +1,4 @@
+import { INTAKE_URL } from "@/data/pricing";
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Star } from "lucide-react";
@@ -93,7 +94,7 @@ export function PageHero({
           <p className="mt-4 text-base text-muted-foreground sm:mt-5 sm:text-lg">{subtitle}</p>
           <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
             <Button asChild size="lg" className="w-full sm:w-auto">
-              <Link to="/contact">Get My Free Website Design</Link>
+              <a href={INTAKE_URL}>Get My Free Website Design</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
               <Link to="/projects">See our work</Link>

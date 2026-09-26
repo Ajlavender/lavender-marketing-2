@@ -1,3 +1,4 @@
+import { INTAKE_URL } from "@/data/pricing";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link, useRouterState } from "@tanstack/react-router";
@@ -198,8 +199,8 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
               </button>
             </GrowthReportDialog>
           ) : (
-            <Link
-              to="/contact"
+            <a
+              href={INTAKE_URL}
               onClick={onClose}
               className="group relative flex items-center justify-center gap-1.5 overflow-hidden rounded-full px-6 py-3.5 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum"
             >
@@ -207,7 +208,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
             <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/20" />
             <span className="relative">Get My Free Website Design</span>
             <ArrowUpRight className="relative h-4 w-4" />
-            </Link>
+            </a>
           )}
         </div>
       </div>
