@@ -14,7 +14,7 @@ const plans = [
     name: "Essentials",
     stage: "Start here",
     emphasis: true,
-    dark: false,
+    dark: true,
     progress: "w-8",
     price: "$297",
     note: "per month",
@@ -59,7 +59,7 @@ const plans = [
     name: "Scale",
     stage: "The destination",
     emphasis: false,
-    dark: true,
+    dark: false,
     progress: "w-28",
     price: "$4,997",
     note: "per month + ad spend",
@@ -386,7 +386,12 @@ function Pricing() {
                 }
 
                 return (
-                  <Button asChild size="lg" variant={plan.emphasis ? "default" : "outline"} className="mt-8 w-full">
+                  <Button
+                    asChild
+                    size="lg"
+                    variant={plan.emphasis && !plan.dark ? "default" : "outline"}
+                    className="mt-8 w-full"
+                  >
                     {href ? (
                       <a href={href}>Get My Free Website Design</a>
                     ) : (
