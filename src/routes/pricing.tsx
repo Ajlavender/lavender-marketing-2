@@ -2,7 +2,7 @@ import { LOCALE_INFO, useLocale } from "@/lib/locale";
 import { paymentLink } from "@/data/pricing";
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check, ChevronRight, Star } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BOOKING_URL } from "@/components/site/BookingDialog";
 import { CtaBand, FaqAccordion, PreviewSteps, RatingBar, Section, SectionHeading } from "@/components/site/sections";
@@ -193,6 +193,7 @@ function PricingHero() {
 function Pricing() {
   const locale = useLocale();
   const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
+  const annual = billing === "annual";
 
   return (
     <>

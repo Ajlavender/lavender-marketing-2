@@ -51,6 +51,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/playfair-600.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/playfair-600-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 /*
@@ -259,6 +275,7 @@
   --color-nav-cta-hover-from: var(--nav-cta-hover-from);
   --color-nav-cta-hover-to: var(--nav-cta-hover-to);
   --color-lavender-wash: var(--lavender-wash);
+  --font-serif: "Playfair Display", "Barlow Semi Condensed", Georgia, serif;
 }
 
 @utility bg-gradient-brand {
