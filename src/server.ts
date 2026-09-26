@@ -44,11 +44,31 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+const LOCALE_RE = /^\/(en-ca|en-us)(\/|$)/i;
+const SKIP_RE = /^\/(api|__l5e|_serverFn|_build|assets|@|node_modules|src)/;
+
+/** Old un-prefixed page URLs (e.g. /pricing) permanently move to the Canadian site. */
+function localeRedirect(request: Request): Response | null {
+  if (request.method !== "GET" && request.method !== "HEAD") return null;
+  const url = new URL(request.url);
+  const p = url.pathname;
+  if (LOCALE_RE.test(p) || SKIP_RE.test(p) || /\.[a-z0-9]+$/i.test(p)) return null;
+  url.pathname = `/en-ca${p === "/" ? "" : p}`;
+  return new Response(null, { status: 301, headers: { location: url.pathname + url.search } });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      const redirect = localeRedirect(request);
+      if (redirect) return redirect;
       const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
+      let response = await handler.fetch(request, env, ctx);
+      const country = request.headers.get("cf-ipcountry");
+      if (country && (response.headers.get("content-type") ?? "").includes("text/html")) {
+        response = new Response(response.body, response);
+        response.headers.append("set-cookie", `lmc_geo=${country.toUpperCase()}; Path=/; Max-Age=86400; SameSite=Lax`);
+      }
       return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {
       console.error(error);
