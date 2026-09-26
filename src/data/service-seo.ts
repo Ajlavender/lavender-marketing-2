@@ -370,7 +370,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     name: "AI Chat Widget",
     image: `${ILLU}/chat-widget.webp`,
     answer:
-      "The AI chat widget is trained on your services, service area, pricing approach and policies, so it can answer free-form questions instead of only pre-written FAQs. It qualifies the lead, books directly into your calendar, and escalates to you with a summarised conversation when needed.",
+      "The AI chat widget is trained on your services, service area, pricing approach and policies, so it can answer free-form questions instead of only pre-written FAQs. It qualifies the lead, books directly into your calendar, and escalates to you with a conversation summary when needed.",
     facts: [
       { label: "Trained on", value: "Your site, docs, pricing rules and FAQs" },
       { label: "Availability", value: "24/7, including weekends" },
