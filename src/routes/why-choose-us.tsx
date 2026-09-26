@@ -176,7 +176,7 @@ function WhyChooseUs() {
             </div>
           </Reveal>
           <Reveal as="h3" className="mx-auto mt-20 max-w-3xl text-center text-3xl font-bold sm:text-4xl">
-            We've analyzed thousands of websites to ensure this{" "}
+            We've built sites for 50+ local businesses to make sure this{" "}
             <span className="text-primary">won't happen to you.</span>
           </Reveal>
         </div>

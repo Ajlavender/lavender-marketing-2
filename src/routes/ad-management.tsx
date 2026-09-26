@@ -8,7 +8,7 @@ export const Route = createFileRoute("/ad-management")({
   component: () => (
     <ServicePage
       slug="/ad-management"
-      eyebrow="Add-on"
+      eyebrow="Included in the Scale plan"
       title="Ad management that feeds the system"
       subtitle="Google and Meta campaigns pointed at the pages, follow-ups and booking flow we already built — so ad spend turns into booked jobs."
       image={`${ILLU}/lead-gen.webp`}
