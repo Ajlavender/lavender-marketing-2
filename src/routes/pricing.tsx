@@ -18,8 +18,8 @@ const plans = [
     progress: "w-8",
     price: "$297",
     note: "per month",
-    annualPrice: "$2,997",
-    annualMonthly: "$297/mo billed annually",
+    annualPrice: "$2,970",
+    annualMonthly: "$247.50/mo billed annually — 2 months free",
     blurb: "The full system. Your site is designed free — you only pay once you like it.",
     features: [
       "Your new website, designed and built",
@@ -42,8 +42,8 @@ const plans = [
     progress: "w-16",
     price: "$497",
     note: "per month",
-    annualPrice: "$4,997",
-    annualMonthly: "$497/mo billed annually",
+    annualPrice: "$4,970",
+    annualMonthly: "$414.17/mo billed annually — 2 months free",
     blurb: "Everything in Essentials, plus AI that answers and books while you work.",
     features: [
       "Everything in Essentials",
@@ -63,8 +63,8 @@ const plans = [
     progress: "w-28",
     price: "$4,997",
     note: "per month + ad spend",
-    annualPrice: "$49,997",
-    annualMonthly: "$4,997/mo billed annually",
+    annualPrice: "$49,970",
+    annualMonthly: "$4,164.17/mo billed annually — 2 months free",
     blurb: "For businesses ready to buy demand, not just catch it.",
     features: [
       "Everything in Growth",
