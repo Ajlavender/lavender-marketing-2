@@ -328,7 +328,7 @@ export const ratingSources = [
   },
   {
     label: "Google",
-    count: "160+ reviews",
+    count: "50+ reviews",
     logo: "/logos/google.svg",
   },
   {

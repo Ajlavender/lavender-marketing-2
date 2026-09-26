@@ -467,7 +467,7 @@ function Index() {
                   <ShieldCheck className="h-4 w-4 text-brand" /> No contracts
                 </span>
                 <span className="inline-flex items-center gap-2">
-                  <Star className="h-4 w-4 fill-[#f4a62a] text-[#f4a62a]" /> 5.0 Google rating
+                  <Star className="h-4 w-4 fill-[#f4a62a] text-[#f4a62a]" /> 5.0-star Google rating
                 </span>
                 <span className="inline-flex items-center gap-2">
                    <Zap className="h-4 w-4 text-brand" /> Live within 14 days
