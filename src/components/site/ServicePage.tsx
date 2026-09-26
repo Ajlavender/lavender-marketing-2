@@ -132,7 +132,7 @@ export function ServicePage({
         <div className="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-muted-foreground">
           {intro.map((p, i) => (
             <Reveal key={p} from="up" delay={i * 80}>
-              <p>{p}</p>
+              <p><Spell>{p}</Spell></p>
             </Reveal>
           ))}
         </div>
