@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export type MegaChild = { label: string; to: string; group?: string; short?: string; value?: string };
+export type MegaChild = { label: string; to: string; group?: string; short?: string; value?: string; column?: string };
 
 const ICONS: Record<string, LucideIcon> = {
   "/website-redesign": LayoutDashboard,
