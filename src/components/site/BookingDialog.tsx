@@ -3,6 +3,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 
 export const BOOKING_URL = "https://links.lavendermarketingco.com/widget/booking/sElYCoHQVkd1yhfDrM4l";
 
+/** Dedicated calendar for the Scale plan, where a conversation comes before any plan. */
+export const SCALE_CALENDAR_URL = "https://links.lavendermarketingco.com/widget/booking/ey1T8FnGXZL8TaBI0y0d";
+
 export type BookingPrefill = {
   name?: string;
   email?: string;

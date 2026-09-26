@@ -4,7 +4,7 @@ import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BOOKING_URL } from "@/components/site/BookingDialog";
+import { SCALE_CALENDAR_URL } from "@/components/site/BookingDialog";
 import { CtaBand, FaqAccordion, PreviewSteps, RatingBar, Section, SectionHeading } from "@/components/site/sections";
 import { QualifyWizard } from "@/components/site/QualifyWizard";
 import { Reveal } from "@/components/site/Reveal";
@@ -380,7 +380,7 @@ function Pricing() {
                 if (plan.name === "Scale") {
                   return (
                     <Button asChild size="lg" variant="outline" className="mt-8 w-full">
-                      <a href={BOOKING_URL}>Let's Talk First</a>
+                      <a href={SCALE_CALENDAR_URL}>Let's Talk First</a>
                     </Button>
                   );
                 }
