@@ -468,7 +468,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
   "/local-seo": {
     title: t("Local SEO And Google Business Profile Management"),
     description:
-      "Local SEO, map pack rankings and Google Business Profile management for service businesses, fed by your review automation. Included in the Scale plan.",
+      "Advanced local SEO: ongoing optimisation, regular content updates and full Google Business Profile management. Starter in Growth, full management in Scale.",
     name: "Local SEO",
     image: `${ILLU}/local-seo.webp`,
     answer:
@@ -477,7 +477,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
       { label: "Focus", value: "Map pack and local search visibility" },
       { label: "Includes", value: "Profile, service pages, citations, posts" },
       { label: "Reported", value: "Map rankings and calls, monthly" },
-      { label: "Plan", value: "Included in the Scale plan" },
+      { label: "Plan", value: "Starter in Growth, full management in Scale" },
     ],
     faqs: [
       {
@@ -497,7 +497,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Yes, with dedicated area pages and profile settings for each town you genuinely serve.",
       },
     ],
-    plan: "Included in the Scale plan",
+    plan: "Included in Growth & Scale",
   },
   "/construction-website-design": {
     title: t("Construction Website Design For Contractors"),

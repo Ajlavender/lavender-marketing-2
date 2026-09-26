@@ -1,4 +1,4 @@
-import { LOCALE_INFO, useLocale } from "@/lib/locale";
+import { LOCALE_INFO, spell, useLocale } from "@/lib/locale";
 import { paymentLink } from "@/data/pricing";
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -53,6 +53,7 @@ const plans = [
       "Lead qualification before it reaches you",
       "Call transcripts and summaries in your CRM",
       "Monthly AI transcript review and retraining",
+      "Local SEO starter: business listings set up across key directories, plus Google Business Profile optimisation.",
     ],
   },
   {
@@ -69,7 +70,7 @@ const plans = [
     features: [
       "Everything in Growth",
       "Google & Meta ad management",
-      "Local SEO & Google Business Profile",
+      "Advanced local SEO: ongoing optimisation, regular content updates, and full Google Business Profile management.",
       "Landing pages built for each campaign",
       "Cost-per-booked-job reporting",
       "Database reactivation campaigns",
@@ -369,7 +370,7 @@ function Pricing() {
                       }`}
                     />
                     <span className={plan.dark ? "text-nav-plum-foreground/80" : "text-muted-foreground"}>
-                      {f}
+                      {spell(f, locale)}
                     </span>
                   </li>
                 ))}
