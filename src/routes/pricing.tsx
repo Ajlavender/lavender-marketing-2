@@ -1,4 +1,4 @@
-import { LOCALE_INFO, useLocale } from "@/lib/locale";
+import { LOCALE_INFO, spell, useLocale } from "@/lib/locale";
 import { paymentLink } from "@/data/pricing";
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -370,7 +370,7 @@ function Pricing() {
                       }`}
                     />
                     <span className={plan.dark ? "text-nav-plum-foreground/80" : "text-muted-foreground"}>
-                      {f}
+                      {spell(f, locale)}
                     </span>
                   </li>
                 ))}
