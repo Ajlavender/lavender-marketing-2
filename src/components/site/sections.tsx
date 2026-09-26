@@ -1,3 +1,4 @@
+import { INTAKE_URL } from "@/data/pricing";
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Star } from "lucide-react";

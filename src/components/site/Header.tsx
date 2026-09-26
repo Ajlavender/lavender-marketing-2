@@ -1,3 +1,4 @@
+import { INTAKE_URL } from "@/data/pricing";
 import { useEffect, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, ChevronDown, ArrowUpRight, X, Sparkles } from "lucide-react";
@@ -210,7 +211,7 @@ export function Header() {
                 <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/20" />
                 <span className="relative">Get Free Website Design</span>
                 <ArrowUpRight className="relative h-3.5 w-3.5" />
-              </Link>
+              </a>
               </Button>
             )}
             <button

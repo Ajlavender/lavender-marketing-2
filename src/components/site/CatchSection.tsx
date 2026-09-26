@@ -1,3 +1,4 @@
+import { INTAKE_URL } from "@/data/pricing";
 import { useState, type ReactNode } from "react";
 import { Check, X, ChevronDown, ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";

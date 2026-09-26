@@ -1,3 +1,4 @@
+import { INTAKE_URL } from "@/data/pricing";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { ArrowUpRight, Sparkles } from "lucide-react";

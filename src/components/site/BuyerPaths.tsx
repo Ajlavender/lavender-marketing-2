@@ -1,3 +1,4 @@
+import { INTAKE_URL } from "@/data/pricing";
 import {
   Check,
   Hammer,
