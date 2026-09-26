@@ -8,13 +8,14 @@ export const Route = createFileRoute("/local-seo")({
   component: () => (
     <ServicePage
       slug="/local-seo"
-      eyebrow="Included in the Scale plan"
+      eyebrow="Included in Growth & Scale"
       title="Local SEO and Google Business Profile"
       subtitle="Get found in the map pack for the searches that turn into phone calls in your service area."
       image={`${ILLU}/local-seo.webp`}
       intro={[
         "Most local buying decisions start with a map. If you're not in the top three, you're competing for scraps of attention.",
         "We optimise your Google Business Profile, build the service and area pages that rank, and keep the review flow going — because reviews and local relevance are what move you up the map.",
+        "Directory listings and profile setup start with the Growth plan. The Scale plan keeps the ongoing optimisation, content updates and full profile management running month after month.",
       ]}
       benefits={[
         { title: "Google Business Profile", body: "Categories, services, photos, posts and Q&A handled." },
