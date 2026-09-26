@@ -343,7 +343,7 @@ function Pricing() {
                   )}
                   <span
                     className={`text-sm ${
-                      plan.dark ? "text-nav-plum-foreground/60" : "text-muted-foreground"
+                      plan.dark ? "text-nav-plum-foreground/75" : "text-muted-foreground"
                     }`}
                   >
                     {annual ? "/yr" : plan.note}
@@ -352,7 +352,7 @@ function Pricing() {
                 {annual && (
                   <p
                     className={`mt-1 text-xs ${
-                      plan.dark ? "text-nav-plum-foreground/60" : "text-muted-foreground"
+                      plan.dark ? "text-nav-plum-foreground/75" : "text-muted-foreground"
                     }`}
                   >
                     {plan.annualMonthly}
