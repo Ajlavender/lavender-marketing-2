@@ -370,7 +370,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
     name: "AI Chat Widget",
     image: `${ILLU}/chat-widget.webp`,
     answer:
-      "The AI chat widget is trained on your services, service area, pricing approach and policies, so it can answer free-form questions instead of only pre-written FAQs. It qualifies the lead, books directly into your calendar, and escalates to you with a summarised conversation when needed.",
+      "The AI chat widget is trained on your services, service area, pricing approach and policies, so it can answer free-form questions instead of only pre-written FAQs. It qualifies the lead, books directly into your calendar, and escalates to you with a conversation summary when needed.",
     facts: [
       { label: "Trained on", value: "Your site, docs, pricing rules and FAQs" },
       { label: "Availability", value: "24/7, including weekends" },
@@ -434,7 +434,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
   "/ad-management": {
     title: t("Google And Meta Ad Management For Local Businesses"),
     description:
-      "Local Google and Meta ad campaigns wired into your CRM, follow-up and booking system, reported on cost per booked job — not clicks. Growth and Scale add-on.",
+      "Local Google and Meta ad campaigns wired into your CRM, follow-up and booking system, reported on cost per booked job — not clicks. Included in the Scale plan.",
     name: "Ad Management",
     image: `${ILLU}/lead-gen.webp`,
     answer:
@@ -443,12 +443,12 @@ export const serviceSeo: Record<string, ServiceSeo> = {
       { label: "Platforms", value: "Google Search and Meta" },
       { label: "Reported as", value: "Cost per booked job" },
       { label: "Tracking", value: "Ad click through to CRM record" },
-      { label: "Plan", value: "Growth and Scale add-on" },
+      { label: "Plan", value: "Included in the Scale plan" },
     ],
     faqs: [
       {
         q: "Is ad spend included in the fee?",
-        a: "No. Management is the add-on fee; your ad budget is paid directly to Google or Meta so you keep full visibility.",
+        a: "No. Management is included in your Scale plan; your ad budget is paid directly to Google or Meta so you keep full visibility.",
       },
       {
         q: "What budget should I start with?",
@@ -460,10 +460,10 @@ export const serviceSeo: Record<string, ServiceSeo> = {
       },
       {
         q: "Do I need the rest of the system first?",
-        a: "Yes. Ads only pay off when the site, follow-up and booking behind them are already working, which is why this is an add-on.",
+        a: "Yes. Ads only pay off when the site, follow-up and booking behind them are already working, which is why this is part of the Scale plan.",
       },
     ],
-    plan: "Growth and Scale add-on",
+    plan: "Included in the Scale plan",
   },
   "/local-seo": {
     title: t("Local SEO And Google Business Profile Management"),

@@ -14,7 +14,7 @@ export const Route = createFileRoute("/ai-chat-widget")({
       image={`${ILLU}/chat-widget.webp`}
       intro={[
         "The standard widget answers the questions we pre-load. The AI widget answers anything — because it's trained on your services, service area, pricing approach and policies.",
-        "It holds a real conversation, qualifies the lead, and either books them in or hands a warm, summarised conversation to you.",
+        "It holds a real conversation, qualifies the lead, and either books them in or hands the warm lead to you with a quick summary.",
       ]}
       benefits={[
         { title: "Trained on your business", body: "Your services, pricing rules, area and policies, not generic answers." },
