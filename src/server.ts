@@ -60,13 +60,11 @@ function localeRedirect(request: Request): Response | null {
 const SITE = "https://lavendermarketingco.com";
 
 /** Point canonical/og:url at the locale version, add hreflang alternates, set <html lang>. */
-function localizeHtml(html: string, locale: string): string {
-  let barePath = "/";
+function localizeHtml(html: string, locale: string, barePath: string): string {
   html = html.replace(
     /(<link[^>]*rel="canonical"[^>]*href="|<meta[^>]*property="og:url"[^>]*content=")https:\/\/lavendermarketingco\.com(\/[^"]*)?"/g,
     (_all, pre: string, path: string | undefined) => {
       const p = (path ?? "/").replace(/^\/(en-ca|en-us)(?=\/|$)/, "") || "/";
-      barePath = p;
       return `${pre}${SITE}/${locale}${p === "/" ? "" : p}"`;
     },
   );
@@ -90,7 +88,7 @@ export default {
       const isHtml = (response.headers.get("content-type") ?? "").includes("text/html");
       const m = new URL(request.url).pathname.match(LOCALE_RE);
       if (isHtml && m && response.status < 400) {
-        const html = localizeHtml(await response.text(), m[1]!.toLowerCase());
+        const html = localizeHtml(await response.text(), m[1]!.toLowerCase(), new URL(request.url).pathname.replace(LOCALE_RE, "/").replace(/\/$/, "") || "/");
         const headers = new Headers(response.headers);
         headers.delete("content-length");
         response = new Response(html, { status: response.status, headers });
