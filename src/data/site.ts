@@ -114,13 +114,41 @@ export const services = [
   },
 ] as const;
 
+/**
+ * Services-menu copy for Local SEO's two tiers. Kept out of `services` so the
+ * homepage services grid still shows a single Local SEO card. Both rows share
+ * one menu column so the mega panel keeps its three-column shape.
+ */
+const LOCAL_SEO_MENU = [
+  {
+    label: "Local SEO starter",
+    to: "/local-seo",
+    group: "Included in Growth",
+    short: "Directory listings and Google Business Profile set up.",
+    column: "Local SEO",
+  },
+  {
+    label: "Advanced local SEO",
+    to: "/local-seo",
+    group: "Included in Scale",
+    short: "Ongoing SEO, content updates and full profile management.",
+    column: "Local SEO",
+  },
+] as const;
+
 export const nav = [
   { label: "Home", to: "/" },
   {
     label: "Services",
     to: "/website-redesign",
-    children: services.map((s) => ({ label: s.title, to: s.slug, group: s.group, short: s.short })),
+    children: [
+      ...services
+        .filter((s) => s.slug !== "/local-seo")
+        .map((s) => ({ label: s.title, to: s.slug, group: s.group, short: s.short })),
+      ...LOCAL_SEO_MENU,
+    ],
   },
+
 
   {
     label: "About",

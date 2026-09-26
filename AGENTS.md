@@ -9,7 +9,19 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
+## Navigation rules
+
+- Services-menu entries carry an optional `column` key (`src/data/site.ts`): rows
+  sharing a `column` render in one mega-panel column, stacked under their own
+  plan heading. Why: the panel is a fixed three-column grid, so a new plan
+  heading must not become a fourth grid cell.
+- Local SEO is listed twice in the Services menu — "Local SEO starter" under
+  "Included in Growth" and "Advanced local SEO" under "Included in Scale" —
+  mirroring the pricing cards. It stays a single card in the services grid, so
+  these rows live in menu-only copy, not in the `services` array.
+
 ## Locale copy rules
+
 
 - Plan feature strings on the pricing page render through `spell(f, locale)` in
   `src/routes/pricing.tsx`, not the raw string: the global `UsSpelling` DOM
