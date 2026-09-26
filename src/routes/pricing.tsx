@@ -296,7 +296,7 @@ function Pricing() {
                 <span
                   className={`inline-flex items-center border-b pb-1 text-[0.62rem] font-bold uppercase tracking-[0.2em] ${
                     plan.dark
-                      ? "border-nav-plum-foreground/25 text-nav-plum-foreground/75"
+                      ? "border-nav-plum-foreground/35 text-nav-plum-foreground/90"
                       : "border-brand/25 text-brand-deep"
                   }`}
                 >
