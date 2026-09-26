@@ -1,5 +1,5 @@
 import { LOCALE_INFO, spell, useLocale } from "@/lib/locale";
-import { paymentLink } from "@/data/pricing";
+import { INTAKE_URL, paymentLink } from "@/data/pricing";
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ChevronRight } from "lucide-react";
@@ -393,11 +393,7 @@ function Pricing() {
                     variant={plan.emphasis && !plan.dark ? "default" : "outline"}
                     className="mt-8 w-full"
                   >
-                    {href ? (
-                      <a href={href}>Get My Free Website Design</a>
-                    ) : (
-                      <Link to="/contact">Get My Free Website Design</Link>
-                    )}
+                    <a href={href ?? INTAKE_URL}>Get My Free Website Design</a>
                   </Button>
                 );
               })()}
