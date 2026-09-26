@@ -118,7 +118,7 @@ export function MegaPanel({
   onNavigate?: () => void;
   open?: boolean;
 }) {
-  const groups = groupChildren(items);
+  const columns = groupColumns(items);
   let order = 0;
 
 
@@ -132,27 +132,32 @@ export function MegaPanel({
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent" />
       <div className="pointer-events-none absolute -bottom-16 left-1/2 h-32 w-[70%] -translate-x-1/2 rounded-full bg-nav-glass-glow blur-[60px]" />
       <div className={cn("grid gap-3 p-4", wide && "grid-cols-[2fr_1.05fr_14.5rem]")}>
-        {groups.map(([groupLabel, kids], gi) => (
-          <div key={groupLabel || "default"} className="min-w-0">
-            {groupLabel && (
-              <p
-                style={{ transitionDelay: open ? `${gi * 60}ms` : "0ms" }}
-                className={cn(
-                  "px-3 pb-2 pt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/70 transition-[transform,opacity] duration-300 ease-out",
-                  "motion-reduce:transition-none motion-reduce:!translate-y-0 motion-reduce:!opacity-100 motion-reduce:!delay-0",
-                  open ? "translate-y-0 opacity-100" : "translate-y-1.5 opacity-0",
+        {columns.map(([columnKey, columnKids], ci) => (
+          <div key={columnKey || "default"} className="min-w-0">
+            {groupChildren(columnKids).map(([groupLabel, kids], gi) => (
+              <div key={groupLabel || "default"} className={cn(gi > 0 && "mt-4")}>
+                {groupLabel && (
+                  <p
+                    style={{ transitionDelay: open ? `${ci * 60 + gi * 40}ms` : "0ms" }}
+                    className={cn(
+                      "px-3 pb-2 pt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/70 transition-[transform,opacity] duration-300 ease-out",
+                      "motion-reduce:transition-none motion-reduce:!translate-y-0 motion-reduce:!opacity-100 motion-reduce:!delay-0",
+                      open ? "translate-y-0 opacity-100" : "translate-y-1.5 opacity-0",
+                    )}
+                  >
+                    {groupLabel}
+                  </p>
                 )}
-              >
-                {groupLabel}
-              </p>
-            )}
-            <div className={cn("space-y-0.5", kids.length > 6 && "grid grid-cols-2 gap-x-2 space-y-0")}>
-              {kids.map((child) => (
-                <Row key={child.to} child={child} onNavigate={onNavigate} open={open} index={order++} />
-              ))}
-            </div>
+                <div className={cn("space-y-0.5", kids.length > 6 && "grid grid-cols-2 gap-x-2 space-y-0")}>
+                  {kids.map((child) => (
+                    <Row key={child.to} child={child} onNavigate={onNavigate} open={open} index={order++} />
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         ))}
+
 
         {wide && (
           <div
