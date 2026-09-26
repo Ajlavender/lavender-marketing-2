@@ -1,3 +1,4 @@
+import { LOCALE_INFO, useLocale } from "@/lib/locale";
 import { LocalePrompt } from "@/components/site/LocaleSwitch";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
@@ -168,8 +169,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const locale = useLocale();
   return (
-    <html lang="en">
+    <html lang={LOCALE_INFO[locale].htmlLang}>
       <head>
         <HeadContent />
       </head>

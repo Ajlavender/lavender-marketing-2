@@ -73,9 +73,7 @@ function localizeHtml(html: string, locale: string, barePath: string): string {
     `<link rel="alternate" hreflang="en-CA" href="${alt("en-ca")}"/>` +
     `<link rel="alternate" hreflang="en-US" href="${alt("en-us")}"/>` +
     `<link rel="alternate" hreflang="x-default" href="${alt("en-ca")}"/>`;
-  return html
-    .replace("</head>", `${tags}</head>`)
-    .replace(/<html lang="en"/, `<html lang="${locale === "en-us" ? "en-US" : "en-CA"}"`);
+  return html.replace("</head>", `${tags}</head>`);
 }
 
 export default {
