@@ -165,6 +165,10 @@ function VideoPlayer({
     else el.pause();
   }, [shouldPlay, videoRef, videoSrc]);
 
+  // If the file can't be decoded, fall back to the poster instead of the browser's error screen.
+  const [failed, setFailed] = useState(false);
+  const [ready, setReady] = useState(false);
+
   return (
     <div className="relative aspect-video w-full bg-black">
       <video
@@ -175,14 +179,16 @@ function VideoPlayer({
         muted={muted}
         loop
         playsInline
-        controls={!floating}
+        controls={!floating && ready && !failed}
         disablePictureInPicture
         preload="metadata"
         onLoadedMetadata={resume}
         onTimeUpdate={(e) => {
           positionRef.current = e.currentTarget.currentTime;
         }}
+        onError={() => setFailed(true)}
         onCanPlay={() => {
+          setReady(true);
           onCanPlay();
           resume();
         }}
@@ -191,7 +197,9 @@ function VideoPlayer({
           floating ? "aspect-video" : "aspect-video",
         )}
       >
-        {videoSrc && <source src={videoSrc} type="video/mp4" />}
+        {videoSrc && !failed && (
+          <source src={videoSrc} type="video/mp4" onError={() => setFailed(true)} />
+        )}
       </video>
 
 
