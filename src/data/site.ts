@@ -108,7 +108,7 @@ export const services = [
     title: "Local SEO",
     short: "Map pack rankings and a Google Business Profile that converts.",
     value: "Scale plan",
-    group: "Add-ons (Growth & Scale)",
+    group: "Scale plan",
     image: `${ILLU}/local-seo.webp`,
     card: `${ILLU}/cards/local-seo.jpg`,
   },
