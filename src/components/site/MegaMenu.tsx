@@ -49,6 +49,22 @@ function groupChildren(children: readonly MegaChild[]): [string, MegaChild[]][] 
   return groups;
 }
 
+/**
+ * Splits children into panel columns. A column can hold several plan groups
+ * (e.g. Local SEO's Growth and Scale rows sit side by side in one column).
+ */
+function groupColumns(children: readonly MegaChild[]): [string, MegaChild[]][] {
+  const columns: [string, MegaChild[]][] = [];
+  for (const child of children) {
+    const key = child.column ?? child.group ?? "";
+    const existing = columns.find(([k]) => k === key);
+    if (existing) existing[1].push(child);
+    else columns.push([key, [child]]);
+  }
+  return columns;
+}
+
+
 function Row({
   child,
   onNavigate,
