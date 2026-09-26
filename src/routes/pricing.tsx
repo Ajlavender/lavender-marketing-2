@@ -2,7 +2,7 @@ import { LOCALE_INFO, useLocale } from "@/lib/locale";
 import { paymentLink } from "@/data/pricing";
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check, ChevronRight, Star } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BOOKING_URL } from "@/components/site/BookingDialog";
 import { CtaBand, FaqAccordion, PreviewSteps, RatingBar, Section, SectionHeading } from "@/components/site/sections";
@@ -12,12 +12,14 @@ import { Reveal } from "@/components/site/Reveal";
 const plans = [
   {
     name: "Essentials",
+    stage: "Start here",
+    emphasis: true,
+    dark: false,
+    progress: "w-8",
     price: "$297",
     note: "per month",
     annualPrice: "$2,997",
     annualMonthly: "$297/mo billed annually",
-    featured: true,
-    badges: ["Start here", "Most popular"],
     blurb: "The full system. Your site is designed free — you only pay once you like it.",
     features: [
       "Your new website, designed and built",
@@ -34,11 +36,14 @@ const plans = [
   },
   {
     name: "Growth",
+    stage: "The next step",
+    emphasis: false,
+    dark: false,
+    progress: "w-16",
     price: "$497",
     note: "per month",
     annualPrice: "$4,997",
     annualMonthly: "$497/mo billed annually",
-    badges: ["The next step"],
     blurb: "Everything in Essentials, plus AI that answers and books while you work.",
     features: [
       "Everything in Essentials",
@@ -52,11 +57,14 @@ const plans = [
   },
   {
     name: "Scale",
+    stage: "The destination",
+    emphasis: false,
+    dark: true,
+    progress: "w-28",
     price: "$4,997",
     note: "per month + ad spend",
     annualPrice: "$49,997",
     annualMonthly: "$4,997/mo billed annually",
-    badges: ["The destination"],
     blurb: "For businesses ready to buy demand, not just catch it.",
     features: [
       "Everything in Growth",
@@ -193,6 +201,7 @@ function PricingHero() {
 function Pricing() {
   const locale = useLocale();
   const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
+  const annual = billing === "annual";
 
   return (
     <>
@@ -201,100 +210,171 @@ function Pricing() {
       <PreviewSteps />
 
       <Section>
-        <div className="mx-auto mb-10 max-w-3xl text-center">
+        <div className="mx-auto max-w-2xl text-center">
           <Reveal>
-            <h2 className="text-3xl font-bold sm:text-4xl">Start with Essentials. Grow into the rest.</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
-              Every client starts with the free 7-day website preview on Essentials. Most add AI with Growth when the calls pick up, then move to Scale when they're ready to buy demand instead of just catching it.
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand/15 bg-lavender-wash px-4 py-1.5 text-[0.6rem] font-bold uppercase tracking-[0.22em] text-brand-deep">
+              <span className="h-1 w-1 rounded-full bg-brand" />
+              The roadmap
+            </span>
+            <h2 className="mt-6 font-serif text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl">
+              Start with Essentials.{" "}
+              <span className="italic text-brand-deep">Grow into the rest.</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+              Every client starts with the free 7-day website preview on Essentials. Most add AI with
+              Growth when the calls pick up, then move to Scale when they're ready to buy demand
+              instead of just catching it.
             </p>
           </Reveal>
+        </div>
 
-          <div className="mt-8 flex flex-col items-center gap-2">
-            <div
-              className="inline-flex rounded-lg border border-border bg-muted p-1"
-              role="group"
-              aria-label="Billing period"
+        <div className="mt-10 flex flex-col items-center gap-4">
+          <div
+            className="relative flex w-[268px] max-w-full items-center rounded-full border border-border bg-muted p-1"
+            role="group"
+            aria-label="Billing period"
+          >
+            <span
+              aria-hidden
+              className="absolute bottom-1 left-1 top-1 w-[calc(50%-4px)] rounded-full border border-border/60 bg-card shadow-[0_10px_24px_-12px_rgba(40,20,60,0.45)] transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
+              style={{ transform: annual ? "translateX(100%)" : "translateX(0)" }}
+            />
+            <button
+              type="button"
+              aria-pressed={!annual}
+              onClick={() => setBilling("monthly")}
+              className={`relative z-10 flex-1 rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-300 ${
+                annual ? "text-muted-foreground hover:text-ink" : "text-brand-deep"
+              }`}
             >
-              <Button
-                type="button"
-                size="sm"
-                variant={billing === "monthly" ? "default" : "ghost"}
-                aria-pressed={billing === "monthly"}
-                onClick={() => setBilling("monthly")}
-              >
-                Monthly
-              </Button>
-              <Button
-                type="button"
-                size="sm"
-                variant={billing === "annual" ? "default" : "ghost"}
-                aria-pressed={billing === "annual"}
-                onClick={() => setBilling("annual")}
-              >
-                Annual
-              </Button>
-            </div>
-            <div className="h-5" aria-live="polite">
-              {billing === "annual" && (
-                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase text-primary">
-                  Get 2 months free
-                </span>
-              )}
-            </div>
+              Monthly
+            </button>
+            <button
+              type="button"
+              aria-pressed={annual}
+              onClick={() => setBilling("annual")}
+              className={`relative z-10 flex-1 rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-300 ${
+                annual ? "text-brand-deep" : "text-muted-foreground hover:text-ink"
+              }`}
+            >
+              Annual
+            </button>
+          </div>
+
+          <div className="flex h-7 items-center" aria-live="polite">
+            <span
+              className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all duration-500 ${
+                annual
+                  ? "border-brand/25 bg-brand/10 text-brand-deep"
+                  : "border-border/70 bg-card text-muted-foreground"
+              }`}
+            >
+              <span
+                className={`h-1.5 w-1.5 rounded-full transition-colors duration-500 ${
+                  annual ? "animate-pulse bg-brand" : "bg-muted-foreground/40"
+                }`}
+              />
+              Get 2 months free with annual billing
+              {annual && <Check className="h-3.5 w-3.5 text-brand" />}
+            </span>
           </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative flex flex-col overflow-hidden rounded-2xl border ${
-                plan.featured
-                  ? "border-primary bg-card shadow-xl ring-1 ring-primary/20"
-                  : "border-border bg-card"
-               } p-8`}
+              className={`relative flex flex-col overflow-hidden rounded-3xl border p-8 transition-all duration-500 ${
+                plan.dark
+                  ? "border-brand-deep/40 bg-gradient-deep shadow-[0_35px_70px_-35px_rgba(30,15,50,0.6)]"
+                  : plan.emphasis
+                    ? "border-brand/25 bg-card shadow-[0_28px_60px_-35px_rgba(60,30,90,0.45)] ring-1 ring-brand/10"
+                    : "border-border bg-card hover:border-brand/25"
+              }`}
             >
-              <div className="mb-5 flex min-h-14 flex-col items-start justify-end gap-1.5">
-                {plan.badges.map((badge) => (
-                  <span
-                    key={badge}
-                    className={badge === "Most popular"
-                      ? "inline-flex items-center rounded-full bg-primary px-3 py-1 text-[0.65rem] font-bold uppercase text-primary-foreground"
-                      : "inline-flex rounded-full bg-primary/10 px-3 py-1 text-[0.65rem] font-bold uppercase text-primary"}
-                  >
-                    {badge === "Most popular" && <Star className="mr-1.5 h-3 w-3 fill-current" />}
-                    {badge}
-                  </span>
-                ))}
+              <div className="mb-6">
+                <span
+                  className={`inline-flex items-center border-b pb-1 text-[0.62rem] font-bold uppercase tracking-[0.2em] ${
+                    plan.dark
+                      ? "border-nav-plum-foreground/35 text-nav-plum-foreground/90"
+                      : "border-brand/25 text-brand-deep"
+                  }`}
+                >
+                  {plan.stage}
+                </span>
               </div>
-              <h2 className="text-2xl">{plan.name}</h2>
-              <p className="mt-2 text-sm text-muted-foreground">{plan.blurb}</p>
-              <div className="mt-6 min-h-16">
+
+              <h2 className={`text-2xl ${plan.dark ? "text-nav-plum-foreground" : "text-ink"}`}>
+                {plan.name}
+              </h2>
+              <p
+                className={`mt-2 text-sm leading-relaxed ${
+                  plan.dark ? "text-nav-plum-foreground/70" : "text-muted-foreground"
+                }`}
+              >
+                {plan.blurb}
+              </p>
+              <span
+                aria-hidden
+                className={`mt-5 block h-1 rounded-full ${
+                  plan.dark ? "bg-nav-plum-foreground/20" : "bg-brand/15"
+                } ${plan.progress}`}
+              />
+
+              <div className="mt-5 min-h-16">
                 <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                  <span className="font-[family-name:var(--font-display)] text-4xl font-bold">
-                    {billing === "annual"
+                  <span
+                    className={`font-[family-name:var(--font-display)] text-4xl font-bold ${
+                      plan.dark ? "text-nav-plum-foreground" : "text-ink"
+                    }`}
+                  >
+                    {annual
                       ? `${locale === "en-ca" ? "CA" : ""}${plan.annualPrice}`
                       : plan.price}
                   </span>
-                  {billing === "monthly" && (
-                    <span className="text-sm font-semibold text-foreground/70">{LOCALE_INFO[locale].currency}</span>
+                  {!annual && (
+                    <span
+                      className={`text-sm font-semibold ${
+                        plan.dark ? "text-nav-plum-foreground/70" : "text-foreground/70"
+                      }`}
+                    >
+                      {LOCALE_INFO[locale].currency}
+                    </span>
                   )}
-                  <span className="text-sm text-muted-foreground">
-                    {billing === "annual" ? "/yr" : plan.note}
+                  <span
+                    className={`text-sm ${
+                      plan.dark ? "text-nav-plum-foreground/75" : "text-muted-foreground"
+                    }`}
+                  >
+                    {annual ? "/yr" : plan.note}
                   </span>
                 </div>
-                {billing === "annual" && (
-                  <p className="mt-1 text-xs text-muted-foreground">{plan.annualMonthly}</p>
+                {annual && (
+                  <p
+                    className={`mt-1 text-xs ${
+                      plan.dark ? "text-nav-plum-foreground/75" : "text-muted-foreground"
+                    }`}
+                  >
+                    {plan.annualMonthly}
+                  </p>
                 )}
               </div>
+
               <ul className="mt-6 flex-1 space-y-3 text-sm">
                 {plan.features.map((f) => (
                   <li key={f} className="flex gap-2">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    <span className="text-muted-foreground">{f}</span>
+                    <Check
+                      className={`mt-0.5 h-4 w-4 shrink-0 ${
+                        plan.dark ? "text-brand-glow" : "text-primary"
+                      }`}
+                    />
+                    <span className={plan.dark ? "text-nav-plum-foreground/80" : "text-muted-foreground"}>
+                      {f}
+                    </span>
                   </li>
                 ))}
               </ul>
+
               {(() => {
                 const href = paymentLink(plan.name, locale);
                 if (plan.name === "Scale") {
@@ -306,7 +386,7 @@ function Pricing() {
                 }
 
                 return (
-                  <Button asChild size="lg" variant={plan.featured ? "default" : "outline"} className="mt-8 w-full">
+                  <Button asChild size="lg" variant={plan.emphasis ? "default" : "outline"} className="mt-8 w-full">
                     {href ? (
                       <a href={href}>Get My Free Website Design</a>
                     ) : (
