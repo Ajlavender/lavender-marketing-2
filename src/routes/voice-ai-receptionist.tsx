@@ -19,7 +19,7 @@ export const Route = createFileRoute("/voice-ai-receptionist")({
       benefits={[
         { title: "Answers 24/7", body: "Overflow, after-hours or every call — your choice." },
         { title: "Books into your calendar", body: "Live availability, confirmations and reminders." },
-        { title: "Full transcripts", body: "Every call summarised in your CRM timeline." },
+        { title: "Full transcripts", body: "Every call summed up in your CRM timeline." },
       ]}
       process={[
         { step: "01", title: "Script", body: "Greeting, questions and escalation rules written with you." },

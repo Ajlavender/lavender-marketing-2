@@ -20,15 +20,22 @@ export function UsSpelling() {
         if (u !== t) n.nodeValue = u;
       }
     };
+    let mo: MutationObserver | null = null;
+    // Wait until React has finished hydrating lazily loaded page sections.
+    const start = window.setTimeout(() => {
     fix(document.body);
-    const mo = new MutationObserver((muts) => {
+    mo = new MutationObserver((muts) => {
       for (const m of muts) {
         if (m.type === "characterData") fix(m.target);
         m.addedNodes.forEach((a) => fix(a));
       }
     });
     mo.observe(document.body, { childList: true, subtree: true, characterData: true });
-    return () => mo.disconnect();
+    }, 1500);
+    return () => {
+      window.clearTimeout(start);
+      mo?.disconnect();
+    };
   }, [locale]);
   return null;
 }
