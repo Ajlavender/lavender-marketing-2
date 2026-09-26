@@ -57,6 +57,29 @@ function localeRedirect(request: Request): Response | null {
   return new Response(null, { status: 301, headers: { location: url.pathname + url.search } });
 }
 
+const SITE = "https://lavendermarketingco.com";
+
+/** Point canonical/og:url at the locale version, add hreflang alternates, set <html lang>. */
+function localizeHtml(html: string, locale: string): string {
+  let barePath = "/";
+  html = html.replace(
+    /(<link[^>]*rel="canonical"[^>]*href="|<meta[^>]*property="og:url"[^>]*content=")https:\/\/lavendermarketingco\.com(\/[^"]*)?"/g,
+    (_all, pre: string, path: string | undefined) => {
+      const p = (path ?? "/").replace(/^\/(en-ca|en-us)(?=\/|$)/, "") || "/";
+      barePath = p;
+      return `${pre}${SITE}/${locale}${p === "/" ? "" : p}"`;
+    },
+  );
+  const alt = (l: string) => `${SITE}/${l}${barePath === "/" ? "" : barePath}`;
+  const tags =
+    `<link rel="alternate" hreflang="en-CA" href="${alt("en-ca")}"/>` +
+    `<link rel="alternate" hreflang="en-US" href="${alt("en-us")}"/>` +
+    `<link rel="alternate" hreflang="x-default" href="${alt("en-ca")}"/>`;
+  return html
+    .replace("</head>", `${tags}</head>`)
+    .replace(/<html lang="en"/, `<html lang="${locale === "en-us" ? "en-US" : "en-CA"}"`);
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
@@ -64,8 +87,16 @@ export default {
       if (redirect) return redirect;
       const handler = await getServerEntry();
       let response = await handler.fetch(request, env, ctx);
+      const isHtml = (response.headers.get("content-type") ?? "").includes("text/html");
+      const m = new URL(request.url).pathname.match(LOCALE_RE);
+      if (isHtml && m && response.status < 400) {
+        const html = localizeHtml(await response.text(), m[1]!.toLowerCase());
+        const headers = new Headers(response.headers);
+        headers.delete("content-length");
+        response = new Response(html, { status: response.status, headers });
+      }
       const country = request.headers.get("cf-ipcountry");
-      if (country && (response.headers.get("content-type") ?? "").includes("text/html")) {
+      if (country && isHtml) {
         response = new Response(response.body, response);
         response.headers.append("set-cookie", `lmc_geo=${country.toUpperCase()}; Path=/; Max-Age=86400; SameSite=Lax`);
       }
