@@ -364,7 +364,7 @@ function WhyChooseUs() {
             </h2>
             <div className="mt-5 max-w-md space-y-4 text-sm leading-relaxed text-muted-foreground">
               <p>
-                We build websites with conversion and SEO best practices learned from over 2000
+                We build websites with conversion and SEO best practices learned from 50+
                 clients. Then we continue to optimize your website with data from your own personal
                 A/B tests.
               </p>

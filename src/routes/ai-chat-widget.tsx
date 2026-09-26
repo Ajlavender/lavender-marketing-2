@@ -8,7 +8,7 @@ export const Route = createFileRoute("/ai-chat-widget")({
   component: () => (
     <ServicePage
       slug="/ai-chat-widget"
-      eyebrow="Add-on"
+      eyebrow="Included in the $497/mo Growth plan"
       title="AI chat widget trained on your business"
       subtitle="Answers real questions, qualifies the lead and books the job 24/7 — an upgrade from the standard FAQ widget."
       image={`${ILLU}/chat-widget.webp`}

@@ -55,7 +55,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Small edits — text, pricing, hours, photos, new service pages — are unlimited and included. You message us and we make the change.",
       },
     ],
-    plan: "Included in the $297/mo growth system",
+    plan: "Included in the $297/mo Essentials plan",
   },
   "/chat-widget": {
     title: t("Website Chat Widget For Local Businesses"),
@@ -89,12 +89,12 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "The lead is already captured, so the automatic follow-up sequence takes over by text and email.",
       },
     ],
-    plan: "Included in the $297/mo growth system",
+    plan: "Included in the $297/mo Essentials plan",
   },
   "/missed-call-text-back": {
     title: t("Missed Call Text Back For Local Businesses"),
     description:
-      "Every missed call gets an instant text from your business so the caller stays with you instead of calling a competitor. Included in the $297/mo growth system.",
+      "Every missed call gets an instant text from your business so the caller stays with you instead of calling a competitor. Included in the $297/mo Essentials plan.",
     name: "Missed-Call Text-Back",
     image: `${ILLU}/missed-call.webp`,
     answer:
@@ -123,12 +123,12 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Yes. You choose whether it runs all the time or only outside business hours.",
       },
     ],
-    plan: "Included in the $297/mo growth system",
+    plan: "Included in the $297/mo Essentials plan",
   },
   "/review-automation": {
     title: t("Google Review Automation For Local Businesses"),
     description:
-      "Automatic text and email review requests after every job, pointing happy customers straight to your Google profile. Included in the $297/mo growth system.",
+      "Automatic text and email review requests after every job, pointing happy customers straight to your Google profile. Included in the $297/mo Essentials plan.",
     name: "Review Automation",
     image: `${ILLU}/reviews.webp`,
     answer:
@@ -157,7 +157,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Yes. Review volume, recency and rating are among the strongest signals for the Google map pack in local search.",
       },
     ],
-    plan: "Included in the $297/mo growth system",
+    plan: "Included in the $297/mo Essentials plan",
   },
   "/online-booking": {
     title: t("Online Booking For Local Business Websites"),
@@ -191,12 +191,12 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Yes. Each service type can have its own duration, buffer and availability window.",
       },
     ],
-    plan: "Included in the $297/mo growth system",
+    plan: "Included in the $297/mo Essentials plan",
   },
   "/follow-up-automation": {
     title: t("Automatic Lead Follow-Up For Local Businesses"),
     description:
-      "Automatic text and email sequences that follow up every lead until they book or say no, and stop the moment they reply. Included in the $297/mo growth system.",
+      "Automatic text and email sequences that follow up every lead until they book or say no, and stop the moment they reply. Included in the $297/mo Essentials plan.",
     name: "Automatic Follow-Up",
     image: `${ILLU}/automations.webp`,
     answer:
@@ -225,7 +225,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "We write them in your voice and you approve them before anything goes out.",
       },
     ],
-    plan: "Included in the $297/mo growth system",
+    plan: "Included in the $297/mo Essentials plan",
   },
   "/unified-inbox": {
     title: t("Unified Inbox App For Local Businesses"),
@@ -259,7 +259,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Yes, notification and business-hour rules are configured during setup.",
       },
     ],
-    plan: "Included in the $297/mo growth system",
+    plan: "Included in the $297/mo Essentials plan",
   },
   "/crm-pipeline": {
     title: t("Lead Pipeline And CRM For Local Businesses"),
@@ -293,12 +293,12 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Yes, pipeline value and win rate are included in your monthly Google & Local Visibility Report.",
       },
     ],
-    plan: "Included in the $297/mo growth system",
+    plan: "Included in the $297/mo Essentials plan",
   },
   "/hosting-and-support": {
     title: t("Website Hosting, Security And Unlimited Edits"),
     description:
-      "Managed hosting, domain and SSL, security monitoring, backups and unlimited small website edits handled by us. Included in the $297/mo growth system.",
+      "Managed hosting, domain and SSL, security monitoring, backups and unlimited small website edits handled by us. Included in the $297/mo Essentials plan.",
     name: "Hosting & Support",
     image: `${ILLU}/hosting-support.webp`,
     answer:
@@ -327,7 +327,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Yes, we handle the migration with no downtime and the domain stays in your name.",
       },
     ],
-    plan: "Included in the $297/mo growth system",
+    plan: "Included in the $297/mo Essentials plan",
   },
   "/growth-report": {
     title: t("Google & Local Visibility Report"),
@@ -361,12 +361,12 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Calls, forms, chats and bookings are tracked from day one, so each lead is tied back to the channel that produced it.",
       },
     ],
-    plan: "Included in the $297/mo growth system",
+    plan: "Included in the $297/mo Essentials plan",
   },
   "/ai-chat-widget": {
     title: t("AI Chat Widget Trained On Your Business"),
     description:
-      "An AI chat widget trained on your services, pricing approach, service area and policies that qualifies leads and books jobs 24/7. Growth plan add-on.",
+      "An AI chat widget trained on your services, pricing approach, service area and policies that qualifies leads and books jobs 24/7. Included in the $497/mo Growth plan.",
     name: "AI Chat Widget",
     image: `${ILLU}/chat-widget.webp`,
     answer:
@@ -375,7 +375,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
       { label: "Trained on", value: "Your site, docs, pricing rules and FAQs" },
       { label: "Availability", value: "24/7, including weekends" },
       { label: "Can book", value: "Yes, into your live calendar" },
-      { label: "Plan", value: "Growth plan add-on" },
+      { label: "Plan", value: "Included in the $497/mo Growth plan" },
     ],
     faqs: [
       {
@@ -395,12 +395,12 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Usually about a week, including training, guardrails and testing before it goes live.",
       },
     ],
-    plan: "Growth plan add-on",
+    plan: "Included in the $497/mo Growth plan",
   },
   "/voice-ai-receptionist": {
     title: t("Voice AI Receptionist For Local Businesses"),
     description:
-      "An AI receptionist that answers overflow and after-hours calls, qualifies the caller and books straight into your calendar, with full transcripts. Add-on.",
+      "An AI receptionist that answers overflow and after-hours calls, qualifies the caller and books straight into your calendar, with full transcripts. Included in the $497/mo Growth plan.",
     name: "Voice AI Receptionist",
     image: `${ILLU}/ai-receptionist.webp`,
     answer:
@@ -409,7 +409,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
       { label: "Answers", value: "Overflow, after-hours or every call" },
       { label: "Books", value: "Directly into your live calendar" },
       { label: "Record", value: "Transcript and summary in your CRM" },
-      { label: "Plan", value: "Growth and Scale add-on" },
+      { label: "Plan", value: "Included in the $497/mo Growth plan" },
     ],
     faqs: [
       {
@@ -429,7 +429,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "You get a transcript and short summary, and the contact record updates automatically in the CRM.",
       },
     ],
-    plan: "Growth and Scale add-on",
+    plan: "Included in the $497/mo Growth plan",
   },
   "/ad-management": {
     title: t("Google And Meta Ad Management For Local Businesses"),
@@ -468,7 +468,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
   "/local-seo": {
     title: t("Local SEO And Google Business Profile Management"),
     description:
-      "Local SEO, map pack rankings and Google Business Profile management for service businesses, fed by your review automation. Growth and Scale add-on.",
+      "Local SEO, map pack rankings and Google Business Profile management for service businesses, fed by your review automation. Included in the Scale plan.",
     name: "Local SEO",
     image: `${ILLU}/local-seo.webp`,
     answer:
@@ -477,7 +477,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
       { label: "Focus", value: "Map pack and local search visibility" },
       { label: "Includes", value: "Profile, service pages, citations, posts" },
       { label: "Reported", value: "Map rankings and calls, monthly" },
-      { label: "Plan", value: "Growth and Scale add-on" },
+      { label: "Plan", value: "Included in the Scale plan" },
     ],
     faqs: [
       {
@@ -497,7 +497,7 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Yes, with dedicated area pages and profile settings for each town you genuinely serve.",
       },
     ],
-    plan: "Growth and Scale add-on",
+    plan: "Included in the Scale plan",
   },
   "/construction-website-design": {
     title: t("Construction Website Design For Contractors"),
@@ -531,6 +531,6 @@ export const serviceSeo: Record<string, ServiceSeo> = {
         a: "Missed-call text-back sends an automatic reply within seconds, so the caller texts back instead of calling your competitor. It works after hours and on weekends too.",
       },
     ],
-    plan: "Included in the $297/mo growth system",
+    plan: "Included in the $297/mo Essentials plan",
   },
 };

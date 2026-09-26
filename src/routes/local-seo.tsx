@@ -8,7 +8,7 @@ export const Route = createFileRoute("/local-seo")({
   component: () => (
     <ServicePage
       slug="/local-seo"
-      eyebrow="Add-on"
+      eyebrow="Included in the Scale plan"
       title="Local SEO and Google Business Profile"
       subtitle="Get found in the map pack for the searches that turn into phone calls in your service area."
       image={`${ILLU}/local-seo.webp`}

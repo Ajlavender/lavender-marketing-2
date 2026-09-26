@@ -8,7 +8,7 @@ export const Route = createFileRoute("/voice-ai-receptionist")({
   component: () => (
     <ServicePage
       slug="/voice-ai-receptionist"
-      eyebrow="Add-on"
+      eyebrow="Included in the $497/mo Growth plan"
       title="Voice AI receptionist that answers every call"
       subtitle="Picks up when you can't, has a natural conversation, answers questions and books the appointment straight into your calendar."
       image={`${ILLU}/ai-receptionist.webp`}
