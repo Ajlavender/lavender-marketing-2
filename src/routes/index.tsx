@@ -13,7 +13,8 @@ import {
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "@/components/ui/button";
-import { LeadForm } from "@/components/site/LeadForm";
+import { LeadForm, ReportFallback } from "@/components/site/LeadForm";
+import { PreviewSteps } from "@/components/site/sections";
 import { cn } from "@/lib/utils";
 import {
   Counters,
@@ -487,6 +488,7 @@ function Index() {
                 </p>
                 <div className="mt-6">
                   <LeadForm labeled offer="design" submitLabel="Get My Free Website Design" />
+                  <ReportFallback className="mt-4 text-center" />
                 </div>
                 <p className="mt-3 text-xs text-muted-foreground">
                   No design fee, no setup fee and no obligation
@@ -723,6 +725,8 @@ function Index() {
           <ServicesGrid />
         </Reveal>
       </Section>
+
+      <PreviewSteps />
 
       {/* Reviews */}
       <Section muted className="py-24">

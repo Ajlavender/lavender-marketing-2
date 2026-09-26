@@ -3,7 +3,7 @@ import { paymentLink } from "@/data/pricing";
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ChevronRight, Star } from "lucide-react";
-import { CtaBand, FaqAccordion, RatingBar, Section, SectionHeading } from "@/components/site/sections";
+import { CtaBand, FaqAccordion, PreviewSteps, RatingBar, Section, SectionHeading } from "@/components/site/sections";
 import { QualifyWizard } from "@/components/site/QualifyWizard";
 import { Reveal } from "@/components/site/Reveal";
 
@@ -184,6 +184,8 @@ function Pricing() {
   return (
     <>
       <PricingHero />
+
+      <PreviewSteps />
 
       <Section>
         <div className="grid gap-6 lg:grid-cols-3">
