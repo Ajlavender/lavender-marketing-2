@@ -1,3 +1,4 @@
+import { Spell } from "@/lib/locale";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo } from "react";
 import { ArrowRight, Play } from "lucide-react";
@@ -129,7 +130,7 @@ function WhyChooseUs() {
               </p>
               <p>
                 Based on what you find online, you will decide if you want to contact the company or
-                not. That's the behaviour in 2025 and also probably why you are reading this.
+                not. That's the <Spell>behaviour</Spell> in 2025 and also probably why you are reading this.
               </p>
             </div>
           </Reveal>

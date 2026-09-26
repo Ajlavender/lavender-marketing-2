@@ -1,3 +1,4 @@
+import { LocaleSwitch } from "@/components/site/LocaleSwitch";
 import { Link } from "@tanstack/react-router";
 import { LOGO } from "@/data/site";
 import { LeadForm } from "./LeadForm";
@@ -96,6 +97,7 @@ export function Footer() {
         <a href="/sitemap.xml" className="hover:text-primary hover:underline">
           Sitemap
         </a>
+        <LocaleSwitch />
       </div>
       <p className="px-4 pb-8 text-center text-xs leading-relaxed text-foreground/45 sm:text-[12px]">
         Designed by{" "}

@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { MegaPanel, type MegaChild } from "@/components/site/MegaMenu";
 import { MobileMenu } from "@/components/site/MobileMenu";
 import { GrowthReportDialog } from "@/components/site/GrowthReportDialog";
+import { LocaleSwitch } from "@/components/site/LocaleSwitch";
 
 type NavChild = MegaChild;
 
@@ -188,6 +189,7 @@ export function Header() {
               })}
             </nav>
 
+            <LocaleSwitch className="hidden xl:inline-flex" />
             {isReportPage ? (
               <GrowthReportDialog>
                 <Button

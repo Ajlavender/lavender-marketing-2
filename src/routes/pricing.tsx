@@ -1,3 +1,5 @@
+import { LOCALE_INFO, useLocale } from "@/lib/locale";
+import { paymentLink } from "@/data/pricing";
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ChevronRight, Star } from "lucide-react";
@@ -178,6 +180,7 @@ function PricingHero() {
 }
 
 function Pricing() {
+  const locale = useLocale();
   return (
     <>
       <PricingHero />
@@ -206,6 +209,7 @@ function Pricing() {
                 <span className="font-[family-name:var(--font-display)] text-4xl font-bold">
                   {plan.price}
                 </span>
+                <span className="text-sm font-semibold text-foreground/70">{LOCALE_INFO[locale].currency}</span>
                 <span className="text-sm text-muted-foreground">{plan.note}</span>
               </div>
               <ul className="mt-6 flex-1 space-y-3 text-sm">
@@ -216,16 +220,19 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <Link
-                to="/contact"
-                className={`mt-8 inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${
+              {(() => {
+                const href = paymentLink(plan.name, locale);
+                const cls = `mt-8 inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${
                   plan.featured
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
                     : "border border-border hover:bg-accent hover:text-accent-foreground"
-                }`}
-              >
-                Get My Free Website Design
-              </Link>
+                }`;
+                return href ? (
+                  <a href={href} className={cls}>Get Started — {LOCALE_INFO[locale].currency}</a>
+                ) : (
+                  <Link to="/contact" className={cls}>Get My Free Website Design</Link>
+                );
+              })()}
             </div>
           ))}
         </div>

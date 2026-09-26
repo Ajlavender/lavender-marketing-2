@@ -1,3 +1,4 @@
+import { Spell } from "@/lib/locale";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -131,7 +132,7 @@ export function ServicePage({
         <div className="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-muted-foreground">
           {intro.map((p, i) => (
             <Reveal key={p} from="up" delay={i * 80}>
-              <p>{p}</p>
+              <p><Spell>{p}</Spell></p>
             </Reveal>
           ))}
         </div>
@@ -173,8 +174,8 @@ export function ServicePage({
                 <span className="font-[family-name:var(--font-display)] text-5xl font-bold text-primary">
                   {p.step}
                 </span>
-                <h3 className="mt-3 text-xl text-foreground">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                <h3 className="mt-3 text-xl text-foreground"><Spell>{p.title}</Spell></h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground"><Spell>{p.body}</Spell></p>
               </li>
             </Reveal>
           ))}

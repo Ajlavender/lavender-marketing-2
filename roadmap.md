@@ -16,3 +16,7 @@
 - [x] Remove avoidable third-party image requests
 - [x] Stop idle-loading every lower-page section
 - [x] Verify layout stability, mobile/tablet presentation, and interactions
+
+## Canada / USA site versions
+- [x] /en-ca and /en-us versions, country popup, switcher, spelling, currency labels, hreflang, sitemap
+- [ ] Add CAD + USD payment links (waiting on AJ)
