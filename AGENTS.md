@@ -8,3 +8,13 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Locale copy rules
+
+- Plan feature strings on the pricing page render through `spell(f, locale)` in
+  `src/routes/pricing.tsx`, not the raw string: the global `UsSpelling` DOM
+  sweep only runs ~2.25s after load, so US visitors would otherwise briefly see
+  Canadian spellings on the cards. Why: regional spelling must be correct in the
+  first paint, and `spell()` is identity for `en-ca`, so Canada is unaffected.
+- Copy is authored in Canadian spelling everywhere; the US side is derived, never
+  hand-written. Prospect-visible text must never name internal tools.
