@@ -4,7 +4,7 @@ import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BOOKING_URL } from "@/components/site/BookingDialog";
+import { BOOKING_URL, SCALE_CALENDAR_URL } from "@/components/site/BookingDialog";
 import { CtaBand, FaqAccordion, PreviewSteps, RatingBar, Section, SectionHeading } from "@/components/site/sections";
 import { QualifyWizard } from "@/components/site/QualifyWizard";
 import { Reveal } from "@/components/site/Reveal";
