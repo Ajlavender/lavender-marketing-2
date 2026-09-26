@@ -51,10 +51,13 @@ export const Route = createFileRoute("/sitemap.xml")({
           })),
         ];
 
-        const urls = entries.map((e) =>
+        const loc = (l: string, path: string) => `${BASE_URL}/${l}${path === "/" ? "" : path}`;
+        const urls = entries.flatMap((e) => ["en-ca", "en-us"].map((l) => ({ ...e, l }))).map((e) =>
           [
             `  <url>`,
-            `    <loc>${BASE_URL}${e.path}</loc>`,
+            `    <loc>${loc(e.l, e.path)}</loc>`,
+            `    <xhtml:link rel="alternate" hreflang="en-CA" href="${loc("en-ca", e.path)}"/>`,
+            `    <xhtml:link rel="alternate" hreflang="en-US" href="${loc("en-us", e.path)}"/>`,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,
@@ -65,7 +68,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
-          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
+          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">`,
           ...urls,
           `</urlset>`,
         ].join("\n");
