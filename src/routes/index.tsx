@@ -705,7 +705,7 @@ function Index() {
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-6">
               <Button asChild size="lg">
-                <Link to="/contact">Get My Free Website Design</Link>
+                <a href={INTAKE_URL}>Get My Free Website Design</a>
               </Button>
               <Link
                 to="/pricing"
