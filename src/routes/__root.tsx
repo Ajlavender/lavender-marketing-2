@@ -1,3 +1,4 @@
+import { LocalePrompt } from "@/components/site/LocaleSwitch";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -194,6 +195,7 @@ function RootComponent() {
         <Footer />
       </div>
       <MobileCtaBar />
+      <LocalePrompt />
       <Toaster position="top-center" />
     </QueryClientProvider>
   );
