@@ -216,7 +216,7 @@ function Pricing() {
               <span className="h-1 w-1 rounded-full bg-brand" />
               The roadmap
             </span>
-            <h2 className="mt-6 font-serif text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl">
+            <h2 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl">
               Start with Essentials.{" "}
               <span className="italic text-brand-deep">Grow into the rest.</span>
             </h2>
