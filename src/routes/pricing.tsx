@@ -3,6 +3,8 @@ import { paymentLink } from "@/data/pricing";
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ChevronRight, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { BOOKING_URL } from "@/components/site/BookingDialog";
 import { CtaBand, FaqAccordion, PreviewSteps, RatingBar, Section, SectionHeading } from "@/components/site/sections";
 import { QualifyWizard } from "@/components/site/QualifyWizard";
 import { Reveal } from "@/components/site/Reveal";
@@ -12,6 +14,10 @@ const plans = [
     name: "Essentials",
     price: "$297",
     note: "per month",
+    annualPrice: "$2,997",
+    annualMonthly: "$297/mo billed annually",
+    featured: true,
+    badges: ["Start here", "Most popular"],
     blurb: "The full system. Your site is designed free — you only pay once you like it.",
     features: [
       "Your new website, designed and built",
@@ -30,7 +36,9 @@ const plans = [
     name: "Growth",
     price: "$497",
     note: "per month",
-    featured: true,
+    annualPrice: "$4,997",
+    annualMonthly: "$497/mo billed annually",
+    badges: ["The next step"],
     blurb: "Everything in Essentials, plus AI that answers and books while you work.",
     features: [
       "Everything in Essentials",
@@ -46,6 +54,9 @@ const plans = [
     name: "Scale",
     price: "$4,997",
     note: "per month + ad spend",
+    annualPrice: "$49,997",
+    annualMonthly: "$4,997/mo billed annually",
+    badges: ["The destination"],
     blurb: "For businesses ready to buy demand, not just catch it.",
     features: [
       "Everything in Growth",
@@ -181,6 +192,8 @@ function PricingHero() {
 
 function Pricing() {
   const locale = useLocale();
+  const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
+
   return (
     <>
       <PricingHero />
@@ -188,6 +201,49 @@ function Pricing() {
       <PreviewSteps />
 
       <Section>
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <Reveal>
+            <h2 className="text-3xl font-bold sm:text-4xl">Start with Essentials. Grow into the rest.</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
+              Every client starts with the free 7-day website preview on Essentials. Most add AI with Growth when the calls pick up, then move to Scale when they're ready to buy demand instead of just catching it.
+            </p>
+          </Reveal>
+
+          <div className="mt-8 flex flex-col items-center gap-2">
+            <div
+              className="inline-flex rounded-lg border border-border bg-muted p-1"
+              role="group"
+              aria-label="Billing period"
+            >
+              <Button
+                type="button"
+                size="sm"
+                variant={billing === "monthly" ? "default" : "ghost"}
+                aria-pressed={billing === "monthly"}
+                onClick={() => setBilling("monthly")}
+              >
+                Monthly
+              </Button>
+              <Button
+                type="button"
+                size="sm"
+                variant={billing === "annual" ? "default" : "ghost"}
+                aria-pressed={billing === "annual"}
+                onClick={() => setBilling("annual")}
+              >
+                Annual
+              </Button>
+            </div>
+            <div className="h-5" aria-live="polite">
+              {billing === "annual" && (
+                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase text-primary">
+                  Get 2 months free
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+
         <div className="grid gap-6 lg:grid-cols-3">
           {plans.map((plan) => (
             <div
@@ -196,23 +252,40 @@ function Pricing() {
                 plan.featured
                   ? "border-primary bg-card shadow-xl ring-1 ring-primary/20"
                   : "border-border bg-card"
-              } ${plan.featured ? "px-8 pb-8 pt-14" : "p-8"}`}
+               } p-8`}
             >
-              {plan.featured && (
-                <div className="absolute inset-x-0 top-0 flex items-center justify-center bg-gradient-to-r from-primary via-primary to-primary/80 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-primary-foreground shadow-lg">
-                  <Star className="mr-2 h-3 w-3 fill-current" />
-                  Most popular
-                  <Star className="ml-2 h-3 w-3 fill-current" />
-                </div>
-              )}
+              <div className="mb-5 flex min-h-14 flex-col items-start justify-end gap-1.5">
+                {plan.badges.map((badge) => (
+                  <span
+                    key={badge}
+                    className={badge === "Most popular"
+                      ? "inline-flex items-center rounded-full bg-primary px-3 py-1 text-[0.65rem] font-bold uppercase text-primary-foreground"
+                      : "inline-flex rounded-full bg-primary/10 px-3 py-1 text-[0.65rem] font-bold uppercase text-primary"}
+                  >
+                    {badge === "Most popular" && <Star className="mr-1.5 h-3 w-3 fill-current" />}
+                    {badge}
+                  </span>
+                ))}
+              </div>
               <h2 className="text-2xl">{plan.name}</h2>
               <p className="mt-2 text-sm text-muted-foreground">{plan.blurb}</p>
-              <div className="mt-6 flex items-baseline gap-2">
-                <span className="font-[family-name:var(--font-display)] text-4xl font-bold">
-                  {plan.price}
-                </span>
-                <span className="text-sm font-semibold text-foreground/70">{LOCALE_INFO[locale].currency}</span>
-                <span className="text-sm text-muted-foreground">{plan.note}</span>
+              <div className="mt-6 min-h-16">
+                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <span className="font-[family-name:var(--font-display)] text-4xl font-bold">
+                    {billing === "annual"
+                      ? `${locale === "en-ca" ? "CA" : ""}${plan.annualPrice}`
+                      : plan.price}
+                  </span>
+                  {billing === "monthly" && (
+                    <span className="text-sm font-semibold text-foreground/70">{LOCALE_INFO[locale].currency}</span>
+                  )}
+                  <span className="text-sm text-muted-foreground">
+                    {billing === "annual" ? "/yr" : plan.note}
+                  </span>
+                </div>
+                {billing === "annual" && (
+                  <p className="mt-1 text-xs text-muted-foreground">{plan.annualMonthly}</p>
+                )}
               </div>
               <ul className="mt-6 flex-1 space-y-3 text-sm">
                 {plan.features.map((f) => (
@@ -224,15 +297,22 @@ function Pricing() {
               </ul>
               {(() => {
                 const href = paymentLink(plan.name, locale);
-                const cls = `mt-8 inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${
-                  plan.featured
-                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                    : "border border-border hover:bg-accent hover:text-accent-foreground"
-                }`;
-                return href ? (
-                  <a href={href} className={cls}>Get Started — {LOCALE_INFO[locale].currency}</a>
-                ) : (
-                  <Link to="/contact" className={cls}>Get My Free Website Design</Link>
+                if (plan.name === "Scale") {
+                  return (
+                    <Button asChild size="lg" variant="outline" className="mt-8 w-full">
+                      <a href={BOOKING_URL}>Let's Talk First</a>
+                    </Button>
+                  );
+                }
+
+                return (
+                  <Button asChild size="lg" variant={plan.featured ? "default" : "outline"} className="mt-8 w-full">
+                    {href ? (
+                      <a href={href}>Get My Free Website Design</a>
+                    ) : (
+                      <Link to="/contact">Get My Free Website Design</Link>
+                    )}
+                  </Button>
                 );
               })()}
             </div>
