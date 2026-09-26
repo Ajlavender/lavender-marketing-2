@@ -111,7 +111,8 @@ export function CountUp({
   const raw = String(value);
   const parsed = parseValue(raw);
   const { ref, inView } = useInView<HTMLSpanElement>();
-  const [display, setDisplay] = useState(parsed ? 0 : null);
+  // Start on the real value so it never shows "0" (SSR, no-JS, slow observers).
+  const [display, setDisplay] = useState(parsed ? parsed.numeric : null);
 
   useEffect(() => {
     if (!inView || !parsed) return;
