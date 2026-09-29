@@ -137,8 +137,8 @@ function VideoPlayer({
   onCanPlay,
 }: VideoPlayerProps) {
   // Start when the banner scrolls into view, pause when it leaves.
-
   useEffect(() => {
+
     const el = videoRef.current;
     if (!el) return;
     if (shouldPlay) el.play().catch(() => {});
@@ -169,8 +169,8 @@ function VideoPlayer({
         }}
         className="h-full w-full object-cover"
       >
-
         {videoSrc && !failed && (
+
           <source src={videoSrc} type="video/mp4" onError={() => setFailed(true)} />
         )}
       </video>
@@ -263,8 +263,8 @@ function Index() {
     const markScrolled = () => {
       if (window.scrollY > 80) {
         const rect = el.getBoundingClientRect();
-
         if (rect.top < window.innerHeight * 1.5) {
+
           attach();
           window.removeEventListener("scroll", markScrolled);
         }
@@ -277,8 +277,8 @@ function Index() {
   }, []);
 
   useEffect(() => {
-
     if (videoSrc) videoRef.current?.load();
+
   }, [videoSrc]);
 
   // Autoplay while the banner is on screen; pause once it scrolls away.
@@ -456,11 +456,9 @@ function Index() {
                   onCanPlay={() => setCanPlay(true)}
                 />
               </div>
-
             </div>
-
-
           </div>
+
         </div>
 
         {/* scroll cue */}
