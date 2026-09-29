@@ -2,8 +2,6 @@ import { INTAKE_URL } from "@/data/pricing";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
-  Maximize2,
-  Minimize2,
   ShieldCheck,
   Sparkles,
   Star,
@@ -11,8 +9,8 @@ import {
   VolumeX,
   Zap,
 } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
+import { useEffect, useRef, useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { LeadForm, ReportFallback } from "@/components/site/LeadForm";
 import { PreviewSteps } from "@/components/site/sections";
@@ -122,44 +120,25 @@ interface VideoPlayerProps {
   muted: boolean;
   canPlay: boolean;
   videoSrc: string | undefined;
-  floating: boolean;
-  /** Play only once the banner is actually on screen (or floating). */
+  /** Play only once the banner is actually on screen. */
   shouldPlay: boolean;
   onToggleMute: () => void;
   onCanPlay: () => void;
-  /** Shared playback position so the video resumes instead of restarting when it moves. */
-  positionRef: { current: number };
 }
+
 
 function VideoPlayer({
   videoRef,
   muted,
   canPlay,
   videoSrc,
-  floating,
   shouldPlay,
   onToggleMute,
   onCanPlay,
-  positionRef,
 }: VideoPlayerProps) {
-  // Restore the shared playback position whenever this element mounts (hero <-> floating).
-  const resume = useCallback(() => {
-    const el = videoRef.current;
-    if (!el) return;
-    const target = positionRef.current;
-    if (target > 0 && Math.abs(el.currentTime - target) > 0.25) {
-      try {
-        el.currentTime = target;
-      } catch {
-        /* seek not ready yet */
-      }
-    }
-    el.muted = muted;
-    if (shouldPlay) el.play().catch(() => {});
-  }, [videoRef, positionRef, muted, shouldPlay]);
-
-  // Start when the banner scrolls into view, pause when it leaves (and isn't floating).
+  // Start when the banner scrolls into view, pause when it leaves.
   useEffect(() => {
+
     const el = videoRef.current;
     if (!el) return;
     if (shouldPlay) el.play().catch(() => {});
@@ -180,25 +159,18 @@ function VideoPlayer({
         muted={muted}
         loop
         playsInline
-        controls={!floating && ready && !failed}
+        controls={ready && !failed}
         disablePictureInPicture
         preload="metadata"
-        onLoadedMetadata={resume}
-        onTimeUpdate={(e) => {
-          positionRef.current = e.currentTarget.currentTime;
-        }}
         onError={() => setFailed(true)}
         onCanPlay={() => {
           setReady(true);
           onCanPlay();
-          resume();
         }}
-        className={cn(
-          "h-full w-full object-cover",
-          floating ? "aspect-video" : "aspect-video",
-        )}
+        className="h-full w-full object-cover"
       >
         {videoSrc && !failed && (
+
           <source src={videoSrc} type="video/mp4" onError={() => setFailed(true)} />
         )}
       </video>
@@ -265,30 +237,16 @@ function VideoPlayer({
 
 function Index() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  // Wrapper around the video banner — drives lazy-load, autoplay and auto-PiP.
+  // Wrapper around the video banner — drives lazy-load and autoplay.
   const bannerRef = useRef<HTMLDivElement>(null);
   const [muted, setMuted] = useState(true);
-  const [showFloatBtn, setShowFloatBtn] = useState(false);
-  const [floating, setFloating] = useState(false);
   // True while the banner is meaningfully on screen — gates autoplay.
   const [inView, setInView] = useState(false);
-  // Tracks whether the current floating player was started automatically by scrolling.
-  const autoFloatRef = useRef(false);
-  // Tracks whether the user manually closed the floating player while scrolled down.
-  const userDismissedRef = useRef(false);
   // Video source is attached only after hydration + when the card is near view,
   // so the poster paints first and the mp4 never blocks first render.
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
   const [canPlay, setCanPlay] = useState(false);
-  const positionRef = useRef(0);
-  // Swipe-to-hide state for the floating mobile player (audio keeps playing).
-  const [dragX, setDragX] = useState(0);
-  const [peeked, setPeeked] = useState(false);
-  const dragRef = useRef<{ startX: number; active: boolean } | null>(null);
-  const hasScrolledRef = useRef(false);
 
-
-  const scrolledPastRef = useRef(false);
 
   // Lazy-attach the mp4 once the banner is close to the viewport.
   useEffect(() => {
@@ -304,9 +262,9 @@ function Index() {
     const attach = () => setVideoSrc(HERO_VIDEO);
     const markScrolled = () => {
       if (window.scrollY > 80) {
-        hasScrolledRef.current = true;
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight * 1.5) {
+
           attach();
           window.removeEventListener("scroll", markScrolled);
         }
@@ -317,16 +275,13 @@ function Index() {
       window.removeEventListener("scroll", markScrolled);
     };
   }, []);
-  useEffect(() => {
-    if (!floating) setPeeked(false);
-  }, [floating]);
-
 
   useEffect(() => {
     if (videoSrc) videoRef.current?.load();
+
   }, [videoSrc]);
 
-  // Autoplay when the banner scrolls into view; pop to PiP once it scrolls fully past.
+  // Autoplay while the banner is on screen; pause once it scrolls away.
   useEffect(() => {
     const el = bannerRef.current;
     if (!el) return;
@@ -335,32 +290,7 @@ function Index() {
       (entries) => {
         const entry = entries[entries.length - 1];
         if (!entry) return;
-
-        const visible = entry.isIntersecting && entry.intersectionRatio >= 0.4;
-        setInView(visible);
-        setShowFloatBtn(visible);
-
-        const past = !entry.isIntersecting && entry.boundingClientRect.top < 0;
-        scrolledPastRef.current = past;
-
-        if (past) {
-          // Scrolled below the video (into "companies we've worked with") — go PiP.
-          setFloating((prev) => {
-            if (prev || autoFloatRef.current || userDismissedRef.current) return prev;
-            autoFloatRef.current = true;
-            return true;
-          });
-        } else if (entry.isIntersecting) {
-          // Back at the banner: return the video and allow auto-PiP again later.
-          userDismissedRef.current = false;
-          setFloating((prev) => {
-            if (prev && autoFloatRef.current) {
-              autoFloatRef.current = false;
-              return false;
-            }
-            return prev;
-          });
-        }
+        setInView(entry.isIntersecting && entry.intersectionRatio >= 0.4);
       },
       { threshold: [0, 0.4, 0.75] },
     );
@@ -369,28 +299,12 @@ function Index() {
   }, []);
 
 
+
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !muted;
       setMuted(!muted);
     }
-  };
-
-  const toggleFloating = () => {
-    setFloating((prev) => {
-      const next = !prev;
-      if (!next) {
-        // Manual close while scrolled down — remember the choice.
-        if (scrolledPastRef.current) {
-          userDismissedRef.current = true;
-        }
-        autoFloatRef.current = false;
-      } else {
-        userDismissedRef.current = false;
-        autoFloatRef.current = false;
-      }
-      return next;
-    });
   };
 
   return (
@@ -531,148 +445,20 @@ function Index() {
               </div>
 
               <div className="relative overflow-hidden rounded-[1.9rem] bg-black">
-                {!floating ? (
-                  <>
-                    <VideoPlayer
-                      key="hero-video-player"
-                      videoRef={videoRef}
-                      muted={muted}
-                      canPlay={canPlay}
-                      videoSrc={videoSrc}
-                      floating={false}
-                      shouldPlay={inView && !floating}
-                      onToggleMute={toggleMute}
-                      onCanPlay={() => setCanPlay(true)}
-                      positionRef={positionRef}
-                    />
-
-                    {/* Pop-out button — appears on scroll */}
-                    <button
-                      type="button"
-                      onClick={toggleFloating}
-                      className={cn(
-                        "group absolute bottom-3 right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full text-white backdrop-blur-md shadow-lg ring-1 transition-all duration-300 ease-out",
-                        "bg-black/70 ring-white/10 hover:scale-110 hover:bg-black/85 hover:shadow-[0_0_30px_-8px_rgba(255,255,255,0.35)] hover:ring-white/25",
-                        "active:scale-95",
-                        showFloatBtn && !floating
-                          ? "translate-y-0 opacity-100"
-                          : "pointer-events-none translate-y-3 opacity-0",
-                      )}
-                      aria-label="Pop video out"
-                      title="Pop video out"
-                    >
-                      <Minimize2 className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-                    </button>
-                  </>
-                ) : (
-                  /* Placeholder while the video is playing in the floating player */
-                  <div className="relative aspect-video w-full">
-                    <img
-                      src={HERO_POSTER}
-                      alt=""
-                       width={1280}
-                       height={720}
-                      className="h-full w-full object-cover opacity-60"
-                    />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30 backdrop-blur-xl">
-                        <Maximize2 className="h-5 w-5" />
-                      </span>
-                      <span className="text-sm font-medium text-white/80">Video playing in corner</span>
-                    </div>
-                  </div>
-                )}
+                <VideoPlayer
+                  key="hero-video-player"
+                  videoRef={videoRef}
+                  muted={muted}
+                  canPlay={canPlay}
+                  videoSrc={videoSrc}
+                  shouldPlay={inView}
+                  onToggleMute={toggleMute}
+                  onCanPlay={() => setCanPlay(true)}
+                />
               </div>
             </div>
-
-            {/* Custom floating player — no browser PiP chrome, so no favicon/logo appears. */}
-            {floating &&
-              createPortal(
-                <div
-                  className={cn(
-                    "fixed right-3 z-[100] w-[min(9.5rem,42vw)] animate-scale-in sm:right-4 sm:w-[min(22rem,60vw)]",
-                    // Sit above the sticky mobile CTA bar on small screens.
-                    "bottom-[calc(env(safe-area-inset-bottom)+4.9rem)] sm:bottom-4",
-                    dragX === 0 ? "transition-transform duration-300 ease-out" : "",
-                  )}
-                  style={{
-                    transform: `translateX(${peeked ? "calc(100% - 1.6rem)" : `${dragX}px`})`,
-                    touchAction: "pan-y",
-                  }}
-                  onPointerDown={(e) => {
-                    dragRef.current = { startX: e.clientX, active: true };
-                  }}
-                  onPointerMove={(e) => {
-                    if (!dragRef.current?.active) return;
-                    const dx = e.clientX - dragRef.current.startX;
-                    setDragX(Math.max(0, dx));
-                  }}
-                  onPointerUp={(e) => {
-                    if (!dragRef.current?.active) return;
-                    const dx = e.clientX - dragRef.current.startX;
-                    dragRef.current.active = false;
-                    setDragX(0);
-                    if (dx > 60) setPeeked(true);
-                  }}
-                  onPointerCancel={() => {
-                    if (dragRef.current) dragRef.current.active = false;
-                    setDragX(0);
-                  }}
-                >
-                  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_30px_70px_-25px_rgba(0,0,0,0.7)]">
-                    <VideoPlayer
-                      key="hero-video-player"
-                      videoRef={videoRef}
-                      muted={muted}
-                      canPlay={canPlay}
-                      videoSrc={videoSrc}
-                      floating={true}
-                      shouldPlay={true}
-                      onToggleMute={toggleMute}
-                      onCanPlay={() => setCanPlay(true)}
-                      positionRef={positionRef}
-                    />
-
-                    {/* Tap the visible sliver to bring the hidden video back (audio never stops) */}
-                    {peeked && (
-                      <button
-                        type="button"
-                        onClick={() => setPeeked(false)}
-                        className="absolute inset-0 z-20 flex items-center justify-start bg-black/70 pl-1 text-white backdrop-blur-sm"
-                        aria-label="Show video"
-                      >
-                        <ArrowRight className="h-4 w-4 rotate-180" />
-                      </button>
-                    )}
-
-                    {/* Close floating player */}
-                    {!peeked && (
-                      <button
-                        type="button"
-                        onClick={toggleFloating}
-                        className="absolute -top-2 -right-2 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-background text-foreground shadow-lg ring-1 ring-border transition hover:scale-110 hover:bg-accent"
-                        aria-label="Close floating video"
-                        title="Close floating video"
-                      >
-                        <span className="sr-only">Close</span>
-                        <svg
-                          className="h-3.5 w-3.5"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
-                        >
-                          <path d="M18 6 6 18M6 6l12 12" />
-                        </svg>
-                      </button>
-                    )}
-                  </div>
-                </div>,
-                document.body,
-              )}
-
           </div>
+
         </div>
 
         {/* scroll cue */}
