@@ -1,7 +1,7 @@
 import { INTAKE_URL } from "@/data/pricing";
 import { useEffect, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, ChevronDown, ArrowUpRight, X, Sparkles } from "lucide-react";
+import { Menu, ChevronDown, ArrowUpRight, X } from "lucide-react";
 import { nav, LOGO } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -18,9 +18,7 @@ function AnnouncementBar({ onClose }: { onClose: () => void }) {
       <div className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(110deg,transparent,rgba(255,255,255,0.18),transparent)] [background-size:220%_100%] animate-[shimmer_3.2s_ease-in-out_infinite] motion-reduce:hidden" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
       <div className="relative mx-auto flex max-w-[90rem] items-center justify-center gap-2 px-4 py-2 pr-10 sm:gap-3 sm:px-8 sm:pr-12 lg:px-10">
-        <Sparkles className="hidden h-4 w-4 shrink-0 text-white/90 sm:block" />
         <p className="flex min-w-0 flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-[0.7rem] font-medium leading-tight tracking-wide sm:text-xs">
-          <span className="hidden sm:inline">✦</span>
           <span>
             <span className="hidden sm:inline">Free website design + review engine — launch your site for </span>
             <span className="sm:hidden">Free website design — launch for </span>
