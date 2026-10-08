@@ -423,7 +423,12 @@ export const faqs = [
     q: "What's the difference between the free Google report and the free website preview?",
     a: "The report is a free snapshot of how your business shows up on Google, zero commitment. The website preview is the fix: a brand-new homepage designed free, yours to keep for $297/mo if you love it.",
   },
-];
+  {
+    q: "What technology powers Lavender Suite Pro?",
+    a: "Lavender Suite Pro is powered by HighLevel, an established CRM and marketing automation platform.\n\nLavender Marketing & Co. combines that technology with our website design, implementation, automation setup, and ongoing services.\n\nOur value is in the complete solution we help put together for your business, not in claiming we invented the underlying software.",
+    link: { label: "Learn more about Lavender Suite Pro and HighLevel", to: "/lavender-suite-pro/compare-highlevel" as const },
+  },
+] as { q: string; a: string; link?: { label: string; to: "/lavender-suite-pro/compare-highlevel" } }[];
 
 export const socials = [
   { label: "Facebook", href: "https://www.facebook.com/" },

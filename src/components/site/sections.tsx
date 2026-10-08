@@ -400,7 +400,14 @@ export function FaqAccordion({ limit }: { limit?: number }) {
       {items.map((f, i) => (
         <AccordionItem key={f.q} value={`item-${i}`}>
           <AccordionTrigger className="text-left text-lg">{f.q}</AccordionTrigger>
-          <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
+          <AccordionContent className="text-muted-foreground">
+            {f.a}
+            {f.link && (
+              <Link to={f.link.to} className="mt-3 block font-medium text-primary underline underline-offset-2">
+                {f.link.label}
+              </Link>
+            )}
+          </AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>

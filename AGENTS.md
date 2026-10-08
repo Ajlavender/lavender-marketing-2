@@ -30,3 +30,14 @@
   first paint, and `spell()` is identity for `en-ca`, so Canada is unaffected.
 - Copy is authored in Canadian spelling everywhere; the US side is derived, never
   hand-written. Prospect-visible text must never name internal tools.
+
+## Customer success rules
+
+- Account-transition requests post to their own `GHL_TRANSITION_WEBHOOK_URL`, never
+  the sales lead webhook, and the form stays disabled until it is set. Why: service
+  requests must not enter the sales funnel, and the form must never fake success.
+- `/account-transition` is noindex, absent from the sitemap and never linked publicly.
+  Why: it is a support-team direct link, not a landing page.
+- The HighLevel disclosure is allowed only on the comparison page, homepage
+  technology section and its FAQ entry. Why: the user chose transparent disclosure
+  there; other prospect copy still names no internal tools.
