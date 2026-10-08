@@ -32,9 +32,11 @@ import { Route as ConstructionWebsiteDesignRouteImport } from './routes/construc
 import { Route as ChatWidgetRouteImport } from './routes/chat-widget'
 import { Route as AiChatWidgetRouteImport } from './routes/ai-chat-widget'
 import { Route as AdManagementRouteImport } from './routes/ad-management'
+import { Route as AccountTransitionRouteImport } from './routes/account-transition'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as LavenderSuiteProCompareHighlevelRouteImport } from './routes/lavender-suite-pro.compare-highlevel'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AboutMottoRouteImport } from './routes/about.motto'
 
@@ -154,6 +156,11 @@ const AdManagementRoute = AdManagementRouteImport.update({
   path: '/ad-management',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccountTransitionRoute = AccountTransitionRouteImport.update({
+  id: '/account-transition',
+  path: '/account-transition',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -169,6 +176,12 @@ const AboutIndexRoute = AboutIndexRouteImport.update({
   path: '/about/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LavenderSuiteProCompareHighlevelRoute =
+  LavenderSuiteProCompareHighlevelRouteImport.update({
+    id: '/lavender-suite-pro/compare-highlevel',
+    path: '/lavender-suite-pro/compare-highlevel',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -182,6 +195,7 @@ const AboutMottoRoute = AboutMottoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/account-transition': typeof AccountTransitionRoute
   '/ad-management': typeof AdManagementRoute
   '/ai-chat-widget': typeof AiChatWidgetRoute
   '/chat-widget': typeof ChatWidgetRoute
@@ -207,11 +221,13 @@ export interface FileRoutesByFullPath {
   '/why-choose-us': typeof WhyChooseUsRoute
   '/about/motto': typeof AboutMottoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/lavender-suite-pro/compare-highlevel': typeof LavenderSuiteProCompareHighlevelRoute
   '/about/': typeof AboutIndexRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/account-transition': typeof AccountTransitionRoute
   '/ad-management': typeof AdManagementRoute
   '/ai-chat-widget': typeof AiChatWidgetRoute
   '/chat-widget': typeof ChatWidgetRoute
@@ -237,12 +253,14 @@ export interface FileRoutesByTo {
   '/why-choose-us': typeof WhyChooseUsRoute
   '/about/motto': typeof AboutMottoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/lavender-suite-pro/compare-highlevel': typeof LavenderSuiteProCompareHighlevelRoute
   '/about': typeof AboutIndexRoute
   '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/account-transition': typeof AccountTransitionRoute
   '/ad-management': typeof AdManagementRoute
   '/ai-chat-widget': typeof AiChatWidgetRoute
   '/chat-widget': typeof ChatWidgetRoute
@@ -268,6 +286,7 @@ export interface FileRoutesById {
   '/why-choose-us': typeof WhyChooseUsRoute
   '/about/motto': typeof AboutMottoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/lavender-suite-pro/compare-highlevel': typeof LavenderSuiteProCompareHighlevelRoute
   '/about/': typeof AboutIndexRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -275,6 +294,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/account-transition'
     | '/ad-management'
     | '/ai-chat-widget'
     | '/chat-widget'
@@ -300,11 +320,13 @@ export interface FileRouteTypes {
     | '/why-choose-us'
     | '/about/motto'
     | '/blog/$slug'
+    | '/lavender-suite-pro/compare-highlevel'
     | '/about/'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/account-transition'
     | '/ad-management'
     | '/ai-chat-widget'
     | '/chat-widget'
@@ -330,11 +352,13 @@ export interface FileRouteTypes {
     | '/why-choose-us'
     | '/about/motto'
     | '/blog/$slug'
+    | '/lavender-suite-pro/compare-highlevel'
     | '/about'
     | '/blog'
   id:
     | '__root__'
     | '/'
+    | '/account-transition'
     | '/ad-management'
     | '/ai-chat-widget'
     | '/chat-widget'
@@ -360,12 +384,14 @@ export interface FileRouteTypes {
     | '/why-choose-us'
     | '/about/motto'
     | '/blog/$slug'
+    | '/lavender-suite-pro/compare-highlevel'
     | '/about/'
     | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountTransitionRoute: typeof AccountTransitionRoute
   AdManagementRoute: typeof AdManagementRoute
   AiChatWidgetRoute: typeof AiChatWidgetRoute
   ChatWidgetRoute: typeof ChatWidgetRoute
@@ -391,6 +417,7 @@ export interface RootRouteChildren {
   WhyChooseUsRoute: typeof WhyChooseUsRoute
   AboutMottoRoute: typeof AboutMottoRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  LavenderSuiteProCompareHighlevelRoute: typeof LavenderSuiteProCompareHighlevelRoute
   AboutIndexRoute: typeof AboutIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
@@ -558,6 +585,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdManagementRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/account-transition': {
+      id: '/account-transition'
+      path: '/account-transition'
+      fullPath: '/account-transition'
+      preLoaderRoute: typeof AccountTransitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -579,6 +613,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lavender-suite-pro/compare-highlevel': {
+      id: '/lavender-suite-pro/compare-highlevel'
+      path: '/lavender-suite-pro/compare-highlevel'
+      fullPath: '/lavender-suite-pro/compare-highlevel'
+      preLoaderRoute: typeof LavenderSuiteProCompareHighlevelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/blog/$slug'
@@ -598,6 +639,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountTransitionRoute: AccountTransitionRoute,
   AdManagementRoute: AdManagementRoute,
   AiChatWidgetRoute: AiChatWidgetRoute,
   ChatWidgetRoute: ChatWidgetRoute,
@@ -623,6 +665,7 @@ const rootRouteChildren: RootRouteChildren = {
   WhyChooseUsRoute: WhyChooseUsRoute,
   AboutMottoRoute: AboutMottoRoute,
   BlogSlugRoute: BlogSlugRoute,
+  LavenderSuiteProCompareHighlevelRoute: LavenderSuiteProCompareHighlevelRoute,
   AboutIndexRoute: AboutIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
