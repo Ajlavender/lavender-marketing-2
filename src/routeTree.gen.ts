@@ -9,60 +9,130 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AccountTransitionRouteImport } from './routes/account-transition'
-import { Route as AdManagementRouteImport } from './routes/ad-management'
-import { Route as AiChatWidgetRouteImport } from './routes/ai-chat-widget'
-import { Route as ChatWidgetRouteImport } from './routes/chat-widget'
-import { Route as ConstructionWebsiteDesignRouteImport } from './routes/construction-website-design'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CrmPipelineRouteImport } from './routes/crm-pipeline'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as FollowUpAutomationRouteImport } from './routes/follow-up-automation'
-import { Route as GrowthReportRouteImport } from './routes/growth-report'
-import { Route as HostingAndSupportRouteImport } from './routes/hosting-and-support'
-import { Route as LocalSeoRouteImport } from './routes/local-seo'
-import { Route as MissedCallTextBackRouteImport } from './routes/missed-call-text-back'
-import { Route as OnlineBookingRouteImport } from './routes/online-booking'
-import { Route as PricingRouteImport } from './routes/pricing'
-import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
-import { Route as ProjectsRouteImport } from './routes/projects'
-import { Route as ReviewAutomationRouteImport } from './routes/review-automation'
-import { Route as ReviewsRouteImport } from './routes/reviews'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as UnifiedInboxRouteImport } from './routes/unified-inbox'
-import { Route as VoiceAiReceptionistRouteImport } from './routes/voice-ai-receptionist'
-import { Route as WebsiteRedesignRouteImport } from './routes/website-redesign'
 import { Route as WhyChooseUsRouteImport } from './routes/why-choose-us'
-import { Route as AboutIndexRouteImport } from './routes/about.index'
-import { Route as AboutMottoRouteImport } from './routes/about.motto'
+import { Route as WebsiteRedesignRouteImport } from './routes/website-redesign'
+import { Route as VoiceAiReceptionistRouteImport } from './routes/voice-ai-receptionist'
+import { Route as UnifiedInboxRouteImport } from './routes/unified-inbox'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ReviewAutomationRouteImport } from './routes/review-automation'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as OnlineBookingRouteImport } from './routes/online-booking'
+import { Route as MissedCallTextBackRouteImport } from './routes/missed-call-text-back'
+import { Route as LocalSeoRouteImport } from './routes/local-seo'
+import { Route as HostingAndSupportRouteImport } from './routes/hosting-and-support'
+import { Route as GrowthReportRouteImport } from './routes/growth-report'
+import { Route as FollowUpAutomationRouteImport } from './routes/follow-up-automation'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as CrmPipelineRouteImport } from './routes/crm-pipeline'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ConstructionWebsiteDesignRouteImport } from './routes/construction-website-design'
+import { Route as ChatWidgetRouteImport } from './routes/chat-widget'
+import { Route as AiChatWidgetRouteImport } from './routes/ai-chat-widget'
+import { Route as AdManagementRouteImport } from './routes/ad-management'
+import { Route as AccountTransitionRouteImport } from './routes/account-transition'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as LavenderSuiteProCompareHighlevelRouteImport } from './routes/lavender-suite-pro.compare-highlevel'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AboutMottoRouteImport } from './routes/about.motto'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const WhyChooseUsRoute = WhyChooseUsRouteImport.update({
+  id: '/why-choose-us',
+  path: '/why-choose-us',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AccountTransitionRoute = AccountTransitionRouteImport.update({
-  id: '/account-transition',
-  path: '/account-transition',
+const WebsiteRedesignRoute = WebsiteRedesignRouteImport.update({
+  id: '/website-redesign',
+  path: '/website-redesign',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdManagementRoute = AdManagementRouteImport.update({
-  id: '/ad-management',
-  path: '/ad-management',
+const VoiceAiReceptionistRoute = VoiceAiReceptionistRouteImport.update({
+  id: '/voice-ai-receptionist',
+  path: '/voice-ai-receptionist',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AiChatWidgetRoute = AiChatWidgetRouteImport.update({
-  id: '/ai-chat-widget',
-  path: '/ai-chat-widget',
+const UnifiedInboxRoute = UnifiedInboxRouteImport.update({
+  id: '/unified-inbox',
+  path: '/unified-inbox',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ChatWidgetRoute = ChatWidgetRouteImport.update({
-  id: '/chat-widget',
-  path: '/chat-widget',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewAutomationRoute = ReviewAutomationRouteImport.update({
+  id: '/review-automation',
+  path: '/review-automation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnlineBookingRoute = OnlineBookingRouteImport.update({
+  id: '/online-booking',
+  path: '/online-booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MissedCallTextBackRoute = MissedCallTextBackRouteImport.update({
+  id: '/missed-call-text-back',
+  path: '/missed-call-text-back',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocalSeoRoute = LocalSeoRouteImport.update({
+  id: '/local-seo',
+  path: '/local-seo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HostingAndSupportRoute = HostingAndSupportRouteImport.update({
+  id: '/hosting-and-support',
+  path: '/hosting-and-support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrowthReportRoute = GrowthReportRouteImport.update({
+  id: '/growth-report',
+  path: '/growth-report',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FollowUpAutomationRoute = FollowUpAutomationRouteImport.update({
+  id: '/follow-up-automation',
+  path: '/follow-up-automation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CrmPipelineRoute = CrmPipelineRouteImport.update({
+  id: '/crm-pipeline',
+  path: '/crm-pipeline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConstructionWebsiteDesignRoute =
@@ -71,109 +141,29 @@ const ConstructionWebsiteDesignRoute =
     path: '/construction-website-design',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const ChatWidgetRoute = ChatWidgetRouteImport.update({
+  id: '/chat-widget',
+  path: '/chat-widget',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CrmPipelineRoute = CrmPipelineRouteImport.update({
-  id: '/crm-pipeline',
-  path: '/crm-pipeline',
+const AiChatWidgetRoute = AiChatWidgetRouteImport.update({
+  id: '/ai-chat-widget',
+  path: '/ai-chat-widget',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
+const AdManagementRoute = AdManagementRouteImport.update({
+  id: '/ad-management',
+  path: '/ad-management',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FollowUpAutomationRoute = FollowUpAutomationRouteImport.update({
-  id: '/follow-up-automation',
-  path: '/follow-up-automation',
+const AccountTransitionRoute = AccountTransitionRouteImport.update({
+  id: '/account-transition',
+  path: '/account-transition',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GrowthReportRoute = GrowthReportRouteImport.update({
-  id: '/growth-report',
-  path: '/growth-report',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HostingAndSupportRoute = HostingAndSupportRouteImport.update({
-  id: '/hosting-and-support',
-  path: '/hosting-and-support',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LocalSeoRoute = LocalSeoRouteImport.update({
-  id: '/local-seo',
-  path: '/local-seo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MissedCallTextBackRoute = MissedCallTextBackRouteImport.update({
-  id: '/missed-call-text-back',
-  path: '/missed-call-text-back',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OnlineBookingRoute = OnlineBookingRouteImport.update({
-  id: '/online-booking',
-  path: '/online-booking',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
-  id: '/privacy-policy',
-  path: '/privacy-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReviewAutomationRoute = ReviewAutomationRouteImport.update({
-  id: '/review-automation',
-  path: '/review-automation',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReviewsRoute = ReviewsRouteImport.update({
-  id: '/reviews',
-  path: '/reviews',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const UnifiedInboxRoute = UnifiedInboxRouteImport.update({
-  id: '/unified-inbox',
-  path: '/unified-inbox',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const VoiceAiReceptionistRoute = VoiceAiReceptionistRouteImport.update({
-  id: '/voice-ai-receptionist',
-  path: '/voice-ai-receptionist',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const WebsiteRedesignRoute = WebsiteRedesignRouteImport.update({
-  id: '/website-redesign',
-  path: '/website-redesign',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const WhyChooseUsRoute = WhyChooseUsRouteImport.update({
-  id: '/why-choose-us',
-  path: '/why-choose-us',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutIndexRoute = AboutIndexRouteImport.update({
-  id: '/about/',
-  path: '/about/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutMottoRoute = AboutMottoRouteImport.update({
-  id: '/about/motto',
-  path: '/about/motto',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -181,9 +171,9 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LavenderSuiteProCompareHighlevelRoute =
@@ -192,6 +182,16 @@ const LavenderSuiteProCompareHighlevelRoute =
     path: '/lavender-suite-pro/compare-highlevel',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutMottoRoute = AboutMottoRouteImport.update({
+  id: '/about/motto',
+  path: '/about/motto',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -424,165 +424,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/account-transition': {
-      id: '/account-transition'
-      path: '/account-transition'
-      fullPath: '/account-transition'
-      preLoaderRoute: typeof AccountTransitionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ad-management': {
-      id: '/ad-management'
-      path: '/ad-management'
-      fullPath: '/ad-management'
-      preLoaderRoute: typeof AdManagementRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ai-chat-widget': {
-      id: '/ai-chat-widget'
-      path: '/ai-chat-widget'
-      fullPath: '/ai-chat-widget'
-      preLoaderRoute: typeof AiChatWidgetRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/chat-widget': {
-      id: '/chat-widget'
-      path: '/chat-widget'
-      fullPath: '/chat-widget'
-      preLoaderRoute: typeof ChatWidgetRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/construction-website-design': {
-      id: '/construction-website-design'
-      path: '/construction-website-design'
-      fullPath: '/construction-website-design'
-      preLoaderRoute: typeof ConstructionWebsiteDesignRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/crm-pipeline': {
-      id: '/crm-pipeline'
-      path: '/crm-pipeline'
-      fullPath: '/crm-pipeline'
-      preLoaderRoute: typeof CrmPipelineRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/follow-up-automation': {
-      id: '/follow-up-automation'
-      path: '/follow-up-automation'
-      fullPath: '/follow-up-automation'
-      preLoaderRoute: typeof FollowUpAutomationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/growth-report': {
-      id: '/growth-report'
-      path: '/growth-report'
-      fullPath: '/growth-report'
-      preLoaderRoute: typeof GrowthReportRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/hosting-and-support': {
-      id: '/hosting-and-support'
-      path: '/hosting-and-support'
-      fullPath: '/hosting-and-support'
-      preLoaderRoute: typeof HostingAndSupportRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/local-seo': {
-      id: '/local-seo'
-      path: '/local-seo'
-      fullPath: '/local-seo'
-      preLoaderRoute: typeof LocalSeoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/missed-call-text-back': {
-      id: '/missed-call-text-back'
-      path: '/missed-call-text-back'
-      fullPath: '/missed-call-text-back'
-      preLoaderRoute: typeof MissedCallTextBackRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/online-booking': {
-      id: '/online-booking'
-      path: '/online-booking'
-      fullPath: '/online-booking'
-      preLoaderRoute: typeof OnlineBookingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy-policy': {
-      id: '/privacy-policy'
-      path: '/privacy-policy'
-      fullPath: '/privacy-policy'
-      preLoaderRoute: typeof PrivacyPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/review-automation': {
-      id: '/review-automation'
-      path: '/review-automation'
-      fullPath: '/review-automation'
-      preLoaderRoute: typeof ReviewAutomationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reviews': {
-      id: '/reviews'
-      path: '/reviews'
-      fullPath: '/reviews'
-      preLoaderRoute: typeof ReviewsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/unified-inbox': {
-      id: '/unified-inbox'
-      path: '/unified-inbox'
-      fullPath: '/unified-inbox'
-      preLoaderRoute: typeof UnifiedInboxRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/voice-ai-receptionist': {
-      id: '/voice-ai-receptionist'
-      path: '/voice-ai-receptionist'
-      fullPath: '/voice-ai-receptionist'
-      preLoaderRoute: typeof VoiceAiReceptionistRouteImport
+    '/why-choose-us': {
+      id: '/why-choose-us'
+      path: '/why-choose-us'
+      fullPath: '/why-choose-us'
+      preLoaderRoute: typeof WhyChooseUsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/website-redesign': {
@@ -592,25 +438,165 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WebsiteRedesignRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/why-choose-us': {
-      id: '/why-choose-us'
-      path: '/why-choose-us'
-      fullPath: '/why-choose-us'
-      preLoaderRoute: typeof WhyChooseUsRouteImport
+    '/voice-ai-receptionist': {
+      id: '/voice-ai-receptionist'
+      path: '/voice-ai-receptionist'
+      fullPath: '/voice-ai-receptionist'
+      preLoaderRoute: typeof VoiceAiReceptionistRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about/': {
-      id: '/about/'
-      path: '/about'
-      fullPath: '/about/'
-      preLoaderRoute: typeof AboutIndexRouteImport
+    '/unified-inbox': {
+      id: '/unified-inbox'
+      path: '/unified-inbox'
+      fullPath: '/unified-inbox'
+      preLoaderRoute: typeof UnifiedInboxRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about/motto': {
-      id: '/about/motto'
-      path: '/about/motto'
-      fullPath: '/about/motto'
-      preLoaderRoute: typeof AboutMottoRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/review-automation': {
+      id: '/review-automation'
+      path: '/review-automation'
+      fullPath: '/review-automation'
+      preLoaderRoute: typeof ReviewAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/online-booking': {
+      id: '/online-booking'
+      path: '/online-booking'
+      fullPath: '/online-booking'
+      preLoaderRoute: typeof OnlineBookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/missed-call-text-back': {
+      id: '/missed-call-text-back'
+      path: '/missed-call-text-back'
+      fullPath: '/missed-call-text-back'
+      preLoaderRoute: typeof MissedCallTextBackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/local-seo': {
+      id: '/local-seo'
+      path: '/local-seo'
+      fullPath: '/local-seo'
+      preLoaderRoute: typeof LocalSeoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hosting-and-support': {
+      id: '/hosting-and-support'
+      path: '/hosting-and-support'
+      fullPath: '/hosting-and-support'
+      preLoaderRoute: typeof HostingAndSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/growth-report': {
+      id: '/growth-report'
+      path: '/growth-report'
+      fullPath: '/growth-report'
+      preLoaderRoute: typeof GrowthReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/follow-up-automation': {
+      id: '/follow-up-automation'
+      path: '/follow-up-automation'
+      fullPath: '/follow-up-automation'
+      preLoaderRoute: typeof FollowUpAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/crm-pipeline': {
+      id: '/crm-pipeline'
+      path: '/crm-pipeline'
+      fullPath: '/crm-pipeline'
+      preLoaderRoute: typeof CrmPipelineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/construction-website-design': {
+      id: '/construction-website-design'
+      path: '/construction-website-design'
+      fullPath: '/construction-website-design'
+      preLoaderRoute: typeof ConstructionWebsiteDesignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chat-widget': {
+      id: '/chat-widget'
+      path: '/chat-widget'
+      fullPath: '/chat-widget'
+      preLoaderRoute: typeof ChatWidgetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-chat-widget': {
+      id: '/ai-chat-widget'
+      path: '/ai-chat-widget'
+      fullPath: '/ai-chat-widget'
+      preLoaderRoute: typeof AiChatWidgetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ad-management': {
+      id: '/ad-management'
+      path: '/ad-management'
+      fullPath: '/ad-management'
+      preLoaderRoute: typeof AdManagementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account-transition': {
+      id: '/account-transition'
+      path: '/account-transition'
+      fullPath: '/account-transition'
+      preLoaderRoute: typeof AccountTransitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -620,11 +606,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
+    '/about/': {
+      id: '/about/'
+      path: '/about'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lavender-suite-pro/compare-highlevel': {
@@ -632,6 +618,20 @@ declare module '@tanstack/react-router' {
       path: '/lavender-suite-pro/compare-highlevel'
       fullPath: '/lavender-suite-pro/compare-highlevel'
       preLoaderRoute: typeof LavenderSuiteProCompareHighlevelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/motto': {
+      id: '/about/motto'
+      path: '/about/motto'
+      fullPath: '/about/motto'
+      preLoaderRoute: typeof AboutMottoRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
