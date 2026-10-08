@@ -10,6 +10,7 @@ import {
   Zap,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { TechnologySection } from "@/components/site/TechStack";
 
 import { Button } from "@/components/ui/button";
 import { LeadForm, ReportFallback } from "@/components/site/LeadForm";
