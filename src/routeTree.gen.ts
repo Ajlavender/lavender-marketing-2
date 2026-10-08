@@ -35,6 +35,7 @@ import { Route as AdManagementRouteImport } from './routes/ad-management'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as LavenderSuiteProCompareHighlevelRouteImport } from './routes/lavender-suite-pro.compare-highlevel'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AboutMottoRouteImport } from './routes/about.motto'
 
@@ -169,6 +170,12 @@ const AboutIndexRoute = AboutIndexRouteImport.update({
   path: '/about/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LavenderSuiteProCompareHighlevelRoute =
+  LavenderSuiteProCompareHighlevelRouteImport.update({
+    id: '/lavender-suite-pro/compare-highlevel',
+    path: '/lavender-suite-pro/compare-highlevel',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -207,6 +214,7 @@ export interface FileRoutesByFullPath {
   '/why-choose-us': typeof WhyChooseUsRoute
   '/about/motto': typeof AboutMottoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/lavender-suite-pro/compare-highlevel': typeof LavenderSuiteProCompareHighlevelRoute
   '/about/': typeof AboutIndexRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -237,6 +245,7 @@ export interface FileRoutesByTo {
   '/why-choose-us': typeof WhyChooseUsRoute
   '/about/motto': typeof AboutMottoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/lavender-suite-pro/compare-highlevel': typeof LavenderSuiteProCompareHighlevelRoute
   '/about': typeof AboutIndexRoute
   '/blog': typeof BlogIndexRoute
 }
@@ -268,6 +277,7 @@ export interface FileRoutesById {
   '/why-choose-us': typeof WhyChooseUsRoute
   '/about/motto': typeof AboutMottoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/lavender-suite-pro/compare-highlevel': typeof LavenderSuiteProCompareHighlevelRoute
   '/about/': typeof AboutIndexRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -300,6 +310,7 @@ export interface FileRouteTypes {
     | '/why-choose-us'
     | '/about/motto'
     | '/blog/$slug'
+    | '/lavender-suite-pro/compare-highlevel'
     | '/about/'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
@@ -330,6 +341,7 @@ export interface FileRouteTypes {
     | '/why-choose-us'
     | '/about/motto'
     | '/blog/$slug'
+    | '/lavender-suite-pro/compare-highlevel'
     | '/about'
     | '/blog'
   id:
@@ -360,6 +372,7 @@ export interface FileRouteTypes {
     | '/why-choose-us'
     | '/about/motto'
     | '/blog/$slug'
+    | '/lavender-suite-pro/compare-highlevel'
     | '/about/'
     | '/blog/'
   fileRoutesById: FileRoutesById
@@ -391,6 +404,7 @@ export interface RootRouteChildren {
   WhyChooseUsRoute: typeof WhyChooseUsRoute
   AboutMottoRoute: typeof AboutMottoRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  LavenderSuiteProCompareHighlevelRoute: typeof LavenderSuiteProCompareHighlevelRoute
   AboutIndexRoute: typeof AboutIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
@@ -579,6 +593,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lavender-suite-pro/compare-highlevel': {
+      id: '/lavender-suite-pro/compare-highlevel'
+      path: '/lavender-suite-pro/compare-highlevel'
+      fullPath: '/lavender-suite-pro/compare-highlevel'
+      preLoaderRoute: typeof LavenderSuiteProCompareHighlevelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/blog/$slug'
@@ -623,6 +644,7 @@ const rootRouteChildren: RootRouteChildren = {
   WhyChooseUsRoute: WhyChooseUsRoute,
   AboutMottoRoute: AboutMottoRoute,
   BlogSlugRoute: BlogSlugRoute,
+  LavenderSuiteProCompareHighlevelRoute: LavenderSuiteProCompareHighlevelRoute,
   AboutIndexRoute: AboutIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
