@@ -585,6 +585,8 @@ function Index() {
         </div>
       </section>
 
+      <TechnologySection />
+
       {/* Stats */}
       <Section>
         <Reveal>
