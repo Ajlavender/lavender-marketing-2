@@ -32,6 +32,7 @@ import { Route as ConstructionWebsiteDesignRouteImport } from './routes/construc
 import { Route as ChatWidgetRouteImport } from './routes/chat-widget'
 import { Route as AiChatWidgetRouteImport } from './routes/ai-chat-widget'
 import { Route as AdManagementRouteImport } from './routes/ad-management'
+import { Route as AccountTransitionRouteImport } from './routes/account-transition'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
@@ -155,6 +156,11 @@ const AdManagementRoute = AdManagementRouteImport.update({
   path: '/ad-management',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccountTransitionRoute = AccountTransitionRouteImport.update({
+  id: '/account-transition',
+  path: '/account-transition',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -189,6 +195,7 @@ const AboutMottoRoute = AboutMottoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/account-transition': typeof AccountTransitionRoute
   '/ad-management': typeof AdManagementRoute
   '/ai-chat-widget': typeof AiChatWidgetRoute
   '/chat-widget': typeof ChatWidgetRoute
@@ -220,6 +227,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/account-transition': typeof AccountTransitionRoute
   '/ad-management': typeof AdManagementRoute
   '/ai-chat-widget': typeof AiChatWidgetRoute
   '/chat-widget': typeof ChatWidgetRoute
@@ -252,6 +260,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/account-transition': typeof AccountTransitionRoute
   '/ad-management': typeof AdManagementRoute
   '/ai-chat-widget': typeof AiChatWidgetRoute
   '/chat-widget': typeof ChatWidgetRoute
@@ -285,6 +294,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/account-transition'
     | '/ad-management'
     | '/ai-chat-widget'
     | '/chat-widget'
@@ -316,6 +326,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/account-transition'
     | '/ad-management'
     | '/ai-chat-widget'
     | '/chat-widget'
@@ -347,6 +358,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/account-transition'
     | '/ad-management'
     | '/ai-chat-widget'
     | '/chat-widget'
@@ -379,6 +391,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountTransitionRoute: typeof AccountTransitionRoute
   AdManagementRoute: typeof AdManagementRoute
   AiChatWidgetRoute: typeof AiChatWidgetRoute
   ChatWidgetRoute: typeof ChatWidgetRoute
@@ -572,6 +585,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdManagementRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/account-transition': {
+      id: '/account-transition'
+      path: '/account-transition'
+      fullPath: '/account-transition'
+      preLoaderRoute: typeof AccountTransitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -619,6 +639,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountTransitionRoute: AccountTransitionRoute,
   AdManagementRoute: AdManagementRoute,
   AiChatWidgetRoute: AiChatWidgetRoute,
   ChatWidgetRoute: ChatWidgetRoute,

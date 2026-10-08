@@ -124,7 +124,7 @@ function SupportContact() {
 function TransitionPage() {
   const { configured } = Route.useLoaderData();
   const locale = useLocale();
-  const formRef = useRef<HTMLFormElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
   const startedAt = useRef(Date.now());
   const [requestType, setRequestType] = useState<RequestType | "">("");
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
@@ -219,7 +219,7 @@ function TransitionPage() {
 
       {/* Form */}
       <section className="mx-auto max-w-3xl px-5 pb-20 sm:px-6">
-        <div className="scroll-mt-28 rounded-3xl border border-border bg-card p-6 sm:p-10" ref={formRef as never}>
+        <div className="scroll-mt-28 rounded-3xl border border-border bg-card p-6 sm:p-10" ref={formRef}>
           {reference ? (
             <div role="status" className="py-6 text-center">
               <h2 className="text-3xl font-semibold">We've Received Your Request.</h2>
@@ -232,7 +232,7 @@ function TransitionPage() {
               </p>
             </div>
           ) : (
-            <form ref={formRef} onSubmit={onSubmit} noValidate={false} className="space-y-6">
+            <form onSubmit={onSubmit} noValidate={false} className="space-y-6">
               <div>
                 <h2 className="text-3xl font-semibold">Tell Us What You Need.</h2>
                 <p className="mt-2 text-muted-foreground">
