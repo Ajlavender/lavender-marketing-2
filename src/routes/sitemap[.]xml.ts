@@ -36,6 +36,7 @@ const staticPaths: SitemapEntry[] = [
   { path: "/voice-ai-receptionist", changefreq: "monthly", priority: "0.7" },
   { path: "/construction-website-design", changefreq: "monthly", priority: "0.8" },
   { path: "/blog", changefreq: "weekly", priority: "0.7" },
+  { path: "/lavender-suite-pro/compare-highlevel", changefreq: "monthly", priority: "0.6" },
   { path: "/privacy-policy", changefreq: "yearly", priority: "0.3" },
 ];
 
