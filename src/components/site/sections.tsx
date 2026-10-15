@@ -364,17 +364,29 @@ export function RatingBar() {
           aria-hidden
           className="relative mx-auto my-8 h-px w-full max-w-md bg-gradient-to-r from-transparent via-border to-transparent"
         />
-        <div className="relative flex flex-wrap items-center justify-center gap-x-10 gap-y-5 sm:gap-x-14">
+        <div className="relative flex flex-wrap items-center justify-center gap-3 sm:gap-4">
           {ratingSources.map((r) => (
-            <img
+            <div
               key={r.label}
-              src={r.logo}
-              alt={r.label}
-              loading="lazy"
-              className="h-7 w-auto object-contain opacity-80 transition duration-300 hover:opacity-100 sm:h-9"
-            />
+              className="group flex items-center gap-3 rounded-full border border-border/70 bg-background/60 px-5 py-2.5 transition duration-300 hover:-translate-y-0.5 hover:border-brand/30 hover:bg-card hover:shadow-[0_16px_34px_-22px_rgba(42,35,82,0.5)]"
+            >
+              <img
+                src={r.logo}
+                alt={r.label}
+                loading="lazy"
+                className={cn("w-auto object-contain", r.square ? "h-5" : "h-[17px]")}
+              />
+              <span
+                aria-hidden
+                className="h-4 w-px shrink-0 bg-border"
+              />
+              <span className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground transition duration-300 group-hover:text-foreground">
+                {r.count}
+              </span>
+            </div>
           ))}
         </div>
+
       </div>
     </Reveal>
   );
