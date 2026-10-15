@@ -28,3 +28,4 @@
 - [x] Maintain localized metadata and sitemap entries
 - [x] Verify all pages, menu interactions and unchanged pricing without submitting forms
 - [x] Rename the main menu label to "What We Do"
+- [x] Trim the main nav to Home | What We Do | About Us | Projects | Pricing | Contact (Reviews and Blog moved to the footer only)
