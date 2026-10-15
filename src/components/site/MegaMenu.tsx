@@ -18,9 +18,15 @@ export function MegaPanel({ items, wide, onNavigate, open = true }: { items: rea
   <div className={cn('grid gap-5 p-5',wide && 'grid-cols-2 gap-y-6 gap-x-0 p-4 @6xl:grid-cols-4 @6xl:gap-y-0 @6xl:p-6')}>
    {groupChildren(items).map(([category,kids],i) => <div key={category || 'default'} className={cn('min-w-0',wide && 'px-3',wide && i % 2 === 1 && 'border-l border-nav-glass-border', wide && i > 0 && '@6xl:border-l')}>
     {category && <h2 className="mb-2 px-2 font-display text-lg @6xl:min-h-14 @6xl:mb-0 @7xl:text-xl font-semibold leading-tight text-nav-plum-foreground">{t(category)}</h2>}
-    <div className="space-y-1">{kids.map(child => { const Icon = ICONS[child.to] ?? Sparkles; return <Link to={child.to} onClick={onNavigate} tabIndex={open ? 0 : -1} key={child.to} className="group flex items-start gap-2.5 rounded-lg px-2 py-2.5 transition-colors hover:bg-nav-plum-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-plum-foreground">
+    <div className="space-y-0.5">{kids.map(child => (wide
+      ? (() => { const Icon = ICONS[child.to] ?? Sparkles; return <Link to={child.to} onClick={onNavigate} tabIndex={open ? 0 : -1} key={child.to} className="group flex items-start gap-2.5 rounded-lg px-2 py-2.5 transition-colors hover:bg-nav-plum-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-plum-foreground">
       <Icon className="mt-0.5 size-4 shrink-0 text-nav-plum-foreground/65" aria-hidden="true" /><span className="min-w-0"><span className="block text-sm font-semibold leading-snug">{t(child.label)}</span>{child.short && <span className="mt-1.5 block text-xs leading-relaxed text-nav-plum-foreground/65">{t(child.short)}</span>}</span>
-    </Link>; })}</div>
+    </Link>; })()
+      : <Link to={child.to} onClick={onNavigate} tabIndex={open ? 0 : -1} key={child.to} className="group flex items-center justify-between gap-4 border-b border-nav-glass-border last:border-b-0 px-3 py-3 transition-colors first:rounded-t-lg last:rounded-b-lg hover:bg-nav-plum-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-plum-foreground">
+          <span className="min-w-0"><span className="block text-sm font-semibold tracking-wide">{t(child.label)}</span>{child.short && <span className="mt-1 block text-xs leading-relaxed text-nav-plum-foreground/60">{t(child.short)}</span>}</span>
+          <ArrowUpRight className="size-4 shrink-0 -translate-x-1 text-nav-plum-foreground/40 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true" />
+        </Link>
+    ))}</div>
    </div>)}
   </div>
   {wide && <div className="flex flex-col items-start justify-between gap-4 border-t border-nav-glass-border bg-nav-plum-foreground/5 px-6 py-4 @3xl:flex-row @3xl:items-center @6xl:px-8 @6xl:py-5"><div><p className="font-display text-lg font-semibold @6xl:text-xl">Not sure what your business needs?</p><p className="mt-1 text-sm text-nav-plum-foreground/65">We'll help you figure out which tools make sense for you.</p></div><Button asChild variant="secondary" className="shrink-0"><Link to="/services" onClick={onNavigate} tabIndex={open ? 0 : -1}>Explore the Services <ArrowUpRight className="size-4" /></Link></Button></div>}
