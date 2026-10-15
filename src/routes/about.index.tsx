@@ -63,30 +63,27 @@ const missionCards = [
     body:
       "We build your demo design for free, so you see exactly what you're getting before you spend a dollar or sign anything.",
     image: `${ILLU}/websites.webp`,
-    offset: "lg:mt-14",
   },
   {
     title: "Built to Convert",
     body:
       "Every page is designed around one goal: more calls, bookings, and reviews. No fluff. No guesswork. Just a site that works.",
     image: `${ILLU}/crm-pipeline.webp`,
-    offset: "lg:mt-0",
   },
   {
     title: "Follow-Up on Autopilot",
     body:
       "Missed calls get texted back instantly. Leads are chased by text and email until they book or say no. Nothing falls through the cracks.",
     image: `${ILLU}/reporting.webp`,
-    offset: "lg:mt-6",
   },
   {
     title: "Made for Busy Owners",
     body:
       "We know you're running a business, not a website project. Our process is fast, simple, and built for owners who don't have time to babysit tech.",
     image: `${ILLU}/automations.webp`,
-    offset: "lg:-mt-6",
   },
 ];
+
 
 function GhostWord({ text, className }: { text: string; className?: string }) {
   return (
@@ -310,15 +307,16 @@ function About() {
             </div>
           </Reveal>
 
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
             {missionCards.map((c, i) => (
               <Reveal
                 key={c.title}
                 delay={i * 110}
                 scale
-                className={c.offset}
+                className="h-full"
               >
-                <article className="h-full rounded-lg bg-card p-6 shadow-[0_20px_50px_-30px_rgba(16,18,24,0.45)]">
+                <article className="flex h-full flex-col rounded-lg bg-card p-6 shadow-[0_20px_50px_-30px_rgba(16,18,24,0.45)]">
+
                   <img
                     src={c.image}
                     alt={c.title}
