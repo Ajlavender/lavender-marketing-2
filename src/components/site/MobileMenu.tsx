@@ -160,7 +160,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
                               </Link>)}
                             </div>
                           ))}
-                          {item.label === "Services" && <div className="mt-4 border-t border-nav-glass-border px-3 pt-4"><p className="text-sm font-semibold text-nav-plum-foreground">Not sure what your business needs?</p><p className="mt-2 text-xs leading-relaxed text-nav-plum-foreground/65">We'll help you figure out which tools make sense for you.</p><Button asChild variant="secondary" className="mt-4" tabIndex={isOpen ? 0 : -1}><Link to="/services" onClick={onClose}>Explore the Services <ArrowUpRight className="size-4" /></Link></Button></div>}
+                          {item.to === "/services" && <div className="mt-4 border-t border-nav-glass-border px-3 pt-4"><p className="text-sm font-semibold text-nav-plum-foreground">Not sure what your business needs?</p><p className="mt-2 text-xs leading-relaxed text-nav-plum-foreground/65">We'll help you figure out which tools make sense for you.</p><Button asChild variant="secondary" className="mt-4" tabIndex={isOpen ? 0 : -1}><Link to="/services" onClick={onClose}>Explore the Services <ArrowUpRight className="size-4" /></Link></Button></div>}
                         </div>
                       </div>
                     </div>
