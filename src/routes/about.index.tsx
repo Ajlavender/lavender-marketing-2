@@ -243,49 +243,52 @@ function About() {
       <section className="px-4 py-10 sm:px-6 lg:px-8">
           <Reveal scale className="mx-auto max-w-5xl">
             <div className="relative overflow-hidden rounded-[1.75rem] bg-[linear-gradient(115deg,#3b1f8f_0%,#5b2bc4_50%,#7c3aed_100%)] px-8 py-12 text-background sm:px-12">
-              <div className="max-w-lg">
-                <p className="text-sm text-[#c4b5fd]">
-                  A 5-Star Web, SEO &amp; Growth Partner For Canadian &amp; American Small Businesses
-                </p>
-                <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
-                  We Built the Agency
-                  <br />
-                  <span className="text-[#c4b5fd]">We Never Found.</span>
-                </h2>
-                <div className="mt-6 space-y-4 text-sm leading-relaxed text-background/85">
-                  <p>
-                    We design your website completely free. You only pay $297/mo if you like it — and
-                    that includes hosting, the review engine, missed-call text-back, automatic
-                    follow-up, online booking, a unified inbox, CRM, and a monthly Google & Local Visibility Report.
+              <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
+                <div className="max-w-lg">
+                  <p className="text-sm text-[#c4b5fd]">
+                    A 5-Star Web, SEO &amp; Growth Partner For Canadian &amp; American Small Businesses
                   </p>
-                  <p>
-                    <strong className="font-bold text-background">The best part?</strong>
+                  <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
+                    We Built the Agency
                     <br />
-                    Everything is built to convert. Your site looks premium, ranks better, responds
-                    faster, and follows up automatically — so you stop losing leads to the next
-                    listing.
-                  </p>
+                    <span className="text-[#c4b5fd]">We Never Found.</span>
+                  </h2>
+                  <div className="mt-6 space-y-4 text-sm leading-relaxed text-background/85">
+                    <p>
+                      We design your website completely free. You only pay $297/mo if you like it — and
+                      that includes hosting, the review engine, missed-call text-back, automatic
+                      follow-up, online booking, a unified inbox, CRM, and a monthly Google &amp; Local Visibility Report.
+                    </p>
+                    <p>
+                      <strong className="font-bold text-background">The best part?</strong>
+                      <br />
+                      Everything is built to convert. Your site looks premium, ranks better, responds
+                      faster, and follows up automatically — so you stop losing leads to the next
+                      listing.
+                    </p>
+                  </div>
+                  <div className="mt-8">
+                    <DemoButton label="Get in touch" />
+                  </div>
                 </div>
-                <div className="mt-8">
-                  <DemoButton label="Get in touch" />
+                <div className="hidden lg:block">
+                  <figure className="rounded-[1.75rem] border border-white/15 bg-white/10 p-2 shadow-[0_40px_90px_-45px_rgba(0,0,0,0.6)] backdrop-blur-sm">
+                    <div className="overflow-hidden rounded-[1.4rem]">
+                      <img
+                        src={AJ_PHOTO_STUDIO}
+                        alt="AJ, founder of Lavender Marketing & Co."
+                        loading="lazy"
+                        className="aspect-[4/5] w-full object-cover object-top"
+                      />
+                    </div>
+                    <figcaption className="mt-2 text-center text-[11px] font-semibold uppercase tracking-widest text-background/80">
+                      AJ — Founder
+                    </figcaption>
+                  </figure>
                 </div>
-              </div>
-            <div className="pointer-events-none absolute -right-4 bottom-0 hidden w-[15rem] lg:block">
-              <div className="relative rounded-[2rem] border border-white/15 bg-white/10 p-2 shadow-[0_40px_90px_-45px_rgba(0,0,0,0.6)] backdrop-blur-sm">
-                <div className="overflow-hidden rounded-[1.5rem]">
-                  <img
-                    src={AJ_PHOTO_STUDIO}
-                    alt="AJ, founder of Lavender Marketing & Co."
-                    loading="lazy"
-                    className="aspect-[4/5] w-full object-cover object-top"
-                  />
-                </div>
-                <p className="mt-2 text-center text-[11px] font-semibold uppercase tracking-widest text-background/80">
-                  AJ — Founder
-                </p>
               </div>
             </div>
-          </div>
+
         </Reveal>
       </section>
 
