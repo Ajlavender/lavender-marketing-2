@@ -311,14 +311,30 @@ export function TestimonialGrid({ limit }: { limit?: number }) {
 }
 
 function ReviewStars({ rating = 5, size = "h-4 w-4" }: { rating?: number; size?: string }) {
+  const full = Math.floor(rating);
+  const frac = rating - full;
   return (
     <div className="flex gap-0.5" aria-label={`Rated ${rating} out of 5`}>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          className={cn(size, "fill-current", i < rating ? "text-[#f4a62a]" : "text-muted")}
-        />
-      ))}
+      {Array.from({ length: 5 }).map((_, i) => {
+        if (i < full) {
+          return <Star key={i} className={cn(size, "fill-current text-[#f4a62a]")} />;
+        }
+        if (i === full && frac > 0) {
+          return (
+            <span key={i} className={cn("relative inline-block", size)}>
+              <Star className={cn(size, "fill-current text-muted")} />
+              <span
+                className="absolute inset-0 overflow-hidden"
+                style={{ width: `${frac * 100}%` }}
+                aria-hidden
+              >
+                <Star className={cn(size, "fill-current text-[#f4a62a]")} />
+              </span>
+            </span>
+          );
+        }
+        return <Star key={i} className={cn(size, "fill-current text-muted")} />;
+      })}
     </div>
   );
 }
@@ -337,9 +353,9 @@ export function RatingBar() {
         />
         <div className="relative flex flex-col items-center gap-3">
           <p className="font-[family-name:var(--font-display)] text-6xl font-bold tracking-tight text-foreground sm:text-7xl">
-            5.0
+            4.8
           </p>
-          <ReviewStars size="h-6 w-6" />
+          <ReviewStars rating={4.8} size="h-6 w-6" />
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             50+ Google reviews
           </p>
