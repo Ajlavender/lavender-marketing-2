@@ -20,3 +20,10 @@
 ## Canada / USA site versions
 - [x] /en-ca and /en-us versions, country popup, switcher, spelling, currency labels, hreflang, sitemap
 - [ ] Add CAD + USD payment links (waiting on AJ)
+
+## Services makeover
+- [ ] Build four-category desktop and mobile Services menu
+- [ ] Rework 11 service pages and add nine dedicated pages
+- [ ] Add Explore the Services catalogue and accurate plan associations
+- [ ] Maintain localized metadata and sitemap entries
+- [ ] Verify all pages, menu interactions and unchanged pricing without submitting forms
