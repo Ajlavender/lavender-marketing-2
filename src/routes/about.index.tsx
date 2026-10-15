@@ -307,15 +307,16 @@ function About() {
             </div>
           </Reveal>
 
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
             {missionCards.map((c, i) => (
               <Reveal
                 key={c.title}
                 delay={i * 110}
                 scale
-                className={c.offset}
+                className="h-full"
               >
-                <article className="h-full rounded-lg bg-card p-6 shadow-[0_20px_50px_-30px_rgba(16,18,24,0.45)]">
+                <article className="flex h-full flex-col rounded-lg bg-card p-6 shadow-[0_20px_50px_-30px_rgba(16,18,24,0.45)]">
+
                   <img
                     src={c.image}
                     alt={c.title}
