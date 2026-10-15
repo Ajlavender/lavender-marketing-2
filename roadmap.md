@@ -27,3 +27,4 @@
 - [x] Add Explore the Services catalogue and accurate plan associations
 - [x] Maintain localized metadata and sitemap entries
 - [x] Verify all pages, menu interactions and unchanged pricing without submitting forms
+- [x] Rename the main menu label to "What We Do"
