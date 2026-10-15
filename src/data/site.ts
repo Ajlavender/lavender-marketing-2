@@ -1,5 +1,7 @@
 import { serviceCatalogue } from "@/data/service-catalogue";
 import logoAsset from "@/assets/lavender-logo-240.webp.asset.json";
+import googleLogoAsset from "@/assets/google-2026.png.asset.json";
+import facebookLogoAsset from "@/assets/facebook-2026.png.asset.json";
 
 export const MEDIA = "/media";
 
@@ -324,13 +326,13 @@ export const ratingSources = [
   {
     label: "Google",
     count: "50+ reviews",
-    logo: "/logos/google.svg",
-    square: false,
+    logo: googleLogoAsset.url,
+    square: true,
   },
   {
     label: "Facebook",
     count: "40+ reviews",
-    logo: "/facebook-logo.svg",
+    logo: facebookLogoAsset.url,
     square: true,
   },
 ];

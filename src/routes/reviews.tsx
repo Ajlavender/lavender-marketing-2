@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { ReviewSlider } from "@/components/site/ReviewSlider";
 import { Reveal } from "@/components/site/Reveal";
 import { googleReviews, ILLU, AJ_PHOTO } from "@/data/site";
+import googleLogoAsset from "@/assets/google-2026.png.asset.json";
+import facebookLogoAsset from "@/assets/facebook-2026.png.asset.json";
 
 export const Route = createFileRoute("/reviews")({
   head: () => ({
@@ -102,10 +104,10 @@ function Reviews() {
           </Reveal>
           <Reveal from="right" delay={110}>
             <img
-              src="/logos/google.svg"
+              src={googleLogoAsset.url}
               alt="Google"
               loading="lazy"
-              className="h-6 w-auto object-contain"
+              className="h-9 w-9 object-contain"
             />
             <h2 className="mt-4 text-2xl font-bold sm:text-3xl">
               See What They Say On <span className="text-primary">Google.</span>
@@ -125,10 +127,10 @@ function Reviews() {
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <Reveal from="left">
             <img
-              src="/facebook-logo.svg"
+              src={facebookLogoAsset.url}
               alt="Facebook"
               loading="lazy"
-              className="h-6 w-auto object-contain"
+              className="h-9 w-9 object-contain"
             />
             <h2 className="mt-4 text-2xl font-bold sm:text-3xl">
               See What They Say On <span className="text-primary">Facebook.</span>
