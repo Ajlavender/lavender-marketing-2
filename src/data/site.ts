@@ -118,7 +118,7 @@ export const services = [
 export const nav = [
   { label: "Home", to: "/" },
   {
-    label: "Services",
+    label: "What We Do",
     to: "/services",
     children: serviceCatalogue.map(s => ({ label: s.title, to: s.slug, category: s.category, short: s.short })),
   },
