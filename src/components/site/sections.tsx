@@ -325,23 +325,42 @@ function ReviewStars({ rating = 5, size = "h-4 w-4" }: { rating?: number; size?:
 
 export function RatingBar() {
   return (
-    <div className="flex flex-col items-center gap-6 text-center">
-      <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
-        {ratingSources.map((r) => (
-          <img
-            key={r.label}
-            src={r.logo}
-            alt={r.label}
-            loading="lazy"
-            className="h-8 w-auto object-contain opacity-90 transition hover:opacity-100 sm:h-10"
-          />
-        ))}
+    <Reveal scale>
+      <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl border border-brand/15 bg-card px-8 py-10 text-center shadow-[0_30px_70px_-35px_rgba(42,35,82,0.45)] sm:px-14 sm:py-12">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-brand to-transparent"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-24 left-1/2 h-48 w-2/3 -translate-x-1/2 rounded-full bg-brand/10 blur-3xl"
+        />
+        <div className="relative flex flex-col items-center gap-3">
+          <p className="font-[family-name:var(--font-display)] text-6xl font-bold tracking-tight text-foreground sm:text-7xl">
+            5.0
+          </p>
+          <ReviewStars size="h-6 w-6" />
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            50+ Google reviews
+          </p>
+        </div>
+        <div
+          aria-hidden
+          className="relative mx-auto my-8 h-px w-full max-w-md bg-gradient-to-r from-transparent via-border to-transparent"
+        />
+        <div className="relative flex flex-wrap items-center justify-center gap-x-10 gap-y-5 sm:gap-x-14">
+          {ratingSources.map((r) => (
+            <img
+              key={r.label}
+              src={r.logo}
+              alt={r.label}
+              loading="lazy"
+              className="h-7 w-auto object-contain opacity-80 transition duration-300 hover:opacity-100 sm:h-9"
+            />
+          ))}
+        </div>
       </div>
-      <div className="flex flex-col items-center gap-2">
-        <ReviewStars size="h-5 w-5" />
-        <p className="text-sm font-medium text-muted-foreground">50+ reviews</p>
-      </div>
-    </div>
+    </Reveal>
   );
 }
 
