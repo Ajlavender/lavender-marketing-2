@@ -218,8 +218,8 @@ function Pricing() {
               The roadmap
             </span>
             <h2 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl">
-              Start with Essentials.{"\n"}
-              <span className="italic text-brand-deep">Grow into the rest.</span>
+              Start with the Essentials.
+              <span className="block italic text-brand-deep">Grow into the rest.</span>
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
               Every client starts with the free 7-day website preview on Essentials. Most add AI with
