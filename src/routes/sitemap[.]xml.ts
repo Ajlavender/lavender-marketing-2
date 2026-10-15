@@ -11,6 +11,17 @@ interface SitemapEntry {
 }
 
 const staticPaths: SitemapEntry[] = [
+  { path: "/services", changefreq: "monthly", priority: "0.7" },
+  { path: "/instant-lead-response", changefreq: "monthly", priority: "0.7" },
+  { path: "/sales-calling", changefreq: "monthly", priority: "0.7" },
+  { path: "/appointment-reminders", changefreq: "monthly", priority: "0.7" },
+  { path: "/social-media-publishing", changefreq: "monthly", priority: "0.7" },
+  { path: "/text-email-marketing", changefreq: "monthly", priority: "0.7" },
+  { path: "/customer-reactivation", changefreq: "monthly", priority: "0.7" },
+  { path: "/website-review-display", changefreq: "monthly", priority: "0.7" },
+  { path: "/estimates-invoices-payments", changefreq: "monthly", priority: "0.7" },
+  { path: "/business-automation", changefreq: "monthly", priority: "0.7" },
+
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/pricing", changefreq: "monthly", priority: "0.9" },
   { path: "/contact", changefreq: "monthly", priority: "0.8" },

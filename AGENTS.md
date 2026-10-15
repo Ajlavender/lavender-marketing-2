@@ -11,14 +11,9 @@
 
 ## Navigation rules
 
-- Services-menu entries carry an optional `column` key (`src/data/site.ts`): rows
-  sharing a `column` render in one mega-panel column, stacked under their own
-  plan heading. Why: the panel is a fixed three-column grid, so a new plan
-  heading must not become a fourth grid cell.
-- Local SEO is listed twice in the Services menu — "Local SEO starter" under
-  "Included in Growth" and "Advanced local SEO" under "Included in Scale" —
-  mirroring the pricing cards. It stays a single card in the services grid, so
-  these rows live in menu-only copy, not in the `services` array.
+- Services navigation uses the independent 20-item `service-catalogue` model and four customer-focused categories; keep homepage and pricing data independent so menu changes never alter plan commitments.
+- Each catalogue entry has a dedicated route and uses the shared catalogue page/head helpers; preserve published paths and service-specific setup, availability and related content.
+- Local SEO appears once in the category menu; its page explains both confirmed plan tiers so category grouping never hides the distinction.
 
 ## Locale copy rules
 
