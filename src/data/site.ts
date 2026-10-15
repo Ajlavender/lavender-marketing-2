@@ -322,31 +322,20 @@ export const googleReviews = [
 
 export const ratingSources = [
   {
-    label: "Bark",
-    count: "100+ reviews",
-    logo: "/logos/bark.svg",
-  },
-  {
     label: "Google",
     count: "50+ reviews",
     logo: "/logos/google.svg",
+    square: false,
   },
   {
     label: "Facebook",
     count: "40+ reviews",
     logo: "/facebook-logo.svg",
-  },
-  {
-    label: "Glassdoor",
-    count: "30+ reviews",
-    logo: "/logos/glassdoor.svg",
-  },
-  {
-    label: "Trustpilot",
-    count: "70+ reviews",
-    logo: "/logos/trustpilot.svg",
+    square: true,
   },
 ];
+
+
 
 
 
