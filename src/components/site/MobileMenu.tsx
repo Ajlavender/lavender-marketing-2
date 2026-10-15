@@ -1,3 +1,5 @@
+import { useSpell } from "@/lib/locale";
+import { Button } from "@/components/ui/button";
 import { INTAKE_URL } from "@/data/pricing";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
@@ -13,6 +15,8 @@ const FOCUSABLE =
 
 export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const isReportPage = useRouterState({ select: (state) => state.location.pathname === "/growth-report" });
+  const t = useSpell();
+  const [categoryOpen, setCategoryOpen] = useState<string | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [mounted, setMounted] = useState(open);
@@ -57,8 +61,9 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         (el) => el.offsetParent !== null,
       );
       if (items.length === 0) return;
-      const firstEl = items[0]!;
-      const lastEl = items[items.length - 1]!;
+      const firstEl = items[0];
+      const lastEl = items[items.length - 1];
+      if (!firstEl || !lastEl) return;
       if (e.shiftKey && document.activeElement === firstEl) {
         e.preventDefault();
         lastEl.focus();
@@ -147,24 +152,15 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
                         <div className="ml-3 border-l border-white/15 pb-3 pl-3">
                           {groupChildren(item.children as MegaChild[]).map(([groupLabel, kids]) => (
                             <div key={groupLabel || "default"}>
-                              {groupLabel && (
-                                <p className="px-3 pb-1 pt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/50">
-                                  {groupLabel}
-                                </p>
-                              )}
-                              {kids.map((child) => (
-                                <Link
-                                  key={child.to}
-                                  to={child.to}
-                                  onClick={onClose}
-                                  tabIndex={isOpen ? 0 : -1}
-                                  className="block rounded-lg px-3 py-2.5 text-sm text-white/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-                                >
-                                  {child.label}
-                                </Link>
-                              ))}
+                              {groupLabel ? <Button variant="ghost" tabIndex={isOpen ? 0 : -1} onClick={() => setCategoryOpen(categoryOpen === groupLabel ? null : groupLabel)} aria-expanded={categoryOpen === groupLabel} className="my-1 h-auto w-full justify-between whitespace-normal px-3 py-3 text-left text-nav-plum-foreground hover:bg-nav-plum-foreground/10 hover:text-nav-plum-foreground">
+                                <span className="font-display text-lg leading-tight">{t(groupLabel)}</span><ChevronDown className={cn("size-4 shrink-0",categoryOpen === groupLabel && "rotate-180")} />
+                              </Button> : null}
+                              {(!groupLabel || categoryOpen === groupLabel) && kids.map(child => <Link key={child.to} to={child.to} onClick={onClose} tabIndex={isOpen ? 0 : -1} className="block rounded-lg px-3 py-3 text-nav-plum-foreground transition-colors hover:bg-nav-plum-foreground/10">
+                                <span className="block text-sm font-semibold">{t(child.label)}</span>{child.short && <span className="mt-1 block text-xs leading-relaxed text-nav-plum-foreground/65">{t(child.short)}</span>}
+                              </Link>)}
                             </div>
                           ))}
+                          {item.label === "Services" && <div className="mt-4 border-t border-nav-glass-border px-3 pt-4"><p className="text-sm font-semibold text-nav-plum-foreground">Not sure what your business needs?</p><p className="mt-2 text-xs leading-relaxed text-nav-plum-foreground/65">We'll help you figure out which tools make sense for you.</p><Button asChild variant="secondary" className="mt-4" tabIndex={isOpen ? 0 : -1}><Link to="/services" onClick={onClose}>Explore the Services <ArrowUpRight className="size-4" /></Link></Button></div>}
                         </div>
                       </div>
                     </div>
