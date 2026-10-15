@@ -125,7 +125,7 @@ export const nav = [
 
 
   {
-    label: "About",
+    label: "About Us",
     to: "/about",
     children: [
       { label: "About Us", to: "/about", short: "Who we are and how we work." },
@@ -135,10 +135,8 @@ export const nav = [
     ],
   },
 
-  { label: "Reviews", to: "/reviews" },
   { label: "Projects", to: "/projects" },
   { label: "Pricing", to: "/pricing" },
-  { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
 ];
 
