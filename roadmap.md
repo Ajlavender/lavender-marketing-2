@@ -22,8 +22,8 @@
 - [ ] Add CAD + USD payment links (waiting on AJ)
 
 ## Services makeover
-- [ ] Build four-category desktop and mobile Services menu
-- [ ] Rework 11 service pages and add nine dedicated pages
-- [ ] Add Explore the Services catalogue and accurate plan associations
-- [ ] Maintain localized metadata and sitemap entries
-- [ ] Verify all pages, menu interactions and unchanged pricing without submitting forms
+- [x] Build four-category desktop and mobile Services menu
+- [x] Rework 11 service pages and add nine dedicated pages
+- [x] Add Explore the Services catalogue and accurate plan associations
+- [x] Maintain localized metadata and sitemap entries
+- [x] Verify all pages, menu interactions and unchanged pricing without submitting forms
