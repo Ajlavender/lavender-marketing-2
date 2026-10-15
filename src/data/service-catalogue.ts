@@ -284,8 +284,8 @@ export const serviceCatalogue: CatalogueService[] = [
     "short": "Automatically remind customers about upcoming appointments through text and email.",
     "image": "/illustrations/booking.webp",
     "category": "Better Customer Service",
-    "plan": null,
-    "planText": "Setup and pricing agreed with you",
+    "plan": "Essentials",
+    "planText": "Included in Essentials",
     "problem": "A forgotten appointment leaves an empty slot and wasted preparation. Timely reminders give customers a chance to confirm or rearrange.",
     "benefits": [
       "Reminders timed around your appointments",
@@ -307,7 +307,7 @@ export const serviceCatalogue: CatalogueService[] = [
       },
       {
         "q": "Which plan includes this service?",
-        "a": "We agree the scope and pricing with you before setup. Being in our services catalogue does not mean this capability is included in Essentials."
+        "a": "Automatic text and email appointment reminders are included with online booking in Essentials. We confirm your calendars, timing and any usage charges before setup."
       },
       {
         "q": "What should I know before getting started?",
@@ -414,7 +414,7 @@ export const serviceCatalogue: CatalogueService[] = [
     "faqs": [
       {
         "q": "What do you set up for my business?",
-        "a": "We connect your google and facebook profiles, then choose the completed-work trigger. Approve a neutral review invitation. Set reasonable timing and review reporting."
+        "a": "We connect your Google and Facebook profiles, then choose the completed-work trigger. Approve a neutral review invitation. Set reasonable timing and review reporting."
       },
       {
         "q": "Which plan includes this service?",

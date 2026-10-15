@@ -14,7 +14,7 @@ export function groupChildren(children: readonly MegaChild[]): [string, MegaChil
 }
 export function MegaPanel({ items, wide, onNavigate, open = true }: { items: readonly MegaChild[]; wide?: boolean; onNavigate?: () => void; open?: boolean }) {
  const t = useSpell();
- return <div className={cn('overflow-y-auto rounded-lg border border-nav-glass-border bg-nav-glass-bg text-nav-plum-foreground shadow-lg backdrop-blur-2xl overscroll-contain', wide ? 'w-[min(88rem,calc(100vw-3rem))] max-h-[calc(100dvh-10rem)]' : 'w-[22rem] max-h-[calc(100dvh-10rem)]')}>
+ return <div className={cn('overflow-y-auto rounded-lg border border-nav-glass-border bg-nav-plum text-nav-plum-foreground shadow-lg backdrop-blur-2xl overscroll-contain', wide ? 'w-[min(88rem,calc(100vw-3rem))] max-h-[calc(100dvh-10rem)]' : 'w-[22rem] max-h-[calc(100dvh-10rem)]')}>
   <div className={cn('grid gap-5 p-5',wide && 'grid-cols-4 gap-0 p-6')}>
    {groupChildren(items).map(([category,kids],i) => <div key={category || 'default'} className={cn('min-w-0',wide && 'px-3',wide && i > 0 && 'border-l border-nav-glass-border')}>
     {category && <h2 className="min-h-14 px-2 font-display text-xl font-semibold leading-tight text-nav-plum-foreground">{t(category)}</h2>}
