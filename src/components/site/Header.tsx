@@ -91,11 +91,19 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!openMenu) return;
+    const close = (event: KeyboardEvent) => { if (event.key === "Escape") { setOpenMenu(null); document.querySelector<HTMLElement>("header nav button[aria-expanded=true]")?.focus(); } };
+    document.addEventListener("keydown", close);
+    return () => document.removeEventListener("keydown", close);
+  }, [openMenu]);
+
   // never hide while a menu is open
   const isHidden = hidden && !openMenu && !open;
 
   return (
     <header
+      onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setOpenMenu(null); }}
       className={cn(
         "fixed top-0 z-50 w-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
         isHidden ? "-translate-y-full" : "translate-y-0",
@@ -137,7 +145,7 @@ export function Header() {
                 return item.children ? (
                   <div
                     key={item.label}
-                    className={item.children.some((c: NavChild) => !!c.group) ? "" : "relative"}
+                    className={item.children.some((c: NavChild) => !!c.category) ? "" : "relative"}
                     onMouseEnter={() => openNow(item.label)}
                     onMouseLeave={closeSoon}
                   >
@@ -147,7 +155,8 @@ export function Header() {
                         openMenu === item.label && "bg-white/10 text-white shadow-[0_0_24px_-4px_rgba(255,255,255,0.18)]",
                       )}
                       aria-expanded={openMenu === item.label}
-                      onFocus={() => openNow(item.label)}
+                      onClick={() => { if (openMenu === item.label) setOpenMenu(null); else openNow(item.label); }}
+                      onKeyDown={(event) => { if (event.key === "ArrowDown") { event.preventDefault(); openNow(item.label); } }}
                     >
                       {item.label}
                       <ChevronDown
@@ -159,7 +168,7 @@ export function Header() {
                     </button>
                     <div
                       className={cn(
-                        "absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 transition-all duration-200 ease-out motion-reduce:transition-none",
+                        cn("absolute top-full z-50 pt-3 transition-all duration-200 ease-out motion-reduce:transition-none", item.children.some((c: NavChild) => !!c.category) ? "fixed inset-x-0 mx-auto flex justify-center" : "left-1/2 -translate-x-1/2"),
                         openMenu === item.label
                           ? "visible translate-y-0 opacity-100"
                           : "invisible -translate-y-1 opacity-0",
@@ -167,7 +176,7 @@ export function Header() {
                     >
                       <MegaPanel
                         items={item.children as NavChild[]}
-                        wide={(item.children as NavChild[]).some((c) => !!c.group)}
+                        wide={(item.children as NavChild[]).some((c) => !!c.category)}
                         open={openMenu === item.label}
                         onNavigate={() => setOpenMenu(null)}
                       />

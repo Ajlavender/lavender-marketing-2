@@ -4,6 +4,7 @@ import { LOGO } from "@/data/site";
 import { LeadForm } from "./LeadForm";
 
 const links = [
+  { label: "All Services", to: "/services" },
   { label: "Website Design", to: "/website-redesign" },
   { label: "Pricing", to: "/pricing" },
   { label: "Visibility Report", to: "/growth-report" },
