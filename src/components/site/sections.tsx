@@ -374,7 +374,7 @@ export function RatingBar() {
                 src={r.logo}
                 alt={r.label}
                 loading="lazy"
-                className={cn("w-auto object-contain", r.square ? "h-5" : "h-[17px]")}
+                className={cn("object-contain", r.square ? "h-5 w-5" : "h-4 w-12")}
               />
               <span
                 aria-hidden
