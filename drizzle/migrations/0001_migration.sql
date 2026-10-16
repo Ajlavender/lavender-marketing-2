@@ -1,0 +1,1 @@
+DROP POLICY "Temp media upload" ON storage.objects;
