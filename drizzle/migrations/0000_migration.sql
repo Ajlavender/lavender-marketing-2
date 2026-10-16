@@ -1,0 +1,2 @@
+CREATE POLICY "Public can view media" ON storage.objects FOR SELECT TO anon, authenticated USING (bucket_id = 'media');
+CREATE POLICY "Temp media upload" ON storage.objects FOR INSERT TO anon WITH CHECK (bucket_id = 'media');
