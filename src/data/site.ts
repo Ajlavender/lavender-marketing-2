@@ -3,9 +3,15 @@ import logoAsset from "@/assets/lavender-logo-240.webp.asset.json";
 import googleLogoAsset from "@/assets/google-2026.png.asset.json";
 import facebookLogoAsset from "@/assets/facebook-2026.png.asset.json";
 
-export const MEDIA = "/media";
+// Site images live in the Lovable Cloud "media" library. Upload a replacement
+// with the same file name there to swap an image without code changes.
+export const MEDIA_LIBRARY = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/media`;
 
-export const ILLU = "/illustrations";
+export const MEDIA = `${MEDIA_LIBRARY}/media`;
+
+export const ILLU = `${MEDIA_LIBRARY}/illustrations`;
+
+export const PROJECTS = `${MEDIA_LIBRARY}/projects`;
 
 export const LOGO = logoAsset.url;
 
@@ -187,79 +193,79 @@ export const projects = [
     name: "Portuguese Canadian Club of Strathroy",
     type: "Website Redesign",
     href: "https://www.strathroyportugueseclub.com/",
-    image: "/projects/portuguese-canadian-club.jpg",
+    image: `${PROJECTS}/portuguese-canadian-club.jpg`,
   },
   {
     name: "AMG & Associates",
     type: "Website Redesign",
     href: "https://www.amg-associates.com/",
-    image: "/projects/amg-associates.jpg",
+    image: `${PROJECTS}/amg-associates.jpg`,
   },
   {
     name: "Busy Bee Virtual Solutions Corp",
     type: "Website Redesign",
     href: "https://busybeesolutionscorp.com/",
-    image: "/projects/busy-bee-solutions.jpg",
+    image: `${PROJECTS}/busy-bee-solutions.jpg`,
   },
   {
     name: "People First Group Realty",
     type: "Website Redesign",
     href: "https://peoplefirst321.com/",
-    image: "/projects/people-first-realty.jpg",
+    image: `${PROJECTS}/people-first-realty.jpg`,
   },
   {
     name: "7Steps™ Insurance Coaching",
     type: "Website Redesign",
     href: "https://eric7steps.com/",
-    image: "/projects/7steps-coaching.jpg",
+    image: `${PROJECTS}/7steps-coaching.jpg`,
   },
   {
     name: "Lavender Suite Pro",
     type: "Website Redesign + Automations",
     href: "https://www.lavendersuitepro.com/",
-    image: "/projects/scale-suite-pro.jpg",
+    image: `${PROJECTS}/scale-suite-pro.jpg`,
   },
   {
     name: "Soccerfice Apparel",
     type: "E-commerce Redesign",
     href: "https://www.soccerfice.com/",
-    image: "/projects/soccerfice-apparel.jpg",
+    image: `${PROJECTS}/soccerfice-apparel.jpg`,
   },
   {
     name: "Summit of Strength ALS Gala",
     type: "Website Redesign",
     href: "https://summitofstrength.com/",
-    image: "/projects/summit-of-strength.jpg",
+    image: `${PROJECTS}/summit-of-strength.jpg`,
   },
   {
     name: "Strathroy Lobster Fest",
     type: "Website Redesign",
     href: "https://strathroylobsterfest.com/",
-    image: "/projects/strathroy-lobster-fest.jpg",
+    image: `${PROJECTS}/strathroy-lobster-fest.jpg`,
   },
   {
     name: "Uncommon Delights Cashew Nuts",
     type: "Website Redesign",
     href: "https://uncommondelights.com/",
-    image: "/projects/uncommon-delights.jpg",
+    image: `${PROJECTS}/uncommon-delights.jpg`,
   },
   {
     name: "Ward Holdings International",
     type: "Website Redesign",
     href: "https://ward.holdings/",
-    image: "/projects/ward-holdings.jpg",
+    image: `${PROJECTS}/ward-holdings.jpg`,
   },
   {
     name: "T&A Construction Contractors LLC",
     type: "Website Redesign",
     href: "https://ta.lavendermarketingco.com/",
-    image: "/projects/ta-construction.jpg",
+    image: `${PROJECTS}/ta-construction.jpg`,
   },
   {
     name: "Broken Together Story",
     type: "Website Redesign",
     href: "https://brokentogetherstory.com/",
-    image: "/projects/broken-together-story.jpg",
+    image: `${PROJECTS}/broken-together-story.jpg`,
   },
 ];
 

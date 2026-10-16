@@ -36,3 +36,6 @@
 - The HighLevel disclosure is allowed only on the comparison page, homepage
   technology section and its FAQ entry. Why: the user chose transparent disclosure
   there; other prospect copy still names no internal tools.
+
+## Media rules
+- Site photos and illustrations load from the Lovable Cloud public `media` bucket (folders `projects/`, `illustrations/`, `media/`) via the `MEDIA_LIBRARY`/`ILLU`/`PROJECTS` constants in `src/data/site.ts`. Why: the owner swaps images by uploading same-named files there, without code edits. Keep the `-480.webp`/`-800.webp` variants next to each `.jpg` because srcSet derives them by name.
