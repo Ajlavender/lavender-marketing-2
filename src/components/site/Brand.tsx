@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { LOGO } from "@/data/site";
-import horizontalLogoDark from "@/assets/lmc-horizontal-logo-white.png.asset.json";
+import horizontalLogoDark from "@/assets/lmc-horizontal-logo-allwhite.png.asset.json";
 import horizontalLogoLight from "@/assets/lmc-horizontal-logo-light.png.asset.json";
 import { cn } from "@/lib/utils";
 
@@ -50,13 +50,16 @@ export function Brand({
 }: BrandProps & { fullLogo?: boolean }) {
   if (fullLogo) {
     const logo = logoVariant === "light" ? horizontalLogoLight : horizontalLogoDark;
+    // Canvas sizes differ per lockup; keep the placeholder box accurate so the
+    // header never shifts while the image loads.
+    const [lw, lh] = logoVariant === "light" ? [1920, 640] : [1920, 370];
     return (
       <Link to="/" aria-label={`${NAME} home`} onClick={onClick} className={cn("flex shrink-0 items-center", className)}>
         <img
           src={logo.url}
           alt={NAME}
-          width={900}
-          height={235}
+          width={lw}
+          height={lh}
           className={logoClassName ?? "h-10 w-auto sm:h-12"}
           {...(priority ? { fetchPriority: "high" as const } : { loading, decoding: "async" as const })}
         />
