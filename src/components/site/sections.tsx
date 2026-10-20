@@ -462,7 +462,6 @@ export function FaqAccordion({ limit }: { limit?: number }) {
 }
 
 export function LogoStrip() {
-  const row = [...clientLogos, ...clientLogos];
   return (
     <section className="relative isolate overflow-hidden border-t border-brand/10 bg-lavender-wash py-14 sm:py-20">
       {/* Ambient top sheen */}
@@ -510,17 +509,23 @@ export function LogoStrip() {
           className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-lavender-wash to-transparent sm:w-28"
         />
 
-        <div className="marquee-premium flex w-max items-center gap-10 px-8 sm:gap-14">
-          {row.map((l, i) => (
-            <div key={`${l.name}-${i}`} className="group flex items-center gap-10 sm:gap-14">
-              <span className="shrink-0 whitespace-nowrap font-[family-name:var(--font-display)] text-xl font-semibold tracking-tight text-ink/70 transition-all duration-300 group-hover:text-brand sm:text-2xl">
-                {l.name}
-              </span>
-              <span className="shrink-0 text-brand/20 transition-colors duration-300 group-hover:text-brand/50" aria-hidden>
-                <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor">
-                  <circle cx="4" cy="4" r="4" />
-                </svg>
-              </span>
+        <div className="marquee-premium flex w-max items-center motion-reduce:animate-none">
+          {[0, 1].map((copy) => (
+            <div key={copy} aria-hidden={copy === 1 ? true : undefined} className="flex shrink-0 items-center gap-10 pr-10 sm:gap-14 sm:pr-14">
+              {clientLogos.map((logo) => (
+                <div key={logo.name} className="flex h-28 w-44 shrink-0 items-center justify-center sm:h-32 sm:w-52">
+                  <img
+                    src={logo.src}
+                    alt={copy === 0 ? logo.name : ""}
+                    title={logo.name}
+                    width={208}
+                    height={112}
+                    loading="lazy"
+                    decoding="async"
+                    className="max-h-24 w-full object-contain opacity-65 brightness-0 transition-opacity duration-300 hover:opacity-90 sm:max-h-28"
+                  />
+                </div>
+              ))}
             </div>
           ))}
         </div>

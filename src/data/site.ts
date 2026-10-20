@@ -2,6 +2,20 @@ import { serviceCatalogue } from "@/data/service-catalogue";
 import logoAsset from "@/assets/lavender-logo-240.webp.asset.json";
 import googleLogoAsset from "@/assets/google-2026.png.asset.json";
 import facebookLogoAsset from "@/assets/facebook-2026.png.asset.json";
+import summitLogo from "@/assets/client-logos/summit-of-strength.webp.asset.json";
+import peopleFirstLogo from "@/assets/client-logos/people-first-group.webp.asset.json";
+import coutosLogo from "@/assets/client-logos/coutos-cleaning.webp.asset.json";
+import uncommonLogo from "@/assets/client-logos/uncommon-delights.webp.asset.json";
+import tanzaLogo from "@/assets/client-logos/tanza-nutz.webp.asset.json";
+import authenticLogo from "@/assets/client-logos/authentic-customs.webp.asset.json";
+import rcmLogo from "@/assets/client-logos/rcm-plumbing.webp.asset.json";
+import romulusLogo from "@/assets/client-logos/romulus-enterprises.webp.asset.json";
+import busyBeeLogo from "@/assets/client-logos/busy-bee-solutions.webp.asset.json";
+import pccLogo from "@/assets/client-logos/portuguese-canadian-club.webp.asset.json";
+import wardLogo from "@/assets/client-logos/ward-holdings.webp.asset.json";
+import newCanaanLogo from "@/assets/client-logos/new-canaan-leads.webp.asset.json";
+import frostBarLogo from "@/assets/client-logos/the-frost-bar.webp.asset.json";
+import leslieLogo from "@/assets/client-logos/lift-up-leslie.webp.asset.json";
 
 // Site images live in the Lovable Cloud "media" library. Upload a replacement
 // with the same file name there to swap an image without code changes.
@@ -409,31 +423,19 @@ export const socials = [
   { label: "Twitter", href: "https://twitter.com/" },
 ];
 
-export const clientLogos: { name: string; src?: string }[] = [
-  { name: "Portuguese Canadian Club of Strathroy" },
-  { name: "AMG & Associates" },
-  { name: "Busy Bee Virtual Solutions Corp" },
-  { name: "People First Group Realty" },
-  { name: "7Steps™ Insurance Coaching" },
-  { name: "Lavender Suite Pro" },
-  { name: "Soccerfice Apparel" },
-  { name: "Summit of Strength ALS Gala" },
-  { name: "Strathroy Lobster Fest" },
-  { name: "Uncommon Delights Cashew Nuts" },
-  { name: "Ward Holdings International" },
-  { name: "T&A Construction Contractors LLC" },
-  { name: "Broken Together Story" },
-  { name: "The Miles Group (TMG)" },
-  { name: "RCM Plumbing" },
-  { name: "Colemat Industries" },
-  { name: "Neva Say Neva Entertainment" },
-  { name: "Communities Reimagined" },
-  { name: "Tanza Nutz™" },
-  { name: "Spartan Financial" },
-  { name: "Couto's Cleaning" },
-  { name: "Authentic Customs General Contracting" },
-  { name: "NCP Realty" },
-  { name: "New Canaan Real Estate Leads" },
-  { name: "The Chambers Group" },
-  { name: "Romulus Enterprises" },
+export const clientLogos: { name: string; src: string }[] = [
+  { name: "Summit of Strength ALS Gala", src: summitLogo.url },
+  { name: "People First Group Realty", src: peopleFirstLogo.url },
+  { name: "Couto's Cleaning", src: coutosLogo.url },
+  { name: "Uncommon Delights", src: uncommonLogo.url },
+  { name: "Tanza Nutz™", src: tanzaLogo.url },
+  { name: "Authentic Customs General Contracting", src: authenticLogo.url },
+  { name: "RCM Plumbing", src: rcmLogo.url },
+  { name: "Romulus Enterprises", src: romulusLogo.url },
+  { name: "Busy Bee Solutions", src: busyBeeLogo.url },
+  { name: "Portuguese Canadian Club of Strathroy", src: pccLogo.url },
+  { name: "Ward Holdings International", src: wardLogo.url },
+  { name: "New Canaan Leads", src: newCanaanLogo.url },
+  { name: "The Frost Bar", src: frostBarLogo.url },
+  { name: "Lift Up Leslie", src: leslieLogo.url },
 ];
