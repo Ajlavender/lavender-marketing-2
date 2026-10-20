@@ -3,7 +3,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   ShieldCheck,
-  Sparkles,
   Star,
   Volume2,
   VolumeX,
@@ -348,7 +347,6 @@ function Index() {
             <div className="relative animate-fade-in">
               <span className="mb-6 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-brand/25 bg-background/70 py-1.5 pl-1.5 pr-4 text-sm font-medium text-foreground shadow-sm backdrop-blur-md">
                 <span className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-white">
-                  <Sparkles className="h-3.5 w-3.5" />
                   Free design
                 </span>
                 <span className="text-muted-foreground">Automated review engine included</span>
