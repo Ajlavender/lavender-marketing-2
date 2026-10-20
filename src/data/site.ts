@@ -25,6 +25,7 @@ import milesLogo from "@/assets/client-logos/miles-group.webp.asset.json";
 import amgLogo from "@/assets/client-logos/amg-associates.webp.asset.json";
 import jedasLogo from "@/assets/client-logos/jedas-cafe.webp.asset.json";
 import monroeLogo from "@/assets/client-logos/monroe-jab-academy.webp.asset.json";
+import lobsterFestLogo from "@/assets/client-logos/strathroy-lobster-fest.webp.asset.json";
 
 // Site images live in the Lovable Cloud "media" library. Upload a replacement
 // with the same file name there to swap an image without code changes.
@@ -456,4 +457,5 @@ export const clientLogos: { name: string; src: string; original?: boolean }[] = 
   { name: "AMG & Associates", src: amgLogo.url },
   { name: "Jedas Cafe & Bistro", src: jedasLogo.url },
   { name: "Monroe JAB Academy", src: monroeLogo.url, original: true },
+  { name: "Strathroy Lobster Fest", src: lobsterFestLogo.url, original: true },
 ];
