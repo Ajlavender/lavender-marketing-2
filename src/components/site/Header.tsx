@@ -134,8 +134,8 @@ export function Header() {
           <Brand
             priority
             shortNameBelowSm
-            className="gap-[11px]"
-            markClassName="h-[26px] w-[26px]"
+            className="gap-[9px]"
+            markClassName="h-[25px] w-[25px]"
             nameClassName="text-white"
           />
 

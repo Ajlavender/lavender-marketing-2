@@ -39,7 +39,6 @@ export function LocaleSwitch({ className }: { className?: string }) {
             l === locale ? "bg-primary text-primary-foreground" : "opacity-70 hover:opacity-100",
           )}
         >
-          <span aria-hidden className="mr-1">{LOCALE_INFO[l].flag}</span>
           {l === "en-ca" ? "CA" : "US"}
         </button>
       ))}
@@ -84,7 +83,6 @@ export function LocalePrompt() {
         <X className="h-4 w-4" />
       </button>
       <p className="pr-6 text-base font-semibold">
-        <span aria-hidden className="mr-1.5">{LOCALE_INFO[suggest].flag}</span>
         Looks like you're in the {LOCALE_INFO[suggest].country}
       </p>
       <p className="mt-1 text-sm text-muted-foreground">

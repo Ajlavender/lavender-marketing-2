@@ -54,9 +54,9 @@ export function Footer() {
         <div className="space-y-5">
           <Brand
             hideNameBelowSm={false}
-            markClassName="h-7 w-7"
+            markClassName="h-[26px] w-[26px]"
             nameClassName="text-foreground"
-            className="gap-3"
+            className="gap-[10px]"
             loading="lazy"
           />
           <p className="text-sm leading-relaxed text-foreground/70">

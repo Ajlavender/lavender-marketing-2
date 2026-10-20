@@ -47,6 +47,8 @@
   hand-roll the mark/name pair again. Why: the logo asset is square, so inline
   `object-contain` boxes with fixed widths reintroduce dead space between the mark
   and the name.
-- The wordmark always uses the `--font-brand` token (Marcellus, self-hosted from
-  `public/fonts/`); size lives in `nameTextClass`, colour in `nameClassName`. Why:
-  conflicting Tailwind size utilities silently lose to CSS order otherwise.
+- The wordmark always uses the `--font-brand` token, whose face is self-hosted
+  from `public/fonts/` and declared with `@font-face` in `src/styles.css`; size
+  lives in `nameTextClass`, colour in `nameClassName`. Why: a remote font URL
+  breaks the Tailwind build, and conflicting Tailwind size utilities silently
+  lose to CSS order.
