@@ -15,6 +15,7 @@ export const PROJECTS = `${MEDIA_LIBRARY}/projects`;
 
 /** Real Lavender Suite Pro product screenshots shown on the homepage service tiles. */
 export const SYSTEM = `${MEDIA_LIBRARY}/system`;
+export const TILES = `${MEDIA_LIBRARY}/tiles`;
 
 export const LOGO = logoAsset.url;
 
@@ -32,7 +33,7 @@ export const services = [
     value: "$500/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/websites.webp`,
-    card: `${SYSTEM}/websites.jpg`,
+    card: `${TILES}/websites.jpg`,
   },
   {
     slug: "/chat-widget",
@@ -41,7 +42,7 @@ export const services = [
     value: "$300/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/chat-widget.webp`,
-    card: `${SYSTEM}/chat-widget.jpg`,
+    card: `${TILES}/chat-widget.jpg`,
   },
   {
     slug: "/missed-call-text-back",
@@ -50,7 +51,7 @@ export const services = [
     value: "$300/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/missed-call.webp`,
-    card: `${SYSTEM}/missed-call.jpg`,
+    card: `${TILES}/missed-call.jpg`,
   },
   {
     slug: "/review-automation",
@@ -59,7 +60,7 @@ export const services = [
     value: "$400/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/reviews.webp`,
-    card: `${SYSTEM}/reviews.jpg`,
+    card: `${TILES}/reviews.jpg`,
   },
   {
     slug: "/online-booking",
@@ -68,7 +69,7 @@ export const services = [
     value: "$300/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/booking.webp`,
-    card: `${SYSTEM}/booking.jpg`,
+    card: `${TILES}/booking.jpg`,
   },
   {
     slug: "/follow-up-automation",
@@ -77,7 +78,7 @@ export const services = [
     value: "$300/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/automations.webp`,
-    card: `${ILLU}/cards/automations.jpg`,
+    card: `${TILES}/follow-up.jpg`,
   },
   {
     slug: "/unified-inbox",
@@ -86,7 +87,7 @@ export const services = [
     value: "$400/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/unified-inbox.webp`,
-    card: `${SYSTEM}/unified-inbox.jpg`,
+    card: `${TILES}/unified-inbox.jpg`,
   },
   {
     slug: "/crm-pipeline",
@@ -95,7 +96,7 @@ export const services = [
     value: "$400/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/crm-pipeline.webp`,
-    card: `${SYSTEM}/crm-pipeline.jpg`,
+    card: `${TILES}/crm-pipeline.jpg`,
   },
   {
     slug: "/hosting-and-support",
@@ -104,7 +105,7 @@ export const services = [
     value: "$200/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/hosting-support.webp`,
-    card: `${ILLU}/cards/hosting-support.jpg`,
+    card: `${TILES}/hosting.jpg`,
   },
   {
     slug: "/growth-report",
@@ -113,7 +114,7 @@ export const services = [
     value: "$250/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/reporting.webp`,
-    card: `${SYSTEM}/reporting.jpg`,
+    card: `${TILES}/reporting.jpg`,
   },
   {
     slug: "/local-seo",
@@ -122,7 +123,7 @@ export const services = [
     value: "Scale plan",
     group: "Scale plan",
     image: `${ILLU}/local-seo.webp`,
-    card: `${SYSTEM}/local-seo.jpg`,
+    card: `${TILES}/local-seo.jpg`,
   },
 ] as const;
 

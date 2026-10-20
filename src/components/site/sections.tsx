@@ -197,24 +197,17 @@ export function ServicesGrid() {
           to={s.slug}
           className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-lg"
         >
-          <div className="aspect-[16/10] w-full bg-gradient-to-br from-primary/15 via-secondary to-primary/5 p-4 sm:p-5">
-            <div className="flex h-full w-full flex-col overflow-hidden rounded-xl border border-border/60 bg-card shadow-[0_14px_30px_-18px_rgba(42,35,82,0.45)] transition-transform duration-500 group-hover:-translate-y-1">
-              <div className="flex items-center gap-1.5 border-b border-border/60 bg-muted/50 px-3 py-2">
-                <span className="h-2 w-2 rounded-full bg-border" />
-                <span className="h-2 w-2 rounded-full bg-border" />
-                <span className="h-2 w-2 rounded-full bg-border" />
-              </div>
-              <img
-                src={s.card}
-                srcSet={`${s.card.replace(/\.jpg$/, "-480.webp")} 480w, ${s.card.replace(/\.jpg$/, "-800.webp")} 800w, ${s.card} 1440w`}
-                sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) calc(50vw - 2rem), 400px"
-                alt={s.title}
-                loading="lazy"
-                width={1440}
-                height={900}
-                className="min-h-0 w-full flex-1 object-contain"
-              />
-            </div>
+          <div className="aspect-[16/10] w-full overflow-hidden bg-secondary">
+            <img
+              src={s.card}
+              srcSet={`${s.card.replace(/\.jpg$/, "-480.webp")} 480w, ${s.card.replace(/\.jpg$/, "-800.webp")} 800w, ${s.card} 1024w`}
+              sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) calc(50vw - 2rem), 400px"
+              alt={s.title}
+              loading="lazy"
+              width={1024}
+              height={640}
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+            />
           </div>
 
           <div className="p-6">
