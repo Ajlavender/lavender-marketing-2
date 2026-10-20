@@ -57,7 +57,7 @@ export function Brand({
           alt={NAME}
           width={900}
           height={235}
-          className={cn("h-10 w-auto sm:h-12", logoClassName)}
+          className={logoClassName ?? "h-10 w-auto sm:h-12"}
           {...(priority ? { fetchPriority: "high" as const } : { loading, decoding: "async" as const })}
         />
       </Link>
