@@ -28,7 +28,7 @@ export function Brand({
   nameClassName = "text-white",
   showName = true,
   hideNameBelowSm = true,
-  divider = true,
+  divider = false,
   priority = false,
   loading = "eager",
   onClick,
@@ -68,7 +68,7 @@ export function Brand({
           ) : null}
           <span
             className={cn(
-              "whitespace-nowrap font-brand text-[1.2rem] leading-none tracking-[0.012em]",
+              "whitespace-nowrap font-brand text-[1.25rem] leading-none tracking-[0.02em]",
               nameClassName,
             )}
           >

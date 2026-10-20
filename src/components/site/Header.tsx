@@ -133,8 +133,8 @@ export function Header() {
         >
           <Brand
             priority
-            className="gap-2.5"
-            markClassName="h-8 w-8"
+            className="gap-[11px]"
+            markClassName="h-[26px] w-[26px]"
             nameClassName="text-white"
           />
 
