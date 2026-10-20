@@ -16,6 +16,15 @@ import wardLogo from "@/assets/client-logos/ward-holdings.webp.asset.json";
 import newCanaanLogo from "@/assets/client-logos/new-canaan-leads.webp.asset.json";
 import frostBarLogo from "@/assets/client-logos/the-frost-bar.webp.asset.json";
 import leslieLogo from "@/assets/client-logos/lift-up-leslie.webp.asset.json";
+import soccerficeLogo from "@/assets/client-logos/soccerfice.webp.asset.json";
+import sevenStepsLogo from "@/assets/client-logos/7steps-coaching.webp.asset.json";
+import chambersLogo from "@/assets/client-logos/chambers-group.webp.asset.json";
+import communityLogo from "@/assets/client-logos/community-reimagined.webp.asset.json";
+import nevaLogo from "@/assets/client-logos/neva-say-neva.webp.asset.json";
+import milesLogo from "@/assets/client-logos/miles-group.webp.asset.json";
+import amgLogo from "@/assets/client-logos/amg-associates.webp.asset.json";
+import jedasLogo from "@/assets/client-logos/jedas-cafe.webp.asset.json";
+import monroeLogo from "@/assets/client-logos/monroe-jab-academy.webp.asset.json";
 
 // Site images live in the Lovable Cloud "media" library. Upload a replacement
 // with the same file name there to swap an image without code changes.
@@ -438,4 +447,13 @@ export const clientLogos: { name: string; src: string }[] = [
   { name: "New Canaan Leads", src: newCanaanLogo.url },
   { name: "The Frost Bar", src: frostBarLogo.url },
   { name: "Lift Up Leslie", src: leslieLogo.url },
+  { name: "Soccerfice", src: soccerficeLogo.url },
+  { name: "The 7 Steps", src: sevenStepsLogo.url },
+  { name: "The Chambers Group", src: chambersLogo.url },
+  { name: "Community Reimagined", src: communityLogo.url },
+  { name: "Neva Say Neva Entertainment", src: nevaLogo.url },
+  { name: "The Miles Group", src: milesLogo.url },
+  { name: "AMG & Associates", src: amgLogo.url },
+  { name: "Jedas Cafe & Bistro", src: jedasLogo.url },
+  { name: "Monroe JAB Academy", src: monroeLogo.url },
 ];
