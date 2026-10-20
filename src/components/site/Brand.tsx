@@ -45,16 +45,19 @@ export function Brand({
   loading = "eager",
   onClick,
   fullLogo = false,
+  logoVariant = "dark",
+  logoClassName,
 }: BrandProps & { fullLogo?: boolean }) {
   if (fullLogo) {
+    const logo = logoVariant === "light" ? horizontalLogoLight : horizontalLogoDark;
     return (
       <Link to="/" aria-label={`${NAME} home`} onClick={onClick} className={cn("flex shrink-0 items-center", className)}>
         <img
-          src={horizontalLogo.url}
+          src={logo.url}
           alt={NAME}
           width={900}
           height={235}
-          className="h-10 w-auto sm:h-12"
+          className={cn("h-10 w-auto sm:h-12", logoClassName)}
           {...(priority ? { fetchPriority: "high" as const } : { loading, decoding: "async" as const })}
         />
       </Link>
