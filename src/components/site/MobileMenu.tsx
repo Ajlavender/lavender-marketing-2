@@ -5,8 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, X, ArrowUpRight } from "lucide-react";
-import { nav, LOGO } from "@/data/site";
+import { nav } from "@/data/site";
 import { cn } from "@/lib/utils";
+import { Brand } from "@/components/site/Brand";
 import { groupChildren, type MegaChild } from "@/components/site/MegaMenu";
 import { GrowthReportDialog } from "@/components/site/GrowthReportDialog";
 
@@ -106,9 +107,14 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         <div className="pointer-events-none absolute -bottom-20 left-1/2 h-40 w-[80%] -translate-x-1/2 rounded-full bg-nav-glass-glow blur-[80px]" />
 
         <div className="flex items-center justify-between px-5 py-4">
-          <Link to="/" onClick={onClose} aria-label="Lavender Marketing & Co. home">
-            <img src={LOGO} alt="Lavender Marketing & Co." width={120} height={32} className="h-8 w-auto" />
-          </Link>
+          <Brand
+            onClick={onClose}
+            shortNameBelowSm
+            markClassName="h-6 w-6"
+            nameTextClass="text-[1.15rem] sm:text-[1.02rem]"
+            className="gap-2.5"
+            priority
+          />
           <button
             onClick={onClose}
             aria-label="Close menu"

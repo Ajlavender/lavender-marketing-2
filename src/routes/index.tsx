@@ -625,10 +625,10 @@ function Index() {
             </Reveal>
           ))}
           <Reveal delay={300} className="col-span-full mt-4 flex justify-center">
-            <div className="grid max-w-2xl grid-cols-2 gap-x-10 gap-y-20 sm:gap-x-16 lg:gap-x-24">
+            <div className="grid max-w-2xl grid-cols-2 gap-x-6 gap-y-16 sm:gap-x-16 sm:gap-y-20 lg:gap-x-24">
               {stats.slice(3).map((s) => (
-                <div key={s.label}>
-                  <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#2a2352]">
+                <div key={s.label} className="min-w-0">
+                  <p className="text-center font-[family-name:var(--font-display)] text-5xl font-bold leading-none text-[#2a2352] sm:text-7xl">
                     <CountUp value={`${s.value}${s.suffix ?? ""}`} />
                   </p>
                   <p className="mt-6 text-base leading-relaxed text-muted-foreground">{s.label}</p>

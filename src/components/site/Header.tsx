@@ -2,9 +2,10 @@ import { INTAKE_URL } from "@/data/pricing";
 import { useEffect, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, ChevronDown, ArrowUpRight, X } from "lucide-react";
-import { nav, LOGO } from "@/data/site";
+import { nav } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Brand } from "@/components/site/Brand";
 import { MegaPanel, type MegaChild } from "@/components/site/MegaMenu";
 import { MobileMenu } from "@/components/site/MobileMenu";
 import { GrowthReportDialog } from "@/components/site/GrowthReportDialog";
@@ -130,12 +131,13 @@ export function Header() {
             scrolled ? "h-16" : "h-[4.75rem]",
           )}
         >
-          <Link to="/" className="flex shrink-0 items-center gap-2.5" aria-label="Lavender Marketing & Co. home">
-            <img src={LOGO} alt="" width={120} height={32} className="h-8 w-[120px] object-contain object-left" fetchPriority="high" />
-            <span className="hidden whitespace-nowrap font-display text-lg font-semibold tracking-tight text-white sm:inline">
-              Lavender Marketing & Co.
-            </span>
-          </Link>
+          <Brand
+            priority
+            shortNameBelowSm
+            className="gap-[11px]"
+            markClassName="h-[26px] w-[26px]"
+            nameClassName="text-white"
+          />
 
           <div className="flex items-center justify-end gap-2 xl:gap-4">
             <nav className="relative hidden items-center gap-0.5 lg:flex xl:gap-1" aria-label="Main">
