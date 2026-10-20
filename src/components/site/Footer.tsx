@@ -2,6 +2,7 @@ import { LocaleSwitch } from "@/components/site/LocaleSwitch";
 import { Link } from "@tanstack/react-router";
 import { Brand } from "@/components/site/Brand";
 import { LeadForm } from "./LeadForm";
+import { useSessionUser } from "@/hooks/use-session";
 
 const links = [
   { label: "All Services", to: "/services" },
@@ -46,6 +47,15 @@ const socials = [
     ),
   },
 ] as const;
+
+function AccountLink() {
+  const user = useSessionUser();
+  return (
+    <Link to={user ? "/account" : "/auth"} className="hover:text-primary hover:underline">
+      {user ? "My account" : "Sign in"}
+    </Link>
+  );
+}
 
 export function Footer() {
   return (
@@ -105,6 +115,8 @@ export function Footer() {
         <a href="/sitemap.xml" className="hover:text-primary hover:underline">
           Sitemap
         </a>
+        <span className="hidden sm:inline" aria-hidden="true">·</span>
+        <AccountLink />
         <LocaleSwitch />
       </div>
       <p className="px-4 pb-8 text-center text-xs leading-relaxed text-foreground/45 sm:text-[12px]">
