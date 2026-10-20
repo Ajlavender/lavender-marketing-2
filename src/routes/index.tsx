@@ -354,7 +354,7 @@ function Index() {
                 <span className="text-muted-foreground">Automated review engine included</span>
               </span>
               <h1
-                className="animate-fade-in pb-[0.28em] text-[clamp(2.75rem,5.2vw,5.15rem)] font-bold leading-[1.02] sm:text-[clamp(3rem,5.2vw,5.15rem)]"
+                className="animate-fade-in pb-[0.28em] text-[clamp(2.5rem,5.2vw,5.15rem)] font-bold leading-[1.02] sm:text-[clamp(3rem,5.2vw,5.15rem)]"
                 style={{ animationDelay: "80ms", animationFillMode: "both" }}
               >
                 The growth system local businesses use to
