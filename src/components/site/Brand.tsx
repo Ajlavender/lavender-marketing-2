@@ -19,6 +19,7 @@ type BrandProps = {
   /** Load the mark ahead of other images (above-the-fold header). */
   priority?: boolean;
   loading?: "eager" | "lazy";
+  onClick?: () => void;
 };
 
 export function Brand({
