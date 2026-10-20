@@ -83,7 +83,6 @@ export function LocalePrompt() {
         <X className="h-4 w-4" />
       </button>
       <p className="pr-6 text-base font-semibold">
-      <p className="font-[family-name:var(--font-display)] text-lg font-semibold">
         Looks like you're in the {LOCALE_INFO[suggest].country}
       </p>
       <p className="mt-1 text-sm text-muted-foreground">
