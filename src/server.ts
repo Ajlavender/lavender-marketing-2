@@ -47,17 +47,27 @@ function isH3SwallowedErrorBody(body: string): boolean {
 const LOCALE_RE = /^\/(en-ca|en-us)(\/|$)/i;
 const SKIP_RE = /^\/(api|__l5e|_serverFn|_build|assets|@|node_modules|src)/;
 
-/** Old un-prefixed page URLs (e.g. /pricing) permanently move to the Canadian site. */
+/** The homepage lives at "/" (Canadian default); old un-prefixed page URLs move to the Canadian site. */
 function localeRedirect(request: Request): Response | null {
   if (request.method !== "GET" && request.method !== "HEAD") return null;
   const url = new URL(request.url);
   const p = url.pathname;
+  if (/^\/en-ca\/?$/i.test(p)) {
+    return new Response(null, { status: 301, headers: { location: "/" + url.search } });
+  }
+  if (p === "/") return null;
   if (LOCALE_RE.test(p) || SKIP_RE.test(p) || /\.[a-z0-9]+$/i.test(p)) return null;
-  url.pathname = `/en-ca${p === "/" ? "" : p}`;
+  url.pathname = `/en-ca${p}`;
   return new Response(null, { status: 301, headers: { location: url.pathname + url.search } });
 }
 
 const SITE = "https://lavendermarketingco.com";
+
+/** Locale-prefixed URL, except the Canadian homepage which is the bare root. */
+function localeUrl(l: string, barePath: string): string {
+  if (barePath === "/") return l === "en-ca" ? `${SITE}/` : `${SITE}/${l}`;
+  return `${SITE}/${l}${barePath}`;
+}
 
 /** Point canonical/og:url at the locale version, add hreflang alternates, set <html lang>. */
 function localizeHtml(html: string, locale: string, barePath: string): string {
@@ -65,10 +75,10 @@ function localizeHtml(html: string, locale: string, barePath: string): string {
     /(<link[^>]*rel="canonical"[^>]*href="|<meta[^>]*property="og:url"[^>]*content=")https:\/\/lavendermarketingco\.com(\/[^"]*)?"/g,
     (_all, pre: string, path: string | undefined) => {
       const p = (path ?? "/").replace(/^\/(en-ca|en-us)(?=\/|$)/, "") || "/";
-      return `${pre}${SITE}/${locale}${p === "/" ? "" : p}"`;
+      return `${pre}${localeUrl(locale, p)}"`;
     },
   );
-  const alt = (l: string) => `${SITE}/${l}${barePath === "/" ? "" : barePath}`;
+  const alt = (l: string) => localeUrl(l, barePath);
   const tags =
     `<link rel="alternate" hreflang="en-CA" href="${alt("en-ca")}"/>` +
     `<link rel="alternate" hreflang="en-US" href="${alt("en-us")}"/>` +
@@ -84,9 +94,12 @@ export default {
       const handler = await getServerEntry();
       let response = await handler.fetch(request, env, ctx);
       const isHtml = (response.headers.get("content-type") ?? "").includes("text/html");
-      const m = new URL(request.url).pathname.match(LOCALE_RE);
-      if (isHtml && m && response.status < 400) {
-        const html = localizeHtml(await response.text(), m[1]!.toLowerCase(), new URL(request.url).pathname.replace(LOCALE_RE, "/").replace(/\/$/, "") || "/");
+      const pathname = new URL(request.url).pathname;
+      const m = pathname.match(LOCALE_RE);
+      if (isHtml && (m || pathname === "/") && response.status < 400) {
+        const locale = m ? m[1]!.toLowerCase() : "en-ca";
+        const bare = pathname.replace(LOCALE_RE, "/").replace(/\/$/, "") || "/";
+        const html = localizeHtml(await response.text(), locale, bare);
         const headers = new Headers(response.headers);
         headers.delete("content-length");
         response = new Response(html, { status: response.status, headers });
