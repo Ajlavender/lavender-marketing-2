@@ -367,7 +367,7 @@ function Index() {
                     "win more customers.",
                     "get found on Google.",
                     "never miss a lead.",
-                    "turn jobs into 5-star reviews.",
+                    "turn jobs into great reviews.",
                   ]}
                 />
               </h1>

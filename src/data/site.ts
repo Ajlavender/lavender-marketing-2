@@ -80,7 +80,7 @@ export const services = [
   {
     slug: "/review-automation",
     title: "Review Automation",
-    short: "Automatic text and email asks that turn jobs into 5-star reviews.",
+    short: "Automatic text and email asks for an honest review after every job.",
     value: "$400/mo value",
     group: "Included in $297/mo",
     image: `${ILLU}/reviews.webp`,
@@ -143,9 +143,9 @@ export const services = [
   {
     slug: "/local-seo",
     title: "Local SEO",
-    short: "Map pack rankings and a Google Business Profile that converts.",
-    value: "Scale plan",
-    group: "Scale plan",
+    short: "Better visibility on Google Maps and a Business Profile that converts.",
+    value: "Growth + Scale",
+    group: "Starter in Growth, full in Scale",
     image: `${ILLU}/local-seo.webp`,
     card: `${TILES}/local-seo.jpg`,
   },
