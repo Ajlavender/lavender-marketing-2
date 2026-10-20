@@ -342,7 +342,8 @@ function Index() {
         </div>
 
         <div className="mx-auto max-w-7xl px-5 pb-14 pt-36 sm:px-6 sm:pt-32 lg:min-h-0 lg:px-8 lg:pb-20 lg:pt-36">
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="mx-auto max-w-6xl text-center">
+
 
             <div className="relative animate-fade-in">
               <span className="mb-6 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-brand/25 bg-background/70 py-1.5 pl-1.5 pr-4 text-sm font-medium text-foreground shadow-sm backdrop-blur-md">
