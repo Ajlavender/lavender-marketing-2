@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { LOGO } from "@/data/site";
+import horizontalLogo from "@/assets/lmc-horizontal-logo.webp.asset.json";
 import { cn } from "@/lib/utils";
 
 const NAME = "Lavender Marketing & Co.";
@@ -38,7 +39,22 @@ export function Brand({
   priority = false,
   loading = "eager",
   onClick,
-}: BrandProps) {
+  fullLogo = false,
+}: BrandProps & { fullLogo?: boolean }) {
+  if (fullLogo) {
+    return (
+      <Link to="/" aria-label={`${NAME} home`} onClick={onClick} className={cn("flex shrink-0 items-center", className)}>
+        <img
+          src={horizontalLogo.url}
+          alt={NAME}
+          width={900}
+          height={235}
+          className="h-8 w-auto sm:h-9"
+          {...(priority ? { fetchPriority: "high" as const } : { loading, decoding: "async" as const })}
+        />
+      </Link>
+    );
+  }
   return (
     <Link
       to="/"

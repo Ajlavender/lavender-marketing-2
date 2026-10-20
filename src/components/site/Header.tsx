@@ -131,13 +131,7 @@ export function Header() {
             scrolled ? "h-16" : "h-[4.75rem]",
           )}
         >
-          <Brand
-            priority
-            shortNameBelowSm
-            className="gap-[9px]"
-            markClassName="h-[25px] w-[25px]"
-            nameClassName="text-white"
-          />
+          <Brand priority fullLogo />
 
           <div className="flex items-center justify-end gap-2 xl:gap-4">
             <nav className="relative hidden items-center gap-0.5 lg:flex xl:gap-1" aria-label="Main">
