@@ -432,7 +432,7 @@ export const socials = [
   { label: "Twitter", href: "https://twitter.com/" },
 ];
 
-export const clientLogos: { name: string; src: string }[] = [
+export const clientLogos: { name: string; src: string; original?: boolean }[] = [
   { name: "Summit of Strength ALS Gala", src: summitLogo.url },
   { name: "People First Group Realty", src: peopleFirstLogo.url },
   { name: "Couto's Cleaning", src: coutosLogo.url, original: true },
