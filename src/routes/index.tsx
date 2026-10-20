@@ -31,6 +31,7 @@ import { CountUp, Reveal } from "@/components/site/Reveal";
 import { LazySection } from "@/components/site/LazySection";
 import { BeforeAfterShowcase } from "@/components/site/BeforeAfterShowcase";
 import { StickySteps } from "@/components/site/StickySteps";
+import { MoneySection } from "@/components/site/MoneySection";
 import { RotatingWord } from "@/components/site/RotatingWord";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { VisibilityReportPreview } from "@/components/site/VisibilityReportPreview";
@@ -524,6 +525,8 @@ function Index() {
       </Section>
 
       <LazySection variant="loop" minHeight={520}><SystemLoop /></LazySection>
+
+      <MoneySection />
 
       {/* Services grid */}
       <Section>
