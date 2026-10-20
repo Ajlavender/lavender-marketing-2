@@ -110,7 +110,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
           <Brand
             onClick={onClose}
             fullLogo
-            logoClassName="h-6 w-auto"
+            logoClassName="h-8 w-auto"
             className="gap-2.5"
             priority
           />
