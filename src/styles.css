@@ -255,6 +255,7 @@
   --brand-glow: oklch(0.74 0.16 300);
   --brand-deep: oklch(0.32 0.16 290);
   --ink: oklch(0.21 0.062 288);
+  --client-granite: #56545c;
   --orange: oklch(0.71 0.19 48);
   --orange-foreground: oklch(0.18 0.03 60);
   --nav-plum: oklch(0.18 0.1 292);
@@ -279,6 +280,7 @@
   --color-brand-glow: var(--brand-glow);
   --color-brand-deep: var(--brand-deep);
   --color-ink: var(--ink);
+  --color-client-granite: var(--client-granite);
   --color-orange: var(--orange);
   --color-orange-foreground: var(--orange-foreground);
   --color-nav-plum: var(--nav-plum);

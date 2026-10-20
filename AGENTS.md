@@ -38,7 +38,7 @@
   there; other prospect copy still names no internal tools.
 
 ## Media rules
-- Client logos use optimized transparent asset pointers in the `clientLogos` registry; trim transparent margins and remove only connected exterior backgrounds from opaque sources. Use the monochrome filter unless it merges contrasting internal artwork; flag those marks with `originalColour` to preserve legibility. Render identical marquee groups with fixed logo slots so the loop stays seamless and branding never clips.
+- Client logos use optimized transparent asset pointers in the `clientLogos` registry; trim transparent margins and remove only connected exterior backgrounds from opaque sources. The shared SVG filter replaces near-white artwork with the semantic client-granite token while preserving original colours and transparency. Render identical marquee groups with fixed logo slots so the loop stays seamless and branding never clips.
 - Site photos and illustrations load from the Lovable Cloud public `media` bucket (folders `projects/`, `illustrations/`, `media/`) via the `MEDIA_LIBRARY`/`ILLU`/`PROJECTS` constants in `src/data/site.ts`. Why: the owner swaps images by uploading same-named files there, without code edits. Keep the `-480.webp`/`-800.webp` variants next to each `.jpg` because srcSet derives them by name.
 
 ## Brand lockup rules

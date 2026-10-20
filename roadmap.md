@@ -1,6 +1,7 @@
 # Homepage conversion polish
 
 ## Client logos
+- [x] Restore original client logo colours and render white elements in granite grey
 - [x] Add nine additional company logos and check mixed light/dark artwork visibility
 - [x] Replace company-name strip with the fourteen supplied logos and verify their display
 
