@@ -14,6 +14,8 @@ type BrandProps = {
   showName?: boolean;
   /** Hide the name below the `sm` breakpoint (header behaviour). */
   hideNameBelowSm?: boolean;
+  /** Below `sm`, show a short form of the name instead of hiding it. */
+  shortNameBelowSm?: boolean;
   /** Thin rule between mark and name so the gap always reads deliberate. */
   divider?: boolean;
   /** Load the mark ahead of other images (above-the-fold header). */
@@ -28,6 +30,7 @@ export function Brand({
   nameClassName = "text-white",
   showName = true,
   hideNameBelowSm = true,
+  shortNameBelowSm = false,
   divider = false,
   priority = false,
   loading = "eager",
@@ -51,12 +54,23 @@ export function Brand({
           : { loading, decoding: "async" as const })}
       />
       {showName ? (
-        <span
-          className={cn(
-            "items-center",
-            hideNameBelowSm ? "hidden sm:inline-flex" : "inline-flex",
-          )}
-        >
+        <>
+          {shortNameBelowSm ? (
+            <span
+              className={cn(
+                "whitespace-nowrap font-brand text-[1.25rem] leading-none tracking-[0.02em] sm:hidden",
+                nameClassName,
+              )}
+            >
+              Lavender
+            </span>
+          ) : null}
+          <span
+            className={cn(
+              "items-center",
+              hideNameBelowSm ? "hidden sm:inline-flex" : "inline-flex",
+            )}
+          >
           {divider ? (
             <span
               aria-hidden="true"
