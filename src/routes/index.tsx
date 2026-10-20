@@ -533,7 +533,7 @@ function Index() {
         <SectionHeading
           eyebrow="What you get"
           title="One growth system, built for local service businesses"
-          subtitle="Every tool below is included in the $297/month Essentials Plan. No separate logins, no surprise bills."
+          subtitle="Everything below comes with the $297/month Essentials Plan, except Local SEO, which starts in Growth. No separate logins, no surprise bills."
         />
         <Reveal delay={120} className="mt-14">
           <ServicesGrid />
