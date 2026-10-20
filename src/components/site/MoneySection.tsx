@@ -43,7 +43,7 @@ export function MoneySection() {
                   The leak
                 </p>
                 <h3 className="mt-2 text-xl font-semibold">{l.problem}</h3>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{l.fix}</p>
+                <p className="mt-4 mb-6 text-base leading-relaxed text-muted-foreground">{l.fix}</p>
                 <p className="mt-auto border-t border-primary/10 pt-5 text-base font-semibold text-primary">
                   {l.result}
                 </p>
