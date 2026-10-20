@@ -522,7 +522,7 @@ export function LogoStrip() {
                     height={112}
                     loading="lazy"
                     decoding="async"
-                    className="max-h-24 w-full object-contain opacity-65 brightness-0 transition-opacity duration-300 hover:opacity-90 sm:max-h-28"
+                    className={`max-h-24 w-full object-contain transition-opacity duration-300 sm:max-h-28 ${logo.originalColour ? "opacity-90 hover:opacity-100" : "opacity-65 brightness-0 hover:opacity-90"}`}
                   />
                 </div>
               ))}

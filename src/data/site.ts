@@ -432,7 +432,7 @@ export const socials = [
   { label: "Twitter", href: "https://twitter.com/" },
 ];
 
-export const clientLogos: { name: string; src: string }[] = [
+export const clientLogos: { name: string; src: string; originalColour?: boolean }[] = [
   { name: "Summit of Strength ALS Gala", src: summitLogo.url },
   { name: "People First Group Realty", src: peopleFirstLogo.url },
   { name: "Couto's Cleaning", src: coutosLogo.url },
@@ -450,10 +450,10 @@ export const clientLogos: { name: string; src: string }[] = [
   { name: "Soccerfice", src: soccerficeLogo.url },
   { name: "The 7 Steps", src: sevenStepsLogo.url },
   { name: "The Chambers Group", src: chambersLogo.url },
-  { name: "Community Reimagined", src: communityLogo.url },
+  { name: "Community Reimagined", src: communityLogo.url, originalColour: true },
   { name: "Neva Say Neva Entertainment", src: nevaLogo.url },
   { name: "The Miles Group", src: milesLogo.url },
   { name: "AMG & Associates", src: amgLogo.url },
   { name: "Jedas Cafe & Bistro", src: jedasLogo.url },
-  { name: "Monroe JAB Academy", src: monroeLogo.url },
+  { name: "Monroe JAB Academy", src: monroeLogo.url, originalColour: true },
 ];
