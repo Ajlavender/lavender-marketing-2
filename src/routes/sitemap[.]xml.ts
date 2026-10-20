@@ -64,7 +64,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           })),
         ];
 
-        const loc = (l: string, path: string) => `${BASE_URL}/${l}${path === "/" ? "" : path}`;
+        const loc = (l: string, path: string) =>
+          path === "/" ? (l === "en-ca" ? `${BASE_URL}/` : `${BASE_URL}/${l}`) : `${BASE_URL}/${l}${path}`;
         const urls = entries.flatMap((e) => ["en-ca", "en-us"].map((l) => ({ ...e, l }))).map((e) =>
           [
             `  <url>`,

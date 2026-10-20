@@ -30,6 +30,8 @@ export const getRouter = () => {
       },
       output: ({ url }) => {
         if (UNPREFIXED.test(url.pathname) || splitLocale(url.pathname).locale) return url;
+        // The Canadian homepage is served at the bare root.
+        if (url.pathname === "/" && current === "en-ca") return url;
         url.pathname = withLocale(url.pathname, current);
         return url;
       },
