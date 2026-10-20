@@ -61,7 +61,7 @@ export function Brand({
           {shortNameBelowSm ? (
             <span
               className={cn(
-                "whitespace-nowrap font-brand font-medium leading-none tracking-[0.03em] sm:hidden",
+                "whitespace-nowrap font-brand font-semibold leading-none tracking-[-0.01em] sm:hidden",
                 nameTextClass,
                 nameClassName,
               )}
@@ -86,7 +86,7 @@ export function Brand({
           ) : null}
           <span
             className={cn(
-              "whitespace-nowrap font-brand font-medium leading-none tracking-[0.03em]",
+              "whitespace-nowrap font-brand font-semibold leading-none tracking-[-0.01em]",
               nameTextClass,
               nameClassName,
             )}
