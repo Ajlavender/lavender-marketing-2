@@ -31,6 +31,7 @@ export function Brand({
   divider = true,
   priority = false,
   loading = "eager",
+  onClick,
 }: BrandProps) {
   return (
     <Link
