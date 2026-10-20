@@ -14,7 +14,7 @@ type NavChild = MegaChild;
 
 function AnnouncementBar({ onClose }: { onClose: () => void }) {
   return (
-       <div className="relative z-50 min-h-9 w-full overflow-hidden border-b border-white/10 bg-gradient-to-r from-nav-cta-from via-[#7c4dff] to-nav-cta-to text-white shadow-[0_8px_30px_-12px_rgba(124,77,255,0.55)]">
+       <div className="relative z-50 min-h-9 w-full overflow-hidden border-b border-white/10 bg-gradient-to-r from-nav-cta-from via-nav-accent to-nav-cta-to text-white shadow-[0_8px_30px_-12px_rgba(124,77,255,0.55)]">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
       <div className="relative mx-auto flex max-w-[90rem] items-center justify-center gap-2 px-4 py-2 pr-10 sm:gap-3 sm:px-8 sm:pr-12 lg:px-10">
         <p className="flex min-w-0 flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-[0.7rem] font-medium leading-tight tracking-wide sm:text-xs">
@@ -44,8 +44,13 @@ function AnnouncementBar({ onClose }: { onClose: () => void }) {
 }
 
 
+function isNavItemActive(pathname: string, to: string) {
+  return to === "/" ? pathname === "/" : pathname === to || pathname.startsWith(`${to}/`);
+}
+
 export function Header() {
   const isReportPage = useRouterState({ select: (state) => state.location.pathname === "/growth-report" });
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -145,8 +150,10 @@ export function Header() {
                   >
                     <button
                       className={cn(
-                        "flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-2 xl:px-3 text-sm font-medium tracking-wide text-nav-plum-foreground/85 transition-all duration-200 hover:bg-white/[0.07] hover:text-white hover:shadow-[0_0_20px_-4px_rgba(255,255,255,0.15)]",
-                        openMenu === item.label && "bg-white/10 text-white shadow-[0_0_24px_-4px_rgba(255,255,255,0.18)]",
+                        "flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-2 xl:px-3 text-sm font-medium tracking-wide transition-colors duration-200 hover:text-nav-accent-text",
+                        openMenu === item.label || isNavItemActive(pathname, item.to)
+                          ? "text-nav-accent-text"
+                          : "text-nav-plum-foreground/85",
                       )}
                       aria-expanded={openMenu === item.label}
                       onClick={() => { if (openMenu === item.label) setOpenMenu(null); else openNow(item.label); }}
@@ -181,8 +188,10 @@ export function Header() {
                     key={item.to}
                     to={item.to}
                     onMouseEnter={closeSoon}
-                    activeProps={{ className: "text-white bg-white/[0.07] shadow-[0_0_24px_-4px_rgba(255,255,255,0.18)]" }}
-                    className="whitespace-nowrap rounded-full px-2 py-2 xl:px-3 text-sm font-medium tracking-wide text-nav-plum-foreground/85 transition-all duration-200 hover:bg-white/[0.07] hover:text-white hover:shadow-[0_0_20px_-4px_rgba(255,255,255,0.15)]"
+                    className={cn(
+                      "whitespace-nowrap rounded-full px-2 py-2 xl:px-3 text-sm font-medium tracking-wide transition-colors duration-200 hover:text-nav-accent-text",
+                      isNavItemActive(pathname, item.to) ? "text-nav-accent-text" : "text-nav-plum-foreground/85",
+                    )}
                   >
                     {item.label}
                   </Link>

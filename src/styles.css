@@ -268,6 +268,8 @@
   --nav-cta-to: oklch(0.35 0.14 300);
   --nav-cta-hover-from: oklch(0.64 0.2 292);
   --nav-cta-hover-to: oklch(0.42 0.16 300);
+  --nav-accent: #7c4dff;
+  --nav-accent-text: #a48cff;
   --lavender-wash: oklch(0.96 0.018 292);
   --gradient-brand: linear-gradient(100deg, var(--brand), var(--brand-glow));
   --gradient-deep: linear-gradient(140deg, var(--brand-deep), var(--ink) 70%);
@@ -293,6 +295,8 @@
   --color-nav-cta-to: var(--nav-cta-to);
   --color-nav-cta-hover-from: var(--nav-cta-hover-from);
   --color-nav-cta-hover-to: var(--nav-cta-hover-to);
+  --color-nav-accent: var(--nav-accent);
+  --color-nav-accent-text: var(--nav-accent-text);
   --color-lavender-wash: var(--lavender-wash);
   --font-serif: "Playfair Display", "Barlow Semi Condensed", Georgia, serif;
   --font-brand: "Manrope", "Roboto", ui-sans-serif, system-ui, sans-serif;
