@@ -53,9 +53,9 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-3 lg:gap-16 lg:px-8">
         <div className="space-y-5">
           <Brand
-            hideNameBelowSm={false}
-            markClassName="h-[26px] w-[26px]"
-            nameClassName="text-foreground"
+            fullLogo
+            logoVariant="light"
+            logoClassName="h-7 w-auto"
             className="gap-[10px]"
             loading="lazy"
           />
