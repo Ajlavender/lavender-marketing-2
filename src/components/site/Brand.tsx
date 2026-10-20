@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { LOGO } from "@/data/site";
-import horizontalLogo from "@/assets/lmc-horizontal-logo.webp.asset.json";
+import horizontalLogoDark from "@/assets/lmc-horizontal-logo-dark.png.asset.json";
+import horizontalLogoLight from "@/assets/lmc-horizontal-logo-light.png.asset.json";
 import { cn } from "@/lib/utils";
 
 const NAME = "Lavender Marketing & Co.";
@@ -25,6 +26,10 @@ type BrandProps = {
   priority?: boolean;
   loading?: "eager" | "lazy";
   onClick?: () => void;
+  /** Which horizontal lockup to use for `fullLogo`: dark surfaces or light surfaces. */
+  logoVariant?: "dark" | "light";
+  /** Size classes for the horizontal lockup image. */
+  logoClassName?: string;
 };
 
 export function Brand({
