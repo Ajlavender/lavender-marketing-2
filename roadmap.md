@@ -1,6 +1,7 @@
 # Homepage conversion polish
 
 ## Client logos
+- [x] Add nine additional company logos and check mixed light/dark artwork visibility
 - [x] Replace company-name strip with the fourteen supplied logos and verify their display
 
 - [x] Unify homepage website-design CTA hierarchy
