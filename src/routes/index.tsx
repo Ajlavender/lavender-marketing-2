@@ -32,8 +32,8 @@ import { CountUp, Reveal } from "@/components/site/Reveal";
 import { LazySection } from "@/components/site/LazySection";
 import { BeforeAfterShowcase } from "@/components/site/BeforeAfterShowcase";
 import { StickySteps } from "@/components/site/StickySteps";
-import { HeroPhone } from "@/components/site/HeroPhone";
-import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { RotatingWord } from "@/components/site/RotatingWord";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { VisibilityReportPreview } from "@/components/site/VisibilityReportPreview";
 import {
   BuyerPaths,
@@ -250,6 +250,8 @@ function Index() {
   // so the poster paints first and the mp4 never blocks first render.
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
   const [canPlay, setCanPlay] = useState(false);
+  const [designOpen, setDesignOpen] = useState(false);
+  const [designEmail, setDesignEmail] = useState("");
 
 
   // Lazy-attach the mp4 once the banner is close to the viewport.
@@ -340,10 +342,10 @@ function Index() {
         </div>
 
         <div className="mx-auto max-w-7xl px-5 pb-14 pt-36 sm:px-6 sm:pt-32 lg:min-h-0 lg:px-8 lg:pb-20 lg:pt-36">
-          <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          <div className="mx-auto max-w-4xl text-center">
 
             <div className="relative animate-fade-in">
-              <span className="mb-6 inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-brand/25 bg-background/70 py-1.5 pl-1.5 pr-4 text-sm font-medium text-foreground shadow-sm backdrop-blur-md">
+              <span className="mb-6 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-brand/25 bg-background/70 py-1.5 pl-1.5 pr-4 text-sm font-medium text-foreground shadow-sm backdrop-blur-md">
                 <span className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-white">
                   <Sparkles className="h-3.5 w-3.5" />
                   Free design
@@ -351,49 +353,70 @@ function Index() {
                 <span className="text-muted-foreground">Automated review engine included</span>
               </span>
               <h1
-                className="animate-fade-in text-[2.75rem] font-bold leading-[1] sm:text-7xl"
+                className="animate-fade-in text-[2.75rem] font-bold leading-[1.02] sm:text-6xl lg:text-7xl"
                 style={{ animationDelay: "80ms", animationFillMode: "both" }}
               >
-                Your new website,
+                The growth system local businesses use to
                 <br />
-                <span className="text-gradient-brand">designed free.</span>
+                <RotatingWord
+                  className="text-gradient-brand"
+                  words={[
+                    "win more customers.",
+                    "get found on Google.",
+                    "never miss a lead.",
+                    "turn jobs into 5-star reviews.",
+                  ]}
+                />
               </h1>
               <p
                 style={{ animationDelay: "180ms", animationFillMode: "both" }}
-                className="animate-fade-in mt-6 max-w-lg text-lg text-muted-foreground sm:text-xl"
+                className="animate-fade-in mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl"
               >
-                Love it? Launch for $297/mo with hosting, honest review requests and missed-call
-                text-back built in. Don&apos;t love it? You pay nothing.
+                We design your new website free. Love it? Launch for $297/mo with hosting, honest
+                review requests and missed-call text-back built in. Don&apos;t love it? You pay nothing.
               </p>
 
-              <div
+              {/* email capture bar — email rides into the free-design form */}
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setDesignOpen(true);
+                }}
                 style={{ animationDelay: "240ms", animationFillMode: "both" }}
-                className="animate-fade-in mt-8 flex flex-wrap items-center gap-4"
+                className="animate-fade-in mx-auto mt-9 flex max-w-xl flex-col gap-2 rounded-3xl border border-border bg-card p-2 shadow-[0_24px_60px_-30px_color-mix(in_oklab,var(--brand)_60%,transparent)] sm:flex-row sm:items-center sm:rounded-full"
               >
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button size="lg" className="h-13 rounded-full px-7 text-base shadow-lg transition-transform hover:-translate-y-0.5">
-                      Get My Free Website Design
-                      <ArrowRight className="ml-1 h-4 w-4" />
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
-                    <DialogTitle className="text-2xl font-bold">Get Your Free Website Design</DialogTitle>
-                    <DialogDescription>
-                      Tell us about your business. We&apos;ll design a custom homepage first, and you pay nothing unless you love it.
-                    </DialogDescription>
-                    <LeadForm labeled offer="design" submitLabel="Get My Free Website Design" />
-                    <ReportFallback className="mt-2 text-center" />
-                  </DialogContent>
-                </Dialog>
-                <Link to="/pricing" className="border-b border-primary pb-1 text-sm font-semibold text-primary">
-                  See the $297 plan
-                </Link>
-              </div>
+                <input
+                  type="email"
+                  value={designEmail}
+                  onChange={(e) => setDesignEmail(e.target.value)}
+                  placeholder="Your email address"
+                  aria-label="Your email address"
+                  className="min-w-0 flex-1 bg-transparent px-4 py-2.5 text-base outline-none placeholder:text-muted-foreground"
+                />
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="h-12 shrink-0 rounded-full px-6 text-sm font-semibold transition-transform hover:-translate-y-0.5 sm:text-base"
+                >
+                  Get My Free Website Design
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Button>
+              </form>
+
+              <Dialog open={designOpen} onOpenChange={setDesignOpen}>
+                <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
+                  <DialogTitle className="text-2xl font-bold">Get Your Free Website Design</DialogTitle>
+                  <DialogDescription>
+                    Tell us about your business. We&apos;ll design a custom homepage first, and you pay nothing unless you love it.
+                  </DialogDescription>
+                  <LeadForm labeled offer="design" submitLabel="Get My Free Website Design" initialEmail={designEmail} />
+                  <ReportFallback className="mt-2 text-center" />
+                </DialogContent>
+              </Dialog>
 
               {/* trust row */}
               <div
-                className="animate-fade-in mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
+                className="animate-fade-in mt-9 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
                 style={{ animationDelay: "320ms", animationFillMode: "both" }}
               >
                 <span className="inline-flex items-center gap-2">
@@ -403,13 +426,9 @@ function Index() {
                   <Star className="h-4 w-4 fill-[#f4a62a] text-[#f4a62a]" /> 4.8-star Google rating
                 </span>
                 <span className="inline-flex items-center gap-2">
-                   <Zap className="h-4 w-4 text-brand" /> Live within 14 days
+                  <Zap className="h-4 w-4 text-brand" /> Live within 14 days
                 </span>
               </div>
-            </div>
-
-            <div style={{ animationDelay: "220ms", animationFillMode: "both" }} className="animate-scale-in">
-              <HeroPhone />
             </div>
           </div>
 
