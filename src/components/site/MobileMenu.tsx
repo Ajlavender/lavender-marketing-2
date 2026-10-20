@@ -110,8 +110,9 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
           <Brand
             onClick={onClose}
             hideNameBelowSm={false}
-            markClassName="h-7 w-7"
-            className="gap-3"
+            markClassName="h-6 w-6"
+            nameTextClass="text-[1.05rem]"
+            className="gap-2.5"
             priority
           />
           <button

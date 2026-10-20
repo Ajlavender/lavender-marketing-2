@@ -16,6 +16,8 @@ type BrandProps = {
   hideNameBelowSm?: boolean;
   /** Below `sm`, show a short form of the name instead of hiding it. */
   shortNameBelowSm?: boolean;
+  /** Size classes for the wordmark (keep one text-size utility here). */
+  nameTextClass?: string;
   /** Thin rule between mark and name so the gap always reads deliberate. */
   divider?: boolean;
   /** Load the mark ahead of other images (above-the-fold header). */
@@ -31,6 +33,7 @@ export function Brand({
   showName = true,
   hideNameBelowSm = true,
   shortNameBelowSm = false,
+  nameTextClass = "text-[1.25rem]",
   divider = false,
   priority = false,
   loading = "eager",
@@ -58,7 +61,8 @@ export function Brand({
           {shortNameBelowSm ? (
             <span
               className={cn(
-                "whitespace-nowrap font-brand text-[1.25rem] leading-none tracking-[0.02em] sm:hidden",
+                "whitespace-nowrap font-brand leading-none tracking-[0.02em] sm:hidden",
+                nameTextClass,
                 nameClassName,
               )}
             >
@@ -82,7 +86,8 @@ export function Brand({
           ) : null}
           <span
             className={cn(
-              "whitespace-nowrap font-brand text-[1.25rem] leading-none tracking-[0.02em]",
+              "whitespace-nowrap font-brand leading-none tracking-[0.02em]",
+              nameTextClass,
               nameClassName,
             )}
           >
