@@ -32,6 +32,7 @@ import { CountUp, Reveal } from "@/components/site/Reveal";
 import { LazySection } from "@/components/site/LazySection";
 import { BeforeAfterShowcase } from "@/components/site/BeforeAfterShowcase";
 import { StickySteps } from "@/components/site/StickySteps";
+import { HeroMockup } from "@/components/site/HeroMockup";
 import { VisibilityReportPreview } from "@/components/site/VisibilityReportPreview";
 import {
   BuyerPaths,
@@ -433,6 +434,9 @@ function Index() {
                 aria-hidden="true"
                 className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-brand opacity-70 blur-[2px]"
               />
+
+              {/* live activity stack */}
+              <HeroMockup className="absolute -left-6 top-8 z-20 hidden lg:flex" />
 
               {/* floating proof card — real turnaround stat */}
 
