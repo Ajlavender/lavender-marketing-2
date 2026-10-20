@@ -341,8 +341,8 @@ function Index() {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
         </div>
 
-        <div className="mx-auto max-w-7xl px-5 pb-14 pt-36 sm:px-6 sm:pt-32 lg:min-h-0 lg:px-8 lg:pb-20 lg:pt-36">
-          <div className="mx-auto max-w-6xl text-center">
+        <div className="mx-auto max-w-[110rem] px-5 pb-14 pt-36 sm:px-6 sm:pt-32 lg:min-h-0 lg:px-8 lg:pb-20 lg:pt-36">
+          <div className="mx-auto w-full text-center">
 
 
             <div className="relative animate-fade-in">
@@ -354,7 +354,7 @@ function Index() {
                 <span className="text-muted-foreground">Automated review engine included</span>
               </span>
               <h1
-                className="animate-fade-in pb-[0.28em] text-[2.5rem] font-bold leading-[1.02] sm:text-5xl lg:text-[3.6rem] xl:text-[4.1rem]"
+                className="animate-fade-in pb-[0.28em] text-[clamp(2.5rem,5.2vw,5.15rem)] font-bold leading-[1.02] sm:text-[clamp(3rem,5.2vw,5.15rem)]"
                 style={{ animationDelay: "80ms", animationFillMode: "both" }}
               >
                 The growth system local businesses use to
@@ -437,7 +437,7 @@ function Index() {
           <div
             ref={bannerRef}
             style={{ animationDelay: "380ms", animationFillMode: "both" }}
-            className="animate-fade-in relative mt-16 lg:mt-20"
+            className="animate-fade-in relative mx-auto mt-16 max-w-7xl lg:mt-20"
           >
             <div className="relative rounded-[2rem] p-[1.5px] shadow-[0_50px_110px_-50px_color-mix(in_oklab,var(--brand)_75%,transparent)]">
               <div
