@@ -570,11 +570,7 @@ export function LogoStrip() {
           <div className="flex flex-col items-start">
             <div className="flex items-center gap-1">
               <span className="text-sm font-bold text-ink">50+ reviews</span>
-              <div className="flex gap-0.5">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-3 w-3 fill-orange text-orange" />
-                ))}
-              </div>
+              <ReviewStars rating={4.8} size="h-3 w-3" />
             </div>
             <span className="text-xs text-ink/50">Across Google &amp; Facebook</span>
           </div>
