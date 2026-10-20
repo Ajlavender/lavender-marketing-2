@@ -88,7 +88,8 @@ export function Brand({
           >
             {NAME}
           </span>
-        </span>
+          </span>
+        </>
       ) : null}
     </Link>
   );

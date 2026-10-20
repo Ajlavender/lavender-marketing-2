@@ -107,7 +107,13 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         <div className="pointer-events-none absolute -bottom-20 left-1/2 h-40 w-[80%] -translate-x-1/2 rounded-full bg-nav-glass-glow blur-[80px]" />
 
         <div className="flex items-center justify-between px-5 py-4">
-          <Brand showName={false} onClick={onClose} markClassName="h-8 w-8" priority />
+          <Brand
+            onClick={onClose}
+            hideNameBelowSm={false}
+            markClassName="h-7 w-7"
+            className="gap-3"
+            priority
+          />
           <button
             onClick={onClose}
             aria-label="Close menu"

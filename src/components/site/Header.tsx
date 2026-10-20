@@ -133,6 +133,7 @@ export function Header() {
         >
           <Brand
             priority
+            shortNameBelowSm
             className="gap-[11px]"
             markClassName="h-[26px] w-[26px]"
             nameClassName="text-white"
