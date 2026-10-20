@@ -1,5 +1,5 @@
 import { serviceCatalogue } from "@/data/service-catalogue";
-import logoAsset from "@/assets/lavender-logo-240.webp.asset.json";
+import logoAsset from "@/assets/lavender-emblem-480.png.asset.json";
 import googleLogoAsset from "@/assets/google-2026.png.asset.json";
 import facebookLogoAsset from "@/assets/facebook-2026.png.asset.json";
 import summitLogo from "@/assets/client-logos/summit-of-strength.webp.asset.json";
