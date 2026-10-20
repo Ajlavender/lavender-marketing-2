@@ -10,10 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AccountTransitionRouteImport } from './routes/account-transition'
 import { Route as AdManagementRouteImport } from './routes/ad-management'
 import { Route as AiChatWidgetRouteImport } from './routes/ai-chat-widget'
 import { Route as AppointmentRemindersRouteImport } from './routes/appointment-reminders'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BusinessAutomationRouteImport } from './routes/business-automation'
 import { Route as ChatWidgetRouteImport } from './routes/chat-widget'
 import { Route as ConstructionWebsiteDesignRouteImport } from './routes/construction-website-design'
@@ -32,6 +34,7 @@ import { Route as OnlineBookingRouteImport } from './routes/online-booking'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ReviewAutomationRouteImport } from './routes/review-automation'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as SalesCallingRouteImport } from './routes/sales-calling'
@@ -44,6 +47,7 @@ import { Route as VoiceAiReceptionistRouteImport } from './routes/voice-ai-recep
 import { Route as WebsiteRedesignRouteImport } from './routes/website-redesign'
 import { Route as WebsiteReviewDisplayRouteImport } from './routes/website-review-display'
 import { Route as WhyChooseUsRouteImport } from './routes/why-choose-us'
+import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as AboutMottoRouteImport } from './routes/about.motto'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -53,6 +57,10 @@ import { Route as LavenderSuiteProCompareHighlevelRouteImport } from './routes/l
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AccountTransitionRoute = AccountTransitionRouteImport.update({
@@ -73,6 +81,11 @@ const AiChatWidgetRoute = AiChatWidgetRouteImport.update({
 const AppointmentRemindersRoute = AppointmentRemindersRouteImport.update({
   id: '/appointment-reminders',
   path: '/appointment-reminders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BusinessAutomationRoute = BusinessAutomationRouteImport.update({
@@ -167,6 +180,11 @@ const ProjectsRoute = ProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReviewAutomationRoute = ReviewAutomationRouteImport.update({
   id: '/review-automation',
   path: '/review-automation',
@@ -227,6 +245,11 @@ const WhyChooseUsRoute = WhyChooseUsRouteImport.update({
   path: '/why-choose-us',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAccountRoute = AuthenticatedAccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/about/',
   path: '/about/',
@@ -260,6 +283,7 @@ export interface FileRoutesByFullPath {
   '/ad-management': typeof AdManagementRoute
   '/ai-chat-widget': typeof AiChatWidgetRoute
   '/appointment-reminders': typeof AppointmentRemindersRoute
+  '/auth': typeof AuthRoute
   '/business-automation': typeof BusinessAutomationRoute
   '/chat-widget': typeof ChatWidgetRoute
   '/construction-website-design': typeof ConstructionWebsiteDesignRoute
@@ -278,6 +302,7 @@ export interface FileRoutesByFullPath {
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/review-automation': typeof ReviewAutomationRoute
   '/reviews': typeof ReviewsRoute
   '/sales-calling': typeof SalesCallingRoute
@@ -290,6 +315,7 @@ export interface FileRoutesByFullPath {
   '/website-redesign': typeof WebsiteRedesignRoute
   '/website-review-display': typeof WebsiteReviewDisplayRoute
   '/why-choose-us': typeof WhyChooseUsRoute
+  '/account': typeof AuthenticatedAccountRoute
   '/about/motto': typeof AboutMottoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/lavender-suite-pro/compare-highlevel': typeof LavenderSuiteProCompareHighlevelRoute
@@ -302,6 +328,7 @@ export interface FileRoutesByTo {
   '/ad-management': typeof AdManagementRoute
   '/ai-chat-widget': typeof AiChatWidgetRoute
   '/appointment-reminders': typeof AppointmentRemindersRoute
+  '/auth': typeof AuthRoute
   '/business-automation': typeof BusinessAutomationRoute
   '/chat-widget': typeof ChatWidgetRoute
   '/construction-website-design': typeof ConstructionWebsiteDesignRoute
@@ -320,6 +347,7 @@ export interface FileRoutesByTo {
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/review-automation': typeof ReviewAutomationRoute
   '/reviews': typeof ReviewsRoute
   '/sales-calling': typeof SalesCallingRoute
@@ -332,6 +360,7 @@ export interface FileRoutesByTo {
   '/website-redesign': typeof WebsiteRedesignRoute
   '/website-review-display': typeof WebsiteReviewDisplayRoute
   '/why-choose-us': typeof WhyChooseUsRoute
+  '/account': typeof AuthenticatedAccountRoute
   '/about/motto': typeof AboutMottoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/lavender-suite-pro/compare-highlevel': typeof LavenderSuiteProCompareHighlevelRoute
@@ -341,10 +370,12 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/account-transition': typeof AccountTransitionRoute
   '/ad-management': typeof AdManagementRoute
   '/ai-chat-widget': typeof AiChatWidgetRoute
   '/appointment-reminders': typeof AppointmentRemindersRoute
+  '/auth': typeof AuthRoute
   '/business-automation': typeof BusinessAutomationRoute
   '/chat-widget': typeof ChatWidgetRoute
   '/construction-website-design': typeof ConstructionWebsiteDesignRoute
@@ -363,6 +394,7 @@ export interface FileRoutesById {
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/review-automation': typeof ReviewAutomationRoute
   '/reviews': typeof ReviewsRoute
   '/sales-calling': typeof SalesCallingRoute
@@ -375,6 +407,7 @@ export interface FileRoutesById {
   '/website-redesign': typeof WebsiteRedesignRoute
   '/website-review-display': typeof WebsiteReviewDisplayRoute
   '/why-choose-us': typeof WhyChooseUsRoute
+  '/_authenticated/account': typeof AuthenticatedAccountRoute
   '/about/motto': typeof AboutMottoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/lavender-suite-pro/compare-highlevel': typeof LavenderSuiteProCompareHighlevelRoute
@@ -389,6 +422,7 @@ export interface FileRouteTypes {
     | '/ad-management'
     | '/ai-chat-widget'
     | '/appointment-reminders'
+    | '/auth'
     | '/business-automation'
     | '/chat-widget'
     | '/construction-website-design'
@@ -407,6 +441,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/privacy-policy'
     | '/projects'
+    | '/reset-password'
     | '/review-automation'
     | '/reviews'
     | '/sales-calling'
@@ -419,6 +454,7 @@ export interface FileRouteTypes {
     | '/website-redesign'
     | '/website-review-display'
     | '/why-choose-us'
+    | '/account'
     | '/about/motto'
     | '/blog/$slug'
     | '/lavender-suite-pro/compare-highlevel'
@@ -431,6 +467,7 @@ export interface FileRouteTypes {
     | '/ad-management'
     | '/ai-chat-widget'
     | '/appointment-reminders'
+    | '/auth'
     | '/business-automation'
     | '/chat-widget'
     | '/construction-website-design'
@@ -449,6 +486,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/privacy-policy'
     | '/projects'
+    | '/reset-password'
     | '/review-automation'
     | '/reviews'
     | '/sales-calling'
@@ -461,6 +499,7 @@ export interface FileRouteTypes {
     | '/website-redesign'
     | '/website-review-display'
     | '/why-choose-us'
+    | '/account'
     | '/about/motto'
     | '/blog/$slug'
     | '/lavender-suite-pro/compare-highlevel'
@@ -469,10 +508,12 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/account-transition'
     | '/ad-management'
     | '/ai-chat-widget'
     | '/appointment-reminders'
+    | '/auth'
     | '/business-automation'
     | '/chat-widget'
     | '/construction-website-design'
@@ -491,6 +532,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/privacy-policy'
     | '/projects'
+    | '/reset-password'
     | '/review-automation'
     | '/reviews'
     | '/sales-calling'
@@ -503,6 +545,7 @@ export interface FileRouteTypes {
     | '/website-redesign'
     | '/website-review-display'
     | '/why-choose-us'
+    | '/_authenticated/account'
     | '/about/motto'
     | '/blog/$slug'
     | '/lavender-suite-pro/compare-highlevel'
@@ -512,10 +555,12 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AccountTransitionRoute: typeof AccountTransitionRoute
   AdManagementRoute: typeof AdManagementRoute
   AiChatWidgetRoute: typeof AiChatWidgetRoute
   AppointmentRemindersRoute: typeof AppointmentRemindersRoute
+  AuthRoute: typeof AuthRoute
   BusinessAutomationRoute: typeof BusinessAutomationRoute
   ChatWidgetRoute: typeof ChatWidgetRoute
   ConstructionWebsiteDesignRoute: typeof ConstructionWebsiteDesignRoute
@@ -534,6 +579,7 @@ export interface RootRouteChildren {
   PricingRoute: typeof PricingRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProjectsRoute: typeof ProjectsRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   ReviewAutomationRoute: typeof ReviewAutomationRoute
   ReviewsRoute: typeof ReviewsRoute
   SalesCallingRoute: typeof SalesCallingRoute
@@ -562,6 +608,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/account-transition': {
       id: '/account-transition'
       path: '/account-transition'
@@ -588,6 +641,13 @@ declare module '@tanstack/react-router' {
       path: '/appointment-reminders'
       fullPath: '/appointment-reminders'
       preLoaderRoute: typeof AppointmentRemindersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/business-automation': {
@@ -716,6 +776,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/review-automation': {
       id: '/review-automation'
       path: '/review-automation'
@@ -800,6 +867,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WhyChooseUsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/account': {
+      id: '/_authenticated/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AuthenticatedAccountRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/about/': {
       id: '/about/'
       path: '/about'
@@ -838,12 +912,25 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAccountRoute: typeof AuthenticatedAccountRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAccountRoute: AuthenticatedAccountRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AccountTransitionRoute: AccountTransitionRoute,
   AdManagementRoute: AdManagementRoute,
   AiChatWidgetRoute: AiChatWidgetRoute,
   AppointmentRemindersRoute: AppointmentRemindersRoute,
+  AuthRoute: AuthRoute,
   BusinessAutomationRoute: BusinessAutomationRoute,
   ChatWidgetRoute: ChatWidgetRoute,
   ConstructionWebsiteDesignRoute: ConstructionWebsiteDesignRoute,
@@ -862,6 +949,7 @@ const rootRouteChildren: RootRouteChildren = {
   PricingRoute: PricingRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProjectsRoute: ProjectsRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   ReviewAutomationRoute: ReviewAutomationRoute,
   ReviewsRoute: ReviewsRoute,
   SalesCallingRoute: SalesCallingRoute,
