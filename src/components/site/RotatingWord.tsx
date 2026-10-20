@@ -1,20 +1,22 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * Owner.com-style rotating headline word: cycles through phrases with a soft
- * rise-in. Stands still for visitors who prefer reduced motion.
+ * Owner.com-style rotating headline phrase: the outgoing phrase fades up and
+ * softly blurs away while the incoming phrase rises in sharp — a true
+ * crossfade with no layout jump (all phrases share one stable-width cell).
+ * Stands still for visitors who prefer reduced motion.
  */
 export function RotatingWord({
   words,
-  interval = 2600,
+  interval = 3000,
   className,
 }: {
   words: readonly string[];
   interval?: number;
   className?: string;
 }) {
-  const [i, advance] = useReducer((n: number) => (n + 1) % words.length, 0);
+  const [state, setState] = useState({ i: 0, prev: -1 });
   const [still] = useState(
     () =>
       typeof window !== "undefined" &&
@@ -23,13 +25,28 @@ export function RotatingWord({
 
   useEffect(() => {
     if (still) return;
-    const id = setInterval(advance, interval);
+    const id = setInterval(
+      () => setState((s) => ({ i: (s.i + 1) % words.length, prev: s.i })),
+      interval,
+    );
     return () => clearInterval(id);
-  }, [still, interval]);
+  }, [still, interval, words.length]);
 
   return (
-    <span key={i} className={cn("inline-block animate-word-in", className)}>
-      {words[i]}
+    <span className={cn("relative inline-grid", className)}>
+      {words.map((word, idx) => (
+        <span
+          key={word}
+          className={cn(
+            "col-start-1 row-start-1 whitespace-nowrap",
+            idx === state.i && "animate-word-in",
+            idx === state.prev && "animate-word-out",
+            idx !== state.i && idx !== state.prev && "invisible",
+          )}
+        >
+          {word}
+        </span>
+      ))}
     </span>
   );
 }
