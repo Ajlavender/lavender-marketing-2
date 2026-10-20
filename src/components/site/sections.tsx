@@ -190,32 +190,35 @@ export function Stars({ className }: { className?: string }) {
 
 export function ServicesGrid() {
   return (
-    <div className="grid gap-5 sm:grid-cols-2 lg:grid-flow-dense lg:grid-cols-3">
-      {services.map((s, i) => (
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {services.map((s) => (
         <Link
           key={s.slug}
           to={s.slug}
-          className={cn(
-            "group flex flex-col overflow-hidden rounded-3xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-lg",
-            i === 0 && "sm:col-span-2 lg:row-span-2",
-            i === 1 && "lg:col-span-2",
-          )}
+          className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-lg"
         >
-          <div className={cn("w-full overflow-hidden bg-secondary", i === 0 ? "aspect-[16/10] lg:aspect-auto lg:flex-1" : i === 1 ? "aspect-[16/10] lg:aspect-[21/9]" : "aspect-[16/10]")}>
-            <img
-              src={s.card}
-              srcSet={`${s.card.replace(/\.jpg$/, "-480.webp")} 480w, ${s.card.replace(/\.jpg$/, "-800.webp")} 800w, ${s.card} 1440w`}
-              sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) calc(50vw - 2rem), 400px"
-              alt={s.title}
-              loading="lazy"
-              width={1440}
-              height={900}
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-            />
+          <div className="aspect-[16/10] w-full bg-gradient-to-br from-primary/15 via-secondary to-primary/5 p-4 sm:p-5">
+            <div className="flex h-full w-full flex-col overflow-hidden rounded-xl border border-border/60 bg-card shadow-[0_14px_30px_-18px_rgba(42,35,82,0.45)] transition-transform duration-500 group-hover:-translate-y-1">
+              <div className="flex items-center gap-1.5 border-b border-border/60 bg-muted/50 px-3 py-2">
+                <span className="h-2 w-2 rounded-full bg-border" />
+                <span className="h-2 w-2 rounded-full bg-border" />
+                <span className="h-2 w-2 rounded-full bg-border" />
+              </div>
+              <img
+                src={s.card}
+                srcSet={`${s.card.replace(/\.jpg$/, "-480.webp")} 480w, ${s.card.replace(/\.jpg$/, "-800.webp")} 800w, ${s.card} 1440w`}
+                sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) calc(50vw - 2rem), 400px"
+                alt={s.title}
+                loading="lazy"
+                width={1440}
+                height={900}
+                className="min-h-0 w-full flex-1 object-contain"
+              />
+            </div>
           </div>
 
-          <div className={cn("p-6", i === 0 && "lg:p-8")}>
-            <h3 className={cn("group-hover:text-primary", i === 0 ? "text-3xl lg:text-4xl" : "text-2xl")}>{s.title}</h3>
+          <div className="p-6">
+            <h3 className="text-2xl group-hover:text-primary">{s.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground">{s.short}</p>
           </div>
         </Link>
