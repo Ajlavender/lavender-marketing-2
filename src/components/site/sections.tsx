@@ -190,14 +190,18 @@ export function Stars({ className }: { className?: string }) {
 
 export function ServicesGrid() {
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {services.map((s) => (
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-flow-dense lg:grid-cols-3">
+      {services.map((s, i) => (
         <Link
           key={s.slug}
           to={s.slug}
-          className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+          className={cn(
+            "group flex flex-col overflow-hidden rounded-3xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-lg",
+            i === 0 && "sm:col-span-2 lg:row-span-2",
+            i === 1 && "lg:col-span-2",
+          )}
         >
-          <div className="aspect-[16/10] w-full overflow-hidden bg-secondary">
+          <div className={cn("w-full overflow-hidden bg-secondary", i === 0 ? "aspect-[16/10] lg:aspect-auto lg:flex-1" : i === 1 ? "aspect-[16/10] lg:aspect-[21/9]" : "aspect-[16/10]")}>
             <img
               src={s.card}
               srcSet={`${s.card.replace(/\.jpg$/, "-480.webp")} 480w, ${s.card.replace(/\.jpg$/, "-800.webp")} 800w, ${s.card} 1440w`}
@@ -210,8 +214,8 @@ export function ServicesGrid() {
             />
           </div>
 
-          <div className="p-6">
-            <h3 className="text-2xl group-hover:text-primary">{s.title}</h3>
+          <div className={cn("p-6", i === 0 && "lg:p-8")}>
+            <h3 className={cn("group-hover:text-primary", i === 0 ? "text-3xl lg:text-4xl" : "text-2xl")}>{s.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground">{s.short}</p>
           </div>
         </Link>
@@ -547,7 +551,7 @@ export function LogoStrip() {
                 ))}
               </div>
             </div>
-            <span className="text-xs text-ink/50">Across Google, Facebook & more</span>
+            <span className="text-xs text-ink/50">Across Google &amp; Facebook</span>
           </div>
         </div>
       </div>
