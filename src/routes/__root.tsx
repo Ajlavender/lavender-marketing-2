@@ -1,4 +1,4 @@
-import { LOCALE_INFO, useLocale } from "@/lib/locale";
+import { useLocale } from "@/lib/locale";
 import { LocalePrompt } from "@/components/site/LocaleSwitch";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
@@ -172,8 +172,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   const locale = useLocale();
-  return (
-    <html lang={LOCALE_INFO[locale].htmlLang}>
+  const shell = (
+    <>
       <head>
         <HeadContent />
       </head>
@@ -181,7 +181,14 @@ function RootShell({ children }: { children: ReactNode }) {
         {children}
         <Scripts />
       </body>
-    </html>
+    </>
+  );
+  // Written as literal lang values so every page's <html> tag states its
+  // language outright, instead of computing it from a lookup table.
+  return locale === "en-us" ? (
+    <html lang="en-US">{shell}</html>
+  ) : (
+    <html lang="en-CA">{shell}</html>
   );
 }
 
