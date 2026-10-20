@@ -1,7 +1,7 @@
 # Homepage conversion polish
 
 ## Client logos
-- [ ] Replace company-name strip with the fourteen supplied logos and verify their display
+- [x] Replace company-name strip with the fourteen supplied logos and verify their display
 
 - [x] Unify homepage website-design CTA hierarchy
 - [x] Separate one-time visibility snapshot from monthly reporting

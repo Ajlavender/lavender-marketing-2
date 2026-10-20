@@ -63,6 +63,8 @@ export const Route = createFileRoute("/")({
           "We design your new website for free. If you love it, launch for $297/mo — hosting, review engine, missed-call text-back and follow-up included.",
       },
       { property: "og:url", content: "https://lavendermarketingco.com/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
 
       { property: "og:image", content: "https://lavendermarketingco.com/media/hero-poster.jpg" },
       { name: "twitter:image", content: "https://lavendermarketingco.com/media/hero-poster.jpg" },
