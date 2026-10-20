@@ -67,6 +67,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Marcellus";
+  src: url("/fonts/marcellus-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 /*
@@ -277,6 +285,7 @@
   --color-nav-cta-hover-to: var(--nav-cta-hover-to);
   --color-lavender-wash: var(--lavender-wash);
   --font-serif: "Playfair Display", "Barlow Semi Condensed", Georgia, serif;
+  --font-brand: "Marcellus", "Playfair Display", Georgia, serif;
 }
 
 @utility bg-gradient-brand {
