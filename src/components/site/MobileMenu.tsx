@@ -111,7 +111,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
             onClick={onClose}
             shortNameBelowSm
             markClassName="h-6 w-6"
-            nameTextClass="text-[1.15rem]"
+            nameTextClass="text-[1.15rem] sm:text-[1.02rem]"
             className="gap-2.5"
             priority
           />
