@@ -464,6 +464,26 @@ export function FaqAccordion({ limit }: { limit?: number }) {
 export function LogoStrip() {
   return (
     <section className="relative isolate overflow-hidden border-t border-brand/10 bg-lavender-wash py-14 sm:py-20">
+      <svg aria-hidden="true" width="0" height="0" className="absolute text-client-granite">
+        <defs>
+          <filter id="client-logo-white-to-granite" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+            <feComponentTransfer in="SourceGraphic" result="whiteChannels">
+              <feFuncR type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1" />
+              <feFuncG type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1" />
+              <feFuncB type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1" />
+            </feComponentTransfer>
+            <feColorMatrix in="whiteChannels" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1 1 1 0 -2" result="whiteMask" />
+            <feComposite in="whiteMask" in2="SourceGraphic" operator="in" result="visibleWhite" />
+            <feFlood floodColor="currentColor" result="granite" />
+            <feComposite in="granite" in2="visibleWhite" operator="in" result="graniteArtwork" />
+            <feComposite in="SourceGraphic" in2="visibleWhite" operator="out" result="originalColours" />
+            <feMerge>
+              <feMergeNode in="originalColours" />
+              <feMergeNode in="graniteArtwork" />
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>
       {/* Ambient top sheen */}
       <div
         aria-hidden="true"
@@ -522,7 +542,7 @@ export function LogoStrip() {
                     height={112}
                     loading="lazy"
                     decoding="async"
-                    className={`max-h-24 w-full object-contain transition-opacity duration-300 sm:max-h-28 ${logo.originalColour ? "opacity-90 hover:opacity-100" : "opacity-65 brightness-0 hover:opacity-90"}`}
+                    className="max-h-24 w-full object-contain [filter:url(#client-logo-white-to-granite)] sm:max-h-28"
                   />
                 </div>
               ))}
