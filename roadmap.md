@@ -39,3 +39,4 @@
 - [x] Shared lockup component with even mark-to-name spacing, Marcellus wordmark, phone short form
 - [x] Remove small-phone horizontal scroll caused by form buttons and stat numbers
 - [x] Swap the wordmark to Manrope SemiBold with tight tracking; drop flag emoji from the country pills
+- [x] Replace the outlined bud mark with the owner's solid lavender botanical emblem in nav, footer, phone menu, report popup and the tab icon

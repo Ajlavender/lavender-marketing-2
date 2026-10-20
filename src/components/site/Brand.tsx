@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { LOGO } from "@/data/site";
-import horizontalLogoDark from "@/assets/lmc-horizontal-logo-allwhite.png.asset.json";
-import horizontalLogoLight from "@/assets/lmc-horizontal-logo-light.png.asset.json";
+import horizontalLogoDark from "@/assets/lmc-lockup-dark.png.asset.json";
+import horizontalLogoLight from "@/assets/lmc-lockup-light.png.asset.json";
 import { cn } from "@/lib/utils";
 
 const NAME = "Lavender Marketing & Co.";
