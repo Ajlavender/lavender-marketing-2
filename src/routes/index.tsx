@@ -32,7 +32,8 @@ import { CountUp, Reveal } from "@/components/site/Reveal";
 import { LazySection } from "@/components/site/LazySection";
 import { BeforeAfterShowcase } from "@/components/site/BeforeAfterShowcase";
 import { StickySteps } from "@/components/site/StickySteps";
-import { HeroMockup } from "@/components/site/HeroMockup";
+import { HeroPhone } from "@/components/site/HeroPhone";
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { VisibilityReportPreview } from "@/components/site/VisibilityReportPreview";
 import {
   BuyerPaths,
@@ -338,7 +339,7 @@ function Index() {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
         </div>
 
-        <div className="mx-auto min-h-[58rem] max-w-7xl px-5 pb-14 pt-36 sm:min-h-[66rem] sm:px-6 sm:pt-32 lg:min-h-0 lg:px-8 lg:pb-20 lg:pt-36">
+        <div className="mx-auto max-w-7xl px-5 pb-14 pt-36 sm:px-6 sm:pt-32 lg:min-h-0 lg:px-8 lg:pb-20 lg:pt-36">
           <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
             <div className="relative animate-fade-in">
@@ -350,35 +351,49 @@ function Index() {
                 <span className="text-muted-foreground">Automated review engine included</span>
               </span>
               <h1
-                className="animate-fade-in text-[2.6rem] font-bold leading-[1.05] tracking-tight sm:text-6xl"
+                className="animate-fade-in text-[2.75rem] font-bold leading-[1] sm:text-7xl"
                 style={{ animationDelay: "80ms", animationFillMode: "both" }}
               >
-                We design your new website{" "}
-                <span className="text-gradient-brand">for free.</span>
+                Your new website,
+                <br />
+                <span className="text-gradient-brand">designed free.</span>
               </h1>
-              <h2
-                style={{ animationDelay: "180ms", animationFillMode: "both" }}
-                className="animate-fade-in mt-4 max-w-xl text-2xl font-bold leading-tight sm:mt-5 sm:text-[2.25rem]"
-              >
-                You only pay $297/mo if you like it.
-              </h2>
               <p
-                style={{ animationDelay: "240ms", animationFillMode: "both" }}
-                className="animate-fade-in mt-4 max-w-xl text-base text-muted-foreground sm:mt-5 sm:text-lg"
+                style={{ animationDelay: "180ms", animationFillMode: "both" }}
+                className="animate-fade-in mt-6 max-w-lg text-lg text-muted-foreground sm:text-xl"
               >
-                Built for local service businesses. The $297 covers hosting, honest review requests,
-                missed-call text-back, follow-up and a
-                monthly Google & Local Visibility Report delivered on the 1st of every month.
-                <span className="hidden sm:inline">
-                  {" "}
-                  No upfront design fee, no setup fee, no paying before you see the design.
-                </span>
+                Love it? Launch for $297/mo with hosting, honest review requests and missed-call
+                text-back built in. Don&apos;t love it? You pay nothing.
               </p>
 
+              <div
+                style={{ animationDelay: "240ms", animationFillMode: "both" }}
+                className="animate-fade-in mt-8 flex flex-wrap items-center gap-4"
+              >
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button size="lg" className="h-13 rounded-full px-7 text-base shadow-lg transition-transform hover:-translate-y-0.5">
+                      Get My Free Website Design
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
+                    <DialogTitle className="text-2xl font-bold">Get Your Free Website Design</DialogTitle>
+                    <DialogDescription>
+                      Tell us about your business. We&apos;ll design a custom homepage first, and you pay nothing unless you love it.
+                    </DialogDescription>
+                    <LeadForm labeled offer="design" submitLabel="Get My Free Website Design" />
+                    <ReportFallback className="mt-2 text-center" />
+                  </DialogContent>
+                </Dialog>
+                <Link to="/pricing" className="border-b border-primary pb-1 text-sm font-semibold text-primary">
+                  See the $297 plan
+                </Link>
+              </div>
 
               {/* trust row */}
               <div
-                className="animate-fade-in mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
+                className="animate-fade-in mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
                 style={{ animationDelay: "320ms", animationFillMode: "both" }}
               >
                 <span className="inline-flex items-center gap-2">
@@ -393,33 +408,8 @@ function Index() {
               </div>
             </div>
 
-            {/* Form card */}
-            <div
-              style={{ animationDelay: "220ms", animationFillMode: "both" }}
-              className="animate-scale-in relative rounded-[1.75rem] p-[1.5px] shadow-[0_40px_90px_-45px_color-mix(in_oklab,var(--brand)_70%,transparent)]"
-            >
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 -z-10 rounded-[1.75rem] bg-gradient-brand opacity-70 blur-[2px]"
-              />
-              <div className="rounded-[1.65rem] border border-white/60 bg-background/80 p-6 backdrop-blur-xl sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-                  Start here
-                </p>
-                <p className="mt-2 text-2xl font-bold leading-tight">
-                  Get Your Free Website Design
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Tell us about your business. We&apos;ll design a custom homepage first, and you pay nothing unless you love it.
-                </p>
-                <div className="mt-6">
-                  <LeadForm labeled offer="design" submitLabel="Get My Free Website Design" />
-                  <ReportFallback className="mt-4 text-center" />
-                </div>
-                <p className="mt-3 text-xs text-muted-foreground">
-                  No design fee, no setup fee and no obligation
-                </p>
-              </div>
+            <div style={{ animationDelay: "220ms", animationFillMode: "both" }} className="animate-scale-in">
+              <HeroPhone />
             </div>
           </div>
 
@@ -434,9 +424,6 @@ function Index() {
                 aria-hidden="true"
                 className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-brand opacity-70 blur-[2px]"
               />
-
-              {/* live activity stack */}
-              <HeroMockup className="absolute -left-6 top-8 z-20 hidden lg:flex" />
 
               {/* floating proof card — real turnaround stat */}
 
