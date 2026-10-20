@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { LOGO } from "@/data/site";
-import horizontalLogo from "@/assets/lmc-horizontal-logo.webp.asset.json";
+import horizontalLogoDark from "@/assets/lmc-horizontal-logo-dark.png.asset.json";
+import horizontalLogoLight from "@/assets/lmc-horizontal-logo-light.png.asset.json";
 import { cn } from "@/lib/utils";
 
 const NAME = "Lavender Marketing & Co.";
@@ -25,6 +26,10 @@ type BrandProps = {
   priority?: boolean;
   loading?: "eager" | "lazy";
   onClick?: () => void;
+  /** Which horizontal lockup to use for `fullLogo`: dark surfaces or light surfaces. */
+  logoVariant?: "dark" | "light";
+  /** Size classes for the horizontal lockup image. */
+  logoClassName?: string;
 };
 
 export function Brand({
@@ -40,16 +45,19 @@ export function Brand({
   loading = "eager",
   onClick,
   fullLogo = false,
+  logoVariant = "dark",
+  logoClassName,
 }: BrandProps & { fullLogo?: boolean }) {
   if (fullLogo) {
+    const logo = logoVariant === "light" ? horizontalLogoLight : horizontalLogoDark;
     return (
       <Link to="/" aria-label={`${NAME} home`} onClick={onClick} className={cn("flex shrink-0 items-center", className)}>
         <img
-          src={horizontalLogo.url}
+          src={logo.url}
           alt={NAME}
           width={900}
           height={235}
-          className="h-10 w-auto sm:h-12"
+          className={logoClassName ?? "h-10 w-auto sm:h-12"}
           {...(priority ? { fetchPriority: "high" as const } : { loading, decoding: "async" as const })}
         />
       </Link>

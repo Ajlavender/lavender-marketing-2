@@ -109,9 +109,8 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         <div className="flex items-center justify-between px-5 py-4">
           <Brand
             onClick={onClose}
-            shortNameBelowSm
-            markClassName="h-6 w-6"
-            nameTextClass="text-[1.15rem] sm:text-[1.02rem]"
+            fullLogo
+            logoClassName="h-6 w-auto"
             className="gap-2.5"
             priority
           />
