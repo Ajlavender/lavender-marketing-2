@@ -153,10 +153,10 @@ export function LeadForm({
           type="submit"
           size="lg"
           disabled={sending}
-          className="h-14 w-full rounded-full px-8 text-sm font-bold uppercase tracking-wider sm:w-auto"
+          className="h-14 w-full rounded-full px-6 text-center text-sm font-bold uppercase tracking-wider sm:w-auto sm:px-8"
         >
-          {submitLabel}
-          <ArrowRight className="ml-2 h-4 w-4" />
+          <span className="leading-snug whitespace-normal">{submitLabel}</span>
+          <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
         </Button>
       </form>
       {bookingDialog}
