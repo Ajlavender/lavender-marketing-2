@@ -338,9 +338,6 @@
   animation: marquee-premium-scroll 55s linear infinite;
 }
 
-.marquee-premium:hover {
-  animation-play-state: paused;
-}
 
 @keyframes pulse-ring {
   0% { transform: scale(0.85); opacity: 0.7; }
