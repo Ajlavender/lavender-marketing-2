@@ -21,6 +21,8 @@ type Props = {
   /** "lead" = url + email + phone, "message" = email + phone + message, "leadInline" = url over phone+email+button */
   fields?: "lead" | "message" | "leadInline";
   offer?: "report" | "design";
+  /** Email captured earlier (e.g. the hero bar) so the visitor doesn't retype it */
+  initialEmail?: string;
 };
 
 function FieldLabel({
@@ -46,8 +48,9 @@ export function LeadForm({
   labeled = false,
   fields = "lead",
   offer = "report",
+  initialEmail,
 }: Props) {
-  const [values, setValues] = useState({ url: "", email: "", phone: "", message: "" });
+  const [values, setValues] = useState({ url: "", email: initialEmail ?? "", phone: "", message: "" });
   const [sending, setSending] = useState(false);
   const [booking, setBooking] = useState(false);
   const send = useServerFn(submitLead);
