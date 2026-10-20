@@ -360,7 +360,7 @@ function Index() {
                 The growth system local businesses use to
                 <br />
                 <RotatingWord
-                  className="text-gradient-brand"
+                  className="text-gradient-brand pb-[0.2em] pt-[0.08em]"
                   words={[
                     "win more customers.",
                     "get found on Google.",
