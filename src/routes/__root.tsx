@@ -113,7 +113,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         crossOrigin: "anonymous",
         href: "/__l5e/assets-v1/84554a3a-3e50-4432-914d-5fda63f957e7/roboto-400.woff2",
       },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon.png" },
+      {
+        rel: "apple-touch-icon",
+        type: "image/png",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
+      },
     ],
     scripts: [
       {
@@ -129,7 +135,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               url: "https://lavendermarketingco.com/",
               logo: {
                 "@type": "ImageObject",
-                url: "https://lavendermarketingco.com/favicon.png",
+                url: "https://lavendermarketingco.com/emblem-512.png",
               },
               email: "Aj@lavendermarketingco.com",
               telephone: "+1-519-671-6248",
