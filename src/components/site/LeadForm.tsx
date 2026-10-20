@@ -248,7 +248,7 @@ export function LeadForm({
       <Button
         type="submit"
         size="lg"
-        className="h-14 w-full whitespace-normal text-center leading-snug text-sm font-bold uppercase tracking-wider"
+        className="h-14 w-full whitespace-normal! text-center leading-snug text-sm font-bold uppercase tracking-wider"
       >
         {submitLabel}
         <ArrowRight className="ml-2 h-4 w-4" />
