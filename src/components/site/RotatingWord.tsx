@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * Owner.com-style rotating headline phrase: the outgoing phrase fades up and
- * softly blurs away while the incoming phrase rises in sharp — a true
- * crossfade with no layout jump (all phrases share one stable-width cell).
+ * Each word swipes through its own mask with a staggered entrance.
+ * All phrases share one stable-width cell, including room for descenders.
  * Stands still for visitors who prefer reduced motion.
  */
 export function RotatingWord({
@@ -19,14 +18,18 @@ export function RotatingWord({
   wordClassName?: string;
 }) {
   const [state, setState] = useState({ i: 0, prev: -1 });
-  const [still] = useState(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-  );
+  const [still, setStill] = useState(false);
 
   useEffect(() => {
-    if (still) return;
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setStill(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (still || words.length < 2) return;
     const id = setInterval(
       () => setState((s) => ({ i: (s.i + 1) % words.length, prev: s.i })),
       interval,
@@ -35,19 +38,34 @@ export function RotatingWord({
   }, [still, interval, words.length]);
 
   return (
-    <span className={cn("relative inline-grid", className)}>
+    <span className={cn("relative inline-grid", className)} aria-label={words[state.i]}>
       {words.map((word, idx) => (
         <span
-          key={word}
+          key={`${word}-${state.i}`}
+          aria-hidden="true"
           className={cn(
             "col-start-1 row-start-1 whitespace-nowrap",
-            wordClassName,
-            idx === state.i && "animate-word-in",
-            idx === state.prev && "animate-word-out",
-            idx !== state.i && idx !== state.prev && "invisible",
+            idx !== state.i && (still || idx !== state.prev) && "invisible",
           )}
         >
-          {word}
+          {word.split(" ").map((part, partIndex) => (
+            <span key={partIndex}>
+              {partIndex > 0 && " "}
+              <span className="headline-word-mask">
+                <span
+                  className={cn(
+                    "headline-word-glyph",
+                    wordClassName,
+                    !still && idx === state.i && "animate-word-in",
+                    !still && idx === state.prev && "animate-word-out",
+                  )}
+                  style={{ "--word-delay": `${partIndex * 65}ms` } as CSSProperties}
+                >
+                  {part}
+                </span>
+              </span>
+            </span>
+          ))}
         </span>
       ))}
     </span>

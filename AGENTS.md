@@ -43,6 +43,8 @@
 
 ## Brand lockup rules
 
+- Rotating headlines animate individual words inside padded masks, with the gradient on each glyph span; keep a shared grid cell for phrase sizing to avoid jumps and clipped descenders.
+
 - The mark + wordmark lockup is rendered only through the shared `Brand` component
   (`src/components/site/Brand.tsx`) in the header, footer and mobile menu; never
   hand-roll the mark/name pair again. Why: the logo asset is square, so inline
