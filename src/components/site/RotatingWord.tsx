@@ -11,10 +11,12 @@ export function RotatingWord({
   words,
   interval = 3000,
   className,
+  wordClassName,
 }: {
   words: readonly string[];
   interval?: number;
   className?: string;
+  wordClassName?: string;
 }) {
   const [state, setState] = useState({ i: 0, prev: -1 });
   const [still] = useState(
@@ -39,6 +41,7 @@ export function RotatingWord({
           key={word}
           className={cn(
             "col-start-1 row-start-1 whitespace-nowrap",
+            wordClassName,
             idx === state.i && "animate-word-in",
             idx === state.prev && "animate-word-out",
             idx !== state.i && idx !== state.prev && "invisible",
