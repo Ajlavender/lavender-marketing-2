@@ -371,7 +371,7 @@ function Index() {
               </h1>
               <p
                 style={{ animationDelay: "180ms", animationFillMode: "both" }}
-                className="animate-fade-in mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl"
+                className="animate-fade-in mx-auto mt-6 max-w-3xl text-lg text-muted-foreground sm:text-xl"
               >
                 We design your new website free. Love it? Launch for $297/mo with hosting, honest
                 review requests and missed-call text-back built in. Don&apos;t love it? You pay nothing.
