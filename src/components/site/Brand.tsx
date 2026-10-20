@@ -36,6 +36,7 @@ export function Brand({
     <Link
       to="/"
       aria-label={`${NAME} home`}
+      onClick={onClick}
       className={cn("group flex shrink-0 items-center", className)}
     >
       <img
