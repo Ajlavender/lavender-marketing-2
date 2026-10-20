@@ -53,10 +53,10 @@ type RevealProps = {
 // On phones every direction resolves to a vertical rise: horizontal travel
 // creates side-scroll and costs more to composite on mobile GPUs.
 const hidden: Record<NonNullable<RevealProps["from"]>, string> = {
-  up: "translate-y-10",
-  down: "-translate-y-10",
-  left: "translate-y-8 md:translate-y-0 md:-translate-x-10",
-  right: "translate-y-8 md:translate-y-0 md:translate-x-10",
+  up: "translate-y-5",
+  down: "-translate-y-5",
+  left: "translate-y-4 md:translate-y-0 md:-translate-x-6",
+  right: "translate-y-4 md:translate-y-0 md:translate-x-6",
   none: "",
 };
 
@@ -75,10 +75,10 @@ export function Reveal({
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
       className={cn(
-        "transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none",
+        "transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none",
         inView
-          ? "translate-x-0 translate-y-0 scale-100 opacity-100 blur-0"
-          : cn("opacity-0 blur-[2px]", hidden[from], scale && "scale-95"),
+          ? "translate-x-0 translate-y-0 scale-100 opacity-100"
+          : cn("opacity-0", hidden[from], scale && "scale-[0.98]"),
         className,
       )}
     >

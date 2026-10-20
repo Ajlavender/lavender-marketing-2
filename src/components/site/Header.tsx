@@ -14,8 +14,6 @@ type NavChild = MegaChild;
 function AnnouncementBar({ onClose }: { onClose: () => void }) {
   return (
        <div className="relative z-50 min-h-9 w-full overflow-hidden border-b border-white/10 bg-gradient-to-r from-nav-cta-from via-[#7c4dff] to-nav-cta-to text-white shadow-[0_8px_30px_-12px_rgba(124,77,255,0.55)]">
-      {/* shimmer sweep */}
-      <div className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(110deg,transparent,rgba(255,255,255,0.18),transparent)] [background-size:220%_100%] animate-[shimmer_3.2s_ease-in-out_infinite] motion-reduce:hidden" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
       <div className="relative mx-auto flex max-w-[90rem] items-center justify-center gap-2 px-4 py-2 pr-10 sm:gap-3 sm:px-8 sm:pr-12 lg:px-10">
         <p className="flex min-w-0 flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-[0.7rem] font-medium leading-tight tracking-wide sm:text-xs">
