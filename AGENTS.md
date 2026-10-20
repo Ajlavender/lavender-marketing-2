@@ -39,3 +39,14 @@
 
 ## Media rules
 - Site photos and illustrations load from the Lovable Cloud public `media` bucket (folders `projects/`, `illustrations/`, `media/`) via the `MEDIA_LIBRARY`/`ILLU`/`PROJECTS` constants in `src/data/site.ts`. Why: the owner swaps images by uploading same-named files there, without code edits. Keep the `-480.webp`/`-800.webp` variants next to each `.jpg` because srcSet derives them by name.
+
+## Brand lockup rules
+
+- The mark + wordmark lockup is rendered only through the shared `Brand` component
+  (`src/components/site/Brand.tsx`) in the header, footer and mobile menu; never
+  hand-roll the mark/name pair again. Why: the logo asset is square, so inline
+  `object-contain` boxes with fixed widths reintroduce dead space between the mark
+  and the name.
+- The wordmark always uses the `--font-brand` token (Marcellus, self-hosted from
+  `public/fonts/`); size lives in `nameTextClass`, colour in `nameClassName`. Why:
+  conflicting Tailwind size utilities silently lose to CSS order otherwise.
