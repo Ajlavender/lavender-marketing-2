@@ -30,19 +30,48 @@ const steps = [
 export function StickySteps() {
   const [active, setActive] = useState(0);
   const refs = useRef<(HTMLDivElement | null)[]>([]);
+  const previewRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (typeof IntersectionObserver === "undefined") return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) setActive(Number((e.target as HTMLElement).dataset.i));
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const preview = previewRef.current;
+      const desktop = window.matchMedia("(min-width: 1024px)").matches;
+      const previewBox = preview?.getBoundingClientRect();
+      // Compare both columns at the same visual centre, not a narrow
+      // viewport intersection band whose callbacks depend on scroll direction.
+      const focus = desktop && previewBox
+        ? previewBox.top + previewBox.height / 2
+        : window.innerHeight / 2;
+      let nearest = 0;
+      let distance = Infinity;
+      refs.current.forEach((element, i) => {
+        if (!element) return;
+        const box = element.getBoundingClientRect();
+        const delta = Math.abs(box.top + box.height / 2 - focus);
+        if (delta < distance) {
+          distance = delta;
+          nearest = i;
         }
-      },
-      { rootMargin: "-45% 0px -45% 0px" },
-    );
-    refs.current.forEach((el) => el && obs.observe(el));
-    return () => obs.disconnect();
+      });
+      setActive((current) => current === nearest ? current : nearest);
+    };
+    const schedule = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    const observer = new ResizeObserver(schedule);
+    refs.current.forEach((element) => element && observer.observe(element));
+    if (previewRef.current) observer.observe(previewRef.current);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -61,12 +90,13 @@ export function StickySteps() {
                 data-i={i}
                 ref={(el) => { refs.current[i] = el; }}
                 className={cn(
-                  "border-l-2 py-10 pl-8 transition-colors duration-500 lg:min-h-[60vh] lg:py-24",
+                  "flex flex-col justify-center border-l-2 py-10 pl-8 transition-colors duration-500 motion-reduce:transition-none lg:min-h-[70svh] lg:py-16",
                   active === i ? "border-primary" : "border-border",
                 )}
               >
+                <div className={cn("transition-opacity duration-500 motion-reduce:transition-none", active === i ? "opacity-100" : "lg:opacity-45")}>
                 <p className="text-sm font-semibold text-primary">{s.eyebrow}</p>
-                <h3 className={cn("mt-2 text-3xl font-bold transition-opacity duration-500 sm:text-4xl", active === i ? "opacity-100" : "lg:opacity-40")}>
+                <h3 className="mt-2 text-3xl font-bold sm:text-4xl">
                   {s.title}
                 </h3>
                 <p className="mt-4 max-w-md text-[15px] leading-relaxed text-muted-foreground">{s.body}</p>
@@ -82,12 +112,13 @@ export function StickySteps() {
                     Get Free Website Design →
                   </a>
                 )}
+                </div>
               </div>
             ))}
           </div>
 
           <div className="hidden lg:block">
-            <div className="sticky top-32 aspect-square overflow-hidden rounded-[2rem] border border-border bg-secondary">
+            <div ref={previewRef} className="sticky top-28 h-[min(32rem,calc(100svh-9rem))] overflow-hidden rounded-[2rem] border border-border bg-secondary">
               {steps.map((s, i) => {
                 const Icon = s.icon;
                 return (
@@ -95,8 +126,8 @@ export function StickySteps() {
                     key={s.title}
                     aria-hidden={active !== i}
                     className={cn(
-                      "absolute inset-0 flex flex-col items-center justify-center gap-6 p-12 text-center transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none",
-                      active === i ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
+                      "absolute inset-0 flex flex-col items-center justify-center gap-6 p-8 text-center transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none",
+                      active === i ? "translate-y-0 opacity-100" : i < active ? "pointer-events-none -translate-y-3 opacity-0" : "pointer-events-none translate-y-3 opacity-0",
                     )}
                   >
                     <div className="flex h-24 w-24 items-center justify-center rounded-3xl bg-primary text-primary-foreground shadow-lg">
@@ -106,7 +137,7 @@ export function StickySteps() {
                     <p className="max-w-xs text-lg font-medium text-muted-foreground">{s.title}</p>
                     <div className="flex gap-2">
                       {steps.map((_, j) => (
-                        <span key={j} className={cn("h-1.5 rounded-full transition-all duration-500", j === active ? "w-8 bg-primary" : "w-3 bg-border")} />
+                        <span key={j} className={cn("h-1.5 w-8 rounded-full transition-colors duration-500 motion-reduce:transition-none", j === active ? "bg-primary" : "bg-border")} />
                       ))}
                     </div>
                   </div>

@@ -43,6 +43,8 @@
 
 ## Brand lockup rules
 
+- Sticky step sections choose the nearest text-block centre to the sticky visual's centre using a frame-throttled scroll measurement; this keeps both columns synchronised in either scroll direction and on short screens.
+
 - Rotating headlines animate individual words inside padded masks, with the gradient on each glyph span; keep a shared grid cell for phrase sizing to avoid jumps and clipped descenders.
 
 - The mark + wordmark lockup is rendered only through the shared `Brand` component
