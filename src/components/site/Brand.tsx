@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { LOGO } from "@/data/site";
-import horizontalLogoDark from "@/assets/lmc-horizontal-logo-dark.png.asset.json";
+import horizontalLogoDark from "@/assets/lmc-horizontal-logo-white.png.asset.json";
 import horizontalLogoLight from "@/assets/lmc-horizontal-logo-light.png.asset.json";
 import { cn } from "@/lib/utils";
 
