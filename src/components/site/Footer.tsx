@@ -65,7 +65,7 @@ export function Footer() {
           <Brand
             fullLogo
             logoVariant="light"
-            logoClassName="h-7 w-auto"
+            logoClassName="h-12 w-auto sm:h-14"
             className="gap-[10px]"
             loading="lazy"
           />
