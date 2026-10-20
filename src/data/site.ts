@@ -432,14 +432,14 @@ export const socials = [
   { label: "Twitter", href: "https://twitter.com/" },
 ];
 
-export const clientLogos: { name: string; src: string }[] = [
+export const clientLogos: { name: string; src: string; original?: boolean }[] = [
   { name: "Summit of Strength ALS Gala", src: summitLogo.url },
   { name: "People First Group Realty", src: peopleFirstLogo.url },
-  { name: "Couto's Cleaning", src: coutosLogo.url },
+  { name: "Couto's Cleaning", src: coutosLogo.url, original: true },
   { name: "Uncommon Delights", src: uncommonLogo.url },
   { name: "Tanza Nutz™", src: tanzaLogo.url },
   { name: "Authentic Customs General Contracting", src: authenticLogo.url },
-  { name: "RCM Plumbing", src: rcmLogo.url },
+  { name: "RCM Plumbing", src: rcmLogo.url, original: true },
   { name: "Romulus Enterprises", src: romulusLogo.url },
   { name: "Busy Bee Solutions", src: busyBeeLogo.url },
   { name: "Portuguese Canadian Club of Strathroy", src: pccLogo.url },
@@ -450,10 +450,10 @@ export const clientLogos: { name: string; src: string }[] = [
   { name: "Soccerfice", src: soccerficeLogo.url },
   { name: "The 7 Steps", src: sevenStepsLogo.url },
   { name: "The Chambers Group", src: chambersLogo.url },
-  { name: "Community Reimagined", src: communityLogo.url },
+  { name: "Community Reimagined", src: communityLogo.url, original: true },
   { name: "Neva Say Neva Entertainment", src: nevaLogo.url },
   { name: "The Miles Group", src: milesLogo.url },
   { name: "AMG & Associates", src: amgLogo.url },
   { name: "Jedas Cafe & Bistro", src: jedasLogo.url },
-  { name: "Monroe JAB Academy", src: monroeLogo.url },
+  { name: "Monroe JAB Academy", src: monroeLogo.url, original: true },
 ];

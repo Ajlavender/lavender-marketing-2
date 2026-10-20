@@ -542,7 +542,11 @@ export function LogoStrip() {
                     height={112}
                     loading="lazy"
                     decoding="async"
-                    className="max-h-24 w-full object-contain [filter:url(#client-logo-white-to-granite)] sm:max-h-28"
+                    className={
+                      logo.original
+                        ? "max-h-24 w-full object-contain sm:max-h-28"
+                        : "max-h-24 w-full object-contain [filter:url(#client-logo-white-to-granite)] sm:max-h-28"
+                    }
                   />
                 </div>
               ))}
