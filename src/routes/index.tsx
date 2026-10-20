@@ -31,6 +31,7 @@ import { CountUp, Reveal } from "@/components/site/Reveal";
 import { LazySection } from "@/components/site/LazySection";
 import { BeforeAfterShowcase } from "@/components/site/BeforeAfterShowcase";
 import { StickySteps } from "@/components/site/StickySteps";
+import { MoneySection } from "@/components/site/MoneySection";
 import { RotatingWord } from "@/components/site/RotatingWord";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { VisibilityReportPreview } from "@/components/site/VisibilityReportPreview";
@@ -366,7 +367,7 @@ function Index() {
                     "win more customers.",
                     "get found on Google.",
                     "never miss a lead.",
-                    "turn jobs into 5-star reviews.",
+                    "turn jobs into great reviews.",
                   ]}
                 />
               </h1>
@@ -525,12 +526,14 @@ function Index() {
 
       <LazySection variant="loop" minHeight={520}><SystemLoop /></LazySection>
 
+      <MoneySection />
+
       {/* Services grid */}
       <Section>
         <SectionHeading
           eyebrow="What you get"
           title="One growth system, built for local service businesses"
-          subtitle="Every tool below is included in the $297/month Essentials Plan. No separate logins, no surprise bills."
+          subtitle="Everything below comes with the $297/month Essentials Plan, except Local SEO, which starts in Growth. No separate logins, no surprise bills."
         />
         <Reveal delay={120} className="mt-14">
           <ServicesGrid />

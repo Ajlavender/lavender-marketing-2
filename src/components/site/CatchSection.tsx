@@ -35,7 +35,7 @@ const included: StackItem[] = [
   {
     title: "Review automation",
     benefit:
-      "No fake reviews — just automatic email and text follow-up to real customers asking how it went and pointing them to your Google profile. More 5-star reviews means higher ranking and easier sales.",
+      "No fake reviews — just automatic email and text follow-up to real customers asking how it went and pointing them to your Google profile. More honest reviews can strengthen your local visibility and make it easier to win the sale.",
     value: 400,
   },
   {
