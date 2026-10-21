@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 import { cn } from "@/lib/utils";
+import { canCollectContact } from "@/lib/consent-policy";
+import { ContactFallback } from "./ContactFallback";
 
 type Props = {
   variant?: "light" | "dark";
@@ -58,6 +60,7 @@ export function LeadForm({
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    if (!canCollectContact("lead")) return;
     if (!values.email) {
       toast.error("Please add your email so we can get back to you.");
       return;
@@ -90,6 +93,8 @@ export function LeadForm({
     }
   }
 
+
+  if (!canCollectContact("lead")) return <ContactFallback className={className} dark={dark} />;
 
   const inputCls = cn(
     "h-14 rounded-full border-0 bg-background px-6 text-base shadow-sm placeholder:text-muted-foreground",

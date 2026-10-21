@@ -1,4 +1,5 @@
 import { INTAKE_URL } from "@/data/pricing";
+import { canCollectContact } from "@/lib/consent-policy";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -67,8 +68,8 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
 
-      { property: "og:image", content: "https://lavendermarketingco.com/media/hero-poster.jpg" },
-      { name: "twitter:image", content: "https://lavendermarketingco.com/media/hero-poster.jpg" },
+      { property: "og:image", content: HERO_POSTER },
+      { name: "twitter:image", content: HERO_POSTER },
     ],
     links: [
       { rel: "canonical", href: "https://lavendermarketingco.com/" },
@@ -380,6 +381,7 @@ function Index() {
               </p>
 
               {/* email capture bar — email rides into the free-design form */}
+              {canCollectContact("lead") ? (
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -405,8 +407,18 @@ function Index() {
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </Button>
               </form>
+              ) : (
+                <div className="mx-auto mt-9">
+                  <Button asChild size="lg" className="h-12 rounded-full px-6 text-sm font-semibold sm:text-base">
+                    <a href={INTAKE_URL}>
+                      Get My Free Website Design
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+              )}
 
-              <Dialog open={designOpen} onOpenChange={setDesignOpen}>
+              <Dialog open={canCollectContact("lead") && designOpen} onOpenChange={setDesignOpen}>
                 <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
                   <DialogTitle className="text-2xl font-bold">Get Your Free Website Design</DialogTitle>
                   <DialogDescription>

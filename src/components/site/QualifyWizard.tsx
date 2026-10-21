@@ -6,6 +6,8 @@ import { submitLead } from "@/lib/leads.functions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { canCollectContact } from "@/lib/consent-policy";
+import { ContactFallback } from "./ContactFallback";
 
 type Step = {
   key: string;
@@ -41,6 +43,7 @@ export function QualifyWizard({ className }: { className?: string }) {
   const value = values[step.key] ?? "";
 
   async function next(v?: string) {
+    if (!canCollectContact("qualification")) return;
     const val = v ?? value;
     if (!val) {
       toast.error("Please answer this question to continue.");
@@ -74,6 +77,8 @@ export function QualifyWizard({ className }: { className?: string }) {
     e.preventDefault();
     next();
   }
+
+  if (!canCollectContact("qualification")) return <ContactFallback className={className} />;
 
   return (
     <div

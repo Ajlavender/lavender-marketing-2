@@ -7,6 +7,7 @@ import { useLocale } from "@/lib/locale";
 import { cn } from "@/lib/utils";
 import { CARD_PRESETS, REASONS, REQUEST_TYPES, isTransfer, type RequestType } from "@/lib/transition";
 import { getTransitionStatus, submitTransitionRequest } from "@/lib/transition.functions";
+import { canCollectContact } from "@/lib/consent-policy";
 
 const TITLE = "Customer Success Centre | Lavender Marketing & Co.";
 const DESC = "Adjust your plan, get help with your service, or request an account transition.";
@@ -139,7 +140,7 @@ function TransitionPage() {
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!configured) return;
+    if (!configured || !canCollectContact("support")) return;
     const fd = new FormData(e.currentTarget);
     setStatus("sending");
     setError("");
@@ -220,7 +221,9 @@ function TransitionPage() {
       {/* Form */}
       <section className="mx-auto max-w-3xl px-5 pb-20 sm:px-6">
         <div className="scroll-mt-28 rounded-3xl border border-border bg-card p-6 sm:p-10" ref={formRef}>
-          {reference ? (
+          {!canCollectContact("support") ? (
+            <p className="text-muted-foreground">For help with your account, please <SupportContact />.</p>
+          ) : reference ? (
             <div role="status" className="py-6 text-center">
               <h2 className="text-3xl font-semibold">We've Received Your Request.</h2>
               <p className="mx-auto mt-4 max-w-lg text-muted-foreground">

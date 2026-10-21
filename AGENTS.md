@@ -28,6 +28,8 @@
 
 ## Customer success rules
 
+- Keep temporary consent restrictions in the shared consent policy and guard each on-site contact collector before rendering or submitting; mount the supplied chat script once in RootShell so navigation never adds duplicate widgets.
+
 - Account-transition requests post to their own `GHL_TRANSITION_WEBHOOK_URL`, never
   the sales lead webhook, and the form stays disabled until it is set. Why: service
   requests must not enter the sales funnel, and the form must never fake success.
