@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { canCollectContact } from "@/lib/consent-policy";
+import { ContactFallback } from "./ContactFallback";
 
 const WIDGET_ID = "6a96011c8fedf72db4fd0b10";
 const SRC = "https://services.leadconnectorhq.com/prospecting/client/widget-embed.js";
@@ -43,7 +45,11 @@ const DOC = `<!doctype html><html><head><meta name="viewport" content="width=dev
  *  - on a tall screen the popup shrinks to the form — no empty gap, scale 1;
  *  - on a short screen the form is scaled down to fit `maxHeight` — no scroll.
  */
-export function GrowthReportWidget({
+export function GrowthReportWidget(props: { className?: string; scale?: number; maxHeight?: number }) {
+  return canCollectContact("report") ? <EmbeddedGrowthReportWidget {...props} /> : <ContactFallback className={props.className} />;
+}
+
+function EmbeddedGrowthReportWidget({
   className,
   scale: scaleCap = 1,
   maxHeight,

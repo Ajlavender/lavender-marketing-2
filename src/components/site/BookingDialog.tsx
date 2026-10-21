@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { canCollectContact } from "@/lib/consent-policy";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 export const BOOKING_URL = "https://links.lavendermarketingco.com/widget/booking/sElYCoHQVkd1yhfDrM4l";
@@ -41,7 +42,7 @@ export function BookingDialog({
   offer?: "report" | "design";
 }) {
   useEffect(() => {
-    if (!open) return;
+    if (!open || !canCollectContact("booking")) return;
     const id = "leadconnector-form-embed";
     if (document.getElementById(id)) return;
     const script = document.createElement("script");
@@ -50,6 +51,8 @@ export function BookingDialog({
     script.type = "text/javascript";
     document.body.appendChild(script);
   }, [open]);
+
+  if (!canCollectContact("booking")) return null;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

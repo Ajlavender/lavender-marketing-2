@@ -1,5 +1,10 @@
 # Homepage conversion polish
 
+## Temporary A2P compliance
+- [x] Add the supplied chat widget across the site
+- [x] Temporarily suppress other on-site contact and embedded booking forms
+- [ ] Verify widget loading and restricted forms without submissions
+
 ## Client logos
 - [x] Restore original client logo colours and render white elements in granite grey
 - [x] Add nine additional company logos and check mixed light/dark artwork visibility
