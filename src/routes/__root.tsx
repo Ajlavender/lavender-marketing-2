@@ -186,7 +186,6 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <script
-          id="lavender-consent-chat-widget"
           src="https://widgets.leadconnectorhq.com/loader.js"
           data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
           data-widget-id="6ad8427fc5fa611730a60fae"
