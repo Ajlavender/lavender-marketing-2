@@ -401,7 +401,10 @@ function Pricing() {
           ))}
         </div>
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          Essentials and Growth are fixed monthly plans. Scale starts at $997/month plus ad spend — campaigns are customized based on your market, goals and advertising requirements.
+          {spell(
+            "Essentials and Growth are fixed monthly plans. Scale starts at $997/month plus ad spend — campaigns are customized based on your market, goals and advertising requirements.",
+            locale,
+          )}
         </p>
       </Section>
 
