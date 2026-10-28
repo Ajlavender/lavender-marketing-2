@@ -62,10 +62,10 @@ const plans = [
     emphasis: false,
     dark: false,
     progress: "w-28",
-    price: "$4,997",
+    price: "$997",
     note: "per month + ad spend",
-    annualPrice: "$49,970",
-    annualMonthly: "$4,164.17/mo billed annually — 2 months free",
+    annualPrice: "$9,970",
+    annualMonthly: "$830.84/mo billed annually — 2 months free",
     blurb: "For businesses ready to buy demand, not just catch it.",
     features: [
       "Everything in Growth",
@@ -401,7 +401,10 @@ function Pricing() {
           ))}
         </div>
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          Essentials and Growth are fixed monthly plans. Scale campaigns are customized based on your market, goals and advertising requirements.
+          {spell(
+            "Essentials and Growth are fixed monthly plans. Scale starts at $997/month plus ad spend — campaigns are customised based on your market, goals and advertising requirements.",
+            locale,
+          )}
         </p>
       </Section>
 

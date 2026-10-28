@@ -529,7 +529,7 @@ export const serviceCatalogue: CatalogueService[] = [
       },
       {
         "q": "Which plan includes this service?",
-        "a": "Scale includes database reactivation campaigns alongside everything in Growth. Scale is $4,997/month plus ad spend."
+        "a": "Scale includes database reactivation campaigns alongside everything in Growth. Scale starts at $997/month plus ad spend."
       },
       {
         "q": "What should I know before getting started?",
