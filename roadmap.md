@@ -1,6 +1,8 @@
 # Homepage conversion polish
 
 ## Pricing starting-point check-in
+- [x] Complete the revised uploaded brief: conditional needs, exactly one plan, separate timing and card highlighting
+- [x] Verify revised logic and browser journeys in both locales, including advertising and branch changes
 - [x] Replace pricing-only preview promotion with four-question check-in
 - [x] Add verified plan matching, advertising costs and local break-even calculator
 - [x] Test decision rules and complete desktop/mobile/keyboard journeys without submitting forms

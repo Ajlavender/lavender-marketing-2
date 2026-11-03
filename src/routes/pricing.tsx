@@ -115,7 +115,7 @@ function Pricing() {
             <div
               key={plan.name}
               id={`plan-${plan.name.toLowerCase()}`}
-              className={`relative scroll-mt-32 flex flex-col overflow-hidden rounded-3xl border p-8 transition-all duration-500 ${
+              className={`relative scroll-mt-32 flex flex-col overflow-hidden rounded-3xl border p-8 transition-all duration-500 target:ring-4 target:ring-brand target:ring-offset-4 ${
                 plan.dark
                   ? "border-brand-deep/40 bg-gradient-deep shadow-[0_35px_70px_-35px_rgba(30,15,50,0.6)]"
                   : plan.emphasis

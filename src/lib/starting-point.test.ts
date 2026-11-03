@@ -1,8 +1,42 @@
 import { describe, expect, it } from "vitest";
 import { adGate, adTotals, breakEven, changeAnswer, finding, scaleFinding } from "./starting-point";
 import { monthlyPrice } from "@/data/pricing-plans";
+import { detailQuestions, followupQuestion } from "./starting-point-questions";
+import { lowestPlan } from "./starting-point-capabilities";
 
 describe("Starting-point rules", () => {
+  it("consolidation recommends the lowest plan covering booking and messages", () => {
+    expect(finding({ stage: "steady", need: "consolidate", selections: ["web_booking", "messages"], help: "simple_system" }).plan).toBe("Essentials");
+  });
+  it("matches website setup work without escalating for lack of time", () => {
+    expect(finding({ need: "setup", detail: "website_setup", help: "managed" }).plan).toBe("Essentials");
+  });
+  it("management preference without advertising interest never opens ad costs", () => {
+    expect(adGate({ need: "replies", detail: "lost_followup", help: "managed" })).toBeNull();
+  });
+  it("setup advertising interest requires capacity confirmation", () => {
+    expect(adGate({ need: "setup", detail: "advertising", help: "setup_help" })).toBe("readiness");
+    expect(scaleFinding({ need: "setup", detail: "advertising", help: "setup_help" }, "capacity_limit", "google")).toBeNull();
+  });
+  it("declined advertising still returns one current-stage foundation plan", () => {
+    expect(finding({ need: "customers", detail: "ready", help: "managed" }, undefined, true).plan).toBe("Essentials");
+  });
+  it("browsing follows actual consolidation and follow-up needs", () => {
+    expect(followupQuestion("exploring", "tool_overlap")).toBe(detailQuestions.consolidate);
+    expect(finding({ need: "exploring", detail: "followup_hard", followup: "lost_followup", help: "diy" }).capability).toBe("Automatic follow-up sequences");
+  });
+  it("capability matching supports inherited plans and Growth-specific features", () => {
+    expect(lowestPlan(["AI chat widget trained on your business", "Online booking"])?.name).toBe("Growth");
+  });
+  it("every main detail returns one plan and a concrete action", () => {
+    for (const [need, question] of Object.entries(detailQuestions)) {
+      for (const [detail] of question.options) {
+        const result = finding({ stage: "steady", need, detail, help: "diy" });
+        expect(["Essentials", "Growth", "Scale"]).toContain(result.plan);
+        expect(result.action.length).toBeGreaterThan(20);
+      }
+    }
+  });
   it("uses current monthly prices", () => {
     expect([monthlyPrice("Essentials"), monthlyPrice("Growth"), monthlyPrice("Scale")]).toEqual([297, 497, 997]);
   });
@@ -12,21 +46,21 @@ describe("Starting-point rules", () => {
   it("keeps follow-up in the lowest verified plan", () => {
     expect(finding({ stage: "steady", need: "quotes", detail: "lost_followup", help: "setup_help" }).plan).toBe("Essentials");
   });
-  it("matches manual inbox effort to Essentials, not AI by default", () => {
-    expect(finding({ need: "replies", detail: "manual_effort", help: "setup_help" }).capability).toBe("Unified inbox (mobile app included)");
+  it("matches manual follow-up effort to Essentials, not AI by default", () => {
+    expect(finding({ need: "replies", detail: "manual_effort", help: "setup_help" }).capability).toBe("Automatic follow-up sequences");
   });
   it("uses Essentials first for slow replies rather than assuming an AI need", () => {
     expect(finding({ need: "replies", detail: "slow_reply", help: "setup_help" }).plan).toBe("Essentials");
   });
-  it("DIY always omits paid recommendations", () => {
-    for (const detail of ["no_home", "slow_reply", "lost_followup", "capacity_limit"]) expect(finding({ detail, help: "diy" }).plan).toBeUndefined();
+  it("DIY still gets exactly one foundation plan", () => {
+    for (const detail of ["no_home", "slow_reply", "lost_followup", "capacity_limit"]) expect(finding({ detail, help: "diy" }).plan).toBe("Essentials");
   });
-  it("healthy and untested setups do not get a fallback plan", () => {
-    for (const detail of ["clear", "working", "all_good", "untested"]) expect(finding({ detail, help: "setup_help" }).plan).toBeUndefined();
+  it("healthy and untested setups get Essentials as a comparison point", () => {
+    for (const detail of ["clear", "working", "all_good", "untested"]) expect(finding({ detail, help: "setup_help" }).plan).toBe("Essentials");
   });
   it("capacity concerns prevent advertising", () => {
     for (const detail of ["capacity_limit", "capacity_unknown", "reply_bottleneck"]) expect(adGate({ stage: "growing", need: "customers", detail, help: "managed_ads" })).toBeNull();
-    expect(adGate({ stage: "full", need: "customers", detail: "ready", help: "managed_ads" })).toBeNull();
+    expect(adGate({ stage: "full", need: "customers", detail: "ready", help: "managed_ads" })).toBe("readiness");
   });
   it("being full does not block existing follow-up help", () => {
     expect(finding({ stage: "full", need: "quotes", detail: "lost_followup", help: "setup_help" }).plan).toBe("Essentials");
@@ -36,7 +70,7 @@ describe("Starting-point rules", () => {
     expect(adGate({ stage: "growing", need: "customers", detail: "ready", help: "managed_ads" })).toBe("cost");
   });
   it("exploring requires the extra readiness confirmation", () => {
-    const a = { stage: "building", need: "exploring", detail: "need_inquiries", help: "managed_ads" };
+    const a = { stage: "building", need: "exploring", detail: "advertising", help: "managed" };
     expect(adGate(a)).toBe("readiness");
     expect(scaleFinding(a, "process", "meta")).toBeNull();
     expect(scaleFinding(a, "yes", "meta")?.plan).toBe("Scale");
