@@ -67,7 +67,8 @@ export function StartingPoint() {
       if (!["ArrowDown", "ArrowUp", "ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
       event.preventDefault();
       event.stopPropagation();
-      const active = options.findIndex(([id]) => id === value);
+      const focused = event.target instanceof HTMLElement ? event.target.closest('[role="radio"]')?.getAttribute("value") : undefined;
+      const active = options.findIndex(([id]) => id === (focused ?? value));
       const next = event.key === "Home" ? 0 : event.key === "End" ? options.length - 1 : (active + (event.key === "ArrowUp" || event.key === "ArrowLeft" ? -1 : 1) + options.length) % options.length;
       const selected = options[next];
       if (selected) onChange(selected[0]);
