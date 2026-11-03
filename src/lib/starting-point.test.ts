@@ -46,8 +46,8 @@ describe("Starting-point rules", () => {
   it("keeps follow-up in the lowest verified plan", () => {
     expect(finding({ stage: "steady", need: "quotes", detail: "lost_followup", help: "setup_help" }).plan).toBe("Essentials");
   });
-  it("matches manual inbox effort to Essentials, not AI by default", () => {
-    expect(finding({ need: "replies", detail: "manual_effort", help: "setup_help" }).capability).toBe("Unified inbox (mobile app included)");
+  it("matches manual follow-up effort to Essentials, not AI by default", () => {
+    expect(finding({ need: "replies", detail: "manual_effort", help: "setup_help" }).capability).toBe("Automatic follow-up sequences");
   });
   it("uses Essentials first for slow replies rather than assuming an AI need", () => {
     expect(finding({ need: "replies", detail: "slow_reply", help: "setup_help" }).plan).toBe("Essentials");
