@@ -11,6 +11,8 @@
 
 ## Navigation rules
 
+- Pricing cards and the pricing-only check-in share the `pricing-plans` model; deterministic advice uses verified feature matches and currency-checked arithmetic so plan changes cannot leave stale costs or unsupported recommendations. The check-in collects no contact data and does not replace standalone campaigns.
+
 - Services navigation uses the independent 20-item `service-catalogue` model and four customer-focused categories; keep homepage and pricing data independent so menu changes never alter plan commitments.
 - Each catalogue entry has a dedicated route and uses the shared catalogue page/head helpers; preserve published paths and service-specific setup, availability and related content.
 - Local SEO appears once in the category menu; its page explains both confirmed plan tiers so category grouping never hides the distinction.

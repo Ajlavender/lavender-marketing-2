@@ -36,7 +36,7 @@ detailQuestions.quotes = detailQuestions.replies;
 // Features are matched against the same commitments shown on the pricing cards.
 export const needFeatures: Record<string, string> = {
   no_home: "Your new website, designed and built", unclear: "Your new website, designed and built", finding_info: "Online booking",
-  slow_reply: "Missed-call text-back", lost_followup: "Automatic follow-up sequences", many_inboxes: "Unified inbox (mobile app included)",
+  slow_reply: "AI chat widget trained on your business", lost_followup: "Automatic follow-up sequences", many_inboxes: "Unified inbox (mobile app included)",
   manual_effort: "Unified inbox (mobile app included)", reply_bottleneck: "Automatic follow-up sequences",
 };
 export function verifiedPlan(feature: string) {
