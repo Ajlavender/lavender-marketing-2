@@ -42,7 +42,7 @@ function answerText(a: Answers) {
   const q = detailQuestions[a.need ?? ""];
   const selected = a.selections?.length ? detailQuestions.consolidate.options.filter(([id]) => a.selections?.includes(id)).map(([, text]) => text).join(" / ") : q?.options.find(([id]) => id === a.detail)?.[1];
   const followup = a.followup ? Object.values(detailQuestions).flatMap((question) => question.options).find(([id]) => id === a.followup)?.[1] : undefined;
-  return followup ?? selected ?? "you’re looking ahead";
+  return selected ?? followup ?? "you’re looking ahead";
 }
 export function finding(a: Answers, readiness?: string, deferred = false): Finding {
   const detail = readiness && readiness !== "ready" && readiness !== "yes" ? readiness === "process" ? "reply_bottleneck" : readiness : effectiveDetail(a);
@@ -56,10 +56,13 @@ export function finding(a: Answers, readiness?: string, deferred = false): Findi
   let action = base.action;
   let timing = features.length ? "This is worth comparing now if this problem comes up each week. Keep what already works until you’ve compared the full coverage and costs." : "You haven’t identified a need that calls for a higher tier. If your current setup handles this at a lower total cost, keep it and revisit Essentials when a website or follow-up gap appears.";
   if (a.need === "consolidate" || a.detail === "tool_overlap" || detail === "connect_tools") {
+    why = `${stage} You want to compare “${answerText(a)}” with what you use today. ${plan.name} is the lowest plan covering the verified functions${selected.includes("reviews_social") ? "; review requests are covered, but social posting is not a verified plan inclusion" : "; check any remaining subscriptions and compatibility before switching"}.`;
     action = "List the tools you pay for, their monthly costs and the functions you actually use. Compare those with this plan, including any subscriptions you would still need to keep.";
     timing = "Compare coverage and costs before switching. We can’t promise savings or compatibility with every existing tool; don’t cancel anything yet.";
   }
-  if (["website_setup", "followup_setup", "connect_tools", "unsure_setup"].includes(detail) || a.help === "setup_help") why += " Website design and implementation are included; confirm the scope of other workflow setup before switching. Setup help is not ongoing management of every task.";
+  if (["website_setup", "followup_setup", "connect_tools", "unsure_setup"].includes(detail) || a.help === "setup_help") timing += " Website design and implementation are included; confirm the scope of other workflow setup. Setup help is different from ongoing management.";
+  if (detail === "website_setup") action = "On your phone, open your website and try to find one service and the contact button. Write down the first confusing step and the change you want made.";
+  if (detail === "followup_setup") action = "Write down what should happen after one new quote request: who replies, when, and the next follow-up date. Start with that single workflow.";
   if (a.help === "managed" && !advertisingInterest(a)) timing += " This is a system you operate, not a promise that we’ll run every part of your business.";
   if (["capacity_limit", "capacity_unknown"].includes(detail)) {
     action = "Count the additional jobs you could comfortably complete over the next two weeks and decide who would reply to each new inquiry.";
