@@ -55,9 +55,9 @@ export function StartingPoint() {
   };
   const choices = (name: string, options: readonly (readonly string[])[], value: string, onChange: (v: string) => void) => (
     <RadioGroup aria-label={name} orientation="vertical" value={value} onValueChange={onChange} className="mt-6 gap-3">
-      {options.map(([id, text]) => <label key={id} className={`flex cursor-pointer items-start gap-3 rounded-lg border px-4 py-4 text-sm leading-relaxed transition-colors focus-within:ring-2 focus-within:ring-ring ${value === id ? "border-brand bg-lavender-wash text-ink" : "border-border bg-background text-foreground hover:border-brand/50"}`}>
+      {options.map(([id, text]) => <div key={id} onClick={() => onChange(id)} className={`flex cursor-pointer items-start gap-3 rounded-lg border px-4 py-4 text-sm leading-relaxed transition-colors focus-within:ring-2 focus-within:ring-ring ${value === id ? "border-brand bg-lavender-wash text-ink" : "border-border bg-background text-foreground hover:border-brand/50"}`}>
         <RadioGroupItem value={id} aria-label={t(text)} className="mt-0.5 shrink-0" />{t(text)}
-      </label>)}
+      </div>)}
     </RadioGroup>
   );
   const calculatorText = jobs ? `At about ${money(Number(amount))} left per job, you’d need roughly ${range(jobs)} additional completed jobs per month to cover the plan and advertising together. This is a break-even estimate. It doesn’t predict how many inquiries or jobs the ads will bring in.` : "";
