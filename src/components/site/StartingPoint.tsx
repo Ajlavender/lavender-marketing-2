@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { LOCALE_INFO, spell, useLocale } from "@/lib/locale";
 import { monthlyPrice } from "@/data/pricing-plans";
 import { SCALE_CALENDAR_URL } from "./BookingDialog";
-import { adGate, adTotals, breakEven, budgets, changeAnswer, detailQuestions, finding, questions, scaleFinding, type Answers, type Channel } from "@/lib/starting-point";
+import { adGate, adTotals, breakEven, budgets, capabilityBenefits, changeAnswer, detailQuestions, finding, questions, scaleFinding, type Answers, type Channel } from "@/lib/starting-point";
 
 type Screen = number | "readiness" | "ads" | "calculator" | "result";
 export function StartingPoint() {

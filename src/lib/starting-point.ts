@@ -39,6 +39,13 @@ export const needFeatures: Record<string, string> = {
   slow_reply: "Missed-call text-back", lost_followup: "Automatic follow-up sequences", many_inboxes: "Unified inbox (mobile app included)",
   manual_effort: "Unified inbox (mobile app included)", reply_bottleneck: "Automatic follow-up sequences",
 };
+export const capabilityBenefits: Record<string, string> = {
+  "Your new website, designed and built": "It gives referred customers a clear place to see your services and contact you.",
+  "Online booking": "It gives customers a clear way to choose a time and book.",
+  "Missed-call text-back": "When you miss a call, it can send a text back so the caller has a next step. It doesn’t replace replying to every kind of message.",
+  "Automatic follow-up sequences": "It can help keep the next contact from getting forgotten. We’d confirm how to set it up for your quotes or booking workflow first.",
+  "Unified inbox (mobile app included)": "It puts supported calls, texts and messages together so you can spend less time checking separate places.",
+};
 export function verifiedPlan(feature: string) {
   return [...plans].sort((a, b) => monthlyPrice(a.name) - monthlyPrice(b.name)).find((plan) => plan.features.includes(feature));
 }

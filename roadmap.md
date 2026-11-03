@@ -1,9 +1,9 @@
 # Homepage conversion polish
 
 ## Pricing starting-point check-in
-- [ ] Replace pricing-only preview promotion with four-question check-in
-- [ ] Add verified plan matching, advertising costs and local break-even calculator
-- [ ] Test decision rules and complete desktop/mobile/keyboard journeys without submitting forms
+- [x] Replace pricing-only preview promotion with four-question check-in
+- [x] Add verified plan matching, advertising costs and local break-even calculator
+- [x] Test decision rules and complete desktop/mobile/keyboard journeys without submitting forms
 
 ## Temporary A2P compliance
 - [x] Add the supplied chat widget across the site
