@@ -18,15 +18,15 @@ describe("Starting-point rules", () => {
   it("uses Essentials first for slow replies rather than assuming an AI need", () => {
     expect(finding({ need: "replies", detail: "slow_reply", help: "setup_help" }).plan).toBe("Essentials");
   });
-  it("DIY always omits paid recommendations", () => {
-    for (const detail of ["no_home", "slow_reply", "lost_followup", "capacity_limit"]) expect(finding({ detail, help: "diy" }).plan).toBeUndefined();
+  it("DIY still gets exactly one foundation plan", () => {
+    for (const detail of ["no_home", "slow_reply", "lost_followup", "capacity_limit"]) expect(finding({ detail, help: "diy" }).plan).toBe("Essentials");
   });
-  it("healthy and untested setups do not get a fallback plan", () => {
-    for (const detail of ["clear", "working", "all_good", "untested"]) expect(finding({ detail, help: "setup_help" }).plan).toBeUndefined();
+  it("healthy and untested setups get Essentials as a comparison point", () => {
+    for (const detail of ["clear", "working", "all_good", "untested"]) expect(finding({ detail, help: "setup_help" }).plan).toBe("Essentials");
   });
   it("capacity concerns prevent advertising", () => {
     for (const detail of ["capacity_limit", "capacity_unknown", "reply_bottleneck"]) expect(adGate({ stage: "growing", need: "customers", detail, help: "managed_ads" })).toBeNull();
-    expect(adGate({ stage: "full", need: "customers", detail: "ready", help: "managed_ads" })).toBeNull();
+    expect(adGate({ stage: "full", need: "customers", detail: "ready", help: "managed_ads" })).toBe("readiness");
   });
   it("being full does not block existing follow-up help", () => {
     expect(finding({ stage: "full", need: "quotes", detail: "lost_followup", help: "setup_help" }).plan).toBe("Essentials");
@@ -36,7 +36,7 @@ describe("Starting-point rules", () => {
     expect(adGate({ stage: "growing", need: "customers", detail: "ready", help: "managed_ads" })).toBe("cost");
   });
   it("exploring requires the extra readiness confirmation", () => {
-    const a = { stage: "building", need: "exploring", detail: "need_inquiries", help: "managed_ads" };
+    const a = { stage: "building", need: "exploring", detail: "advertising", help: "managed" };
     expect(adGate(a)).toBe("readiness");
     expect(scaleFinding(a, "process", "meta")).toBeNull();
     expect(scaleFinding(a, "yes", "meta")?.plan).toBe("Scale");
