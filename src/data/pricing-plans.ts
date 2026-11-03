@@ -1,0 +1,75 @@
+export const plans = [
+  {
+    name: "Essentials",
+    stage: "Start here",
+    emphasis: true,
+    dark: true,
+    progress: "w-8",
+    price: "$297",
+    note: "per month",
+    annualPrice: "$2,970",
+    annualMonthly: "$247.50/mo billed annually — 2 months free",
+    blurb: "The full system. Your site is designed free — you only pay once you like it.",
+    features: [
+      "Your new website, designed and built",
+      "Website chat widget with pre-loaded FAQs",
+      "Missed-call text-back",
+      "Review automation",
+      "Online booking",
+      "Automatic follow-up sequences",
+      "Unified inbox (mobile app included)",
+      "Lead pipeline + full CRM",
+      "Hosting, domain, security & unlimited small edits",
+      "Google & Local Visibility Report",
+    ],
+  },
+  {
+    name: "Growth",
+    stage: "The next step",
+    emphasis: false,
+    dark: false,
+    progress: "w-16",
+    price: "$497",
+    note: "per month",
+    annualPrice: "$4,970",
+    annualMonthly: "$414.17/mo billed annually — 2 months free",
+    blurb: "Everything in Essentials, plus AI that answers and books while you work.",
+    features: [
+      "Everything in Essentials",
+      "AI chat widget trained on your business",
+      "Voice AI receptionist (answers missed calls)",
+      "AI books straight into your calendar",
+      "Lead qualification before it reaches you",
+      "Call transcripts and summaries in your CRM",
+      "Monthly AI transcript review and retraining",
+      "Local SEO starter: business listings set up across key directories, plus Google Business Profile optimisation.",
+    ],
+  },
+  {
+    name: "Scale",
+    stage: "The destination",
+    emphasis: false,
+    dark: false,
+    progress: "w-28",
+    price: "$997",
+    note: "per month + ad spend",
+    annualPrice: "$9,970",
+    annualMonthly: "$830.84/mo billed annually — 2 months free",
+    blurb: "For businesses ready to buy demand, not just catch it.",
+    features: [
+      "Everything in Growth",
+      "Google & Meta ad management",
+      "Advanced local SEO: ongoing optimisation, regular content updates, and full Google Business Profile management.",
+      "Landing pages built for each campaign",
+      "Cost-per-booked-job reporting",
+      "Database reactivation campaigns",
+      "Dedicated account manager",
+    ],
+  },
+];
+
+export type PlanName = typeof plans[number]["name"];
+export function monthlyPrice(name: string): number {
+  const plan = plans.find((item) => item.name === name);
+  return plan ? Number(plan.price.replace(/[^0-9.]/g, "")) : 0;
+}
