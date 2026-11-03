@@ -11,7 +11,7 @@
 
 ## Navigation rules
 
-- Pricing cards and the pricing-only check-in share the `pricing-plans` model; deterministic advice uses verified feature matches and currency-checked arithmetic so plan changes cannot leave stale costs or unsupported recommendations. The check-in collects no contact data and does not replace standalone campaigns.
+- Pricing cards and the pricing-only check-in share the `pricing-plans` model; deterministic advice uses verified feature matches and currency-checked arithmetic so plan changes cannot leave stale costs or unsupported recommendations. Question data, capability mapping, result-copy templates and rules are separate modules. Every result gives one plan while purchase timing stays separate; this prevents UI choices from changing commitments. The check-in collects no contact data and does not replace standalone campaigns.
 
 - Services navigation uses the independent 20-item `service-catalogue` model and four customer-focused categories; keep homepage and pricing data independent so menu changes never alter plan commitments.
 - Each catalogue entry has a dedicated route and uses the shared catalogue page/head helpers; preserve published paths and service-specific setup, availability and related content.
