@@ -1,8 +1,42 @@
 import { describe, expect, it } from "vitest";
 import { adGate, adTotals, breakEven, changeAnswer, finding, scaleFinding } from "./starting-point";
 import { monthlyPrice } from "@/data/pricing-plans";
+import { detailQuestions, followupQuestion } from "./starting-point-questions";
+import { lowestPlan } from "./starting-point-capabilities";
 
 describe("Starting-point rules", () => {
+  it("consolidation recommends the lowest plan covering booking and messages", () => {
+    expect(finding({ stage: "steady", need: "consolidate", selections: ["web_booking", "messages"], help: "simple_system" }).plan).toBe("Essentials");
+  });
+  it("matches website setup work without escalating for lack of time", () => {
+    expect(finding({ need: "setup", detail: "website_setup", help: "managed" }).plan).toBe("Essentials");
+  });
+  it("management preference without advertising interest never opens ad costs", () => {
+    expect(adGate({ need: "replies", detail: "lost_followup", help: "managed" })).toBeNull();
+  });
+  it("setup advertising interest requires capacity confirmation", () => {
+    expect(adGate({ need: "setup", detail: "advertising", help: "setup_help" })).toBe("readiness");
+    expect(scaleFinding({ need: "setup", detail: "advertising", help: "setup_help" }, "capacity_limit", "google")).toBeNull();
+  });
+  it("declined advertising still returns one current-stage foundation plan", () => {
+    expect(finding({ need: "customers", detail: "ready", help: "managed" }, undefined, true).plan).toBe("Essentials");
+  });
+  it("browsing follows actual consolidation and follow-up needs", () => {
+    expect(followupQuestion("exploring", "tool_overlap")).toBe(detailQuestions.consolidate);
+    expect(finding({ need: "exploring", detail: "followup_hard", followup: "lost_followup", help: "diy" }).capability).toBe("Automatic follow-up sequences");
+  });
+  it("capability matching supports inherited plans and Growth-specific features", () => {
+    expect(lowestPlan(["AI chat widget trained on your business", "Online booking"])?.name).toBe("Growth");
+  });
+  it("every main detail returns one plan and a concrete action", () => {
+    for (const [need, question] of Object.entries(detailQuestions)) {
+      for (const [detail] of question.options) {
+        const result = finding({ stage: "steady", need, detail, help: "diy" });
+        expect(["Essentials", "Growth", "Scale"]).toContain(result.plan);
+        expect(result.action.length).toBeGreaterThan(20);
+      }
+    }
+  });
   it("uses current monthly prices", () => {
     expect([monthlyPrice("Essentials"), monthlyPrice("Growth"), monthlyPrice("Scale")]).toEqual([297, 497, 997]);
   });
