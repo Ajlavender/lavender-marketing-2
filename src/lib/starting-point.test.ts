@@ -15,8 +15,8 @@ describe("Starting-point rules", () => {
   it("matches manual inbox effort to Essentials, not AI by default", () => {
     expect(finding({ need: "replies", detail: "manual_effort", help: "setup_help" }).capability).toBe("Unified inbox (mobile app included)");
   });
-  it("matches a trained immediate chat response to Growth", () => {
-    expect(finding({ need: "replies", detail: "slow_reply", help: "setup_help" }).plan).toBe("Growth");
+  it("uses Essentials first for slow replies rather than assuming an AI need", () => {
+    expect(finding({ need: "replies", detail: "slow_reply", help: "setup_help" }).plan).toBe("Essentials");
   });
   it("DIY always omits paid recommendations", () => {
     for (const detail of ["no_home", "slow_reply", "lost_followup", "capacity_limit"]) expect(finding({ detail, help: "diy" }).plan).toBeUndefined();
