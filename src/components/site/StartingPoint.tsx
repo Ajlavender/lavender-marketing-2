@@ -54,9 +54,9 @@ export function StartingPoint() {
     else move(costChoice === "compare_cost" ? "calculator" : costChoice ? "ads" : readiness ? "readiness" : 3);
   };
   const choices = (name: string, options: readonly (readonly string[])[], value: string, onChange: (v: string) => void) => (
-    <RadioGroup aria-label={name} value={value} onValueChange={onChange} className="mt-6 gap-3">
+    <RadioGroup aria-label={name} orientation="vertical" value={value} onValueChange={onChange} className="mt-6 gap-3">
       {options.map(([id, text]) => <label key={id} className={`flex cursor-pointer items-start gap-3 rounded-lg border px-4 py-4 text-sm leading-relaxed transition-colors focus-within:ring-2 focus-within:ring-ring ${value === id ? "border-brand bg-lavender-wash text-ink" : "border-border bg-background text-foreground hover:border-brand/50"}`}>
-        <RadioGroupItem value={id} className="mt-0.5 shrink-0" />{t(text)}
+        <RadioGroupItem value={id} aria-label={t(text)} className="mt-0.5 shrink-0" />{t(text)}
       </label>)}
     </RadioGroup>
   );
