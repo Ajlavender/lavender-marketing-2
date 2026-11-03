@@ -54,7 +54,17 @@ export function StartingPoint() {
     else move(costChoice === "compare_cost" ? "calculator" : costChoice ? "ads" : readiness ? "readiness" : 3);
   };
   const choices = (name: string, options: readonly (readonly string[])[], value: string, onChange: (v: string) => void) => (
-    <RadioGroup aria-label={name} orientation="vertical" value={value} onValueChange={onChange} className="mt-6 gap-3">
+    <RadioGroup aria-label={name} orientation="vertical" value={value} onValueChange={onChange} className="mt-6 gap-3" onKeyDown={(event) => {
+      if (!["ArrowDown", "ArrowUp", "ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const active = options.findIndex(([id]) => id === value);
+      const next = event.key === "Home" ? 0 : event.key === "End" ? options.length - 1 : (active + (event.key === "ArrowUp" || event.key === "ArrowLeft" ? -1 : 1) + options.length) % options.length;
+      const selected = options[next];
+      if (selected) onChange(selected[0]);
+      const group = event.currentTarget;
+      requestAnimationFrame(() => group.querySelectorAll<HTMLButtonElement>('[role="radio"]')[next]?.focus());
+    }}>
       {options.map(([id, text]) => <div key={id} onClick={() => onChange(id)} className={`flex cursor-pointer items-start gap-3 rounded-lg border px-4 py-4 text-sm leading-relaxed transition-colors focus-within:ring-2 focus-within:ring-ring ${value === id ? "border-brand bg-lavender-wash text-ink" : "border-border bg-background text-foreground hover:border-brand/50"}`}>
         <RadioGroupItem value={id} aria-label={t(text)} className="mt-0.5 shrink-0" />{t(text)}
       </div>)}
