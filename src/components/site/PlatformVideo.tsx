@@ -35,7 +35,7 @@ export function PlatformVideo() {
             Your website, customer conversations, follow-ups and reviews shouldn&apos;t run separately. See how
             Lavender Suite Pro brings them together to help your business run more smoothly.
           </p>
-          <p className="mt-3 text-sm font-medium text-foreground">Platform overview · 2 min 45 sec</p>
+          <p className="mt-3 text-sm font-medium text-foreground">Platform overview · 2 min 48 sec</p>
         </div>
 
         <div className="relative mx-auto mt-10 overflow-hidden rounded-[1.75rem] bg-foreground shadow-[0_40px_90px_-50px_color-mix(in_oklab,var(--brand)_70%,transparent)]">
