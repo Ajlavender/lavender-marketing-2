@@ -1,7 +1,6 @@
 import { INTAKE_URL } from "@/data/pricing";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Check, ShieldCheck, Star, Volume2, VolumeX } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { ArrowRight, Check, ShieldCheck, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LogoStrip } from "@/components/site/sections";
 import { MEDIA } from "@/data/site";
@@ -18,7 +17,7 @@ import {
   TransformationsIntro,
   ValueCalculator,
 } from "@/components/site/HomeSections";
-import heroVideoAsset from "@/assets/hero-mobile.mp4.asset.json";
+import { PlatformVideo } from "@/components/site/PlatformVideo";
 
 const HERO_POSTER = `${MEDIA}/hero-poster.jpg`;
 
@@ -48,12 +47,6 @@ export const Route = createFileRoute("/")({
       { rel: "canonical", href: "https://lavendermarketingco.com/" },
       { rel: "preconnect", href: "https://assets.cdn.filesafe.space", crossOrigin: "anonymous" },
       { rel: "dns-prefetch", href: "https://assets.cdn.filesafe.space" },
-      {
-        rel: "preload",
-        as: "image",
-        href: HERO_POSTER,
-        fetchPriority: "high",
-      },
     ],
     scripts: [
       {
@@ -93,200 +86,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const HERO_VIDEO = heroVideoAsset.url;
-
-interface VideoPlayerProps {
-  videoRef: React.RefObject<HTMLVideoElement | null>;
-  muted: boolean;
-  canPlay: boolean;
-  videoSrc: string | undefined;
-  /** Play only once the banner is actually on screen. */
-  shouldPlay: boolean;
-  onToggleMute: () => void;
-  onCanPlay: () => void;
-}
-
-
-function VideoPlayer({
-  videoRef,
-  muted,
-  canPlay,
-  videoSrc,
-  shouldPlay,
-  onToggleMute,
-  onCanPlay,
-}: VideoPlayerProps) {
-  // Start when the banner scrolls into view, pause when it leaves.
-  useEffect(() => {
-
-    const el = videoRef.current;
-    if (!el) return;
-    if (shouldPlay) el.play().catch(() => {});
-    else el.pause();
-  }, [shouldPlay, videoRef, videoSrc]);
-
-  // If the file can't be decoded, fall back to the poster instead of the browser's error screen.
-  const [failed, setFailed] = useState(false);
-  const [ready, setReady] = useState(false);
-
-  return (
-    <div className="relative aspect-video w-full bg-black">
-      <video
-        ref={videoRef}
-        poster={HERO_POSTER}
-        width={1280}
-        height={720}
-        muted={muted}
-        loop
-        playsInline
-        controls={ready && !failed}
-        disablePictureInPicture
-        preload="metadata"
-        onError={() => setFailed(true)}
-        onCanPlay={() => {
-          setReady(true);
-          onCanPlay();
-        }}
-        className="h-full w-full object-cover"
-      >
-        {videoSrc && !failed && (
-
-          <source src={videoSrc} type="video/mp4" onError={() => setFailed(true)} />
-        )}
-      </video>
-
-
-
-      {/* Click-to-unmute overlay */}
-      {muted && canPlay && (
-        <button
-          type="button"
-          onClick={onToggleMute}
-          className="group absolute inset-0 z-10 flex cursor-pointer flex-col items-center justify-center bg-black/30 transition duration-500 hover:bg-black/40"
-          aria-label="Unmute video"
-        >
-          {/* animated rings */}
-          <span className="absolute h-24 w-24 rounded-full bg-white/10 animate-pulse-ring" />
-          <span
-            className="absolute h-24 w-24 rounded-full bg-white/10 animate-pulse-ring"
-            style={{ animationDelay: "0.8s" }}
-          />
-          <span className="absolute h-32 w-32 rounded-full bg-white/5 animate-pulse-ring" />
-
-          {/* glass icon button */}
-          <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30 backdrop-blur-xl shadow-[0_0_40px_-10px_rgba(255,255,255,0.25)] transition duration-500 group-hover:scale-110 group-hover:bg-white/25 group-hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.4)]">
-            <VolumeX className="relative z-10 h-8 w-8 text-white transition-transform duration-500 group-hover:scale-110" />
-          </span>
-
-          {/* sound wave bars */}
-          <span className="mt-6 flex h-5 items-end gap-1">
-            {[0, 1, 2, 3, 4].map((i) => (
-              <span
-                key={i}
-                className="w-1 rounded-full bg-white/80 animate-sound-bar origin-bottom"
-                style={{
-                  height: "100%",
-                  animationDelay: `${i * 0.12}s`,
-                }}
-              />
-            ))}
-          </span>
-
-          {/* label */}
-          <span className="mt-5 text-center font-[family-name:var(--font-display)] text-sm font-semibold tracking-[0.16em] text-white/95 uppercase drop-shadow-lg">
-            Tap to unmute
-          </span>
-        </button>
-      )}
-
-      {/* Mute toggle (visible once unmuted) */}
-      {!muted && (
-        <button
-          type="button"
-          onClick={onToggleMute}
-          className="absolute top-3 right-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/70"
-          aria-label={muted ? "Unmute video" : "Mute video"}
-        >
-          {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
-        </button>
-      )}
-    </div>
-  );
-}
-
-
 function Index() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  // Wrapper around the video banner — drives lazy-load and autoplay.
-  const bannerRef = useRef<HTMLDivElement>(null);
-  const [muted, setMuted] = useState(true);
-  // True while the banner is meaningfully on screen — gates autoplay.
-  const [inView, setInView] = useState(false);
-  // Video source is attached only after hydration + when the card is near view,
-  // so the poster paints first and the mp4 never blocks first render.
-  const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
-  const [canPlay, setCanPlay] = useState(false);
-
-
-  // Lazy-attach the mp4 once the banner is close to the viewport.
-  useEffect(() => {
-    const el = bannerRef.current;
-    if (!el) return;
-
-    const conn = (navigator as Navigator & {
-      connection?: { saveData?: boolean; effectiveType?: string };
-    }).connection;
-    if (conn?.saveData) return; // keep the poster only
-    if (/^(slow-2g|2g)$/.test(conn?.effectiveType ?? "")) return;
-
-    const attach = () => setVideoSrc(HERO_VIDEO);
-    const markScrolled = () => {
-      if (window.scrollY > 80) {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 1.5) {
-
-          attach();
-          window.removeEventListener("scroll", markScrolled);
-        }
-      }
-    };
-    window.addEventListener("scroll", markScrolled, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", markScrolled);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (videoSrc) videoRef.current?.load();
-
-  }, [videoSrc]);
-
-  // Autoplay while the banner is on screen; pause once it scrolls away.
-  useEffect(() => {
-    const el = bannerRef.current;
-    if (!el) return;
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[entries.length - 1];
-        if (!entry) return;
-        setInView(entry.isIntersecting && entry.intersectionRatio >= 0.4);
-      },
-      { threshold: [0, 0.4, 0.75] },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
-
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !muted;
-      setMuted(!muted);
-    }
-  };
-
   return (
     <>
       {/* Hero */}
@@ -362,33 +162,6 @@ function Index() {
             </div>
           </div>
 
-          {/* Landscape video banner */}
-          <div
-            ref={bannerRef}
-            style={{ animationDelay: "380ms", animationFillMode: "both" }}
-            className="animate-fade-in relative mx-auto mt-16 max-w-7xl lg:mt-20"
-          >
-            <div className="relative rounded-[2rem] p-[1.5px] shadow-[0_50px_110px_-50px_color-mix(in_oklab,var(--brand)_75%,transparent)]">
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-brand opacity-70 blur-[2px]"
-              />
-
-              <div className="relative overflow-hidden rounded-[1.9rem] bg-black">
-                <VideoPlayer
-                  key="hero-video-player"
-                  videoRef={videoRef}
-                  muted={muted}
-                  canPlay={canPlay}
-                  videoSrc={videoSrc}
-                  shouldPlay={inView}
-                  onToggleMute={toggleMute}
-                  onCanPlay={() => setCanPlay(true)}
-                />
-              </div>
-            </div>
-          </div>
-
         </div>
 
         {/* scroll cue */}
@@ -402,6 +175,8 @@ function Index() {
 
 
       <HomeProblem />
+
+      <PlatformVideo />
 
       <TransformationsIntro />
       <BeforeAfterShowcase />
