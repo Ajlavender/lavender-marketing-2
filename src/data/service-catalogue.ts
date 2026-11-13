@@ -35,7 +35,7 @@ export const serviceCatalogue: CatalogueService[] = [
     ],
     "setup": [
       "Understand your customers and services",
-      "Design your homepage for a free 7-day preview",
+      "Design your homepage for a free design preview",
       "Refine the design with your feedback",
       "Launch and support your live website"
     ],
@@ -44,7 +44,7 @@ export const serviceCatalogue: CatalogueService[] = [
     "faqs": [
       {
         "q": "What do you set up for my business?",
-        "a": "We understand your customers and services, then design your homepage for a free 7-day preview. Refine the design with your feedback. Launch and support your live website."
+        "a": "We understand your customers and services, then design your homepage for a free design preview. Refine the design with your feedback. Launch and support your live website."
       },
       {
         "q": "Which plan includes this service?",

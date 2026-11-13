@@ -19,17 +19,17 @@ function AnnouncementBar({ onClose }: { onClose: () => void }) {
       <div className="relative mx-auto flex max-w-[90rem] items-center justify-center gap-2 px-4 py-2 pr-10 sm:gap-3 sm:px-8 sm:pr-12 lg:px-10">
         <p className="flex min-w-0 flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-[0.7rem] font-medium leading-tight tracking-wide sm:text-xs">
           <span>
-            <span className="hidden sm:inline">Free website design + review engine — launch your site for </span>
-            <span className="sm:hidden">Free website design — launch for </span>
-            <span className="font-semibold underline decoration-white/40 underline-offset-2">$297/mo</span>.
+            <span className="hidden sm:inline">Your new website design is free. Love it? Launch from </span>
+            <span className="sm:hidden">Free website design. Launch from </span>
+            <span className="font-semibold">$297/month</span>.
           </span>
-          <Link
-            to="/pricing"
+          <a
+            href={INTAKE_URL}
             className="inline-flex shrink-0 items-center gap-0.5 whitespace-nowrap rounded-full bg-white/15 px-2.5 py-0.5 text-[0.68rem] font-semibold ring-1 ring-inset ring-white/25 transition-colors hover:bg-white/25 sm:text-[0.72rem]"
           >
-            See if you qualify
+            Get Started
             <ArrowUpRight className="h-3 w-3" />
-          </Link>
+          </a>
         </p>
         <button
           onClick={onClose}

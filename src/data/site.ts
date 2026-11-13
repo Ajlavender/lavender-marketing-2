@@ -402,18 +402,18 @@ export const faqs = [
   },
   {
     q: "Who owns the website when it's done?",
-    a: "You do. Full ownership of the design, content and files, with no lock-in.",
+    a: "Your domain is 100% yours, and we always recommend keeping it that way. Your website is built and hosted on our platform, but if you ever decide to leave, you can request an export of your website's code to move it to another hosting provider. We believe in earning your business, not locking you in.",
   },
   {
-    q: "What happens during the 7-day preview?",
-    a: "We design a brand-new homepage for your business and give you 7 days to review it. If you love it, it becomes your live website at $297/mo, live within 14 days, with everything switched on. If not, we take it down and you owe nothing.",
+    q: "What happens after I see my design preview?",
+    a: "We design a custom homepage preview for your business and you review it. If you love it, choose a plan and we build the full website and switch everything on, usually live within 14 days. If it isn't right for you, you owe nothing for reviewing it.",
   },
   {
     q: "Do I need to enter a credit card to start?",
-    a: "No. The design and the 7-day preview are completely free. You only pay if you decide to keep the website.",
+    a: "No. The design preview is completely free to review. You only pay once you approve the design and choose a plan.",
   },
   {
-    q: "What happens if I don't want to continue after 7 days?",
+    q: "What happens if I decide not to go ahead?",
     a: "The preview comes down and you owe nothing. We'll check in once to hear your thoughts.",
   },
   {

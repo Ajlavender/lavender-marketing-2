@@ -26,7 +26,7 @@ export function CatalogueServicePage({ slug }: { slug: string }) {
               <Button asChild size="lg">{website ? <a href={INTAKE_URL}>Get My Free Website Design <ArrowUpRight className="size-4" /></a> : <Link to="/contact">Talk About This Service <ArrowUpRight className="size-4" /></Link>}</Button>
               <Button asChild variant="outline" size="lg"><Link to="/pricing">View Plans <ArrowRight className="size-4" /></Link></Button>
             </div>
-            {website && <p className="mt-5 text-sm text-muted-foreground">Free custom design. A 7-day preview. Launch with Essentials for $297/month if you love it.</p>}
+            {website && <p className="mt-5 text-sm text-muted-foreground">Free custom design preview. Launch with Essentials for $297/month if you love it.</p>}
           </div>
           <img src={s.image} alt={t(s.title)} width={600} height={600} fetchPriority="high" className="mx-auto aspect-square w-full max-w-[340px] object-contain sm:max-w-[400px]" />
         </div>

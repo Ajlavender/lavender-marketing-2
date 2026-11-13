@@ -1,50 +1,23 @@
 import { INTAKE_URL } from "@/data/pricing";
-import { canCollectContact } from "@/lib/consent-policy";
-import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  ShieldCheck,
-  Star,
-  Volume2,
-  VolumeX,
-  Zap,
-} from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { ArrowRight, Check, ShieldCheck, Star, Volume2, VolumeX } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { TechnologySection } from "@/components/site/TechStack";
-
 import { Button } from "@/components/ui/button";
-import { LeadForm, ReportFallback } from "@/components/site/LeadForm";
-import { PreviewSteps } from "@/components/site/sections";
-import { cn } from "@/lib/utils";
-import {
-  Counters,
-  CtaBand,
-  GoogleReviews,
-  LogoStrip,
-  ProjectGrid,
-  RatingBar,
-  Section,
-  SectionHeading,
-  ServicesGrid,
-} from "@/components/site/sections";
-import { MEDIA, stats, ILLU } from "@/data/site";
-import { CountUp, Reveal } from "@/components/site/Reveal";
-import { LazySection } from "@/components/site/LazySection";
+import { LogoStrip } from "@/components/site/sections";
+import { MEDIA } from "@/data/site";
 import { BeforeAfterShowcase } from "@/components/site/BeforeAfterShowcase";
-import { StickySteps } from "@/components/site/StickySteps";
-import { MoneySection } from "@/components/site/MoneySection";
-import { RotatingWord } from "@/components/site/RotatingWord";
-import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
-import { VisibilityReportPreview } from "@/components/site/VisibilityReportPreview";
 import {
-  BuyerPaths,
-  CatchSection,
-  ComparisonTable,
-  PainPointCards,
-  SystemLoop,
-  TestimonialCarousel,
-  ValueStack,
-} from "@/components/site/home-sections.lazy";
+  ExploreWork,
+  FinalCta,
+  HomeFaq,
+  HomeProblem,
+  HomeReviews,
+  HomeSteps,
+  HomeSystem,
+  ReportNudge,
+  TransformationsIntro,
+  ValueCalculator,
+} from "@/components/site/HomeSections";
 import heroVideoAsset from "@/assets/hero-mobile.mp4.asset.json";
 
 const HERO_POSTER = `${MEDIA}/hero-poster.jpg`;
@@ -253,8 +226,6 @@ function Index() {
   // so the poster paints first and the mp4 never blocks first render.
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
   const [canPlay, setCanPlay] = useState(false);
-  const [designOpen, setDesignOpen] = useState(false);
-  const [designEmail, setDesignEmail] = useState("");
 
 
   // Lazy-attach the mp4 once the banner is close to the viewport.
@@ -348,100 +319,44 @@ function Index() {
           <div className="mx-auto w-full text-center">
 
 
-            <div className="relative animate-fade-in">
-              <span className="mb-6 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-brand/25 bg-background/70 py-1.5 pl-1.5 pr-4 text-sm font-medium text-foreground shadow-sm backdrop-blur-md">
-                <span className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-white">
-                  Free design
-                </span>
-                <span className="text-muted-foreground">Automated review engine included</span>
-              </span>
-              <h1
-                className="animate-fade-in pb-[0.28em] text-[clamp(2.5rem,5.2vw,5.15rem)] font-bold leading-[1.02] sm:text-[clamp(3rem,5.2vw,5.15rem)]"
-                style={{ animationDelay: "80ms", animationFillMode: "both" }}
-              >
-                The growth system local businesses use to
-                <br />
-                <RotatingWord
-                  className="pb-[0.2em] pt-[0.08em]"
-                  wordClassName="text-gradient-brand"
-                  words={[
-                    "win more customers.",
-                    "get found on Google.",
-                    "never miss a lead.",
-                    "turn jobs into great reviews.",
-                  ]}
-                />
+            <div className="relative">
+              <h1 className="mx-auto max-w-5xl text-balance text-[clamp(2.4rem,6vw,5rem)] font-bold leading-[1.04]">
+                A better website is just the beginning.
               </h1>
-              <p
-                style={{ animationDelay: "180ms", animationFillMode: "both" }}
-                className="animate-fade-in mx-auto mt-6 max-w-3xl text-lg text-muted-foreground sm:text-xl"
-              >
-                We design your new website free. Love it? Launch for $297/mo with hosting, honest
-                review requests and missed-call text-back built in. Don&apos;t love it? You pay nothing.
+              <p className="mx-auto mt-5 max-w-3xl text-balance text-xl font-semibold text-gradient-brand sm:text-2xl">
+                Look professional. Respond faster. Turn more inquiries into customers.
               </p>
-
-              {/* email capture bar — email rides into the free-design form */}
-              {canCollectContact("lead") ? (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setDesignOpen(true);
-                }}
-                style={{ animationDelay: "240ms", animationFillMode: "both" }}
-                className="animate-fade-in mx-auto mt-9 flex max-w-xl flex-col gap-2 rounded-3xl border border-border bg-card p-2 shadow-[0_24px_60px_-30px_color-mix(in_oklab,var(--brand)_60%,transparent)] sm:flex-row sm:items-center sm:rounded-full"
-              >
-                <input
-                  type="email"
-                  value={designEmail}
-                  onChange={(e) => setDesignEmail(e.target.value)}
-                  placeholder="Your email address"
-                  aria-label="Your email address"
-                  className="min-w-0 flex-1 bg-transparent px-4 py-2.5 text-base outline-none placeholder:text-muted-foreground"
-                />
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="h-12 shrink-0 rounded-full px-6 text-sm font-semibold transition-transform hover:-translate-y-0.5 sm:text-base"
-                >
-                  Get My Free Website Design
-                  <ArrowRight className="ml-1 h-4 w-4" />
+              <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+                Your next customer might be visiting your website or calling while you&apos;re busy. We
+                design your new website for free, then connect it to tools that help you answer missed
+                calls, follow up with interested customers, and make review requests part of your routine.
+              </p>
+              <p className="mx-auto mt-4 max-w-2xl text-lg font-medium text-foreground">
+                Love your design? Launch with Essentials from $297/month.
+              </p>
+              <div className="mt-9 flex justify-center">
+                <Button asChild size="lg" className="h-12 rounded-full px-7 text-base font-semibold">
+                  <a href={INTAKE_URL}>
+                    Get My Free Website Design
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </a>
                 </Button>
-              </form>
-              ) : (
-                <div className="mx-auto mt-9">
-                  <Button asChild size="lg" className="h-12 rounded-full px-6 text-sm font-semibold sm:text-base">
-                    <a href={INTAKE_URL}>
-                      Get My Free Website Design
-                      <ArrowRight className="ml-1 h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
-              )}
-
-              <Dialog open={canCollectContact("lead") && designOpen} onOpenChange={setDesignOpen}>
-                <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
-                  <DialogTitle className="text-2xl font-bold">Get Your Free Website Design</DialogTitle>
-                  <DialogDescription>
-                    Tell us about your business. We&apos;ll design a custom homepage first, and you pay nothing unless you love it.
-                  </DialogDescription>
-                  <LeadForm labeled offer="design" submitLabel="Get My Free Website Design" initialEmail={designEmail} />
-                  <ReportFallback className="mt-2 text-center" />
-                </DialogContent>
-              </Dialog>
-
-              {/* trust row */}
-              <div
-                className="animate-fade-in mt-9 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
-                style={{ animationDelay: "320ms", animationFillMode: "both" }}
-              >
+              </div>
+              <p className="mt-4 text-sm font-medium text-foreground">
+                Free design preview. No payment required to review it.
+              </p>
+              <p className="mx-auto mt-1 max-w-md text-xs text-muted-foreground">
+                You&apos;ll get a custom homepage design to review. The full website is built after you approve it.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-2">
-                  <ShieldCheck className="h-4 w-4 text-brand" /> No contracts
+                  <ShieldCheck className="h-4 w-4 text-brand" /> No payment for the preview
                 </span>
                 <span className="inline-flex items-center gap-2">
-                  <Star className="h-4 w-4 fill-[#f4a62a] text-[#f4a62a]" /> 4.8-star Google rating
+                  <Check className="h-4 w-4 text-brand" /> No long-term contract
                 </span>
                 <span className="inline-flex items-center gap-2">
-                  <Zap className="h-4 w-4 text-brand" /> Live within 14 days
+                  <Star className="h-4 w-4 fill-current text-brand" /> 4.8 on Google · 50+ reviews
                 </span>
               </div>
             </div>
@@ -458,18 +373,6 @@ function Index() {
                 aria-hidden="true"
                 className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-brand opacity-70 blur-[2px]"
               />
-
-              {/* floating proof card — real turnaround stat */}
-
-              <div
-                className="animate-float-soft pointer-events-none absolute -right-4 bottom-10 z-20 hidden rounded-2xl border border-white/60 bg-background/85 px-4 py-3 shadow-xl backdrop-blur-xl sm:block"
-                style={{ animationDelay: "-2.5s" }}
-              >
-                <p className="text-2xl font-bold leading-none text-brand">
-                  <CountUp value="14 days" />
-                </p>
-                <p className="mt-1 text-xs font-medium text-muted-foreground">Design to launch</p>
-              </div>
 
               <div className="relative overflow-hidden rounded-[1.9rem] bg-black">
                 <VideoPlayer
@@ -491,234 +394,33 @@ function Index() {
         {/* scroll cue */}
         <div className="pointer-events-none flex justify-center pb-8">
           <span className="animate-float-soft inline-flex items-center gap-2 rounded-full border border-brand/20 bg-background/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur-md">
-            Scroll to see how it works
+            Scroll to see more
             <ArrowRight className="h-3.5 w-3.5 rotate-90 text-brand" />
           </span>
         </div>
       </section>
 
 
+      <HomeProblem />
+
+      <TransformationsIntro />
+      <BeforeAfterShowcase />
+      <ExploreWork />
       <LogoStrip />
 
-      <StickySteps />
+      <HomeSteps />
 
-      <BeforeAfterShowcase />
+      <HomeSystem />
 
+      <ValueCalculator />
 
-      {/* Pain points — the four leak points */}
-      <Section className="pt-28">
-        <div className="grid gap-16 lg:grid-cols-2 lg:items-start lg:gap-12">
-          <Reveal from="left" className="lg:sticky lg:top-32">
-            <p className="max-w-sm text-base text-primary">The real issue</p>
-            <h2 className="mt-4 max-w-md text-4xl font-bold leading-[1.1] sm:text-5xl">
-              Most local businesses don&apos;t have a traffic problem. They have a{" "}
-              <span className="text-primary">follow-up and conversion problem.</span>
-            </h2>
-            <p className="mt-6 max-w-md text-lg text-muted-foreground">
-              You can have great work, referrals and word of mouth. But if your website is weak,
-              your calls get missed, your follow-up is slow, or your reviews aren&apos;t being
-              captured, good leads quietly disappear.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-6">
-              <Button asChild size="lg">
-                <a href={INTAKE_URL}>Get My Free Website Design</a>
-              </Button>
-              <Link
-                to="/pricing"
-                className="border-b border-primary pb-1 text-sm font-medium text-primary"
-              >
-                See the $297 plan
-              </Link>
-            </div>
-          </Reveal>
+      <HomeReviews />
 
-          <LazySection variant="cards" minHeight={600}><PainPointCards /></LazySection>
-        </div>
-      </Section>
+      <ReportNudge />
 
-      <LazySection variant="loop" minHeight={520}><SystemLoop /></LazySection>
+      <HomeFaq />
 
-      <MoneySection />
-
-      {/* Services grid */}
-      <Section>
-        <SectionHeading
-          eyebrow="What you get"
-          title="One growth system, built for local service businesses"
-          subtitle="Everything below comes with the $297/month Essentials Plan, except Local SEO, which starts in Growth. No separate logins, no surprise bills."
-        />
-        <Reveal delay={120} className="mt-14">
-          <ServicesGrid />
-        </Reveal>
-      </Section>
-
-      <PreviewSteps />
-
-      {/* Reviews */}
-      <Section muted className="py-24">
-        <Reveal>
-          <p className="text-center text-base font-semibold text-foreground">
-            Rated by 50+ local business owners
-          </p>
-          <h2 className="mx-auto mt-4 max-w-4xl text-center text-4xl font-bold sm:text-5xl">
-            Automatically ask real customers for{" "}
-            <span className="text-primary">honest Google reviews after every completed job.</span>
-          </h2>
-        </Reveal>
-
-        <Reveal delay={120} className="mt-16">
-          <RatingBar />
-        </Reveal>
-        <Reveal delay={200} className="mt-16">
-          <GoogleReviews />
-        </Reveal>
-
-        <div className="mt-10 text-center">
-          <Button asChild variant="outline" size="lg">
-            <Link to="/reviews">See all reviews</Link>
-          </Button>
-        </div>
-      </Section>
-
-      {/* Sexy and affordable */}
-      <section className="bg-secondary py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal scale className="relative rounded-[2rem] bg-[linear-gradient(115deg,#1d1f4a_0%,#231f57_45%,#6d33d6_100%)] px-8 py-14 text-background sm:px-14 lg:px-16">
-            <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
-              <div>
-                <p className="text-xl font-medium text-[#a78bfa]">
-                  LM&amp;C sets it up. Lavender Suite Pro keeps it running.
-                </p>
-                <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
-                  One system instead of five disconnected tools.
-                </h2>
-                <p className="mt-8 max-w-xl text-background/85">
-                  Your calls, texts, forms, bookings, reviews and follow-up all live in one place.
-                  You see every lead, where it came from, and what happened next — without adding
-                  front-desk work.
-                </p>
-                <p className="mt-6 font-bold">Already have a decent website?</p>
-                <p className="mt-1 max-w-xl text-background/85">
-                  Perfect. The review engine works on its own — honest reviews can strengthen your
-                  local visibility and create more opportunities to get found and chosen.
-                </p>
-                <p className="mt-6 text-background/85">
-                  Drop your details and we'll send your free Google & Local Visibility Report.
-                </p>
-                <div className="mt-6 max-w-xl">
-                  <LeadForm variant="dark" fields="leadInline" labeled submitLabel="Get My Free Google Report" />
-                </div>
-              </div>
-
-              <VisibilityReportPreview />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <TechnologySection />
-
-      {/* Stats */}
-      <Section>
-        <Reveal>
-          <p className="text-center text-base text-muted-foreground">
-            Why this matters for a local business
-          </p>
-          <h2 className="mx-auto mt-4 max-w-4xl text-center text-4xl font-bold sm:text-5xl">
-            Customers decide fast — and they call{" "}
-            <span className="text-primary">whoever answers first.</span>
-          </h2>
-        </Reveal>
-        <div className="mx-auto mt-20 grid max-w-5xl gap-x-10 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
-          {stats.slice(0, 3).map((s, i) => (
-            <Reveal key={s.label} delay={i * 100}>
-              <p className="text-center font-[family-name:var(--font-display)] text-7xl font-bold leading-none text-[#2a2352]">
-                <CountUp value={`${s.value}${s.suffix ?? ""}`} />
-              </p>
-              <p className="mt-6 text-base leading-relaxed text-muted-foreground">{s.label}</p>
-              {"source" in s && s.source && (
-                <p className="mt-2 text-xs text-muted-foreground/60">Source: {s.source}</p>
-              )}
-            </Reveal>
-          ))}
-          <Reveal delay={300} className="col-span-full mt-4 flex justify-center">
-            <div className="grid max-w-2xl grid-cols-2 gap-x-6 gap-y-16 sm:gap-x-16 sm:gap-y-20 lg:gap-x-24">
-              {stats.slice(3).map((s) => (
-                <div key={s.label} className="min-w-0">
-                  <p className="text-center font-[family-name:var(--font-display)] text-5xl font-bold leading-none text-[#2a2352] sm:text-7xl">
-                    <CountUp value={`${s.value}${s.suffix ?? ""}`} />
-                  </p>
-                  <p className="mt-6 text-base leading-relaxed text-muted-foreground">{s.label}</p>
-                  {"source" in s && s.source && (
-                    <p className="mt-2 text-xs text-muted-foreground/60">Source: {s.source}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-
-        <Reveal as="h3" className="mx-auto mt-16 max-w-3xl text-center text-3xl font-bold sm:text-4xl">
-          We build the website and the system so this{" "}
-          <span className="text-primary">doesn&apos;t happen to you.</span>
-        </Reveal>
-      </Section>
-
-      {/* Projects */}
-      <Section muted>
-        <Reveal>
-          <p className="text-lg font-semibold text-primary">Real websites we&apos;ve built</p>
-          <h2 className="mt-3 text-5xl font-bold sm:text-6xl">Cutting-Edge Creations</h2>
-        </Reveal>
-        <Reveal delay={140} className="mt-14">
-          <ProjectGrid limit={3} />
-        </Reveal>
-        <div className="mt-14 text-center">
-          <Button asChild size="lg" className="px-10 uppercase tracking-wide">
-            <Link to="/projects">
-              See all projects <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-      </Section>
-
-      <LazySection variant="split" minHeight={640}><CatchSection /></LazySection>
-
-      <LazySection variant="split" minHeight={520}><BuyerPaths /></LazySection>
-
-      <LazySection variant="cards" minHeight={640}><ValueStack /></LazySection>
-
-      {/* No strings attached */}
-      <Section>
-        <Reveal>
-          <h2 className="mx-auto max-w-3xl text-center text-4xl font-bold sm:text-5xl">
-            Built quickly. Supported for the <span className="text-primary">long run.</span>
-          </h2>
-        </Reveal>
-        <div className="mt-14">
-          <Counters />
-        </div>
-      </Section>
-
-      <LazySection variant="table" minHeight={560}><ComparisonTable /></LazySection>
-
-      {/* Testimonials */}
-      <Section className="py-24">
-        <Reveal>
-          <p className="text-center text-lg text-foreground">
-            Straight from <span className="text-primary">local owners.</span>
-          </p>
-          <h2 className="mt-3 text-center text-5xl font-bold text-[#1f2150] sm:text-6xl">
-            What clients say after launch
-          </h2>
-        </Reveal>
-        <Reveal delay={140} className="mt-14">
-          <LazySection variant="carousel" minHeight={420}><TestimonialCarousel /></LazySection>
-        </Reveal>
-      </Section>
-
-
-      <CtaBand />
+      <FinalCta />
     </>
 
   );
