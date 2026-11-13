@@ -61,3 +61,6 @@
   lives in `nameTextClass`, colour in `nameClassName`. Why: a remote font URL
   breaks the Tailwind build, and conflicting Tailwind size utilities silently
   lose to CSS order.
+
+## Layout width rules
+- Page widths come from the `--container-site` (content) and `--container-showcase` (large visuals, via `Section wide`) tokens in `src/styles.css`; paragraphs keep their own `max-w-2xl/3xl`. Why: one width system keeps every page aligned with the header and avoids stretched text on large screens.

@@ -227,7 +227,7 @@ function ComparePage() {
     <>
       {/* Hero */}
       <section className="border-b border-border bg-secondary">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-16 pt-36 sm:px-6 sm:pb-20 sm:pt-40 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:px-8">
+        <div className="mx-auto grid max-w-site items-center gap-12 px-5 pb-16 pt-36 sm:px-6 sm:pb-20 sm:pt-40 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:px-8">
           <div>
             <Eyebrow>Lavender Marketing &amp; Co. vs. HighLevel</Eyebrow>
             <h1 className="mt-3 text-[2.15rem] leading-[1.08] sm:text-6xl">
@@ -262,7 +262,7 @@ function ComparePage() {
 
       {/* Transparent explanation */}
       <section className="py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:px-8">
+        <div className="mx-auto grid max-w-site gap-12 px-5 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:px-8">
           <Reveal>
             <Eyebrow>The platform behind the experience</Eyebrow>
             <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
@@ -289,7 +289,7 @@ function ComparePage() {
             </p>
           </Reveal>
         </div>
-        <div className="mx-auto mt-14 grid max-w-7xl gap-5 px-5 sm:px-6 md:grid-cols-3 lg:px-8">
+        <div className="mx-auto mt-14 grid max-w-site gap-5 px-5 sm:px-6 md:grid-cols-3 lg:px-8">
           {pillars.map((p, i) => (
             <Reveal key={p.n} delay={i * 90}>
               <div className="h-full rounded-2xl border border-border bg-card p-7 transition-colors hover:border-primary/40">
@@ -304,7 +304,7 @@ function ComparePage() {
 
       {/* Comparison */}
       <section id="comparison" className="scroll-mt-28 border-y border-border bg-secondary py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
           <Reveal className="mx-auto max-w-3xl text-center">
             <Eyebrow>The real difference</Eyebrow>
             <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
@@ -371,7 +371,7 @@ function ComparePage() {
 
       {/* Beyond the software */}
       <section className="py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <Eyebrow>Beyond the software</Eyebrow>
             <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
@@ -399,7 +399,7 @@ function ComparePage() {
 
       {/* Fit */}
       <section className="border-y border-border bg-secondary py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
           <Reveal className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
               Different Businesses Need Different Levels of Support.
@@ -444,7 +444,7 @@ function ComparePage() {
 
       {/* How we work */}
       <section className="py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <Eyebrow>How we work</Eyebrow>
             <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
@@ -486,7 +486,7 @@ function ComparePage() {
 
       {/* Final CTA */}
       <section className="py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
           <div className="rounded-[2rem] bg-[linear-gradient(115deg,#1d1f4a_0%,#231f57_55%,#6d33d6_100%)] px-8 py-14 text-center text-background sm:px-14">
             <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-tight sm:text-5xl">
               You Run the Business. We'll Help Build the Systems Behind It.

@@ -653,3 +653,9 @@ body {
     animation: none;
   }
 }
+
+/* Site width system: content containers and wide showcases. */
+@theme {
+  --container-site: 90rem;
+  --container-showcase: 106rem;
+}

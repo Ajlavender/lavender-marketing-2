@@ -139,7 +139,7 @@ function WhyChooseUs() {
 
       {/* Stats */}
       <section className="bg-background py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-site px-4 sm:px-6 lg:px-8">
           <Reveal>
             <p className="text-center text-base text-primary">
               Do You Have Limited Time, Knowledge, and Budget?
@@ -289,7 +289,7 @@ function WhyChooseUs() {
       {/* Cutting-Edge Creations */}
       <section className="relative bg-secondary py-24">
         <GhostWord text="What We Do" className="left-2 top-1/3" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-site px-4 sm:px-6 lg:px-8">
           <Reveal>
             <p className="text-sm text-primary">
               We've Got Black Belt In Websites. See For Yourself.

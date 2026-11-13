@@ -60,7 +60,7 @@ function AccountLink() {
 export function Footer() {
   return (
     <footer className="bg-background text-foreground">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-3 lg:gap-16 lg:px-8">
+      <div className="mx-auto grid max-w-site gap-12 px-4 py-16 sm:px-6 lg:grid-cols-3 lg:gap-16 lg:px-8">
         <div className="space-y-5">
           <Brand
             fullLogo

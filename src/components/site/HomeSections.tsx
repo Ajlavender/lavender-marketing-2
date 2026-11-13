@@ -250,7 +250,7 @@ export function ValueCalculator() {
   const essentials = jobsToCover(297, jobN, marginN);
 
   return (
-    <Section muted className="py-24">
+    <Section muted className="overflow-x-clip py-24">
       <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <Reveal>
@@ -373,7 +373,7 @@ export function HomeReviews() {
 /* Secondary offer — visibility report (chat/email only while chat is the sole consent form) */
 export function ReportNudge() {
   return (
-    <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-site px-4 pb-20 sm:px-6 lg:px-8">
       <div className="flex flex-col items-start justify-between gap-5 rounded-3xl border border-border bg-card p-7 sm:flex-row sm:items-center">
         <div>
           <h3 className="text-xl font-bold">Already happy with your website?</h3>
@@ -463,7 +463,7 @@ export function HomeFaq() {
 export function FinalCta() {
   return (
     <section className="py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-site px-4 sm:px-6 lg:px-8">
         <Reveal className="rounded-[2rem] bg-gradient-brand px-8 py-16 text-center text-primary-foreground sm:px-14">
           <h2 className="mx-auto max-w-3xl text-4xl font-bold leading-[1.1] sm:text-5xl">
             Your business deserves a better first impression.

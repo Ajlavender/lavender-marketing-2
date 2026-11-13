@@ -260,7 +260,7 @@ export function BeforeAfterShowcase() {
   const item = transformations[active];
 
   return (
-    <Section className="pt-24 pb-4 sm:pt-28">
+    <Section wide className="pt-24 pb-4 sm:pt-28">
       <Reveal className="mx-auto max-w-3xl text-center">
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
           Real transformations
@@ -302,7 +302,7 @@ export function BeforeAfterShowcase() {
         </div>
       </Reveal>
 
-      <Reveal delay={120} className="mx-auto mt-10 w-full max-w-[1280px]">
+      <Reveal delay={120} className="mx-auto mt-10 w-full max-w-showcase">
         <BeforeAfterCompare key={item.client} item={item} />
 
 

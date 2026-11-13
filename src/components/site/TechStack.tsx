@@ -53,7 +53,7 @@ export function TechStackVisual({ labels }: { labels?: readonly { name: string; 
 export function TechnologySection() {
   return (
     <section className="border-y border-border bg-background py-20">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:px-8">
+      <div className="mx-auto grid max-w-site items-center gap-12 px-5 sm:px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:px-8">
         <Reveal>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">Our technology</p>
           <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">

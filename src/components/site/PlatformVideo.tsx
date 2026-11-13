@@ -23,7 +23,7 @@ export function PlatformVideo() {
 
   return (
     <section className="bg-background py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
             Powered by Lavender Suite Pro

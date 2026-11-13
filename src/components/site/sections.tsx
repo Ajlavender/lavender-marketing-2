@@ -28,14 +28,17 @@ export function Section({
   children,
   className,
   muted,
+  wide,
 }: {
   children: ReactNode;
   className?: string;
   muted?: boolean;
+  /** Showcase width for large visuals; text inside keeps its own max width. */
+  wide?: boolean;
 }) {
   return (
     <section className={cn("py-20", muted && "bg-secondary", className)}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
+      <div className={cn("mx-auto px-4 sm:px-6 lg:px-8", wide ? "max-w-showcase" : "max-w-site")}>{children}</div>
     </section>
   );
 }
@@ -85,7 +88,7 @@ export function PageHero({
 }) {
   return (
     <section className="border-b border-border bg-secondary">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-16 pt-36 sm:px-6 sm:pb-20 sm:pt-40 lg:grid-cols-2 lg:px-8">
+      <div className="mx-auto grid max-w-site items-center gap-10 px-5 pb-16 pt-36 sm:px-6 sm:pb-20 sm:pt-40 lg:grid-cols-2 lg:px-8">
         <div>
           {eyebrow && (
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">{eyebrow}</p>
@@ -500,7 +503,7 @@ export function LogoStrip() {
         className="pointer-events-none absolute left-1/2 top-0 h-64 w-[40rem] -translate-x-1/2 bg-gradient-radial from-brand/10 via-transparent to-transparent opacity-70"
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-site px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-brand/15 bg-white/60 px-4 py-1.5 shadow-sm backdrop-blur-sm">
             <Star className="h-3.5 w-3.5 fill-orange text-orange" />
@@ -555,7 +558,7 @@ export function LogoStrip() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto mt-10 flex max-w-7xl justify-center px-4 sm:mt-14 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto mt-10 flex max-w-site justify-center px-4 sm:mt-14 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3 rounded-2xl border border-brand/10 bg-white/70 px-5 py-3 shadow-sm backdrop-blur-sm">
           <div className="flex -space-x-1.5">
             {["bg-brand", "bg-brand-glow", "bg-brand-deep", "bg-ink"].map((c, i) => (
@@ -589,7 +592,7 @@ export function CtaBand({
 }) {
   return (
     <section className="bg-secondary py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-site px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-10 rounded-[2rem] bg-[linear-gradient(100deg,#191b3f_0%,#221f5a_45%,#6d33d6_100%)] px-8 py-14 text-background sm:px-14 lg:flex-row lg:items-center lg:gap-12 lg:pl-14">
           <div className="w-full max-w-xl lg:flex-1">
             <p className="text-lg text-[#a78bfa]">

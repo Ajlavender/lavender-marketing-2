@@ -4,7 +4,7 @@ import { ArrowRight, Check, ShieldCheck, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LogoStrip } from "@/components/site/sections";
 import { MEDIA } from "@/data/site";
-import { BeforeAfterShowcase } from "@/components/site/BeforeAfterShowcase";
+import { BeforeAfterCompare, BeforeAfterShowcase, transformations } from "@/components/site/BeforeAfterShowcase";
 import {
   ExploreWork,
   FinalCta,
@@ -115,26 +115,27 @@ function Index() {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
         </div>
 
-        <div className="mx-auto max-w-[110rem] px-5 pb-14 pt-36 sm:px-6 sm:pt-32 lg:min-h-0 lg:px-8 lg:pb-20 lg:pt-36">
-          <div className="mx-auto w-full text-center">
+        <div className="mx-auto max-w-site px-5 pb-14 pt-36 sm:px-8 sm:pt-32 lg:px-10 lg:pb-20 lg:pt-40">
+          <div className="grid items-center gap-12 lg:grid-cols-[45fr_55fr] lg:gap-14 xl:gap-20">
+          <div className="w-full text-center lg:text-left">
 
 
             <div className="relative">
-              <h1 className="mx-auto max-w-5xl text-balance text-[clamp(2.4rem,6vw,5rem)] font-bold leading-[1.04]">
+              <h1 className="mx-auto max-w-5xl text-balance text-[clamp(2.4rem,6vw,5rem)] lg:mx-0 lg:text-[clamp(2.75rem,4.1vw,4.6rem)] font-bold leading-[1.04]">
                 A better website is just the beginning.
               </h1>
-              <p className="mx-auto mt-5 max-w-3xl text-balance text-xl font-semibold text-gradient-brand sm:text-2xl">
+              <p className="mx-auto mt-5 max-w-3xl lg:mx-0 text-balance text-xl font-semibold text-gradient-brand sm:text-2xl">
                 Look professional. Respond faster. Turn more inquiries into customers.
               </p>
-              <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+              <p className="mx-auto mt-6 max-w-2xl lg:mx-0 text-lg text-muted-foreground">
                 Your next customer might be visiting your website or calling while you&apos;re busy. We
                 design your new website for free, then connect it to tools that help you answer missed
                 calls, follow up with interested customers, and make review requests part of your routine.
               </p>
-              <p className="mx-auto mt-4 max-w-2xl text-lg font-medium text-foreground">
+              <p className="mx-auto mt-4 max-w-2xl lg:mx-0 text-lg font-medium text-foreground">
                 Love your design? Launch with Essentials from $297/month.
               </p>
-              <div className="mt-9 flex justify-center">
+              <div className="mt-9 flex justify-center lg:justify-start">
                 <Button asChild size="lg" className="h-12 rounded-full px-7 text-base font-semibold">
                   <a href={INTAKE_URL}>
                     Get My Free Website Design
@@ -145,10 +146,10 @@ function Index() {
               <p className="mt-4 text-sm font-medium text-foreground">
                 Free design preview. No payment required to review it.
               </p>
-              <p className="mx-auto mt-1 max-w-md text-xs text-muted-foreground">
+              <p className="mx-auto mt-1 max-w-md lg:mx-0 text-xs text-muted-foreground">
                 You&apos;ll get a custom homepage design to review. The full website is built after you approve it.
               </p>
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
+              <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-2">
                   <ShieldCheck className="h-4 w-4 text-brand" /> No payment for the preview
                 </span>
@@ -162,6 +163,15 @@ function Index() {
             </div>
           </div>
 
+          <div className="w-full min-w-0">
+            <div className="rounded-[1.75rem] border border-border bg-card p-2 shadow-[0_40px_90px_-45px_color-mix(in_oklab,var(--brand)_70%,transparent)] sm:p-3">
+              <BeforeAfterCompare item={transformations[0]} />
+            </div>
+            <p className="mt-3 text-center text-sm text-muted-foreground">
+              Drag to compare: {transformations[0].client}, before and after.
+            </p>
+          </div>
+          </div>
         </div>
 
         {/* scroll cue */}

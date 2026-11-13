@@ -45,7 +45,7 @@ export function ServicePage({
       <header className="relative overflow-hidden bg-nav-plum pb-24 pt-40 text-nav-plum-foreground">
         <div className="pointer-events-none absolute -right-24 -top-24 h-[28rem] w-[28rem] rounded-full bg-primary/30 blur-[120px]" />
         <div className="pointer-events-none absolute -bottom-32 left-1/4 h-80 w-80 rounded-full bg-white/10 blur-[110px]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.15fr_1fr] lg:px-8">
+        <div className="relative mx-auto grid max-w-site items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.15fr_1fr] lg:px-8">
           <Reveal from="up">
             <div>
               <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-nav-plum-foreground/80">

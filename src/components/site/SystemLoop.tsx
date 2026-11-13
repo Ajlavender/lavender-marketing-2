@@ -30,7 +30,7 @@ const steps = [
 export function SystemLoop() {
   return (
     <section className="section-wash py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-site px-4 sm:px-6 lg:px-8">
         <Reveal>
           <p className="rail-eyebrow text-primary">The mechanism</p>
           <h2 className="mt-3 max-w-3xl text-4xl font-bold leading-[1.1] sm:text-5xl">

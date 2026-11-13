@@ -80,7 +80,7 @@ const paths = [
 export function BuyerPaths() {
   return (
     <section className="bg-background py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-site px-4 sm:px-6 lg:px-8">
         <Reveal className="flex flex-col items-center">
           <p className="rail-eyebrow text-primary">Two buyer paths</p>
           <h2 className="mx-auto mt-3 max-w-3xl text-center text-4xl font-bold sm:text-5xl">
