@@ -7,11 +7,10 @@ Paddle (recommended for your US business). Paddle is the legal seller on each sa
 1. **Pricing cards** - Essentials, Growth and Scale all get a "Buy Now" button (monthly or annual, following the toggle). For Scale, ad spend is agreed after purchase; "Let's Talk First" stays as a secondary link.
 2. **Checkout** - secure Paddle checkout pops up on your site, email only (no phone field while texting approval is pending). Canadian visitors see CA$, US visitors see US$.
 3. **After payment** - a "You're in" page with next steps and a button to your intake form (start.lavendermarketingco.com), plus a receipt email from Paddle.
-4. **Free website design** - a short 2-step sign-up (name, email, business, website) that ends on a confirmation page, feeling like a real commitment. No card for now.
+4. **Free website design** - a checkout-style page: order summary ("Custom website design - $0.00"), name, email, business and current website, then a "Confirm my free design" button and a confirmation page. No card.
 5. **Manage billing** - customers can update their card or cancel from a link in their receipt email.
 
 ## Defaults used until you answer the open questions
-- Free design: free sign-up, no card.
 - After payment: thank-you page then intake form.
 - Email only, no phone numbers.
 
