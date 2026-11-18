@@ -1,26 +1,28 @@
-# Buy-today checkout for plans + committed free design sign-up
-
-## Payment approach
-Use your existing Stripe account connected inside HighLevel. Payments, subscriptions, receipts and customer records all stay in HighLevel/Stripe as they do today. No new payment provider, no extra fees beyond Stripe's.
+# Buy Now checkout + free design sign-up
 
 ## What customers will see
-1. **Pricing cards** - Essentials, Growth and Scale all get a "Buy Now" button. It follows the monthly/annual toggle and opens the matching HighLevel checkout (6 links). For Scale, ad spend is agreed after purchase; "Let's Talk First" stays as a smaller link.
-2. **Checkout** - your HighLevel order form, with email and phone. Canadian and US visitors go to their own currency's checkout if you have separate ones.
-3. **After payment** - set the HighLevel order form's thank-you redirect to start.lavendermarketingco.com so buyers go straight to the intake form.
-4. **Free website design** - a $0 checkout-style page on your site: order summary ("Custom website design - $0.00"), name, email, phone, business, current website, optional text-message consent checkbox, then "Confirm my free design" and a confirmation page. Sent to HighLevel through your existing lead connection.
-5. **Campaign tags** (utm, gclid, fbclid) carried onto every checkout link.
+- **Buy Now buttons** on Essentials, Growth and Scale. The button follows the Monthly/Yearly switch and the visitor's country (US or Canada), so each person lands on the right HighLevel checkout.
+- **Scale** gets Buy Now too. "Let's Talk First" stays as a smaller link under it, and ad spend is agreed after purchase.
+- **Free website design** opens a $0 checkout-style page on the site: order summary ("Custom website design — $0, no card needed"), name, email, phone, business name, optional text-message consent box, and a "Confirm my free design" button. It sends the sign-up into HighLevel, then goes to the intake form.
+- **After paying**, customers go to the intake form at start.lavendermarketingco.com. You set this as the thank-you page on each HighLevel order form.
+- **Phone numbers return**: texting approval is done, so the temporary "chat widget only" rule is lifted. Forms get phone back with an optional consent box, and the chat widget stays.
+- **Black Friday trial**: a small "30-day free trial, Black Friday" note on the monthly Essentials card, shown only on the US side because only the US Essentials monthly link carries the trial.
 
-## Texting approval
-Carrier approval is done, so the temporary "chat widget only" rule is lifted and phone fields return. The chat widget stays.
+## Checkout links
+| Plan | US monthly | US yearly | Canada monthly | Canada yearly |
+|---|---|---|---|---|
+| Essentials | …2704a | …27057 | …58dbc | …e1286 |
+| Growth | …bb967 | …d7661 | …27050 | …27054 |
+| Scale | …bb968 | …27056 | …d765d | …d765f |
 
-## Steps
-1. Add the 6 checkout links to the shared plan data and wire the Buy Now buttons.
-2. Build the free design checkout page and confirmation page.
-3. Lift the temporary consent restriction.
-4. Test in both locales on desktop and phone. No real forms submitted.
+All links are under links.lavendersuitepro.com/payment-link/.
+
+## Not changing
+Plan names, prices, yearly math or other copy.
 
 ## Technical details
-- Checkout URLs stored per plan + billing period (+ locale if separate) in `src/data/pricing-plans.ts`; `IntakeAttribution` appends campaign params.
-- Free design page posts via existing `submitLead` to `GHL_WEBHOOK_URL` with a `free-design-checkout` tag.
-- `CHAT_WIDGET_ONLY_CONSENT` to false in `src/lib/consent-policy.ts`; update test and a2p memory.
-- Starting-point check-in and plan cards stay on shared data, so prices never drift.
+- Add a `checkoutLinks` map (plan × billing × locale) to `src/data/pricing-plans.ts`, with a test that confirms all 12 links are present and different from each other.
+- Pricing cards render a Buy Now link (same tab) plus the existing free design CTA. Campaign tags carry over through IntakeAttribution.
+- New route `/free-design` (both locales, noindex off, unique head) with a zod-validated form that posts through the existing `submitLead` server function to `GHL_WEBHOOK_URL`, then redirects to the intake URL. Free-design CTAs across the site point to it.
+- Set `CHAT_WIDGET_ONLY_CONSENT = false` in `consent-policy.ts`, restore phone fields with an unticked optional SMS consent checkbox, and update the consent test and memory note.
+- Check both locales and both billing options with Playwright, without submitting real forms.
