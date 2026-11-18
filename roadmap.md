@@ -36,7 +36,8 @@
 
 ## Canada / USA site versions
 - [x] /en-ca and /en-us versions, country popup, switcher, spelling, currency labels, hreflang, sitemap
-- [ ] Add CAD + USD payment links (waiting on AJ)
+- [x] Add CAD + USD payment links
+- [x] Enable the Canadian Black Friday popup and supplied Essentials monthly trial checkout
 
 ## Services makeover
 - [x] Build four-category desktop and mobile Services menu

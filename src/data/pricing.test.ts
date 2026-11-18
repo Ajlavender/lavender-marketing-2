@@ -13,10 +13,18 @@ describe("Checkout links", () => {
     expect(checkoutLink("Essentials", "en-us", "monthly")).toMatch(/6afce9e121a48a3872d2704a$/);
     expect(checkoutLink("Scale", "en-ca", "annual")).toMatch(/6afcea41906a8b62055d765f$/);
   });
-  it("shows the trial note only on US Essentials monthly", () => {
+  it("sends Canadian Essentials monthly to the supplied trial checkout", () => {
+    expect(checkoutLink("Essentials", "en-ca", "monthly")).toBe("https://links.lavendersuitepro.com/payment-link/6afd4aa7906a8b62055d77c6");
+  });
+  it("offers the trial on Canadian Essentials monthly", () => {
+    expect(hasTrial("Essentials", "en-ca", "monthly")).toBe(true);
+  });
+  it("shows the trial note only on Essentials monthly in both countries", () => {
     expect(hasTrial("Essentials", "en-us", "monthly")).toBe(true);
-    expect(hasTrial("Essentials", "en-ca", "monthly")).toBe(false);
     expect(hasTrial("Essentials", "en-us", "annual")).toBe(false);
+    expect(hasTrial("Essentials", "en-ca", "annual")).toBe(false);
     expect(hasTrial("Growth", "en-us", "monthly")).toBe(false);
+    expect(hasTrial("Growth", "en-ca", "monthly")).toBe(false);
+    expect(hasTrial("Scale", "en-ca", "monthly")).toBe(false);
   });
 });

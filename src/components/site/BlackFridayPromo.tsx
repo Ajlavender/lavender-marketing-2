@@ -11,16 +11,14 @@ const SHOW_DELAY_MS = 5000;
 const SHOW_SCROLL_RATIO = 0.45;
 
 /**
- * Black Friday promotion popup. The 30-day free trial exists only on the US
- * Essentials monthly checkout, so the popup renders on the US site only and
- * at most once per browser session.
+ * Black Friday promotion popup for the local Essentials monthly checkout,
+ * shown at most once per browser session in either country.
  */
 export function BlackFridayPromo() {
   const locale = useLocale();
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (locale !== "en-us") return;
     if (typeof sessionStorage !== "undefined" && sessionStorage.getItem(DISMISS_KEY)) return;
 
     let shown = false;
@@ -52,9 +50,7 @@ export function BlackFridayPromo() {
     setOpen(false);
   };
 
-  if (locale !== "en-us") return null;
-
-  const checkout = checkoutLink("Essentials", "en-us", "monthly");
+  const checkout = checkoutLink("Essentials", locale, "monthly");
 
   return (
     <Dialog open={open} onOpenChange={(v) => (v ? setOpen(true) : dismiss())}>
@@ -89,7 +85,7 @@ export function BlackFridayPromo() {
             {[
               "Custom website designed and built for you",
               "Automated review engine included",
-              "30 days free, then $297 USD/month",
+              locale === "en-us" ? "30 days free, then $297 USD/month" : "30 days free, then CA$297/month",
             ].map((point) => (
               <li key={point} className="flex items-start gap-2.5">
                 <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-glow" />
@@ -103,7 +99,7 @@ export function BlackFridayPromo() {
             size="lg"
             className="mt-7 w-full rounded-full bg-brand-glow text-base font-semibold text-brand-deep hover:bg-brand-glow/90"
           >
-            <a href={checkout ?? "/en-us/pricing"}>
+            <a href={checkout ?? (locale === "en-us" ? "/en-us/pricing" : "/pricing")}>
               Claim my 30 free days <ArrowRight className="ml-1 h-4 w-4" />
             </a>
           </Button>

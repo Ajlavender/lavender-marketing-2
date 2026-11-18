@@ -7,7 +7,7 @@ const BASE = "https://links.lavendersuitepro.com/payment-link/";
 export const CHECKOUT_LINKS: Record<string, Record<"usd" | "cad", Record<Billing, string>>> = {
   Essentials: {
     usd: { monthly: BASE + "6afce9e121a48a3872d2704a", annual: BASE + "6afcea9021a48a3872d27057" },
-    cad: { monthly: BASE + "6ae8d59c5b49394de8f58dbc", annual: BASE + "6ae8d5ac00921ddbe8ee1286" },
+    cad: { monthly: BASE + "6afd4aa7906a8b62055d77c6", annual: BASE + "6ae8d5ac00921ddbe8ee1286" },
   },
   Growth: {
     usd: { monthly: BASE + "6a98bba6f9c8c807930bb967", annual: BASE + "6afcea83906a8b62055d7661" },
@@ -28,7 +28,7 @@ export function checkoutLink(plan: string, locale: Locale, billing: Billing): st
   return CHECKOUT_LINKS[plan]?.[locale === "en-us" ? "usd" : "cad"][billing] ?? null;
 }
 
-/** The Black Friday 30-day trial is attached only to the US Essentials monthly checkout. */
-export function hasTrial(plan: string, locale: Locale, billing: Billing): boolean {
-  return plan === "Essentials" && locale === "en-us" && billing === "monthly";
+/** The Black Friday 30-day trial applies to Essentials monthly in both countries. */
+export function hasTrial(plan: string, _locale: Locale, billing: Billing): boolean {
+  return plan === "Essentials" && billing === "monthly";
 }
