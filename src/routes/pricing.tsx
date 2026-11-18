@@ -216,7 +216,7 @@ function Pricing() {
                   asChild
                   size="lg"
                   variant={plan.dark ? "outline" : "default"}
-                  className="w-full"
+                  className={`w-full ${plan.dark ? "text-brand-deep hover:text-brand-deep" : ""}`}
                 >
                   <a href={checkoutLink(plan.name, locale, billing) ?? FREE_DESIGN_URL}>
                     Buy {plan.name} {annual ? "yearly" : "monthly"}

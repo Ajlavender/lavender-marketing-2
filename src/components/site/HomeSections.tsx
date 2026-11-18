@@ -6,9 +6,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Reveal } from "@/components/site/Reveal";
 import { Section } from "@/components/site/sections";
 import { VisibilityReportPreview } from "@/components/site/VisibilityReportPreview";
-import { FREE_DESIGN_URL } from "@/data/pricing";
+import { FREE_DESIGN_URL, checkoutLink, hasTrial } from "@/data/pricing";
+import { plans } from "@/data/pricing-plans";
 import { googleReviews } from "@/data/site";
-import { useLocale } from "@/lib/locale";
+import { spell, useLocale } from "@/lib/locale";
 import { jobsToCover } from "@/lib/value-calculator";
 
 const CONTACT_EMAIL = "Aj@lavendermarketingco.com";
@@ -334,6 +335,61 @@ export function ValueCalculator() {
 }
 
 /* 07 — Reviews */
+/* Plan journey (short version of the pricing cards) */
+export function HomePlans() {
+  const locale = useLocale();
+  return (
+    <Section className="overflow-x-clip">
+      <div className="mx-auto max-w-3xl text-center">
+        <Eyebrow>The Roadmap</Eyebrow>
+        <h2 className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+          Start with the Essentials.
+          <br />
+          Grow into the rest.
+        </h2>
+      </div>
+      <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        {plans.map((plan, i) => {
+          const trial = hasTrial(plan.name, locale, "monthly");
+          return (
+            <Reveal key={plan.name} delay={i * 80}>
+              <div className={`flex h-full flex-col rounded-3xl border p-8 ${plan.dark ? "border-transparent bg-nav-plum text-nav-plum-foreground" : "border-border bg-card"}`}>
+                <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${plan.dark ? "text-brand-glow" : "text-primary"}`}>{plan.stage}</p>
+                <h3 className={`mt-3 font-display text-2xl font-semibold ${plan.dark ? "" : "text-ink"}`}>{plan.name}</h3>
+                <p className="mt-4 flex items-baseline gap-2">
+                  <span className="font-display text-4xl font-semibold">{locale === "en-ca" ? "CA" : ""}{plan.price}</span>
+                  <span className={`text-sm ${plan.dark ? "text-nav-plum-foreground/70" : "text-muted-foreground"}`}>{plan.note}</span>
+                </p>
+                <p className={`mt-4 text-sm ${plan.dark ? "text-nav-plum-foreground/80" : "text-muted-foreground"}`}>{spell(plan.blurb, locale)}</p>
+                <ul className="mt-6 flex-1 space-y-2.5 text-sm">
+                  {plan.features.slice(0, 3).map((f) => (
+                    <li key={f} className="flex gap-2">
+                      <Check className={`mt-0.5 h-4 w-4 shrink-0 ${plan.dark ? "text-brand-glow" : "text-primary"}`} />
+                      <span className={plan.dark ? "text-nav-plum-foreground/80" : "text-muted-foreground"}>{spell(f, locale)}</span>
+                    </li>
+                  ))}
+                </ul>
+                {trial && (
+                  <p className="mt-6 rounded-full border border-brand-glow/40 px-3 py-1.5 text-center text-xs font-semibold uppercase tracking-wider text-brand-glow">
+                    Black Friday: 30-day free trial
+                  </p>
+                )}
+                <Button asChild size="lg" variant={plan.dark ? "outline" : "default"} className={`${trial ? "mt-4" : "mt-8"} w-full rounded-full ${plan.dark ? "text-brand-deep hover:text-brand-deep" : ""}`}>
+                  <a href={checkoutLink(plan.name, locale, "monthly") ?? FREE_DESIGN_URL}>Buy {plan.name} monthly</a>
+                </Button>
+              </div>
+            </Reveal>
+          );
+        })}
+      </div>
+      <div className="mt-10 flex flex-col items-center justify-center gap-3 text-sm font-semibold sm:flex-row sm:gap-8">
+        <Link to="/pricing" hash="compare-plans" className="text-primary underline-offset-4 hover:underline">Not sure which fits? Compare plans</Link>
+        <a href={FREE_DESIGN_URL} className="text-primary underline-offset-4 hover:underline">Or start with a free website design</a>
+      </div>
+    </Section>
+  );
+}
+
 export function HomeReviews() {
   const picks = googleReviews.filter((r) => !r.quote.startsWith("This user only")).slice(0, 3);
   return (

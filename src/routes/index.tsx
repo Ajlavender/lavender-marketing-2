@@ -16,6 +16,7 @@ import {
   ReportNudge,
   TransformationsIntro,
   ValueCalculator,
+  HomePlans,
 } from "@/components/site/HomeSections";
 import { PlatformVideo } from "@/components/site/PlatformVideo";
 
@@ -198,6 +199,8 @@ function Index() {
       <HomeSystem />
 
       <ValueCalculator />
+
+      <HomePlans />
 
       <HomeReviews />
 
