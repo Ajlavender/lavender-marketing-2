@@ -6,7 +6,7 @@
 - **Free website design** opens a $0 checkout-style page on the site: order summary ("Custom website design — $0, no card needed"), name, email, phone, business name, optional text-message consent box, and a "Confirm my free design" button. It sends the sign-up into HighLevel, then goes to the intake form.
 - **After paying**, customers go to the intake form at start.lavendermarketingco.com. You set this as the thank-you page on each HighLevel order form.
 - **Phone numbers return**: texting approval is done, so the temporary "chat widget only" rule is lifted. Forms get phone back with an optional consent box, and the chat widget stays.
-- **Black Friday trial**: I'll add a line on the US Essentials card only if you say yes to the open question.
+- **Black Friday trial**: a small "30-day free trial, Black Friday" note on the monthly Essentials card, shown only on the US side because only the US Essentials monthly link carries the trial.
 
 ## Checkout links
 | Plan | US monthly | US yearly | Canada monthly | Canada yearly |
