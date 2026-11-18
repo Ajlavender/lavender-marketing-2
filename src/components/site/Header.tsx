@@ -1,4 +1,4 @@
-import { INTAKE_URL } from "@/data/pricing";
+import { FREE_DESIGN_URL } from "@/data/pricing";
 import { useEffect, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, ChevronDown, ArrowUpRight, X } from "lucide-react";
@@ -24,7 +24,7 @@ function AnnouncementBar({ onClose }: { onClose: () => void }) {
             <span className="font-semibold">$297/month</span>.
           </span>
           <a
-            href={INTAKE_URL}
+            href={FREE_DESIGN_URL}
             className="inline-flex shrink-0 items-center gap-0.5 whitespace-nowrap rounded-full bg-white/15 px-2.5 py-0.5 text-[0.68rem] font-semibold ring-1 ring-inset ring-white/25 transition-colors hover:bg-white/25 sm:text-[0.72rem]"
           >
             Get Started
@@ -214,7 +214,7 @@ export function Header() {
               <Button asChild
                 className="group/btn relative h-9 max-w-[11rem] overflow-hidden rounded-full px-4 text-xs font-semibold tracking-wide text-white shadow-none max-sm:hidden"
               >
-              <a href={INTAKE_URL}>
+              <a href={FREE_DESIGN_URL}>
                 <span className="absolute inset-0 bg-gradient-to-br from-nav-cta-from to-nav-cta-to transition-all duration-300 group-hover/btn:from-nav-cta-hover-from group-hover/btn:to-nav-cta-hover-to" />
                 <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/20" />
                 <span className="relative">Get Free Website Design</span>

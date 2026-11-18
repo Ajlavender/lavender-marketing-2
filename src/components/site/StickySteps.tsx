@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Check, Palette, Rocket, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { INTAKE_URL } from "@/data/pricing";
+import { FREE_DESIGN_URL } from "@/data/pricing";
 
 const steps = [
   {
@@ -108,7 +108,7 @@ export function StickySteps() {
                   ))}
                 </ul>
                 {i === 0 && (
-                  <a href={INTAKE_URL} className="mt-6 inline-flex text-sm font-semibold text-primary underline-offset-4 hover:underline">
+                  <a href={FREE_DESIGN_URL} className="mt-6 inline-flex text-sm font-semibold text-primary underline-offset-4 hover:underline">
                     Get Free Website Design →
                   </a>
                 )}

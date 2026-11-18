@@ -1,5 +1,5 @@
 import { LOCALE_INFO, spell, useLocale } from "@/lib/locale";
-import { INTAKE_URL, paymentLink } from "@/data/pricing";
+import { FREE_DESIGN_URL, checkoutLink, hasTrial } from "@/data/pricing";
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Check } from "lucide-react";
@@ -206,27 +206,32 @@ function Pricing() {
                 ))}
               </ul>
 
-              {(() => {
-                const href = paymentLink(plan.name, locale);
-                if (plan.name === "Scale") {
-                  return (
-                    <Button asChild size="lg" variant="outline" className="mt-8 w-full">
-                      <a href={SCALE_CALENDAR_URL}>Let's Talk First</a>
-                    </Button>
-                  );
-                }
-
-                return (
-                  <Button
-                    asChild
-                    size="lg"
-                    variant={plan.emphasis && !plan.dark ? "default" : "outline"}
-                    className="mt-8 w-full"
-                  >
-                    <a href={href ?? INTAKE_URL}>Get My Free Website Design</a>
-                  </Button>
-                );
-              })()}
+              {hasTrial(plan.name, locale, billing) && (
+                <p className="mt-6 rounded-full border border-brand-glow/40 px-3 py-1.5 text-center text-xs font-semibold uppercase tracking-wider text-brand-glow">
+                  Black Friday: 30-day free trial
+                </p>
+              )}
+              <div className={hasTrial(plan.name, locale, billing) ? "mt-4 space-y-3" : "mt-8 space-y-3"}>
+                <Button
+                  asChild
+                  size="lg"
+                  variant={plan.dark ? "outline" : "default"}
+                  className="w-full"
+                >
+                  <a href={checkoutLink(plan.name, locale, billing) ?? FREE_DESIGN_URL}>
+                    Buy {plan.name} {annual ? "yearly" : "monthly"}
+                  </a>
+                </Button>
+                {plan.name === "Scale" ? (
+                  <a href={SCALE_CALENDAR_URL} className="block text-center text-sm font-semibold text-primary underline-offset-4 hover:underline">
+                    Prefer to chat first? Let's Talk First
+                  </a>
+                ) : (
+                  <a href={FREE_DESIGN_URL} className={`block text-center text-sm font-semibold underline-offset-4 hover:underline ${plan.dark ? "text-brand-glow" : "text-primary"}`}>
+                    Or start with a free website design
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>

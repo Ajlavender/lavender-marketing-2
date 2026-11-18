@@ -1,6 +1,6 @@
 import { useSpell } from "@/lib/locale";
 import { Button } from "@/components/ui/button";
-import { INTAKE_URL } from "@/data/pricing";
+import { FREE_DESIGN_URL } from "@/data/pricing";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link, useRouterState } from "@tanstack/react-router";
@@ -201,7 +201,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
             </GrowthReportDialog>
           ) : (
             <a
-              href={INTAKE_URL}
+              href={FREE_DESIGN_URL}
               onClick={onClose}
               className="group relative flex items-center justify-center gap-1.5 overflow-hidden rounded-full px-6 py-3.5 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-nav-plum"
             >

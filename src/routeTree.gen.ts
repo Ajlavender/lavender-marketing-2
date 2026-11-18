@@ -25,6 +25,7 @@ import { Route as CustomerReactivationRouteImport } from './routes/customer-reac
 import { Route as EstimatesInvoicesPaymentsRouteImport } from './routes/estimates-invoices-payments'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FollowUpAutomationRouteImport } from './routes/follow-up-automation'
+import { Route as FreeDesignRouteImport } from './routes/free-design'
 import { Route as GrowthReportRouteImport } from './routes/growth-report'
 import { Route as HostingAndSupportRouteImport } from './routes/hosting-and-support'
 import { Route as InstantLeadResponseRouteImport } from './routes/instant-lead-response'
@@ -133,6 +134,11 @@ const FaqRoute = FaqRouteImport.update({
 const FollowUpAutomationRoute = FollowUpAutomationRouteImport.update({
   id: '/follow-up-automation',
   path: '/follow-up-automation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FreeDesignRoute = FreeDesignRouteImport.update({
+  id: '/free-design',
+  path: '/free-design',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GrowthReportRoute = GrowthReportRouteImport.update({
@@ -293,6 +299,7 @@ export interface FileRoutesByFullPath {
   '/estimates-invoices-payments': typeof EstimatesInvoicesPaymentsRoute
   '/faq': typeof FaqRoute
   '/follow-up-automation': typeof FollowUpAutomationRoute
+  '/free-design': typeof FreeDesignRoute
   '/growth-report': typeof GrowthReportRoute
   '/hosting-and-support': typeof HostingAndSupportRoute
   '/instant-lead-response': typeof InstantLeadResponseRoute
@@ -338,6 +345,7 @@ export interface FileRoutesByTo {
   '/estimates-invoices-payments': typeof EstimatesInvoicesPaymentsRoute
   '/faq': typeof FaqRoute
   '/follow-up-automation': typeof FollowUpAutomationRoute
+  '/free-design': typeof FreeDesignRoute
   '/growth-report': typeof GrowthReportRoute
   '/hosting-and-support': typeof HostingAndSupportRoute
   '/instant-lead-response': typeof InstantLeadResponseRoute
@@ -385,6 +393,7 @@ export interface FileRoutesById {
   '/estimates-invoices-payments': typeof EstimatesInvoicesPaymentsRoute
   '/faq': typeof FaqRoute
   '/follow-up-automation': typeof FollowUpAutomationRoute
+  '/free-design': typeof FreeDesignRoute
   '/growth-report': typeof GrowthReportRoute
   '/hosting-and-support': typeof HostingAndSupportRoute
   '/instant-lead-response': typeof InstantLeadResponseRoute
@@ -432,6 +441,7 @@ export interface FileRouteTypes {
     | '/estimates-invoices-payments'
     | '/faq'
     | '/follow-up-automation'
+    | '/free-design'
     | '/growth-report'
     | '/hosting-and-support'
     | '/instant-lead-response'
@@ -477,6 +487,7 @@ export interface FileRouteTypes {
     | '/estimates-invoices-payments'
     | '/faq'
     | '/follow-up-automation'
+    | '/free-design'
     | '/growth-report'
     | '/hosting-and-support'
     | '/instant-lead-response'
@@ -523,6 +534,7 @@ export interface FileRouteTypes {
     | '/estimates-invoices-payments'
     | '/faq'
     | '/follow-up-automation'
+    | '/free-design'
     | '/growth-report'
     | '/hosting-and-support'
     | '/instant-lead-response'
@@ -570,6 +582,7 @@ export interface RootRouteChildren {
   EstimatesInvoicesPaymentsRoute: typeof EstimatesInvoicesPaymentsRoute
   FaqRoute: typeof FaqRoute
   FollowUpAutomationRoute: typeof FollowUpAutomationRoute
+  FreeDesignRoute: typeof FreeDesignRoute
   GrowthReportRoute: typeof GrowthReportRoute
   HostingAndSupportRoute: typeof HostingAndSupportRoute
   InstantLeadResponseRoute: typeof InstantLeadResponseRoute
@@ -711,6 +724,13 @@ declare module '@tanstack/react-router' {
       path: '/follow-up-automation'
       fullPath: '/follow-up-automation'
       preLoaderRoute: typeof FollowUpAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/free-design': {
+      id: '/free-design'
+      path: '/free-design'
+      fullPath: '/free-design'
+      preLoaderRoute: typeof FreeDesignRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/growth-report': {
@@ -940,6 +960,7 @@ const rootRouteChildren: RootRouteChildren = {
   EstimatesInvoicesPaymentsRoute: EstimatesInvoicesPaymentsRoute,
   FaqRoute: FaqRoute,
   FollowUpAutomationRoute: FollowUpAutomationRoute,
+  FreeDesignRoute: FreeDesignRoute,
   GrowthReportRoute: GrowthReportRoute,
   HostingAndSupportRoute: HostingAndSupportRoute,
   InstantLeadResponseRoute: InstantLeadResponseRoute,

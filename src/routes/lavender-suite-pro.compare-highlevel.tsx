@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal } from "@/components/site/Reveal";
 import { TechStackVisual } from "@/components/site/TechStack";
-import { INTAKE_URL } from "@/data/pricing";
+import { FREE_DESIGN_URL } from "@/data/pricing";
 
 const URL = "https://lavendermarketingco.com/lavender-suite-pro/compare-highlevel";
 const TITLE = "Lavender Marketing & Co. vs. HighLevel | What's the Difference?";
@@ -496,7 +496,7 @@ function ComparePage() {
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Button asChild size="lg" variant="secondary">
-                <a href={INTAKE_URL}>
+                <a href={FREE_DESIGN_URL}>
                   Get My Free Website Design <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>

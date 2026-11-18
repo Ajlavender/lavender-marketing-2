@@ -1,4 +1,4 @@
-import { INTAKE_URL } from "@/data/pricing";
+import { FREE_DESIGN_URL } from "@/data/pricing";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { ArrowUpRight, Sparkles } from "lucide-react";
@@ -45,7 +45,7 @@ export function MobileCtaBar() {
           </GrowthReportDialog>
         ) : (
           <Button asChild className="group relative flex h-14 w-full items-center justify-center gap-2 overflow-hidden rounded-full px-5 text-[0.95rem] font-semibold text-white shadow-[0_16px_40px_-14px_rgba(124,77,255,0.85)] active:scale-[0.99]">
-          <a href={INTAKE_URL}>
+          <a href={FREE_DESIGN_URL}>
             <span className="absolute inset-0 bg-gradient-to-br from-nav-cta-from to-nav-cta-to" />
             <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/25" />
             <Sparkles className="relative h-4 w-4 shrink-0" />

@@ -1,6 +1,6 @@
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
-import { INTAKE_URL } from "@/data/pricing";
+import { FREE_DESIGN_URL } from "@/data/pricing";
 
 const leaks = [
   {
@@ -67,7 +67,7 @@ export function MoneySection() {
               </p>
             </div>
             <Button asChild size="lg" variant="secondary" className="shrink-0">
-              <a href={INTAKE_URL}>Get My Free Website Design</a>
+              <a href={FREE_DESIGN_URL}>Get My Free Website Design</a>
             </Button>
           </div>
         </Reveal>

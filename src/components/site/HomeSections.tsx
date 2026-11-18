@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Reveal } from "@/components/site/Reveal";
 import { Section } from "@/components/site/sections";
 import { VisibilityReportPreview } from "@/components/site/VisibilityReportPreview";
-import { INTAKE_URL } from "@/data/pricing";
+import { FREE_DESIGN_URL } from "@/data/pricing";
 import { googleReviews } from "@/data/site";
 import { useLocale } from "@/lib/locale";
 import { jobsToCover } from "@/lib/value-calculator";
@@ -20,7 +20,7 @@ function Eyebrow({ children }: { children: string }) {
 function IntakeButton({ label = "Get My Free Website Design", variant }: { label?: string; variant?: "secondary" }) {
   return (
     <Button asChild size="lg" variant={variant} className="h-12 rounded-full px-6 font-semibold">
-      <a href={INTAKE_URL}>
+      <a href={FREE_DESIGN_URL}>
         {label} <ArrowRight className="ml-1 h-4 w-4" />
       </a>
     </Button>

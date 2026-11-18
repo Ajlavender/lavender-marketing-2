@@ -1,4 +1,4 @@
-import { INTAKE_URL } from "@/data/pricing";
+import { FREE_DESIGN_URL } from "@/data/pricing";
 import { useState, type ReactNode } from "react";
 import { Check, X, ChevronDown, ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
@@ -233,7 +233,7 @@ export function CatchSection() {
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Button asChild size="lg">
-                  <a href={INTAKE_URL}>Get My Free Website Design</a>
+                  <a href={FREE_DESIGN_URL}>Get My Free Website Design</a>
                 </Button>
                 <Link
                   to="/pricing"

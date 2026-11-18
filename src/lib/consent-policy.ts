@@ -1,5 +1,5 @@
-/** Temporary carrier-review mode. Restore only at the owner's request. */
-export const CHAT_WIDGET_ONLY_CONSENT = true;
+/** Carrier review is complete (owner confirmed); set true to restore chat-widget-only consent. */
+export const CHAT_WIDGET_ONLY_CONSENT = false;
 
 export type ContactSurface = "chat" | "lead" | "report" | "qualification" | "booking" | "support";
 

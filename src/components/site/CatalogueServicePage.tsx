@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, Check, ArrowRight } from 'lucide-react';
 import { catalogueService, serviceCatalogue } from '@/data/service-catalogue';
-import { INTAKE_URL } from '@/data/pricing';
+import { FREE_DESIGN_URL } from '@/data/pricing';
 import { useSpell } from '@/lib/locale';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -23,7 +23,7 @@ export function CatalogueServicePage({ slug }: { slug: string }) {
             <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-tight sm:text-6xl">{t(s.title)}</h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{t(s.short)}</p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Button asChild size="lg">{website ? <a href={INTAKE_URL}>Get My Free Website Design <ArrowUpRight className="size-4" /></a> : <Link to="/contact">Talk About This Service <ArrowUpRight className="size-4" /></Link>}</Button>
+              <Button asChild size="lg">{website ? <a href={FREE_DESIGN_URL}>Get My Free Website Design <ArrowUpRight className="size-4" /></a> : <Link to="/contact">Talk About This Service <ArrowUpRight className="size-4" /></Link>}</Button>
               <Button asChild variant="outline" size="lg"><Link to="/pricing">View Plans <ArrowRight className="size-4" /></Link></Button>
             </div>
             {website && <p className="mt-5 text-sm text-muted-foreground">Free custom design preview. Launch with Essentials for $297/month if you love it.</p>}

@@ -1,4 +1,4 @@
-import { INTAKE_URL } from "@/data/pricing";
+import { FREE_DESIGN_URL } from "@/data/pricing";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Check, ShieldCheck, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -137,7 +137,7 @@ function Index() {
               </p>
               <div className="mt-9 flex justify-center lg:justify-start">
                 <Button asChild size="lg" className="h-12 rounded-full px-7 text-base font-semibold">
-                  <a href={INTAKE_URL}>
+                  <a href={FREE_DESIGN_URL}>
                     Get My Free Website Design
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </a>

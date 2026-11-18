@@ -32,6 +32,7 @@
 
 - Keep temporary consent restrictions in the shared consent policy and guard each on-site contact collector before rendering or submitting; mount the supplied chat script once in RootShell so navigation never adds duplicate widgets.
 
+- Plan Buy Now buttons use per plan, billing and country HighLevel checkout links in `src/data/pricing.ts`; free-design CTAs go to the on-site `/free-design` checkout, which then hands off to the intake form. Why: one source keeps every checkout link in sync.
 - Account-transition requests post to their own `GHL_TRANSITION_WEBHOOK_URL`, never
   the sales lead webhook, and the form stays disabled until it is set. Why: service
   requests must not enter the sales funnel, and the form must never fake success.

@@ -1,4 +1,4 @@
-import { INTAKE_URL } from "@/data/pricing";
+import { FREE_DESIGN_URL } from "@/data/pricing";
 import {
   Check,
   Hammer,
@@ -112,7 +112,7 @@ export function BuyerPaths() {
                   ))}
                 </ul>
                 <a
-                  href={INTAKE_URL}
+                  href={FREE_DESIGN_URL}
                   className="mt-8 self-start border-b border-primary pb-1 text-sm font-medium text-primary"
                 >
                   Get My Free Website Design
