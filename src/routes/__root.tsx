@@ -17,6 +17,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { MobileCtaBar } from "@/components/site/MobileCtaBar";
+import { BlackFridayPromo } from "@/components/site/BlackFridayPromo";
 import { Toaster } from "@/components/ui/sonner";
 import { UsSpelling } from "@/components/site/UsSpelling";
 import { IntakeAttribution } from "@/components/site/IntakeAttribution";
@@ -220,6 +221,7 @@ function RootComponent() {
         <Footer />
       </div>
       <MobileCtaBar />
+      <BlackFridayPromo />
       <LocalePrompt />
       <UsSpelling />
       <IntakeAttribution />
