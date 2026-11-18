@@ -190,7 +190,7 @@ function Index() {
       <PlatformVideo />
 
       <TransformationsIntro />
-      <BeforeAfterShowcase />
+      <BeforeAfterShowcase defaultIndex={1} />
       <ExploreWork />
       <LogoStrip />
 

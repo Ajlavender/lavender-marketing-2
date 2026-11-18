@@ -255,8 +255,8 @@ export function BeforeAfterCompare({
 
 }
 
-export function BeforeAfterShowcase() {
-  const [active, setActive] = useState(0);
+export function BeforeAfterShowcase({ defaultIndex = 0 }: { defaultIndex?: number }) {
+  const [active, setActive] = useState(defaultIndex);
   const item = transformations[active];
 
   return (
